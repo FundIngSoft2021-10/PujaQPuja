@@ -1,3 +1,2 @@
 # PujaQPuja
-Sitio de subastas
-
+Sitio de subastas.
