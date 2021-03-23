@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "828692439541",
+    "project_id": "puja-que-puja",
+    "storage_bucket": "puja-que-puja.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:828692439541:android:52ff6ab775301fc822c0bc",
+        "android_client_info": {
+          "package_name": "com.example.puja_que_puja"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "828692439541-coj37qpm51qjkkekqtnn9ocsc1ohmbgc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSuH_KHplCLqnhFhDo7BtTa6XNA2vv4M8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "828692439541-coj37qpm51qjkkekqtnn9ocsc1ohmbgc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
