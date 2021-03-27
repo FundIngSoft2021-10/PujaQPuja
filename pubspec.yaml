@@ -30,15 +30,18 @@ dependencies:
   cupertino_icons: ^1.0.2
 
   #Main dependences
-  provider: ^5.0.0
-  flutter_bloc: ^7.0.0
+  provider: ^5.0.0        # Funciones para proveedores
+  flutter_bloc: ^7.0.0    # Para usar el patrón BLoC
 
   #Firebase dependencies
-  firebase_core: ^1.0.2
-  firebase_auth: ^1.0.1
-  cloud_firestore: ^1.0.2
-  google_sign_in: ^5.0.1
+  firebase_core: ^1.0.2       # Core principal para Firebase
+  cloud_firestore: ^1.0.3     # Base de Datos NoSQL para almacenamiento Firebase
+  firebase_storage: ^8.0.1    # Almacenamiento de archivos Firebase
+  firebase_messaging: ^9.1.0  # Servicio mensajería Firebase
+  firebase_database: ^6.1.1   # Base de Datos NoSQL de alta rapidez Firebase (Real Time -> Para manejar corrrectamente cuando se puje)
 
+  firebase_auth: ^1.0.1   # Autenticación Firebase
+  google_sign_in: ^5.0.1  # Autenticacion con Google
 
   #flutter_spinkit:
   #flutter_svg:
