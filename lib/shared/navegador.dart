@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class Navegador {
-  eliminarPantallaActualYAbrir({@required BuildContext context, @required String nombreRuta}) {
+  static eliminarPantallaActualYAbrir({@required BuildContext context, @required String nombreRuta}) {
     return Navigator.of(context).pushReplacementNamed(nombreRuta);
+  }
+
+  static mantenerPantallaActualYAbrir({@required BuildContext context, @required String nombreRuta}) {
+    return Navigator.of(context).pushNamed(nombreRuta);
   }
 }
