@@ -1,9 +1,23 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:puja_que_puja/screens/app.dart';
+import 'package:puja_que_puja/screens/pantalla_inicial_temporal/home.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Puja Que Puja',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: PantallaTemporal(title: 'Flutter Demo Home Page'),
+    );
+  }
 }
