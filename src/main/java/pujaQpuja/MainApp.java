@@ -1,15 +1,16 @@
 package pujaQpuja;
 
+import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import java.io.IOException;
 
 
 public class MainApp extends Application {
     /*
+    
     @Override
     public void init() throws Exception {
         super.init();
@@ -18,17 +19,10 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/src/main/java/pujaQpuja/FXMLDocument.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Inicio.fxml"));
 
         Parent root = loader.load();
         primaryStage.setScene(new Scene(root));
-        primaryStage.show();
-
-        Label etiqueta = new Label("Hola Mundo");
-        etiqueta.setAlignment(Pos.CENTER);
-        Scene scene = new Scene(etiqueta, 500, 350);
-        primaryStage.setTitle("Aplicación Hola Mundo");
-        primaryStage.setScene(scene);
         primaryStage.show();
     }
     @Override
@@ -85,7 +79,7 @@ public class MainApp extends Application {
     }
 
     private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource(fxml + ".fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("/fxml/" + fxml + ".fxml"));
         return fxmlLoader.load();
     }
 

@@ -45,6 +45,24 @@
             <artifactId>charm-glisten</artifactId>
             <version>6.0.2</version>
         </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/com.gluonhq.attach/util -->
+        <dependency>
+            <groupId>com.gluonhq.attach</groupId>
+            <artifactId>util</artifactId>
+            <version>4.0.11</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.gluonhq.attach/display -->
+        <dependency>
+            <groupId>com.gluonhq.attach</groupId>
+            <artifactId>display</artifactId>
+            <version>4.0.11</version>
+            <classifier>desktop</classifier>
+            <scope>runtime</scope>
+        </dependency>
+
 
     </dependencies>
 
@@ -55,8 +73,11 @@
       </repository>
     </repositories>
 
+ 
+
     <build>
         <plugins>
+           
             <!-- adds file to let you run program outside of IDE -->
             <plugin>
                 <artifactId>maven-antrun-plugin</artifactId>
@@ -74,6 +95,7 @@
                     </execution>
                 </executions>
             </plugin>
+
 
             <!-- sets up the version of Java you are running -->
             <plugin>
