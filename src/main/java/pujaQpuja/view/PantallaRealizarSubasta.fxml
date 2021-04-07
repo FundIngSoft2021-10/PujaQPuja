@@ -33,8 +33,6 @@
 -->
 
 <?import com.gluonhq.charm.glisten.control.AppBar?>
-<?import com.gluonhq.charm.glisten.control.BottomNavigation?>
-<?import com.gluonhq.charm.glisten.control.BottomNavigationButton?>
 <?import com.gluonhq.charm.glisten.control.DropdownButton?>
 <?import com.gluonhq.charm.glisten.mvc.View?>
 <?import javafx.scene.control.Button?>
@@ -48,18 +46,6 @@
 <?import javafx.scene.text.Font?>
 
 <View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="679.0" prefWidth="343.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
-   <bottom>
-      <BottomNavigation prefHeight="61.0" prefWidth="343.0">
-         <BottomNavigationButton>
-            <graphic>
-               <Button id="publicar" mnemonicParsing="false" prefHeight="44.0" prefWidth="91.0" style="-fx-background-color: light; -fx-font-size: 20;" text="Publicar">
-                  <font>
-                     <Font size="17.0" />
-                  </font>
-               </Button>
-            </graphic></BottomNavigationButton>
-      </BottomNavigation>
-   </bottom>
    <top>
       <AppBar titleText="Realizar subasta" BorderPane.alignment="CENTER" />
    </top>
@@ -93,4 +79,7 @@
          </children>
       </AnchorPane>
    </center>
+   <bottom>
+      <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="344.0" style="-fx-font-size: 20;" text="Publicar" BorderPane.alignment="CENTER" />
+   </bottom>
 </View>

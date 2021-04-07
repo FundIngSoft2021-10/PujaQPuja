@@ -33,8 +33,6 @@
 -->
 
 <?import com.gluonhq.charm.glisten.control.AppBar?>
-<?import com.gluonhq.charm.glisten.control.BottomNavigation?>
-<?import com.gluonhq.charm.glisten.control.BottomNavigationButton?>
 <?import com.gluonhq.charm.glisten.control.Icon?>
 <?import com.gluonhq.charm.glisten.mvc.View?>
 <?import javafx.scene.control.Button?>
@@ -48,15 +46,6 @@
 <?import javafx.scene.text.Font?>
 
 <View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
-   <bottom>
-      <BottomNavigation prefHeight="60.0" prefWidth="335.0">
-         <BottomNavigationButton>
-            <graphic>
-               <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="96.0" style="-fx-background-color: light; -fx-font-size: 20;" text="Aceptar" />
-            </graphic>
-         </BottomNavigationButton>
-      </BottomNavigation>
-   </bottom>
    <top>
       <AppBar titleText="Confirmación" BorderPane.alignment="CENTER" />
    </top>
@@ -79,4 +68,7 @@
          </children>
       </AnchorPane>
    </center>
+   <bottom>
+      <Button mnemonicParsing="false" prefHeight="48.0" prefWidth="335.0" style="-fx-font-size: 20;" text="Aceptar" BorderPane.alignment="CENTER" />
+   </bottom>
 </View>
