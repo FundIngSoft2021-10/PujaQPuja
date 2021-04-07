@@ -1,6 +1,6 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/java,code-java,netbeans,vscode
-# Edit at https://www.toptal.com/developers/gitignore?templates=java,code-java,netbeans,vscode
+# Created by https://www.toptal.com/developers/gitignore/api/java,code-java,netbeans,vscode,maven
+# Edit at https://www.toptal.com/developers/gitignore?templates=java,code-java,netbeans,vscode,maven
 
 ### Code-Java ###
 # Language Support for Java(TM) by Red Hat extension for Visual Studio Code - https://marketplace.visualstudio.com/items?itemName=redhat.java
@@ -34,6 +34,20 @@ factoryConfiguration.json
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
+### Maven ###
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+# https://github.com/takari/maven-wrapper#usage-without-binary-jar
+.mvn/wrapper/maven-wrapper.jar
+.flattened-pom.xml
+
 ### NetBeans ###
 **/nbproject/private/
 **/nbproject/Makefile-*.mk
@@ -52,4 +66,4 @@ nbdist/
 !.vscode/extensions.json
 *.code-workspace
 
-# End of https://www.toptal.com/developers/gitignore/api/java,code-java,netbeans,vscode
+# End of https://www.toptal.com/developers/gitignore/api/java,code-java,netbeans,vscode,maven
