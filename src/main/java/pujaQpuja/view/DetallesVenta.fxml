@@ -33,10 +33,9 @@
 -->
 
 <?import com.gluonhq.charm.glisten.control.AppBar?>
-<?import com.gluonhq.charm.glisten.control.BottomNavigation?>
-<?import com.gluonhq.charm.glisten.control.BottomNavigationButton?>
 <?import com.gluonhq.charm.glisten.control.Icon?>
 <?import com.gluonhq.charm.glisten.mvc.View?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -44,10 +43,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
-   <bottom>
-      <BottomNavigation />
-   </bottom>
+<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -65,10 +61,10 @@
             <TextField id="informacionDetalles" layoutX="57.0" layoutY="234.0" prefHeight="24.0" prefWidth="213.0" promptText="Más información" />
             <TextField id="descripcionDetalles" layoutX="59.0" layoutY="280.0" prefHeight="24.0" prefWidth="217.0" promptText="Descripción" />
             <Icon content="DESCRIPTION" layoutX="14.0" layoutY="280.0" prefHeight="26.0" prefWidth="25.0" />
-            <BottomNavigationButton id="tableroDetalles" layoutX="99.0" layoutY="330.0" prefHeight="28.0" prefWidth="145.0" text="Tablero de preguntas" />
-            <BottomNavigationButton id="editarDetalles" layoutX="99.0" layoutY="373.0" prefHeight="28.0" prefWidth="145.0" text="Editar producto" />
-            <BottomNavigationButton id="eliminarDetalles" layoutX="99.0" layoutY="420.0" prefHeight="28.0" prefWidth="145.0" text="Eliminar Producto" />
-            <BottomNavigationButton id="regresarDetalles" layoutX="99.0" layoutY="484.0" prefHeight="33.0" prefWidth="144.0" text="Regresar" />
+            <Button id="tableroDetalles" layoutX="98.0" layoutY="330.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="148.0" text="Tablero de preguntas" />
+            <Button id="editarDetalles" layoutX="98.0" layoutY="372.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="148.0" text="Editar producto" />
+            <Button id="eliminarDetalles" layoutX="98.0" layoutY="413.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="148.0" text="Eliminar Producto" />
+            <Button id="regresarDetalles" layoutX="98.0" layoutY="479.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="148.0" text="Regresar" />
          </children>
       </AnchorPane>
    </center>

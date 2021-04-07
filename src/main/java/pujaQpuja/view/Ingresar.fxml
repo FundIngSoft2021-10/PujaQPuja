@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.BottomNavigationButton?>
 <?import com.gluonhq.charm.glisten.mvc.View?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -37,7 +37,7 @@
                   <Font size="18.0" />
                </font>
             </Text>
-            <BottomNavigationButton id="ingresarIngresar" layoutX="122.0" layoutY="523.0" prefHeight="32.0" prefWidth="95.0" text="Ingresar" />
+            <Button id="ingresarIngresar" layoutX="122.0" layoutY="520.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="95.0" text="Ingresar" />
          </children>
       </AnchorPane>
    </center>
