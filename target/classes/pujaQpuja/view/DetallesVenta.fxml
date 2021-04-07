@@ -36,39 +36,39 @@
 <?import com.gluonhq.charm.glisten.control.Icon?>
 <?import com.gluonhq.charm.glisten.mvc.View?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="434.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e44545" height="139.0" layoutX="51.0" layoutY="78.0" stroke="BLACK" strokeType="INSIDE" width="234.0" />
-            <Label layoutX="68.0" layoutY="87.0" prefHeight="118.0" prefWidth="144.0" text="Hubo un error en registrar usuario por campos erroneos" wrapText="true">
+            <Text fill="WHITE" layoutX="125.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Detalles">
                <font>
-                  <Font size="18.0" />
+                  <Font size="24.0" />
                </font>
-            </Label>
-            <Icon content="ERROR" layoutX="224.0" layoutY="94.0" prefHeight="36.0" prefWidth="45.0" />
+            </Text>
+            <ImageView id="imagenDetalles" fitHeight="138.0" fitWidth="132.0" layoutX="14.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" />
+            <TextField id="nomDetalles" layoutX="153.0" layoutY="66.0" promptText="NombreProducto" />
+            <TextField id="precioDetalles" layoutX="153.0" layoutY="114.0" promptText="Precio" />
+            <TextField id="nombreCompradorDetalles" layoutX="58.0" layoutY="195.0" prefHeight="26.0" prefWidth="211.0" promptText="Nombre Comprador" />
+            <Icon content="PEOPLE" layoutX="15.0" layoutY="195.0" />
+            <Icon content="INFO" layoutX="15.0" layoutY="234.0" />
+            <TextField id="informacionDetalles" layoutX="57.0" layoutY="234.0" prefHeight="24.0" prefWidth="213.0" promptText="Más información" />
+            <TextField id="descripcionDetalles" layoutX="59.0" layoutY="280.0" prefHeight="24.0" prefWidth="217.0" promptText="Descripción" />
+            <Icon content="DESCRIPTION" layoutX="14.0" layoutY="280.0" prefHeight="26.0" prefWidth="25.0" />
+            <Button id="tableroDetalles" layoutX="98.0" layoutY="330.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="148.0" text="Tablero de preguntas" />
+            <Button id="editarDetalles" layoutX="98.0" layoutY="372.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="148.0" text="Editar producto" />
+            <Button id="eliminarDetalles" layoutX="98.0" layoutY="413.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="148.0" text="Eliminar Producto" />
+            <Button id="regresarDetalles" layoutX="98.0" layoutY="479.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="148.0" text="Regresar" />
          </children>
       </AnchorPane>
    </center>
    <top>
-      <AppBar titleText="Error" BorderPane.alignment="CENTER" />
+      <AppBar titleText="" BorderPane.alignment="CENTER" />
    </top>
-   <bottom>
-      <AnchorPane prefHeight="68.0" prefWidth="335.0" BorderPane.alignment="CENTER">
-         <children>
-            <Button fx:id="regresarBoton" layoutY="-1.0" mnemonicParsing="false" onAction="#regresar" prefHeight="68.0" prefWidth="173.0" style="-fx-font-size: 18;" text="Regresar">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
-            <Button fx:id="cancelarBoton" layoutX="171.0" layoutY="-1.0" mnemonicParsing="false" onAction="#cancelar" prefHeight="68.0" prefWidth="164.0" style="-fx-font-size: 18;" text="Cancelar" />
-         </children>
-      </AnchorPane>
-   </bottom>
 </View>

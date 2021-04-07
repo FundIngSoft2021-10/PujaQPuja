@@ -43,11 +43,11 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button id="editarPerfil" layoutX="53.0" layoutY="262.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" style="-fx-background-color: light black; -fx-font-size: 18;" text="Editar perfil">
+            <Button id="editarPerfil" fx:id="editarPerfilBoton" layoutX="53.0" layoutY="262.0" mnemonicParsing="false" onAction="#editarPerfil" prefHeight="35.0" prefWidth="135.0" style="-fx-background-color: light black; -fx-font-size: 18;" text="Editar perfil">
                <font>
                   <Font size="21.0" />
                </font></Button>
-            <Button id="privacidadYSeguridad" layoutX="68.0" layoutY="310.0" mnemonicParsing="false" style="-fx-background-color: light black; -fx-font-size: 18;" text="Privacidad y seguridad" />
+            <Button id="privacidadYSeguridad" fx:id="privacidadSeguridadBoton" layoutX="68.0" layoutY="310.0" mnemonicParsing="false" onAction="#privacidadSeguridad" style="-fx-background-color: light black; -fx-font-size: 18;" text="Privacidad y seguridad" />
             <Button id="soporte" layoutX="68.0" layoutY="364.0" mnemonicParsing="false" style="-fx-background-color: light black; -fx-font-size: 18;" text="Soporte y ayuda" />
          </children>
       </AnchorPane>
@@ -56,6 +56,6 @@
       <AppBar titleText="Perfil" BorderPane.alignment="CENTER" />
    </top>
    <bottom>
-      <Button mnemonicParsing="false" prefHeight="48.0" prefWidth="335.0" style="-fx-font-size: 20;" text="Regresar" BorderPane.alignment="CENTER" />
+      <Button fx:id="regresarBoton" mnemonicParsing="false" onAction="#regresar" prefHeight="48.0" prefWidth="335.0" style="-fx-font-size: 20;" text="Regresar" BorderPane.alignment="CENTER" />
    </bottom>
 </View>

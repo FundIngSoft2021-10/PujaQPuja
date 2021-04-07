@@ -62,12 +62,12 @@
    <bottom>
       <AnchorPane prefHeight="68.0" prefWidth="335.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutY="-1.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="173.0" style="-fx-font-size: 18;" text="Regresar">
+            <Button fx:id="regresarBoton" layoutY="-1.0" mnemonicParsing="false" onAction="#regresar" prefHeight="68.0" prefWidth="173.0" style="-fx-font-size: 18;" text="Regresar">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button layoutX="171.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="164.0" style="-fx-font-size: 18;" text="Cancelar" />
+            <Button fx:id="cancelarBoton" layoutX="171.0" layoutY="-1.0" mnemonicParsing="false" onAction="#cancelar" prefHeight="68.0" prefWidth="164.0" style="-fx-font-size: 18;" text="Cancelar" />
          </children>
       </AnchorPane>
    </bottom>

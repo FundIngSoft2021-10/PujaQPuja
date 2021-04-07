@@ -59,24 +59,24 @@
    <left>
       <AnchorPane prefHeight="212.0" prefWidth="335.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField id="nombreYApellido" layoutX="20.0" layoutY="115.0" prefHeight="32.0" prefWidth="294.0" style="-fx-background-color: grey;" />
+            <TextField id="nombreYApellido" fx:id="nombreApellidoTextField" layoutX="20.0" layoutY="115.0" prefHeight="32.0" prefWidth="294.0" style="-fx-background-color: grey;" />
             <Text fill="#fffefe" layoutX="15.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="  Nombre y apellidos" />
             <Text fill="#fffefe" layoutX="19.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Correo electrónico" />
             <Text fill="#fffefe" layoutX="18.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dirección" />
             <Text fill="#fffefe" layoutX="20.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Teléfono" />
             <Text fill="#fffefe" layoutX="19.0" layoutY="351.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Establecer contraseña" />
-            <TextField id="correoElectronico" layoutX="20.0" layoutY="171.0" prefHeight="32.0" prefWidth="294.0" style="-fx-background-color: grey;" />
-            <TextField id="direccion" layoutX="20.0" layoutY="227.0" prefHeight="32.0" prefWidth="294.0" style="-fx-background-color: grey;" />
-            <TextField id="telefono" layoutX="20.0" layoutY="286.0" prefHeight="32.0" prefWidth="294.0" style="-fx-background-color: grey;" />
+            <TextField id="correoElectronico" fx:id="correoTextField" layoutX="20.0" layoutY="171.0" prefHeight="32.0" prefWidth="294.0" style="-fx-background-color: grey;" />
+            <TextField id="direccion" fx:id="direccionTextField" layoutX="20.0" layoutY="227.0" prefHeight="32.0" prefWidth="294.0" style="-fx-background-color: grey;" />
+            <TextField id="telefono" fx:id="telefonoTextField" layoutX="20.0" layoutY="286.0" prefHeight="32.0" prefWidth="294.0" style="-fx-background-color: grey;" />
             <Text fill="#fffefe" layoutX="20.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmar contraseña" />
-            <PasswordField id="contraseña" layoutX="20.0" layoutY="355.0" prefHeight="33.0" prefWidth="297.0" style="-fx-background-color: grey;" />
-            <PasswordField id="confirmarContraseña" layoutX="20.0" layoutY="415.0" prefHeight="33.0" prefWidth="297.0" style="-fx-background-color: grey;" />
-            <CheckBox layoutX="51.0" layoutY="478.0" mnemonicParsing="false" text="Acepto los terminos y condiciones" />
+            <PasswordField id="contraseña" fx:id="contraseñaTextField" layoutX="20.0" layoutY="355.0" prefHeight="33.0" prefWidth="297.0" style="-fx-background-color: grey;" />
+            <PasswordField id="confirmarContraseña" fx:id="confirmarContraseñaTextField" layoutX="20.0" layoutY="415.0" prefHeight="33.0" prefWidth="297.0" style="-fx-background-color: grey;" />
+            <CheckBox fx:id="terminosYCondicionesCheckBox" layoutX="51.0" layoutY="478.0" mnemonicParsing="false" text="Acepto los terminos y condiciones" />
             <Icon content="HELP_OUTLINE" layoutX="287.0" layoutY="359.0" />
          </children>
       </AnchorPane>
    </left>
    <bottom>
-      <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="336.0" style="-fx-font-size: 20;" text="Registrarse" BorderPane.alignment="CENTER" />
+      <Button fx:id="registrarseBoton" mnemonicParsing="false" onAction="#registarse" prefHeight="45.0" prefWidth="336.0" style="-fx-font-size: 20;" text="Registrarse" BorderPane.alignment="CENTER" />
    </bottom>
 </View>
