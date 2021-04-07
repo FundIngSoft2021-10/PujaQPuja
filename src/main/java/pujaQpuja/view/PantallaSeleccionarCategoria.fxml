@@ -55,13 +55,13 @@
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </Text>
-            <Icon content="INSERT_EMOTICON" layoutX="273.0" layoutY="5.0" />
-            <Icon content="KEYBOARD_ARROW_LEFT" layoutX="299.0" layoutY="5.0" />
-            <TextField layoutY="31.0" prefHeight="37.0" prefWidth="335.0" />
-            <Icon content="SEARCH" layoutX="310.0" layoutY="36.0" />
-            <Icon fx:id="next" content="KEYBOARD_ARROW_RIGHT" layoutX="313.0" layoutY="515.0" />
-            <Icon fx:id="Categorías" accessibleRole="BUTTON" content="TUNE" layoutX="3.0" layoutY="68.0" onTouchMoved="#categoriaAction" />
-            <Icon content="UNFOLD_MORE" layoutX="25.0" layoutY="68.0" />
+            <Icon fx:id="iconperfil" accessibleRole="BUTTON" content="INSERT_EMOTICON" layoutX="273.0" layoutY="5.0" onTouchMoved="#volveruserfuncion" onTouchPressed="#volveruserfuncion" />
+            <Icon fx:id="iconregresar" accessibleRole="BUTTON" content="KEYBOARD_ARROW_LEFT" layoutX="299.0" layoutY="5.0" onTouchMoved="#regresaranteriorfuncion" onTouchPressed="#regresaranteriorfuncion" />
+            <TextField fx:id="Buscar" layoutY="31.0" onAction="#labenfuncion" onMouseEntered="#funcionbuscarenter" onTouchPressed="#labelfuncion" prefHeight="37.0" prefWidth="335.0" />
+            <Icon fx:id="iconbuscar" accessibleRole="BUTTON" content="SEARCH" layoutX="310.0" layoutY="36.0" onTouchMoved="#funcionbuscar" onTouchPressed="#funconbuscar" />
+            <Icon fx:id="next" accessibleRole="BUTTON" content="KEYBOARD_ARROW_RIGHT" layoutX="313.0" layoutY="515.0" onTouchMoved="#siguientefuncion" onTouchPressed="#siguientefuncion" />
+            <Icon fx:id="categorias" accessibleRole="BUTTON" content="TUNE" layoutX="3.0" layoutY="68.0" onTouchMoved="#categoriafuncion" onTouchPressed="#categoriafuncion" />
+            <Icon fx:id="ordenar" accessibleRole="BUTTON" content="UNFOLD_MORE" layoutX="25.0" layoutY="68.0" onTouchMoved="#ordenarfuncion" onTouchPressed="#ordenarfuncion" />
             <TableView fx:id="tableview" layoutY="94.0" prefHeight="424.0" prefWidth="335.0">
               <columns>
                 <TableColumn fx:id="imagecolumn" prefWidth="75.0" />
