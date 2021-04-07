@@ -20,6 +20,7 @@
             <artifactId>javafx-fxml</artifactId>
             <version>11</version>
         </dependency>
+        
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-media</artifactId>
@@ -31,8 +32,28 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.23</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.google.protobuf</groupId>
+                    <artifactId>protobuf-java</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
+
+        <dependency>
+            <groupId>com.gluonhq</groupId>
+            <artifactId>charm-glisten</artifactId>
+            <version>6.0.2</version>
+        </dependency>
+
     </dependencies>
+
+    <repositories>
+      <repository>
+        <id>gluon-nexus-repository</id>
+        <url>http://nexus.gluonhq.com/nexus/content/repositories/releases/</url>
+      </repository>
+    </repositories>
 
     <build>
         <plugins>
