@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="355.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <AnchorPane prefHeight="78.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="79.0" stroke="BLACK" strokeType="INSIDE" width="335.0" />
+            <Label layoutX="123.0" layoutY="27.0" text="Puja Exitosa" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #393939;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="105.0" layoutY="81.0" text="¡FELICIDADES!" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="71.0" layoutY="127.0" text="Has ganado una puja " textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="51.0" fitWidth="147.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Imágenes/ganar.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </center>
+   <bottom>
+      <AnchorPane prefHeight="55.0" prefWidth="335.0" style="-fx-background-color: #393939;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="BotonAceptarGanadorPuja" layoutX="79.0" layoutY="-14.0" mnemonicParsing="false" onAction="#AceptarGanadorPuja" prefHeight="56.0" prefWidth="177.0" style="-fx-background-color: #1e90ff;" text="Aceptar" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>
