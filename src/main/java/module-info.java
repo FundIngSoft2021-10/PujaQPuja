@@ -7,4 +7,6 @@ module pujaQpuja {
     requires java.base;
     opens pujaQpuja to javafx.fxml;
     exports pujaQpuja;
+    exports pujaQpuja.view;
+    opens pujaQpuja.view to javafx.fxml;
 }

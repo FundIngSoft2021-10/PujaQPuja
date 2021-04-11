@@ -15,7 +15,7 @@
    <top>
       <AnchorPane prefHeight="79.0" prefWidth="345.0" BorderPane.alignment="CENTER">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="79.0" stroke="BLACK" strokeType="INSIDE" width="338.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="59.0" stroke="BLACK" strokeType="INSIDE" width="338.0" />
             <Text layoutX="14.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pujar">
                <font>
                   <Font name="System Bold Italic" size="19.0" />
@@ -35,26 +35,20 @@
             <TextField layoutX="1.0" layoutY="32.0" prefHeight="36.0" prefWidth="335.0" promptText="Search" style="-fx-alignment: #202142; -fx-background-color: #393937; -fx-border-color: #202142;" />
             <Button layoutX="254.0" layoutY="1.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="30.0" />
             <Button layoutX="293.0" layoutY="1.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="30.0" />
-            <Button layoutX="309.0" layoutY="493.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0" />
             <Button layoutX="293.0" layoutY="37.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="30.0" />
             <ImageView fitHeight="21.0" fitWidth="20.0" layoutX="259.0" layoutY="4.0">
                <image>
-                  <Image url="@../../../resources/images/usuario.png" />
+                  <Image url="@../images/usuario.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="295.0" layoutY="4.0">
                <image>
-                  <Image url="@../../../resources/images/atras.png" />
+                  <Image url="@../images/atras.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="298.0" layoutY="39.0">
                <image>
-                  <Image url="@../../../resources/images/loupe.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="22.0" fitWidth="25.0" layoutX="311.0" layoutY="495.0">
-               <image>
-                  <Image url="@../../../resources/images/atras.png" />
+                  <Image url="@../images/loupe.png" />
                </image>
             </ImageView>
             <Text layoutX="3.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Información del Producto">
@@ -68,33 +62,22 @@
                   <Font name="System Bold Italic" size="17.0" />
                </font>
             </Text>
-            <Text layoutX="3.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio en Subasta:">
-               <font>
-                  <Font name="System Bold Italic" size="17.0" />
-               </font>
-            </Text>
             <Label layoutX="154.0" layoutY="356.0" prefHeight="30.0" prefWidth="150.0" />
             <Label layoutX="7.0" layoutY="286.0" prefHeight="74.0" prefWidth="322.0" />
             <Label layoutX="213.0" layoutY="93.0" prefHeight="174.0" prefWidth="126.0" />
-            <TextField layoutX="64.0" layoutY="452.0" prefHeight="32.0" prefWidth="169.0" promptText="Digite Precio" />
-            <Button layoutX="237.0" layoutY="452.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="64.0" text="Pujar" />
-            <Text layoutX="210.0" layoutY="442.0" strokeType="OUTSIDE" strokeWidth="0.0" text="# Pujantes:">
-               <font>
-                  <Font name="System Bold Italic" size="17.0" />
-               </font>
-            </Text>
             <Label layoutX="293.0" layoutY="425.0" prefHeight="18.0" prefWidth="36.0" />
-            <Button layoutX="102.0" layoutY="492.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="122.0" text="Realizar Pregunta" />
-            <ImageView fitHeight="41.0" fitWidth="54.0" layoutX="14.0" layoutY="385.0">
+            <ImageView fitHeight="41.0" fitWidth="54.0" layoutX="141.0" layoutY="366.0">
                <image>
-                  <Image url="@../../../resources/images/warning.png" />
+                  <Image url="@../images/warning.png" />
                </image>
             </ImageView>
-            <Text fill="#d41212" layoutX="74.0" layoutY="401.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Debes colocar un precio mayor o igual al precio en subasta" wrappingWidth="261.97137451171875">
+            <Text fill="#d41212" layoutX="29.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Estás seguro que deseas hacer la siguiente puja por : $150.000 COP ? " textAlignment="CENTER" wrappingWidth="281.97137451171875">
                <font>
                   <Font name="System Bold Italic" size="16.0" />
                </font>
             </Text>
+            <Button layoutX="85.0" layoutY="481.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="38.0" text="SI" />
+            <Button layoutX="212.0" layoutY="481.0" mnemonicParsing="false" text="NO" />
          </children>
       </AnchorPane>
    </left>

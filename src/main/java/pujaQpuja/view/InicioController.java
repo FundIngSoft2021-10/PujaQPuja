@@ -1,4 +1,4 @@
-package pujaQpuja;
+package pujaQpuja.view;
 
 import java.net.URL;
 import java.util.ResourceBundle;
