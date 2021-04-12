@@ -16,7 +16,7 @@
       <AnchorPane prefHeight="79.0" prefWidth="345.0" BorderPane.alignment="CENTER">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="59.0" stroke="BLACK" strokeType="INSIDE" width="338.0" />
-            <Text layoutX="14.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pujar">
+            <Text layoutX="32.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pujar">
                <font>
                   <Font name="System Bold Italic" size="19.0" />
                </font>
@@ -27,7 +27,7 @@
    <left>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Text layoutX="3.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Puja que Puja">
+            <Text layoutX="29.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Puja que Puja">
                <font>
                   <Font name="System Bold Italic" size="17.0" />
                </font>
@@ -51,13 +51,13 @@
                   <Image url="@../images/loupe.png" />
                </image>
             </ImageView>
-            <Text layoutX="3.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Información del Producto">
+            <Text layoutX="29.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Información del Producto">
                <font>
                   <Font name="System Bold Italic" size="17.0" />
                </font>
             </Text>
             <ImageView fitHeight="180.0" fitWidth="211.0" layoutX="4.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true" />
-            <Text layoutX="3.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descripción del Producto">
+            <Text layoutX="29.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descripción del Producto">
                <font>
                   <Font name="System Bold Italic" size="17.0" />
                </font>
@@ -76,8 +76,8 @@
                   <Font name="System Bold Italic" size="16.0" />
                </font>
             </Text>
-            <Button layoutX="85.0" layoutY="481.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="38.0" text="SI" />
-            <Button layoutX="212.0" layoutY="481.0" mnemonicParsing="false" text="NO" />
+            <Button layoutX="93.0" layoutY="461.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="38.0" text="SI" />
+            <Button layoutX="188.0" layoutY="461.0" mnemonicParsing="false" text="NO" />
          </children>
       </AnchorPane>
    </left>
