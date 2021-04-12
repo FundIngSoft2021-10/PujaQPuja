@@ -49,3 +49,5 @@ factoryConfiguration.json
 hs_err_pid*
 *.class
 *.class
+target/classes/pujaQpuja/view/inicio/InicioController.class
+target/classes/pujaQpuja/view/inicio/InicioController.class
