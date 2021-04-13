@@ -5,12 +5,18 @@
  */
 package pujaQpuja.controller.pantallas;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.fxml.FXMLLoader;
+import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
@@ -49,7 +55,7 @@ public class PantallaRegistroController implements Initializable {
     }    
     
     @FXML
-    private void registrarse(ActionEvent event) {
+    private void registrarse(ActionEvent event) throws IOException {
         Usuario usuario = new Usuario();
         if(campoPassword.getText().equals(campoConfirmarPassword.getText()) && checkAceptarTerminos.isSelected())
         {
@@ -58,13 +64,13 @@ public class PantallaRegistroController implements Initializable {
             usuario.setDireccion(campoDireccion.getText());
             usuario.setTelefono(campoTelefono.getText());
             usuario.setPassword(campoPassword.getText());
-            //System.out.println("hola");
         }else
         {
-           /* Scene scene = new Scene(root, 400, 400);
-            primaryStage.setScene(scene);
-            primaryStage.show();
-            openScene.start(window);*/
+           Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaErrorRegistro.fxml"));
+           Scene errorRegistroScene = new Scene(pantallaErrorParent);
+           Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+           window.setScene(errorRegistroScene);
+           window.show();
         }
     }
 
