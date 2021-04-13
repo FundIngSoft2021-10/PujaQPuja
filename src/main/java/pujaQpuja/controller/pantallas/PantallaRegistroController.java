@@ -10,15 +10,17 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
+import pujaQpuja.model.Usuario;
 /**
  * FXML Controller class
  *
- * @author LomitoFrito
+ * @author Cristian Da Camara
  */
+
 public class PantallaRegistroController implements Initializable {
 
 
@@ -43,11 +45,27 @@ public class PantallaRegistroController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        //Usuario usuario = new Usuario();
     }    
     
     @FXML
     private void registrarse(ActionEvent event) {
+        Usuario usuario = new Usuario();
+        if(campoPassword.getText().equals(campoConfirmarPassword.getText()) && checkAceptarTerminos.isSelected())
+        {
+            usuario.setApellidos(campoNombreApellido.getText());
+            usuario.setCorreo(campoCorreo.getText());
+            usuario.setDireccion(campoDireccion.getText());
+            usuario.setTelefono(campoTelefono.getText());
+            usuario.setPassword(campoPassword.getText());
+            //System.out.println("hola");
+        }else
+        {
+           /* Scene scene = new Scene(root, 400, 400);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+            openScene.start(window);*/
+        }
     }
 
 }
