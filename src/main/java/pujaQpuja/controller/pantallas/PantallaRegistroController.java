@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pujaQpuja.controller.pantallas;
 
 import java.io.IOException;
@@ -18,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import pujaQpuja.model.Usuario;
 
@@ -38,9 +34,9 @@ public class PantallaRegistroController implements Initializable {
     @FXML
     private TextField campoTelefono;
     @FXML
-    private TextField campoPassword;
+    private PasswordField campoPassword;
     @FXML
-    private TextField campoConfirmarPassword;
+    private PasswordField campoConfirmarPassword;
     @FXML
     private CheckBox checkAceptarTerminos;
     @FXML
@@ -84,13 +80,11 @@ public class PantallaRegistroController implements Initializable {
             usuario.setPassword(campoPassword.getText());
             System.out.println("holiwi");
 
-            /*
-             * Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/"
-             * +"PantallaExitoRegistro.fxml")); Scene errorRegistroScene = new
-             * Scene(pantallaErrorParent); Stage window =
-             * (Stage)((Node)event.getSource()).getScene().getWindow();
-             * window.setScene(errorRegistroScene); window.show();
-             */
+            Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaExitoRegistro.fxml"));
+            Scene errorRegistroScene = new Scene(pantallaErrorParent);
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(errorRegistroScene);
+            window.show();
 
         } else {
             Parent pantallaErrorParent = FXMLLoader
