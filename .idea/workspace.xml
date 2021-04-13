@@ -4,47 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bab415b7-8294-4919-b0ff-d59ce9d66de9" name="Default Changelist" comment="Organización pantallas en archivos y eliminación layout estilo pc a celular">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2021_1_09_p__m__[Default_Changelist]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2021_1_09_p__m__[Default_Changelist]1/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2021_1_09_p__m__[Default_Changelist]2/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2021_1_09_p__m___Default_Changelist_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2021_1_09_p__m___Default_Changelist_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/EjemploControladorFXMLDocumentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/view/InicioController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/DetallesVenta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/DetallesVenta.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/EditarPerfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/EditarPerfil.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/ErrorAutenticar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ErrorAutenticar.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/GanadorPuja.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/GanadorPuja.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/HistorialCompras.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/HistorialCompras.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/HistorialVentas.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/HistorialVentas.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/Informacion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/Informacion.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/Ingresar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/Ingresar.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/Inicio.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaCalificarProducto.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaCalificarProducto.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaCatalogo.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaCatalogoError.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaCatalogoError.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaChat.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaChat.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaConfirmacionCambiosPerfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaConfirmacionCambiosPerfil.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaConfirmarPuja.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaConfirmarPuja.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaErrorPublicacionSubasta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaErrorPublicacionSubasta.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaErrorRegistro.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaErrorRegistro.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaExitoRealizarSubasta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaExitoRealizarSubasta.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaPerfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaPerfil.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaPujarXProducto.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaPujarXProducto.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaPujarXProductoConfirmacion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaPujarXProductoConfirmacion.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaPujarXProductoError.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaPujarXProductoError.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaRealizarSubasta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaRealizarSubasta.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaRegistro.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaRegistro.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaSeleccionarCategoria.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaSeleccionarCategoria.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/Plantilla.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/Plantilla.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/primary.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pujaQpuja/model/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/view/inicio/InicioController.class" beforeDir="false" />
-    </list>
+    <list default="true" id="bab415b7-8294-4919-b0ff-d59ce9d66de9" name="Default Changelist" comment="Organización pantallas en archivos y eliminación layout estilo pc a celular" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
