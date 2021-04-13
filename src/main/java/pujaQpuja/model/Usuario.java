@@ -17,12 +17,13 @@ public class Usuario {
     private double calificacion;
     private List<Puja> historialCompras;
     private List<Puja> historialVentas;
+    private List<Mensaje> mensajes;
 
     public Usuario() {
 
     }
 
-    public Usuario(String user, String password, String nombres, String apellidos, String correo, String direccion, String telefono, String documento, double calificacion, List<Puja> historialCompras, List<Puja> historialVentas) {
+    public Usuario(String user, String password, String nombres, String apellidos, String correo, String direccion, String telefono, String documento, double calificacion, List<Puja> historialCompras, List<Puja> historialVentas,List<Mensaje> mensajes) {
         this.user = user;
         this.password = password;
         this.nombres = nombres;
@@ -34,6 +35,7 @@ public class Usuario {
         this.calificacion = calificacion;
         this.historialCompras = historialCompras;
         this.historialVentas = historialVentas;
+        this.mensajes= mensajes;
     }
 
 
@@ -50,6 +52,14 @@ public class Usuario {
         this.calificacion = calificacion;
         this.historialCompras = historialCompras;
         this.historialVentas = historialVentas;
+    }
+
+    public List<Mensaje> getMensajes() {
+        return this.mensajes;
+    }
+
+    public void setMensajes(List<Mensaje> mensajes) {
+        this.mensajes = mensajes;
     }
 
     public Long getId() {
