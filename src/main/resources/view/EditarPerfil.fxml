@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.EditarPerfilController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #393939;" BorderPane.alignment="CENTER">
+         <children>
+            <PasswordField id="contraEdicion" fx:id="campoPassword" layoutX="33.0" layoutY="263.0" prefHeight="28.0" prefWidth="290.0" promptText="Contraseña" style="-fx-background-color: grey;" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="61.0" layoutX="10.0" stroke="BLACK" strokeType="INSIDE" width="345.0" />
+            <Text fill="WHITE" layoutX="14.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Editar Perfil">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="116.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Puja que Puja">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8a8a8a" height="30.0" layoutY="106.0" stroke="BLACK" strokeType="INSIDE" width="355.0" />
+            <Text fill="WHITE" layoutX="21.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mi Perfil">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#fffdfd" layoutX="21.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Datos de la cuenta">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="26.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Datos Personales">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <TextField id="usuarioEdicion" fx:id="campoUsuario" layoutX="33.0" layoutY="188.0" prefHeight="28.0" prefWidth="290.0" promptText="Usuario" style="-fx-background-color: grey;" />
+            <TextField id="correoEdicion" fx:id="campoCorreo" layoutX="33.0" layoutY="223.0" prefHeight="28.0" prefWidth="290.0" promptText="Correo" style="-fx-background-color: grey;" />
+            <TextField id="telEdicion" fx:id="campoTelefono" layoutX="38.0" layoutY="420.0" prefHeight="28.0" prefWidth="290.0" promptText="Teléfono" style="-fx-background-color: grey;" />
+            <TextField id="docuEdicion" fx:id="campoDocumento" layoutX="38.0" layoutY="383.0" prefHeight="28.0" prefWidth="290.0" promptText="Documento" style="-fx-background-color: grey;" />
+            <TextField id="nombreEdicion" fx:id="campoNombreApellido" layoutX="38.0" layoutY="344.0" prefHeight="28.0" prefWidth="290.0" promptText="Nombre y apellido" style="-fx-background-color: grey;" />
+            <TextField id="dirEdicion" fx:id="campoDireccion" layoutX="39.0" layoutY="455.0" prefHeight="46.0" prefWidth="288.0" promptText="Dirección" style="-fx-background-color: grey;" />
+            <Button id="guardarEditar" fx:id="botonGuardar" layoutX="69.0" layoutY="532.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: #1e90ff;" text="Guardar" textFill="WHITE" />
+            <Button id="cancelarEditar" fx:id="botonCancelar" layoutX="192.0" layoutY="532.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: #1e90ff;" text="Cancelar" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

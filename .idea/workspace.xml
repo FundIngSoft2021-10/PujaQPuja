@@ -4,59 +4,66 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bab415b7-8294-4919-b0ff-d59ce9d66de9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="bab415b7-8294-4919-b0ff-d59ce9d66de9" name="Default Changelist" comment="Organización pantallas en archivos y eliminación layout estilo pc a celular">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2021_1_09_p__m__[Default_Changelist]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2021_1_09_p__m__[Default_Changelist]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2021_1_09_p__m__[Default_Changelist]2/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2021_1_09_p__m___Default_Changelist_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2021_1_09_p__m___Default_Changelist_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/InicioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/view/InicioController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/view/DetallesVenta.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/view/EditarPerfil.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/view/ErrorAutenticar.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/view/GanadorPuja.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/GanadorPuja.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/view/HistorialCompras.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/HistorialCompras.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/view/HistorialVentas.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/HistorialVentas.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/view/Informacion.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/view/Ingresar.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/view/Inicio.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/view/PantallaCalificarProducto.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/PantallaCalificarProducto.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/view/PantallaCatalogo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/PantallaCatalogo.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/view/PantallaCatalogoError.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/PantallaCatalogoError.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/view/PantallaChat.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/PantallaChat.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/view/PantallaConfirmacionCambiosPerfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/PantallaConfirmacionCambiosPerfil.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/view/PantallaConfirmarPuja.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/PantallaConfirmarPuja.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/view/PantallaErrorPublicacionSubasta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/PantallaErrorPublicacionSubasta.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/view/PantallaErrorRegistro.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/PantallaErrorRegistro.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/view/PantallaExitoRealizarSubasta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/PantallaExitoRealizarSubasta.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/view/PantallaPerfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/PantallaPerfil.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/view/PantallaPujarXProducto.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/PantallaPujarXProducto.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/view/PantallaPujarXProductoConfirmacion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/PantallaPujarXProductoConfirmacion.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/view/PantallaPujarXProductoError.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/PantallaPujarXProductoError.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/view/PantallaRealizarSubasta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/PantallaRealizarSubasta.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/view/PantallaRegistro.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/PantallaRegistro.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/view/PantallaSeleccionarCategoria.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/PantallaSeleccionarCategoria.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/view/Plantilla.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/Plantilla.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/view/inicio/Inicio.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/view/inicio/InicioController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/Inicio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/Inicio.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/view/DetallesVenta.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/view/EditarPerfil.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/view/ErrorAutenticar.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/view/Informacion.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/view/Ingresar.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/view/Inicio.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/view/PantallaSeleccionarCategoria.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/EjemploControladorFXMLDocumentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/view/InicioController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/DetallesVenta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/DetallesVenta.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/EditarPerfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/EditarPerfil.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/ErrorAutenticar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ErrorAutenticar.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/GanadorPuja.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/GanadorPuja.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/HistorialCompras.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/HistorialCompras.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/HistorialVentas.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/HistorialVentas.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/Informacion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/Informacion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/Ingresar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/Ingresar.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/Inicio.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaCalificarProducto.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaCalificarProducto.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaCatalogo.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaCatalogoError.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaCatalogoError.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaChat.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaChat.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaConfirmacionCambiosPerfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaConfirmacionCambiosPerfil.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaConfirmarPuja.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaConfirmarPuja.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaErrorPublicacionSubasta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaErrorPublicacionSubasta.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaErrorRegistro.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaErrorRegistro.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaExitoRealizarSubasta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaExitoRealizarSubasta.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaPerfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaPerfil.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaPujarXProducto.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaPujarXProducto.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaPujarXProductoConfirmacion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaPujarXProductoConfirmacion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaPujarXProductoError.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaPujarXProductoError.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaRealizarSubasta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaRealizarSubasta.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaRegistro.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaRegistro.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/PantallaSeleccionarCategoria.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaSeleccionarCategoria.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/Plantilla.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/Plantilla.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/primary.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pujaQpuja/model/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/view/inicio/InicioController.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="76755c97-02cc-4320-8aef-4f230f760d6f" />
   </component>
   <component name="ProjectId" id="1r2CgMMRiTvncp7uXrDWudQ04RB" />
   <component name="ProjectViewState">
@@ -68,17 +75,21 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/SceneBuilder/SceneBuilder.exe" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Juanpa\Programacion\Java\PujaQPuja\src\main\java\pujaQpuja\controller\pantallas" />
+      <recent name="E:\Juanpa\Programacion\Java\PujaQPuja\src\main\resources\view" />
       <recent name="E:\Juanpa\Programacion\Java\PujaQPuja\src\main\resources\fxml" />
     </key>
   </component>
   <component name="RunManager">
     <configuration name="MainApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="pujaQpuja.MainApp" />
-      <module name="pujaQpuja" />
+      <module name="PujaQPuja" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="pujaQpuja.*" />
@@ -119,6 +130,14 @@
       <option name="presentableId" value="Default" />
       <updated>1618164914011</updated>
     </task>
+    <task id="LOCAL-00001" summary="Organización pantallas en archivos y eliminación layout estilo pc a celular">
+      <created>1618166304646</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1618166304646</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -126,10 +145,27 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="develop" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Organización pantallas en archivos y eliminación layout estilo pc a celular" />
+    <option name="LAST_COMMIT_MESSAGE" value="Organización pantallas en archivos y eliminación layout estilo pc a celular" />
   </component>
 </project>

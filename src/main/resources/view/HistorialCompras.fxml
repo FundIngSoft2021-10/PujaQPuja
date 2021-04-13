@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #393939;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.HistorialComprasController">
+   <top>
+      <AnchorPane prefHeight="78.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="79.0" stroke="BLACK" strokeType="INSIDE" width="335.0" />
+            <Label layoutX="89.0" layoutY="27.0" text="Historial de Compras" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="tablaHistorialCompras" prefHeight="454.0" prefWidth="335.0" style="-fx-background-color: gray;">
+              <columns>
+                <TableColumn fx:id="columnaProductoColHC" prefWidth="100.0" style="-fx-background-color: gray;" text=" Producto" />
+                <TableColumn fx:id="columnaNomProdColHC" prefWidth="135.0" style="-fx-background-color: gray;" text="Nombre del Producto" />
+                  <TableColumn fx:id="columnaEstadoColHC" prefWidth="100.0" style="-fx-background-color: gray;" text="Estado" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </center>
+   <bottom>
+      <AnchorPane prefHeight="67.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="botonRegresarHC" alignment="CENTER" layoutX="79.0" layoutY="6.0" mnemonicParsing="false" onAction="#RegresarHC" prefHeight="56.0" prefWidth="177.0" style="-fx-background-color: #1e90ff;" text="Regresar" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>

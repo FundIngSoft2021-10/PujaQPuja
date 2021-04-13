@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="401.0" prefWidth="340.0" style="-fx-background-color: #393939;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaConfirmacionCambiosPerfilController">
+   <top>
+      <AnchorPane prefHeight="78.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="65.0" stroke="BLACK" strokeType="INSIDE" width="340.0" />
+            <Label layoutX="37.0" layoutY="20.0" text="Alerta" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="543.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextArea editable="false" layoutX="34.0" layoutY="53.0" prefHeight="154.0" prefWidth="272.0" text="&#10;¿Esta de acuerdo con los cambios?" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextArea>
+         </children></AnchorPane>
+   </center>
+   <bottom>
+      <AnchorPane prefHeight="62.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="botonSi" mnemonicParsing="false" onAction="#aceptarCambios" prefHeight="62.0" prefWidth="170.0" style="-fx-font-size: 18; -fx-background-color: #1e90ff;" text="Si" textFill="WHITE" />
+            <Button fx:id="botonNo" layoutX="170.0" mnemonicParsing="false" onAction="#cancelarCambios" prefHeight="62.0" prefWidth="170.0" style="-fx-font-size: 18; -fx-background-color: #1e90ff;" text="No" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>

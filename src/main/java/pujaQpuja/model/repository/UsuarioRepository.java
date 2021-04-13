@@ -88,13 +88,13 @@ public class UsuarioRepository extends DB {
         Connection con = getConexion();
 
         String sql = "";
-        sql += "UPDATE FROM Usuario ";
+        sql += "DELETE FROM Usuario ";
         sql += "WHERE id = ?";
 
         try {
             ps = con.prepareStatement(sql);
 
-            ps.setLong(10, usuario.getId());
+            ps.setLong(1, usuario.getId());
 
             return ps.execute();
         } catch (SQLException e) {
@@ -122,7 +122,7 @@ public class UsuarioRepository extends DB {
         try {
             ps = con.prepareStatement(sql);
 
-            ps.setLong(10, usuario.getId());
+            ps.setLong(1, usuario.getId());
             rs = ps.executeQuery();
 
             if (rs.next()) {
