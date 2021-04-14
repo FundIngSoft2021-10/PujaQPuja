@@ -15,6 +15,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import pujaQpuja.controller.SingletonController;
 /**
  * FXML Controller class
  *
@@ -41,12 +42,17 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
     private ImageView botonBuscar;
     @FXML
     private ImageView botonOrdenar;
+
+
+    SingletonController singleton = SingletonController.getControllerAplication();
+    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        System.out.println((singleton).getControlador().getAutenticado().getCorreo());
+
     }    
     
 }

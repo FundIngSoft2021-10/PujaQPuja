@@ -23,6 +23,20 @@ public class Usuario {
 
     }
 
+    public Usuario(Long id, String user, String password, String nombres, String apellidos, String correo, String direccion, String telefono, String documento, double calificacion) {
+        this.id = id;
+        this.user = user;
+        this.password = password;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.correo = correo;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.documento = documento;
+        this.calificacion = calificacion;
+        
+    }
+
     public Usuario(String user, String password, String nombres, String apellidos, String correo, String direccion, String telefono, String documento, double calificacion, List<Puja> historialCompras, List<Puja> historialVentas,List<Mensaje> mensajes) {
         this.user = user;
         this.password = password;
@@ -53,6 +67,8 @@ public class Usuario {
         this.historialCompras = historialCompras;
         this.historialVentas = historialVentas;
     }
+
+    
 
     public List<Mensaje> getMensajes() {
         return this.mensajes;

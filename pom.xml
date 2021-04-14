@@ -40,39 +40,7 @@
             </exclusions>
         </dependency>
 
-        <dependency>
-            <groupId>com.gluonhq</groupId>
-            <artifactId>charm-glisten</artifactId>
-            <version>6.0.2</version>
-        </dependency>
-        
-        <!-- https://mvnrepository.com/artifact/com.gluonhq.attach/util -->
-        <dependency>
-            <groupId>com.gluonhq.attach</groupId>
-            <artifactId>util</artifactId>
-            <version>4.0.11</version>
-            <scope>runtime</scope>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/com.gluonhq.attach/display -->
-        <dependency>
-            <groupId>com.gluonhq.attach</groupId>
-            <artifactId>display</artifactId>
-            <version>4.0.11</version>
-            <classifier>desktop</classifier>
-            <scope>runtime</scope>
-        </dependency>
-
     </dependencies>
-
-    <repositories>
-      <repository>
-        <id>gluon-nexus-repository</id>
-        <url>http://nexus.gluonhq.com/nexus/content/repositories/releases/</url>
-      </repository>
-    </repositories>
-
- 
 
     <build>
         <plugins>
