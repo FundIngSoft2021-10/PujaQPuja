@@ -5,17 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bab415b7-8294-4919-b0ff-d59ce9d66de9" name="Default Changelist" comment="Organización pantallas en archivos y eliminación layout estilo pc a celular">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/LomitoFrito.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/ajustes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/categoria.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/historial_compras.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/historial_ventas.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/logo_vertical.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/metodo_pago.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/notificacion.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/perfil.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/realizar_subasta.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/DetallesVentaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/DetallesVentaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/descripcion.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/descripcion.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/styles/Styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles/Styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/EditarPerfilController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/EditarPerfilController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/atras.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/atras.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/menu.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/menu.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/DetallesVenta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/DetallesVenta.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/EditarPerfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/EditarPerfil.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/ErrorAutenticar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ErrorAutenticar.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/GanadorPuja.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/GanadorPuja.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/HistorialCompras.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/HistorialCompras.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/HistorialVentas.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/HistorialVentas.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/Informacion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/Informacion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/Inicio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/Inicio.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/Plantilla.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/Plantilla.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/styles/Styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/styles/Styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +38,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -43,11 +56,15 @@
     <option name="defaultAccountId" value="76755c97-02cc-4320-8aef-4f230f760d6f" />
   </component>
   <component name="ProjectId" id="1r2CgMMRiTvncp7uXrDWudQ04RB" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -142,6 +159,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Organización pantallas en archivos y eliminación layout estilo pc a celular" />
     <option name="LAST_COMMIT_MESSAGE" value="Organización pantallas en archivos y eliminación layout estilo pc a celular" />
   </component>

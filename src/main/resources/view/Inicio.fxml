@@ -15,15 +15,15 @@
                 <Font size="24.0" />
             </font>
         </Text>
-        <ImageView fitHeight="204.0" fitWidth="138.0" layoutX="101.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="298.0" fitWidth="238.0" layoutX="52.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@../images/logo.png" />
         </ImageView>
-        <Button id="registrarseInicio" fx:id="botonRegistrarse" layoutX="106.0" layoutY="386.0" mnemonicParsing="false" onAction="#registrar" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: #1e90ff;" text="Registrarse" textFill="WHITE">
+        <Button id="registrarseInicio" fx:id="botonRegistrarse" layoutX="106.0" layoutY="430.0" mnemonicParsing="false" onAction="#registrar" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: #1e90ff;" text="Registrarse" textFill="WHITE">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-        <Button id="ingresarInicio" fx:id="botonIngresar" layoutX="106.0" layoutY="461.0" mnemonicParsing="false" onAction="#ingresar" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: #1e90ff;" text="Ingresar" textFill="WHITE">
+        <Button id="ingresarInicio" fx:id="botonIngresar" layoutX="106.0" layoutY="505.0" mnemonicParsing="false" onAction="#ingresar" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: #1e90ff;" text="Ingresar" textFill="WHITE">
             <font>
                 <Font size="14.0" />
             </font>
