@@ -5,11 +5,17 @@
  */
 package pujaQpuja.controller.pantallas;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
 
 import javafx.scene.control.Button;
 /**
@@ -33,11 +39,13 @@ public class PantallaConfirmacionCambiosPerfilController implements Initializabl
     }    
     
     @FXML
-    private void aceptarCambios(ActionEvent event) {
+    private void aceptarCambios(ActionEvent event) throws IOException {
+        
     }
 
     @FXML
-    private void cancelarCambios(ActionEvent event) {
+    private void cancelarCambios(ActionEvent event) throws IOException {
+        
     }
 
 }
