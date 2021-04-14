@@ -65,7 +65,7 @@ public class EditarPerfilController implements Initializable {
     }
 
     @FXML
-    void guardar(ActionEvent event) {
+    void guardar(ActionEvent event) throws IOException {
         Usuario usuario = new Usuario();
 
         if(!campoNombreApellido.getText().isBlank()){
