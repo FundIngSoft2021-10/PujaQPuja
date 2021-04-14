@@ -41,14 +41,13 @@
                   <Font size="16.0" />
                </font>
             </Text>
-            <TextField id="usuarioEdicion" fx:id="campoUsuario" layoutX="33.0" layoutY="188.0" prefHeight="28.0" prefWidth="290.0" promptText="Usuario" style="-fx-background-color: grey;" />
             <TextField id="correoEdicion" fx:id="campoCorreo" layoutX="33.0" layoutY="223.0" prefHeight="28.0" prefWidth="290.0" promptText="Correo" style="-fx-background-color: grey;" />
             <TextField id="telEdicion" fx:id="campoTelefono" layoutX="38.0" layoutY="420.0" prefHeight="28.0" prefWidth="290.0" promptText="Teléfono" style="-fx-background-color: grey;" />
             <TextField id="docuEdicion" fx:id="campoDocumento" layoutX="38.0" layoutY="383.0" prefHeight="28.0" prefWidth="290.0" promptText="Documento" style="-fx-background-color: grey;" />
             <TextField id="nombreEdicion" fx:id="campoNombreApellido" layoutX="38.0" layoutY="344.0" prefHeight="28.0" prefWidth="290.0" promptText="Nombre y apellido" style="-fx-background-color: grey;" />
             <TextField id="dirEdicion" fx:id="campoDireccion" layoutX="39.0" layoutY="455.0" prefHeight="46.0" prefWidth="288.0" promptText="Dirección" style="-fx-background-color: grey;" />
-            <Button id="guardarEditar" fx:id="botonGuardar" layoutX="69.0" layoutY="532.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: #1e90ff;" text="Guardar" textFill="WHITE" />
-            <Button id="cancelarEditar" fx:id="botonCancelar" layoutX="192.0" layoutY="532.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: #1e90ff;" text="Cancelar" textFill="WHITE" />
+            <Button id="guardarEditar" fx:id="botonGuardar" layoutX="69.0" layoutY="532.0" mnemonicParsing="false" onAction="#guardar" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: #1e90ff;" text="Guardar" textFill="WHITE" />
+            <Button id="cancelarEditar" fx:id="botonCancelar" layoutX="192.0" layoutY="532.0" mnemonicParsing="false" onAction="#cancelar" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: #1e90ff;" text="Cancelar" textFill="WHITE" />
          </children>
       </AnchorPane>
    </center>
