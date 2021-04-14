@@ -57,11 +57,11 @@ public class EditarPerfilController implements Initializable {
 
     @FXML
     void cancelar(ActionEvent event) throws IOException {
-        /*Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaHome.fxml"));
+        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaHome.fxml"));
         Scene errorRegistroScene = new Scene(pantallaErrorParent);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(errorRegistroScene);
-        window.show();*/
+        window.show();
     }
 
     @FXML
