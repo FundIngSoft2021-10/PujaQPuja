@@ -5,6 +5,7 @@
  */
 package pujaQpuja.controller.pantallas;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -78,7 +79,7 @@ public class DetallesVentaController implements Initializable {
     }
 
     @FXML
-    private void abrirPerfil(MouseEvent event) {
+    private void abrirPerfil(MouseEvent event) throws IOException {
         Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaPerfil.fxml"));
         Scene errorRegistroScene = new Scene(pantallaErrorParent);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -87,7 +88,7 @@ public class DetallesVentaController implements Initializable {
     }
 
     @FXML
-    private void abrirAjustes(MouseEvent event) {
+    private void abrirAjustes(MouseEvent event) throws IOException {
         Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaAjustes.fxml"));
         Scene errorRegistroScene = new Scene(pantallaErrorParent);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -96,7 +97,7 @@ public class DetallesVentaController implements Initializable {
     }
 
     @FXML
-    private void abrirCategorias(MouseEvent event) {
+    private void abrirCategorias(MouseEvent event) throws IOException {
         Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaSeleccionarCategoria.fxml"));
         Scene errorRegistroScene = new Scene(pantallaErrorParent);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -105,7 +106,7 @@ public class DetallesVentaController implements Initializable {
     }
 
     @FXML
-    private void abrirRealizarSubasta(MouseEvent event) {
+    private void abrirRealizarSubasta(MouseEvent event) throws IOException {
         Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaRealizarSubasta.fxml"));
         Scene errorRegistroScene = new Scene(pantallaErrorParent);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -114,7 +115,7 @@ public class DetallesVentaController implements Initializable {
     }
 
     @FXML
-    private void abrirHistorialVentas(MouseEvent event) {
+    private void abrirHistorialVentas(MouseEvent event) throws IOException {
         Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"historialVentas.fxml"));
         Scene errorRegistroScene = new Scene(pantallaErrorParent);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -123,7 +124,7 @@ public class DetallesVentaController implements Initializable {
     }
 
     @FXML
-    private void abrirHistorialCompras(MouseEvent event) {
+    private void abrirHistorialCompras(MouseEvent event) throws IOException {
         Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"HistorialCompras.fxml"));
         Scene errorRegistroScene = new Scene(pantallaErrorParent);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
