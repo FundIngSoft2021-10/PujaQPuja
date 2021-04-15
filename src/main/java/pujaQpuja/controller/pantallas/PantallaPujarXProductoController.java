@@ -7,12 +7,11 @@ package pujaQpuja.controller.pantallas;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 
 /**
  * FXML Controller class
@@ -20,6 +19,13 @@ import javafx.scene.image.ImageView;
  * @author LomitoFrito
  */
 public class PantallaPujarXProductoController implements Initializable {
+
+    @FXML
+    private Button botonSi;
+    @FXML
+    private Button botonNo;
+    @FXML
+    private Text textPrecioPujaARealizar;
 
 
     /**
@@ -29,5 +35,14 @@ public class PantallaPujarXProductoController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void accionSi(ActionEvent event) {
+    }
+
+    @FXML
+    private void accionNo(ActionEvent event) {
+    }
+
     
 }

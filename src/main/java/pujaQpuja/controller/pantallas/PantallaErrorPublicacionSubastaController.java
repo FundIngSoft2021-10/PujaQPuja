@@ -12,14 +12,23 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 /**
  * FXML Controller class
  *
  * @author LomitoFrito
  */
 public class PantallaErrorPublicacionSubastaController implements Initializable {
+
+    @FXML
+    private Text textoNombreProducto;
+    @FXML
+    private ImageView imagenProducto;
+    @FXML
+    private Button botonReintentar;
+    @FXML
+    private Button botonCancelar;
 
 
     /**
@@ -29,4 +38,12 @@ public class PantallaErrorPublicacionSubastaController implements Initializable 
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void accionReintentar(ActionEvent event) {
+    }
+
+    @FXML
+    private void accionCancelar(ActionEvent event) {
+    }
 }

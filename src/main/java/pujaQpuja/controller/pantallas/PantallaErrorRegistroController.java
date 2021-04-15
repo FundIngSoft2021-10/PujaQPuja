@@ -17,6 +17,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.scene.Node;
+
 /**
  * FXML Controller class
  *
@@ -24,6 +25,10 @@ import javafx.scene.Node;
  */
 public class PantallaErrorRegistroController implements Initializable {
 
+    @FXML
+    private Button botonRegresar;
+    @FXML
+    private Button botonCancelar;
 
     /**
      * Initializes the controller class.
@@ -31,24 +36,24 @@ public class PantallaErrorRegistroController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
-    
-    private void regresar(ActionEvent event) throws IOException {
-        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaRegistro.fxml"));
-           Scene errorRegistroScene = new Scene(pantallaErrorParent);
-           Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-           window.setScene(errorRegistroScene);
-           window.show();
     }
 
-    
-    private void cancelar(ActionEvent event) throws IOException {
-        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"Inicio.fxml"));
-           Scene errorRegistroScene = new Scene(pantallaErrorParent);
-           Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-           window.setScene(errorRegistroScene);
-           window.show();
+    @FXML
+    private void accionRegresar(ActionEvent event) throws IOException {
+        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaRegistro.fxml"));
+        Scene errorRegistroScene = new Scene(pantallaErrorParent);
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(errorRegistroScene);
+        window.show();
+    }
+
+    @FXML
+    private void accionCancelar(ActionEvent event) throws IOException {
+        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" + "Inicio.fxml"));
+        Scene errorRegistroScene = new Scene(pantallaErrorParent);
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(errorRegistroScene);
+        window.show();
     }
 
 }

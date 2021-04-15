@@ -16,6 +16,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Rectangle;
 import pujaQpuja.model.Usuario;
 import pujaQpuja.Utiles;
 
@@ -24,9 +27,44 @@ import pujaQpuja.Utiles;
  *
  * @author Cristian Da Camara
  */
-
 public class PantallaRegistroController implements Initializable {
 
+    @FXML
+    private ImageView botonAtras;
+    @FXML
+    private ImageView botonPerfil;
+    @FXML
+    private Rectangle botonRectanguloAjustes;
+    @FXML
+    private Rectangle botonRectanguloCategorias;
+    @FXML
+    private Rectangle botonRectanguloRealizarSubasta;
+    @FXML
+    private Rectangle botonRectanguloHistorialVentas;
+    @FXML
+    private Rectangle botonRectanguloHistorialCompras;
+    @FXML
+    private Rectangle botonRectanguloNotificaciones;
+    @FXML
+    private Rectangle botonRectanguloMetodoPago;
+    @FXML
+    private TextField campoNombres;
+    @FXML
+    private TextField campoApellidos;
+    @FXML
+    private TextField campoDireccion;
+    @FXML
+    private TextField campoTelefono;
+    @FXML
+    private TextField campoCorreo;
+    @FXML
+    private PasswordField campoPassword;
+    @FXML
+    private PasswordField campoConfirmarPassword;
+    @FXML
+    private CheckBox checkAceptarTerminos;
+    @FXML
+    private Button botonRegistrarse;
 
     /**
      * Initializes the controller class.
@@ -36,14 +74,50 @@ public class PantallaRegistroController implements Initializable {
         // Usuario usuario = new Usuario();
     }
 
-  
+    @FXML
+    private void irAtras(MouseEvent event) {
+    }
 
-    private void registrarse(ActionEvent event) throws IOException {
+    @FXML
+    private void abrirPerfil(MouseEvent event) {
+    }
+
+    @FXML
+    private void abrirAjustes(MouseEvent event) {
+    }
+
+    @FXML
+    private void abrirCategorias(MouseEvent event) {
+    }
+
+    @FXML
+    private void abrirRealizarSubasta(MouseEvent event) {
+    }
+
+    @FXML
+    private void abrirHistorialVentas(MouseEvent event) {
+    }
+
+    @FXML
+    private void abrirHistorialCompras(MouseEvent event) {
+    }
+
+    @FXML
+    private void abrirNotificaciones(MouseEvent event) {
+    }
+
+    @FXML
+    private void abririMetodoPago(MouseEvent event) {
+    }
+
+    @FXML
+    private void accionRegistrarse(ActionEvent event) throws IOException {
         Usuario usuario = new Usuario();
 
         if (campoPassword.getText().equals(campoConfirmarPassword.getText()) && checkAceptarTerminos.isSelected()
                 && Utiles.isNumeric(campoTelefono.getText()) && Utiles.isValid(campoCorreo.getText())) {
-            usuario.setApellidos(campoNombreApellido.getText());
+            usuario.setNombres(campoNombres.getText());
+            usuario.setApellidos(campoApellidos.getText());
             usuario.setCorreo(campoCorreo.getText());
             usuario.setDireccion(campoDireccion.getText());
             usuario.setTelefono(campoTelefono.getText());

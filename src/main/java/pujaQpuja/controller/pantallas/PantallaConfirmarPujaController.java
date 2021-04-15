@@ -7,17 +7,22 @@ package pujaQpuja.controller.pantallas;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 /**
  * FXML Controller class
  *
  * @author LomitoFrito
  */
 public class PantallaConfirmarPujaController implements Initializable {
+
+    @FXML
+    private Button botonSi;
+    @FXML
+    private Button botonNo;
 
 
     /**
@@ -27,5 +32,13 @@ public class PantallaConfirmarPujaController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void accionSi(ActionEvent event) {
+    }
+
+    @FXML
+    private void accionNo(ActionEvent event) {
+    }
     
 }
