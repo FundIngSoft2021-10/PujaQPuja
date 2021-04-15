@@ -34,18 +34,18 @@
                   <Font name="System Bold Italic" size="17.0" />
                </font>
             </Text>
-            <TextField fx:id="campoBuscar" layoutX="1.0" layoutY="32.0" prefHeight="36.0" prefWidth="335.0" promptText="Search" style="-fx-alignment: #393939; -fx-background-color: #393937;" />
-            <TableView fx:id="tablaCatalogo" layoutX="-1.0" layoutY="94.0" prefHeight="402.0" prefWidth="338.0" style="-fx-background-color: #393939;">
+            <TextField fx:id="campoBuscar" layoutX="1.0" layoutY="32.0" prefHeight="36.0" prefWidth="335.0" promptText="Search" style="-fx-alignment: transparente; -fx-background-color: transparente;" />
+            <TableView fx:id="tablaCatalogo" layoutX="-1.0" layoutY="94.0" prefHeight="402.0" prefWidth="338.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" stylesheets="@../styles/darktheme.css">
               <columns>
-                <TableColumn fx:id="columnaDescripcion" prefWidth="118.39999693632126" style="-fx-background-color: #393939;" />
-                <TableColumn fx:id="columnaImagen" prefWidth="216.00001525878906" style="-fx-background-color: #393939;" />
+                <TableColumn fx:id="columnaImagen" editable="false" prefWidth="118.39999693632126" sortable="false" style="-fx-text-fill: #ffffff; -fx-alignment: center; -fx-textcolor: #ffffff; -fx-background-color: #393939; -fx-border-color: transparent; -fx-table-cell-border-color: transparent;" text="Producto" />
+                <TableColumn fx:id="columnaDescripcion" editable="false" prefWidth="216.00001525878906" sortable="false" style="-fx-background-color: #393939;" text="Descripción" />
               </columns>
             </TableView>
-            <ComboBox fx:id="desplegableFiltros" layoutX="3.0" layoutY="68.0" prefHeight="26.0" prefWidth="33.0" />
+            <ComboBox fx:id="desplegableFiltros" layoutX="3.0" layoutY="68.0" onAction="#desplegarfiltros" prefHeight="26.0" prefWidth="33.0" />
             <Button layoutX="254.0" layoutY="1.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="30.0" />
             <Button layoutX="293.0" layoutY="1.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="30.0" />
             <Button layoutX="59.0" layoutY="68.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="30.0" />
-            <Button layoutX="293.0" layoutY="37.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="30.0" />
+            <Button fx:id="botonBuscar" layoutX="293.0" layoutY="37.0" mnemonicParsing="false" onAction="#buscarProducto" prefHeight="26.0" prefWidth="30.0" />
             <ImageView fx:id="botonPerfil" fitHeight="21.0" fitWidth="20.0" layoutX="259.0" layoutY="4.0">
                <image>
                   <Image url="@../images/usuario.png" />
@@ -56,7 +56,7 @@
                   <Image url="@../images/atras.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="botonBuscar" fitHeight="22.0" fitWidth="22.0" layoutX="298.0" layoutY="39.0">
+            <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="298.0" layoutY="39.0">
                <image>
                   <Image url="@../images/loupe.png" />
                </image>

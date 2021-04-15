@@ -52,7 +52,7 @@ public class IngresarController implements Initializable {
     }
     List<Usuario> getlistaUsuarios(){
       List<Usuario> users = new ArrayList<Usuario>();
-        users.add(new Usuario(Long.valueOf(1243546),"ken","contra","abrahan","ayala","ken1@hotmail.com","calle 11 sur","3158346574","1587954785",0.0));
+        users.add(new Usuario(Long.valueOf(1243546),"ken","contra","abrahan","ayala","ken","calle 11 sur","3158346574","1587954785",0.0));
 
       return users;
     }   
