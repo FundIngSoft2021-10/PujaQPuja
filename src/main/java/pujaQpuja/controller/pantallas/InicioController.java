@@ -18,6 +18,7 @@ import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 
 import javafx.scene.control.Button;
+
 /**
  * FXML Controller class
  *
@@ -25,11 +26,11 @@ import javafx.scene.control.Button;
  */
 public class InicioController implements Initializable {
 
-
     @FXML
     private Button botonRegistrarse;
     @FXML
     private Button botonIngresar;
+
     /**
      * Initializes the controller class.
      */
@@ -39,21 +40,21 @@ public class InicioController implements Initializable {
     }
 
     @FXML
-    void ingresar(ActionEvent event) throws IOException {
-        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"Ingresar.fxml"));
+    private void accionRegistrarse(ActionEvent event) throws IOException {
+        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaRegistro.fxml"));
         Scene errorRegistroScene = new Scene(pantallaErrorParent);
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(errorRegistroScene);
         window.show();
     }
 
     @FXML
-    void registrar(ActionEvent event) throws IOException {
-        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaRegistro.fxml"));
+    private void accionIngresar(ActionEvent event) throws IOException {
+        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" + "Ingresar.fxml"));
         Scene errorRegistroScene = new Scene(pantallaErrorParent);
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(errorRegistroScene);
         window.show();
     }
-    
+
 }

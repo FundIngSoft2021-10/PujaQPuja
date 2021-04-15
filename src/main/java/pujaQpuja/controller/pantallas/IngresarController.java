@@ -7,6 +7,7 @@ package pujaQpuja.controller.pantallas;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
@@ -23,9 +24,11 @@ public class IngresarController implements Initializable {
     @FXML
     private TextField campoCorreo;
     @FXML
-    private Button botonIngresar;
-    @FXML
     private PasswordField campoPassword;
+    @FXML
+    private Button botonIngresar;
+
+
     /**
      * Initializes the controller class.
      */
@@ -33,5 +36,9 @@ public class IngresarController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void accionIngresar(ActionEvent event) {
+    }
     
 }

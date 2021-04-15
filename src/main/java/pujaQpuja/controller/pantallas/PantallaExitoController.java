@@ -1,6 +1,5 @@
 package pujaQpuja.controller.pantallas;
 
-
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -14,13 +13,13 @@ import javafx.scene.control.Button;
 public class PantallaExitoController {
 
     @FXML
-    private Button botonVolver;
+    private Button botonRegresar;
 
     @FXML
-    void volver(ActionEvent event) throws IOException {
-        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"inicio.fxml"));
+    private void accionRegresar(ActionEvent event) throws IOException {
+        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" + "inicio.fxml"));
         Scene errorRegistroScene = new Scene(pantallaErrorParent);
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(errorRegistroScene);
         window.show();
     }

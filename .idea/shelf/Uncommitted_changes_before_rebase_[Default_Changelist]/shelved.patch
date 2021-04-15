@@ -1,0 +1,1809 @@
+Index: src/main/resources/view/PantallaPujarXProducto.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.BorderPane?>\r\n<?import javafx.scene.shape.Rectangle?>\r\n<?import javafx.scene.text.Font?>\r\n<?import javafx.scene.text.Text?>\r\n\r\n<BorderPane prefHeight=\"600.0\" prefWidth=\"335.0\" style=\"-fx-background-color: #393939;\" xmlns=\"http://javafx.com/javafx/16\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"pujaQpuja.controller.pantallas.PantallaPujarXProductoController\">\r\n   <top>\r\n      <AnchorPane prefHeight=\"79.0\" prefWidth=\"345.0\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <Rectangle arcHeight=\"5.0\" arcWidth=\"5.0\" fill=\"DODGERBLUE\" height=\"79.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" width=\"338.0\" />\r\n            <Text layoutX=\"14.0\" layoutY=\"44.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Pujar\">\r\n               <font>\r\n                  <Font name=\"System Bold Italic\" size=\"19.0\" />\r\n               </font>\r\n            </Text>\r\n         </children>\r\n      </AnchorPane>\r\n   </top>\r\n   <left>\r\n      <AnchorPane prefHeight=\"200.0\" prefWidth=\"200.0\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <Text layoutX=\"3.0\" layoutY=\"18.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Puja que Puja\">\r\n               <font>\r\n                  <Font name=\"System Bold Italic\" size=\"17.0\" />\r\n               </font>\r\n            </Text>\r\n            <TextField fx:id=\"campoBusqueda\" layoutX=\"1.0\" layoutY=\"32.0\" prefHeight=\"36.0\" prefWidth=\"335.0\" promptText=\"Search\" style=\"-fx-alignment: #202142; -fx-background-color: #393937; -fx-border-color: #202142;\" />\r\n            <Button layoutX=\"254.0\" layoutY=\"1.0\" mnemonicParsing=\"false\" prefHeight=\"26.0\" prefWidth=\"30.0\" />\r\n            <Button layoutX=\"293.0\" layoutY=\"1.0\" mnemonicParsing=\"false\" prefHeight=\"26.0\" prefWidth=\"30.0\" />\r\n            <Button layoutX=\"293.0\" layoutY=\"37.0\" mnemonicParsing=\"false\" prefHeight=\"26.0\" prefWidth=\"30.0\" />\r\n            <ImageView fx:id=\"botonPerfil\" fitHeight=\"21.0\" fitWidth=\"20.0\" layoutX=\"259.0\" layoutY=\"4.0\">\r\n               <image>\r\n                  <Image url=\"@../images/usuario.png\" />\r\n               </image>\r\n            </ImageView>\r\n            <ImageView fx:id=\"botonRegresar\" fitHeight=\"22.0\" fitWidth=\"26.0\" layoutX=\"295.0\" layoutY=\"4.0\">\r\n               <image>\r\n                  <Image url=\"@../images/atras.png\" />\r\n               </image>\r\n            </ImageView>\r\n            <ImageView fx:id=\"botonBusqueda\" fitHeight=\"22.0\" fitWidth=\"22.0\" layoutX=\"298.0\" layoutY=\"39.0\">\r\n               <image>\r\n                  <Image url=\"@../images/loupe.png\" />\r\n               </image>\r\n            </ImageView>\r\n            <Text layoutX=\"3.0\" layoutY=\"86.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Información del Producto\">\r\n               <font>\r\n                  <Font name=\"System Bold Italic\" size=\"17.0\" />\r\n               </font>\r\n            </Text>\r\n            <ImageView fx:id=\"imagenProducto\" fitHeight=\"180.0\" fitWidth=\"211.0\" layoutX=\"4.0\" layoutY=\"93.0\" pickOnBounds=\"true\" preserveRatio=\"true\" />\r\n            <Text layoutX=\"3.0\" layoutY=\"279.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Descripción del Producto\">\r\n               <font>\r\n                  <Font name=\"System Bold Italic\" size=\"17.0\" />\r\n               </font>\r\n            </Text>\r\n            <Text layoutX=\"3.0\" layoutY=\"376.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Precio en Subasta:\">\r\n               <font>\r\n                  <Font name=\"System Bold Italic\" size=\"17.0\" />\r\n               </font>\r\n            </Text>\r\n            <Label layoutX=\"154.0\" layoutY=\"356.0\" prefHeight=\"30.0\" prefWidth=\"150.0\" />\r\n            <Label fx:id=\"campoDescripcionProducto\" layoutX=\"7.0\" layoutY=\"286.0\" prefHeight=\"74.0\" prefWidth=\"322.0\" />\r\n            <Label fx:id=\"campoInformacionProducto\" layoutX=\"213.0\" layoutY=\"93.0\" prefHeight=\"174.0\" prefWidth=\"126.0\" />\r\n            <TextField fx:id=\"campoDigitePrecio\" layoutX=\"58.0\" layoutY=\"386.0\" prefHeight=\"32.0\" prefWidth=\"169.0\" promptText=\"Digite Precio\" />\r\n            <Button fx:id=\"botonPuja\" layoutX=\"233.0\" layoutY=\"386.0\" mnemonicParsing=\"false\" prefHeight=\"32.0\" prefWidth=\"64.0\" text=\"Pujar\" />\r\n            <Text layoutX=\"210.0\" layoutY=\"376.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"# Pujantes:\">\r\n               <font>\r\n                  <Font name=\"System Bold Italic\" size=\"17.0\" />\r\n               </font>\r\n            </Text>\r\n            <Label layoutX=\"303.0\" layoutY=\"363.0\" prefHeight=\"18.0\" prefWidth=\"36.0\" />\r\n            <Button fx:id=\"botonRealizarPregunta\" layoutX=\"107.0\" layoutY=\"449.0\" mnemonicParsing=\"false\" prefHeight=\"27.0\" prefWidth=\"122.0\" text=\"Realizar Pregunta\" />\r\n         </children>\r\n      </AnchorPane>\r\n   </left>\r\n</BorderPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/view/PantallaPujarXProducto.fxml b/src/main/resources/view/PantallaPujarXProducto.fxml
+--- a/src/main/resources/view/PantallaPujarXProducto.fxml	(revision a53694365ae5542e419df9d35afddb8974849330)
++++ b/src/main/resources/view/PantallaPujarXProducto.fxml	(date 1618461957959)
+@@ -7,79 +7,193 @@
+ <?import javafx.scene.image.ImageView?>
+ <?import javafx.scene.layout.AnchorPane?>
+ <?import javafx.scene.layout.BorderPane?>
++<?import javafx.scene.shape.Line?>
+ <?import javafx.scene.shape.Rectangle?>
+ <?import javafx.scene.text.Font?>
+ <?import javafx.scene.text.Text?>
+ 
+-<BorderPane prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #393939;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaPujarXProductoController">
+-   <top>
+-      <AnchorPane prefHeight="79.0" prefWidth="345.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="79.0" stroke="BLACK" strokeType="INSIDE" width="338.0" />
+-            <Text layoutX="14.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pujar">
+-               <font>
+-                  <Font name="System Bold Italic" size="19.0" />
+-               </font>
+-            </Text>
+-         </children>
+-      </AnchorPane>
+-   </top>
+-   <left>
+-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Text layoutX="3.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Puja que Puja">
+-               <font>
+-                  <Font name="System Bold Italic" size="17.0" />
+-               </font>
+-            </Text>
+-            <TextField fx:id="campoBusqueda" layoutX="1.0" layoutY="32.0" prefHeight="36.0" prefWidth="335.0" promptText="Search" style="-fx-alignment: #202142; -fx-background-color: #393937; -fx-border-color: #202142;" />
+-            <Button layoutX="254.0" layoutY="1.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="30.0" />
+-            <Button layoutX="293.0" layoutY="1.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="30.0" />
+-            <Button layoutX="293.0" layoutY="37.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="30.0" />
+-            <ImageView fx:id="botonPerfil" fitHeight="21.0" fitWidth="20.0" layoutX="259.0" layoutY="4.0">
+-               <image>
+-                  <Image url="@../images/usuario.png" />
+-               </image>
++<?import javafx.geometry.Insets?>
++<BorderPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaPujarXProductoController">
++    <top>
++        <AnchorPane prefHeight="39.0" prefWidth="375.0" BorderPane.alignment="CENTER">
++            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#64b5f6" height="78.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1280.0"/>
++            <Label layoutX="347.0" layoutY="8.0" prefHeight="64.0" prefWidth="259.0" text="Publicación">
++                <font>
++                    <Font name="Berlin Sans FB" size="32.0"/>
++                </font>
++            </Label>
++            <ImageView fx:id="botonAtras" fitHeight="45.0" fitWidth="45.0" layoutX="284.0" layoutY="17.0" onMouseClicked="#irAtras" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/atras.png"/>
++            </ImageView>
++            <ImageView fx:id="botonPerfil" fitHeight="55.0" fitWidth="51.0" layoutX="1205.0" layoutY="15.0" onMouseClicked="#abrirPerfil" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/perfil.png"/>
++            </ImageView>
++        </AnchorPane>
++    </top>
++    <left>
++        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
++            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bbc7d1" height="763.0" layoutY="-109.0" stroke="#bbc7d1" strokeType="INSIDE" strokeWidth="0.0" width="269.0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="13.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/menu.png"/>
++            </ImageView>
++            <Label layoutX="68.0" layoutY="63.0" prefHeight="33.0" prefWidth="71.0" text="Menú">
++                <font>
++                    <Font name="SansSerif Bold" size="24.0"/>
++                </font>
++            </Label>
++            <Line endX="145.0" layoutX="123.0" layoutY="220.0" startX="-124.0" stroke="#92b4d0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="13.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/ajustes.png"/>
++            </ImageView>
++            <Label layoutX="68.0" layoutY="169.0" prefHeight="33.0" prefWidth="136.0" text="Ajustes">
++                <font>
++                    <Font name="Berlin Sans FB" size="24.0"/>
++                </font>
++            </Label>
++            <Line endX="145.0" layoutX="123.0" layoutY="292.0" startX="-124.0" stroke="#92b4d0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="13.0" layoutY="238.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/categoria.png"/>
++            </ImageView>
++            <Label layoutX="68.0" layoutY="241.0" prefHeight="33.0" prefWidth="191.0" text="Categorías">
++                <font>
++                    <Font name="Berlin Sans FB" size="24.0"/>
++                </font>
++            </Label>
++            <Line endX="145.0" endY="1.0" layoutX="123.0" layoutY="362.0" startX="-124.0" stroke="#92b4d0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="11.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/realizar_subasta.png"/>
++            </ImageView>
++            <Label layoutX="66.0" layoutY="313.0" prefHeight="33.0" prefWidth="191.0" text="Realizar Subasta">
++                <font>
++                    <Font name="Berlin Sans FB" size="24.0"/>
++                </font>
++            </Label>
++            <Line endX="145.0" layoutX="123.0" layoutY="429.0" startX="-124.0" stroke="#92b4d0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="11.0" layoutY="377.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/historial_ventas.png"/>
++            </ImageView>
++            <Label layoutX="66.0" layoutY="380.0" prefHeight="33.0" prefWidth="191.0" text="Historial Ventas">
++                <font>
++                    <Font name="Berlin Sans FB" size="24.0"/>
++                </font>
++            </Label>
++            <Line endX="145.0" layoutX="123.0" layoutY="499.0" startX="-124.0" stroke="#92b4d0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="12.0" layoutY="446.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/historial_compras.png"/>
++            </ImageView>
++            <Label layoutX="67.0" layoutY="449.0" prefHeight="33.0" prefWidth="191.0" text="Historial Compras">
++                <font>
++                    <Font name="Berlin Sans FB" size="24.0"/>
++                </font>
++            </Label>
++            <Line endX="145.0" layoutX="123.0" layoutY="569.0" startX="-124.0" stroke="#92b4d0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="12.0" layoutY="516.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/notificacion.png"/>
+             </ImageView>
+-            <ImageView fx:id="botonRegresar" fitHeight="22.0" fitWidth="26.0" layoutX="295.0" layoutY="4.0">
+-               <image>
+-                  <Image url="@../images/atras.png" />
+-               </image>
++            <Label layoutX="67.0" layoutY="519.0" prefHeight="33.0" prefWidth="191.0" text="Notificaciones">
++                <font>
++                    <Font name="Berlin Sans FB" size="24.0"/>
++                </font>
++            </Label>
++            <Line endX="145.0" layoutX="123.0" layoutY="639.0" startX="-124.0" stroke="#92b4d0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="12.0" layoutY="587.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/metodo_pago.png"/>
++            </ImageView>
++            <Label layoutX="67.0" layoutY="590.0" prefHeight="33.0" prefWidth="191.0" text="Método Pago">
++                <font>
++                    <Font name="Berlin Sans FB" size="24.0"/>
++                </font>
++            </Label>
++            <Line endX="145.0" layoutX="124.0" layoutY="150.0" startX="-124.0" stroke="#92b4d0"/>
++            <Rectangle fx:id="botonRectanguloAjustes" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="150.0" onMouseClicked="#abrirAjustes" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="269.0"/>
++            <Rectangle fx:id="botonRectanguloCategorias" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="222.0" onMouseClicked="#abrirCategorias" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="269.0"/>
++            <Rectangle fx:id="botonRectanguloRealizarSubasta" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="292.0" onMouseClicked="#abrirRealizarSubasta" opacity="0.0" stroke="BLACK" strokeType="INSIDE"
++                       width="269.0"/>
++            <Rectangle fx:id="botonRectanguloHistorialVentas" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="362.0" onMouseClicked="#abrirHistorialVentas" opacity="0.0" stroke="BLACK" strokeType="INSIDE"
++                       width="269.0"/>
++            <Rectangle fx:id="botonRectanguloHistorialCompras" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="430.0" onMouseClicked="#abrirHistorialCompras" opacity="0.0" stroke="BLACK" strokeType="INSIDE"
++                       width="269.0"/>
++            <Rectangle fx:id="botonRectanguloNotificaciones" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="501.0" onMouseClicked="#abrirNotificaciones" opacity="0.0" stroke="BLACK" strokeType="INSIDE"
++                       width="269.0"/>
++            <Rectangle fx:id="botonRectanguloMetodoPago" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="569.0" onMouseClicked="#abririMetodoPago" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="269.0"/>
++            <ImageView fitHeight="133.0" fitWidth="240.0" layoutX="22.0" layoutY="-83.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/logo_vertical.png"/>
+             </ImageView>
+-            <ImageView fx:id="botonBusqueda" fitHeight="22.0" fitWidth="22.0" layoutX="298.0" layoutY="39.0">
+-               <image>
+-                  <Image url="@../images/loupe.png" />
+-               </image>
++        </AnchorPane>
++    </left>
++    <center>
++        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
++            <TextField fx:id="campoBusqueda" layoutX="182.0" layoutY="14.0" prefHeight="36.0" prefWidth="646.0" promptText="Buscar..." style="-fx-background-color: #CCECFE;">
++                <font>
++                    <Font name="SansSerif Regular" size="20.0"/>
++                </font>
++            </TextField>
++            <ImageView fx:id="botonBusqueda" fitHeight="22.0" fitWidth="22.0" layoutX="795.0" layoutY="22.0">
++                <Image url="@../images/loupe.png"/>
+             </ImageView>
+-            <Text layoutX="3.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Información del Producto">
+-               <font>
+-                  <Font name="System Bold Italic" size="17.0" />
+-               </font>
++            <Text text="Información del Producto" layoutX="33.0" layoutY="22.0" style="-fx-background-color: #CCECFE;">
++                <font>
++                    <Font name="SansSerif Regular" size="20.0"/>
++                </font>
+             </Text>
+-            <ImageView fx:id="imagenProducto" fitHeight="180.0" fitWidth="211.0" layoutX="4.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true" />
+-            <Text layoutX="3.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descripción del Producto">
+-               <font>
+-                  <Font name="System Bold Italic" size="17.0" />
+-               </font>
++            <ImageView fx:id="imagenProducto" fitHeight="180.0" fitWidth="211.0" layoutX="4.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true"/>
++            <Text text="Descripción del Producto" layoutX="33.0" layoutY="22.0" style="-fx-background-color: #CCECFE;">
++                <font>
++                    <Font name="SansSerif Regular" size="20.0"/>
++                </font>
+             </Text>
+-            <Text layoutX="3.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio en Subasta:">
+-               <font>
+-                  <Font name="System Bold Italic" size="17.0" />
+-               </font>
++            <Text text="Precio en Subasta:" layoutX="33.0" layoutY="22.0" style="-fx-background-color: #CCECFE;">
++                <font>
++                    <Font name="SansSerif Regular" size="20.0"/>
++                </font>
+             </Text>
+-            <Label layoutX="154.0" layoutY="356.0" prefHeight="30.0" prefWidth="150.0" />
+-            <Label fx:id="campoDescripcionProducto" layoutX="7.0" layoutY="286.0" prefHeight="74.0" prefWidth="322.0" />
+-            <Label fx:id="campoInformacionProducto" layoutX="213.0" layoutY="93.0" prefHeight="174.0" prefWidth="126.0" />
+-            <TextField fx:id="campoDigitePrecio" layoutX="58.0" layoutY="386.0" prefHeight="32.0" prefWidth="169.0" promptText="Digite Precio" />
+-            <Button fx:id="botonPuja" layoutX="233.0" layoutY="386.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="64.0" text="Pujar" />
+-            <Text layoutX="210.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="# Pujantes:">
+-               <font>
+-                  <Font name="System Bold Italic" size="17.0" />
+-               </font>
++            <TextField promptText="#" fx:id="campoNumeroPujantes" layoutX="33.0" layoutY="22.0" style="-fx-background-color: #CCECFE;">
++                <font>
++                    <Font name="SansSerif Regular" size="20.0"/>
++                </font>
++            </TextField>
++            <TextField promptText="Descripción" fx:id="campoDescripcionProducto" layoutX="33.0" layoutY="22.0" style="-fx-background-color: #CCECFE;">
++                <font>
++                    <Font name="SansSerif Regular" size="20.0"/>
++                </font>
++            </TextField>
++            <TextField fx:id="campoInformacionProducto" layoutX="33.0" layoutY="22.0" style="-fx-background-color: #CCECFE;">
++                <font>
++                    <Font name="SansSerif Regular" size="20.0"/>
++                </font>
++            </TextField>
++            <TextField promptText="Digite Precio" fx:id="campoDigitePrecio" layoutX="33.0" layoutY="22.0" style="-fx-background-color: #CCECFE;">
++                <font>
++                    <Font name="SansSerif Regular" size="20.0"/>
++                </font>
++            </TextField>
++            <Button text="Pujar" fx:id="botonPuja" layoutX="317.0" layoutY="22.0" lineSpacing="5.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="146.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" textAlignment="CENTER">
++                <font>
++                    <Font name="SansSerif Regular" size="20.0"/>
++                </font>
++                <opaqueInsets>
++                    <Insets/>
++                </opaqueInsets>
++            </Button>
++            <Text text="# Pujantes:" layoutX="33.0" layoutY="22.0" style="-fx-background-color: #CCECFE;">
++                <font>
++                    <Font name="SansSerif Regular" size="20.0"/>
++                </font>
+             </Text>
+-            <Label layoutX="303.0" layoutY="363.0" prefHeight="18.0" prefWidth="36.0" />
+-            <Button fx:id="botonRealizarPregunta" layoutX="107.0" layoutY="449.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="122.0" text="Realizar Pregunta" />
+-         </children>
+-      </AnchorPane>
+-   </left>
++            <TextField promptText="Precio" fx:id="campoPrecioSubasta" layoutX="33.0" layoutY="22.0" style="-fx-background-color: #CCECFE;">
++                <font>
++                    <Font name="SansSerif Regular" size="20.0"/>
++                </font>
++            </TextField>
++            <Button text="Realizar Pregunta" fx:id="botonRealizarPregunta" layoutX="317.0" layoutY="22.0" lineSpacing="5.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="146.0"
++                    style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" textAlignment="CENTER">
++                <font>
++                    <Font name="SansSerif Regular" size="20.0"/>
++                </font>
++                <opaqueInsets>
++                    <Insets/>
++                </opaqueInsets>
++            </Button>
++        </AnchorPane>
++    </center>
+ </BorderPane>
+Index: src/main/resources/view/PantallaExitoRegistro.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.TextArea?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.BorderPane?>\r\n<?import javafx.scene.shape.Rectangle?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<BorderPane prefHeight=\"469.0\" prefWidth=\"335.0\" style=\"-fx-background-color: #393939;\" xmlns=\"http://javafx.com/javafx/16\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"pujaQpuja.controller.pantallas.PantallaExitoController\">\r\n   <top>\r\n      <AnchorPane prefHeight=\"78.0\" prefWidth=\"335.0\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <Rectangle arcHeight=\"5.0\" arcWidth=\"5.0\" fill=\"DODGERBLUE\" height=\"65.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" width=\"335.0\" />\r\n            <Label layoutX=\"37.0\" layoutY=\"20.0\" text=\"Alerta\" textFill=\"WHITE\">\r\n               <font>\r\n                  <Font size=\"17.0\" />\r\n               </font>\r\n            </Label>\r\n         </children>\r\n      </AnchorPane>\r\n   </top>\r\n   <center>\r\n      <AnchorPane prefHeight=\"543.0\" prefWidth=\"335.0\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <TextArea editable=\"false\" layoutX=\"68.0\" layoutY=\"111.0\" prefHeight=\"108.0\" prefWidth=\"200.0\" text=\"Se registro con exito\" wrapText=\"true\">\r\n               <font>\r\n                  <Font size=\"23.0\" />\r\n               </font>\r\n            </TextArea>\r\n         </children></AnchorPane>\r\n   </center>\r\n   <bottom>\r\n      <AnchorPane prefHeight=\"62.0\" prefWidth=\"335.0\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <Button fx:id=\"botonVolver\" mnemonicParsing=\"false\" onAction=\"#volver\" prefHeight=\"62.0\" prefWidth=\"335.0\" style=\"-fx-font-size: 18; -fx-background-color: #1e90ff;\" text=\"Volver\" textFill=\"WHITE\" />\r\n         </children>\r\n      </AnchorPane>\r\n   </bottom>\r\n</BorderPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/view/PantallaExitoRegistro.fxml b/src/main/resources/view/PantallaExitoRegistro.fxml
+--- a/src/main/resources/view/PantallaExitoRegistro.fxml	(revision a53694365ae5542e419df9d35afddb8974849330)
++++ b/src/main/resources/view/PantallaExitoRegistro.fxml	(date 1618458063140)
+@@ -1,41 +1,31 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
++<?import javafx.geometry.Insets?>
+ <?import javafx.scene.control.Button?>
+-<?import javafx.scene.control.Label?>
+ <?import javafx.scene.control.TextArea?>
+ <?import javafx.scene.layout.AnchorPane?>
+ <?import javafx.scene.layout.BorderPane?>
+-<?import javafx.scene.shape.Rectangle?>
+ <?import javafx.scene.text.Font?>
+ 
+-<BorderPane prefHeight="469.0" prefWidth="335.0" style="-fx-background-color: #393939;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaExitoController">
+-   <top>
+-      <AnchorPane prefHeight="78.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="65.0" stroke="BLACK" strokeType="INSIDE" width="335.0" />
+-            <Label layoutX="37.0" layoutY="20.0" text="Alerta" textFill="WHITE">
+-               <font>
+-                  <Font size="17.0" />
+-               </font>
+-            </Label>
+-         </children>
+-      </AnchorPane>
+-   </top>
+-   <center>
+-      <AnchorPane prefHeight="543.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <TextArea editable="false" layoutX="68.0" layoutY="111.0" prefHeight="108.0" prefWidth="200.0" text="Se registro con exito" wrapText="true">
+-               <font>
+-                  <Font size="23.0" />
+-               </font>
+-            </TextArea>
+-         </children></AnchorPane>
+-   </center>
+-   <bottom>
+-      <AnchorPane prefHeight="62.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Button fx:id="botonVolver" mnemonicParsing="false" onAction="#volver" prefHeight="62.0" prefWidth="335.0" style="-fx-font-size: 18; -fx-background-color: #1e90ff;" text="Volver" textFill="WHITE" />
+-         </children>
+-      </AnchorPane>
+-   </bottom>
++<BorderPane prefHeight="199.0" prefWidth="295.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaExitoController">
++    <center>
++        <AnchorPane prefHeight="543.0" prefWidth="335.0" BorderPane.alignment="CENTER">
++            <children>
++                <TextArea editable="false" layoutX="23.0" layoutY="22.0" prefHeight="108.0" prefWidth="246.0" text="Se realizó el registro con éxito" wrapText="true">
++                    <font>
++                        <Font size="23.0"/>
++                    </font>
++                </TextArea>
++                <Button fx:id="botonRegresar" layoutX="73.0" layoutY="146.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#accionRegresar" prefHeight="36.0" prefWidth="146.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;"
++                        text="Regresar" textAlignment="CENTER">
++                    <font>
++                        <Font name="SansSerif Regular" size="20.0"/>
++                    </font>
++                    <opaqueInsets>
++                        <Insets/>
++                    </opaqueInsets>
++                </Button>
++            </children>
++        </AnchorPane>
++    </center>
+ </BorderPane>
+Index: src/main/resources/view/PantallaPerfil.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.BorderPane?>\r\n<?import javafx.scene.shape.Rectangle?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<BorderPane prefHeight=\"571.0\" prefWidth=\"335.0\" style=\"-fx-background-color: #393939;\" xmlns=\"http://javafx.com/javafx/16\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"pujaQpuja.controller.pantallas.PantallaPerfilController\">\r\n   <top>\r\n      <AnchorPane prefHeight=\"78.0\" prefWidth=\"335.0\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <Rectangle arcHeight=\"5.0\" arcWidth=\"5.0\" fill=\"DODGERBLUE\" height=\"65.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" width=\"335.0\" />\r\n            <Label layoutX=\"37.0\" layoutY=\"20.0\" text=\"Perfil\" textFill=\"WHITE\">\r\n               <font>\r\n                  <Font size=\"17.0\" />\r\n               </font>\r\n            </Label>\r\n         </children>\r\n      </AnchorPane>\r\n   </top>\r\n   <center>\r\n      <AnchorPane prefHeight=\"543.0\" prefWidth=\"335.0\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <ImageView fx:id=\"imagenFotoPerfil\" fitHeight=\"150.0\" fitWidth=\"200.0\" layoutX=\"68.0\" layoutY=\"14.0\" pickOnBounds=\"true\" preserveRatio=\"true\" />\r\n            <Button fx:id=\"botonEditarPerfil\" layoutX=\"68.0\" layoutY=\"188.0\" mnemonicParsing=\"false\" onAction=\"#editarPerfil\" style=\"-fx-font-size: 18; -fx-background-color: #393939;\" text=\"Editar perfil\" textFill=\"WHITE\">\r\n               <font>\r\n                  <Font size=\"18.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button fx:id=\"botonPrivacidadSeguridad\" layoutX=\"68.0\" layoutY=\"244.0\" mnemonicParsing=\"false\" onAction=\"#privacidadSeguridad\" style=\"-fx-font-size: 18; -fx-background-color: #393939;\" text=\"Privacidad y seguridad\" textFill=\"WHITE\">\r\n               <font>\r\n                  <Font size=\"18.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"68.0\" layoutY=\"294.0\" mnemonicParsing=\"false\" style=\"-fx-font-size: 18; -fx-background-color: #393939;\" text=\"Soporte y ayuda\" textFill=\"WHITE\">\r\n               <font>\r\n                  <Font size=\"18.0\" />\r\n               </font>\r\n            </Button>\r\n         </children></AnchorPane>\r\n   </center>\r\n   <bottom>\r\n      <AnchorPane prefHeight=\"62.0\" prefWidth=\"335.0\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <Button fx:id=\"botonRegresar\" mnemonicParsing=\"false\" onAction=\"#regresar\" prefHeight=\"64.0\" prefWidth=\"335.0\" style=\"-fx-font-size: 18; -fx-background-color: #1e90ff;\" text=\"Regresar\" textFill=\"WHITE\">\r\n               <font>\r\n                  <Font size=\"18.0\" />\r\n               </font>\r\n            </Button>\r\n         </children>\r\n      </AnchorPane>\r\n   </bottom>\r\n</BorderPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/view/PantallaPerfil.fxml b/src/main/resources/view/PantallaPerfil.fxml
+--- a/src/main/resources/view/PantallaPerfil.fxml	(revision a53694365ae5542e419df9d35afddb8974849330)
++++ b/src/main/resources/view/PantallaPerfil.fxml	(date 1618459776257)
+@@ -1,56 +1,158 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
++<?import javafx.geometry.Insets?>
+ <?import javafx.scene.control.Button?>
+ <?import javafx.scene.control.Label?>
++<?import javafx.scene.image.Image?>
+ <?import javafx.scene.image.ImageView?>
+ <?import javafx.scene.layout.AnchorPane?>
+ <?import javafx.scene.layout.BorderPane?>
++<?import javafx.scene.shape.Line?>
+ <?import javafx.scene.shape.Rectangle?>
+ <?import javafx.scene.text.Font?>
+ 
+-<BorderPane prefHeight="571.0" prefWidth="335.0" style="-fx-background-color: #393939;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaPerfilController">
+-   <top>
+-      <AnchorPane prefHeight="78.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="65.0" stroke="BLACK" strokeType="INSIDE" width="335.0" />
+-            <Label layoutX="37.0" layoutY="20.0" text="Perfil" textFill="WHITE">
+-               <font>
+-                  <Font size="17.0" />
+-               </font>
++<BorderPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaPerfilController">
++    <top>
++        <AnchorPane prefHeight="39.0" prefWidth="375.0" BorderPane.alignment="CENTER">
++            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#64b5f6" height="78.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1280.0"/>
++            <Label layoutX="347.0" layoutY="8.0" prefHeight="64.0" prefWidth="259.0" text="Perfil">
++                <font>
++                    <Font name="Berlin Sans FB" size="32.0"/>
++                </font>
+             </Label>
+-         </children>
+-      </AnchorPane>
+-   </top>
+-   <center>
+-      <AnchorPane prefHeight="543.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <ImageView fx:id="imagenFotoPerfil" fitHeight="150.0" fitWidth="200.0" layoutX="68.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+-            <Button fx:id="botonEditarPerfil" layoutX="68.0" layoutY="188.0" mnemonicParsing="false" onAction="#editarPerfil" style="-fx-font-size: 18; -fx-background-color: #393939;" text="Editar perfil" textFill="WHITE">
+-               <font>
+-                  <Font size="18.0" />
+-               </font>
+-            </Button>
+-            <Button fx:id="botonPrivacidadSeguridad" layoutX="68.0" layoutY="244.0" mnemonicParsing="false" onAction="#privacidadSeguridad" style="-fx-font-size: 18; -fx-background-color: #393939;" text="Privacidad y seguridad" textFill="WHITE">
+-               <font>
+-                  <Font size="18.0" />
+-               </font>
++            <ImageView fx:id="botonAtras" fitHeight="45.0" fitWidth="45.0" layoutX="284.0" layoutY="17.0" onMouseClicked="#irAtras" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/atras.png"/>
++            </ImageView>
++            <ImageView fx:id="botonPerfil" fitHeight="55.0" fitWidth="51.0" layoutX="1205.0" layoutY="15.0" onMouseClicked="#abrirPerfil" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/perfil.png"/>
++            </ImageView>
++        </AnchorPane>
++    </top>
++    <left>
++        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
++            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bbc7d1" height="763.0" layoutY="-109.0" stroke="#bbc7d1" strokeType="INSIDE" strokeWidth="0.0" width="269.0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="13.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/menu.png"/>
++            </ImageView>
++            <Label layoutX="68.0" layoutY="63.0" prefHeight="33.0" prefWidth="71.0" text="Menú">
++                <font>
++                    <Font name="SansSerif Bold" size="24.0"/>
++                </font>
++            </Label>
++            <Line endX="145.0" layoutX="123.0" layoutY="220.0" startX="-124.0" stroke="#92b4d0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="13.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/ajustes.png"/>
++            </ImageView>
++            <Label layoutX="68.0" layoutY="169.0" prefHeight="33.0" prefWidth="136.0" text="Ajustes">
++                <font>
++                    <Font name="Berlin Sans FB" size="24.0"/>
++                </font>
++            </Label>
++            <Line endX="145.0" layoutX="123.0" layoutY="292.0" startX="-124.0" stroke="#92b4d0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="13.0" layoutY="238.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/categoria.png"/>
++            </ImageView>
++            <Label layoutX="68.0" layoutY="241.0" prefHeight="33.0" prefWidth="191.0" text="Categorías">
++                <font>
++                    <Font name="Berlin Sans FB" size="24.0"/>
++                </font>
++            </Label>
++            <Line endX="145.0" endY="1.0" layoutX="123.0" layoutY="362.0" startX="-124.0" stroke="#92b4d0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="11.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/realizar_subasta.png"/>
++            </ImageView>
++            <Label layoutX="66.0" layoutY="313.0" prefHeight="33.0" prefWidth="191.0" text="Realizar Subasta">
++                <font>
++                    <Font name="Berlin Sans FB" size="24.0"/>
++                </font>
++            </Label>
++            <Line endX="145.0" layoutX="123.0" layoutY="429.0" startX="-124.0" stroke="#92b4d0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="11.0" layoutY="377.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/historial_ventas.png"/>
++            </ImageView>
++            <Label layoutX="66.0" layoutY="380.0" prefHeight="33.0" prefWidth="191.0" text="Historial Ventas">
++                <font>
++                    <Font name="Berlin Sans FB" size="24.0"/>
++                </font>
++            </Label>
++            <Line endX="145.0" layoutX="123.0" layoutY="499.0" startX="-124.0" stroke="#92b4d0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="12.0" layoutY="446.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/historial_compras.png"/>
++            </ImageView>
++            <Label layoutX="67.0" layoutY="449.0" prefHeight="33.0" prefWidth="191.0" text="Historial Compras">
++                <font>
++                    <Font name="Berlin Sans FB" size="24.0"/>
++                </font>
++            </Label>
++            <Line endX="145.0" layoutX="123.0" layoutY="569.0" startX="-124.0" stroke="#92b4d0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="12.0" layoutY="516.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/notificacion.png"/>
++            </ImageView>
++            <Label layoutX="67.0" layoutY="519.0" prefHeight="33.0" prefWidth="191.0" text="Notificaciones">
++                <font>
++                    <Font name="Berlin Sans FB" size="24.0"/>
++                </font>
++            </Label>
++            <Line endX="145.0" layoutX="123.0" layoutY="639.0" startX="-124.0" stroke="#92b4d0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="12.0" layoutY="587.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/metodo_pago.png"/>
++            </ImageView>
++            <Label layoutX="67.0" layoutY="590.0" prefHeight="33.0" prefWidth="191.0" text="Método Pago">
++                <font>
++                    <Font name="Berlin Sans FB" size="24.0"/>
++                </font>
++            </Label>
++            <Line endX="145.0" layoutX="124.0" layoutY="150.0" startX="-124.0" stroke="#92b4d0"/>
++            <Rectangle fx:id="botonRectanguloAjustes" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="150.0" onMouseClicked="#abrirAjustes" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="269.0"/>
++            <Rectangle fx:id="botonRectanguloCategorias" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="222.0" onMouseClicked="#abrirCategorias" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="269.0"/>
++            <Rectangle fx:id="botonRectanguloRealizarSubasta" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="292.0" onMouseClicked="#abrirRealizarSubasta" opacity="0.0" stroke="BLACK" strokeType="INSIDE"
++                       width="269.0"/>
++            <Rectangle fx:id="botonRectanguloHistorialVentas" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="362.0" onMouseClicked="#abrirHistorialVentas" opacity="0.0" stroke="BLACK" strokeType="INSIDE"
++                       width="269.0"/>
++            <Rectangle fx:id="botonRectanguloHistorialCompras" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="430.0" onMouseClicked="#abrirHistorialCompras" opacity="0.0" stroke="BLACK" strokeType="INSIDE"
++                       width="269.0"/>
++            <Rectangle fx:id="botonRectanguloNotificaciones" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="501.0" onMouseClicked="#abrirNotificaciones" opacity="0.0" stroke="BLACK" strokeType="INSIDE"
++                       width="269.0"/>
++            <Rectangle fx:id="botonRectanguloMetodoPago" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="569.0" onMouseClicked="#abririMetodoPago" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="269.0"/>
++            <ImageView fitHeight="133.0" fitWidth="240.0" layoutX="22.0" layoutY="-83.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/logo_vertical.png"/>
++            </ImageView>
++        </AnchorPane>
++    </left>
++    <center>
++        <AnchorPane prefHeight="543.0" prefWidth="335.0" BorderPane.alignment="CENTER">
++            <ImageView fx:id="imagenFotoPerfil" fitHeight="297.0" fitWidth="331.0" layoutX="357.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true" smooth="false">
++                <image>
++                    <Image url="@../images/usuario.png"/>
++                </image>
++            </ImageView>
++            <Button fx:id="botonEditarPerfil" layoutX="383.0" layoutY="392.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#abrirEditarPerfil" prefHeight="36.0" prefWidth="245.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;"
++                    text="Editar perfil" textAlignment="CENTER">
++                <font>
++                    <Font name="SansSerif Regular" size="20.0"/>
++                </font>
++                <opaqueInsets>
++                    <Insets/>
++                </opaqueInsets>
+             </Button>
+-            <Button layoutX="68.0" layoutY="294.0" mnemonicParsing="false" style="-fx-font-size: 18; -fx-background-color: #393939;" text="Soporte y ayuda" textFill="WHITE">
+-               <font>
+-                  <Font size="18.0" />
+-               </font>
++            <Button fx:id="botonPrivacidadSeguridad" layoutX="383.0" layoutY="462.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#abrirPrivacidadSeguridad" prefHeight="36.0" prefWidth="245.0"
++                    style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Privacidad y seguridad" textAlignment="CENTER">
++                <font>
++                    <Font name="SansSerif Regular" size="20.0"/>
++                </font>
++                <opaqueInsets>
++                    <Insets/>
++                </opaqueInsets>
+             </Button>
+-         </children></AnchorPane>
+-   </center>
+-   <bottom>
+-      <AnchorPane prefHeight="62.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Button fx:id="botonRegresar" mnemonicParsing="false" onAction="#regresar" prefHeight="64.0" prefWidth="335.0" style="-fx-font-size: 18; -fx-background-color: #1e90ff;" text="Regresar" textFill="WHITE">
+-               <font>
+-                  <Font size="18.0" />
+-               </font>
++            <Button fx:id="botonSoporteYAyuda" layoutX="383.0" layoutY="531.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#abrirSoporteYAyuda" prefHeight="36.0" prefWidth="245.0"
++                    style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Soporte y ayuda" textAlignment="CENTER">
++                <font>
++                    <Font name="SansSerif Regular" size="20.0"/>
++                </font>
++                <opaqueInsets>
++                    <Insets/>
++                </opaqueInsets>
+             </Button>
+-         </children>
+-      </AnchorPane>
+-   </bottom>
++        </AnchorPane>
++    </center>
+ </BorderPane>
+Index: src/main/resources/view/PantallaExitoRealizarSubasta.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.TextArea?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.BorderPane?>\r\n<?import javafx.scene.shape.Rectangle?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<BorderPane prefHeight=\"600.0\" prefWidth=\"335.0\" style=\"-fx-background-color: #393939;\" xmlns=\"http://javafx.com/javafx/16\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"pujaQpuja.controller.pantallas.PantallaExitoRealizarSubastaController\">\r\n   <top>\r\n      <AnchorPane prefHeight=\"78.0\" prefWidth=\"335.0\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <Rectangle arcHeight=\"5.0\" arcWidth=\"5.0\" fill=\"DODGERBLUE\" height=\"65.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" width=\"335.0\" />\r\n            <Label layoutX=\"37.0\" layoutY=\"20.0\" text=\"Confirmación\" textFill=\"WHITE\">\r\n               <font>\r\n                  <Font size=\"17.0\" />\r\n               </font>\r\n            </Label>\r\n         </children>\r\n      </AnchorPane>\r\n   </top>\r\n   <center>\r\n      <AnchorPane prefHeight=\"543.0\" prefWidth=\"335.0\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <Label layoutX=\"81.0\" layoutY=\"1.0\" text=\"Nombre del producto\" textFill=\"WHITE\">\r\n               <font>\r\n                  <Font size=\"18.0\" />\r\n               </font>\r\n            </Label>\r\n            <ImageView fx:id=\"imagenProducto\" fitHeight=\"150.0\" fitWidth=\"200.0\" layoutX=\"68.0\" layoutY=\"80.0\" pickOnBounds=\"true\" preserveRatio=\"true\" />\r\n            <TextArea fx:id=\"campoConfirmacion\" editable=\"false\" layoutX=\"36.0\" layoutY=\"293.0\" prefHeight=\"97.0\" prefWidth=\"257.0\" style=\"-fx-font-size: 18;\" text=\"El articulo fue publicado con exito\" wrapText=\"true\" />\r\n         </children></AnchorPane>\r\n   </center>\r\n   <bottom>\r\n      <AnchorPane prefHeight=\"62.0\" prefWidth=\"335.0\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <Button fx:id=\"botonAceptar\" mnemonicParsing=\"false\" onAction=\"#aceptar\" prefHeight=\"62.0\" prefWidth=\"335.0\" style=\"-fx-font-size: 18; -fx-background-color: #1e90ff;\" text=\"Aceptar\" textFill=\"WHITE\" />\r\n         </children>\r\n      </AnchorPane>\r\n   </bottom>\r\n</BorderPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/view/PantallaExitoRealizarSubasta.fxml b/src/main/resources/view/PantallaExitoRealizarSubasta.fxml
+--- a/src/main/resources/view/PantallaExitoRealizarSubasta.fxml	(revision a53694365ae5542e419df9d35afddb8974849330)
++++ b/src/main/resources/view/PantallaExitoRealizarSubasta.fxml	(date 1618457836716)
+@@ -1,44 +1,36 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
++<?import javafx.geometry.Insets?>
+ <?import javafx.scene.control.Button?>
+-<?import javafx.scene.control.Label?>
+ <?import javafx.scene.control.TextArea?>
++<?import javafx.scene.image.Image?>
+ <?import javafx.scene.image.ImageView?>
+ <?import javafx.scene.layout.AnchorPane?>
+ <?import javafx.scene.layout.BorderPane?>
+-<?import javafx.scene.shape.Rectangle?>
+ <?import javafx.scene.text.Font?>
++<?import javafx.scene.text.Text?>
+ 
+-<BorderPane prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #393939;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaExitoRealizarSubastaController">
+-   <top>
+-      <AnchorPane prefHeight="78.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="65.0" stroke="BLACK" strokeType="INSIDE" width="335.0" />
+-            <Label layoutX="37.0" layoutY="20.0" text="Confirmación" textFill="WHITE">
+-               <font>
+-                  <Font size="17.0" />
+-               </font>
+-            </Label>
+-         </children>
+-      </AnchorPane>
+-   </top>
+-   <center>
+-      <AnchorPane prefHeight="543.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Label layoutX="81.0" layoutY="1.0" text="Nombre del producto" textFill="WHITE">
+-               <font>
+-                  <Font size="18.0" />
+-               </font>
+-            </Label>
+-            <ImageView fx:id="imagenProducto" fitHeight="150.0" fitWidth="200.0" layoutX="68.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" />
+-            <TextArea fx:id="campoConfirmacion" editable="false" layoutX="36.0" layoutY="293.0" prefHeight="97.0" prefWidth="257.0" style="-fx-font-size: 18;" text="El articulo fue publicado con exito" wrapText="true" />
+-         </children></AnchorPane>
+-   </center>
+-   <bottom>
+-      <AnchorPane prefHeight="62.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Button fx:id="botonAceptar" mnemonicParsing="false" onAction="#aceptar" prefHeight="62.0" prefWidth="335.0" style="-fx-font-size: 18; -fx-background-color: #1e90ff;" text="Aceptar" textFill="WHITE" />
+-         </children>
+-      </AnchorPane>
+-   </bottom>
++<BorderPane prefHeight="237.0" prefWidth="304.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaExitoRealizarSubastaController">
++    <center>
++        <AnchorPane prefHeight="543.0" prefWidth="335.0" BorderPane.alignment="CENTER">
++            <Text fx:id="textoNombreProducto" layoutX="38.0" layoutY="36.0" style="-fx-background-color: #CCECFE;" text="Nombre del producto" textAlignment="CENTER">
++                <font>
++                    <Font name="SansSerif Regular" size="24.0"/>
++                </font>
++            </Text>
++            <TextArea fx:id="campoConfirmacion" editable="false" layoutX="23.0" layoutY="57.0" prefHeight="97.0" prefWidth="257.0" style="-fx-font-size: 18;" text="El articulo fue publicado con exito" wrapText="true"/>
++            <ImageView fx:id="imagenProducto" fitHeight="42.0" fitWidth="45.0" layoutX="230.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/informacion.png"/>
++            </ImageView>
++            <Button fx:id="botonAceptar" layoutX="77.0" layoutY="178.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#accionAceptar" prefHeight="36.0" prefWidth="146.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;"
++                    text="Aceptar" textAlignment="CENTER">
++                <font>
++                    <Font name="SansSerif Regular" size="20.0"/>
++                </font>
++                <opaqueInsets>
++                    <Insets/>
++                </opaqueInsets>
++            </Button>
++        </AnchorPane>
++    </center>
+ </BorderPane>
+Index: src/main/resources/view/PantallaCatalogoError.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.BorderPane?>\r\n<?import javafx.scene.shape.Rectangle?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<BorderPane prefHeight=\"600.0\" prefWidth=\"335.0\" style=\"-fx-background-color: #393939;\" xmlns=\"http://javafx.com/javafx/16\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"pujaQpuja.controller.pantallas.PantallaCatalogoErrorController\">\r\n   <top>\r\n      <AnchorPane prefHeight=\"78.0\" prefWidth=\"335.0\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <Rectangle arcHeight=\"5.0\" arcWidth=\"5.0\" fill=\"DODGERBLUE\" height=\"79.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" width=\"335.0\" />\r\n            <Label layoutX=\"14.0\" layoutY=\"27.0\" text=\"Catálogo\" textFill=\"WHITE\">\r\n               <font>\r\n                  <Font size=\"17.0\" />\r\n               </font>\r\n            </Label>\r\n         </children>\r\n      </AnchorPane>\r\n   </top>\r\n   <center>\r\n      <AnchorPane prefHeight=\"200.0\" prefWidth=\"200.0\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <TextField fx:id=\"campoBuscarCatalogo\" layoutX=\"14.0\" layoutY=\"14.0\" prefHeight=\"26.0\" prefWidth=\"245.0\" style=\"-fx-background-radius: 40;\" text=\"Buscar\" />\r\n            <Button fx:id=\"botonBuscarCatalogo\" layoutX=\"259.0\" layoutY=\"12.0\" minWidth=\"22.0\" mnemonicParsing=\"false\" prefHeight=\"28.0\" prefWidth=\"22.0\">\r\n               <graphic>\r\n                  <ImageView fitHeight=\"22.0\" fitWidth=\"25.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n                     <image>\r\n                        <Image url=\"@../images/loupe.png\" />\r\n                     </image>\r\n                  </ImageView>\r\n               </graphic>\r\n            </Button>\r\n            <Label layoutX=\"154.0\" layoutY=\"234.0\" text=\"Label\" />\r\n            <Rectangle arcHeight=\"5.0\" arcWidth=\"5.0\" height=\"200.0\" layoutX=\"18.0\" layoutY=\"134.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" width=\"300.0\" />\r\n            <Label alignment=\"CENTER\" layoutX=\"27.0\" layoutY=\"166.0\" prefHeight=\"68.0\" prefWidth=\"282.0\" text=\"Resultados de busqueda no&#10;encontrados\" textAlignment=\"CENTER\">\r\n               <font>\r\n                  <Font size=\"18.0\" />\r\n               </font>\r\n            </Label>\r\n            <Label alignment=\"TOP_LEFT\" layoutX=\"26.0\" layoutY=\"234.0\" text=\"Este seguro de haber escrito las palabras &#10;correctamente. Sea especifico o use diferentes &#10;palabras.\" textAlignment=\"JUSTIFY\" />\r\n            <ImageView fitHeight=\"36.0\" fitWidth=\"37.0\" layoutX=\"152.0\" layoutY=\"134.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n               <image>\r\n                  <Image url=\"@../../../../../../../../../Fotos/lupa-blanca.png\" />\r\n               </image>\r\n            </ImageView>\r\n            <ImageView fitHeight=\"43.0\" fitWidth=\"37.0\" layoutX=\"276.0\" layoutY=\"288.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n               <image>\r\n                  <Image url=\"@../../../../../../../../../Fotos/Rdf866ef98ca23634384fe06c9c947bf2.png\" />\r\n               </image>\r\n            </ImageView>\r\n         </children>\r\n      </AnchorPane>\r\n   </center>\r\n   <bottom>\r\n      <AnchorPane prefHeight=\"67.0\" prefWidth=\"335.0\" BorderPane.alignment=\"CENTER\" />\r\n   </bottom>\r\n</BorderPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/view/PantallaCatalogoError.fxml b/src/main/resources/view/PantallaCatalogoError.fxml
+--- a/src/main/resources/view/PantallaCatalogoError.fxml	(revision a53694365ae5542e419df9d35afddb8974849330)
++++ b/src/main/resources/view/PantallaCatalogoError.fxml	(date 1618455499889)
+@@ -1,8 +1,8 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
++<?import javafx.geometry.Insets?>
+ <?import javafx.scene.control.Button?>
+ <?import javafx.scene.control.Label?>
+-<?import javafx.scene.control.TextField?>
+ <?import javafx.scene.image.Image?>
+ <?import javafx.scene.image.ImageView?>
+ <?import javafx.scene.layout.AnchorPane?>
+@@ -10,54 +10,32 @@
+ <?import javafx.scene.shape.Rectangle?>
+ <?import javafx.scene.text.Font?>
+ 
+-<BorderPane prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #393939;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaCatalogoErrorController">
+-   <top>
+-      <AnchorPane prefHeight="78.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="79.0" stroke="BLACK" strokeType="INSIDE" width="335.0" />
+-            <Label layoutX="14.0" layoutY="27.0" text="Catálogo" textFill="WHITE">
+-               <font>
+-                  <Font size="17.0" />
+-               </font>
++<BorderPane prefHeight="317.0" prefWidth="335.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaCatalogoErrorController">
++    <center>
++        <AnchorPane prefHeight="308.0" prefWidth="335.0" BorderPane.alignment="CENTER">
++            <Label layoutX="154.0" layoutY="130.0" text="Label"/>
++            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e8e8e8" height="200.0" layoutX="18.0" layoutY="30.0" stroke="WHITE" strokeType="INSIDE" width="300.0"/>
++            <Label alignment="CENTER" layoutX="30.0" layoutY="78.0" prefHeight="68.0" prefWidth="282.0" text="Resultados de busqueda no&#10;encontrados" textAlignment="CENTER">
++                <font>
++                    <Font size="18.0"/>
++                </font>
+             </Label>
+-         </children>
+-      </AnchorPane>
+-   </top>
+-   <center>
+-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <TextField fx:id="campoBuscarCatalogo" layoutX="14.0" layoutY="14.0" prefHeight="26.0" prefWidth="245.0" style="-fx-background-radius: 40;" text="Buscar" />
+-            <Button fx:id="botonBuscarCatalogo" layoutX="259.0" layoutY="12.0" minWidth="22.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="22.0">
+-               <graphic>
+-                  <ImageView fitHeight="22.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+-                     <image>
+-                        <Image url="@../images/loupe.png" />
+-                     </image>
+-                  </ImageView>
+-               </graphic>
+-            </Button>
+-            <Label layoutX="154.0" layoutY="234.0" text="Label" />
+-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="18.0" layoutY="134.0" stroke="BLACK" strokeType="INSIDE" width="300.0" />
+-            <Label alignment="CENTER" layoutX="27.0" layoutY="166.0" prefHeight="68.0" prefWidth="282.0" text="Resultados de busqueda no&#10;encontrados" textAlignment="CENTER">
+-               <font>
+-                  <Font size="18.0" />
+-               </font>
+-            </Label>
+-            <Label alignment="TOP_LEFT" layoutX="26.0" layoutY="234.0" text="Este seguro de haber escrito las palabras &#10;correctamente. Sea especifico o use diferentes &#10;palabras." textAlignment="JUSTIFY" />
+-            <ImageView fitHeight="36.0" fitWidth="37.0" layoutX="152.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+-               <image>
+-                  <Image url="@../../../../../../../../../Fotos/lupa-blanca.png" />
+-               </image>
+-            </ImageView>
+-            <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="276.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true">
+-               <image>
+-                  <Image url="@../../../../../../../../../Fotos/Rdf866ef98ca23634384fe06c9c947bf2.png" />
+-               </image>
+-            </ImageView>
+-         </children>
+-      </AnchorPane>
+-   </center>
+-   <bottom>
+-      <AnchorPane prefHeight="67.0" prefWidth="335.0" BorderPane.alignment="CENTER" />
+-   </bottom>
++            <Label alignment="TOP_LEFT" layoutX="30.0" layoutY="147.0" text="Este seguro de haber escrito las palabras &#10;correctamente. Sea especifico o use diferentes &#10;palabras." textAlignment="JUSTIFY"/>
++            <ImageView fitHeight="36.0" fitWidth="37.0" layoutX="150.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/loupe.png"/>
++            </ImageView>
++            <ImageView fitHeight="41.0" fitWidth="42.0" layoutX="264.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/alerta.png"/>
++            </ImageView>
++            <Button id="aceptarErrorAutenticar" fx:id="botonAceptar" layoutX="95.0" layoutY="252.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#accionAceptar" prefHeight="36.0" prefWidth="146.0"
++                    style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Aceptar" textAlignment="CENTER">
++                <font>
++                    <Font name="SansSerif Regular" size="20.0"/>
++                </font>
++                <opaqueInsets>
++                    <Insets/>
++                </opaqueInsets>
++            </Button>
++        </AnchorPane>
++    </center>
+ </BorderPane>
+Index: src/main/resources/view/PantallaCalificarProducto.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.RadioButton?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.BorderPane?>\r\n<?import javafx.scene.shape.Circle?>\r\n<?import javafx.scene.shape.Line?>\r\n<?import javafx.scene.shape.QuadCurve?>\r\n<?import javafx.scene.shape.Rectangle?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<BorderPane prefHeight=\"600.0\" prefWidth=\"335.0\" style=\"-fx-background-color: #393939;\" xmlns=\"http://javafx.com/javafx/16\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"pujaQpuja.controller.pantallas.PantallaCalificarProductoController\">\r\n   <top>\r\n      <AnchorPane prefHeight=\"78.0\" prefWidth=\"335.0\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <Rectangle arcHeight=\"5.0\" arcWidth=\"5.0\" fill=\"DODGERBLUE\" height=\"65.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" width=\"335.0\" />\r\n            <Label layoutX=\"37.0\" layoutY=\"20.0\" text=\"Calificación\" textFill=\"WHITE\">\r\n               <font>\r\n                  <Font size=\"17.0\" />\r\n               </font>\r\n            </Label>\r\n         </children>\r\n      </AnchorPane>\r\n   </top>\r\n   <center>\r\n      <AnchorPane prefHeight=\"543.0\" prefWidth=\"335.0\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <Label layoutX=\"23.0\" layoutY=\"77.0\" text=\"Cómo calificas la atención del vendedor?\" textAlignment=\"CENTER\" textFill=\"WHITE\">\r\n               <font>\r\n                  <Font size=\"17.0\" />\r\n               </font>\r\n            </Label>\r\n            <Circle fill=\"DODGERBLUE\" layoutX=\"53.0\" layoutY=\"244.0\" radius=\"37.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" />\r\n            <Circle fill=\"DODGERBLUE\" layoutX=\"168.0\" layoutY=\"244.0\" radius=\"37.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" />\r\n            <Circle fill=\"DODGERBLUE\" layoutX=\"285.0\" layoutY=\"244.0\" radius=\"37.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" />\r\n            <RadioButton fx:id=\"botonRadioMala\" contentDisplay=\"TOP\" graphicTextGap=\"10.0\" layoutX=\"27.0\" layoutY=\"296.0\" mnemonicParsing=\"false\" text=\"Mala\" textAlignment=\"JUSTIFY\" textFill=\"WHITE\" textOverrun=\"CLIP\" wrapText=\"true\" />\r\n            <RadioButton fx:id=\"botonRadioRegular\" contentDisplay=\"TOP\" graphicTextGap=\"10.0\" layoutX=\"140.0\" layoutY=\"296.0\" mnemonicParsing=\"false\" text=\"Regular\" textFill=\"WHITE\" textOverrun=\"CLIP\" wrapText=\"true\" />\r\n            <RadioButton fx:id=\"botonRadioBuena\" contentDisplay=\"TOP\" graphicTextGap=\"10.0\" layoutX=\"255.0\" layoutY=\"296.0\" mnemonicParsing=\"false\" text=\"Buena\" textFill=\"WHITE\" textOverrun=\"CLIP\" wrapText=\"true\" />\r\n            <Line endX=\"18.0\" endY=\"7.0\" layoutX=\"168.0\" layoutY=\"256.0\" startX=\"-18.0\" startY=\"7.0\" strokeType=\"OUTSIDE\" />\r\n            <QuadCurve controlX=\"-31.0\" controlY=\"15.0\" endX=\"-9.0\" endY=\"-6.0\" layoutX=\"315.0\" layoutY=\"266.0\" startX=\"-52.0\" startY=\"-6.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" />\r\n            <QuadCurve controlX=\"-29.0\" controlY=\"-20.0\" endX=\"-9.0\" endY=\"-6.0\" layoutX=\"83.0\" layoutY=\"271.0\" startX=\"-52.0\" startY=\"-6.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" />\r\n            <Label layoutX=\"95.0\" layoutY=\"117.0\" text=\"Ayúdanos a mejorar!\" textAlignment=\"CENTER\" textFill=\"WHITE\">\r\n               <font>\r\n                  <Font size=\"17.0\" />\r\n               </font>\r\n            </Label>\r\n            <Circle layoutX=\"36.0\" layoutY=\"235.0\" radius=\"5.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" />\r\n            <Circle layoutX=\"69.0\" layoutY=\"235.0\" radius=\"5.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" />\r\n            <Circle layoutX=\"151.0\" layoutY=\"235.0\" radius=\"5.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" />\r\n            <Circle layoutX=\"184.0\" layoutY=\"235.0\" radius=\"5.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" />\r\n            <Circle layoutX=\"268.0\" layoutY=\"235.0\" radius=\"5.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" />\r\n            <Circle layoutX=\"301.0\" layoutY=\"235.0\" radius=\"5.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" />\r\n         </children></AnchorPane>\r\n   </center>\r\n   <bottom>\r\n      <AnchorPane prefHeight=\"62.0\" prefWidth=\"335.0\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <Button fx:id=\"botonAceptar\" mnemonicParsing=\"false\" onAction=\"#aceptar\" prefHeight=\"62.0\" prefWidth=\"335.0\" style=\"-fx-font-size: 18; -fx-background-color: #1e90ff;\" text=\"Aceptar\" textFill=\"WHITE\" />\r\n         </children>\r\n      </AnchorPane>\r\n   </bottom>\r\n</BorderPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/view/PantallaCalificarProducto.fxml b/src/main/resources/view/PantallaCalificarProducto.fxml
+--- a/src/main/resources/view/PantallaCalificarProducto.fxml	(revision a53694365ae5542e419df9d35afddb8974849330)
++++ b/src/main/resources/view/PantallaCalificarProducto.fxml	(date 1618450371068)
+@@ -1,64 +1,189 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
++<?import javafx.geometry.Insets?>
+ <?import javafx.scene.control.Button?>
+ <?import javafx.scene.control.Label?>
+ <?import javafx.scene.control.RadioButton?>
++<?import javafx.scene.control.TextField?>
++<?import javafx.scene.image.Image?>
++<?import javafx.scene.image.ImageView?>
+ <?import javafx.scene.layout.AnchorPane?>
+ <?import javafx.scene.layout.BorderPane?>
+-<?import javafx.scene.shape.Circle?>
+ <?import javafx.scene.shape.Line?>
+-<?import javafx.scene.shape.QuadCurve?>
+ <?import javafx.scene.shape.Rectangle?>
+ <?import javafx.scene.text.Font?>
++<?import javafx.scene.text.Text?>
+ 
+-<BorderPane prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #393939;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaCalificarProductoController">
+-   <top>
+-      <AnchorPane prefHeight="78.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="65.0" stroke="BLACK" strokeType="INSIDE" width="335.0" />
+-            <Label layoutX="37.0" layoutY="20.0" text="Calificación" textFill="WHITE">
+-               <font>
+-                  <Font size="17.0" />
+-               </font>
++<BorderPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaCalificarProductoController">
++    <top>
++        <AnchorPane prefHeight="39.0" prefWidth="375.0" BorderPane.alignment="CENTER">
++            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#64b5f6" height="78.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1280.0"/>
++            <Label layoutX="347.0" layoutY="8.0" prefHeight="64.0" prefWidth="259.0" text="Calificación">
++                <font>
++                    <Font name="Berlin Sans FB" size="32.0"/>
++                </font>
+             </Label>
+-         </children>
+-      </AnchorPane>
+-   </top>
+-   <center>
+-      <AnchorPane prefHeight="543.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Label layoutX="23.0" layoutY="77.0" text="Cómo calificas la atención del vendedor?" textAlignment="CENTER" textFill="WHITE">
+-               <font>
+-                  <Font size="17.0" />
+-               </font>
++            <ImageView fx:id="botonAtras" fitHeight="45.0" fitWidth="45.0" layoutX="284.0" layoutY="17.0" onMouseClicked="#irAtras" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/atras.png"/>
++            </ImageView>
++            <ImageView fx:id="botonPerfil" fitHeight="55.0" fitWidth="51.0" layoutX="1205.0" layoutY="15.0" onMouseClicked="#abrirPerfil" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/perfil.png"/>
++            </ImageView>
++        </AnchorPane>
++    </top>
++    <left>
++        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
++            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bbc7d1" height="763.0" layoutY="-109.0" stroke="#bbc7d1" strokeType="INSIDE" strokeWidth="0.0" width="269.0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="13.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/menu.png"/>
++            </ImageView>
++            <Label layoutX="68.0" layoutY="63.0" prefHeight="33.0" prefWidth="71.0" text="Menú">
++                <font>
++                    <Font name="SansSerif Bold" size="24.0"/>
++                </font>
++            </Label>
++            <Line endX="145.0" layoutX="123.0" layoutY="220.0" startX="-124.0" stroke="#92b4d0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="13.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/ajustes.png"/>
++            </ImageView>
++            <Label layoutX="68.0" layoutY="169.0" prefHeight="33.0" prefWidth="136.0" text="Ajustes">
++                <font>
++                    <Font name="Berlin Sans FB" size="24.0"/>
++                </font>
++            </Label>
++            <Line endX="145.0" layoutX="123.0" layoutY="292.0" startX="-124.0" stroke="#92b4d0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="13.0" layoutY="238.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/categoria.png"/>
++            </ImageView>
++            <Label layoutX="68.0" layoutY="241.0" prefHeight="33.0" prefWidth="191.0" text="Categorías">
++                <font>
++                    <Font name="Berlin Sans FB" size="24.0"/>
++                </font>
++            </Label>
++            <Line endX="145.0" endY="1.0" layoutX="123.0" layoutY="362.0" startX="-124.0" stroke="#92b4d0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="11.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/realizar_subasta.png"/>
++            </ImageView>
++            <Label layoutX="66.0" layoutY="313.0" prefHeight="33.0" prefWidth="191.0" text="Realizar Subasta">
++                <font>
++                    <Font name="Berlin Sans FB" size="24.0"/>
++                </font>
+             </Label>
+-            <Circle fill="DODGERBLUE" layoutX="53.0" layoutY="244.0" radius="37.0" stroke="BLACK" strokeType="INSIDE" />
+-            <Circle fill="DODGERBLUE" layoutX="168.0" layoutY="244.0" radius="37.0" stroke="BLACK" strokeType="INSIDE" />
+-            <Circle fill="DODGERBLUE" layoutX="285.0" layoutY="244.0" radius="37.0" stroke="BLACK" strokeType="INSIDE" />
+-            <RadioButton fx:id="botonRadioMala" contentDisplay="TOP" graphicTextGap="10.0" layoutX="27.0" layoutY="296.0" mnemonicParsing="false" text="Mala" textAlignment="JUSTIFY" textFill="WHITE" textOverrun="CLIP" wrapText="true" />
+-            <RadioButton fx:id="botonRadioRegular" contentDisplay="TOP" graphicTextGap="10.0" layoutX="140.0" layoutY="296.0" mnemonicParsing="false" text="Regular" textFill="WHITE" textOverrun="CLIP" wrapText="true" />
+-            <RadioButton fx:id="botonRadioBuena" contentDisplay="TOP" graphicTextGap="10.0" layoutX="255.0" layoutY="296.0" mnemonicParsing="false" text="Buena" textFill="WHITE" textOverrun="CLIP" wrapText="true" />
+-            <Line endX="18.0" endY="7.0" layoutX="168.0" layoutY="256.0" startX="-18.0" startY="7.0" strokeType="OUTSIDE" />
+-            <QuadCurve controlX="-31.0" controlY="15.0" endX="-9.0" endY="-6.0" layoutX="315.0" layoutY="266.0" startX="-52.0" startY="-6.0" stroke="BLACK" strokeType="INSIDE" />
+-            <QuadCurve controlX="-29.0" controlY="-20.0" endX="-9.0" endY="-6.0" layoutX="83.0" layoutY="271.0" startX="-52.0" startY="-6.0" stroke="BLACK" strokeType="INSIDE" />
+-            <Label layoutX="95.0" layoutY="117.0" text="Ayúdanos a mejorar!" textAlignment="CENTER" textFill="WHITE">
+-               <font>
+-                  <Font size="17.0" />
+-               </font>
++            <Line endX="145.0" layoutX="123.0" layoutY="429.0" startX="-124.0" stroke="#92b4d0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="11.0" layoutY="377.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/historial_ventas.png"/>
++            </ImageView>
++            <Label layoutX="66.0" layoutY="380.0" prefHeight="33.0" prefWidth="191.0" text="Historial Ventas">
++                <font>
++                    <Font name="Berlin Sans FB" size="24.0"/>
++                </font>
+             </Label>
+-            <Circle layoutX="36.0" layoutY="235.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+-            <Circle layoutX="69.0" layoutY="235.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+-            <Circle layoutX="151.0" layoutY="235.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+-            <Circle layoutX="184.0" layoutY="235.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+-            <Circle layoutX="268.0" layoutY="235.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+-            <Circle layoutX="301.0" layoutY="235.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+-         </children></AnchorPane>
+-   </center>
+-   <bottom>
+-      <AnchorPane prefHeight="62.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Button fx:id="botonAceptar" mnemonicParsing="false" onAction="#aceptar" prefHeight="62.0" prefWidth="335.0" style="-fx-font-size: 18; -fx-background-color: #1e90ff;" text="Aceptar" textFill="WHITE" />
+-         </children>
+-      </AnchorPane>
+-   </bottom>
++            <Line endX="145.0" layoutX="123.0" layoutY="499.0" startX="-124.0" stroke="#92b4d0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="12.0" layoutY="446.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/historial_compras.png"/>
++            </ImageView>
++            <Label layoutX="67.0" layoutY="449.0" prefHeight="33.0" prefWidth="191.0" text="Historial Compras">
++                <font>
++                    <Font name="Berlin Sans FB" size="24.0"/>
++                </font>
++            </Label>
++            <Line endX="145.0" layoutX="123.0" layoutY="569.0" startX="-124.0" stroke="#92b4d0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="12.0" layoutY="516.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/notificacion.png"/>
++            </ImageView>
++            <Label layoutX="67.0" layoutY="519.0" prefHeight="33.0" prefWidth="191.0" text="Notificaciones">
++                <font>
++                    <Font name="Berlin Sans FB" size="24.0"/>
++                </font>
++            </Label>
++            <Line endX="145.0" layoutX="123.0" layoutY="639.0" startX="-124.0" stroke="#92b4d0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="12.0" layoutY="587.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/metodo_pago.png"/>
++            </ImageView>
++            <Label layoutX="67.0" layoutY="590.0" prefHeight="33.0" prefWidth="191.0" text="Método Pago">
++                <font>
++                    <Font name="Berlin Sans FB" size="24.0"/>
++                </font>
++            </Label>
++            <Line endX="145.0" layoutX="124.0" layoutY="150.0" startX="-124.0" stroke="#92b4d0"/>
++            <Rectangle fx:id="botonRectanguloAjustes" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="150.0" onMouseClicked="#abrirAjustes" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="269.0"/>
++            <Rectangle fx:id="botonRectanguloCategorias" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="222.0" onMouseClicked="#abrirCategorias" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="269.0"/>
++            <Rectangle fx:id="botonRectanguloRealizarSubasta" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="292.0" onMouseClicked="#abrirRealizarSubasta" opacity="0.0" stroke="BLACK" strokeType="INSIDE"
++                       width="269.0"/>
++            <Rectangle fx:id="botonRectanguloHistorialVentas" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="362.0" onMouseClicked="#abrirHistorialVentas" opacity="0.0" stroke="BLACK" strokeType="INSIDE"
++                       width="269.0"/>
++            <Rectangle fx:id="botonRectanguloHistorialCompras" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="430.0" onMouseClicked="#abrirHistorialCompras" opacity="0.0" stroke="BLACK" strokeType="INSIDE"
++                       width="269.0"/>
++            <Rectangle fx:id="botonRectanguloNotificaciones" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="501.0" onMouseClicked="#abrirNotificaciones" opacity="0.0" stroke="BLACK" strokeType="INSIDE"
++                       width="269.0"/>
++            <Rectangle fx:id="botonRectanguloMetodoPago" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="569.0" onMouseClicked="#abririMetodoPago" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="269.0"/>
++            <ImageView fitHeight="133.0" fitWidth="240.0" layoutX="22.0" layoutY="-83.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/logo_vertical.png"/>
++            </ImageView>
++        </AnchorPane>
++    </left>
++    <center>
++        <AnchorPane prefHeight="543.0" prefWidth="335.0" BorderPane.alignment="CENTER">
++            <children>
++                <Text layoutX="323.0" layoutY="133.0" style="-fx-background-color: #CCECFE;" text="Cómo calificas la atención del vendedor?">
++                    <font>
++                        <Font name="SansSerif Regular" size="20.0"/>
++                    </font>
++                </Text>
++                <RadioButton fx:id="botonRadioBuena" contentDisplay="TOP" graphicTextGap="10.0" layoutX="400.0" layoutY="264.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="0.0" textAlignment="JUSTIFY" textFill="WHITE" textOverrun="CLIP"
++                             wrapText="true"/>
++                <RadioButton fx:id="botonRadioRegular" contentDisplay="TOP" graphicTextGap="10.0" layoutX="500.0" layoutY="266.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="0.0" textFill="WHITE" textOverrun="CLIP" wrapText="true"/>
++                <RadioButton fx:id="botonRadioMala" contentDisplay="TOP" graphicTextGap="10.0" layoutX="595.0" layoutY="266.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="7.0" textFill="WHITE" textOverrun="CLIP" wrapText="true"/>
++                <Text layoutX="342.0" layoutY="70.0" style="-fx-background-color: #CCECFE;" text="Ayúdanos a mejorar!">
++                    <font>
++                        <Font name="SansSerif Regular" size="36.0"/>
++                    </font>
++                </Text>
++                <Button fx:id="botonAceptar" layoutX="435.0" layoutY="533.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#accionAceptar" prefHeight="36.0" prefWidth="146.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;"
++                        text="Aceptar" textAlignment="CENTER">
++                    <font>
++                        <Font name="SansSerif Regular" size="20.0"/>
++                    </font>
++                    <opaqueInsets>
++                        <Insets/>
++                    </opaqueInsets>
++                </Button>
++                <ImageView fitHeight="58.0" fitWidth="61.0" layoutX="379.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true">
++                    <image>
++                        <Image url="@../images/feliz.png"/>
++                    </image>
++                </ImageView>
++                <ImageView fitHeight="58.0" fitWidth="61.0" layoutX="479.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
++                    <image>
++                        <Image url="@../images/regular.png"/>
++                    </image>
++                </ImageView>
++                <ImageView fitHeight="58.0" fitWidth="61.0" layoutX="574.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
++                    <image>
++                        <Image url="@../images/triste.png"/>
++                    </image>
++                </ImageView>
++                <Text layoutX="379.0" layoutY="243.0" style="-fx-background-color: #CCECFE;" text="Buena">
++                    <font>
++                        <Font name="SansSerif Regular" size="20.0"/>
++                    </font>
++                </Text>
++                <Text layoutX="473.0" layoutY="245.0" style="-fx-background-color: #CCECFE;" text="Regular">
++                    <font>
++                        <Font name="SansSerif Regular" size="20.0"/>
++                    </font>
++                </Text>
++                <Text layoutX="581.0" layoutY="245.0" style="-fx-background-color: #CCECFE;" text="Mala">
++                    <font>
++                        <Font name="SansSerif Regular" size="20.0"/>
++                    </font>
++                </Text>
++                <TextField fx:id="campoOpinionProducto" alignment="TOP_CENTER" layoutX="330.0" layoutY="318.0" prefHeight="180.0" prefWidth="356.0" promptText="¿Qué te pareció el producto?" style="-fx-background-color: #CCECFE;">
++                    <font>
++                        <Font name="SansSerif Regular" size="20.0"/>
++                    </font>
++                </TextField>
++            </children>
++        </AnchorPane>
++    </center>
+ </BorderPane>
+Index: src/main/resources/view/Inicio.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.BorderPane?>\r\n<?import javafx.scene.text.Font?>\r\n<?import javafx.scene.text.Text?>\r\n\r\n<AnchorPane id=\"AnchorPane\" prefHeight=\"600.0\" prefWidth=\"335.0\" style=\"-fx-background-color: #393939;\" BorderPane.alignment=\"CENTER\" xmlns=\"http://javafx.com/javafx/16\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"pujaQpuja.controller.pantallas.InicioController\">\r\n    <children>\r\n        <Text fill=\"WHITE\" layoutX=\"99.0\" layoutY=\"70.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Puja que Puja\">\r\n            <font>\r\n                <Font size=\"24.0\" />\r\n            </font>\r\n        </Text>\r\n        <ImageView fitHeight=\"298.0\" fitWidth=\"238.0\" layoutX=\"52.0\" layoutY=\"106.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n            <Image url=\"@../images/logo.png\" />\r\n        </ImageView>\r\n        <Button id=\"registrarseInicio\" fx:id=\"botonRegistrarse\" layoutX=\"106.0\" layoutY=\"430.0\" mnemonicParsing=\"false\" onAction=\"#registrar\" prefHeight=\"35.0\" prefWidth=\"130.0\" style=\"-fx-background-color: #1e90ff;\" text=\"Registrarse\" textFill=\"WHITE\">\r\n            <font>\r\n                <Font size=\"14.0\" />\r\n            </font>\r\n        </Button>\r\n        <Button id=\"ingresarInicio\" fx:id=\"botonIngresar\" layoutX=\"106.0\" layoutY=\"505.0\" mnemonicParsing=\"false\" onAction=\"#ingresar\" prefHeight=\"35.0\" prefWidth=\"130.0\" style=\"-fx-background-color: #1e90ff;\" text=\"Ingresar\" textFill=\"WHITE\">\r\n            <font>\r\n                <Font size=\"14.0\" />\r\n            </font>\r\n        </Button>\r\n    </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/view/Inicio.fxml b/src/main/resources/view/Inicio.fxml
+--- a/src/main/resources/view/Inicio.fxml	(revision a53694365ae5542e419df9d35afddb8974849330)
++++ b/src/main/resources/view/Inicio.fxml	(date 1618448764406)
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
++<?import javafx.geometry.Insets?>
+ <?import javafx.scene.control.Button?>
+ <?import javafx.scene.image.Image?>
+ <?import javafx.scene.image.ImageView?>
+@@ -8,25 +9,35 @@
+ <?import javafx.scene.text.Font?>
+ <?import javafx.scene.text.Text?>
+ 
+-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #393939;" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.InicioController">
+-    <children>
+-        <Text fill="WHITE" layoutX="99.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Puja que Puja">
+-            <font>
+-                <Font size="24.0" />
+-            </font>
+-        </Text>
+-        <ImageView fitHeight="298.0" fitWidth="238.0" layoutX="52.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+-            <Image url="@../images/logo.png" />
+-        </ImageView>
+-        <Button id="registrarseInicio" fx:id="botonRegistrarse" layoutX="106.0" layoutY="430.0" mnemonicParsing="false" onAction="#registrar" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: #1e90ff;" text="Registrarse" textFill="WHITE">
+-            <font>
+-                <Font size="14.0" />
+-            </font>
+-        </Button>
+-        <Button id="ingresarInicio" fx:id="botonIngresar" layoutX="106.0" layoutY="505.0" mnemonicParsing="false" onAction="#ingresar" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: #1e90ff;" text="Ingresar" textFill="WHITE">
+-            <font>
+-                <Font size="14.0" />
+-            </font>
+-        </Button>
+-    </children>
+-</AnchorPane>
++<BorderPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.InicioController">
++    <center>
++        <AnchorPane prefHeight="654.0" prefWidth="405.0" BorderPane.alignment="CENTER">
++            <Text layoutX="528.0" layoutY="90.0" style="-fx-background-color: #CCECFE;" text="Puja que Puja">
++                <font>
++                    <Font name="SansSerif Regular" size="36.0"/>
++                </font>
++            </Text>
++            <ImageView fitHeight="410.0" fitWidth="369.0" layoutX="474.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/logo.png"/>
++            </ImageView>
++            <Button id="registrarseInicio" fx:id="botonRegistrarse" layoutX="567.0" layoutY="531.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#accionRegistrarse" prefHeight="36.0" prefWidth="146.0"
++                    style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Registrarse" textAlignment="CENTER">
++                <font>
++                    <Font name="SansSerif Regular" size="20.0"/>
++                </font>
++                <opaqueInsets>
++                    <Insets/>
++                </opaqueInsets>
++            </Button>
++            <Button id="ingresarInicio" fx:id="botonIngresar" layoutX="567.0" layoutY="603.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#accionIngresar" prefHeight="36.0" prefWidth="146.0"
++                    style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Ingresar" textAlignment="CENTER">
++                <font>
++                    <Font name="SansSerif Regular" size="20.0"/>
++                </font>
++                <opaqueInsets>
++                    <Insets/>
++                </opaqueInsets>
++            </Button>
++        </AnchorPane>
++    </center>
++</BorderPane>
+Index: src/main/resources/view/PantallaErrorPublicacionSubasta.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.TextArea?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.BorderPane?>\r\n<?import javafx.scene.shape.Rectangle?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<BorderPane prefHeight=\"550.0\" prefWidth=\"340.0\" style=\"-fx-background-color: #393939;\" xmlns=\"http://javafx.com/javafx/16\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"pujaQpuja.controller.pantallas.PantallaErrorPublicacionSubastaController\">\r\n   <top>\r\n      <AnchorPane prefHeight=\"78.0\" prefWidth=\"335.0\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <Rectangle arcHeight=\"5.0\" arcWidth=\"5.0\" fill=\"DODGERBLUE\" height=\"65.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" width=\"340.0\" />\r\n            <Label layoutX=\"37.0\" layoutY=\"20.0\" text=\"Error\" textFill=\"WHITE\">\r\n               <font>\r\n                  <Font size=\"17.0\" />\r\n               </font>\r\n            </Label>\r\n         </children>\r\n      </AnchorPane>\r\n   </top>\r\n   <center>\r\n      <AnchorPane prefHeight=\"543.0\" prefWidth=\"335.0\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <TextArea editable=\"false\" layoutX=\"33.0\" layoutY=\"244.0\" prefHeight=\"126.0\" prefWidth=\"274.0\" style=\"-fx-font-size: 18;\" text=\"El articulo no pudo ser publicado, debido a un error en el sistema\" wrapText=\"true\" />\r\n            <Label fx:id=\"campoNombreProducto\" layoutX=\"83.0\" layoutY=\"35.0\" text=\"Nombre del producto\" textFill=\"WHITE\">\r\n               <font>\r\n                  <Font size=\"18.0\" />\r\n               </font>\r\n            </Label>\r\n            <ImageView fx:id=\"imagenProducto\" fitHeight=\"150.0\" fitWidth=\"200.0\" layoutX=\"70.0\" layoutY=\"69.0\" pickOnBounds=\"true\" preserveRatio=\"true\" />\r\n         </children></AnchorPane>\r\n   </center>\r\n   <bottom>\r\n      <AnchorPane prefHeight=\"62.0\" prefWidth=\"335.0\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <Button fx:id=\"botonReintentar\" mnemonicParsing=\"false\" onAction=\"#reintentar\" prefHeight=\"62.0\" prefWidth=\"170.0\" style=\"-fx-font-size: 18; -fx-background-color: #1e90ff;\" text=\"Reintentar\" textFill=\"WHITE\" />\r\n            <Button fx:id=\"botonCancelar\" layoutX=\"170.0\" mnemonicParsing=\"false\" onAction=\"#cancelar\" prefHeight=\"62.0\" prefWidth=\"170.0\" style=\"-fx-font-size: 18; -fx-background-color: #1e90ff;\" text=\"Cancelar\" textFill=\"WHITE\" />\r\n         </children>\r\n      </AnchorPane>\r\n   </bottom>\r\n</BorderPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/view/PantallaErrorPublicacionSubasta.fxml b/src/main/resources/view/PantallaErrorPublicacionSubasta.fxml
+--- a/src/main/resources/view/PantallaErrorPublicacionSubasta.fxml	(revision a53694365ae5542e419df9d35afddb8974849330)
++++ b/src/main/resources/view/PantallaErrorPublicacionSubasta.fxml	(date 1618457268816)
+@@ -1,45 +1,47 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
++<?import javafx.geometry.Insets?>
+ <?import javafx.scene.control.Button?>
+-<?import javafx.scene.control.Label?>
+ <?import javafx.scene.control.TextArea?>
++<?import javafx.scene.image.Image?>
+ <?import javafx.scene.image.ImageView?>
+ <?import javafx.scene.layout.AnchorPane?>
+ <?import javafx.scene.layout.BorderPane?>
+-<?import javafx.scene.shape.Rectangle?>
+ <?import javafx.scene.text.Font?>
++<?import javafx.scene.text.Text?>
+ 
+-<BorderPane prefHeight="550.0" prefWidth="340.0" style="-fx-background-color: #393939;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaErrorPublicacionSubastaController">
+-   <top>
+-      <AnchorPane prefHeight="78.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="65.0" stroke="BLACK" strokeType="INSIDE" width="340.0" />
+-            <Label layoutX="37.0" layoutY="20.0" text="Error" textFill="WHITE">
+-               <font>
+-                  <Font size="17.0" />
+-               </font>
+-            </Label>
+-         </children>
+-      </AnchorPane>
+-   </top>
+-   <center>
+-      <AnchorPane prefHeight="543.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <TextArea editable="false" layoutX="33.0" layoutY="244.0" prefHeight="126.0" prefWidth="274.0" style="-fx-font-size: 18;" text="El articulo no pudo ser publicado, debido a un error en el sistema" wrapText="true" />
+-            <Label fx:id="campoNombreProducto" layoutX="83.0" layoutY="35.0" text="Nombre del producto" textFill="WHITE">
+-               <font>
+-                  <Font size="18.0" />
+-               </font>
+-            </Label>
+-            <ImageView fx:id="imagenProducto" fitHeight="150.0" fitWidth="200.0" layoutX="70.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true" />
+-         </children></AnchorPane>
+-   </center>
+-   <bottom>
+-      <AnchorPane prefHeight="62.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Button fx:id="botonReintentar" mnemonicParsing="false" onAction="#reintentar" prefHeight="62.0" prefWidth="170.0" style="-fx-font-size: 18; -fx-background-color: #1e90ff;" text="Reintentar" textFill="WHITE" />
+-            <Button fx:id="botonCancelar" layoutX="170.0" mnemonicParsing="false" onAction="#cancelar" prefHeight="62.0" prefWidth="170.0" style="-fx-font-size: 18; -fx-background-color: #1e90ff;" text="Cancelar" textFill="WHITE" />
+-         </children>
+-      </AnchorPane>
+-   </bottom>
++<BorderPane prefHeight="264.0" prefWidth="327.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaErrorPublicacionSubastaController">
++    <center>
++        <AnchorPane prefHeight="543.0" prefWidth="335.0" BorderPane.alignment="CENTER">
++            <children>
++                <TextArea editable="false" layoutX="26.0" layoutY="58.0" prefHeight="126.0" prefWidth="274.0" style="-fx-font-size: 18;" text="El articulo no pudo ser publicado, debido a un error en el sistema" wrapText="true"/>
++                <Text fx:id="textoNombreProducto" layoutX="51.0" layoutY="36.0" style="-fx-background-color: #CCECFE;" text="Nombre del producto" textAlignment="CENTER">
++                    <font>
++                        <Font name="SansSerif Regular" size="24.0"/>
++                    </font>
++                </Text>
++                <ImageView fx:id="imagenProducto" fitHeight="43.0" fitWidth="46.0" layoutX="243.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
++                    <Image url="@../images/alerta.png"/>
++                </ImageView>
++                <Button fx:id="botonReintentar" layoutX="31.0" layoutY="199.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#accionReintentar" prefHeight="36.0" prefWidth="120.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;"
++                        text="Reintentar" textAlignment="CENTER">
++                    <font>
++                        <Font name="SansSerif Regular" size="20.0"/>
++                    </font>
++                    <opaqueInsets>
++                        <Insets/>
++                    </opaqueInsets>
++                </Button>
++                <Button fx:id="botonCancelar" layoutX="177.0" layoutY="199.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#accionCancelar" prefHeight="36.0" prefWidth="120.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;"
++                        text="Cancelar" textAlignment="CENTER">
++                    <font>
++                        <Font name="SansSerif Regular" size="20.0"/>
++                    </font>
++                    <opaqueInsets>
++                        <Insets/>
++                    </opaqueInsets>
++                </Button>
++            </children>
++        </AnchorPane>
++    </center>
+ </BorderPane>
+Index: src/main/resources/view/Ingresar.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.PasswordField?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.BorderPane?>\r\n<?import javafx.scene.text.Font?>\r\n<?import javafx.scene.text.Text?>\r\n\r\n<BorderPane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"600.0\" prefWidth=\"335.0\" xmlns=\"http://javafx.com/javafx/16\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"pujaQpuja.controller.pantallas.IngresarController\">\r\n   <center>\r\n      <AnchorPane prefHeight=\"200.0\" prefWidth=\"200.0\" style=\"-fx-background-color: #393939;\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <Text fill=\"WHITE\" layoutX=\"96.0\" layoutY=\"60.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Puja que Puja\">\r\n               <font>\r\n                  <Font size=\"24.0\" />\r\n               </font>\r\n            </Text>\r\n            <ImageView fitHeight=\"200.0\" fitWidth=\"149.0\" layoutX=\"102.0\" layoutY=\"119.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n               <image>\r\n                  <Image url=\"@../images/logo.png\" />\r\n               </image>\r\n            </ImageView>\r\n            <Text fill=\"#f5f5f5\" layoutX=\"23.0\" layoutY=\"374.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Correo electrónico\">\r\n               <font>\r\n                  <Font size=\"18.0\" />\r\n               </font>\r\n            </Text>\r\n            <Text fill=\"WHITE\" layoutX=\"29.0\" layoutY=\"465.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Contraseña\">\r\n               <font>\r\n                  <Font size=\"18.0\" />\r\n               </font>\r\n            </Text>\r\n            <TextField id=\"correoIngresar\" fx:id=\"campoCorreo\" layoutX=\"23.0\" layoutY=\"394.0\" prefHeight=\"28.0\" prefWidth=\"290.0\" style=\"-fx-background-color: grey;\" />\r\n            <Button id=\"ingresarIngresar\" fx:id=\"botonIngresar\" layoutX=\"120.0\" layoutY=\"542.0\" mnemonicParsing=\"false\" prefHeight=\"32.0\" prefWidth=\"95.0\" style=\"-fx-background-color: #1e90ff;\" text=\"Ingresar\" textFill=\"WHITE\" />\r\n            <PasswordField id=\"contraIngresar\" fx:id=\"campoPassword\" layoutX=\"22.0\" layoutY=\"485.0\" prefHeight=\"28.0\" prefWidth=\"290.0\" style=\"-fx-background-color: grey;\" />\r\n         </children>\r\n      </AnchorPane>\r\n   </center>\r\n</BorderPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/view/Ingresar.fxml b/src/main/resources/view/Ingresar.fxml
+--- a/src/main/resources/view/Ingresar.fxml	(revision a53694365ae5542e419df9d35afddb8974849330)
++++ b/src/main/resources/view/Ingresar.fxml	(date 1618448011811)
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
++<?import javafx.geometry.Insets?>
+ <?import javafx.scene.control.Button?>
+ <?import javafx.scene.control.PasswordField?>
+ <?import javafx.scene.control.TextField?>
+@@ -10,34 +11,42 @@
+ <?import javafx.scene.text.Font?>
+ <?import javafx.scene.text.Text?>
+ 
+-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.IngresarController">
+-   <center>
+-      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #393939;" BorderPane.alignment="CENTER">
+-         <children>
+-            <Text fill="WHITE" layoutX="96.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Puja que Puja">
+-               <font>
+-                  <Font size="24.0" />
+-               </font>
++<BorderPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.IngresarController">
++    <top>
++        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
++            <Text layoutX="518.0" layoutY="70.0" style="-fx-background-color: #CCECFE;" text="Puja que Puja">
++                <font>
++                    <Font name="SansSerif Regular" size="36.0"/>
++                </font>
+             </Text>
+-            <ImageView fitHeight="200.0" fitWidth="149.0" layoutX="102.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
+-               <image>
+-                  <Image url="@../images/logo.png" />
+-               </image>
++            <ImageView fitHeight="322.0" fitWidth="294.0" layoutX="501.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/logo.png"/>
+             </ImageView>
+-            <Text fill="#f5f5f5" layoutX="23.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Correo electrónico">
+-               <font>
+-                  <Font size="18.0" />
+-               </font>
++            <Text layoutX="505.0" layoutY="440.0" style="-fx-background-color: #CCECFE;" text="Correo electrónico">
++                <font>
++                    <Font name="SansSerif Regular" size="20.0"/>
++                </font>
+             </Text>
+-            <Text fill="WHITE" layoutX="29.0" layoutY="465.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña">
+-               <font>
+-                  <Font size="18.0" />
+-               </font>
++            <Text layoutX="506.0" layoutY="521.0" style="-fx-background-color: #CCECFE;" text="Contraseña">
++                <font>
++                    <Font name="SansSerif Regular" size="20.0"/>
++                </font>
+             </Text>
+-            <TextField id="correoIngresar" fx:id="campoCorreo" layoutX="23.0" layoutY="394.0" prefHeight="28.0" prefWidth="290.0" style="-fx-background-color: grey;" />
+-            <Button id="ingresarIngresar" fx:id="botonIngresar" layoutX="120.0" layoutY="542.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="95.0" style="-fx-background-color: #1e90ff;" text="Ingresar" textFill="WHITE" />
+-            <PasswordField id="contraIngresar" fx:id="campoPassword" layoutX="22.0" layoutY="485.0" prefHeight="28.0" prefWidth="290.0" style="-fx-background-color: grey;" />
+-         </children>
+-      </AnchorPane>
+-   </center>
++            <TextField id="correoIngresar" fx:id="campoCorreo" layoutX="505.0" layoutY="446.0" style="-fx-background-color: #CCECFE;">
++                <font>
++                    <Font name="SansSerif Regular" size="20.0"/>
++                </font>
++            </TextField>
++            <Button id="ingresarIngresar" fx:id="botonIngresar" layoutX="506.0" layoutY="610.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#accionIngresar" prefHeight="37.0" prefWidth="249.0"
++                    style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Ingresar" textAlignment="CENTER">
++                <font>
++                    <Font name="SansSerif Regular" size="20.0"/>
++                </font>
++                <opaqueInsets>
++                    <Insets/>
++                </opaqueInsets>
++            </Button>
++            <PasswordField id="contraIngresar" fx:id="campoPassword" layoutX="505.0" layoutY="527.0" prefHeight="38.0" prefWidth="251.0" style="-fx-background-color: #CCECFE;"/>
++        </AnchorPane>
++    </top>
+ </BorderPane>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"bab415b7-8294-4919-b0ff-d59ce9d66de9\" name=\"Default Changelist\" comment=\"Organización pantallas en archivos y eliminación layout estilo pc a celular\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/images/ajustes.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/images/categoria.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/images/historial_compras.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/images/historial_ventas.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/images/logo_vertical.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/images/metodo_pago.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/images/notificacion.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/images/perfil.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/images/realizar_subasta.png\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/pujaQpuja/MainApp.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/pujaQpuja/MainApp.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/EditarPerfilController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/EditarPerfilController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/images/atras.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/images/atras.png\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/images/logo.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/images/logo.png\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/images/menu.png\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/images/menu.png\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/view/DetallesVenta.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/view/DetallesVenta.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/view/EditarPerfil.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/view/EditarPerfil.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/view/ErrorAutenticar.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/view/ErrorAutenticar.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/view/GanadorPuja.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/view/GanadorPuja.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/view/HistorialCompras.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/view/HistorialCompras.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/view/HistorialVentas.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/view/HistorialVentas.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/view/Informacion.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/view/Informacion.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/view/Inicio.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/view/Inicio.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/view/Plantilla.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/view/Plantilla.fxml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n        <option value=\"FxmlFile\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"develop\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n    <option name=\"UPDATE_TYPE\" value=\"REBASE\" />\r\n  </component>\r\n  <component name=\"GithubDefaultAccount\">\r\n    <option name=\"defaultAccountId\" value=\"76755c97-02cc-4320-8aef-4f230f760d6f\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1r2CgMMRiTvncp7uXrDWudQ04RB\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"ASKED_ADD_EXTERNAL_FILES\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"last_opened_file_path\" value=\"$USER_HOME$/AppData/Local/SceneBuilder/SceneBuilder.exe\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"preferences.sourceCode\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"E:\\Juanpa\\Programacion\\Java\\PujaQPuja\\src\\main\\java\\pujaQpuja\\controller\\pantallas\" />\r\n      <recent name=\"E:\\Juanpa\\Programacion\\Java\\PujaQPuja\\src\\main\\resources\\view\" />\r\n      <recent name=\"E:\\Juanpa\\Programacion\\Java\\PujaQPuja\\src\\main\\resources\\fxml\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"MainApp\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"ALTERNATIVE_JRE_PATH\" value=\"11\" />\r\n      <option name=\"ALTERNATIVE_JRE_PATH_ENABLED\" value=\"true\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"pujaQpuja.MainApp\" />\r\n      <module name=\"PujaQPuja\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"pujaQpuja.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.MainApp\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"ServiceViewManager\">\r\n    <option name=\"viewStates\">\r\n      <list>\r\n        <serviceView>\r\n          <treeState>\r\n            <expand />\r\n            <select />\r\n          </treeState>\r\n        </serviceView>\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"false\" transferred=\"true\" />\r\n  <component name=\"SvnConfiguration\">\r\n    <configuration />\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"bab415b7-8294-4919-b0ff-d59ce9d66de9\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1618164914011</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1618164914011</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Organización pantallas en archivos y eliminación layout estilo pc a celular\">\r\n      <created>1618166304646</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1618166304646</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"requerimiento/adaptacionPantallasAPc\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n    <MESSAGE value=\"Organización pantallas en archivos y eliminación layout estilo pc a celular\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Organización pantallas en archivos y eliminación layout estilo pc a celular\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision a53694365ae5542e419df9d35afddb8974849330)
++++ b/.idea/workspace.xml	(date 1618460057599)
+@@ -5,30 +5,25 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="bab415b7-8294-4919-b0ff-d59ce9d66de9" name="Default Changelist" comment="Organización pantallas en archivos y eliminación layout estilo pc a celular">
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/ajustes.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/categoria.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/historial_compras.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/historial_ventas.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/logo_vertical.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/metodo_pago.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/notificacion.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/perfil.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/realizar_subasta.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enviar.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/images/feliz.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/images/regular.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/images/triste.png" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/MainApp.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/EditarPerfilController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/EditarPerfilController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/atras.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/atras.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/logo.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/menu.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/menu.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/DetallesVenta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/DetallesVenta.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/EditarPerfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/EditarPerfil.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/ErrorAutenticar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ErrorAutenticar.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/GanadorPuja.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/GanadorPuja.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/HistorialCompras.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/HistorialCompras.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/HistorialVentas.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/HistorialVentas.fxml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/resources/view/Informacion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/Informacion.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/view/Ingresar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/Ingresar.fxml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/resources/view/Inicio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/Inicio.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/Plantilla.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/Plantilla.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/view/PantallaCalificarProducto.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaCalificarProducto.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/view/PantallaCatalogoError.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaCatalogoError.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/view/PantallaChat.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaChat.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/view/PantallaConfirmacionCambiosPerfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaConfirmacionCambiosPerfil.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/view/PantallaConfirmarPuja.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaConfirmarPuja.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/view/PantallaErrorPublicacionSubasta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaErrorPublicacionSubasta.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/view/PantallaErrorRegistro.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaErrorRegistro.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/view/PantallaExitoRealizarSubasta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaExitoRealizarSubasta.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/view/PantallaExitoRegistro.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaExitoRegistro.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/view/PantallaPerfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaPerfil.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/view/PantallaPujarXProducto.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaPujarXProducto.fxml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+Index: src/main/resources/view/Informacion.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.BorderPane?>\r\n<?import javafx.scene.shape.Line?>\r\n<?import javafx.scene.shape.Rectangle?>\r\n<?import javafx.scene.text.Font?>\r\n<?import javafx.scene.text.Text?>\r\n\r\n<BorderPane prefHeight=\"720.0\" prefWidth=\"1280.0\" style=\"-fx-background-color: #FFFFFF;\" xmlns=\"http://javafx.com/javafx/16\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"pujaQpuja.controller.pantallas.InformacionController\">\r\n    <top>\r\n        <AnchorPane prefHeight=\"39.0\" prefWidth=\"375.0\" BorderPane.alignment=\"CENTER\">\r\n            <Rectangle arcHeight=\"5.0\" arcWidth=\"5.0\" fill=\"#64b5f6\" height=\"78.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" strokeWidth=\"0.0\" width=\"1280.0\" />\r\n            <Label layoutX=\"347.0\" layoutY=\"8.0\" prefHeight=\"64.0\" prefWidth=\"259.0\" text=\"Más Información\">\r\n                <font>\r\n                    <Font name=\"Berlin Sans FB\" size=\"32.0\" />\r\n                </font>\r\n            </Label>\r\n            <ImageView fx:id=\"botonAtras\" fitHeight=\"45.0\" fitWidth=\"45.0\" layoutX=\"284.0\" layoutY=\"17.0\" onMouseClicked=\"#irAtras\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n                <Image url=\"@../images/atras.png\" />\r\n            </ImageView>\r\n            <ImageView fx:id=\"botonPerfil\" fitHeight=\"55.0\" fitWidth=\"51.0\" layoutX=\"1205.0\" layoutY=\"15.0\" onMouseClicked=\"#abrirPerfil\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n                <Image url=\"@../images/perfil.png\" />\r\n            </ImageView>\r\n        </AnchorPane>\r\n    </top>\r\n    <left>\r\n        <AnchorPane prefHeight=\"200.0\" prefWidth=\"200.0\" BorderPane.alignment=\"CENTER\">\r\n            <Rectangle arcHeight=\"5.0\" arcWidth=\"5.0\" fill=\"#bbc7d1\" height=\"763.0\" layoutY=\"-109.0\" stroke=\"#bbc7d1\" strokeType=\"INSIDE\" strokeWidth=\"0.0\" width=\"269.0\" />\r\n            <ImageView fitHeight=\"38.0\" fitWidth=\"38.0\" layoutX=\"13.0\" layoutY=\"60.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n                <Image url=\"@../images/menu.png\" />\r\n            </ImageView>\r\n            <Label layoutX=\"68.0\" layoutY=\"63.0\" prefHeight=\"33.0\" prefWidth=\"71.0\" text=\"Menú\">\r\n                <font>\r\n                    <Font name=\"SansSerif Bold\" size=\"24.0\" />\r\n                </font>\r\n            </Label>\r\n            <Line endX=\"145.0\" layoutX=\"123.0\" layoutY=\"220.0\" startX=\"-124.0\" stroke=\"#92b4d0\" />\r\n            <ImageView fitHeight=\"38.0\" fitWidth=\"38.0\" layoutX=\"13.0\" layoutY=\"166.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n                <Image url=\"@../images/ajustes.png\" />\r\n            </ImageView>\r\n            <Label layoutX=\"68.0\" layoutY=\"169.0\" prefHeight=\"33.0\" prefWidth=\"136.0\" text=\"Ajustes\">\r\n                <font>\r\n                    <Font name=\"Berlin Sans FB\" size=\"24.0\" />\r\n                </font>\r\n            </Label>\r\n            <Line endX=\"145.0\" layoutX=\"123.0\" layoutY=\"292.0\" startX=\"-124.0\" stroke=\"#92b4d0\" />\r\n            <ImageView fitHeight=\"38.0\" fitWidth=\"38.0\" layoutX=\"13.0\" layoutY=\"238.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n                <Image url=\"@../images/categoria.png\" />\r\n            </ImageView>\r\n            <Label layoutX=\"68.0\" layoutY=\"241.0\" prefHeight=\"33.0\" prefWidth=\"191.0\" text=\"Categorías\">\r\n                <font>\r\n                    <Font name=\"Berlin Sans FB\" size=\"24.0\" />\r\n                </font>\r\n            </Label>\r\n            <Line endX=\"145.0\" endY=\"1.0\" layoutX=\"123.0\" layoutY=\"362.0\" startX=\"-124.0\" stroke=\"#92b4d0\" />\r\n            <ImageView fitHeight=\"38.0\" fitWidth=\"38.0\" layoutX=\"11.0\" layoutY=\"310.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n                <Image url=\"@../images/realizar_subasta.png\" />\r\n            </ImageView>\r\n            <Label layoutX=\"66.0\" layoutY=\"313.0\" prefHeight=\"33.0\" prefWidth=\"191.0\" text=\"Realizar Subasta\">\r\n                <font>\r\n                    <Font name=\"Berlin Sans FB\" size=\"24.0\" />\r\n                </font>\r\n            </Label>\r\n            <Line endX=\"145.0\" layoutX=\"123.0\" layoutY=\"429.0\" startX=\"-124.0\" stroke=\"#92b4d0\" />\r\n            <ImageView fitHeight=\"38.0\" fitWidth=\"38.0\" layoutX=\"11.0\" layoutY=\"377.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n                <Image url=\"@../images/historial_ventas.png\" />\r\n            </ImageView>\r\n            <Label layoutX=\"66.0\" layoutY=\"380.0\" prefHeight=\"33.0\" prefWidth=\"191.0\" text=\"Historial Ventas\">\r\n                <font>\r\n                    <Font name=\"Berlin Sans FB\" size=\"24.0\" />\r\n                </font>\r\n            </Label>\r\n            <Line endX=\"145.0\" layoutX=\"123.0\" layoutY=\"499.0\" startX=\"-124.0\" stroke=\"#92b4d0\" />\r\n            <ImageView fitHeight=\"38.0\" fitWidth=\"38.0\" layoutX=\"12.0\" layoutY=\"446.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n                <Image url=\"@../images/historial_compras.png\" />\r\n            </ImageView>\r\n            <Label layoutX=\"67.0\" layoutY=\"449.0\" prefHeight=\"33.0\" prefWidth=\"191.0\" text=\"Historial Compras\">\r\n                <font>\r\n                    <Font name=\"Berlin Sans FB\" size=\"24.0\" />\r\n                </font>\r\n            </Label>\r\n            <Line endX=\"145.0\" layoutX=\"123.0\" layoutY=\"569.0\" startX=\"-124.0\" stroke=\"#92b4d0\" />\r\n            <ImageView fitHeight=\"38.0\" fitWidth=\"38.0\" layoutX=\"12.0\" layoutY=\"516.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n                <Image url=\"@../images/notificacion.png\" />\r\n            </ImageView>\r\n            <Label layoutX=\"67.0\" layoutY=\"519.0\" prefHeight=\"33.0\" prefWidth=\"191.0\" text=\"Notificaciones\">\r\n                <font>\r\n                    <Font name=\"Berlin Sans FB\" size=\"24.0\" />\r\n                </font>\r\n            </Label>\r\n            <Line endX=\"145.0\" layoutX=\"123.0\" layoutY=\"639.0\" startX=\"-124.0\" stroke=\"#92b4d0\" />\r\n            <ImageView fitHeight=\"38.0\" fitWidth=\"38.0\" layoutX=\"12.0\" layoutY=\"587.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n                <Image url=\"@../images/metodo_pago.png\" />\r\n            </ImageView>\r\n            <Label layoutX=\"67.0\" layoutY=\"590.0\" prefHeight=\"33.0\" prefWidth=\"191.0\" text=\"Método Pago\">\r\n                <font>\r\n                    <Font name=\"Berlin Sans FB\" size=\"24.0\" />\r\n                </font>\r\n            </Label>\r\n            <Line endX=\"145.0\" layoutX=\"124.0\" layoutY=\"150.0\" startX=\"-124.0\" stroke=\"#92b4d0\" />\r\n            <Rectangle fx:id=\"botonRectanguloAjustes\" arcHeight=\"5.0\" arcWidth=\"5.0\" fill=\"DODGERBLUE\" height=\"70.0\" layoutX=\"-1.0\" layoutY=\"150.0\" onMouseClicked=\"#abrirAjustes\" opacity=\"0.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" width=\"269.0\" />\r\n            <Rectangle fx:id=\"botonRectanguloCategorias\" arcHeight=\"5.0\" arcWidth=\"5.0\" fill=\"DODGERBLUE\" height=\"70.0\" layoutX=\"-1.0\" layoutY=\"222.0\" onMouseClicked=\"#abrirCategorias\" opacity=\"0.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" width=\"269.0\" />\r\n            <Rectangle fx:id=\"botonRectanguloRealizarSubasta\" arcHeight=\"5.0\" arcWidth=\"5.0\" fill=\"DODGERBLUE\" height=\"70.0\" layoutX=\"-1.0\" layoutY=\"292.0\" onMouseClicked=\"#abrirRealizarSubasta\" opacity=\"0.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" width=\"269.0\" />\r\n            <Rectangle fx:id=\"botonRectanguloHistorialVentas\" arcHeight=\"5.0\" arcWidth=\"5.0\" fill=\"DODGERBLUE\" height=\"70.0\" layoutX=\"-1.0\" layoutY=\"362.0\" onMouseClicked=\"#abrirHistorialVentas\" opacity=\"0.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" width=\"269.0\" />\r\n            <Rectangle fx:id=\"botonRectanguloHistorialCompras\" arcHeight=\"5.0\" arcWidth=\"5.0\" fill=\"DODGERBLUE\" height=\"70.0\" layoutX=\"-1.0\" layoutY=\"430.0\" onMouseClicked=\"#abrirHistorialCompras\" opacity=\"0.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" width=\"269.0\" />\r\n            <Rectangle fx:id=\"botonRectanguloNotificaciones\" arcHeight=\"5.0\" arcWidth=\"5.0\" fill=\"DODGERBLUE\" height=\"70.0\" layoutX=\"-1.0\" layoutY=\"501.0\" onMouseClicked=\"#abrirNotificaciones\" opacity=\"0.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" width=\"269.0\" />\r\n            <Rectangle fx:id=\"botonRectanguloMetodoPago\" arcHeight=\"5.0\" arcWidth=\"5.0\" fill=\"DODGERBLUE\" height=\"70.0\" layoutX=\"-1.0\" layoutY=\"569.0\" onMouseClicked=\"#abririMetodoPago\" opacity=\"0.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" width=\"269.0\" />\r\n            <ImageView fitHeight=\"133.0\" fitWidth=\"240.0\" layoutX=\"22.0\" layoutY=\"-83.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n                <Image url=\"@../images/logo_vertical.png\" />\r\n            </ImageView>\r\n        </AnchorPane>\r\n    </left>\r\n    <center>\r\n        <AnchorPane prefHeight=\"200.0\" prefWidth=\"200.0\" style=\"-fx-background-color: #393939;\" BorderPane.alignment=\"CENTER\">\r\n            <ImageView fx:id=\"imagenInformacion\" fitHeight=\"388.0\" fitWidth=\"424.0\" layoutX=\"58.0\" layoutY=\"140.0\" pickOnBounds=\"true\" preserveRatio=\"true\" />\r\n            <Text layoutX=\"505.0\" layoutY=\"180.0\" style=\"-fx-background-color: #CCECFE;\" text=\"Tiempo en subasta:\">\r\n                <font>\r\n                    <Font name=\"SansSerif Regular\" size=\"20.0\" />\r\n                </font>\r\n            </Text>\r\n            <Text layoutX=\"505.0\" layoutY=\"264.0\" style=\"-fx-background-color: #CCECFE;\" text=\"Tiempo restante     :\" wrappingWidth=\"182.068359375\">\r\n                <font>\r\n                    <Font name=\"SansSerif Regular\" size=\"20.0\" />\r\n                </font>\r\n            </Text>\r\n            <Text layoutX=\"505.0\" layoutY=\"342.0\" style=\"-fx-background-color: #CCECFE;\" text=\"Total de pujas        :\">\r\n                <font>\r\n                    <Font name=\"SansSerif Regular\" size=\"20.0\" />\r\n                </font>\r\n            </Text>\r\n            <Text layoutX=\"505.0\" layoutY=\"416.0\" style=\"-fx-background-color: #CCECFE;\" text=\"Precio inicial          :\">\r\n                <font>\r\n                    <Font name=\"SansSerif Regular\" size=\"20.0\" />\r\n                </font>\r\n            </Text>\r\n            <Text layoutX=\"505.0\" layoutY=\"488.0\" style=\"-fx-background-color: #CCECFE;\" text=\"Precio actual          :\">\r\n                <font>\r\n                    <Font name=\"SansSerif Regular\" size=\"20.0\" />\r\n                </font>\r\n            </Text>\r\n            <TextField id=\"tiempoSubastaInformacion\" fx:id=\"campoTiempoSubasta\" layoutX=\"701.0\" layoutY=\"155.0\" promptText=\"Tiempo subasta\" style=\"-fx-background-color: #CCECFE;\">\r\n                <font>\r\n                    <Font name=\"SansSerif Regular\" size=\"20.0\" />\r\n                </font>\r\n            </TextField>\r\n            <TextField id=\"precioActualInformacion\" fx:id=\"campoPrecioActual\" layoutX=\"701.0\" layoutY=\"462.0\" promptText=\"Precio Actual\" style=\"-fx-background-color: #CCECFE;\">\r\n                <font>\r\n                    <Font name=\"SansSerif Regular\" size=\"20.0\" />\r\n                </font>\r\n            </TextField>\r\n            <TextField id=\"tiempoRestanteInformacion\" fx:id=\"campoTiempoRestante\" layoutX=\"701.0\" layoutY=\"238.0\" promptText=\"Tiempo Restante\" style=\"-fx-background-color: #CCECFE;\">\r\n                <font>\r\n                    <Font name=\"SansSerif Regular\" size=\"20.0\" />\r\n                </font>\r\n            </TextField>\r\n            <TextField id=\"totalPujasInformacion\" fx:id=\"campoTotalPujas\" layoutX=\"701.0\" layoutY=\"316.0\" promptText=\"Total Pujas\" style=\"-fx-background-color: #CCECFE;\">\r\n                <font>\r\n                    <Font name=\"SansSerif Regular\" size=\"20.0\" />\r\n                </font>\r\n            </TextField>\r\n            <TextField id=\"precioInicialInformacion\" fx:id=\"campoPrecioInicial\" layoutX=\"701.0\" layoutY=\"390.0\" promptText=\"Precio Inicial\" style=\"-fx-background-color: #CCECFE;\">\r\n                <font>\r\n                    <Font name=\"SansSerif Regular\" size=\"20.0\" />\r\n                </font>\r\n            </TextField>\r\n        </AnchorPane>\r\n    </center>\r\n</BorderPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/view/Informacion.fxml b/src/main/resources/view/Informacion.fxml
+--- a/src/main/resources/view/Informacion.fxml	(revision a53694365ae5542e419df9d35afddb8974849330)
++++ b/src/main/resources/view/Informacion.fxml	(date 1618443804726)
+@@ -148,22 +148,22 @@
+                     <Font name="SansSerif Regular" size="20.0" />
+                 </font>
+             </TextField>
+-            <TextField id="precioActualInformacion" fx:id="campoPrecioActual" layoutX="701.0" layoutY="462.0" promptText="Precio Actual" style="-fx-background-color: #CCECFE;">
++            <TextField id="tiempoRestanteInformacion" fx:id="campoTiempoRestante" layoutX="701.0" layoutY="238.0" promptText="Tiempo Restante" style="-fx-background-color: #CCECFE;">
+                 <font>
+                     <Font name="SansSerif Regular" size="20.0" />
+                 </font>
+             </TextField>
+-            <TextField id="tiempoRestanteInformacion" fx:id="campoTiempoRestante" layoutX="701.0" layoutY="238.0" promptText="Tiempo Restante" style="-fx-background-color: #CCECFE;">
++            <TextField id="totalPujasInformacion" fx:id="campoTotalPujas" layoutX="701.0" layoutY="316.0" promptText="Total Pujas" style="-fx-background-color: #CCECFE;">
+                 <font>
+                     <Font name="SansSerif Regular" size="20.0" />
+                 </font>
+             </TextField>
+-            <TextField id="totalPujasInformacion" fx:id="campoTotalPujas" layoutX="701.0" layoutY="316.0" promptText="Total Pujas" style="-fx-background-color: #CCECFE;">
++            <TextField id="precioInicialInformacion" fx:id="campoPrecioInicial" layoutX="701.0" layoutY="390.0" promptText="Precio Inicial" style="-fx-background-color: #CCECFE;">
+                 <font>
+                     <Font name="SansSerif Regular" size="20.0" />
+                 </font>
+             </TextField>
+-            <TextField id="precioInicialInformacion" fx:id="campoPrecioInicial" layoutX="701.0" layoutY="390.0" promptText="Precio Inicial" style="-fx-background-color: #CCECFE;">
++            <TextField id="precioActualInformacion" fx:id="campoPrecioActual" layoutX="701.0" layoutY="462.0" promptText="Precio Actual" style="-fx-background-color: #CCECFE;">
+                 <font>
+                     <Font name="SansSerif Regular" size="20.0" />
+                 </font>
+Index: src/main/resources/view/PantallaConfirmacionCambiosPerfil.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.TextArea?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.BorderPane?>\r\n<?import javafx.scene.shape.Rectangle?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<BorderPane prefHeight=\"401.0\" prefWidth=\"340.0\" style=\"-fx-background-color: #393939;\" xmlns=\"http://javafx.com/javafx/16\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"pujaQpuja.controller.pantallas.PantallaConfirmacionCambiosPerfilController\">\r\n   <top>\r\n      <AnchorPane prefHeight=\"78.0\" prefWidth=\"335.0\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <Rectangle arcHeight=\"5.0\" arcWidth=\"5.0\" fill=\"DODGERBLUE\" height=\"65.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" width=\"340.0\" />\r\n            <Label layoutX=\"37.0\" layoutY=\"20.0\" text=\"Alerta\" textFill=\"WHITE\">\r\n               <font>\r\n                  <Font size=\"17.0\" />\r\n               </font>\r\n            </Label>\r\n         </children>\r\n      </AnchorPane>\r\n   </top>\r\n   <center>\r\n      <AnchorPane prefHeight=\"543.0\" prefWidth=\"335.0\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <TextArea editable=\"false\" layoutX=\"34.0\" layoutY=\"53.0\" prefHeight=\"154.0\" prefWidth=\"272.0\" text=\"&#10;¿Esta de acuerdo con los cambios?\" wrapText=\"true\">\r\n               <font>\r\n                  <Font size=\"18.0\" />\r\n               </font>\r\n            </TextArea>\r\n         </children></AnchorPane>\r\n   </center>\r\n   <bottom>\r\n      <AnchorPane prefHeight=\"62.0\" prefWidth=\"335.0\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <Button fx:id=\"botonSi\" mnemonicParsing=\"false\" onAction=\"#aceptarCambios\" prefHeight=\"62.0\" prefWidth=\"170.0\" style=\"-fx-font-size: 18; -fx-background-color: #1e90ff;\" text=\"Si\" textFill=\"WHITE\" />\r\n            <Button fx:id=\"botonNo\" layoutX=\"170.0\" mnemonicParsing=\"false\" onAction=\"#cancelarCambios\" prefHeight=\"62.0\" prefWidth=\"170.0\" style=\"-fx-font-size: 18; -fx-background-color: #1e90ff;\" text=\"No\" textFill=\"WHITE\" />\r\n         </children>\r\n      </AnchorPane>\r\n   </bottom>\r\n</BorderPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/view/PantallaConfirmacionCambiosPerfil.fxml b/src/main/resources/view/PantallaConfirmacionCambiosPerfil.fxml
+--- a/src/main/resources/view/PantallaConfirmacionCambiosPerfil.fxml	(revision a53694365ae5542e419df9d35afddb8974849330)
++++ b/src/main/resources/view/PantallaConfirmacionCambiosPerfil.fxml	(date 1618456830366)
+@@ -1,42 +1,40 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
++<?import javafx.geometry.Insets?>
+ <?import javafx.scene.control.Button?>
+-<?import javafx.scene.control.Label?>
+ <?import javafx.scene.control.TextArea?>
+ <?import javafx.scene.layout.AnchorPane?>
+ <?import javafx.scene.layout.BorderPane?>
+-<?import javafx.scene.shape.Rectangle?>
+ <?import javafx.scene.text.Font?>
+ 
+-<BorderPane prefHeight="401.0" prefWidth="340.0" style="-fx-background-color: #393939;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaConfirmacionCambiosPerfilController">
+-   <top>
+-      <AnchorPane prefHeight="78.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="65.0" stroke="BLACK" strokeType="INSIDE" width="340.0" />
+-            <Label layoutX="37.0" layoutY="20.0" text="Alerta" textFill="WHITE">
+-               <font>
+-                  <Font size="17.0" />
+-               </font>
+-            </Label>
+-         </children>
+-      </AnchorPane>
+-   </top>
+-   <center>
+-      <AnchorPane prefHeight="543.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <TextArea editable="false" layoutX="34.0" layoutY="53.0" prefHeight="154.0" prefWidth="272.0" text="&#10;¿Esta de acuerdo con los cambios?" wrapText="true">
+-               <font>
+-                  <Font size="18.0" />
+-               </font>
++<BorderPane prefHeight="247.0" prefWidth="315.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
++            fx:controller="pujaQpuja.controller.pantallas.PantallaConfirmacionCambiosPerfilController">
++    <center>
++        <AnchorPane prefHeight="543.0" prefWidth="335.0" BorderPane.alignment="CENTER">
++            <TextArea editable="false" layoutX="22.0" layoutY="20.0" prefHeight="154.0" prefWidth="272.0" text="&#10;¿Está de acuerdo con los cambios?" wrapText="true">
++                <font>
++                    <Font size="18.0"/>
++                </font>
+             </TextArea>
+-         </children></AnchorPane>
+-   </center>
+-   <bottom>
+-      <AnchorPane prefHeight="62.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Button fx:id="botonSi" mnemonicParsing="false" onAction="#aceptarCambios" prefHeight="62.0" prefWidth="170.0" style="-fx-font-size: 18; -fx-background-color: #1e90ff;" text="Si" textFill="WHITE" />
+-            <Button fx:id="botonNo" layoutX="170.0" mnemonicParsing="false" onAction="#cancelarCambios" prefHeight="62.0" prefWidth="170.0" style="-fx-font-size: 18; -fx-background-color: #1e90ff;" text="No" textFill="WHITE" />
+-         </children>
+-      </AnchorPane>
+-   </bottom>
++            <Button fx:id="botonSi" layoutX="42.0" layoutY="189.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#accionSI" prefHeight="37.0" prefWidth="100.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Si"
++                    textAlignment="CENTER">
++                <font>
++                    <Font name="SansSerif Regular" size="20.0"/>
++                </font>
++                <opaqueInsets>
++                    <Insets/>
++                </opaqueInsets>
++            </Button>
++            <Button fx:id="botonNo" layoutX="175.0" layoutY="189.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#accionNo" prefHeight="37.0" prefWidth="100.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="No"
++                    textAlignment="CENTER">
++                <font>
++                    <Font name="SansSerif Regular" size="20.0"/>
++                </font>
++                <opaqueInsets>
++                    <Insets/>
++                </opaqueInsets>
++            </Button>
++        </AnchorPane>
++    </center>
++
+ </BorderPane>
+Index: src/main/resources/view/PantallaErrorRegistro.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.TextArea?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.BorderPane?>\r\n<?import javafx.scene.shape.Rectangle?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<BorderPane prefHeight=\"501.0\" prefWidth=\"335.0\" style=\"-fx-background-color: #393939;\" xmlns=\"http://javafx.com/javafx/16\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"pujaQpuja.controller.pantallas.PantallaErrorRegistroController\">\r\n   <top>\r\n      <AnchorPane prefHeight=\"78.0\" prefWidth=\"335.0\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <Rectangle arcHeight=\"5.0\" arcWidth=\"5.0\" fill=\"DODGERBLUE\" height=\"65.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" width=\"338.0\" />\r\n            <Label layoutX=\"37.0\" layoutY=\"20.0\" text=\"Error\" textFill=\"WHITE\">\r\n               <font>\r\n                  <Font size=\"17.0\" />\r\n               </font>\r\n            </Label>\r\n         </children>\r\n      </AnchorPane>\r\n   </top>\r\n   <center>\r\n      <AnchorPane prefHeight=\"543.0\" prefWidth=\"335.0\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <TextArea editable=\"false\" layoutX=\"42.0\" layoutY=\"94.0\" prefHeight=\"153.0\" prefWidth=\"252.0\" style=\"-fx-font-size: 18;\" text=\"Hubo un error en registrar usuario por campos erroneos&#10;\" wrapText=\"true\">\r\n               <font>\r\n                  <Font size=\"14.0\" />\r\n               </font>\r\n            </TextArea>\r\n         </children></AnchorPane>\r\n   </center>\r\n   <bottom>\r\n      <AnchorPane prefHeight=\"62.0\" prefWidth=\"335.0\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <Button fx:id=\"botonRegresar\" mnemonicParsing=\"false\" onAction=\"#regresar\" prefHeight=\"62.0\" prefWidth=\"170.0\" style=\"-fx-font-size: 18; -fx-background-color: #1e90ff;\" text=\"Regresar\" textFill=\"WHITE\" />\r\n            <Button fx:id=\"botonCancelar\" layoutX=\"168.0\" mnemonicParsing=\"false\" onAction=\"#cancelar\" prefHeight=\"62.0\" prefWidth=\"170.0\" style=\"-fx-font-size: 18; -fx-background-color: #1e90ff;\" text=\"Cancelar\" textFill=\"WHITE\" />\r\n         </children>\r\n      </AnchorPane>\r\n   </bottom>\r\n</BorderPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/view/PantallaErrorRegistro.fxml b/src/main/resources/view/PantallaErrorRegistro.fxml
+--- a/src/main/resources/view/PantallaErrorRegistro.fxml	(revision a53694365ae5542e419df9d35afddb8974849330)
++++ b/src/main/resources/view/PantallaErrorRegistro.fxml	(date 1618457551443)
+@@ -1,42 +1,43 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
++<?import javafx.geometry.Insets?>
+ <?import javafx.scene.control.Button?>
+-<?import javafx.scene.control.Label?>
+ <?import javafx.scene.control.TextArea?>
++<?import javafx.scene.image.Image?>
++<?import javafx.scene.image.ImageView?>
+ <?import javafx.scene.layout.AnchorPane?>
+ <?import javafx.scene.layout.BorderPane?>
+-<?import javafx.scene.shape.Rectangle?>
+ <?import javafx.scene.text.Font?>
+ 
+-<BorderPane prefHeight="501.0" prefWidth="335.0" style="-fx-background-color: #393939;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaErrorRegistroController">
+-   <top>
+-      <AnchorPane prefHeight="78.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="65.0" stroke="BLACK" strokeType="INSIDE" width="338.0" />
+-            <Label layoutX="37.0" layoutY="20.0" text="Error" textFill="WHITE">
+-               <font>
+-                  <Font size="17.0" />
+-               </font>
+-            </Label>
+-         </children>
+-      </AnchorPane>
+-   </top>
+-   <center>
+-      <AnchorPane prefHeight="543.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <TextArea editable="false" layoutX="42.0" layoutY="94.0" prefHeight="153.0" prefWidth="252.0" style="-fx-font-size: 18;" text="Hubo un error en registrar usuario por campos erroneos&#10;" wrapText="true">
+-               <font>
+-                  <Font size="14.0" />
+-               </font>
++<BorderPane prefHeight="236.0" prefWidth="305.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaErrorRegistroController">
++    <center>
++        <AnchorPane prefHeight="260.0" prefWidth="300.0" BorderPane.alignment="CENTER">
++            <TextArea editable="false" layoutX="26.0" layoutY="25.0" prefHeight="134.0" prefWidth="252.0" style="-fx-font-size: 18;" text="Hubo un error en registrar usuario por campos erroneos&#10;" wrapText="true">
++                <font>
++                    <Font size="14.0"/>
++                </font>
+             </TextArea>
+-         </children></AnchorPane>
+-   </center>
+-   <bottom>
+-      <AnchorPane prefHeight="62.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Button fx:id="botonRegresar" mnemonicParsing="false" onAction="#regresar" prefHeight="62.0" prefWidth="170.0" style="-fx-font-size: 18; -fx-background-color: #1e90ff;" text="Regresar" textFill="WHITE" />
+-            <Button fx:id="botonCancelar" layoutX="168.0" mnemonicParsing="false" onAction="#cancelar" prefHeight="62.0" prefWidth="170.0" style="-fx-font-size: 18; -fx-background-color: #1e90ff;" text="Cancelar" textFill="WHITE" />
+-         </children>
+-      </AnchorPane>
+-   </bottom>
++            <Button fx:id="botonRegresar" layoutX="22.0" layoutY="178.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#accionRegresar" prefHeight="36.0" prefWidth="120.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;"
++                    text="Regresar" textAlignment="CENTER">
++                <font>
++                    <Font name="SansSerif Regular" size="20.0"/>
++                </font>
++                <opaqueInsets>
++                    <Insets/>
++                </opaqueInsets>
++            </Button>
++            <Button fx:id="botonCancelar" layoutX="162.0" layoutY="178.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#accionCancelar" prefHeight="36.0" prefWidth="120.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;"
++                    text="Cancelar" textAlignment="CENTER">
++                <font>
++                    <Font name="SansSerif Regular" size="20.0"/>
++                </font>
++                <opaqueInsets>
++                    <Insets/>
++                </opaqueInsets>
++            </Button>
++            <ImageView fitHeight="57.0" fitWidth="67.0" layoutX="210.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/alerta.png"/>
++            </ImageView>
++        </AnchorPane>
++    </center>
+ </BorderPane>
+Index: src/main/resources/view/PantallaConfirmarPuja.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.BorderPane?>\r\n<?import javafx.scene.shape.Rectangle?>\r\n<?import javafx.scene.text.Font?>\r\n<?import javafx.scene.text.Text?>\r\n\r\n<BorderPane prefHeight=\"600.0\" prefWidth=\"335.0\" style=\"-fx-background-color: #393939;\" xmlns=\"http://javafx.com/javafx/16\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"pujaQpuja.controller.pantallas.PantallaConfirmarPujaController\">\r\n   <top>\r\n      <AnchorPane prefHeight=\"79.0\" prefWidth=\"345.0\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <Rectangle arcHeight=\"5.0\" arcWidth=\"5.0\" fill=\"DODGERBLUE\" height=\"79.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" width=\"338.0\" />\r\n            <Text layoutX=\"14.0\" layoutY=\"44.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Confirmación\">\r\n               <font>\r\n                  <Font name=\"System Bold Italic\" size=\"19.0\" />\r\n               </font>\r\n            </Text>\r\n         </children>\r\n      </AnchorPane>\r\n   </top>\r\n   <left>\r\n      <AnchorPane prefHeight=\"200.0\" prefWidth=\"200.0\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <Text layoutX=\"3.0\" layoutY=\"18.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Puja que Puja\">\r\n               <font>\r\n                  <Font name=\"System Bold Italic\" size=\"17.0\" />\r\n               </font>\r\n            </Text>\r\n            <TextField fx:id=\"campoBuscarPuja\" layoutX=\"1.0\" layoutY=\"32.0\" prefHeight=\"36.0\" prefWidth=\"335.0\" promptText=\"Search\" style=\"-fx-alignment: #202142; -fx-background-color: #393937; -fx-border-color: #202142;\" />\r\n            <Button fx:id=\"botonPerfil\" layoutX=\"222.0\" layoutY=\"-2.0\" mnemonicParsing=\"false\" prefHeight=\"26.0\" prefWidth=\"30.0\">\r\n               <graphic>\r\n                  <ImageView fitHeight=\"21.0\" fitWidth=\"20.0\">\r\n                     <image>\r\n                        <Image url=\"@../images/usuario.png\" />\r\n                     </image>\r\n                  </ImageView>\r\n               </graphic></Button>\r\n            <Button fx:id=\"botonRegresar\" layoutX=\"284.0\" layoutY=\"-2.0\" mnemonicParsing=\"false\" prefHeight=\"26.0\" prefWidth=\"30.0\">\r\n               <graphic>\r\n                  <ImageView fitHeight=\"22.0\" fitWidth=\"26.0\">\r\n                     <image>\r\n                        <Image url=\"@../images/atras.png\" />\r\n                     </image>\r\n                  </ImageView>\r\n               </graphic></Button>\r\n            <Button fx:id=\"botonBuscarPuja\" layoutX=\"266.0\" layoutY=\"37.0\" mnemonicParsing=\"false\" prefHeight=\"26.0\" prefWidth=\"30.0\">\r\n               <graphic>\r\n                  <ImageView fitHeight=\"22.0\" fitWidth=\"22.0\">\r\n                     <image>\r\n                        <Image url=\"@../images/loupe.png\" />\r\n                     </image>\r\n                  </ImageView>\r\n               </graphic></Button>\r\n            <Rectangle arcHeight=\"5.0\" arcWidth=\"5.0\" height=\"200.0\" layoutX=\"19.0\" layoutY=\"161.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" width=\"300.0\" />\r\n            <Label layoutX=\"63.0\" layoutY=\"231.0\" text=\"¿Esta seguro de hacer la&#10;siguiente subasta?\" textAlignment=\"CENTER\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Label>\r\n            <ImageView fitHeight=\"50.0\" fitWidth=\"43.0\" layoutX=\"272.0\" layoutY=\"313.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n               <image>\r\n                  <Image url=\"@../../../../../../../../../Fotos/Rdf866ef98ca23634384fe06c9c947bf2.png\" />\r\n               </image>\r\n            </ImageView>\r\n            <Button fx:id=\"botonSi\" layoutX=\"58.0\" layoutY=\"438.0\" mnemonicParsing=\"false\" prefHeight=\"30.0\" prefWidth=\"80.0\" text=\"Si\" />\r\n            <Button fx:id=\"botonNo\" layoutX=\"209.0\" layoutY=\"438.0\" mnemonicParsing=\"false\" prefHeight=\"30.0\" prefWidth=\"80.0\" text=\"No\" />\r\n         </children>\r\n      </AnchorPane>\r\n   </left>\r\n</BorderPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/view/PantallaConfirmarPuja.fxml b/src/main/resources/view/PantallaConfirmarPuja.fxml
+--- a/src/main/resources/view/PantallaConfirmarPuja.fxml	(revision a53694365ae5542e419df9d35afddb8974849330)
++++ b/src/main/resources/view/PantallaConfirmarPuja.fxml	(date 1618457684266)
+@@ -1,76 +1,45 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
++<?import javafx.geometry.Insets?>
+ <?import javafx.scene.control.Button?>
+ <?import javafx.scene.control.Label?>
+-<?import javafx.scene.control.TextField?>
+ <?import javafx.scene.image.Image?>
+ <?import javafx.scene.image.ImageView?>
+ <?import javafx.scene.layout.AnchorPane?>
+ <?import javafx.scene.layout.BorderPane?>
+ <?import javafx.scene.shape.Rectangle?>
+ <?import javafx.scene.text.Font?>
+-<?import javafx.scene.text.Text?>
+ 
+-<BorderPane prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #393939;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaConfirmarPujaController">
+-   <top>
+-      <AnchorPane prefHeight="79.0" prefWidth="345.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="79.0" stroke="BLACK" strokeType="INSIDE" width="338.0" />
+-            <Text layoutX="14.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmación">
+-               <font>
+-                  <Font name="System Bold Italic" size="19.0" />
+-               </font>
+-            </Text>
+-         </children>
+-      </AnchorPane>
+-   </top>
+-   <left>
+-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Text layoutX="3.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Puja que Puja">
+-               <font>
+-                  <Font name="System Bold Italic" size="17.0" />
+-               </font>
+-            </Text>
+-            <TextField fx:id="campoBuscarPuja" layoutX="1.0" layoutY="32.0" prefHeight="36.0" prefWidth="335.0" promptText="Search" style="-fx-alignment: #202142; -fx-background-color: #393937; -fx-border-color: #202142;" />
+-            <Button fx:id="botonPerfil" layoutX="222.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="30.0">
+-               <graphic>
+-                  <ImageView fitHeight="21.0" fitWidth="20.0">
+-                     <image>
+-                        <Image url="@../images/usuario.png" />
+-                     </image>
+-                  </ImageView>
+-               </graphic></Button>
+-            <Button fx:id="botonRegresar" layoutX="284.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="30.0">
+-               <graphic>
+-                  <ImageView fitHeight="22.0" fitWidth="26.0">
+-                     <image>
+-                        <Image url="@../images/atras.png" />
+-                     </image>
+-                  </ImageView>
+-               </graphic></Button>
+-            <Button fx:id="botonBuscarPuja" layoutX="266.0" layoutY="37.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="30.0">
+-               <graphic>
+-                  <ImageView fitHeight="22.0" fitWidth="22.0">
+-                     <image>
+-                        <Image url="@../images/loupe.png" />
+-                     </image>
+-                  </ImageView>
+-               </graphic></Button>
+-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="19.0" layoutY="161.0" stroke="BLACK" strokeType="INSIDE" width="300.0" />
+-            <Label layoutX="63.0" layoutY="231.0" text="¿Esta seguro de hacer la&#10;siguiente subasta?" textAlignment="CENTER">
+-               <font>
+-                  <Font size="20.0" />
+-               </font>
+-            </Label>
+-            <ImageView fitHeight="50.0" fitWidth="43.0" layoutX="272.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
+-               <image>
+-                  <Image url="@../../../../../../../../../Fotos/Rdf866ef98ca23634384fe06c9c947bf2.png" />
+-               </image>
+-            </ImageView>
+-            <Button fx:id="botonSi" layoutX="58.0" layoutY="438.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="Si" />
+-            <Button fx:id="botonNo" layoutX="209.0" layoutY="438.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="No" />
+-         </children>
+-      </AnchorPane>
+-   </left>
++<BorderPane prefHeight="265.0" prefWidth="335.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaConfirmarPujaController">
++    <center>
++        <AnchorPane prefHeight="259.0" prefWidth="335.0" BorderPane.alignment="CENTER">
++            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d4d4" height="161.0" layoutX="18.0" layoutY="23.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="300.0"/>
++            <Label layoutX="62.0" layoutY="54.0" text="¿Esta seguro de hacer la siguiente subasta?" textAlignment="CENTER">
++                <font>
++                    <Font size="20.0"/>
++                </font>
++            </Label>
++            <ImageView fitHeight="36.0" fitWidth="37.0" layoutX="263.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/informacion.png"/>
++            </ImageView>
++            <Button fx:id="botonSi" layoutX="44.0" layoutY="207.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#accionSi" prefHeight="36.0" prefWidth="100.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Si"
++                    textAlignment="CENTER">
++                <font>
++                    <Font name="SansSerif Regular" size="20.0"/>
++                </font>
++                <opaqueInsets>
++                    <Insets/>
++                </opaqueInsets>
++            </Button>
++            <Button fx:id="botonNo" layoutX="192.0" layoutY="207.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#accionNo" prefHeight="36.0" prefWidth="100.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="No"
++                    textAlignment="CENTER">
++                <font>
++                    <Font name="SansSerif Regular" size="20.0"/>
++                </font>
++                <opaqueInsets>
++                    <Insets/>
++                </opaqueInsets>
++            </Button>
++        </AnchorPane>
++    </center>
+ </BorderPane>
+Index: src/main/resources/view/PantallaChat.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.TextArea?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.BorderPane?>\r\n<?import javafx.scene.shape.Polygon?>\r\n<?import javafx.scene.shape.Rectangle?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<BorderPane prefHeight=\"600.0\" prefWidth=\"335.0\" style=\"-fx-background-color: #393939;\" xmlns=\"http://javafx.com/javafx/16\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"pujaQpuja.controller.pantallas.PantallaChatController\">\r\n   <top>\r\n      <AnchorPane prefHeight=\"78.0\" prefWidth=\"335.0\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <Rectangle arcHeight=\"5.0\" arcWidth=\"5.0\" fill=\"DODGERBLUE\" height=\"65.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" width=\"335.0\" />\r\n            <Label layoutX=\"37.0\" layoutY=\"20.0\" text=\"Chats\" textFill=\"WHITE\">\r\n               <font>\r\n                  <Font size=\"17.0\" />\r\n               </font>\r\n            </Label>\r\n         </children>\r\n      </AnchorPane>\r\n   </top>\r\n   <center>\r\n      <AnchorPane prefHeight=\"543.0\" prefWidth=\"335.0\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <Polygon fx:id=\"botonEnviar\" fill=\"DODGERBLUE\" layoutX=\"315.0\" layoutY=\"391.0\" onMouseClicked=\"#enviar\" points=\"-33.0, 36.0, -3.0, 24.0, -33.0, 8.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" />\r\n            <TextArea layoutX=\"27.0\" layoutY=\"43.0\" opacity=\"0.5\" prefHeight=\"336.0\" prefWidth=\"282.0\" />\r\n            <TextField fx:id=\"campoEscribirMensaje\" disable=\"true\" layoutX=\"27.0\" layoutY=\"401.0\" prefHeight=\"26.0\" prefWidth=\"248.0\" style=\"-fx-background-radius: 40;\" text=\"Escribe tu mensaje\" />\r\n         </children></AnchorPane>\r\n   </center>\r\n   <bottom>\r\n      <AnchorPane prefHeight=\"62.0\" prefWidth=\"335.0\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <Button fx:id=\"botonRegresar\" mnemonicParsing=\"false\" onAction=\"#aceptar\" prefHeight=\"62.0\" prefWidth=\"335.0\" style=\"-fx-font-size: 18; -fx-background-color: #1e90ff;\" text=\"Regresar\" textFill=\"WHITE\" />\r\n         </children>\r\n      </AnchorPane>\r\n   </bottom>\r\n</BorderPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/view/PantallaChat.fxml b/src/main/resources/view/PantallaChat.fxml
+--- a/src/main/resources/view/PantallaChat.fxml	(revision a53694365ae5542e419df9d35afddb8974849330)
++++ b/src/main/resources/view/PantallaChat.fxml	(date 1618456832801)
+@@ -1,41 +1,148 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
+-<?import javafx.scene.control.Button?>
+ <?import javafx.scene.control.Label?>
+ <?import javafx.scene.control.TextArea?>
+ <?import javafx.scene.control.TextField?>
++<?import javafx.scene.image.Image?>
++<?import javafx.scene.image.ImageView?>
+ <?import javafx.scene.layout.AnchorPane?>
+ <?import javafx.scene.layout.BorderPane?>
+-<?import javafx.scene.shape.Polygon?>
++<?import javafx.scene.shape.Line?>
+ <?import javafx.scene.shape.Rectangle?>
+ <?import javafx.scene.text.Font?>
++<?import javafx.scene.text.Text?>
+ 
+-<BorderPane prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #393939;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaChatController">
+-   <top>
+-      <AnchorPane prefHeight="78.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="65.0" stroke="BLACK" strokeType="INSIDE" width="335.0" />
+-            <Label layoutX="37.0" layoutY="20.0" text="Chats" textFill="WHITE">
+-               <font>
+-                  <Font size="17.0" />
+-               </font>
++<BorderPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaChatController">
++    <top>
++        <AnchorPane prefHeight="39.0" prefWidth="375.0" BorderPane.alignment="CENTER">
++            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#64b5f6" height="78.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1280.0"/>
++            <Label layoutX="347.0" layoutY="8.0" prefHeight="64.0" prefWidth="259.0" text="Chat">
++                <font>
++                    <Font name="Berlin Sans FB" size="32.0"/>
++                </font>
+             </Label>
+-         </children>
+-      </AnchorPane>
+-   </top>
+-   <center>
+-      <AnchorPane prefHeight="543.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Polygon fx:id="botonEnviar" fill="DODGERBLUE" layoutX="315.0" layoutY="391.0" onMouseClicked="#enviar" points="-33.0, 36.0, -3.0, 24.0, -33.0, 8.0" stroke="BLACK" strokeType="INSIDE" />
+-            <TextArea layoutX="27.0" layoutY="43.0" opacity="0.5" prefHeight="336.0" prefWidth="282.0" />
+-            <TextField fx:id="campoEscribirMensaje" disable="true" layoutX="27.0" layoutY="401.0" prefHeight="26.0" prefWidth="248.0" style="-fx-background-radius: 40;" text="Escribe tu mensaje" />
+-         </children></AnchorPane>
+-   </center>
+-   <bottom>
+-      <AnchorPane prefHeight="62.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Button fx:id="botonRegresar" mnemonicParsing="false" onAction="#aceptar" prefHeight="62.0" prefWidth="335.0" style="-fx-font-size: 18; -fx-background-color: #1e90ff;" text="Regresar" textFill="WHITE" />
+-         </children>
+-      </AnchorPane>
+-   </bottom>
++            <ImageView fx:id="botonAtras" fitHeight="45.0" fitWidth="45.0" layoutX="284.0" layoutY="17.0" onMouseClicked="#irAtras" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/atras.png"/>
++            </ImageView>
++            <ImageView fx:id="botonPerfil" fitHeight="55.0" fitWidth="51.0" layoutX="1205.0" layoutY="15.0" onMouseClicked="#abrirPerfil" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/perfil.png"/>
++            </ImageView>
++        </AnchorPane>
++    </top>
++    <left>
++        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
++            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bbc7d1" height="763.0" layoutY="-109.0" stroke="#bbc7d1" strokeType="INSIDE" strokeWidth="0.0" width="269.0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="13.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/menu.png"/>
++            </ImageView>
++            <Label layoutX="68.0" layoutY="63.0" prefHeight="33.0" prefWidth="71.0" text="Menú">
++                <font>
++                    <Font name="SansSerif Bold" size="24.0"/>
++                </font>
++            </Label>
++            <Line endX="145.0" layoutX="123.0" layoutY="220.0" startX="-124.0" stroke="#92b4d0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="13.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/ajustes.png"/>
++            </ImageView>
++            <Label layoutX="68.0" layoutY="169.0" prefHeight="33.0" prefWidth="136.0" text="Ajustes">
++                <font>
++                    <Font name="Berlin Sans FB" size="24.0"/>
++                </font>
++            </Label>
++            <Line endX="145.0" layoutX="123.0" layoutY="292.0" startX="-124.0" stroke="#92b4d0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="13.0" layoutY="238.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/categoria.png"/>
++            </ImageView>
++            <Label layoutX="68.0" layoutY="241.0" prefHeight="33.0" prefWidth="191.0" text="Categorías">
++                <font>
++                    <Font name="Berlin Sans FB" size="24.0"/>
++                </font>
++            </Label>
++            <Line endX="145.0" endY="1.0" layoutX="123.0" layoutY="362.0" startX="-124.0" stroke="#92b4d0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="11.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/realizar_subasta.png"/>
++            </ImageView>
++            <Label layoutX="66.0" layoutY="313.0" prefHeight="33.0" prefWidth="191.0" text="Realizar Subasta">
++                <font>
++                    <Font name="Berlin Sans FB" size="24.0"/>
++                </font>
++            </Label>
++            <Line endX="145.0" layoutX="123.0" layoutY="429.0" startX="-124.0" stroke="#92b4d0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="11.0" layoutY="377.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/historial_ventas.png"/>
++            </ImageView>
++            <Label layoutX="66.0" layoutY="380.0" prefHeight="33.0" prefWidth="191.0" text="Historial Ventas">
++                <font>
++                    <Font name="Berlin Sans FB" size="24.0"/>
++                </font>
++            </Label>
++            <Line endX="145.0" layoutX="123.0" layoutY="499.0" startX="-124.0" stroke="#92b4d0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="12.0" layoutY="446.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/historial_compras.png"/>
++            </ImageView>
++            <Label layoutX="67.0" layoutY="449.0" prefHeight="33.0" prefWidth="191.0" text="Historial Compras">
++                <font>
++                    <Font name="Berlin Sans FB" size="24.0"/>
++                </font>
++            </Label>
++            <Line endX="145.0" layoutX="123.0" layoutY="569.0" startX="-124.0" stroke="#92b4d0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="12.0" layoutY="516.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/notificacion.png"/>
++            </ImageView>
++            <Label layoutX="67.0" layoutY="519.0" prefHeight="33.0" prefWidth="191.0" text="Notificaciones">
++                <font>
++                    <Font name="Berlin Sans FB" size="24.0"/>
++                </font>
++            </Label>
++            <Line endX="145.0" layoutX="123.0" layoutY="639.0" startX="-124.0" stroke="#92b4d0"/>
++            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="12.0" layoutY="587.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/metodo_pago.png"/>
++            </ImageView>
++            <Label layoutX="67.0" layoutY="590.0" prefHeight="33.0" prefWidth="191.0" text="Método Pago">
++                <font>
++                    <Font name="Berlin Sans FB" size="24.0"/>
++                </font>
++            </Label>
++            <Line endX="145.0" layoutX="124.0" layoutY="150.0" startX="-124.0" stroke="#92b4d0"/>
++            <Rectangle fx:id="botonRectanguloAjustes" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="150.0" onMouseClicked="#abrirAjustes" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="269.0"/>
++            <Rectangle fx:id="botonRectanguloCategorias" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="222.0" onMouseClicked="#abrirCategorias" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="269.0"/>
++            <Rectangle fx:id="botonRectanguloRealizarSubasta" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="292.0" onMouseClicked="#abrirRealizarSubasta" opacity="0.0" stroke="BLACK" strokeType="INSIDE"
++                       width="269.0"/>
++            <Rectangle fx:id="botonRectanguloHistorialVentas" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="362.0" onMouseClicked="#abrirHistorialVentas" opacity="0.0" stroke="BLACK" strokeType="INSIDE"
++                       width="269.0"/>
++            <Rectangle fx:id="botonRectanguloHistorialCompras" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="430.0" onMouseClicked="#abrirHistorialCompras" opacity="0.0" stroke="BLACK" strokeType="INSIDE"
++                       width="269.0"/>
++            <Rectangle fx:id="botonRectanguloNotificaciones" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="501.0" onMouseClicked="#abrirNotificaciones" opacity="0.0" stroke="BLACK" strokeType="INSIDE"
++                       width="269.0"/>
++            <Rectangle fx:id="botonRectanguloMetodoPago" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="569.0" onMouseClicked="#abririMetodoPago" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="269.0"/>
++            <ImageView fitHeight="133.0" fitWidth="240.0" layoutX="22.0" layoutY="-83.0" pickOnBounds="true" preserveRatio="true">
++                <Image url="@../images/logo_vertical.png"/>
++            </ImageView>
++        </AnchorPane>
++    </left>
++    <center>
++        <AnchorPane prefHeight="543.0" prefWidth="335.0" BorderPane.alignment="CENTER">
++            <TextArea layoutX="39.0" layoutY="70.0" opacity="0.5" prefHeight="506.0" prefWidth="934.0"/>
++            <TextField fx:id="campoEscribirMensaje" layoutX="54.0" layoutY="592.0" prefHeight="37.0" prefWidth="842.0" style="-fx-background-color: #CCECFE;" text="Escribe tu mensaje">
++                <font>
++                    <Font name="SansSerif Regular" size="20.0"/>
++                </font>
++            </TextField>
++            <ImageView fx:id="botonEnviar" fitHeight="45.0" fitWidth="41.0" layoutX="916.0" layoutY="590.0" onMouseClicked="#accionEnviar" pickOnBounds="true" preserveRatio="true">
++                <image>
++                    <Image url="@../images/enviar.png"/>
++                </image>
++            </ImageView>
++            <ImageView fitHeight="65.0" fitWidth="119.0" layoutX="868.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
++                <image>
++                    <Image url="@../images/logo_vertical.png"/>
++                </image>
++            </ImageView>
++            <Text fx:id="textoTituloTipoChat" layoutX="219.0" layoutY="44.0" style="-fx-background-color: #CCECFE;" text="NOMBRE CHAT SEGÚN USO (SOPORTE, RESPUESTA, ETC)" textAlignment="CENTER">
++                <font>
++                    <Font name="SansSerif Regular" size="20.0"/>
++                </font>
++            </Text>
++        </AnchorPane>
++    </center>
+ </BorderPane>

@@ -1,51 +1,180 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.DetallesVentaController">
-   <center>
-      <AnchorPane prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #393939;" BorderPane.alignment="CENTER">
-         <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="61.0" layoutX="-6.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="348.0" />
-            <Text fill="WHITE" layoutX="127.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Detalles">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Text>
-            <ImageView id="imagenDetalles" fx:id="imagenProducto" fitHeight="138.0" fitWidth="132.0" layoutX="14.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true" />
-            <TextField id="nomDetalles" fx:id="campoNombreProducto" layoutX="159.0" layoutY="125.0" promptText="Nombre Producto" style="-fx-background-color: grey;" />
-            <TextField id="precioDetalles" fx:id="campoPrecio" layoutX="159.0" layoutY="170.0" promptText="Precio" style="-fx-background-color: grey;" />
-            <ImageView fitHeight="21.0" fitWidth="23.0" layoutX="17.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/usuario.png" />
-               </image>
+<BorderPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.DetallesVentaController">
+    <top>
+        <AnchorPane prefHeight="39.0" prefWidth="375.0" BorderPane.alignment="CENTER">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#64b5f6" height="78.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1280.0" />
+            <Label layoutX="347.0" layoutY="8.0" prefHeight="64.0" prefWidth="259.0" text="Detalles">
+                <font>
+                    <Font name="Berlin Sans FB" size="32.0" />
+                </font>
+            </Label>
+            <ImageView fx:id="botonAtras" fitHeight="45.0" fitWidth="45.0" layoutX="284.0" layoutY="17.0" onMouseClicked="#irAtras" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../images/atras.png" />
             </ImageView>
-            <ImageView fitHeight="26.0" fitWidth="25.0" layoutX="15.0" layoutY="321.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/informacion.png" />
-               </image>
+            <ImageView fx:id="botonPerfil" fitHeight="55.0" fitWidth="51.0" layoutX="1205.0" layoutY="15.0" onMouseClicked="#abrirPerfil" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../images/perfil.png" />
             </ImageView>
-            <ImageView fitHeight="30.0" fitWidth="28.0" layoutX="14.0" layoutY="374.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/descripcion.png" />
-               </image>
+        </AnchorPane>
+    </top>
+    <left>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bbc7d1" height="763.0" layoutY="-109.0" stroke="#bbc7d1" strokeType="INSIDE" strokeWidth="0.0" width="269.0" />
+            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="13.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../images/menu.png" />
             </ImageView>
-            <TextField id="nombreCompradorDetalles" fx:id="campoNombreComprador" layoutX="80.0" layoutY="271.0" prefHeight="26.0" prefWidth="211.0" promptText="Nombre Comprador" style="-fx-background-color: grey;" />
-            <TextField id="informacionDetalles" fx:id="campoMasInformacion" layoutX="80.0" layoutY="321.0" prefHeight="26.0" prefWidth="211.0" promptText="Más Información" style="-fx-background-color: grey;" />
-            <TextField id="descripcionDetalles" fx:id="campoDescripcion" layoutX="80.0" layoutY="375.0" prefHeight="26.0" prefWidth="211.0" promptText="Descripción" style="-fx-background-color: grey;" />
-            <Button id="tableroDetalles" fx:id="botonTableroDePreguntas" layoutX="95.0" layoutY="418.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="148.0" style="-fx-background-color: #1e90ff;" text="Tablero de preguntas" textFill="WHITE" />
-            <Button id="editarDetalles" fx:id="botonEditarProducto" layoutX="96.0" layoutY="465.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="148.0" style="-fx-background-color: #1e90ff;" text="Editar producto" textFill="WHITE" />
-            <Button id="eliminarDetalles" fx:id="botonEliminarProducto" layoutX="95.0" layoutY="509.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="148.0" style="-fx-background-color: #1e90ff;" text="Eliminar Producto" textFill="WHITE" />
-            <Button id="regresarDetalles" fx:id="botonRegresar" layoutX="96.0" layoutY="554.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="148.0" style="-fx-background-color: #1e90ff;" text="Regresar" textFill="WHITE" />
-         </children>
-      </AnchorPane>
-   </center>
+            <Label layoutX="68.0" layoutY="63.0" prefHeight="33.0" prefWidth="71.0" text="Menú">
+                <font>
+                    <Font name="SansSerif Bold" size="24.0" />
+                </font>
+            </Label>
+            <Line endX="145.0" layoutX="123.0" layoutY="220.0" startX="-124.0" stroke="#92b4d0" />
+            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="13.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../images/ajustes.png" />
+            </ImageView>
+            <Label layoutX="68.0" layoutY="169.0" prefHeight="33.0" prefWidth="136.0" text="Ajustes">
+                <font>
+                    <Font name="Berlin Sans FB" size="24.0" />
+                </font>
+            </Label>
+            <Line endX="145.0" layoutX="123.0" layoutY="292.0" startX="-124.0" stroke="#92b4d0" />
+            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="13.0" layoutY="238.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../images/categoria.png" />
+            </ImageView>
+            <Label layoutX="68.0" layoutY="241.0" prefHeight="33.0" prefWidth="191.0" text="Categorías">
+                <font>
+                    <Font name="Berlin Sans FB" size="24.0" />
+                </font>
+            </Label>
+            <Line endX="145.0" endY="1.0" layoutX="123.0" layoutY="362.0" startX="-124.0" stroke="#92b4d0" />
+            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="11.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../images/realizar_subasta.png" />
+            </ImageView>
+            <Label layoutX="66.0" layoutY="313.0" prefHeight="33.0" prefWidth="191.0" text="Realizar Subasta">
+                <font>
+                    <Font name="Berlin Sans FB" size="24.0" />
+                </font>
+            </Label>
+            <Line endX="145.0" layoutX="123.0" layoutY="429.0" startX="-124.0" stroke="#92b4d0" />
+            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="11.0" layoutY="377.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../images/historial_ventas.png" />
+            </ImageView>
+            <Label layoutX="66.0" layoutY="380.0" prefHeight="33.0" prefWidth="191.0" text="Historial Ventas">
+                <font>
+                    <Font name="Berlin Sans FB" size="24.0" />
+                </font>
+            </Label>
+            <Line endX="145.0" layoutX="123.0" layoutY="499.0" startX="-124.0" stroke="#92b4d0" />
+            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="12.0" layoutY="446.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../images/historial_compras.png" />
+            </ImageView>
+            <Label layoutX="67.0" layoutY="449.0" prefHeight="33.0" prefWidth="191.0" text="Historial Compras">
+                <font>
+                    <Font name="Berlin Sans FB" size="24.0" />
+                </font>
+            </Label>
+            <Line endX="145.0" layoutX="123.0" layoutY="569.0" startX="-124.0" stroke="#92b4d0" />
+            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="12.0" layoutY="516.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../images/notificacion.png" />
+            </ImageView>
+            <Label layoutX="67.0" layoutY="519.0" prefHeight="33.0" prefWidth="191.0" text="Notificaciones">
+                <font>
+                    <Font name="Berlin Sans FB" size="24.0" />
+                </font>
+            </Label>
+            <Line endX="145.0" layoutX="123.0" layoutY="639.0" startX="-124.0" stroke="#92b4d0" />
+            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="12.0" layoutY="587.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../images/metodo_pago.png" />
+            </ImageView>
+            <Label layoutX="67.0" layoutY="590.0" prefHeight="33.0" prefWidth="191.0" text="Método Pago">
+                <font>
+                    <Font name="Berlin Sans FB" size="24.0" />
+                </font>
+            </Label>
+            <Line endX="145.0" layoutX="124.0" layoutY="150.0" startX="-124.0" stroke="#92b4d0" />
+            <Rectangle fx:id="botonRectanguloAjustes" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="150.0" onMouseClicked="#abrirAjustes" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="269.0" />
+            <Rectangle fx:id="botonRectanguloCategorias" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="222.0" onMouseClicked="#abrirCategorias" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="269.0" />
+            <Rectangle fx:id="botonRectanguloRealizarSubasta" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="292.0" onMouseClicked="#abrirRealizarSubasta" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="269.0" />
+            <Rectangle fx:id="botonRectanguloHistorialVentas" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="362.0" onMouseClicked="#abrirHistorialVentas" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="269.0" />
+            <Rectangle fx:id="botonRectanguloHistorialCompras" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="430.0" onMouseClicked="#abrirHistorialCompras" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="269.0" />
+            <Rectangle fx:id="botonRectanguloNotificaciones" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="501.0" onMouseClicked="#abrirNotificaciones" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="269.0" />
+            <Rectangle fx:id="botonRectanguloMetodoPago" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="-1.0" layoutY="569.0" onMouseClicked="#abririMetodoPago" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="269.0" />
+            <ImageView fitHeight="133.0" fitWidth="240.0" layoutX="22.0" layoutY="-83.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../images/logo_vertical.png" />
+            </ImageView>
+        </AnchorPane>
+    </left>
+    <center>
+        <AnchorPane prefHeight="480.0" BorderPane.alignment="CENTER">
+            <ImageView id="imagenDetalles" fx:id="imagenProducto" fitHeight="360.0" fitWidth="404.0" layoutX="24.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
+            <TextField id="nomDetalles" fx:id="campoNombreProducto" layoutX="482.0" layoutY="40.0" promptText="Nombre Producto" style="-fx-background-color: #CCECFE;">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+            </TextField>
+            <TextField id="precioDetalles" fx:id="campoPrecio" layoutX="482.0" layoutY="104.0" promptText="Precio" style="-fx-background-color: #CCECFE;">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+            </TextField>
+            <TextField id="descripcionDetalles" fx:id="campoDescripcion" layoutX="482.0" layoutY="169.0" prefHeight="208.0" prefWidth="430.0" promptText="Descripción" style="-fx-background-color: #CCECFE;">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+            </TextField>
+            <TextField id="nombreCompradorDetalles" fx:id="campoNombreComprador" layoutX="524.0" layoutY="415.0" promptText="Nombre Comprador" style="-fx-background-color: #CCECFE;">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+            </TextField>
+            <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="482.0" layoutY="420.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../images/usuario.png" />
+            </ImageView>
+            <Button id="tableroDetalles" fx:id="botonTableroDePreguntas" layoutX="116.0" layoutY="420.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#abrirTableroDePreguntas" prefHeight="37.0" prefWidth="220.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Tablero de preguntas" textAlignment="CENTER">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+                <opaqueInsets>
+                    <Insets />
+                </opaqueInsets>
+            </Button>
+            <Button id="editarDetalles" fx:id="botonEditarProducto" layoutX="116.0" layoutY="497.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#abrirEditarProducto" prefHeight="37.0" prefWidth="220.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Editar producto" textAlignment="CENTER">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+                <opaqueInsets>
+                    <Insets />
+                </opaqueInsets>
+            </Button>
+            <Button id="eliminarDetalles" fx:id="botonEliminarProducto" layoutX="116.0" layoutY="569.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#abrirEliminarProducto" prefHeight="37.0" prefWidth="220.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Eliminar Producto" textAlignment="CENTER">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+                <opaqueInsets>
+                    <Insets />
+                </opaqueInsets>
+            </Button>
+            <ImageView fitHeight="40.0" fitWidth="39.0" layoutX="487.0" layoutY="524.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../images/informacion.png" />
+            </ImageView>
+         <Label layoutX="535.0" layoutY="521.0" prefHeight="44.0" prefWidth="259.0" text="Más Información">
+            <font>
+               <Font name="Berlin Sans FB" size="30.0" />
+            </font>
+         </Label>
+         <Rectangle fx:id="botonRectanguloMasInformacion" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="54.0" layoutX="482.0" layoutY="516.0" onMouseClicked="#abrirMasInformacion" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="274.0" />
+        </AnchorPane>
+    </center>
 </BorderPane>

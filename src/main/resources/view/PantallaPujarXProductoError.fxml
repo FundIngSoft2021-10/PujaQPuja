@@ -1,95 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #393939;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaPujarXProductoErrorController">
-   <top>
-      <AnchorPane prefHeight="79.0" prefWidth="345.0" BorderPane.alignment="CENTER">
-         <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="79.0" stroke="BLACK" strokeType="INSIDE" width="338.0" />
-            <Text layoutX="14.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pujar">
-               <font>
-                  <Font name="System Bold Italic" size="19.0" />
-               </font>
-            </Text>
-         </children>
-      </AnchorPane>
-   </top>
-   <left>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <Text layoutX="3.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Puja que Puja">
-               <font>
-                  <Font name="System Bold Italic" size="17.0" />
-               </font>
-            </Text>
-            <TextField fx:id="campoBuscar" layoutX="1.0" layoutY="32.0" prefHeight="36.0" prefWidth="335.0" promptText="Search" style="-fx-alignment: #202142; -fx-background-color: #393937; -fx-border-color: #202142;" />
-            <Button layoutX="254.0" layoutY="1.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="30.0" />
-            <Button layoutX="293.0" layoutY="1.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="30.0" />
-            <Button layoutX="293.0" layoutY="37.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="30.0" />
-            <ImageView fx:id="botonPerfil" fitHeight="21.0" fitWidth="20.0" layoutX="259.0" layoutY="4.0">
-               <image>
-                  <Image url="@../images/usuario.png" />
-               </image>
+<BorderPane prefHeight="210.0" prefWidth="303.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaPujarXProductoErrorController">
+    <center>
+        <AnchorPane prefHeight="563.0" prefWidth="303.0" BorderPane.alignment="CENTER">
+            <Button fx:id="botonRegresar" layoutX="92.0" layoutY="159.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#accionRegresar" prefHeight="36.0" prefWidth="120.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Regresar" textAlignment="CENTER">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+                <opaqueInsets>
+                    <Insets />
+                </opaqueInsets>
+            </Button>
+            <TextArea editable="false" layoutX="26.0" layoutY="20.0" prefHeight="130.0" prefWidth="252.0" style="-fx-font-size: 18;" text="Se debe colocar un precio mayor o igual al precio en subasta" wrapText="true">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </TextArea>
+            <ImageView fitHeight="50.0" fitWidth="54.0" layoutX="217.0" layoutY="93.0">
+                <Image url="@../images/alerta.png" />
             </ImageView>
-            <ImageView fx:id="botonRegresar" fitHeight="22.0" fitWidth="26.0" layoutX="295.0" layoutY="4.0">
-               <image>
-                  <Image url="@../images/atras.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="botonBuscar" fitHeight="22.0" fitWidth="22.0" layoutX="298.0" layoutY="39.0">
-               <image>
-                  <Image url="@../images/loupe.png" />
-               </image>
-            </ImageView>
-            <Text layoutX="3.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Información del Producto">
-               <font>
-                  <Font name="System Bold Italic" size="17.0" />
-               </font>
-            </Text>
-            <ImageView fx:id="imagenFotoProducto" fitHeight="180.0" fitWidth="211.0" layoutX="4.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true" />
-            <Text layoutX="3.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descripción del Producto">
-               <font>
-                  <Font name="System Bold Italic" size="17.0" />
-               </font>
-            </Text>
-            <Text layoutX="3.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio en Subasta:">
-               <font>
-                  <Font name="System Bold Italic" size="17.0" />
-               </font>
-            </Text>
-            <Label layoutX="154.0" layoutY="356.0" prefHeight="30.0" prefWidth="150.0" />
-            <Label fx:id="campoDescripcion" layoutX="7.0" layoutY="286.0" prefHeight="74.0" prefWidth="322.0" />
-            <Label fx:id="campoInformacionProducto" layoutX="213.0" layoutY="93.0" prefHeight="174.0" prefWidth="126.0" />
-            <TextField fx:id="campoDigitarPrecio" layoutX="64.0" layoutY="452.0" prefHeight="32.0" prefWidth="169.0" promptText="Digite Precio" />
-            <Button fx:id="botonPujar" layoutX="237.0" layoutY="452.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="64.0" text="Pujar" />
-            <Text layoutX="210.0" layoutY="442.0" strokeType="OUTSIDE" strokeWidth="0.0" text="# Pujantes:">
-               <font>
-                  <Font name="System Bold Italic" size="17.0" />
-               </font>
-            </Text>
-            <Label layoutX="293.0" layoutY="425.0" prefHeight="18.0" prefWidth="36.0" />
-            <Button fx:id="botonRealizarPregunta" layoutX="102.0" layoutY="492.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="122.0" text="Realizar Pregunta" />
-            <ImageView fitHeight="41.0" fitWidth="54.0" layoutX="14.0" layoutY="385.0">
-               <image>
-                  <Image url="@../images/warning.png" />
-               </image>
-            </ImageView>
-            <Text fill="#d41212" layoutX="74.0" layoutY="401.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Debes colocar un precio mayor o igual al precio en subasta" wrappingWidth="261.97137451171875">
-               <font>
-                  <Font name="System Bold Italic" size="16.0" />
-               </font>
-            </Text>
-         </children>
-      </AnchorPane>
-   </left>
+        </AnchorPane>
+    </center>
 </BorderPane>

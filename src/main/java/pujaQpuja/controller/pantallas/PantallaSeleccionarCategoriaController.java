@@ -15,6 +15,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Rectangle;
+
 /**
  * FXML Controller class
  *
@@ -22,9 +25,28 @@ import javafx.scene.image.ImageView;
  */
 public class PantallaSeleccionarCategoriaController implements Initializable {
 
-
     @FXML
-    private TextField campoBuscar;
+    private ImageView botonAtras;
+    @FXML
+    private ImageView botonPerfil;
+    @FXML
+    private Rectangle botonRectanguloAjustes;
+    @FXML
+    private Rectangle botonRectanguloCategorias;
+    @FXML
+    private Rectangle botonRectanguloRealizarSubasta;
+    @FXML
+    private Rectangle botonRectanguloHistorialVentas;
+    @FXML
+    private Rectangle botonRectanguloHistorialCompras;
+    @FXML
+    private Rectangle botonRectanguloNotificaciones;
+    @FXML
+    private Rectangle botonRectanguloMetodoPago;
+    @FXML
+    private TextField campoBusqueda;
+    @FXML
+    private ImageView botonBusqueda;
     @FXML
     private TableView<?> tablaCatalogo;
     @FXML
@@ -34,19 +56,58 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
     @FXML
     private ComboBox<?> desplegableFiltros;
     @FXML
-    private ImageView botonPerfil;
-    @FXML
-    private ImageView botonRegresar;
-    @FXML
-    private ImageView botonBuscar;
-    @FXML
     private ImageView botonOrdenar;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
+
+    @FXML
+    private void irAtras(MouseEvent event) {
+    }
+
+    @FXML
+    private void abrirPerfil(MouseEvent event) {
+    }
+
+    @FXML
+    private void abrirAjustes(MouseEvent event) {
+    }
+
+    @FXML
+    private void abrirCategorias(MouseEvent event) {
+    }
+
+    @FXML
+    private void abrirRealizarSubasta(MouseEvent event) {
+    }
+
+    @FXML
+    private void abrirHistorialVentas(MouseEvent event) {
+    }
+
+    @FXML
+    private void abrirHistorialCompras(MouseEvent event) {
+    }
+
+    @FXML
+    private void abrirNotificaciones(MouseEvent event) {
+    }
+
+    @FXML
+    private void abririMetodoPago(MouseEvent event) {
+    }
+
+    @FXML
+    private void AccionBuscar(MouseEvent event) {
+    }
+
+    @FXML
+    private void accionOrdenar(MouseEvent event) {
+    }
+
 }

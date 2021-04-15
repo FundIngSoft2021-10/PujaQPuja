@@ -4,7 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bab415b7-8294-4919-b0ff-d59ce9d66de9" name="Default Changelist" comment="Organización pantallas en archivos y eliminación layout estilo pc a celular" />
+    <list default="true" id="bab415b7-8294-4919-b0ff-d59ce9d66de9" name="Default Changelist" comment="Arreglo pantallas hasta pantalla PujarXProducto">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/DetallesVentaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/DetallesVentaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/EditarPerfilController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/EditarPerfilController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/ErrorAutenticarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/ErrorAutenticarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/GanadorPujaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/GanadorPujaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/HistorialComprasController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/HistorialComprasController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/HistorialVentasController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/HistorialVentasController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/InformacionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/InformacionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/IngresarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/IngresarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/InicioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/InicioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaCalificarProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaCalificarProductoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaCatalogoErrorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaCatalogoErrorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaChatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaConfirmacionCambiosPerfilController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaConfirmacionCambiosPerfilController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaConfirmarPujaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaConfirmarPujaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaErrorPublicacionSubastaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaErrorPublicacionSubastaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaErrorRegistroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaErrorRegistroController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaExitoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaExitoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaExitoRealizarSubastaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaExitoRealizarSubastaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaPerfilController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaPerfilController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaPujarXProductoConfirmacionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaPujarXProductoConfirmacionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaPujarXProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaPujarXProductoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaPujarXProductoErrorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaPujarXProductoErrorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaRealizarSubastaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaRealizarSubastaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaRegistroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaRegistroController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaSeleccionarCategoriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaSeleccionarCategoriaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/GanadorPuja.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/GanadorPuja.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/Informacion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/Informacion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/Ingresar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/Ingresar.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/PantallaPujarXProducto.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaPujarXProducto.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,29 +45,39 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="76755c97-02cc-4320-8aef-4f230f760d6f" />
   </component>
   <component name="ProjectId" id="1r2CgMMRiTvncp7uXrDWudQ04RB" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/SceneBuilder/SceneBuilder.exe" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -78,7 +120,7 @@
       </list>
     </option>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="false" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -97,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618166304646</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Arreglo pantallas hasta pantalla PujarXProducto">
+      <created>1618465352041</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1618465352041</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -111,7 +160,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="develop" />
+                        <option value="requerimiento/adaptacionPantallasAPc" />
                       </list>
                     </value>
                   </entry>
@@ -125,7 +174,9 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Organización pantallas en archivos y eliminación layout estilo pc a celular" />
-    <option name="LAST_COMMIT_MESSAGE" value="Organización pantallas en archivos y eliminación layout estilo pc a celular" />
+    <MESSAGE value="Arreglo pantallas hasta pantalla PujarXProducto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Arreglo pantallas hasta pantalla PujarXProducto" />
   </component>
 </project>

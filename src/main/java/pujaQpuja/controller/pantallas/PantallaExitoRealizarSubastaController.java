@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 /**
  * FXML Controller class
  *
@@ -21,13 +22,15 @@ import javafx.scene.image.ImageView;
  */
 public class PantallaExitoRealizarSubastaController implements Initializable {
 
-
     @FXML
-    private Button botonAceptar;
+    private Text textoNombreProducto;
+    @FXML
+    private TextArea campoConfirmacion;
     @FXML
     private ImageView imagenProducto;
     @FXML
-    private TextArea campoConfirmacion;
+    private Button botonAceptar;
+
     /**
      * Initializes the controller class.
      */
@@ -35,9 +38,9 @@ public class PantallaExitoRealizarSubastaController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
+
     @FXML
-    private void aceptar(ActionEvent event) {
+    private void accionAceptar(ActionEvent event) {
     }
 
 }

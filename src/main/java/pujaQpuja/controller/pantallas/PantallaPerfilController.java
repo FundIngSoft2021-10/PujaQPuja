@@ -13,6 +13,8 @@ import javafx.fxml.Initializable;
 
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Rectangle;
 /**
  * FXML Controller class
  *
@@ -20,15 +22,34 @@ import javafx.scene.image.ImageView;
  */
 public class PantallaPerfilController implements Initializable {
 
-
     @FXML
-    private Button botonRegresar;
+    private ImageView botonAtras;
+    @FXML
+    private ImageView botonPerfil;
+    @FXML
+    private Rectangle botonRectanguloAjustes;
+    @FXML
+    private Rectangle botonRectanguloCategorias;
+    @FXML
+    private Rectangle botonRectanguloRealizarSubasta;
+    @FXML
+    private Rectangle botonRectanguloHistorialVentas;
+    @FXML
+    private Rectangle botonRectanguloHistorialCompras;
+    @FXML
+    private Rectangle botonRectanguloNotificaciones;
+    @FXML
+    private Rectangle botonRectanguloMetodoPago;
     @FXML
     private ImageView imagenFotoPerfil;
     @FXML
     private Button botonEditarPerfil;
     @FXML
     private Button botonPrivacidadSeguridad;
+    @FXML
+    private Button botonSoporteYAyuda;
+
+
     /**
      * Initializes the controller class.
      */
@@ -36,17 +57,54 @@ public class PantallaPerfilController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
+
     @FXML
-    private void regresar(ActionEvent event) {
+    private void irAtras(MouseEvent event) {
     }
 
     @FXML
-    private void editarPerfil(ActionEvent event) {
+    private void abrirPerfil(MouseEvent event) {
     }
 
     @FXML
-    private void privacidadSeguridad(ActionEvent event) {
+    private void abrirAjustes(MouseEvent event) {
     }
+
+    @FXML
+    private void abrirCategorias(MouseEvent event) {
+    }
+
+    @FXML
+    private void abrirRealizarSubasta(MouseEvent event) {
+    }
+
+    @FXML
+    private void abrirHistorialVentas(MouseEvent event) {
+    }
+
+    @FXML
+    private void abrirHistorialCompras(MouseEvent event) {
+    }
+
+    @FXML
+    private void abrirNotificaciones(MouseEvent event) {
+    }
+
+    @FXML
+    private void abririMetodoPago(MouseEvent event) {
+    }
+
+    @FXML
+    private void abrirEditarPerfil(ActionEvent event) {
+    }
+
+    @FXML
+    private void abrirPrivacidadSeguridad(ActionEvent event) {
+    }
+
+    @FXML
+    private void abrirSoporteYAyuda(ActionEvent event) {
+    }
+
 
 }
