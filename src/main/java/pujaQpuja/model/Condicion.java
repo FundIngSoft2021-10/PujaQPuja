@@ -4,6 +4,4 @@ public enum Condicion {
     RESTAURADO,
     NUEVO,
     USADO
-
-    
 }

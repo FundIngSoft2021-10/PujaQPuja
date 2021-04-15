@@ -7,7 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import pujaQpuja.controller.SingletonController;
 
 public class MainApp extends Application {
 
@@ -30,7 +29,6 @@ public class MainApp extends Application {
     }
 
     public static void main(String[] args) {
-        SingletonController singleton = SingletonController.getControllerAplication();
         launch();
     }
 }
@@ -39,7 +37,7 @@ public class MainApp extends Application {
 
     @Override
     public void init() throws Exception {
-    super.init();
+        super.init();
         System.out.println("Realice las inicializaciones necesarias aquí.");
     }
 
