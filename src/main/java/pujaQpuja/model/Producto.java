@@ -11,18 +11,21 @@ public class Producto {
     private String descripcion;
     private List<Image> fotos;
     private Condicion condicion;
+    private float precioInicial;
 
 
 
     public Producto() {
     }
 
-    public Producto(String nombre, List<Categoría> categorias, String descripcion, List<Image> fotos, Condicion condicion) {
+    public Producto(String nombre, List<Categoría> categorias, String descripcion, List<Image> fotos, Condicion condicion, float precioInicial) {
         this.nombre = nombre;
         this.categorias = categorias;
         this.descripcion = descripcion;
         this.fotos = fotos;
         this.condicion = condicion;
+        this.precioInicial=precioInicial;
+        
     }
 
     public String getNombre() {
@@ -61,6 +64,13 @@ public class Producto {
         return this.condicion;
     }
 
+    public float getPrecioInicial(){
+        return this.precioInicial;
+    }
+
+    public void setPrecioInicial(float precioInicial){
+        this.precioInicial=precioInicial;
+    }
     public void setCondicion(Condicion condicion) {
         this.condicion = condicion;
     }
@@ -90,6 +100,10 @@ public class Producto {
         return this;
     }
 
+    public Producto precioInicial(float precioInicial){
+        setPrecioInicial(precioInicial);
+        return this;
+    }
     @Override
     public boolean equals(Object o) {
         if (o == this)
@@ -98,12 +112,12 @@ public class Producto {
             return false;
         }
         Producto producto = (Producto) o;
-        return Objects.equals(nombre, producto.nombre) && Objects.equals(categorias, producto.categorias) && Objects.equals(descripcion, producto.descripcion) && Objects.equals(fotos, producto.fotos) && Objects.equals(condicion, producto.condicion);
+        return Objects.equals(nombre, producto.nombre) && Objects.equals(categorias, producto.categorias) && Objects.equals(descripcion, producto.descripcion) && Objects.equals(fotos, producto.fotos) && Objects.equals(condicion, producto.condicion)&& Objects.equals(precioInicial, producto.precioInicial);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nombre, categorias, descripcion, fotos, condicion);
+        return Objects.hash(nombre, categorias, descripcion, fotos, condicion, precioInicial);
     }
 
     @Override
@@ -114,6 +128,6 @@ public class Producto {
             ", descripcion='" + getDescripcion() + "'" +
             ", fotos='" + getFotos() + "'" +
             ", condicion='" + getCondicion() + "'" +
-            "}";
+            ", precio inicial='"+ getPrecioInicial()+"}";
     }
 }

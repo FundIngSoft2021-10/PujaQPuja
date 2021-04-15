@@ -33,6 +33,11 @@ public class ErrorAutenticarController implements Initializable {
 
     @FXML
     private void accionAceptar(ActionEvent event) {
+        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"Inicio.fxml"));
+        Scene errorRegistroScene = new Scene(pantallaErrorParent);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(errorRegistroScene);
+        window.show();
     }
     
 }

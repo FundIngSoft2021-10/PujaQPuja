@@ -15,6 +15,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
 
 /**
  * FXML Controller class
@@ -74,26 +79,56 @@ public class DetallesVentaController implements Initializable {
 
     @FXML
     private void abrirPerfil(MouseEvent event) {
+        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaPerfil.fxml"));
+        Scene errorRegistroScene = new Scene(pantallaErrorParent);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(errorRegistroScene);
+        window.show();
     }
 
     @FXML
     private void abrirAjustes(MouseEvent event) {
+        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaAjustes.fxml"));
+        Scene errorRegistroScene = new Scene(pantallaErrorParent);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(errorRegistroScene);
+        window.show();
     }
 
     @FXML
     private void abrirCategorias(MouseEvent event) {
+        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaSeleccionarCategoria.fxml"));
+        Scene errorRegistroScene = new Scene(pantallaErrorParent);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(errorRegistroScene);
+        window.show();
     }
 
     @FXML
     private void abrirRealizarSubasta(MouseEvent event) {
+        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaRealizarSubasta.fxml"));
+        Scene errorRegistroScene = new Scene(pantallaErrorParent);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(errorRegistroScene);
+        window.show();
     }
 
     @FXML
     private void abrirHistorialVentas(MouseEvent event) {
+        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"historialVentas.fxml"));
+        Scene errorRegistroScene = new Scene(pantallaErrorParent);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(errorRegistroScene);
+        window.show();
     }
 
     @FXML
     private void abrirHistorialCompras(MouseEvent event) {
+        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"HistorialCompras.fxml"));
+        Scene errorRegistroScene = new Scene(pantallaErrorParent);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(errorRegistroScene);
+        window.show();
     }
 
     @FXML
