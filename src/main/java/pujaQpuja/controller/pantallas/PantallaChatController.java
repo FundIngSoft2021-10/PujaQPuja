@@ -23,12 +23,6 @@ import javafx.scene.shape.Polygon;
 public class PantallaChatController implements Initializable {
 
 
-    @FXML
-    private Button botonRegresar;
-    @FXML
-    private Polygon botonEnviar;
-    @FXML
-    private TextField campoEscribirMensaje;
     /**
      * Initializes the controller class.
      */
@@ -37,12 +31,6 @@ public class PantallaChatController implements Initializable {
         // TODO
     }    
     
-    @FXML
-    private void aceptar(ActionEvent event) {
-    }
 
-    @FXML
-    private void enviar(MouseEvent event) {
-    }
 
 }

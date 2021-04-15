@@ -20,12 +20,7 @@ import javafx.scene.control.TextField;
  */
 public class IngresarController implements Initializable {
 
-    @FXML
-    private TextField campoCorreo;
-    @FXML
-    private Button botonIngresar;
-    @FXML
-    private PasswordField campoPassword;
+
     /**
      * Initializes the controller class.
      */

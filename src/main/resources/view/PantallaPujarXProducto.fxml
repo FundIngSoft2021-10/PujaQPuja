@@ -140,12 +140,17 @@
                     <Font name="SansSerif Regular" size="20.0" />
                 </font>
             </Text>
-            <TextField fx:id="campoNumeroPujantes" layoutX="613.0" layoutY="358.0" promptText="#" style="-fx-background-color: #CCECFE;">
+            <TextField fx:id="campoDescripcionProducto" layoutX="417.0" layoutY="122.0" prefHeight="110.0" prefWidth="454.0" promptText="Descripción" style="-fx-background-color: #CCECFE;">
                 <font>
                     <Font name="SansSerif Regular" size="20.0" />
                 </font>
             </TextField>
-            <TextField fx:id="campoDescripcionProducto" layoutX="417.0" layoutY="122.0" prefHeight="110.0" prefWidth="454.0" promptText="Descripción" style="-fx-background-color: #CCECFE;">
+            <TextField fx:id="campoPrecioSubasta" layoutX="613.0" layoutY="292.0" promptText="Precio" style="-fx-background-color: #CCECFE;">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+            </TextField>
+            <TextField fx:id="campoNumeroPujantes" layoutX="613.0" layoutY="358.0" promptText="#" style="-fx-background-color: #CCECFE;">
                 <font>
                     <Font name="SansSerif Regular" size="20.0" />
                 </font>
@@ -168,11 +173,6 @@
                     <Font name="SansSerif Regular" size="20.0" />
                 </font>
             </Text>
-            <TextField fx:id="campoPrecioSubasta" layoutX="613.0" layoutY="292.0" promptText="Precio" style="-fx-background-color: #CCECFE;">
-                <font>
-                    <Font name="SansSerif Regular" size="20.0" />
-                </font>
-            </TextField>
             <Button fx:id="botonRealizarPregunta" layoutX="542.0" layoutY="542.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#AbrirRealizarPregunta" prefHeight="37.0" prefWidth="205.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Realizar Pregunta" textAlignment="CENTER">
                 <font>
                     <Font name="SansSerif Regular" size="20.0" />

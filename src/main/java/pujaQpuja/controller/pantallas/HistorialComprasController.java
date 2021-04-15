@@ -22,16 +22,6 @@ import javafx.scene.control.TableView;
 public class HistorialComprasController implements Initializable {
 
 
-    @FXML
-    private Button botonRegresarHC;
-    @FXML
-    private TableView<?> tablaHistorialCompras;
-    @FXML
-    private TableColumn<?, ?> columnaProductoColHC;
-    @FXML
-    private TableColumn<?, ?> columnaNomProdColHC;
-    @FXML
-    private TableColumn<?, ?> columnaEstadoColHC;
     /**
      * Initializes the controller class.
      */
@@ -39,9 +29,5 @@ public class HistorialComprasController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
-    @FXML
-    private void RegresarHC(ActionEvent event) {
-    }
 
 }

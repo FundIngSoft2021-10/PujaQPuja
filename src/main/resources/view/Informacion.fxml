@@ -143,11 +143,6 @@
                     <Font name="SansSerif Regular" size="20.0" />
                 </font>
             </TextField>
-            <TextField id="precioActualInformacion" fx:id="campoPrecioActual" layoutX="701.0" layoutY="462.0" promptText="Precio Actual" style="-fx-background-color: #CCECFE;">
-                <font>
-                    <Font name="SansSerif Regular" size="20.0" />
-                </font>
-            </TextField>
             <TextField id="tiempoRestanteInformacion" fx:id="campoTiempoRestante" layoutX="701.0" layoutY="238.0" promptText="Tiempo Restante" style="-fx-background-color: #CCECFE;">
                 <font>
                     <Font name="SansSerif Regular" size="20.0" />
@@ -159,6 +154,11 @@
                 </font>
             </TextField>
             <TextField id="precioInicialInformacion" fx:id="campoPrecioInicial" layoutX="701.0" layoutY="390.0" promptText="Precio Inicial" style="-fx-background-color: #CCECFE;">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+            </TextField>
+            <TextField id="precioActualInformacion" fx:id="campoPrecioActual" layoutX="701.0" layoutY="462.0" promptText="Precio Actual" style="-fx-background-color: #CCECFE;">
                 <font>
                     <Font name="SansSerif Regular" size="20.0" />
                 </font>

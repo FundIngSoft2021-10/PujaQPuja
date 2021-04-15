@@ -22,14 +22,6 @@ import javafx.scene.image.ImageView;
 public class PantallaErrorPublicacionSubastaController implements Initializable {
 
 
-    @FXML
-    private Button botonReintentar;
-    @FXML
-    private Button botonCancelar;
-    @FXML
-    private Label campoNombreProducto;
-    @FXML
-    private ImageView imagenProducto;
     /**
      * Initializes the controller class.
      */
@@ -37,13 +29,4 @@ public class PantallaErrorPublicacionSubastaController implements Initializable 
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
-    @FXML
-    private void reintentar(ActionEvent event) {
-    }
-
-    @FXML
-    private void cancelar(ActionEvent event) {
-    }
-
 }

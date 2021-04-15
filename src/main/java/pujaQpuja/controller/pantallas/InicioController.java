@@ -26,10 +26,6 @@ import javafx.scene.control.Button;
 public class InicioController implements Initializable {
 
 
-    @FXML
-    private Button botonRegistrarse;
-    @FXML
-    private Button botonIngresar;
     /**
      * Initializes the controller class.
      */
@@ -38,7 +34,7 @@ public class InicioController implements Initializable {
         // TODO
     }
 
-    @FXML
+    
     void ingresar(ActionEvent event) throws IOException {
         Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"Ingresar.fxml"));
         Scene errorRegistroScene = new Scene(pantallaErrorParent);
@@ -47,7 +43,7 @@ public class InicioController implements Initializable {
         window.show();
     }
 
-    @FXML
+    
     void registrar(ActionEvent event) throws IOException {
         Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaRegistro.fxml"));
         Scene errorRegistroScene = new Scene(pantallaErrorParent);

@@ -30,34 +30,12 @@ import javafx.fxml.FXMLLoader;
  */
 public class EditarPerfilController implements Initializable {
 
-    @FXML
-    private PasswordField campoPassword;
-    @FXML
-    private TextField campoCorreo;
-    @FXML
-    private TextField campoTelefono;
-    @FXML
-    private TextField campoDocumento;
-    @FXML
-    private TextField campoNombreApellido;
-    @FXML
-    private TextField campoDireccion;
-    @FXML
-    private Button botonGuardar;
-    @FXML
-    private Button botonCancelar;
-
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-
-    }
-
-    @FXML
-    public void accionAbrirMenu(MouseEvent mouseEvent) {
 
     }
 

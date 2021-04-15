@@ -19,9 +19,6 @@ import javafx.scene.control.Button;
  */
 public class GanadorPujaController implements Initializable {
 
-
-    @FXML
-    private Button botonAceptarGanadorPuja;
     /**
      * Initializes the controller class.
      */
@@ -29,9 +26,5 @@ public class GanadorPujaController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
-    @FXML
-    private void AceptarGanadorPuja(ActionEvent event) {
-    }
 
 }

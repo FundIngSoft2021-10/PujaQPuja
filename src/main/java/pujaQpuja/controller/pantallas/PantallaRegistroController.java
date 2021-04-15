@@ -27,22 +27,6 @@ import pujaQpuja.Utiles;
 
 public class PantallaRegistroController implements Initializable {
 
-    @FXML
-    private TextField campoNombreApellido;
-    @FXML
-    private TextField campoCorreo;
-    @FXML
-    private TextField campoDireccion;
-    @FXML
-    private TextField campoTelefono;
-    @FXML
-    private PasswordField campoPassword;
-    @FXML
-    private PasswordField campoConfirmarPassword;
-    @FXML
-    private CheckBox checkAceptarTerminos;
-    @FXML
-    private Button botonRegistrarse;
 
     /**
      * Initializes the controller class.
@@ -54,7 +38,6 @@ public class PantallaRegistroController implements Initializable {
 
   
 
-    @FXML
     private void registrarse(ActionEvent event) throws IOException {
         Usuario usuario = new Usuario();
 

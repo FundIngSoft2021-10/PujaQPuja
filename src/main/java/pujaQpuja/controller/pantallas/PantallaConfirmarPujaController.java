@@ -20,18 +20,6 @@ import javafx.scene.control.TextField;
 public class PantallaConfirmarPujaController implements Initializable {
 
 
-    @FXML
-    private TextField campoBuscarPuja;
-    @FXML
-    private Button botonPerfil;
-    @FXML
-    private Button botonRegresar;
-    @FXML
-    private Button botonBuscarPuja;
-    @FXML
-    private Button botonSi;
-    @FXML
-    private Button botonNo;
     /**
      * Initializes the controller class.
      */

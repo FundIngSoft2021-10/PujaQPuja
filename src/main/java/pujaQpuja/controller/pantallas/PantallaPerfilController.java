@@ -21,14 +21,6 @@ import javafx.scene.image.ImageView;
 public class PantallaPerfilController implements Initializable {
 
 
-    @FXML
-    private Button botonRegresar;
-    @FXML
-    private ImageView imagenFotoPerfil;
-    @FXML
-    private Button botonEditarPerfil;
-    @FXML
-    private Button botonPrivacidadSeguridad;
     /**
      * Initializes the controller class.
      */
@@ -36,17 +28,6 @@ public class PantallaPerfilController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
-    @FXML
-    private void regresar(ActionEvent event) {
-    }
 
-    @FXML
-    private void editarPerfil(ActionEvent event) {
-    }
-
-    @FXML
-    private void privacidadSeguridad(ActionEvent event) {
-    }
 
 }

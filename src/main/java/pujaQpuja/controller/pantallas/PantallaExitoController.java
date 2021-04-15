@@ -13,10 +13,7 @@ import javafx.scene.control.Button;
 
 public class PantallaExitoController {
 
-    @FXML
-    private Button botonVolver;
 
-    @FXML
     void volver(ActionEvent event) throws IOException {
         Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"inicio.fxml"));
         Scene errorRegistroScene = new Scene(pantallaErrorParent);

@@ -21,25 +21,6 @@ import javafx.scene.image.ImageView;
  */
 public class PantallaPujarXProductoConfirmacionController implements Initializable {
 
-
-    @FXML
-    private TextField campoBusqueda;
-    @FXML
-    private ImageView botonPerfil;
-    @FXML
-    private ImageView botonRegresar;
-    @FXML
-    private ImageView botonBusqueda;
-    @FXML
-    private ImageView imagenFotoProducto;
-    @FXML
-    private Label columnaDescripcion;
-    @FXML
-    private Label campoInformacionProducto;
-    @FXML
-    private Button botonSi;
-    @FXML
-    private Button botonNo;
     /**
      * Initializes the controller class.
      */

@@ -18,12 +18,10 @@ import javafx.scene.control.Button;
  */
 public class ErrorAutenticarController implements Initializable {
 
-
-    @FXML
-    private Button botonAceptar;
     /**
      * Initializes the controller class.
      */
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

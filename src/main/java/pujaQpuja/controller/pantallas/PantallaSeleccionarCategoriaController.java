@@ -22,25 +22,6 @@ import javafx.scene.image.ImageView;
  */
 public class PantallaSeleccionarCategoriaController implements Initializable {
 
-
-    @FXML
-    private TextField campoBuscar;
-    @FXML
-    private TableView<?> tablaCatalogo;
-    @FXML
-    private TableColumn<?, ?> columnaDescripcion;
-    @FXML
-    private TableColumn<?, ?> columnaImagen;
-    @FXML
-    private ComboBox<?> desplegableFiltros;
-    @FXML
-    private ImageView botonPerfil;
-    @FXML
-    private ImageView botonRegresar;
-    @FXML
-    private ImageView botonBuscar;
-    @FXML
-    private ImageView botonOrdenar;
     /**
      * Initializes the controller class.
      */

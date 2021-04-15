@@ -24,20 +24,6 @@ import javafx.scene.image.ImageView;
 public class PantallaRealizarSubastaController implements Initializable {
 
 
-    @FXML
-    private Button botonPublicar;
-    @FXML
-    private TextField campoNombreProducto;
-    @FXML
-    private ChoiceBox<?> desplegableCategoria;
-    @FXML
-    private TextArea campoDescripcionProducto;
-    @FXML
-    private TextField campoPrecioInicial;
-    @FXML
-    private ImageView imagenProducto;
-    @FXML
-    private Button botonAdjuntarFoto;
     /**
      * Initializes the controller class.
      */
@@ -46,8 +32,5 @@ public class PantallaRealizarSubastaController implements Initializable {
         // TODO
     }    
     
-    @FXML
-    private void publicar(ActionEvent event) {
-    }
 
 }

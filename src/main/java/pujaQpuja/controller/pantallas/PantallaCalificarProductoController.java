@@ -20,15 +20,6 @@ import javafx.scene.control.RadioButton;
  */
 public class PantallaCalificarProductoController implements Initializable {
 
-
-    @FXML
-    private Button botonAceptar;
-    @FXML
-    private RadioButton botonRadioMala;
-    @FXML
-    private RadioButton botonRadioRegular;
-    @FXML
-    private RadioButton botonRadioBuena;
     /**
      * Initializes the controller class.
      */
@@ -36,9 +27,5 @@ public class PantallaCalificarProductoController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
-    @FXML
-    private void aceptar(ActionEvent event) {
-    }
 
 }

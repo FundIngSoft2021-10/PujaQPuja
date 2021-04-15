@@ -21,13 +21,6 @@ import javafx.scene.image.ImageView;
  */
 public class PantallaExitoRealizarSubastaController implements Initializable {
 
-
-    @FXML
-    private Button botonAceptar;
-    @FXML
-    private ImageView imagenProducto;
-    @FXML
-    private TextArea campoConfirmacion;
     /**
      * Initializes the controller class.
      */
@@ -35,9 +28,5 @@ public class PantallaExitoRealizarSubastaController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
-    @FXML
-    private void aceptar(ActionEvent event) {
-    }
 
 }

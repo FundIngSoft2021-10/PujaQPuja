@@ -25,11 +25,6 @@ import javafx.scene.control.Button;
  */
 public class PantallaConfirmacionCambiosPerfilController implements Initializable {
 
-
-    @FXML
-    private Button botonSi;
-    @FXML
-    private Button botonNo;
     /**
      * Initializes the controller class.
      */
@@ -37,15 +32,6 @@ public class PantallaConfirmacionCambiosPerfilController implements Initializabl
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
-    @FXML
-    private void aceptarCambios(ActionEvent event) throws IOException {
-        
-    }
 
-    @FXML
-    private void cancelarCambios(ActionEvent event) throws IOException {
-        
-    }
 
 }

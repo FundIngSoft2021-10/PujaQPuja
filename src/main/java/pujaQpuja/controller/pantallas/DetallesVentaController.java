@@ -23,28 +23,6 @@ import javafx.scene.input.MouseEvent;
  * @author LomitoFrito
  */
 public class DetallesVentaController implements Initializable {
-    @FXML
-    public ImageView botonMenu;
-    @FXML
-    private TextField campoNombreProducto;
-    @FXML
-    private TextField campoPrecio;
-    @FXML
-    private TextField campoNombreComprador;
-    @FXML
-    private TextField campoMasInformacion;
-    @FXML
-    private TextField campoDescripcion;
-    @FXML
-    private Button botonTableroDePreguntas;
-    @FXML
-    private Button botonEditarProducto;
-    @FXML
-    private Button botonEliminarProducto;
-    @FXML
-    private Button botonRegresar;
-    @FXML
-    private ImageView imagenProducto;
 
     /**
      * Initializes the controller class.
@@ -54,23 +32,4 @@ public class DetallesVentaController implements Initializable {
         // TODO
     }
 
-    @FXML
-    public void accionAbrirMenu(MouseEvent mouseEvent) {
-    }
-
-    @FXML
-    public void accionTableroDePreguntas(ActionEvent actionEvent) {
-    }
-
-    @FXML
-    public void accionEditarProducto(ActionEvent actionEvent) {
-    }
-
-    @FXML
-    public void accionRegresar(ActionEvent actionEvent) {
-    }
-
-    @FXML
-    public void accionEliminarProducto(ActionEvent actionEvent) {
-    }
 }

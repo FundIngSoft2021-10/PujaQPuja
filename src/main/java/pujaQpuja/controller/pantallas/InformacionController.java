@@ -21,20 +21,6 @@ import javafx.scene.image.ImageView;
 public class InformacionController implements Initializable {
 
 
-    @FXML
-    private ImageView imagenInformacion;
-    @FXML
-    private TextField campoTiempoSubasta;
-    @FXML
-    private TextField campoPrecioActual;
-    @FXML
-    private TextField campoTiempoRestante;
-    @FXML
-    private TextField campoTotalPujas;
-    @FXML
-    private TextField campoPrecioInicial;
-    @FXML
-    private Button botonRegresar;
     /**
      * Initializes the controller class.
      */

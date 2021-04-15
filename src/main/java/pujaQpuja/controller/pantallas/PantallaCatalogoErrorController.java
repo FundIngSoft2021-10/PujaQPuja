@@ -20,10 +20,6 @@ import javafx.scene.control.TextField;
 public class PantallaCatalogoErrorController implements Initializable {
 
 
-    @FXML
-    private TextField campoBuscarCatalogo;
-    @FXML
-    private Button botonBuscarCatalogo;
     /**
      * Initializes the controller class.
      */

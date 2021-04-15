@@ -25,10 +25,6 @@ import javafx.scene.Node;
 public class PantallaErrorRegistroController implements Initializable {
 
 
-    @FXML
-    private Button botonRegresar;
-    @FXML
-    private Button botonCancelar;
     /**
      * Initializes the controller class.
      */
@@ -37,7 +33,7 @@ public class PantallaErrorRegistroController implements Initializable {
         // TODO
     }    
     
-    @FXML
+    
     private void regresar(ActionEvent event) throws IOException {
         Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaRegistro.fxml"));
            Scene errorRegistroScene = new Scene(pantallaErrorParent);
@@ -46,7 +42,7 @@ public class PantallaErrorRegistroController implements Initializable {
            window.show();
     }
 
-    @FXML
+    
     private void cancelar(ActionEvent event) throws IOException {
         Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"Inicio.fxml"));
            Scene errorRegistroScene = new Scene(pantallaErrorParent);
