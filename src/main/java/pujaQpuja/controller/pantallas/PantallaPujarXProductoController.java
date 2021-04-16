@@ -1,15 +1,28 @@
 package pujaQpuja.controller.pantallas;
 
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.scene.Node;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import pujaQpuja.controller.SingletonController;
 
-public class PantallaPujarXProductoController {
+public class PantallaPujarXProductoController implements Initializable {
+
+    SingletonController singleton = SingletonController.getControllerAplication();
 
     @FXML
     private Rectangle botonAtras;
@@ -67,10 +80,56 @@ public class PantallaPujarXProductoController {
 
     @FXML
     private Text textoNombreProducto;
+    @Override
 
+    public void initialize(URL url, ResourceBundle rb) {
+               campoDescripcionProducto.setText(singleton.getControlador().getTemporalVisualizada().getProducto().getDescripcion());
+               textoNombreProducto.setText(singleton.getControlador().getTemporalVisualizada().getProducto().getNombre());
+                campoPrecioSubasta.setText(Double.toString(singleton.getControlador().getTemporalVisualizada().getPrecioFinal()));
+            //    campoNumeroPujantes.setText(Double.toString(singleton.getControlador().getTemporalVisualizada().getListaCompradores().size()));
+                imagenProducto.setImage(singleton.getControlador().getTemporalVisualizada().getProducto().getFotos().get(0).getImage());
+                
+
+    }
     @FXML
-    void AbrirPujar(ActionEvent event) {
+    void AbrirPujar(ActionEvent event) throws IOException {
 
+
+
+        String precioOfertado = campoDigitePrecio.getText();
+        if(precioOfertado!=null)
+        {
+            Double precio=0.0;
+                try {
+                     precio= Double.parseDouble(precioOfertado);
+                } catch (Exception e) {
+                    //TODO: handle exception
+                    //mostrar show alert dialog, campo incorrecto
+                }
+
+                if(precio>0.0)
+                {
+                        if(precio<=singleton.getControlador().getTemporalVisualizada().getPrecioFinal())
+                        {
+                           
+                         
+                            Parent pantallaIngresarParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaPujarXProductoError.fxml"));
+                            Scene pantallaIngresarScene = new Scene(pantallaIngresarParent);
+                            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                            window.setScene(pantallaIngresarScene);
+                            window.show();
+                        }
+                        else
+                        {
+                            //mostrar pantalla confirmacion- en caso de que no servir, hacer alert show dialogs
+                            Parent pantallaIngresarParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaPujarXProductoConfirmacion.fxml"));
+                            Scene pantallaIngresarScene = new Scene(pantallaIngresarParent);
+                            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                            window.setScene(pantallaIngresarScene);
+                            window.show();
+                        }
+                }
+        }
     }
 
     @FXML

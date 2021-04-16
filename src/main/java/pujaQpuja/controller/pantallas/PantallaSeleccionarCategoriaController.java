@@ -184,6 +184,8 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
     }
     @FXML
     void seleccionar(MouseEvent event) throws IOException {
+
+        singleton.getControlador().setTemporalVisualizada( singleton.getControlador().buscarPuja(tablaCatalogo.getSelectionModel().getSelectedItem().getPuja().getIdentificador()));
         Parent pantallaIngresarParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaPujarXProducto.fxml"));
         Scene pantallaIngresarScene = new Scene(pantallaIngresarParent);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();

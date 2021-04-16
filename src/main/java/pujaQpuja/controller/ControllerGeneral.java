@@ -24,7 +24,27 @@ public class ControllerGeneral {
 
     private Usuario autenticado;
     private List<Puja> pujasActivas;
+    private Puja temporalVisualizada;
 
+
+    public ControllerGeneral(Usuario autenticado, List<Puja> pujasActivas, Puja temporalVisualizada) {
+        this.autenticado = autenticado;
+        this.pujasActivas = pujasActivas;
+        this.temporalVisualizada = temporalVisualizada;
+    }
+
+    public Puja getTemporalVisualizada() {
+        return this.temporalVisualizada;
+    }
+
+    public void setTemporalVisualizada(Puja temporalVisualizada) {
+        this.temporalVisualizada = temporalVisualizada;
+    }
+
+    public ControllerGeneral temporalVisualizada(Puja temporalVisualizada) {
+        setTemporalVisualizada(temporalVisualizada);
+        return this;
+    }
 
     
     public ControllerGeneral() {
@@ -41,7 +61,7 @@ public class ControllerGeneral {
             //ImageView image = new Image (imagen);
             producto.insertarFoto(image1);
 
-                
+            
             puj.setPrecioFinal(200);
             puj.setFecha(null);
             puj.setListaCompradores(null);
@@ -123,6 +143,16 @@ public class ControllerGeneral {
         return "{" +
             " autenticado='" + getAutenticado() + "'" +
             "}";
+    }
+    public Puja buscarPuja(Long id)
+    {
+                for (Puja puja : pujasActivas) {
+                    if(puja.getIdentificador()==id)
+                    {
+                        return puja;
+                    }
+                }
+                return null;
     }
     
 }
