@@ -5,23 +5,30 @@
  */
 package pujaQpuja.controller.pantallas;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.Initializable;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.text.Text;
 
-/**
- * FXML Controller class
- *
- * @author LomitoFrito
- */
-public class PantallaPujarXProductoConfirmacionController implements Initializable {
+public class PantallaPujarXProductoConfirmacionController {
 
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+    @FXML
+    private Button botonSi;
+
+    @FXML
+    private Button botonNo;
+
+    @FXML
+    private Text textPrecioPujaARealizar;
+
+    @FXML
+    void accionNo(ActionEvent event) {
+
+    }
+
+    @FXML
+    void accionSi(ActionEvent event) {
+
     }
 
 }

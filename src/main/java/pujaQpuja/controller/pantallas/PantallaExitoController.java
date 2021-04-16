@@ -15,6 +15,8 @@ public class PantallaExitoController {
     @FXML
     private Button botonRegresar;
 
+
+
     @FXML
     private void accionRegresar(ActionEvent event) throws IOException {
         Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" + "inicio.fxml"));

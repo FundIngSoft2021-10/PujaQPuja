@@ -36,6 +36,8 @@ public class PantallaExitoRealizarSubastaController implements Initializable {
     @FXML
     private Button botonAceptar;
 
+
+
     /**
      * Initializes the controller class.
      */

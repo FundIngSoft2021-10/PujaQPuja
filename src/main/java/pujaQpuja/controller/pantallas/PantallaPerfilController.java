@@ -15,6 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
+import pujaQpuja.controller.PantallasMenu;
 /**
  * FXML Controller class
  *
@@ -23,9 +24,9 @@ import javafx.scene.shape.Rectangle;
 public class PantallaPerfilController implements Initializable {
 
     @FXML
-    private ImageView botonAtras;
+    private Rectangle botonAtras;
     @FXML
-    private ImageView botonPerfil;
+    private Rectangle botonPerfil;
     @FXML
     private Rectangle botonRectanguloAjustes;
     @FXML
@@ -50,6 +51,8 @@ public class PantallaPerfilController implements Initializable {
     private Button botonSoporteYAyuda;
 
 
+
+
     /**
      * Initializes the controller class.
      */
@@ -64,34 +67,42 @@ public class PantallaPerfilController implements Initializable {
 
     @FXML
     private void abrirPerfil(MouseEvent event) {
+        PantallasMenu.abrirPerfil(event);
     }
 
     @FXML
     private void abrirAjustes(MouseEvent event) {
+        PantallasMenu.abrirAjustes(event);
     }
 
     @FXML
     private void abrirCategorias(MouseEvent event) {
+        PantallasMenu.abrirCategorias(event);
     }
 
     @FXML
     private void abrirRealizarSubasta(MouseEvent event) {
+        PantallasMenu.abrirRealizarSubasta(event);
     }
 
     @FXML
     private void abrirHistorialVentas(MouseEvent event) {
+        PantallasMenu.abrirHistorialVentas(event);
     }
 
     @FXML
     private void abrirHistorialCompras(MouseEvent event) {
+        PantallasMenu.abrirHistorialCompras(event);
     }
 
     @FXML
     private void abrirNotificaciones(MouseEvent event) {
+        PantallasMenu.abrirNotificaciones(event);
     }
 
     @FXML
     private void abririMetodoPago(MouseEvent event) {
+        PantallasMenu.abririMetodoPago(event);
     }
 
     @FXML

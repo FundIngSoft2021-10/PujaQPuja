@@ -9,7 +9,7 @@
 
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="247.0" prefWidth="315.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+<BorderPane prefHeight="247.0" prefWidth="315.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="pujaQpuja.controller.pantallas.PantallaConfirmacionCambiosPerfilController">
     <center>
         <AnchorPane prefHeight="543.0" prefWidth="335.0" BorderPane.alignment="CENTER">

@@ -30,6 +30,7 @@ public class PantallaCatalogoErrorController implements Initializable {
     private Button botonAceptar;
 
 
+
     /**
      * Initializes the controller class.
      */

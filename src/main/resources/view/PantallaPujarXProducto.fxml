@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaPujarXProductoController">
+<BorderPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaPujarXProductoController">
     <top>
         <AnchorPane prefHeight="39.0" prefWidth="375.0" BorderPane.alignment="CENTER">
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#64b5f6" height="78.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1280.0" />
@@ -16,12 +22,14 @@
                     <Font name="Berlin Sans FB" size="32.0" />
                 </font>
             </Label>
-            <ImageView fx:id="botonAtras" fitHeight="45.0" fitWidth="45.0" layoutX="284.0" layoutY="17.0" onMouseClicked="#irAtras" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="284.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                 <Image url="@../images/atras.png" />
             </ImageView>
-            <ImageView fx:id="botonPerfil" fitHeight="55.0" fitWidth="51.0" layoutX="1205.0" layoutY="15.0" onMouseClicked="#abrirPerfil" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="55.0" fitWidth="51.0" layoutX="1205.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                 <Image url="@../images/perfil.png" />
             </ImageView>
+            <Rectangle fx:id="botonAtras" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.0" layoutX="274.0" layoutY="8.0" onMouseClicked="#irAtras" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="botonPerfil" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.0" layoutX="1197.0" layoutY="10.0" onMouseClicked="#abrirPerfil" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
         </AnchorPane>
     </top>
     <left>
@@ -118,9 +126,10 @@
                     <Font name="SansSerif Regular" size="20.0" />
                 </font>
             </TextField>
-            <ImageView fx:id="botonBusqueda" fitHeight="22.0" fitWidth="22.0" layoutX="795.0" layoutY="22.0" onMouseClicked="#AccionBuscar">
+            <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="795.0" layoutY="22.0">
                 <Image url="@../images/loupe.png" />
             </ImageView>
+            <Rectangle fx:id="botonBusqueda" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="38.0" layoutX="787.0" layoutY="14.0" onMouseClicked="#accionBuscar" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="38.0" />
             <Text layoutX="55.0" layoutY="100.0" style="-fx-background-color: #CCECFE;" text="Información del Producto">
                 <font>
                     <Font name="SansSerif Regular" size="20.0" />
@@ -130,7 +139,7 @@
             <image>
                <Image url="@../images/alerta.png" />
             </image></ImageView>
-            <Text layoutX="417.0" layoutY="99.0" style="-fx-background-color: #CCECFE;" text="Descripción del Producto">
+            <Text layoutX="417.0" layoutY="99.0" style="-fx-background-color: #CCECFE;" text="Descripción:">
                 <font>
                     <Font name="SansSerif Regular" size="20.0" />
                 </font>
@@ -140,17 +149,17 @@
                     <Font name="SansSerif Regular" size="20.0" />
                 </font>
             </Text>
-            <TextField fx:id="campoDescripcionProducto" layoutX="417.0" layoutY="122.0" prefHeight="110.0" prefWidth="454.0" promptText="Descripción" style="-fx-background-color: #CCECFE;">
+            <TextField fx:id="campoDescripcionProducto" editable="false" layoutX="417.0" layoutY="122.0" prefHeight="110.0" prefWidth="454.0" promptText="Descripción" style="-fx-background-color: #CCECFE;">
                 <font>
                     <Font name="SansSerif Regular" size="20.0" />
                 </font>
             </TextField>
-            <TextField fx:id="campoPrecioSubasta" layoutX="613.0" layoutY="292.0" promptText="Precio" style="-fx-background-color: #CCECFE;">
+            <TextField fx:id="campoPrecioSubasta" editable="false" layoutX="613.0" layoutY="292.0" promptText="Precio" style="-fx-background-color: #CCECFE;">
                 <font>
                     <Font name="SansSerif Regular" size="20.0" />
                 </font>
             </TextField>
-            <TextField fx:id="campoNumeroPujantes" layoutX="613.0" layoutY="358.0" promptText="#" style="-fx-background-color: #CCECFE;">
+            <TextField fx:id="campoNumeroPujantes" editable="false" layoutX="613.0" layoutY="358.0" promptText="#" style="-fx-background-color: #CCECFE;">
                 <font>
                     <Font name="SansSerif Regular" size="20.0" />
                 </font>

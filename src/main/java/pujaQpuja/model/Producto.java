@@ -1,24 +1,26 @@
 package pujaQpuja.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-
-import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class Producto {
     private String nombre;
     private List<Categoría> categorias;
     private String descripcion;
-    private List<Image> fotos;
+    private List<ImageView> fotos;
     private Condicion condicion;
     private float precioInicial;
 
 
 
     public Producto() {
+        this.fotos= new ArrayList<ImageView>();
+        this.categorias= new ArrayList<>();
     }
 
-    public Producto(String nombre, List<Categoría> categorias, String descripcion, List<Image> fotos, Condicion condicion, float precioInicial) {
+    public Producto(String nombre, List<Categoría> categorias, String descripcion, List<ImageView> fotos, Condicion condicion, float precioInicial) {
         this.nombre = nombre;
         this.categorias = categorias;
         this.descripcion = descripcion;
@@ -52,11 +54,11 @@ public class Producto {
         this.descripcion = descripcion;
     }
 
-    public List<Image> getFotos() {
+    public List<ImageView> getFotos() {
         return this.fotos;
     }
 
-    public void setFotos(List<Image> fotos) {
+    public void setFotos(List<ImageView> fotos) {
         this.fotos = fotos;
     }
 
@@ -90,7 +92,7 @@ public class Producto {
         return this;
     }
 
-    public Producto fotos(List<Image> fotos) {
+    public Producto fotos(List<ImageView> fotos) {
         setFotos(fotos);
         return this;
     }
@@ -129,5 +131,13 @@ public class Producto {
             ", fotos='" + getFotos() + "'" +
             ", condicion='" + getCondicion() + "'" +
             ", precio inicial='"+ getPrecioInicial()+"}";
+    }
+
+    public void insertarFoto(ImageView imagen) {
+        this.fotos.add(imagen);
+    }
+    public void insertarCategoria(Categoría actual)
+    {
+    this.categorias.add(actual);
     }
 }

@@ -29,6 +29,7 @@ import javafx.stage.Stage;
 import pujaQpuja.model.Categoría;
 import pujaQpuja.model.Producto;
 import javafx.fxml.FXMLLoader;
+import pujaQpuja.controller.PantallasMenu;
 /**
  * FXML Controller class
  *
@@ -37,9 +38,9 @@ import javafx.fxml.FXMLLoader;
 public class PantallaRealizarSubastaController implements Initializable {
 
     @FXML
-    private ImageView botonAtras;
+    private Rectangle botonAtras;
     @FXML
-    private ImageView botonPerfil;
+    private Rectangle botonPerfil;
     @FXML
     private Rectangle botonRectanguloAjustes;
     @FXML
@@ -70,6 +71,7 @@ public class PantallaRealizarSubastaController implements Initializable {
     private Button botonPublicar;
     
 
+
     /**
      * Initializes the controller class.
      */
@@ -83,65 +85,43 @@ public class PantallaRealizarSubastaController implements Initializable {
     }
 
     @FXML
-    private void abrirPerfil(MouseEvent event) throws IOException {
-        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaPerfil.fxml"));
-        Scene errorRegistroScene = new Scene(pantallaErrorParent);
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window.setScene(errorRegistroScene);
-        window.show();
+    private void abrirPerfil(MouseEvent event) {
+        PantallasMenu.abrirPerfil(event);
     }
 
     @FXML
-    private void abrirAjustes(MouseEvent event) throws IOException {
-        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"¨PantallaAjustes.fxml"));
-        Scene errorRegistroScene = new Scene(pantallaErrorParent);
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window.setScene(errorRegistroScene);
-        window.show();
+    private void abrirAjustes(MouseEvent event) {
+        PantallasMenu.abrirAjustes(event);
     }
 
     @FXML
-    private void abrirCategorias(MouseEvent event) throws IOException {
-        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaSeleccionarCategoria.fxml"));
-        Scene errorRegistroScene = new Scene(pantallaErrorParent);
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window.setScene(errorRegistroScene);
-        window.show();
+    private void abrirCategorias(MouseEvent event) {
+        PantallasMenu.abrirCategorias(event);
     }
 
     @FXML
-    private void abrirRealizarSubasta(MouseEvent event) throws IOException {
-        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaRealizarSubasta.fxml"));
-        Scene errorRegistroScene = new Scene(pantallaErrorParent);
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window.setScene(errorRegistroScene);
-        window.show();
+    private void abrirRealizarSubasta(MouseEvent event) {
+        PantallasMenu.abrirRealizarSubasta(event);
     }
 
     @FXML
-    private void abrirHistorialVentas(MouseEvent event) throws IOException {
-        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"historialVentas.fxml"));
-        Scene errorRegistroScene = new Scene(pantallaErrorParent);
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window.setScene(errorRegistroScene);
-        window.show();
+    private void abrirHistorialVentas(MouseEvent event) {
+        PantallasMenu.abrirHistorialVentas(event);
     }
 
     @FXML
-    private void abrirHistorialCompras(MouseEvent event) throws IOException {
-        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"historialCompras.fxml"));
-        Scene errorRegistroScene = new Scene(pantallaErrorParent);
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window.setScene(errorRegistroScene);
-        window.show();
+    private void abrirHistorialCompras(MouseEvent event) {
+        PantallasMenu.abrirHistorialCompras(event);
     }
 
     @FXML
     private void abrirNotificaciones(MouseEvent event) {
+        PantallasMenu.abrirNotificaciones(event);
     }
 
     @FXML
     private void abririMetodoPago(MouseEvent event) {
+        PantallasMenu.abririMetodoPago(event);
     }
 
     @FXML

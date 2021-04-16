@@ -9,7 +9,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
 
-<BorderPane prefHeight="236.0" prefWidth="305.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaErrorRegistroController">
+<BorderPane prefHeight="236.0" prefWidth="305.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaErrorRegistroController">
     <center>
         <AnchorPane prefHeight="260.0" prefWidth="300.0" BorderPane.alignment="CENTER">
             <TextArea editable="false" layoutX="26.0" layoutY="25.0" prefHeight="134.0" prefWidth="252.0" style="-fx-font-size: 18;" text="Hubo un error en registrar usuario por campos erroneos&#10;" wrapText="true">

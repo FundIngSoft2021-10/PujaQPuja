@@ -22,6 +22,8 @@ public class PantallaPujarXProductoErrorController implements Initializable {
     @FXML
     private Button botonRegresar;
 
+
+
     /**
      * Initializes the controller class.
      */
