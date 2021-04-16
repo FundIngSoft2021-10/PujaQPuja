@@ -30,9 +30,9 @@ import pujaQpuja.Utiles;
 public class PantallaRegistroController implements Initializable {
 
     @FXML
-    private ImageView botonAtras;
+    private Rectangle botonAtras;
     @FXML
-    private ImageView botonPerfil;
+    private Rectangle botonPerfil;
     @FXML
     private Rectangle botonRectanguloAjustes;
     @FXML
@@ -65,6 +65,7 @@ public class PantallaRegistroController implements Initializable {
     private CheckBox checkAceptarTerminos;
     @FXML
     private Button botonRegistrarse;
+
 
     /**
      * Initializes the controller class.

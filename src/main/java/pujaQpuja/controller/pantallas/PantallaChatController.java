@@ -23,9 +23,9 @@ import javafx.scene.text.Text;
 public class PantallaChatController implements Initializable {
 
     @FXML
-    private ImageView botonAtras;
+    private Rectangle botonAtras;
     @FXML
-    private ImageView botonPerfil;
+    private Rectangle botonPerfil;
     @FXML
     private Rectangle botonRectanguloAjustes;
     @FXML
@@ -43,9 +43,11 @@ public class PantallaChatController implements Initializable {
     @FXML
     private TextField campoEscribirMensaje;
     @FXML
-    private ImageView botonEnviar;
-    @FXML
     private Text textoTituloTipoChat;
+    @FXML
+    private Rectangle botonEnviar;
+
+
 
 
     /**

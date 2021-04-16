@@ -24,9 +24,9 @@ import javafx.scene.shape.Rectangle;
 public class DetallesVentaController implements Initializable {
 
     @FXML
-    private ImageView botonAtras;
+    private Rectangle botonAtras;
     @FXML
-    private ImageView botonPerfil;
+    private Rectangle botonPerfil;
     @FXML
     private Rectangle botonRectanguloAjustes;
     @FXML
@@ -59,6 +59,7 @@ public class DetallesVentaController implements Initializable {
     private Button botonEliminarProducto;
     @FXML
     private Rectangle botonRectanguloMasInformacion;
+
 
     /**
      * Initializes the controller class.

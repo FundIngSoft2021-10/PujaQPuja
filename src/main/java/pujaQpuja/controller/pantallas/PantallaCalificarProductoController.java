@@ -25,9 +25,9 @@ import javafx.scene.shape.Rectangle;
 public class PantallaCalificarProductoController implements Initializable {
 
     @FXML
-    private ImageView botonAtras;
+    private Rectangle botonAtras;
     @FXML
-    private ImageView botonPerfil;
+    private Rectangle botonPerfil;
     @FXML
     private Rectangle botonRectanguloAjustes;
     @FXML
@@ -52,6 +52,8 @@ public class PantallaCalificarProductoController implements Initializable {
     private Button botonAceptar;
     @FXML
     private TextField campoOpinionProducto;
+
+
 
     /**
      * Initializes the controller class.

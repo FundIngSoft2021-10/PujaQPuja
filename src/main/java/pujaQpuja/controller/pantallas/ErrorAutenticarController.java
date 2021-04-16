@@ -29,6 +29,7 @@ public class ErrorAutenticarController implements Initializable {
     @FXML
     private Button botonAceptar;
 
+
     /**
      * Initializes the controller class.
      */

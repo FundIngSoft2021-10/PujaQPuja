@@ -31,6 +31,8 @@ public class PantallaErrorPublicacionSubastaController implements Initializable 
     private Button botonCancelar;
 
 
+
+
     /**
      * Initializes the controller class.
      */

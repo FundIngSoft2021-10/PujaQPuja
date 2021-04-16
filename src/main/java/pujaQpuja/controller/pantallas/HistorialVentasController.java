@@ -23,9 +23,9 @@ import javafx.scene.shape.Rectangle;
 public class HistorialVentasController implements Initializable {
 
     @FXML
-    private ImageView botonAtras;
+    private Rectangle botonAtras;
     @FXML
-    private ImageView botonPerfil;
+    private Rectangle botonPerfil;
     @FXML
     private Rectangle botonRectanguloAjustes;
     @FXML
@@ -49,6 +49,7 @@ public class HistorialVentasController implements Initializable {
     @FXML
     private TableColumn<?, ?> columnaEstadoProducto;
 
+
     /**
      * Initializes the controller class.
      */
@@ -57,9 +58,6 @@ public class HistorialVentasController implements Initializable {
         // TODO
     }    
 
-    @FXML
-    private void accionAtras(MouseEvent event) {
-    }
 
     @FXML
     private void abrirPerfil(MouseEvent event) {
@@ -91,6 +89,10 @@ public class HistorialVentasController implements Initializable {
 
     @FXML
     private void abririMetodoPago(MouseEvent event) {
+    }
+
+    @FXML
+    private void irAtras(MouseEvent event) {
     }
 
 

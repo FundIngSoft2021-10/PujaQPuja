@@ -24,6 +24,8 @@ public class PantallaConfirmacionCambiosPerfilController implements Initializabl
     @FXML
     private Button botonNo;
 
+
+
     /**
      * Initializes the controller class.
      */

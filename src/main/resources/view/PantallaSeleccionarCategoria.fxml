@@ -21,8 +21,8 @@
             <ImageView fitHeight="55.0" fitWidth="51.0" layoutX="1205.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                 <Image url="@../images/perfil.png" />
             </ImageView>
-         <Rectangle fx:id="botonAtras" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.0" layoutX="274.0" layoutY="8.0" onMouseClicked="#irAtras" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-         <Rectangle fx:id="botonPerfil" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.0" layoutX="1197.0" layoutY="10.0" onMouseClicked="#abrirPerfil" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="botonAtras" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.0" layoutX="274.0" layoutY="8.0" onMouseClicked="#irAtras" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="botonPerfil" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.0" layoutX="1197.0" layoutY="10.0" onMouseClicked="#abrirPerfil" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
         </AnchorPane>
     </top>
     <left>
@@ -122,6 +122,7 @@
             <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="795.0" layoutY="22.0">
                 <Image url="@../images/loupe.png" />
             </ImageView>
+            <Rectangle fx:id="botonBusqueda" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="38.0" layoutX="787.0" layoutY="14.0" onMouseClicked="#accionBuscar" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="38.0" />
             <TableView fx:id="tablaCatalogo" layoutX="14.0" layoutY="94.0" prefHeight="541.0" prefWidth="983.0">
                 <columns>
                     <TableColumn fx:id="columnaImagen" editable="false" prefWidth="272.800085067749" sortable="false" />
@@ -134,12 +135,12 @@
                     <Image url="@../images/filter.png" />
                 </image>
             </ImageView>
-            <ImageView fx:id="botonOrdenar" fitHeight="29.0" fitWidth="29.0" layoutX="79.0" layoutY="65.0" onMouseClicked="#accionOrdenar">
+            <ImageView fitHeight="29.0" fitWidth="29.0" layoutX="79.0" layoutY="65.0">
                 <image>
                     <Image url="@../images/ordenar.png" />
                 </image>
             </ImageView>
-         <Rectangle fx:id="botonBusqueda" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="38.0" layoutX="787.0" layoutY="14.0" onMouseClicked="#accionBuscar" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="38.0" />
+         <Rectangle fx:id="botonOrdenar" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="38.0" layoutX="75.0" layoutY="57.0" onMouseClicked="#accionOrdenar" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="38.0" />
         </AnchorPane>
     </center>
 </BorderPane>

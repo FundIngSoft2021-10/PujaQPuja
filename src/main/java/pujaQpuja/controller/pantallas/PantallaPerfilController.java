@@ -23,9 +23,9 @@ import javafx.scene.shape.Rectangle;
 public class PantallaPerfilController implements Initializable {
 
     @FXML
-    private ImageView botonAtras;
+    private Rectangle botonAtras;
     @FXML
-    private ImageView botonPerfil;
+    private Rectangle botonPerfil;
     @FXML
     private Rectangle botonRectanguloAjustes;
     @FXML
@@ -48,6 +48,8 @@ public class PantallaPerfilController implements Initializable {
     private Button botonPrivacidadSeguridad;
     @FXML
     private Button botonSoporteYAyuda;
+
+
 
 
     /**

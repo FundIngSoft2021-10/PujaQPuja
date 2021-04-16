@@ -24,6 +24,7 @@ public class GanadorPujaController implements Initializable {
     @FXML
     private Button botonContinuar;
 
+
     /**
      * Initializes the controller class.
      */

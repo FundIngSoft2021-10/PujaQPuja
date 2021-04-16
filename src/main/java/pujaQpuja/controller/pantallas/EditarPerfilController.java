@@ -33,9 +33,9 @@ import javafx.scene.shape.Rectangle;
 public class EditarPerfilController implements Initializable {
 
     @FXML
-    private ImageView botonAtras;
+    private Rectangle botonAtras;
     @FXML
-    private ImageView botonPerfil;
+    private Rectangle botonPerfil;
     @FXML
     private Rectangle botonRectanguloAjustes;
     @FXML
@@ -68,6 +68,8 @@ public class EditarPerfilController implements Initializable {
     private Button botonGuardar;
     @FXML
     private Button botonCancelar;
+
+
 
     /**
      * Initializes the controller class.

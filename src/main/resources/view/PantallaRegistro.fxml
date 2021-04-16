@@ -16,12 +16,14 @@
                     <Font name="Berlin Sans FB" size="32.0" />
                 </font>
             </Label>
-            <ImageView fx:id="botonAtras" fitHeight="45.0" fitWidth="45.0" layoutX="284.0" layoutY="17.0" onMouseClicked="#irAtras" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="284.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                 <Image url="@../images/atras.png" />
             </ImageView>
-            <ImageView fx:id="botonPerfil" fitHeight="55.0" fitWidth="51.0" layoutX="1205.0" layoutY="15.0" onMouseClicked="#abrirPerfil" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="55.0" fitWidth="51.0" layoutX="1205.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                 <Image url="@../images/perfil.png" />
             </ImageView>
+            <Rectangle fx:id="botonAtras" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.0" layoutX="274.0" layoutY="8.0" onMouseClicked="#irAtras" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="botonPerfil" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.0" layoutX="1197.0" layoutY="10.0" onMouseClicked="#abrirPerfil" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
         </AnchorPane>
     </top>
     <left>

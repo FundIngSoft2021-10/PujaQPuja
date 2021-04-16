@@ -31,6 +31,8 @@ public class InicioController implements Initializable {
     @FXML
     private Button botonIngresar;
 
+
+
     /**
      * Initializes the controller class.
      */

@@ -22,9 +22,9 @@ import javafx.scene.shape.Rectangle;
 public class InformacionController implements Initializable {
 
     @FXML
-    private ImageView botonAtras;
+    private Rectangle botonAtras;
     @FXML
-    private ImageView botonPerfil;
+    private Rectangle botonPerfil;
     @FXML
     private Rectangle botonRectanguloAjustes;
     @FXML
@@ -51,6 +51,7 @@ public class InformacionController implements Initializable {
     private TextField campoPrecioInicial;
     @FXML
     private TextField campoPrecioActual;
+
 
 
     /**

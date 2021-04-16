@@ -36,6 +36,8 @@ import pujaQpuja.model.Categoría;
  */
 public class PantallaSeleccionarCategoriaController implements Initializable {
 
+    SingletonController singleton = SingletonController.getControllerAplication();
+    
     @FXML
     private Rectangle botonAtras;
     @FXML
@@ -59,17 +61,15 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
     @FXML
     private Rectangle botonBusqueda;
     @FXML
-    private TableView<TablaCatalogoTemporal> tablaCatalogo;
+    private TableView<?> tablaCatalogo;
     @FXML
-    private TableColumn<TablaCatalogoTemporal,String> columnaDescripcion;
+    private TableColumn<?, ?> columnaImagen;
     @FXML
-    private TableColumn<TablaCatalogoTemporal,ImageView> columnaImagen;
+    private TableColumn<?, ?> columnaDescripcion;
     @FXML
     private ComboBox<?> desplegableFiltros;
     @FXML
-    private ImageView botonOrdenar;
-
-    SingletonController singleton = SingletonController.getControllerAplication();
+    private Rectangle botonOrdenar;
     /**
      * Initializes the controller class.
      */
