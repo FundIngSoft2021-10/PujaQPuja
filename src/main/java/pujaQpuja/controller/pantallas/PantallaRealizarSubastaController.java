@@ -130,31 +130,31 @@ public class PantallaRealizarSubastaController implements Initializable {
 
     @FXML
     private void accionPublicar(ActionEvent event) throws IOException {
-        //AQUI
         Producto productoASubastar= new Producto();
-        productoASubastar.setNombre(campoNombreProducto.getText());
-        productoASubastar.setPrecioInicial(Float.parseFloat(campoPrecioInicial.getText()));
-        productoASubastar.setDescripcion(campoDescripcionProducto.getText());
-        
-        List<Categoría> categorias = new ArrayList<Categoría>();
-        if(Categoría.CALZADO==desplegableCategoria.getValue()){
-            Categoría cat=Categoría.CALZADO;
-            categorias.add(cat); 
-        }
-        if(Categoría.DEPORTE==desplegableCategoria.getValue()){
-            Categoría cat=Categoría.CALZADO;
-            categorias.add(cat); 
-        }
-        productoASubastar.setCategorias(categorias);
 
-        List<Image> fotos=new ArrayList<>();
-        fotos.add(imagenProducto.getImage());
-        productoASubastar.setFotos(fotos);
-        
         //FALTA AGREGAR ESE PRODUCTO A LA LISTA DE PUJAS 
 
         if(productoASubastar.getPrecioInicial()>=0 && !productoASubastar.getNombre().isEmpty() && !productoASubastar.getNombre().isEmpty() && !productoASubastar.getCategorias().isEmpty() && !productoASubastar.getFotos().isEmpty() ){
             
+            productoASubastar.setNombre(campoNombreProducto.getText());
+            productoASubastar.setPrecioInicial(Float.parseFloat(campoPrecioInicial.getText()));
+            productoASubastar.setDescripcion(campoDescripcionProducto.getText());
+            
+            List<Categoría> categorias = new ArrayList<Categoría>();
+            if(Categoría.CALZADO==desplegableCategoria.getValue()){
+                Categoría cat=Categoría.CALZADO;
+                categorias.add(cat); 
+            }
+            if(Categoría.DEPORTE==desplegableCategoria.getValue()){
+                Categoría cat=Categoría.CALZADO;
+                categorias.add(cat); 
+            }
+            productoASubastar.setCategorias(categorias);
+
+            List<Image> fotos=new ArrayList<>();
+            fotos.add(imagenProducto.getImage());
+            productoASubastar.setFotos(fotos);
+
             Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaExitoRealizarSubasta.fxml"));
             Scene errorRegistroScene = new Scene(pantallaErrorParent);
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
