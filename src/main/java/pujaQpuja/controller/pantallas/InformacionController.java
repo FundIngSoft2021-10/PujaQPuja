@@ -81,7 +81,7 @@ public class InformacionController implements Initializable {
     }
 
     @FXML
-    private void abrirAjustes(MouseEvent event) {
+    private void abrirAjustes(MouseEvent event) throws IOException {
         Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaAjustes.fxml"));
         Scene errorRegistroScene = new Scene(pantallaErrorParent);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();

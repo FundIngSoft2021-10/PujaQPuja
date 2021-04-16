@@ -83,7 +83,7 @@ public class PantallaRealizarSubastaController implements Initializable {
     }
 
     @FXML
-    private void abrirPerfil(MouseEvent event) {
+    private void abrirPerfil(MouseEvent event) throws IOException {
         Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaPerfil.fxml"));
         Scene errorRegistroScene = new Scene(pantallaErrorParent);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -92,7 +92,7 @@ public class PantallaRealizarSubastaController implements Initializable {
     }
 
     @FXML
-    private void abrirAjustes(MouseEvent event) {
+    private void abrirAjustes(MouseEvent event) throws IOException {
         Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"¨PantallaAjustes.fxml"));
         Scene errorRegistroScene = new Scene(pantallaErrorParent);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -101,7 +101,7 @@ public class PantallaRealizarSubastaController implements Initializable {
     }
 
     @FXML
-    private void abrirCategorias(MouseEvent event) {
+    private void abrirCategorias(MouseEvent event) throws IOException {
         Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaSeleccionarCategoria.fxml"));
         Scene errorRegistroScene = new Scene(pantallaErrorParent);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -110,7 +110,7 @@ public class PantallaRealizarSubastaController implements Initializable {
     }
 
     @FXML
-    private void abrirRealizarSubasta(MouseEvent event) {
+    private void abrirRealizarSubasta(MouseEvent event) throws IOException {
         Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaRealizarSubasta.fxml"));
         Scene errorRegistroScene = new Scene(pantallaErrorParent);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -149,7 +149,7 @@ public class PantallaRealizarSubastaController implements Initializable {
     }
 
     @FXML
-    private void accionPublicar(ActionEvent event) {
+    private void accionPublicar(ActionEvent event) throws IOException {
         //AQUI
         Producto productoASubastar= new Producto();
         productoASubastar.setNombre(campoNombreProducto.getText());
@@ -168,8 +168,26 @@ public class PantallaRealizarSubastaController implements Initializable {
         productoASubastar.setCategorias(categorias);
 
         List<Image> fotos=new ArrayList<>();
-
+        fotos.add(imagenProducto.getImage());
         productoASubastar.setFotos(fotos);
+        
+        //FALTA AGREGAR ESE PRODUCTO A LA LISTA DE PUJAS 
+
+        if(productoASubastar.getPrecioInicial()>=0 && !productoASubastar.getNombre().isEmpty() && !productoASubastar.getNombre().isEmpty() && !productoASubastar.getCategorias().isEmpty() && !productoASubastar.getFotos().isEmpty() ){
+            
+            Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaExitoRealizarSubasta.fxml"));
+            Scene errorRegistroScene = new Scene(pantallaErrorParent);
+            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+            window.setScene(errorRegistroScene);
+            window.show();
+        }
+        else{
+            Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaErrorPublicacionSubasta"));
+            Scene errorRegistroScene = new Scene(pantallaErrorParent);
+            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+            window.setScene(errorRegistroScene);
+            window.show();
+        }
     }
     
 
