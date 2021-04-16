@@ -26,7 +26,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import pujaQpuja.model.Categoría;
+import pujaQpuja.model.Categoria;
 import pujaQpuja.model.Producto;
 import javafx.fxml.FXMLLoader;
 import pujaQpuja.controller.PantallasMenu;
@@ -140,13 +140,13 @@ public class PantallaRealizarSubastaController implements Initializable {
             productoASubastar.setPrecioInicial(Float.parseFloat(campoPrecioInicial.getText()));
             productoASubastar.setDescripcion(campoDescripcionProducto.getText());
             
-            List<Categoría> categorias = new ArrayList<Categoría>();
-            if(Categoría.CALZADO==desplegableCategoria.getValue()){
-                Categoría cat=Categoría.CALZADO;
+            List<Categoria> categorias = new ArrayList<Categoria>();
+            if(Categoria.CALZADO==desplegableCategoria.getValue()){
+                Categoria cat=Categoria.CALZADO;
                 categorias.add(cat); 
             }
-            if(Categoría.DEPORTE==desplegableCategoria.getValue()){
-                Categoría cat=Categoría.CALZADO;
+            if(Categoria.DEPORTE==desplegableCategoria.getValue()){
+                Categoria cat=Categoria.CALZADO;
                 categorias.add(cat); 
             }
             productoASubastar.setCategorias(categorias);
