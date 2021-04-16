@@ -16,6 +16,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import pujaQpuja.Utiles;
+import pujaQpuja.controller.PantallasMenu;
 import pujaQpuja.model.Usuario;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -86,34 +87,42 @@ public class EditarPerfilController implements Initializable {
 
     @FXML
     private void abrirPerfil(MouseEvent event) {
+        PantallasMenu.abrirPerfil(event);
     }
 
     @FXML
     private void abrirAjustes(MouseEvent event) {
+        PantallasMenu.abrirAjustes(event);
     }
 
     @FXML
     private void abrirCategorias(MouseEvent event) {
+        PantallasMenu.abrirCategorias(event);
     }
 
     @FXML
     private void abrirRealizarSubasta(MouseEvent event) {
+        PantallasMenu.abrirRealizarSubasta(event);
     }
 
     @FXML
     private void abrirHistorialVentas(MouseEvent event) {
+        PantallasMenu.abrirHistorialVentas(event);
     }
 
     @FXML
     private void abrirHistorialCompras(MouseEvent event) {
+        PantallasMenu.abrirHistorialCompras(event);
     }
 
     @FXML
     private void abrirNotificaciones(MouseEvent event) {
+        PantallasMenu.abrirNotificaciones(event);
     }
 
     @FXML
     private void abririMetodoPago(MouseEvent event) {
+        PantallasMenu.abririMetodoPago(event);
     }
 
     @FXML
