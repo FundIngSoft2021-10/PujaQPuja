@@ -5,6 +5,7 @@
  */
 package pujaQpuja.controller.pantallas;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -13,8 +14,10 @@ import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -23,11 +26,13 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
 import pujaQpuja.controller.SingletonController;
 import pujaQpuja.model.EstadoPuja;
 import pujaQpuja.model.Puja;
 import pujaQpuja.model.TablaCatalogoTemporal;
 import pujaQpuja.model.Categoría;
+import javafx.scene.Node;
 
 /**
  * FXML Controller class
@@ -176,6 +181,15 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
 
     @FXML
     private void accionOrdenar(MouseEvent event) {
+    }
+    @FXML
+    void seleccionar(MouseEvent event) throws IOException {
+        Parent pantallaIngresarParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaPujarXProducto.fxml"));
+        Scene pantallaIngresarScene = new Scene(pantallaIngresarParent);
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(pantallaIngresarScene);
+        window.show();
+
     }
 
 }

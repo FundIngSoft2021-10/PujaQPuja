@@ -130,7 +130,7 @@
                 <Image url="@../images/loupe.png" />
             </ImageView>
             <Rectangle fx:id="botonBusqueda" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="38.0" layoutX="787.0" layoutY="14.0" onMouseClicked="#accionBuscar" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="38.0" />
-            <TableView fx:id="tablaCatalogo" layoutX="14.0" layoutY="94.0" prefHeight="541.0" prefWidth="983.0" stylesheets="@../styles/transparentTheme.css">
+            <TableView fx:id="tablaCatalogo" layoutX="14.0" layoutY="94.0" onMouseClicked="#seleccionar" prefHeight="541.0" prefWidth="983.0" stylesheets="@../styles/transparentTheme.css">
                 <columns>
                     <TableColumn fx:id="columnaImagen" editable="false" prefWidth="272.800085067749" sortable="false" text="Producto" />
                     <TableColumn fx:id="columnaDescripcion" editable="false" prefWidth="709.5998840332031" resizable="false" sortable="false" text="Descripción" />
