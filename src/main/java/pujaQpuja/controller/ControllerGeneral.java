@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import javafx.scene.image.Image;
-import pujaQpuja.model.Categoría;
+import pujaQpuja.model.Categoria;
 import pujaQpuja.model.EstadoPuja;
 import pujaQpuja.model.Producto;
 import pujaQpuja.model.Puja;
@@ -40,8 +40,8 @@ public class ControllerGeneral {
         for (int i = 0; i < 10; i++) {
             Puja puj = new Puja();
             Producto producto = new Producto();
-            producto.insertarCategoria(Categoría.CALZADO);
-            producto.insertarCategoria(Categoría.DEPORTE);
+            producto.insertarCategoria(Categoria.CALZADO);
+            producto.insertarCategoria(Categoria.DEPORTE);
             producto.setNombre("Pantalon talla 30");
             producto.setDescripcion("buen estado talla 30 color azul xd");
             Image image1 = new Image("file:" + "src/main/resources/images/logo.png", 118, 118, false, false);

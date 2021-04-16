@@ -32,7 +32,7 @@ import pujaQpuja.controller.SingletonController;
 import pujaQpuja.model.EstadoPuja;
 import pujaQpuja.model.Puja;
 import pujaQpuja.model.TablaCatalogoTemporal;
-import pujaQpuja.model.Categoría;
+import pujaQpuja.model.Categoria;
 import javafx.scene.Node;
 
 /**
