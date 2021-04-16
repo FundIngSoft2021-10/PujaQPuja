@@ -37,9 +37,9 @@ import pujaQpuja.model.Categoría;
 public class PantallaSeleccionarCategoriaController implements Initializable {
 
     @FXML
-    private ImageView botonAtras;
+    private Rectangle botonAtras;
     @FXML
-    private ImageView botonPerfil;
+    private Rectangle botonPerfil;
     @FXML
     private Rectangle botonRectanguloAjustes;
     @FXML
@@ -57,7 +57,7 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
     @FXML
     private TextField campoBusqueda;
     @FXML
-    private ImageView botonBusqueda;
+    private Rectangle botonBusqueda;
     @FXML
     private TableView<TablaCatalogoTemporal> tablaCatalogo;
     @FXML
@@ -169,7 +169,7 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
     }
 
     @FXML
-    private void AccionBuscar(MouseEvent event) {
+    private void accionBuscar(MouseEvent event) {
         System.out.println("metodobuscar");
     }
 
