@@ -130,7 +130,7 @@ public class PantallaRealizarSubastaController implements Initializable {
 
     @FXML
     private void accionPublicar(ActionEvent event) throws IOException {
-        Producto productoASubastar= new Producto();
+        Producto productoASubastar = new Producto();
 
         //FALTA AGREGAR ESE PRODUCTO A LA LISTA DE PUJAS 
 

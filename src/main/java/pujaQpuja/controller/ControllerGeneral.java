@@ -3,29 +3,18 @@ package pujaQpuja.controller;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-//////
-
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import pujaQpuja.model.Categoría;
-
-///
-
-
-
 import pujaQpuja.model.EstadoPuja;
 import pujaQpuja.model.Producto;
 import pujaQpuja.model.Puja;
 import pujaQpuja.model.Usuario;
 
-
 public class ControllerGeneral {
-
 
     private Usuario autenticado;
     private List<Puja> pujasActivas;
     private Puja temporalVisualizada;
-
 
     public ControllerGeneral(Usuario autenticado, List<Puja> pujasActivas, Puja temporalVisualizada) {
         this.autenticado = autenticado;
@@ -46,22 +35,20 @@ public class ControllerGeneral {
         return this;
     }
 
-    
     public ControllerGeneral() {
-        pujasActivas= new ArrayList<Puja>();
-        for(int i=0;i<10;i++){
+        pujasActivas = new ArrayList<Puja>();
+        for (int i = 0; i < 10; i++) {
             Puja puj = new Puja();
             Producto producto = new Producto();
             producto.insertarCategoria(Categoría.CALZADO);
             producto.insertarCategoria(Categoría.DEPORTE);
             producto.setNombre("Pantalon talla 30");
             producto.setDescripcion("buen estado talla 30 color azul xd");
-            ImageView image1 = new ImageView(new Image("file:" +"src/main/resources/images/logo.png",118,118,false,false));
-   
-            //ImageView image = new Image (imagen);
+            Image image1 = new Image("file:" + "src/main/resources/images/logo.png", 118, 118, false, false);
+
+            // ImageView image = new Image (imagen);
             producto.insertarFoto(image1);
 
-            
             puj.setPrecioFinal(200);
             puj.setFecha(null);
             puj.setListaCompradores(null);
@@ -69,24 +56,14 @@ public class ControllerGeneral {
             puj.setVendedor(autenticado);
             puj.setEstado(EstadoPuja.ACTIVO);
             pujasActivas.add(puj);
-          
         }
-            
-           
-            
-
- 
 
     }
 
-
-
-
-    public ControllerGeneral(Usuario autenticado,List< Puja> pujasActivas) {
+    public ControllerGeneral(Usuario autenticado, List<Puja> pujasActivas) {
         this.autenticado = autenticado;
-       this.pujasActivas=pujasActivas;
+        this.pujasActivas = pujasActivas;
     }
-
 
     public List<Puja> getPujasActivas() {
         return this.pujasActivas;
@@ -100,10 +77,6 @@ public class ControllerGeneral {
         setPujasActivas(pujasActivas);
         return this;
     }
- 
-
-   
-
 
     public ControllerGeneral(Usuario autenticado) {
         this.autenticado = autenticado;
@@ -140,19 +113,16 @@ public class ControllerGeneral {
 
     @Override
     public String toString() {
-        return "{" +
-            " autenticado='" + getAutenticado() + "'" +
-            "}";
+        return "{" + " autenticado='" + getAutenticado() + "'" + "}";
     }
-    public Puja buscarPuja(Long id)
-    {
-                for (Puja puja : pujasActivas) {
-                    if(puja.getIdentificador()==id)
-                    {
-                        return puja;
-                    }
-                }
-                return null;
+
+    public Puja buscarPuja(Long id) {
+        for (Puja puja : pujasActivas) {
+            if (puja.getIdentificador() == id) {
+                return puja;
+            }
+        }
+        return null;
     }
-    
+
 }

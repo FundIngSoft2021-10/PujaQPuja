@@ -96,7 +96,7 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
             if (actual.getEstado() == EstadoPuja.ACTIVO) {
                 TablaCatalogoTemporal temp = new TablaCatalogoTemporal();
                 temp.setPuja(actual);
-                temp.setImagen(actual.getProducto().getFotos().get(0));
+                temp.setImagen(new ImageView(actual.getProducto().getFotos().get(0)));
                 StringBuilder dtemp = new StringBuilder("Nombre:  " + actual.getProducto().getNombre() + "\n"
                         + "Descripción:  " + actual.getProducto().getDescripcion() + "\n" + "Precio:  " + "$ "
                         + actual.getPrecioFinal() + " COP");
