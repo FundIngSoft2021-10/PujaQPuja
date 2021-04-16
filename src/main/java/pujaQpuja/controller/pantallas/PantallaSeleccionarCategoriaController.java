@@ -61,15 +61,16 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
     @FXML
     private Rectangle botonBusqueda;
     @FXML
-    private TableView<?> tablaCatalogo;
+    private TableView<TablaCatalogoTemporal> tablaCatalogo;
     @FXML
-    private TableColumn<?, ?> columnaImagen;
+    private TableColumn<TablaCatalogoTemporal, ImageView> columnaImagen;
     @FXML
-    private TableColumn<?, ?> columnaDescripcion;
+    private TableColumn<TablaCatalogoTemporal, String> columnaDescripcion;
     @FXML
     private ComboBox<?> desplegableFiltros;
     @FXML
     private Rectangle botonOrdenar;
+
     /**
      * Initializes the controller class.
      */
