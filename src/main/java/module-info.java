@@ -11,4 +11,6 @@ module pujaQpuja {
     opens pujaQpuja.controller to javafx.fxml;
     exports pujaQpuja.controller.pantallas;
     opens pujaQpuja.controller.pantallas to javafx.fxml;
+    exports pujaQpuja.model;
+    opens pujaQpuja.model to javafx.fxml;
 }

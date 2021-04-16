@@ -17,7 +17,7 @@
     <top>
         <AnchorPane prefHeight="39.0" prefWidth="375.0" BorderPane.alignment="CENTER">
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#64b5f6" height="78.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1280.0" />
-            <Label layoutX="347.0" layoutY="8.0" prefHeight="64.0" prefWidth="259.0" text="Detalles">
+            <Label layoutX="347.0" layoutY="8.0" prefHeight="64.0" prefWidth="259.0" text="Catálogo">
                 <font>
                     <Font name="Berlin Sans FB" size="32.0" />
                 </font>
@@ -130,7 +130,7 @@
             <TableView fx:id="tablaCatalogo" layoutX="14.0" layoutY="94.0" prefHeight="541.0" prefWidth="983.0">
                 <columns>
                     <TableColumn fx:id="columnaImagen" editable="false" prefWidth="272.800085067749" sortable="false" />
-                    <TableColumn fx:id="columnaDescripcion" editable="false" prefWidth="709.5998840332031" sortable="false" />
+                    <TableColumn fx:id="columnaDescripcion" editable="false" prefWidth="709.5998840332031" resizable="false" sortable="false" />
                 </columns>
             </TableView>
             <ComboBox fx:id="desplegableFiltros" layoutX="14.0" layoutY="65.0" prefHeight="29.0" prefWidth="58.0" />
