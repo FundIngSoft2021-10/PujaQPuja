@@ -80,55 +80,48 @@ public class PantallaPujarXProductoController implements Initializable {
 
     @FXML
     private Text textoNombreProducto;
+
     @Override
-
     public void initialize(URL url, ResourceBundle rb) {
-               campoDescripcionProducto.setText(singleton.getControlador().getTemporalVisualizada().getProducto().getDescripcion());
-               textoNombreProducto.setText(singleton.getControlador().getTemporalVisualizada().getProducto().getNombre());
-                campoPrecioSubasta.setText(Double.toString(singleton.getControlador().getTemporalVisualizada().getPrecioFinal()));
-            //    campoNumeroPujantes.setText(Double.toString(singleton.getControlador().getTemporalVisualizada().getListaCompradores().size()));
-                imagenProducto.setImage(singleton.getControlador().getTemporalVisualizada().getProducto().getFotos().get(0).getImage());
-                
-
+        campoDescripcionProducto.setText(singleton.getControlador().getTemporalVisualizada().getProducto().getDescripcion());
+        textoNombreProducto.setText(singleton.getControlador().getTemporalVisualizada().getProducto().getNombre());
+        campoPrecioSubasta.setText(Double.toString(singleton.getControlador().getTemporalVisualizada().getPrecioFinal()));
+        // campoNumeroPujantes.setText(Double.toString(singleton.getControlador().getTemporalVisualizada().getListaCompradores().size()));
+        imagenProducto.setImage(singleton.getControlador().getTemporalVisualizada().getProducto().getFotos().get(0));
     }
+
     @FXML
     void AbrirPujar(ActionEvent event) throws IOException {
 
-
-
         String precioOfertado = campoDigitePrecio.getText();
-        if(precioOfertado!=null)
-        {
-            Double precio=0.0;
-                try {
-                     precio= Double.parseDouble(precioOfertado);
-                } catch (Exception e) {
-                    //TODO: handle exception
-                    //mostrar show alert dialog, campo incorrecto
-                }
+        if (precioOfertado != null) {
+            Double precio = 0.0;
+            try {
+                precio = Double.parseDouble(precioOfertado);
+            } catch (Exception e) {
+                // TODO: handle exception
+                // mostrar show alert dialog, campo incorrecto
+            }
 
-                if(precio>0.0)
-                {
-                        if(precio<=singleton.getControlador().getTemporalVisualizada().getPrecioFinal())
-                        {
-                           
-                         
-                            Parent pantallaIngresarParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaPujarXProductoError.fxml"));
-                            Scene pantallaIngresarScene = new Scene(pantallaIngresarParent);
-                            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                            window.setScene(pantallaIngresarScene);
-                            window.show();
-                        }
-                        else
-                        {
-                            //mostrar pantalla confirmacion- en caso de que no servir, hacer alert show dialogs
-                            Parent pantallaIngresarParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaPujarXProductoConfirmacion.fxml"));
-                            Scene pantallaIngresarScene = new Scene(pantallaIngresarParent);
-                            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                            window.setScene(pantallaIngresarScene);
-                            window.show();
-                        }
+            if (precio > 0.0) {
+                if (precio <= singleton.getControlador().getTemporalVisualizada().getPrecioFinal()) {
+
+                    Parent pantallaIngresarParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaPujarXProductoError.fxml"));
+                    Scene pantallaIngresarScene = new Scene(pantallaIngresarParent);
+                    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    window.setScene(pantallaIngresarScene);
+                    window.show();
+                } else {
+                    // mostrar pantalla confirmacion- en caso de que no servir, hacer alert show
+                    // dialogs
+                    Parent pantallaIngresarParent = FXMLLoader
+                            .load(getClass().getResource("/view/" + "PantallaPujarXProductoConfirmacion.fxml"));
+                    Scene pantallaIngresarScene = new Scene(pantallaIngresarParent);
+                    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    window.setScene(pantallaIngresarScene);
+                    window.show();
                 }
+            }
         }
     }
 

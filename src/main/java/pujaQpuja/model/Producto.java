@@ -3,6 +3,8 @@ package pujaQpuja.model;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import pujaQpuja.model.Categoria;
 
@@ -10,25 +12,24 @@ public class Producto {
     private String nombre;
     private List<Categoria> categorias;
     private String descripcion;
-    private List<ImageView> fotos;
+    private List<Image> fotos;
     private Condicion condicion;
     private float precioInicial;
 
-
-
     public Producto() {
-        this.fotos= new ArrayList<ImageView>();
-        this.categorias= new ArrayList<>();
+        this.fotos = new ArrayList<Image>();
+        this.categorias = new ArrayList<>();
     }
 
-    public Producto(String nombre, List<Categoria> categorias, String descripcion, List<ImageView> fotos, Condicion condicion, float precioInicial) {
+    public Producto(String nombre, List<Categoria> categorias, String descripcion, List<Image> fotos,
+            Condicion condicion, float precioInicial) {
         this.nombre = nombre;
         this.categorias = categorias;
         this.descripcion = descripcion;
         this.fotos = fotos;
         this.condicion = condicion;
-        this.precioInicial=precioInicial;
-        
+        this.precioInicial = precioInicial;
+
     }
 
     public String getNombre() {
@@ -55,25 +56,27 @@ public class Producto {
         this.descripcion = descripcion;
     }
 
-    public List<ImageView> getFotos() {
+    public List<Image> getFotos() {
         return this.fotos;
     }
 
-    public void setFotos(List<ImageView> fotos) {
+    public void setFotos(List<Image> fotos) {
         this.fotos = fotos;
+        ImageView ej = new ImageView();
     }
 
     public Condicion getCondicion() {
         return this.condicion;
     }
 
-    public float getPrecioInicial(){
+    public float getPrecioInicial() {
         return this.precioInicial;
     }
 
-    public void setPrecioInicial(float precioInicial){
-        this.precioInicial=precioInicial;
+    public void setPrecioInicial(float precioInicial) {
+        this.precioInicial = precioInicial;
     }
+
     public void setCondicion(Condicion condicion) {
         this.condicion = condicion;
     }
@@ -93,7 +96,7 @@ public class Producto {
         return this;
     }
 
-    public Producto fotos(List<ImageView> fotos) {
+    public Producto fotos(List<Image> fotos) {
         setFotos(fotos);
         return this;
     }
@@ -103,10 +106,11 @@ public class Producto {
         return this;
     }
 
-    public Producto precioInicial(float precioInicial){
+    public Producto precioInicial(float precioInicial) {
         setPrecioInicial(precioInicial);
         return this;
     }
+
     @Override
     public boolean equals(Object o) {
         if (o == this)
@@ -115,7 +119,10 @@ public class Producto {
             return false;
         }
         Producto producto = (Producto) o;
-        return Objects.equals(nombre, producto.nombre) && Objects.equals(categorias, producto.categorias) && Objects.equals(descripcion, producto.descripcion) && Objects.equals(fotos, producto.fotos) && Objects.equals(condicion, producto.condicion)&& Objects.equals(precioInicial, producto.precioInicial);
+        return Objects.equals(nombre, producto.nombre) && Objects.equals(categorias, producto.categorias)
+                && Objects.equals(descripcion, producto.descripcion) && Objects.equals(fotos, producto.fotos)
+                && Objects.equals(condicion, producto.condicion)
+                && Objects.equals(precioInicial, producto.precioInicial);
     }
 
     @Override
@@ -125,20 +132,16 @@ public class Producto {
 
     @Override
     public String toString() {
-        return "{" +
-            " nombre='" + getNombre() + "'" +
-            ", categorias='" + getCategorias() + "'" +
-            ", descripcion='" + getDescripcion() + "'" +
-            ", fotos='" + getFotos() + "'" +
-            ", condicion='" + getCondicion() + "'" +
-            ", precio inicial='"+ getPrecioInicial()+"}";
+        return "{" + " nombre='" + getNombre() + "'" + ", categorias='" + getCategorias() + "'" + ", descripcion='"
+                + getDescripcion() + "'" + ", fotos='" + getFotos() + "'" + ", condicion='" + getCondicion() + "'"
+                + ", precio inicial='" + getPrecioInicial() + "}";
     }
 
-    public void insertarFoto(ImageView imagen) {
+    public void insertarFoto(Image imagen) {
         this.fotos.add(imagen);
     }
-    public void insertarCategoria(Categoria actual)
-    {
-    this.categorias.add(actual);
+
+    public void insertarCategoria(Categoria actual) {
+        this.categorias.add(actual);
     }
 }
