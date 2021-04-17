@@ -76,6 +76,10 @@ public class ControllerGeneral {
         this.pujasActivas = pujasActivas;
     }
 
+    public void agregarPujaActiva(Puja pujaActiva){
+        this.pujasActivas.add(pujaActiva);
+    }
+
     public ControllerGeneral pujasActivas(List<Puja> pujasActivas) {
         setPujasActivas(pujasActivas);
         return this;
