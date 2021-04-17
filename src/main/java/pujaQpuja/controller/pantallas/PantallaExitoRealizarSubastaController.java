@@ -50,7 +50,7 @@ public class PantallaExitoRealizarSubastaController implements Initializable {
     private void accionAceptar(ActionEvent event) throws IOException {
 
         // AGREGAR PANTALLA
-        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaSeleccionarCateogria.fxml"));
+        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaSeleccionarCategoria.fxml"));
         Scene errorRegistroScene = new Scene(pantallaErrorParent);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(errorRegistroScene);
