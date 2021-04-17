@@ -21,7 +21,9 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class PantallaPujarXProductoConfirmacionController implements Initializable{
-    private Double precionuevo;
+    private Double precionuevo; 
+    private PantallaPujarXProductoController controlador1 ;
+
     @FXML
     private Button botonSi;
 
@@ -41,28 +43,61 @@ public class PantallaPujarXProductoConfirmacionController implements Initializab
         
     }
     @FXML
-    void accionNo(ActionEvent event) {
-
-    }
-
-    @FXML
-    void accionSi(ActionEvent event) throws IOException {
-        
+    void accionNo(ActionEvent event)throws IOException {
+        cerrar();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + "PantallaPujarXProducto.fxml"));
         fxmlLoader.load();
         PantallaPujarXProductoController ConfirmacionController = fxmlLoader.getController();
-       if( ConfirmacionController.confirmacion(true,this.precionuevo))
-       {
-           //showalert messaje puja realizada con exito
-       }
+       
+        if( ConfirmacionController.confirmacion(false,this.precionuevo))
+        {
+            //showalert messaje puja realizada con exito
+        }
         Parent p = fxmlLoader.getRoot();
         Stage s = new Stage();
         s.setScene(new Scene(p));
         s.show(); 
+        Stage escena= (Stage) botonSi().getScene().getWindow();
+        escena.close();
+    }
+
+    @FXML
+    void accionSi(ActionEvent event) throws IOException {
+        cerrar();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + "PantallaPujarXProducto.fxml"));
+        fxmlLoader.load();
+        PantallaPujarXProductoController ConfirmacionController = fxmlLoader.getController();
+       
+        if( ConfirmacionController.confirmacion(true,this.precionuevo))
+        {
+            //showalert messaje puja realizada con exito
+        }
+        Parent p = fxmlLoader.getRoot();
+        Stage s = new Stage();
+        s.setScene(new Scene(p));
+        s.show(); 
+        Stage escena= (Stage) botonSi().getScene().getWindow();
+        escena.close();
     }
    public void SetPrecioNuevo(Double precio)
    {
     this.precionuevo=precio;
    }
+   public void setControlador( PantallaPujarXProductoController controlador)
+   {
+       this.controlador1 = controlador;
+   }
+
+   public void cerrar()
+   {
+      Stage stage = (Stage) this.controlador1.botonPuja().getScene().getWindow();
+      stage.close(); 
+   }
+
+    public Button botonSi()
+    {
+
+        return this.botonSi;
+    }
 
 }

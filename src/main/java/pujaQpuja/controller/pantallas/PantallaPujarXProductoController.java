@@ -24,6 +24,7 @@ import pujaQpuja.controller.SingletonController;
 public class PantallaPujarXProductoController implements Initializable {
 
     SingletonController singleton = SingletonController.getControllerAplication();
+    private PantallaPujarXProductoConfirmacionController controlador2 ;
 
     @FXML
     private Rectangle botonAtras;
@@ -75,7 +76,7 @@ public class PantallaPujarXProductoController implements Initializable {
 
     @FXML
     private Button botonPuja;
-
+   
     @FXML
     private Button botonRealizarPregunta;
 
@@ -130,11 +131,13 @@ public class PantallaPujarXProductoController implements Initializable {
                   fxmlLoader.load();
                   PantallaPujarXProductoConfirmacionController ConfirmacionController = fxmlLoader.getController();
                   ConfirmacionController.SetPrecioNuevo(precio);
+                  ConfirmacionController.setControlador(this);
                   ConfirmacionController.getTextoPrecio().setText(Double.toString( precio));
                   Parent p = fxmlLoader.getRoot();
                   Stage s = new Stage();
                   s.setScene(new Scene(p));
                   s.show(); 
+                  
 
                 }
             }
@@ -205,9 +208,22 @@ public class PantallaPujarXProductoController implements Initializable {
     {
         //crear la puja y validad y lo demas
         
+       if(confirmacion==true) {
         singleton.getControlador().getTemporalVisualizada().setPrecioFinal(precionuevo);
-        campoPrecioSubasta.setText(Double.toString(singleton.getControlador().getTemporalVisualizada().getPrecioFinal()));
+        campoPrecioSubasta.setText(Double.toString(singleton.getControlador().getTemporalVisualizada().getPrecioFinal()));  
         return true;
+       }
+       else{
+        return false;
+       }
     }
-
+    public void setControlador(PantallaPujarXProductoConfirmacionController controlador)
+    {
+        this.controlador2 = controlador; 
+    }
+   public  Button botonPuja ()
+   {
+       return this.botonPuja;
+   }
+  
 }
