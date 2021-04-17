@@ -86,7 +86,13 @@ public class PantallaPujarXProductoController implements Initializable {
                campoDescripcionProducto.setText(singleton.getControlador().getTemporalVisualizada().getProducto().getDescripcion());
                textoNombreProducto.setText(singleton.getControlador().getTemporalVisualizada().getProducto().getNombre());
                 campoPrecioSubasta.setText(Double.toString(singleton.getControlador().getTemporalVisualizada().getPrecioFinal()));
-            //    campoNumeroPujantes.setText(Double.toString(singleton.getControlador().getTemporalVisualizada().getListaCompradores().size()));
+               // if( singleton.getControlador().getTemporalVisualizada().getListaCompradores().isEmpty())
+             //   {
+                    campoNumeroPujantes.setText("0");
+             //   }else{
+                   // campoNumeroPujantes.setText(Double.toString(singleton.getControlador().getTemporalVisualizada().getListaCompradores().size()));
+              //  }
+            //   
                 imagenProducto.setImage(singleton.getControlador().getTemporalVisualizada().getProducto().getFotos().get(0).getImage());
                 
 
@@ -122,11 +128,14 @@ public class PantallaPujarXProductoController implements Initializable {
                         else
                         {
                             //mostrar pantalla confirmacion- en caso de que no servir, hacer alert show dialogs
-                            Parent pantallaIngresarParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaPujarXProductoConfirmacion.fxml"));
-                            Scene pantallaIngresarScene = new Scene(pantallaIngresarParent);
-                            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                            window.setScene(pantallaIngresarScene);
-                            window.show();
+                            Parent pantallaIngresarParent2 = FXMLLoader.load(getClass().getResource("/view/" + "PantallaPujarXProductoConfirmacion.fxml"));
+                            Scene pantallaIngresarScene2 = new Scene(pantallaIngresarParent2);
+                            Stage window2 = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                            window2.setScene(pantallaIngresarScene2);
+                            window2.show();
+                            
+
+
                         }
                 }
         }

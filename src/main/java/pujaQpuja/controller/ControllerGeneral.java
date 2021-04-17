@@ -8,6 +8,7 @@ import java.util.Objects;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import pujaQpuja.model.Categoría;
+import pujaQpuja.model.CompradorXpuja;
 
 ///
 
@@ -61,7 +62,7 @@ public class ControllerGeneral {
             //ImageView image = new Image (imagen);
             producto.insertarFoto(image1);
 
-            
+            puj.setListaCompradores(new ArrayList<CompradorXpuja>());
             puj.setPrecioFinal(200);
             puj.setFecha(null);
             puj.setListaCompradores(null);
