@@ -33,6 +33,7 @@ import pujaQpuja.controller.SingletonController;
 import pujaQpuja.model.EstadoPuja;
 import pujaQpuja.model.Puja;
 import pujaQpuja.model.TablaCatalogoTemporal;
+import javafx.scene.Node;
 
 /**
  * FXML Controller class
@@ -81,7 +82,6 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
         System.out.println((singleton).getControlador().getAutenticado().getCorreo());
 
         // TableColumn<TablaCatalogoTemporal, String> descripcion = new
@@ -130,7 +130,6 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
         SortedList<TablaCatalogoTemporal> sortedData = new SortedList<>(filteredData);
         sortedData.comparatorProperty().bind(tablaCatalogo.comparatorProperty());
         tablaCatalogo.setItems(sortedData);
-
         System.out.println(datos.size());
     }
 

@@ -51,23 +51,13 @@ public class HistorialVentasController implements Initializable {
     private TableColumn<?, ?> columnaDescripcionProducto;
     @FXML
     private TableColumn<?, ?> columnaEstadoProducto;
-    @FXML
-    private VBox vBox;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
-        vBox = new VBox();
-        // TODO
-        vBox.getChildren().add(new Button("HOLAS"));
-        vBox.getChildren().add(new Button("HOLAS"));
-        vBox.getChildren().add(new Button("HOLAS"));
-        vBox.getChildren().add(new Button("HOLAS"));
-        vBox.getChildren().add(new Button("HOLAS"));
-        vBox.getChildren().add(new Button("HOLAS"));
+        
 
     }
 

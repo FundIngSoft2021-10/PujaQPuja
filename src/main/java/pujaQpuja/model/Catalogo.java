@@ -6,12 +6,12 @@ import java.util.Objects;
 public class Catalogo {
 
     private List<Puja> listaPujas;
-    private List<Categoría> categorias;
+    private List<Categoria> categorias;
 
     public Catalogo() {
     }
 
-    public Catalogo(List<Puja> listaPujas, List<Categoría> categorias) {
+    public Catalogo(List<Puja> listaPujas, List<Categoria> categorias) {
         this.listaPujas = listaPujas;
         this.categorias = categorias;
     }
@@ -24,11 +24,11 @@ public class Catalogo {
         this.listaPujas = listaPujas;
     }
 
-    public List<Categoría> getCategorias() {
+    public List<Categoria> getCategorias() {
         return this.categorias;
     }
 
-    public void setCategorias(List<Categoría> categorias) {
+    public void setCategorias(List<Categoria> categorias) {
         this.categorias = categorias;
     }
 

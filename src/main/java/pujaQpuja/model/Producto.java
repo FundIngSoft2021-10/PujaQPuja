@@ -6,10 +6,11 @@ import java.util.Objects;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import pujaQpuja.model.Categoria;
 
 public class Producto {
     private String nombre;
-    private List<Categoría> categorias;
+    private List<Categoria> categorias;
     private String descripcion;
     private List<Image> fotos;
     private Condicion condicion;
@@ -20,7 +21,7 @@ public class Producto {
         this.categorias = new ArrayList<>();
     }
 
-    public Producto(String nombre, List<Categoría> categorias, String descripcion, List<Image> fotos,
+    public Producto(String nombre, List<Categoria> categorias, String descripcion, List<Image> fotos,
             Condicion condicion, float precioInicial) {
         this.nombre = nombre;
         this.categorias = categorias;
@@ -39,11 +40,11 @@ public class Producto {
         this.nombre = nombre;
     }
 
-    public List<Categoría> getCategorias() {
+    public List<Categoria> getCategorias() {
         return this.categorias;
     }
 
-    public void setCategorias(List<Categoría> categorias) {
+    public void setCategorias(List<Categoria> categorias) {
         this.categorias = categorias;
     }
 
@@ -85,7 +86,7 @@ public class Producto {
         return this;
     }
 
-    public Producto categorias(List<Categoría> categorias) {
+    public Producto categorias(List<Categoria> categorias) {
         setCategorias(categorias);
         return this;
     }
@@ -140,7 +141,7 @@ public class Producto {
         this.fotos.add(imagen);
     }
 
-    public void insertarCategoria(Categoría actual) {
+    public void insertarCategoria(Categoria actual) {
         this.categorias.add(actual);
     }
 }
