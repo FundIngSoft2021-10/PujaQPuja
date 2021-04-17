@@ -9,12 +9,14 @@ import pujaQpuja.model.EstadoPuja;
 import pujaQpuja.model.Producto;
 import pujaQpuja.model.Puja;
 import pujaQpuja.model.Usuario;
+import pujaQpuja.model.repository.UsuarioRepository;
 
 public class ControllerGeneral {
 
     private Usuario autenticado;
     private List<Puja> pujasActivas;
     private Puja temporalVisualizada;
+    private UsuarioRepository usuarioDB;
 
     public ControllerGeneral(Usuario autenticado, List<Puja> pujasActivas, Puja temporalVisualizada) {
         this.autenticado = autenticado;
@@ -123,6 +125,18 @@ public class ControllerGeneral {
             }
         }
         return null;
+    }
+
+    public void setActualizarUsuario(Usuario usuario) {
+        usuarioDB.modificar(usuario);
+    }
+
+    public boolean usuarioRegistradoCorreo(String correo) {
+        return usuarioDB.buscarUsuarioCorreo(correo);
+    }
+
+    public void crear(Usuario usuario) {
+        usuarioDB.crear(usuario);
     }
 
 }

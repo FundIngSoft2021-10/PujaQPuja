@@ -5,7 +5,6 @@
  */
 package pujaQpuja.controller.pantallas;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -67,7 +66,7 @@ public class DetallesVentaController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
     }
 
     @FXML

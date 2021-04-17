@@ -18,7 +18,6 @@ import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 /**
  * FXML Controller class
  *
@@ -36,7 +35,6 @@ public class PantallaCatalogoErrorController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
     }    
 
     @FXML

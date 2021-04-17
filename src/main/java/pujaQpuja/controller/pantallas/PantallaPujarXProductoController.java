@@ -18,6 +18,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import pujaQpuja.controller.PantallasMenu;
 import pujaQpuja.controller.SingletonController;
 
 public class PantallaPujarXProductoController implements Initializable {
@@ -132,37 +133,37 @@ public class PantallaPujarXProductoController implements Initializable {
 
     @FXML
     void abrirAjustes(MouseEvent event) {
-
+        PantallasMenu.abrirAjustes(event);
     }
 
     @FXML
     void abrirCategorias(MouseEvent event) {
-
+        PantallasMenu.abrirCategorias(event);
     }
 
     @FXML
     void abrirHistorialCompras(MouseEvent event) {
-
+        PantallasMenu.abrirHistorialCompras(event);
     }
 
     @FXML
     void abrirHistorialVentas(MouseEvent event) {
-
+        PantallasMenu.abrirHistorialVentas(event);
     }
 
     @FXML
     void abrirNotificaciones(MouseEvent event) {
-
+        PantallasMenu.abrirNotificaciones(event);
     }
 
     @FXML
     void abrirPerfil(MouseEvent event) {
-
+        PantallasMenu.abrirPerfil(event);
     }
 
     @FXML
     void abrirRealizarSubasta(MouseEvent event) {
-
+        PantallasMenu.abrirRealizarSubasta(event);
     }
 
     @FXML
@@ -176,8 +177,12 @@ public class PantallaPujarXProductoController implements Initializable {
     }
 
     @FXML
-    void irAtras(MouseEvent event) {
-
+    void irAtras(MouseEvent event) throws IOException {
+        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaSeleccionarCategoria.fxml"));
+        Scene errorRegistroScene = new Scene(pantallaErrorParent);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(errorRegistroScene);
+        window.show();
     }
 
 }

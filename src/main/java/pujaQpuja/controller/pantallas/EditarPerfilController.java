@@ -17,6 +17,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import pujaQpuja.Utiles;
 import pujaQpuja.controller.PantallasMenu;
+import pujaQpuja.controller.SingletonController;
 import pujaQpuja.model.Usuario;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -70,13 +71,13 @@ public class EditarPerfilController implements Initializable {
     private Button botonCancelar;
 
 
-
+    SingletonController single = SingletonController.getControllerAplication();
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
 
     }
 
@@ -126,10 +127,10 @@ public class EditarPerfilController implements Initializable {
 
     @FXML
     private void accionGuardar(ActionEvent event) throws IOException {
-        Usuario usuario = new Usuario();
+        Usuario usuario = single.getControlador().getAutenticado();
 
         if (!campoNombres.getText().isBlank()) {
-            usuario.setApellidos(campoNombres.getText());
+            usuario.setNombres(campoNombres.getText());
         }
         if (!campoApellidos.getText().isBlank()) {
             usuario.setApellidos(campoApellidos.getText());
@@ -149,6 +150,9 @@ public class EditarPerfilController implements Initializable {
         if (!campoDireccion.getText().isBlank()) {
             usuario.setDireccion(campoDireccion.getText());
         }
+
+        single.getControlador().setActualizarUsuario(usuario);
+        single.getControlador().setAutenticado(usuario);
 
         Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaHome.fxml"));
         Scene errorRegistroScene = new Scene(pantallaErrorParent);
