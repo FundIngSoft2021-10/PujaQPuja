@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import javafx.scene.image.Image;
+
 import pujaQpuja.model.Categoria;
 import pujaQpuja.model.EstadoPuja;
 import pujaQpuja.model.Producto;

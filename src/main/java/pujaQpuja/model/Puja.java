@@ -1,7 +1,7 @@
 package pujaQpuja.model;
 
 import java.sql.Date;
-
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -34,40 +34,7 @@ public class Puja {
         this.identificador = identificador;
     }
 
-    public Puja identificador(long identificador) {
-        setIdentificador(identificador);
-        return this;
-    }
-
-    public Puja precioFinal(double precioFinal) {
-        setPrecioFinal(precioFinal);
-        return this;
-    }
-
-    public Puja fecha(Date fecha) {
-        setFecha(fecha);
-        return this;
-    }
-
-    public Puja listaCompradores(List<CompradorXpuja> listaCompradores) {
-        setListaCompradores(listaCompradores);
-        return this;
-    }
-
-    public Puja producto(Producto producto) {
-        setProducto(producto);
-        return this;
-    }
-
-    public Puja vendedor(Usuario vendedor) {
-        setVendedor(vendedor);
-        return this;
-    }
-
-    public Puja estado(EstadoPuja estado) {
-        setEstado(estado);
-        return this;
-    }
+  
 
     @Override
     public boolean equals(Object o) {
@@ -101,6 +68,7 @@ public class Puja {
     public Puja() {
 
         this.identificador=+1;
+        this.listaCompradores = new ArrayList<CompradorXpuja>();
     }
 
 

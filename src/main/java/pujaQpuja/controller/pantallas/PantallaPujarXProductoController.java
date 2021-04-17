@@ -84,9 +84,11 @@ public class PantallaPujarXProductoController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        campoDescripcionProducto.setText(singleton.getControlador().getTemporalVisualizada().getProducto().getDescripcion());
+        campoDescripcionProducto
+                .setText(singleton.getControlador().getTemporalVisualizada().getProducto().getDescripcion());
         textoNombreProducto.setText(singleton.getControlador().getTemporalVisualizada().getProducto().getNombre());
-        campoPrecioSubasta.setText(Double.toString(singleton.getControlador().getTemporalVisualizada().getPrecioFinal()));
+        campoPrecioSubasta
+                .setText(Double.toString(singleton.getControlador().getTemporalVisualizada().getPrecioFinal()));
         // campoNumeroPujantes.setText(Double.toString(singleton.getControlador().getTemporalVisualizada().getListaCompradores().size()));
         imagenProducto.setImage(singleton.getControlador().getTemporalVisualizada().getProducto().getFotos().get(0));
     }
@@ -102,12 +104,14 @@ public class PantallaPujarXProductoController implements Initializable {
             } catch (Exception e) {
                 // TODO: handle exception
                 // mostrar show alert dialog, campo incorrecto
+                System.out.println("");
             }
 
             if (precio > 0.0) {
                 if (precio <= singleton.getControlador().getTemporalVisualizada().getPrecioFinal()) {
 
-                    Parent pantallaIngresarParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaPujarXProductoError.fxml"));
+                    Parent pantallaIngresarParent = FXMLLoader
+                            .load(getClass().getResource("/view/" + "PantallaPujarXProductoError.fxml"));
                     Scene pantallaIngresarScene = new Scene(pantallaIngresarParent);
                     Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     window.setScene(pantallaIngresarScene);
@@ -115,12 +119,13 @@ public class PantallaPujarXProductoController implements Initializable {
                 } else {
                     // mostrar pantalla confirmacion- en caso de que no servir, hacer alert show
                     // dialogs
-                    Parent pantallaIngresarParent = FXMLLoader
+                    Parent pantallaIngresarParent2 = FXMLLoader
                             .load(getClass().getResource("/view/" + "PantallaPujarXProductoConfirmacion.fxml"));
-                    Scene pantallaIngresarScene = new Scene(pantallaIngresarParent);
-                    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    window.setScene(pantallaIngresarScene);
-                    window.show();
+                    Scene pantallaIngresarScene2 = new Scene(pantallaIngresarParent2);
+                    Stage window2 = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    window2.setScene(pantallaIngresarScene2);
+                    window2.show();
+
                 }
             }
         }
@@ -178,9 +183,10 @@ public class PantallaPujarXProductoController implements Initializable {
 
     @FXML
     void irAtras(MouseEvent event) throws IOException {
-        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaSeleccionarCategoria.fxml"));
+        Parent pantallaErrorParent = FXMLLoader
+                .load(getClass().getResource("/view/" + "PantallaSeleccionarCategoria.fxml"));
         Scene errorRegistroScene = new Scene(pantallaErrorParent);
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(errorRegistroScene);
         window.show();
     }
