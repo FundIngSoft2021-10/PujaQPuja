@@ -111,12 +111,13 @@ public class PantallaPujarXProductoController implements Initializable {
             if (precio > 0.0) {
                 if (precio <= singleton.getControlador().getTemporalVisualizada().getPrecioFinal()) {
 
-                    Parent pantallaIngresarParent = FXMLLoader
-                            .load(getClass().getResource("/view/" + "PantallaPujarXProductoError.fxml"));
-                    Scene pantallaIngresarScene = new Scene(pantallaIngresarParent);
-                    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    window.setScene(pantallaIngresarScene);
-                    window.show();
+
+                            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + "PantallaPujarXProductoError.fxml"));
+                            fxmlLoader.load();
+                           Parent p = fxmlLoader.getRoot();
+                            Stage s = new Stage();
+                            s.setScene(new Scene(p));
+                            s.show(); 
                 } else {
                     // mostrar pantalla confirmacion- en caso de que no servir, hacer alert show
                     // dialogs
