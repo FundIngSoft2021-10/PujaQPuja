@@ -2,6 +2,7 @@ module pujaQpuja {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.media;
+    requires javafx.scene;
     requires java.sql;
     requires com.gluonhq.charm.glisten;
     requires java.base;

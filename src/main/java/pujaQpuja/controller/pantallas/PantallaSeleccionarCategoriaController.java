@@ -16,6 +16,7 @@ import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
@@ -32,8 +33,6 @@ import pujaQpuja.controller.SingletonController;
 import pujaQpuja.model.EstadoPuja;
 import pujaQpuja.model.Puja;
 import pujaQpuja.model.TablaCatalogoTemporal;
-import pujaQpuja.model.Categoría;
-import javafx.scene.Node;
 
 /**
  * FXML Controller class
