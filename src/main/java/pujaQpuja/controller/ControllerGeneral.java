@@ -113,6 +113,10 @@ public class ControllerGeneral {
         this.contID = contID;
     }
 
+    public void incrementarId(){
+        this.contID++;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == this)
