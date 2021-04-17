@@ -119,12 +119,22 @@ public class PantallaPujarXProductoController implements Initializable {
                 } else {
                     // mostrar pantalla confirmacion- en caso de que no servir, hacer alert show
                     // dialogs
-                    Parent pantallaIngresarParent2 = FXMLLoader
-                            .load(getClass().getResource("/view/" + "PantallaPujarXProductoConfirmacion.fxml"));
-                    Scene pantallaIngresarScene2 = new Scene(pantallaIngresarParent2);
-                    Stage window2 = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    window2.setScene(pantallaIngresarScene2);
-                    window2.show();
+                    
+                  //  Parent pantallaIngresarParent2 = FXMLLoader
+                   //         .load(getClass().getResource("/view/" + "PantallaPujarXProductoConfirmacion.fxml"));
+                  //  Scene pantallaIngresarScene2 = new Scene(pantallaIngresarParent2);
+                 //   Stage window2 = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                //   window2.setScene(pantallaIngresarScene2);
+                  //  window2.show();
+                  FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + "PantallaPujarXProductoConfirmacion.fxml"));
+                  fxmlLoader.load();
+                  PantallaPujarXProductoConfirmacionController ConfirmacionController = fxmlLoader.getController();
+                  ConfirmacionController.SetPrecioNuevo(precio);
+                  ConfirmacionController.getTextoPrecio().setText(Double.toString( precio));
+                  Parent p = fxmlLoader.getRoot();
+                  Stage s = new Stage();
+                  s.setScene(new Scene(p));
+                  s.show(); 
 
                 }
             }
@@ -184,11 +194,20 @@ public class PantallaPujarXProductoController implements Initializable {
     @FXML
     void irAtras(MouseEvent event) throws IOException {
         Parent pantallaErrorParent = FXMLLoader
-                .load(getClass().getResource("/view/" + "PantallaSeleccionarCategoria.fxml"));
+        .load(getClass().getResource("/view/" + "PantallaSeleccionarCategoria.fxml"));
         Scene errorRegistroScene = new Scene(pantallaErrorParent);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(errorRegistroScene);
         window.show();
+    }
+
+    public boolean confirmacion(boolean confirmacion,Double precionuevo)
+    {
+        //crear la puja y validad y lo demas
+        
+        singleton.getControlador().getTemporalVisualizada().setPrecioFinal(precionuevo);
+        campoPrecioSubasta.setText(Double.toString(singleton.getControlador().getTemporalVisualizada().getPrecioFinal()));
+        return true;
     }
 
 }
