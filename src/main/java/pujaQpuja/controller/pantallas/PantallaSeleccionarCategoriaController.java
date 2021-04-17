@@ -13,6 +13,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -30,6 +31,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import pujaQpuja.controller.PantallasMenu;
 import pujaQpuja.controller.SingletonController;
+import pujaQpuja.model.Categoria;
 import pujaQpuja.model.EstadoPuja;
 import pujaQpuja.model.Puja;
 import pujaQpuja.model.TablaCatalogoTemporal;
@@ -73,7 +75,7 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
     @FXML
     private TableColumn<TablaCatalogoTemporal, String> columnaDescripcion;
     @FXML
-    private ComboBox<?> desplegableFiltros;
+    private ComboBox<Categoria> desplegableFiltros;
     @FXML
     private Rectangle botonOrdenar;
 
@@ -82,6 +84,7 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        desplegableFiltros.getItems().setAll(Categoria.values());
         System.out.println((singleton).getControlador().getAutenticado().getCorreo());
 
         // TableColumn<TablaCatalogoTemporal, String> descripcion = new
@@ -98,10 +101,10 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
                 temp.setImagen(new ImageView(actual.getProducto().getFotos().get(0)));
                 StringBuilder dtemp = new StringBuilder("Nombre:  " + actual.getProducto().getNombre() + "\n"
                         + "Descripción:  " + actual.getProducto().getDescripcion() + "\n" + "Precio:  " + "$ "
-                        + actual.getPrecioFinal() + " COP");
+                        + actual.getPrecioFinal() + " COP" + "\n" + "Categoria: " + actual.getProducto().getCategorias());
                 temp.setDesc(dtemp.toString());
                 datos.add(temp);
-                System.out.println(dtemp);
+                //System.out.println(dtemp);
             }
         }
         tablaCatalogo.setItems(datos);
@@ -130,7 +133,7 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
         SortedList<TablaCatalogoTemporal> sortedData = new SortedList<>(filteredData);
         sortedData.comparatorProperty().bind(tablaCatalogo.comparatorProperty());
         tablaCatalogo.setItems(sortedData);
-        System.out.println(datos.size());
+        //System.out.println(datos.size());
     }
 
     @FXML
@@ -185,6 +188,54 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
 
     @FXML
     private void accionOrdenar(MouseEvent event) {
+    }
+
+    @FXML
+    void filtrarXcategoria(ActionEvent event) {
+        System.out.println(desplegableFiltros.getSelectionModel().getSelectedItem());
+
+        ObservableList<TablaCatalogoTemporal> datos = FXCollections.observableArrayList();
+        for (Puja actual : singleton.getControlador().getPujasActivas()) {
+            if (actual.getProducto().getCategorias() == desplegableFiltros.getSelectionModel().getSelectedItem().toString()) {
+                TablaCatalogoTemporal temp = new TablaCatalogoTemporal();
+                temp.setPuja(actual);
+                temp.setImagen(new ImageView(actual.getProducto().getFotos().get(0)));
+                StringBuilder dtemp = new StringBuilder("Nombre:  " + actual.getProducto().getNombre() + "\n"
+                        + "Descripción:  " + actual.getProducto().getDescripcion() + "\n" + "Precio:  " + "$ "
+                        + actual.getPrecioFinal() + " COP" + "\n" + "Categoria: " + actual.getProducto().getCategorias());
+                temp.setDesc(dtemp.toString());
+                datos.add(temp);
+                //System.out.println(dtemp);
+            }
+        }
+        tablaCatalogo.setItems(datos);
+        FilteredList<TablaCatalogoTemporal> filteredData = new FilteredList<>(datos, b -> true);
+        campoBusqueda.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(TablaCatalogoTemporal -> {
+                // If filter text is empty, display all persons.
+
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                // Compare first name and last name of every person with filter text.
+                String lowerCaseFilter = newValue.toLowerCase();
+                ////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////
+                if (TablaCatalogoTemporal.getDesc().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true; // Filter matches first name.
+                } else
+                    return false; // Does not match.
+
+            }
+
+            );
+        });
+        SortedList<TablaCatalogoTemporal> sortedData = new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(tablaCatalogo.comparatorProperty());
+        tablaCatalogo.setItems(sortedData);
+        //System.out.println(datos.size());
+
     }
 
     @FXML

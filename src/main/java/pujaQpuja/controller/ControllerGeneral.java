@@ -43,8 +43,8 @@ public class ControllerGeneral {
         for (int i = 0; i < 10; i++) {
             Puja puj = new Puja();
             Producto producto = new Producto();
-            producto.insertarCategoria(Categoria.CALZADO);
-            producto.insertarCategoria(Categoria.DEPORTE);
+            producto.insertarCategoria(Categoria.ROPA);
+            //producto.insertarCategoria(Categoria.PANTALONES);
             producto.setNombre("Pantalon talla 30");
             producto.setDescripcion("buen estado talla 30 color azul xd");
             Image image1 = new Image("file:" + "src/main/resources/images/logo.png", 118, 118, false, false);
