@@ -82,7 +82,12 @@ public class EditarPerfilController implements Initializable {
     }
 
     @FXML
-    private void irAtras(MouseEvent event) {
+    private void irAtras(MouseEvent event) throws IOException {
+        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaPerfil.fxml"));
+        Scene errorRegistroScene = new Scene(pantallaErrorParent);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(errorRegistroScene);
+        window.show();
     }
 
     @FXML
