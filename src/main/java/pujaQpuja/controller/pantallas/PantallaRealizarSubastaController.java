@@ -182,10 +182,13 @@ public class PantallaRealizarSubastaController implements Initializable {
             Puja nPuja=new Puja();
             nPuja.setEstado(EstadoPuja.ACTIVO);
             nPuja.setProducto(productoASubastar);
-            nPuja.setIdentificador(12);
             nPuja.setPrecioFinal(productoASubastar.getPrecioInicial());
+            int cont=SingletonController.getControllerAplication().getControlador().getContID();
+            SingletonController.getControllerAplication().getControlador().setContID(cont++);
+            cont++;
+            nPuja.setIdentificador(cont++);
             System.out.println(nPuja.toString());
-
+            System.out.println(cont);
             SingletonController.getControllerAplication().getControlador().agregarPujaActiva(nPuja);
         
 

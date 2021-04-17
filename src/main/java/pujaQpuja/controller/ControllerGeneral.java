@@ -18,6 +18,7 @@ public class ControllerGeneral {
     private List<Puja> pujasActivas;
     private Puja temporalVisualizada;
     private UsuarioRepository usuarioDB;
+    private int contID;
 
     public ControllerGeneral(Usuario autenticado, List<Puja> pujasActivas, Puja temporalVisualizada) {
         this.autenticado = autenticado;
@@ -58,9 +59,11 @@ public class ControllerGeneral {
             puj.setProducto(producto);
             puj.setVendedor(autenticado);
             puj.setEstado(EstadoPuja.ACTIVO);
+            puj.setIdentificador(i);
             pujasActivas.add(puj);
+            this.setContID(i);
         }
-
+        System.out.println(this.contID);
     }
 
     public ControllerGeneral(Usuario autenticado, List<Puja> pujasActivas) {
@@ -100,6 +103,14 @@ public class ControllerGeneral {
     public ControllerGeneral autenticado(Usuario autenticado) {
         setAutenticado(autenticado);
         return this;
+    }
+
+    public int getContID() {
+        return this.contID;
+    }
+
+    public void setContID(int contID) {
+        this.contID = contID;
     }
 
     @Override
