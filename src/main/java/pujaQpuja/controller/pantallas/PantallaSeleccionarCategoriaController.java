@@ -192,11 +192,11 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
 
     @FXML
     void filtrarXcategoria(ActionEvent event) {
-        System.out.println(desplegableFiltros.getSelectionModel().getSelectedItem());
+        
 
         ObservableList<TablaCatalogoTemporal> datos = FXCollections.observableArrayList();
         for (Puja actual : singleton.getControlador().getPujasActivas()) {
-            if (actual.getProducto().getCategorias() == desplegableFiltros.getSelectionModel().getSelectedItem().toString()) {
+            if (actual.getProducto().getCategorias() == desplegableFiltros.getSelectionModel().getSelectedItem()) {
                 TablaCatalogoTemporal temp = new TablaCatalogoTemporal();
                 temp.setPuja(actual);
                 temp.setImagen(new ImageView(actual.getProducto().getFotos().get(0)));

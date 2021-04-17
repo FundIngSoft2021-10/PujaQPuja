@@ -7,35 +7,35 @@ public enum Categoria {
     PANTALONES,
     ELECTRODOMESTICOS,
     TECNOLOGIA;
-    
 
     public String getDeporte()
     {
-        return "deporte";
+        return "DEPORTE";
     }
     
     public String getCalzado()
     {
-        return "calzado";
+        return "CALZADO";
     }
     
     public String getRopa()
     {
-        return "ropa";
+        return "ROPA";
     }
     
     public String getPantalones()
     {
-        return "pantalones";
+        return "PANTALONES";
     }
     
     public String getElectrodomesticos()
     {
-        return "electrodomesticos";
+        return "ELECTRODOMESTICOS";
     }
     
     public String getTecnologia()
     {
-        return "tecnologia";
+        return "TECNOLOGIA";
     }
+
 }

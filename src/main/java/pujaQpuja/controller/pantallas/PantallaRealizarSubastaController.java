@@ -147,34 +147,28 @@ public class PantallaRealizarSubastaController implements Initializable {
             productoASubastar.setPrecioInicial(Float.parseFloat(campoPrecioInicial.getText()));
             productoASubastar.setDescripcion(campoDescripcionProducto.getText());
             
-            List<Categoria> categorias = new ArrayList<Categoria>();
+            Categoria categorias = Categoria.CALZADO;
             if(Categoria.CALZADO==desplegableCategoria.getValue()){
-                Categoria cat=Categoria.CALZADO;
-                categorias.add(cat); 
+                categorias = Categoria.CALZADO;
             }
             if(Categoria.DEPORTE==desplegableCategoria.getValue()){
-                Categoria cat=Categoria.DEPORTE;
-                categorias.add(cat); 
+                categorias = Categoria.DEPORTE; 
             }
 
             if(Categoria.ELECTRODOMESTICOS==desplegableCategoria.getValue()){
-                Categoria cat=Categoria.ELECTRODOMESTICOS;
-                categorias.add(cat);
+                categorias = Categoria.ELECTRODOMESTICOS;
             }
 
             if(Categoria.PANTALONES==desplegableCategoria.getValue()){
-                Categoria cat=Categoria.PANTALONES;
-                categorias.add(cat);
+                categorias = Categoria.PANTALONES;
             }
 
             if(Categoria.ROPA==desplegableCategoria.getValue()){
-                Categoria cat=Categoria.ROPA;
-                categorias.add(cat);
+                categorias = Categoria.ROPA;
             }
 
             if(Categoria.TECNOLOGIA==desplegableCategoria.getValue()){
-                Categoria cat=Categoria.TECNOLOGIA;
-                categorias.add(cat);
+                categorias = Categoria.TECNOLOGIA;
             }
             productoASubastar.setCategorias(categorias);
 
@@ -196,7 +190,7 @@ public class PantallaRealizarSubastaController implements Initializable {
         
 
 
-        if(productoASubastar.getPrecioInicial()>=0 && !productoASubastar.getNombre().isEmpty() && !productoASubastar.getNombre().isEmpty() && !productoASubastar.getCategorias().isEmpty() && !productoASubastar.getFotos().isEmpty() ){
+        if(productoASubastar.getPrecioInicial()>=0 && !productoASubastar.getNombre().isEmpty() && !productoASubastar.getNombre().isEmpty() && productoASubastar.getCategorias() != null && !productoASubastar.getFotos().isEmpty() ){
 
             Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaExitoRealizarSubasta.fxml"));
             Scene errorRegistroScene = new Scene(pantallaErrorParent);
