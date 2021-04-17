@@ -146,8 +146,28 @@ public class PantallaRealizarSubastaController implements Initializable {
                 categorias.add(cat); 
             }
             if(Categoria.DEPORTE==desplegableCategoria.getValue()){
-                Categoria cat=Categoria.CALZADO;
+                Categoria cat=Categoria.DEPORTE;
                 categorias.add(cat); 
+            }
+
+            if(Categoria.ELECTRODOMESTICOS==desplegableCategoria.getValue()){
+                Categoria cat=Categoria.ELECTRODOMESTICOS;
+                categorias.add(cat);
+            }
+
+            if(Categoria.PANTALONES==desplegableCategoria.getValue()){
+                Categoria cat=Categoria.PANTALONES;
+                categorias.add(cat);
+            }
+
+            if(Categoria.ROPA==desplegableCategoria.getValue()){
+                Categoria cat=Categoria.ROPA;
+                categorias.add(cat);
+            }
+
+            if(Categoria.TECNOLOGIA==desplegableCategoria.getValue()){
+                Categoria cat=Categoria.TECNOLOGIA;
+                categorias.add(cat);
             }
             productoASubastar.setCategorias(categorias);
 
