@@ -2,12 +2,12 @@ package pujaQpuja.model.entities.otros;
 
 import java.util.Objects;
 
-import javafx.scene.image.Image;
+
 import javafx.scene.image.ImageView;
 import pujaQpuja.model.entities.Puja;
 
 public class TablaCatalogoTemporal {
-    private Image imagen;
+    private ImageView imagen;
     private String desc;
     private Puja puja;
 
@@ -20,11 +20,11 @@ public class TablaCatalogoTemporal {
         this.puja = puja;
     }
 
-    public Image getImagen() {
+    public ImageView getImagen() {
         return this.imagen;
     }
 
-    public void setImagen(Image imagen) {
+    public void setImagen(ImageView imagen) {
         this.imagen = imagen;
     }
 
