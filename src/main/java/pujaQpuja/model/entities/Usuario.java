@@ -18,11 +18,12 @@ public class Usuario {
     private List<Puja> historialVentas;
     private List<Mensaje> mensajes;
 
-
     public Usuario() {
     }
 
-    public Usuario(Long id, String password, String nombres, String apellidos, String correo, String direccion, String telefono, String documento, double calificacion, List<Puja> historialCompras, List<Puja> historialVentas, List<Mensaje> mensajes) {
+    public Usuario(Long id, String password, String nombres, String apellidos, String correo, String direccion,
+            String telefono, String documento, double calificacion, List<Puja> historialCompras,
+            List<Puja> historialVentas, List<Mensaje> mensajes) {
         this.id = id;
         this.password = password;
         this.nombres = nombres;
@@ -201,30 +202,28 @@ public class Usuario {
             return false;
         }
         Usuario usuario = (Usuario) o;
-        return Objects.equals(id, usuario.id) && Objects.equals(password, usuario.password) && Objects.equals(nombres, usuario.nombres) && Objects.equals(apellidos, usuario.apellidos) && Objects.equals(correo, usuario.correo) && Objects.equals(direccion, usuario.direccion) && Objects.equals(telefono, usuario.telefono) && Objects.equals(documento, usuario.documento) && calificacion == usuario.calificacion && Objects.equals(historialCompras, usuario.historialCompras) && Objects.equals(historialVentas, usuario.historialVentas) && Objects.equals(mensajes, usuario.mensajes);
+        return Objects.equals(id, usuario.id) && Objects.equals(password, usuario.password)
+                && Objects.equals(nombres, usuario.nombres) && Objects.equals(apellidos, usuario.apellidos)
+                && Objects.equals(correo, usuario.correo) && Objects.equals(direccion, usuario.direccion)
+                && Objects.equals(telefono, usuario.telefono) && Objects.equals(documento, usuario.documento)
+                && calificacion == usuario.calificacion && Objects.equals(historialCompras, usuario.historialCompras)
+                && Objects.equals(historialVentas, usuario.historialVentas)
+                && Objects.equals(mensajes, usuario.mensajes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, password, nombres, apellidos, correo, direccion, telefono, documento, calificacion, historialCompras, historialVentas, mensajes);
+        return Objects.hash(id, password, nombres, apellidos, correo, direccion, telefono, documento, calificacion,
+                historialCompras, historialVentas, mensajes);
     }
 
     @Override
     public String toString() {
-        return "{" +
-            " id='" + getId() + "'" +
-            ", password='" + getPassword() + "'" +
-            ", nombres='" + getNombres() + "'" +
-            ", apellidos='" + getApellidos() + "'" +
-            ", correo='" + getCorreo() + "'" +
-            ", direccion='" + getDireccion() + "'" +
-            ", telefono='" + getTelefono() + "'" +
-            ", documento='" + getDocumento() + "'" +
-            ", calificacion='" + getCalificacion() + "'" +
-            ", historialCompras='" + getHistorialCompras() + "'" +
-            ", historialVentas='" + getHistorialVentas() + "'" +
-            ", mensajes='" + getMensajes() + "'" +
-            "}";
+        return "{" + " id='" + getId() + "'" + ", password='" + getPassword() + "'" + ", nombres='" + getNombres() + "'"
+                + ", apellidos='" + getApellidos() + "'" + ", correo='" + getCorreo() + "'" + ", direccion='"
+                + getDireccion() + "'" + ", telefono='" + getTelefono() + "'" + ", documento='" + getDocumento() + "'"
+                + ", calificacion='" + getCalificacion() + "'" + ", historialCompras='" + getHistorialCompras() + "'"
+                + ", historialVentas='" + getHistorialVentas() + "'" + ", mensajes='" + getMensajes() + "'" + "}";
     }
 
 }

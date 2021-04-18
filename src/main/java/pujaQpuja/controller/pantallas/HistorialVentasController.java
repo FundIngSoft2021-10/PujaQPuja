@@ -7,14 +7,13 @@ package pujaQpuja.controller.pantallas;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.layout.VBox;
 import pujaQpuja.utilities.PantallasMenu;
 
 /**
@@ -50,23 +49,12 @@ public class HistorialVentasController implements Initializable {
     private TableColumn<?, ?> columnaDescripcionProducto;
     @FXML
     private TableColumn<?, ?> columnaEstadoProducto;
-    @FXML
-    private VBox vBox;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
-        vBox = new VBox();
-        // TODO
-        vBox.getChildren().add(new Button("HOLAS"));
-        vBox.getChildren().add(new Button("HOLAS"));
-        vBox.getChildren().add(new Button("HOLAS"));
-        vBox.getChildren().add(new Button("HOLAS"));
-        vBox.getChildren().add(new Button("HOLAS"));
-        vBox.getChildren().add(new Button("HOLAS"));
 
     }
 

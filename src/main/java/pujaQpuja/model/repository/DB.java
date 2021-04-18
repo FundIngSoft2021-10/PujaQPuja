@@ -25,7 +25,10 @@ public class DB {
     }
 
     public static void desconectar(Connection conn) throws SQLException {
-        conn.close();
+        if (conn != null)
+        {
+            conn.close();
+        }
         conn = null;
         if (conn == null)
             System.out.println("Conexión terminada correctamente");

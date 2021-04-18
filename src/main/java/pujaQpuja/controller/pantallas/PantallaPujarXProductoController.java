@@ -20,6 +20,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import pujaQpuja.controller.GeneralController;
+import pujaQpuja.utilities.PantallasMenu;
 
 public class PantallaPujarXProductoController implements Initializable {
 
@@ -83,14 +84,13 @@ public class PantallaPujarXProductoController implements Initializable {
     private Text textoNombreProducto;
 
     @Override
-
     public void initialize(URL url, ResourceBundle rb) {
         generalController = GeneralController.getControllerAplication();
 
         campoDescripcionProducto.setText(generalController.getTemporalVisualizada().getProducto().getDescripcion());
         textoNombreProducto.setText(generalController.getTemporalVisualizada().getProducto().getNombre());
         campoPrecioSubasta.setText(Double.toString(generalController.getTemporalVisualizada().getPrecioFinal()));
-        //campoNumeroPujantes.setText(Double.toString(singleton.getTemporalVisualizada().getListaCompradores().size()));
+        // campoNumeroPujantes.setText(Double.toString(singleton.getTemporalVisualizada().getListaCompradores().size()));
         imagenProducto.setImage(generalController.getTemporalVisualizada().getProducto().getFoto());
     }
 
@@ -102,23 +102,39 @@ public class PantallaPujarXProductoController implements Initializable {
             try {
                 precio = Double.parseDouble(precioOfertado);
             } catch (Exception e) {
-                //TODO: handle exception
-                //mostrar show alert dialog, campo incorrecto
+                // TODO: handle exception
+                // mostrar show alert dialog, campo incorrecto
             }
             if (precio > 0.0) {
                 if (precio <= generalController.getTemporalVisualizada().getPrecioFinal()) {
-                    Parent pantallaIngresarParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaPujarXProductoError.fxml"));
+                    Parent pantallaIngresarParent = FXMLLoader
+                            .load(getClass().getResource("/view/" + "PantallaPujarXProductoError.fxml"));
                     Scene pantallaIngresarScene = new Scene(pantallaIngresarParent);
                     Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     window.setScene(pantallaIngresarScene);
                     window.show();
                 } else {
-                    //mostrar pantalla confirmacion- en caso de que no servir, hacer alert show dialogs
-                    Parent pantallaIngresarParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaPujarXProductoConfirmacion.fxml"));
-                    Scene pantallaIngresarScene = new Scene(pantallaIngresarParent);
-                    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    window.setScene(pantallaIngresarScene);
-                    window.show();
+                    // mostrar pantalla confirmacion- en caso de que no servir, hacer alert show
+                    // dialogs
+
+                    // Parent pantallaIngresarParent2 = FXMLLoader
+                    // .load(getClass().getResource("/view/" +
+                    // "PantallaPujarXProductoConfirmacion.fxml"));
+                    // Scene pantallaIngresarScene2 = new Scene(pantallaIngresarParent2);
+                    // Stage window2 = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    // window2.setScene(pantallaIngresarScene2);
+                    // window2.show();
+                    FXMLLoader fxmlLoader = new FXMLLoader(
+                            getClass().getResource("/view/" + "PantallaPujarXProductoConfirmacion.fxml"));
+                    fxmlLoader.load();
+                    PantallaPujarXProductoConfirmacionController ConfirmacionController = fxmlLoader.getController();
+                    ConfirmacionController.SetPrecioNuevo(precio);
+                    ConfirmacionController.getTextoPrecio().setText(Double.toString(precio));
+                    Parent p = fxmlLoader.getRoot();
+                    Stage s = new Stage();
+                    s.setScene(new Scene(p));
+                    s.show();
+
                 }
             }
         }
@@ -131,37 +147,37 @@ public class PantallaPujarXProductoController implements Initializable {
 
     @FXML
     void abrirAjustes(MouseEvent event) {
-
+        PantallasMenu.abrirAjustes(event);
     }
 
     @FXML
     void abrirCategorias(MouseEvent event) {
-
+        PantallasMenu.abrirCategorias(event);
     }
 
     @FXML
     void abrirHistorialCompras(MouseEvent event) {
-
+        PantallasMenu.abrirHistorialCompras(event);
     }
 
     @FXML
     void abrirHistorialVentas(MouseEvent event) {
-
+        PantallasMenu.abrirHistorialVentas(event);
     }
 
     @FXML
     void abrirNotificaciones(MouseEvent event) {
-
+        PantallasMenu.abrirNotificaciones(event);
     }
 
     @FXML
     void abrirPerfil(MouseEvent event) {
-
+        PantallasMenu.abrirPerfil(event);
     }
 
     @FXML
     void abrirRealizarSubasta(MouseEvent event) {
-
+        PantallasMenu.abrirRealizarSubasta(event);
     }
 
     @FXML
@@ -175,8 +191,21 @@ public class PantallaPujarXProductoController implements Initializable {
     }
 
     @FXML
-    void irAtras(MouseEvent event) {
+    void irAtras(MouseEvent event) throws IOException {
+        Parent pantallaErrorParent = FXMLLoader
+                .load(getClass().getResource("/view/" + "PantallaSeleccionarCategoria.fxml"));
+        Scene errorRegistroScene = new Scene(pantallaErrorParent);
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(errorRegistroScene);
+        window.show();
+    }
 
+    public boolean confirmacion(boolean confirmacion, Double precionuevo) {
+        // crear la puja y validad y lo demas
+
+        generalController.getTemporalVisualizada().setPrecioFinal(precionuevo);
+        campoPrecioSubasta.setText(Double.toString(generalController.getTemporalVisualizada().getPrecioFinal()));
+        return true;
     }
 
 }

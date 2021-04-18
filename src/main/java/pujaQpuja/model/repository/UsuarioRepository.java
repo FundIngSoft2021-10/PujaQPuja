@@ -195,4 +195,16 @@ public class UsuarioRepository extends DB {
             }
         }
     }
+
+    public static boolean buscarUsuarioCorreo(String correo) {
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Connection con = getConexion();
+
+        String sql = "";
+        sql += "SELECT * FROM Usuario ";
+        sql += "WHERE correo = ?";
+        
+        return false;
+    }
 }

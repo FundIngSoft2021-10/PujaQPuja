@@ -17,6 +17,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import pujaQpuja.utilities.Utiles;
 import pujaQpuja.utilities.PantallasMenu;
+import pujaQpuja.controller.GeneralController;
 import pujaQpuja.model.entities.Usuario;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -31,6 +32,8 @@ import javafx.scene.shape.Rectangle;
  * @author Cristian Da Camara
  */
 public class EditarPerfilController implements Initializable {
+
+    GeneralController generalController;
 
     @FXML
     private Rectangle botonAtras;
@@ -69,19 +72,21 @@ public class EditarPerfilController implements Initializable {
     @FXML
     private Button botonCancelar;
 
-
-
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-
+        generalController = GeneralController.getControllerAplication();
     }
 
     @FXML
-    private void irAtras(MouseEvent event) {
+    private void irAtras(MouseEvent event) throws IOException {
+        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaPerfil.fxml"));
+        Scene errorRegistroScene = new Scene(pantallaErrorParent);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(errorRegistroScene);
+        window.show();
     }
 
     @FXML
@@ -126,10 +131,10 @@ public class EditarPerfilController implements Initializable {
 
     @FXML
     private void accionGuardar(ActionEvent event) throws IOException {
-        Usuario usuario = new Usuario();
+        Usuario usuario = generalController.getAutenticado();
 
         if (!campoNombres.getText().isBlank()) {
-            usuario.setApellidos(campoNombres.getText());
+            usuario.setNombres(campoNombres.getText());
         }
         if (!campoApellidos.getText().isBlank()) {
             usuario.setApellidos(campoApellidos.getText());
@@ -150,7 +155,10 @@ public class EditarPerfilController implements Initializable {
             usuario.setDireccion(campoDireccion.getText());
         }
 
-        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaHome.fxml"));
+        generalController.setActualizarUsuario(usuario);
+        generalController.setAutenticado(usuario);
+
+        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaSeleccionarCategoria.fxml"));
         Scene errorRegistroScene = new Scene(pantallaErrorParent);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(errorRegistroScene);
@@ -159,7 +167,7 @@ public class EditarPerfilController implements Initializable {
 
     @FXML
     private void accionCancelar(ActionEvent event) throws IOException {
-        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaHome.fxml"));
+        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaSeleccionarCategoria.fxml"));
         Scene errorRegistroScene = new Scene(pantallaErrorParent);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(errorRegistroScene);

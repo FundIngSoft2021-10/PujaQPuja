@@ -35,6 +35,8 @@ public class GeneralController implements IGeneralController {
     private List<Puja> pujasActivas;
     private Puja temporalVisualizada;
 
+    private int contID;
+
     // ----------------------------------------------------------
     // ---------------------- Constructor -----------------------
     // ----------------------------------------------------------
@@ -153,5 +155,35 @@ public class GeneralController implements IGeneralController {
         }
         return null;
     }
+
+    public void setActualizarUsuario(Usuario usuario) {
+        UsuarioRepository.modificar(usuario);
+    }
+
+    public boolean usuarioRegistradoCorreo(String correo) {
+        return UsuarioRepository.buscarUsuarioCorreo(correo);
+    }
+
+    public void crear(Usuario usuario) {
+        UsuarioRepository.crear(usuario);
+    }
+
+
+    public void agregarPujaActiva(Puja pujaActiva){
+        this.pujasActivas.add(pujaActiva);
+    }
+
+    public int getContID() {
+        return this.contID;
+    }
+
+    public void setContID(int contID) {
+        this.contID = contID;
+    }
+
+    public void incrementarId(){
+        this.contID++;
+    }
+
 
 }

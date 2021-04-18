@@ -13,9 +13,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
@@ -28,11 +30,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import pujaQpuja.controller.GeneralController;
-import pujaQpuja.utilities.PantallasMenu;
+import pujaQpuja.model.entities.Categoria;
 import pujaQpuja.model.entities.EstadoPuja;
 import pujaQpuja.model.entities.Puja;
 import pujaQpuja.model.entities.otros.TablaCatalogoTemporal;
-import javafx.scene.Node;
+import pujaQpuja.utilities.PantallasMenu;
 
 /**
  * FXML Controller class
@@ -72,7 +74,7 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
     @FXML
     private TableColumn<TablaCatalogoTemporal, String> columnaDescripcion;
     @FXML
-    private ComboBox<?> desplegableFiltros;
+    private ComboBox<Categoria> desplegableFiltros;
     @FXML
     private Rectangle botonOrdenar;
 
@@ -86,6 +88,7 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
         // TODO REPARAR CÓDIGO
         System.out.println(generalController.getAutenticado().getCorreo());
 
+        desplegableFiltros.getItems().setAll(Categoria.values());
         // TableColumn<TablaCatalogoTemporal, String> descripcion = new
         // TableColumn<>("Descripción");
         columnaDescripcion.setCellValueFactory(new PropertyValueFactory<TablaCatalogoTemporal, String>("desc"));
@@ -97,13 +100,14 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
             if (actual.getEstado() == EstadoPuja.ACTIVO) {
                 TablaCatalogoTemporal temp = new TablaCatalogoTemporal();
                 temp.setPuja(actual);
-                temp.setImagen(actual.getProducto().getFoto());
+                temp.setImagen(new ImageView(actual.getProducto().getFoto()));
                 StringBuilder dtemp = new StringBuilder("Nombre:  " + actual.getProducto().getNombre() + "\n"
                         + "Descripción:  " + actual.getProducto().getDescripcion() + "\n" + "Precio:  " + "$ "
-                        + actual.getPrecioFinal() + " COP");
+                        + actual.getPrecioFinal() + " COP" + "\n" + "Categoria: "
+                        + actual.getProducto().getCategoria());
                 temp.setDesc(dtemp.toString());
                 datos.add(temp);
-                System.out.println(dtemp);
+                // System.out.println(dtemp);
             }
         }
         tablaCatalogo.setItems(datos);
@@ -132,8 +136,7 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
         SortedList<TablaCatalogoTemporal> sortedData = new SortedList<>(filteredData);
         sortedData.comparatorProperty().bind(tablaCatalogo.comparatorProperty());
         tablaCatalogo.setItems(sortedData);
-
-        System.out.println(datos.size());
+        // System.out.println(datos.size());
     }
 
 
@@ -193,10 +196,60 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
     }
 
     @FXML
+    void filtrarXcategoria(ActionEvent event) {
+
+        ObservableList<TablaCatalogoTemporal> datos = FXCollections.observableArrayList();
+        for (Puja actual : generalController.getPujasActivas()) {
+            if (actual.getProducto().getCategoria() == desplegableFiltros.getSelectionModel().getSelectedItem()) {
+                TablaCatalogoTemporal temp = new TablaCatalogoTemporal();
+                temp.setPuja(actual);
+                temp.setImagen(new ImageView(actual.getProducto().getFoto()));
+                StringBuilder dtemp = new StringBuilder("Nombre:  " + actual.getProducto().getNombre() + "\n"
+                        + "Descripción:  " + actual.getProducto().getDescripcion() + "\n" + "Precio:  " + "$ "
+                        + actual.getPrecioFinal() + " COP" + "\n" + "Categoria: "
+                        + actual.getProducto().getCategoria());
+                temp.setDesc(dtemp.toString());
+                datos.add(temp);
+                // System.out.println(dtemp);
+            }
+        }
+        tablaCatalogo.setItems(datos);
+        FilteredList<TablaCatalogoTemporal> filteredData = new FilteredList<>(datos, b -> true);
+        campoBusqueda.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(TablaCatalogoTemporal -> {
+                // If filter text is empty, display all persons.
+
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                // Compare first name and last name of every person with filter text.
+                String lowerCaseFilter = newValue.toLowerCase();
+                ////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////
+                if (TablaCatalogoTemporal.getDesc().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true; // Filter matches first name.
+                } else
+                    return false; // Does not match.
+
+            }
+
+            );
+        });
+        SortedList<TablaCatalogoTemporal> sortedData = new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(tablaCatalogo.comparatorProperty());
+        tablaCatalogo.setItems(sortedData);
+        // System.out.println(datos.size());
+
+    }
+
+    @FXML
     void seleccionar(MouseEvent event) throws IOException {
 
-        generalController.setTemporalVisualizada(generalController.buscarPuja(tablaCatalogo.getSelectionModel().getSelectedItem().getPuja().getId()));
-        Parent pantallaIngresarParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaPujarXProducto.fxml"));
+        generalController.setTemporalVisualizada(
+                generalController.buscarPuja(tablaCatalogo.getSelectionModel().getSelectedItem().getPuja().getId()));
+        Parent pantallaIngresarParent = FXMLLoader
+                .load(getClass().getResource("/view/" + "PantallaPujarXProducto.fxml"));
         Scene pantallaIngresarScene = new Scene(pantallaIngresarParent);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(pantallaIngresarScene);
@@ -224,8 +277,9 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
  * import javafx.scene.control.TextField; import
  * javafx.scene.control.cell.PropertyValueFactory; import
  * javafx.scene.image.ImageView; import
- * pujaQpuja.controller.SingletonController; import pujaQpuja.model.entities.EstadoPuja;
- * import pujaQpuja.model.entities.Puja; import pujaQpuja.model.entities.otros.TablaCatalogoTemporal;
+ * pujaQpuja.controller.SingletonController; import
+ * pujaQpuja.model.entities.EstadoPuja; import pujaQpuja.model.entities.Puja;
+ * import pujaQpuja.model.entities.otros.TablaCatalogoTemporal;
  * 
  * 
  * public class PantallaSeleccionarCategoriaController implements Initializable

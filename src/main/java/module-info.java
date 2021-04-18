@@ -3,7 +3,6 @@ module pujaQpuja {
     requires javafx.fxml;
     requires javafx.media;
     requires java.sql;
-    requires com.gluonhq.charm.glisten;
     requires java.base;
     exports pujaQpuja;
     exports pujaQpuja.utilities;
