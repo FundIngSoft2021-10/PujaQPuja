@@ -1,16 +1,21 @@
 package pujaQpuja.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javafx.scene.image.Image;
+import pujaQpuja.model.entities.Categoria;
+import pujaQpuja.model.entities.Producto;
 import pujaQpuja.model.entities.Puja;
 import pujaQpuja.model.entities.Usuario;
+import pujaQpuja.model.entities.EstadoPuja;
 import pujaQpuja.model.repository.UsuarioRepository;
 
 public class GeneralController implements IGeneralController {
 
-    //----------------------------------------------------------
-    //----------------------- Singleton ------------------------
-    //----------------------------------------------------------
+    // ----------------------------------------------------------
+    // ----------------------- Singleton ------------------------
+    // ----------------------------------------------------------
 
     private static GeneralController conexion = null;
 
@@ -21,72 +26,63 @@ public class GeneralController implements IGeneralController {
         return conexion;
     }
 
-    //----------------------------------------------------------
-    //------------------ Variables Globales --------------------
-    //----------------------------------------------------------
+    // ----------------------------------------------------------
+    // ------------------ Variables Globales --------------------
+    // ----------------------------------------------------------
 
     private Usuario autenticado;
 
     private List<Puja> pujasActivas;
     private Puja temporalVisualizada;
 
-    //----------------------------------------------------------
-    //---------------------- Constructor -----------------------
-    //----------------------------------------------------------
+    // ----------------------------------------------------------
+    // ---------------------- Constructor -----------------------
+    // ----------------------------------------------------------
 
     public GeneralController() {
+        //Eliminar la linea de abajo
+        obtenerPujas();
     }
 
-    //----------------------------------------------------------
-    //---------------- Autenticacion y Sesión ------------------
-    //----------------------------------------------------------
+    // ----------------------------------------------------------
+    // ---------------- Autenticacion y Sesión ------------------
+    // ----------------------------------------------------------
 
     public boolean iniciarSesion(String correo, String password) {
         Usuario temp = new Usuario();
         temp.setCorreo(correo);
-        
-        if(UsuarioRepository.buscarPorCorreo(temp))
-        {
+
+        if (UsuarioRepository.buscarPorCorreo(temp)) {
             if (temp.getPassword().equals(password)) {
                 autenticado = temp;
                 System.out.println("ENTRASTE CORRECTAMENTE");
                 return true;
-            }
-            else {
+            } else {
                 System.out.println("Contraseña incorrecta");
             }
-        }
-        else {
+        } else {
             System.out.println("Correo incorrecto");
         }
         return false;
     }
 
-    //----------------------------------------------------------
-    //------------------------- Otros --------------------------
-    //----------------------------------------------------------
+    // ----------------------------------------------------------
+    // ------------------------- Otros --------------------------
+    // ----------------------------------------------------------
 
-
-
-
-
-
-
-/*
-    public ControllerGeneral() {
+    public void obtenerPujas() {
+        // TODO hacerlo mirando la base de datos
         pujasActivas = new ArrayList<Puja>();
         for (int i = 0; i < 10; i++) {
             Puja puj = new Puja();
             Producto producto = new Producto();
-            producto.insertarCategoria(Categoría.CALZADO);
-            producto.insertarCategoria(Categoría.DEPORTE);
+            producto.setCategoria(Categoria.CALZADO);
             producto.setNombre("Pantalon talla 30");
             producto.setDescripcion("buen estado talla 30 color azul xd");
-            ImageView image1 = new ImageView(
-                    new Image("file:" + "src/main/resources/images/logo.png", 118, 118, false, false));
+            Image image1 = new Image("file:" + "src/main/resources/images/logo.png", 118, 118, false, false);
 
             // ImageView image = new Image (imagen);
-            producto.insertarFoto(image1);
+            producto.setFoto(image1);
 
             puj.setPrecioFinal(200);
             puj.setFecha(null);
@@ -100,9 +96,6 @@ public class GeneralController implements IGeneralController {
 
     }
 
-*/
-
-    
     public Puja getTemporalVisualizada() {
         return this.temporalVisualizada;
     }
@@ -115,7 +108,6 @@ public class GeneralController implements IGeneralController {
         setTemporalVisualizada(temporalVisualizada);
         return this;
     }
-
 
     public GeneralController(Usuario autenticado, List<Puja> pujasActivas) {
         this.autenticado = autenticado;
@@ -153,6 +145,7 @@ public class GeneralController implements IGeneralController {
     }
 
     public Puja buscarPuja(Long id) {
+        // TODO hacerlo mirando la base de datos
         for (Puja puja : pujasActivas) {
             if (puja.getId() == id) {
                 return puja;

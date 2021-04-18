@@ -29,7 +29,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import pujaQpuja.controller.GeneralController;
 import pujaQpuja.utilities.PantallasMenu;
-import pujaQpuja.model.entities.otros.EstadoPuja;
+import pujaQpuja.model.entities.EstadoPuja;
 import pujaQpuja.model.entities.Puja;
 import pujaQpuja.model.entities.otros.TablaCatalogoTemporal;
 import javafx.scene.Node;
@@ -224,7 +224,7 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
  * import javafx.scene.control.TextField; import
  * javafx.scene.control.cell.PropertyValueFactory; import
  * javafx.scene.image.ImageView; import
- * pujaQpuja.controller.SingletonController; import pujaQpuja.model.entities.otros.EstadoPuja;
+ * pujaQpuja.controller.SingletonController; import pujaQpuja.model.entities.EstadoPuja;
  * import pujaQpuja.model.entities.Puja; import pujaQpuja.model.entities.otros.TablaCatalogoTemporal;
  * 
  * 

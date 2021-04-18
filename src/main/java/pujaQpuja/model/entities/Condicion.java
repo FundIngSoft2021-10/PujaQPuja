@@ -1,4 +1,4 @@
-package pujaQpuja.model.entities.otros;
+package pujaQpuja.model.entities;
 
 public enum Condicion {
     RESTAURADO,

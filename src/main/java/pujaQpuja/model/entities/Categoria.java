@@ -1,6 +1,6 @@
 package pujaQpuja.model.entities;
 
-public enum Categoría {
+public enum Categoria {
     DEPORTE,
     CALZADO,
     ROPA,

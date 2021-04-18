@@ -1,7 +1,5 @@
 package pujaQpuja.model.entities;
 
-import pujaQpuja.model.entities.otros.EstadoPuja;
-
 import java.sql.Date;
 
 import java.util.List;

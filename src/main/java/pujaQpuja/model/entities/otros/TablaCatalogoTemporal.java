@@ -82,6 +82,5 @@ public class TablaCatalogoTemporal {
             ", puja='" + getPuja() + "'" +
             "}";
     }
-    
 
 }

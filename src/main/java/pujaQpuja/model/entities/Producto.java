@@ -3,13 +3,12 @@ package pujaQpuja.model.entities;
 import java.util.Objects;
 
 import javafx.scene.image.Image;
-import pujaQpuja.model.entities.otros.Condicion;
 
 public class Producto {
 
     private long id;
     private String nombre;
-    private Categoría categoria;
+    private Categoria categoria;
     private String descripcion;
     private Image foto;
     private Condicion condicion;
@@ -19,7 +18,7 @@ public class Producto {
     public Producto() {
     }
 
-    public Producto(long id, String nombre, Categoría categoria, String descripcion, Image foto, Condicion condicion, double precioInicial) {
+    public Producto(long id, String nombre, Categoria categoria, String descripcion, Image foto, Condicion condicion, double precioInicial) {
         this.id = id;
         this.nombre = nombre;
         this.categoria = categoria;
@@ -45,11 +44,11 @@ public class Producto {
         this.nombre = nombre;
     }
 
-    public Categoría getCategoria() {
+    public Categoria getCategoria() {
         return this.categoria;
     }
 
-    public void setCategoria(Categoría categoria) {
+    public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
 
@@ -95,7 +94,7 @@ public class Producto {
         return this;
     }
 
-    public Producto categoria(Categoría categoria) {
+    public Producto categoria(Categoria categoria) {
         setCategoria(categoria);
         return this;
     }
