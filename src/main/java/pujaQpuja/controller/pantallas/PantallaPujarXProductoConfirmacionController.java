@@ -17,10 +17,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class PantallaPujarXProductoConfirmacionController implements Initializable{
+public class PantallaPujarXProductoConfirmacionController implements Initializable {
     private Double precionuevo;
     @FXML
     private Button botonSi;
@@ -29,17 +28,14 @@ public class PantallaPujarXProductoConfirmacionController implements Initializab
     private Button botonNo;
 
     @FXML
-   
     private Label textPrecioPujaARealizar;
-    public Label getTextoPrecio()
-    {
-        return this.textPrecioPujaARealizar;
-    } 
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-     //  textPrecioPujaARealizar.setText(Double.toString(this.precionuevo));
-        
+        // textPrecioPujaARealizar.setText(Double.toString(this.precionuevo));
+
     }
+
     @FXML
     void accionNo(ActionEvent event) {
 
@@ -47,22 +43,25 @@ public class PantallaPujarXProductoConfirmacionController implements Initializab
 
     @FXML
     void accionSi(ActionEvent event) throws IOException {
-        
+
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + "PantallaPujarXProducto.fxml"));
         fxmlLoader.load();
         PantallaPujarXProductoController ConfirmacionController = fxmlLoader.getController();
-       if( ConfirmacionController.confirmacion(true,this.precionuevo))
-       {
-           //showalert messaje puja realizada con exito
-       }
+        if (ConfirmacionController.confirmacion(true, this.precionuevo)) {
+            // showalert messaje puja realizada con exito
+        }
         Parent p = fxmlLoader.getRoot();
         Stage s = new Stage();
         s.setScene(new Scene(p));
-        s.show(); 
+        s.show();
     }
-   public void SetPrecioNuevo(Double precio)
-   {
-    this.precionuevo=precio;
-   }
+
+    public void SetPrecioNuevo(Double precio) {
+        this.precionuevo = precio;
+    }
+
+    public Label getTextoPrecio() {
+        return this.textPrecioPujaARealizar;
+    }
 
 }

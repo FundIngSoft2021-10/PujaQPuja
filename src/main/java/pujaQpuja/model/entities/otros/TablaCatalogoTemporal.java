@@ -1,40 +1,23 @@
-package pujaQpuja.model;
+package pujaQpuja.model.entities.otros;
 
 import java.util.Objects;
 
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import pujaQpuja.model.entities.Puja;
 
 public class TablaCatalogoTemporal {
     private ImageView imagen;
     private String desc;
     private Puja puja;
 
+    public TablaCatalogoTemporal() {
+    }
+
     public TablaCatalogoTemporal(ImageView imagen, String desc, Puja puja) {
         this.imagen = imagen;
         this.desc = desc;
         this.puja = puja;
-    }
-
-    public Puja getPuja() {
-        return this.puja;
-    }
-
-    public void setPuja(Puja puja) {
-        this.puja = puja;
-    }
-
-    public TablaCatalogoTemporal puja(Puja puja) {
-        setPuja(puja);
-        return this;
-    }
-
-
-    public TablaCatalogoTemporal() {
-    }
-
-    public TablaCatalogoTemporal(ImageView imagen, String desc) {
-        this.imagen = imagen;
-        this.desc = desc;
     }
 
     public ImageView getImagen() {
@@ -53,6 +36,14 @@ public class TablaCatalogoTemporal {
         this.desc = desc;
     }
 
+    public Puja getPuja() {
+        return this.puja;
+    }
+
+    public void setPuja(Puja puja) {
+        this.puja = puja;
+    }
+
     public TablaCatalogoTemporal imagen(ImageView imagen) {
         setImagen(imagen);
         return this;
@@ -60,6 +51,11 @@ public class TablaCatalogoTemporal {
 
     public TablaCatalogoTemporal desc(String desc) {
         setDesc(desc);
+        return this;
+    }
+
+    public TablaCatalogoTemporal puja(Puja puja) {
+        setPuja(puja);
         return this;
     }
 
@@ -71,12 +67,12 @@ public class TablaCatalogoTemporal {
             return false;
         }
         TablaCatalogoTemporal tablaCatalogoTemporal = (TablaCatalogoTemporal) o;
-        return Objects.equals(imagen, tablaCatalogoTemporal.imagen) && Objects.equals(desc, tablaCatalogoTemporal.desc);
+        return Objects.equals(imagen, tablaCatalogoTemporal.imagen) && Objects.equals(desc, tablaCatalogoTemporal.desc) && Objects.equals(puja, tablaCatalogoTemporal.puja);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(imagen, desc);
+        return Objects.hash(imagen, desc, puja);
     }
 
     @Override
@@ -84,9 +80,8 @@ public class TablaCatalogoTemporal {
         return "{" +
             " imagen='" + getImagen() + "'" +
             ", desc='" + getDesc() + "'" +
+            ", puja='" + getPuja() + "'" +
             "}";
     }
 
-
-    
 }

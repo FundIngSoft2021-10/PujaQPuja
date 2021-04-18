@@ -18,10 +18,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-import pujaQpuja.Utiles;
-import pujaQpuja.controller.PantallasMenu;
-import pujaQpuja.model.Usuario;
-import pujaQpuja.controller.SingletonController;
+import pujaQpuja.controller.GeneralController;
+import pujaQpuja.model.entities.Usuario;
+import pujaQpuja.utilities.Utiles;
+import pujaQpuja.utilities.PantallasMenu;
 
 /**
  * FXML Controller class
@@ -30,7 +30,7 @@ import pujaQpuja.controller.SingletonController;
  */
 public class PantallaRegistroController implements Initializable {
 
-    SingletonController single = SingletonController.getControllerAplication();
+    GeneralController generalController;
 
     @FXML
     private Rectangle botonAtras;
@@ -74,14 +74,14 @@ public class PantallaRegistroController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // Usuario usuario = new Usuario();
+        generalController = GeneralController.getControllerAplication();
     }
 
     @FXML
     private void irAtras(MouseEvent event) throws IOException {
-        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"inicio.fxml"));
+        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" + "inicio.fxml"));
         Scene errorRegistroScene = new Scene(pantallaErrorParent);
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(errorRegistroScene);
         window.show();
     }
@@ -139,8 +139,8 @@ public class PantallaRegistroController implements Initializable {
             usuario.setTelefono(campoTelefono.getText());
             usuario.setPassword(campoPassword.getText());
 
-            if (!single.getControlador().usuarioRegistradoCorreo(usuario.getCorreo())) {
-                single.getControlador().crear(usuario);
+            if (!generalController.usuarioRegistradoCorreo(usuario.getCorreo())) {
+                generalController.crear(usuario);
                 Parent pantallaErrorParent = FXMLLoader
                         .load(getClass().getResource("/view/" + "PantallaExitoRegistro.fxml"));
                 Scene errorRegistroScene = new Scene(pantallaErrorParent);

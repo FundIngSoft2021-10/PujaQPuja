@@ -10,13 +10,11 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
-import pujaQpuja.controller.PantallasMenu;
+import pujaQpuja.utilities.PantallasMenu;
 
 /**
  * FXML Controller class
@@ -57,7 +55,6 @@ public class HistorialVentasController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
 
     }
 

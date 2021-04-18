@@ -2,16 +2,22 @@ module pujaQpuja {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.media;
-    //requires javafx.scene;
     requires java.sql;
-    requires com.gluonhq.charm.glisten;
     requires java.base;
-    opens pujaQpuja to javafx.fxml;
+
     exports pujaQpuja;
+    exports pujaQpuja.utilities;
     exports pujaQpuja.controller;
-    opens pujaQpuja.controller to javafx.fxml;
     exports pujaQpuja.controller.pantallas;
+    exports pujaQpuja.model.entities;
+    exports pujaQpuja.model.entities.otros;
+    exports pujaQpuja.model.repository;
+
+    opens pujaQpuja to javafx.fxml;
+    opens pujaQpuja.utilities to javafx.fxml;
+    opens pujaQpuja.controller to javafx.fxml;
     opens pujaQpuja.controller.pantallas to javafx.fxml;
-    exports pujaQpuja.model;
-    opens pujaQpuja.model to javafx.fxml;
+    opens pujaQpuja.model.entities to javafx.fxml;
+    opens pujaQpuja.model.repository to javafx.fxml;
+    opens pujaQpuja.model.entities.otros to javafx.fxml;
 }

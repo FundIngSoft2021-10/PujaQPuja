@@ -14,7 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
-import pujaQpuja.controller.PantallasMenu;
+import pujaQpuja.utilities.PantallasMenu;
 /**
  * FXML Controller class
  *

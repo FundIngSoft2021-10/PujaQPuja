@@ -21,7 +21,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
-import pujaQpuja.controller.PantallasMenu;
+import pujaQpuja.utilities.PantallasMenu;
 /**
  * FXML Controller class
  *
