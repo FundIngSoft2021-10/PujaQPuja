@@ -7,7 +7,7 @@ import javafx.scene.image.ImageView;
 import pujaQpuja.model.entities.Puja;
 
 public class TablaCatalogoTemporal {
-    private ImageView imagen;
+    private Image imagen;
     private String desc;
     private Puja puja;
 
@@ -20,11 +20,11 @@ public class TablaCatalogoTemporal {
         this.puja = puja;
     }
 
-    public ImageView getImagen() {
+    public Image getImagen() {
         return this.imagen;
     }
 
-    public void setImagen(ImageView imagen) {
+    public void setImagen(Image imagen) {
         this.imagen = imagen;
     }
 

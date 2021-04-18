@@ -1,30 +1,41 @@
 package pujaQpuja.model.entities;
 
 public enum Categoria {
-    DEPORTE, CALZADO, ROPA, PANTALONES, ELECTRODOMESTICOS, TECNOLOGIA;
+    DEPORTE,
+    CALZADO,
+    ROPA,
+    PANTALONES,
+    ELECTRODOMESTICOS,
+    TECNOLOGIA;
+    
 
-    public String getDeporte() {
-        return "DEPORTE";
+    public String getDeporte()
+    {
+        return "deporte";
     }
-
-    public String getCalzado() {
-        return "CALZADO";
+    
+    public String getCalzado()
+    {
+        return "calzado";
     }
-
-    public String getRopa() {
-        return "ROPA";
+    
+    public String getRopa()
+    {
+        return "ropa";
     }
-
-    public String getPantalones() {
-        return "PANTALONES";
+    
+    public String getPantalones()
+    {
+        return "pantalones";
     }
-
-    public String getElectrodomesticos() {
-        return "ELECTRODOMESTICOS";
+    
+    public String getElectrodomesticos()
+    {
+        return "electrodomesticos";
     }
-
-    public String getTecnologia() {
-        return "TECNOLOGIA";
+    
+    public String getTecnologia()
+    {
+        return "tecnologia";
     }
-
 }

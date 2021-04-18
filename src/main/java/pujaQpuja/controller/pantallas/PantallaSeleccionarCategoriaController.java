@@ -139,6 +139,8 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
         // System.out.println(datos.size());
     }
 
+
+
     @FXML
     private void irAtras(MouseEvent event) {
 

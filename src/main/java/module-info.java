@@ -4,7 +4,6 @@ module pujaQpuja {
     requires javafx.media;
     requires java.sql;
     requires java.base;
-
     exports pujaQpuja;
     exports pujaQpuja.utilities;
     exports pujaQpuja.controller;
@@ -12,7 +11,6 @@ module pujaQpuja {
     exports pujaQpuja.model.entities;
     exports pujaQpuja.model.entities.otros;
     exports pujaQpuja.model.repository;
-
     opens pujaQpuja to javafx.fxml;
     opens pujaQpuja.utilities to javafx.fxml;
     opens pujaQpuja.controller to javafx.fxml;
