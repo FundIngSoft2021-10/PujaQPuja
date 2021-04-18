@@ -14,6 +14,7 @@ public class Usuario {
     private String direccion;
     private String telefono;
     private String documento;
+    private List<Double> calificaciones;
     private double calificacion;
     private List<Puja> historialCompras;
     private List<Puja> historialVentas;
@@ -21,6 +22,18 @@ public class Usuario {
 
     public Usuario() {
 
+    }
+
+    public List<Double> getCalificaciones() {
+        return calificaciones;
+    }
+
+    public void setCalificaciones(List<Double> calificaciones) {
+        this.calificaciones = calificaciones;
+    }
+
+    public void agregarCalificacion(double valor){
+        this.calificaciones.add(valor);
     }
 
     public Usuario(Long id, String user, String password, String nombres, String apellidos, String correo, String direccion, String telefono, String documento, double calificacion) {
