@@ -1,4 +1,4 @@
-package pujaQpuja;
+package pujaQpuja.utilities;
 
 public class Utiles {
     public static boolean isValid(String email) {

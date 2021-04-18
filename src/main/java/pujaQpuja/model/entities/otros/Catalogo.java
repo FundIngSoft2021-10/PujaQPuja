@@ -1,4 +1,7 @@
-package pujaQpuja.model;
+package pujaQpuja.model.entities.otros;
+
+import pujaQpuja.model.entities.Categoría;
+import pujaQpuja.model.entities.Puja;
 
 import java.util.List;
 import java.util.Objects;

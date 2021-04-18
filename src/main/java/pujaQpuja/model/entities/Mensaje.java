@@ -1,8 +1,9 @@
-package pujaQpuja.model;
+package pujaQpuja.model.entities;
 
 import java.util.Objects;
 
 public class Mensaje {
+    private long id;
  private Usuario emisor;
  private Usuario receptor;
  private String cuerpo;
@@ -10,10 +11,19 @@ public class Mensaje {
     public Mensaje() {
     }
 
-    public Mensaje(Usuario emisor, Usuario receptor, String cuerpo) {
+    public Mensaje(long id, Usuario emisor, Usuario receptor, String cuerpo) {
+        this.id = id;
         this.emisor = emisor;
         this.receptor = receptor;
         this.cuerpo = cuerpo;
+    }
+
+    public long getId() {
+        return this.id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public Usuario getEmisor() {
@@ -40,6 +50,11 @@ public class Mensaje {
         this.cuerpo = cuerpo;
     }
 
+    public Mensaje id(long id) {
+        setId(id);
+        return this;
+    }
+
     public Mensaje emisor(Usuario emisor) {
         setEmisor(emisor);
         return this;
@@ -63,18 +78,19 @@ public class Mensaje {
             return false;
         }
         Mensaje mensaje = (Mensaje) o;
-        return Objects.equals(emisor, mensaje.emisor) && Objects.equals(receptor, mensaje.receptor) && Objects.equals(cuerpo, mensaje.cuerpo);
+        return id == mensaje.id && Objects.equals(emisor, mensaje.emisor) && Objects.equals(receptor, mensaje.receptor) && Objects.equals(cuerpo, mensaje.cuerpo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(emisor, receptor, cuerpo);
+        return Objects.hash(id, emisor, receptor, cuerpo);
     }
 
     @Override
     public String toString() {
         return "{" +
-            " emisor='" + getEmisor() + "'" +
+            " id='" + getId() + "'" +
+            ", emisor='" + getEmisor() + "'" +
             ", receptor='" + getReceptor() + "'" +
             ", cuerpo='" + getCuerpo() + "'" +
             "}";

@@ -14,10 +14,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
-import pujaQpuja.controller.PantallasMenu;
+import pujaQpuja.utilities.PantallasMenu;
 /**
  * FXML Controller class
  *

@@ -1,19 +1,30 @@
-package pujaQpuja.model;
+package pujaQpuja.model.entities;
+
+import java.sql.Date;
 import java.util.Objects;
 public class CompradorXpuja {
 
-    private Usuario comprador    ;
+    private long id;
+    private Usuario comprador;
     private double precioOfertado;
-
-
-
+    private Date fechaComprador;
 
     public CompradorXpuja() {
     }
 
-    public CompradorXpuja(Usuario comprador, double precioOfertado) {
+    public CompradorXpuja(long id, Usuario comprador, double precioOfertado, Date fechaComprador) {
+        this.id = id;
         this.comprador = comprador;
         this.precioOfertado = precioOfertado;
+        this.fechaComprador = fechaComprador;
+    }
+
+    public long getId() {
+        return this.id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public Usuario getComprador() {
@@ -32,6 +43,19 @@ public class CompradorXpuja {
         this.precioOfertado = precioOfertado;
     }
 
+    public Date getFechaComprador() {
+        return this.fechaComprador;
+    }
+
+    public void setFechaComprador(Date fechaComprador) {
+        this.fechaComprador = fechaComprador;
+    }
+
+    public CompradorXpuja id(long id) {
+        setId(id);
+        return this;
+    }
+
     public CompradorXpuja comprador(Usuario comprador) {
         setComprador(comprador);
         return this;
@@ -39,6 +63,11 @@ public class CompradorXpuja {
 
     public CompradorXpuja precioOfertado(double precioOfertado) {
         setPrecioOfertado(precioOfertado);
+        return this;
+    }
+
+    public CompradorXpuja fechaComprador(Date fechaComprador) {
+        setFechaComprador(fechaComprador);
         return this;
     }
 
@@ -50,21 +79,23 @@ public class CompradorXpuja {
             return false;
         }
         CompradorXpuja compradorXpuja = (CompradorXpuja) o;
-        return Objects.equals(comprador, compradorXpuja.comprador) && precioOfertado == compradorXpuja.precioOfertado;
+        return id == compradorXpuja.id && Objects.equals(comprador, compradorXpuja.comprador) && precioOfertado == compradorXpuja.precioOfertado && Objects.equals(fechaComprador, compradorXpuja.fechaComprador);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(comprador, precioOfertado);
+        return Objects.hash(id, comprador, precioOfertado, fechaComprador);
     }
 
     @Override
     public String toString() {
         return "{" +
-            " comprador='" + getComprador() + "'" +
+            " id='" + getId() + "'" +
+            ", comprador='" + getComprador() + "'" +
             ", precioOfertado='" + getPrecioOfertado() + "'" +
+            ", fechaComprador='" + getFechaComprador() + "'" +
             "}";
     }
 
-    
+
 }

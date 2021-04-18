@@ -15,15 +15,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import pujaQpuja.Utiles;
-import pujaQpuja.controller.PantallasMenu;
-import pujaQpuja.model.Usuario;
+import pujaQpuja.utilities.Utiles;
+import pujaQpuja.utilities.PantallasMenu;
+import pujaQpuja.model.entities.Usuario;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.image.ImageView;
 import javafx.scene.shape.Rectangle;
 
 /**

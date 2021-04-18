@@ -14,9 +14,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
 import javafx.scene.layout.VBox;
-import pujaQpuja.controller.PantallasMenu;
+import pujaQpuja.utilities.PantallasMenu;
 
 /**
  * FXML Controller class

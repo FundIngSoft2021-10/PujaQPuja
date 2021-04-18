@@ -1,4 +1,4 @@
-package pujaQpuja.controller;
+package pujaQpuja.utilities;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;

@@ -27,12 +27,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-import pujaQpuja.controller.PantallasMenu;
-import pujaQpuja.controller.SingletonController;
-import pujaQpuja.model.EstadoPuja;
-import pujaQpuja.model.Puja;
-import pujaQpuja.model.TablaCatalogoTemporal;
-import pujaQpuja.model.Categoría;
+import pujaQpuja.controller.GeneralController;
+import pujaQpuja.utilities.PantallasMenu;
+import pujaQpuja.model.entities.otros.EstadoPuja;
+import pujaQpuja.model.entities.Puja;
+import pujaQpuja.model.entities.otros.TablaCatalogoTemporal;
 import javafx.scene.Node;
 
 /**
@@ -42,7 +41,7 @@ import javafx.scene.Node;
  */
 public class PantallaSeleccionarCategoriaController implements Initializable {
 
-    SingletonController singleton = SingletonController.getControllerAplication();
+    GeneralController generalController;
 
     @FXML
     private Rectangle botonAtras;
@@ -82,8 +81,10 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        System.out.println((singleton).getControlador().getAutenticado().getCorreo());
+        generalController = GeneralController.getControllerAplication();
+
+        // TODO REPARAR CÓDIGO
+        System.out.println(generalController.getAutenticado().getCorreo());
 
         // TableColumn<TablaCatalogoTemporal, String> descripcion = new
         // TableColumn<>("Descripción");
@@ -92,11 +93,11 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
         // TableColumn<>("Imagen");
         columnaImagen.setCellValueFactory(new PropertyValueFactory<TablaCatalogoTemporal, ImageView>("imagen"));
         ObservableList<TablaCatalogoTemporal> datos = FXCollections.observableArrayList();
-        for (Puja actual : singleton.getControlador().getPujasActivas()) {
+        for (Puja actual : generalController.getPujasActivas()) {
             if (actual.getEstado() == EstadoPuja.ACTIVO) {
                 TablaCatalogoTemporal temp = new TablaCatalogoTemporal();
                 temp.setPuja(actual);
-                temp.setImagen(actual.getProducto().getFotos().get(0));
+                temp.setImagen(actual.getProducto().getFoto());
                 StringBuilder dtemp = new StringBuilder("Nombre:  " + actual.getProducto().getNombre() + "\n"
                         + "Descripción:  " + actual.getProducto().getDescripcion() + "\n" + "Precio:  " + "$ "
                         + actual.getPrecioFinal() + " COP");
@@ -134,6 +135,8 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
 
         System.out.println(datos.size());
     }
+
+
 
     @FXML
     private void irAtras(MouseEvent event) {
@@ -192,10 +195,8 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
     @FXML
     void seleccionar(MouseEvent event) throws IOException {
 
-        singleton.getControlador().setTemporalVisualizada(singleton.getControlador()
-                .buscarPuja(tablaCatalogo.getSelectionModel().getSelectedItem().getPuja().getIdentificador()));
-        Parent pantallaIngresarParent = FXMLLoader
-                .load(getClass().getResource("/view/" + "PantallaPujarXProducto.fxml"));
+        generalController.setTemporalVisualizada(generalController.buscarPuja(tablaCatalogo.getSelectionModel().getSelectedItem().getPuja().getId()));
+        Parent pantallaIngresarParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaPujarXProducto.fxml"));
         Scene pantallaIngresarScene = new Scene(pantallaIngresarParent);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(pantallaIngresarScene);
@@ -223,8 +224,8 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
  * import javafx.scene.control.TextField; import
  * javafx.scene.control.cell.PropertyValueFactory; import
  * javafx.scene.image.ImageView; import
- * pujaQpuja.controller.SingletonController; import pujaQpuja.model.EstadoPuja;
- * import pujaQpuja.model.Puja; import pujaQpuja.model.TablaCatalogoTemporal;
+ * pujaQpuja.controller.SingletonController; import pujaQpuja.model.entities.otros.EstadoPuja;
+ * import pujaQpuja.model.entities.Puja; import pujaQpuja.model.entities.otros.TablaCatalogoTemporal;
  * 
  * 
  * public class PantallaSeleccionarCategoriaController implements Initializable

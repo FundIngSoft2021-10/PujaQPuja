@@ -16,12 +16,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
-import pujaQpuja.model.Usuario;
-import pujaQpuja.Utiles;
-import pujaQpuja.controller.PantallasMenu;
+import pujaQpuja.model.entities.Usuario;
+import pujaQpuja.utilities.Utiles;
+import pujaQpuja.utilities.PantallasMenu;
 
 /**
  * FXML Controller class

@@ -1,4 +1,4 @@
-package pujaQpuja.model;
+package pujaQpuja.model.entities;
 
 import java.util.List;
 import java.util.Objects;
@@ -6,7 +6,6 @@ import java.util.Objects;
 public class Usuario {
 
     private Long id;
-    private String user;
     private String password;
     private String nombres;
     private String apellidos;
@@ -19,26 +18,12 @@ public class Usuario {
     private List<Puja> historialVentas;
     private List<Mensaje> mensajes;
 
+
     public Usuario() {
-
     }
 
-    public Usuario(Long id, String user, String password, String nombres, String apellidos, String correo, String direccion, String telefono, String documento, double calificacion) {
+    public Usuario(Long id, String password, String nombres, String apellidos, String correo, String direccion, String telefono, String documento, double calificacion, List<Puja> historialCompras, List<Puja> historialVentas, List<Mensaje> mensajes) {
         this.id = id;
-        this.user = user;
-        this.password = password;
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.correo = correo;
-        this.direccion = direccion;
-        this.telefono = telefono;
-        this.documento = documento;
-        this.calificacion = calificacion;
-        
-    }
-
-    public Usuario(String user, String password, String nombres, String apellidos, String correo, String direccion, String telefono, String documento, double calificacion, List<Puja> historialCompras, List<Puja> historialVentas,List<Mensaje> mensajes) {
-        this.user = user;
         this.password = password;
         this.nombres = nombres;
         this.apellidos = apellidos;
@@ -49,31 +34,6 @@ public class Usuario {
         this.calificacion = calificacion;
         this.historialCompras = historialCompras;
         this.historialVentas = historialVentas;
-        this.mensajes= mensajes;
-    }
-
-
-    public Usuario(Long id, String user, String password, String nombres, String apellidos, String correo, String direccion, String telefono, String documento, double calificacion, List<Puja> historialCompras, List<Puja> historialVentas) {
-        this.id = id;
-        this.user = user;
-        this.password = password;
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.correo = correo;
-        this.direccion = direccion;
-        this.telefono = telefono;
-        this.documento = documento;
-        this.calificacion = calificacion;
-        this.historialCompras = historialCompras;
-        this.historialVentas = historialVentas;
-    }
-
-
-    public List<Mensaje> getMensajes() {
-        return this.mensajes;
-    }
-
-    public void setMensajes(List<Mensaje> mensajes) {
         this.mensajes = mensajes;
     }
 
@@ -83,14 +43,6 @@ public class Usuario {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getUser() {
-        return this.user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
     }
 
     public String getPassword() {
@@ -173,13 +125,16 @@ public class Usuario {
         this.historialVentas = historialVentas;
     }
 
-    public Usuario id(Long id) {
-        setId(id);
-        return this;
+    public List<Mensaje> getMensajes() {
+        return this.mensajes;
     }
 
-    public Usuario user(String user) {
-        setUser(user);
+    public void setMensajes(List<Mensaje> mensajes) {
+        this.mensajes = mensajes;
+    }
+
+    public Usuario id(Long id) {
+        setId(id);
         return this;
     }
 
@@ -233,6 +188,11 @@ public class Usuario {
         return this;
     }
 
+    public Usuario mensajes(List<Mensaje> mensajes) {
+        setMensajes(mensajes);
+        return this;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == this)
@@ -241,19 +201,18 @@ public class Usuario {
             return false;
         }
         Usuario usuario = (Usuario) o;
-        return Objects.equals(id, usuario.id) && Objects.equals(user, usuario.user) && Objects.equals(password, usuario.password) && Objects.equals(nombres, usuario.nombres) && Objects.equals(apellidos, usuario.apellidos) && Objects.equals(correo, usuario.correo) && Objects.equals(direccion, usuario.direccion) && Objects.equals(telefono, usuario.telefono) && Objects.equals(documento, usuario.documento) && calificacion == usuario.calificacion && Objects.equals(historialCompras, usuario.historialCompras) && Objects.equals(historialVentas, usuario.historialVentas);
+        return Objects.equals(id, usuario.id) && Objects.equals(password, usuario.password) && Objects.equals(nombres, usuario.nombres) && Objects.equals(apellidos, usuario.apellidos) && Objects.equals(correo, usuario.correo) && Objects.equals(direccion, usuario.direccion) && Objects.equals(telefono, usuario.telefono) && Objects.equals(documento, usuario.documento) && calificacion == usuario.calificacion && Objects.equals(historialCompras, usuario.historialCompras) && Objects.equals(historialVentas, usuario.historialVentas) && Objects.equals(mensajes, usuario.mensajes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, user, password, nombres, apellidos, correo, direccion, telefono, documento, calificacion, historialCompras, historialVentas);
+        return Objects.hash(id, password, nombres, apellidos, correo, direccion, telefono, documento, calificacion, historialCompras, historialVentas, mensajes);
     }
 
     @Override
     public String toString() {
         return "{" +
             " id='" + getId() + "'" +
-            ", user='" + getUser() + "'" +
             ", password='" + getPassword() + "'" +
             ", nombres='" + getNombres() + "'" +
             ", apellidos='" + getApellidos() + "'" +
@@ -264,6 +223,7 @@ public class Usuario {
             ", calificacion='" + getCalificacion() + "'" +
             ", historialCompras='" + getHistorialCompras() + "'" +
             ", historialVentas='" + getHistorialVentas() + "'" +
+            ", mensajes='" + getMensajes() + "'" +
             "}";
     }
 
