@@ -44,7 +44,7 @@ public class GeneralController implements IGeneralController {
 
     public GeneralController() {
         //Eliminar la linea de abajo
-        obtenerPujas();
+
         usuarioController = new UsuarioController();
     }
 
@@ -74,31 +74,9 @@ public class GeneralController implements IGeneralController {
     // ------------------------- Otros --------------------------
     // ----------------------------------------------------------
 
-    public void obtenerPujas() {
-        // TODO hacerlo mirando la base de datos
-        pujasActivas = new ArrayList<Puja>();
-        for (int i = 0; i < 10; i++) {
-            Puja puj = new Puja();
-            Producto producto = new Producto();
-            producto.setCategoria(Categoria.CALZADO);
-            producto.setNombre("Pantalon talla 30");
-            producto.setDescripcion("buen estado talla 30 color azul xd");
-            Image image1 = new Image("file:" + "src/main/resources/images/logo.png", 118, 118, false, false);
 
-            // ImageView image = new Image (imagen);
-            producto.setFoto(image1);
 
-            puj.setPrecioFinal(200);
-            puj.setFecha(null);
-            puj.setListaCompradores(null);
-            puj.setProducto(producto);
-            puj.setVendedor(autenticado);
-            puj.setEstado(EstadoPuja.ACTIVO);
-            pujasActivas.add(puj);
 
-        }
-
-    }
 
     public Puja getTemporalVisualizada() {
         return this.temporalVisualizada;
@@ -147,9 +125,9 @@ public class GeneralController implements IGeneralController {
         setAutenticado(autenticado);
         return this;
     }
-
+/*
     public Puja buscarPuja(Long id) {
-        // TODO hacerlo mirando la base de datos
+        //
         for (Puja puja : pujasActivas) {
             if (puja.getId() == id) {
                 return puja;
@@ -157,7 +135,7 @@ public class GeneralController implements IGeneralController {
         }
         return null;
     }
-
+*/
     public void setActualizarUsuario(Usuario usuario) {
         usuarioController.modificar(usuario);
     }

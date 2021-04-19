@@ -88,11 +88,6 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
         generalController = GeneralController.getControllerAplication();
         pujaController = new PujaController();
 
-        obtenerPujas();
-    }
-
-    private void obtenerPujas()
-    {
         // TODO REPARAR CÓDIGO
         System.out.println(generalController.getAutenticado().getCorreo());
 
@@ -100,25 +95,7 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
         columnaDescripcion.setCellValueFactory(new PropertyValueFactory<TablaCatalogoTemporal, String>("desc"));
         columnaImagen.setCellValueFactory(new PropertyValueFactory<TablaCatalogoTemporal, ImageView>("imagen"));
 
-        ObservableList<TablaCatalogoTemporal> datos = pujaController.getPujasActivasItems();
-
-        tablaCatalogo.setItems(datos);
-        FilteredList<TablaCatalogoTemporal> filteredData = new FilteredList<>(datos, b -> true);
-        campoBusqueda.textProperty().addListener((observable, oldValue, newValue) -> {
-            filteredData.setPredicate(TablaCatalogoTemporal -> {
-                if (newValue == null || newValue.isEmpty()) {
-                    return true;
-                }
-                String lowerCaseFilter = newValue.toLowerCase();
-                if (TablaCatalogoTemporal.getDesc().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-                    return true; // Filter matches first name.
-                } else
-                    return false; // Does not match.
-            });
-        });
-        SortedList<TablaCatalogoTemporal> sortedData = new SortedList<>(filteredData);
-        sortedData.comparatorProperty().bind(tablaCatalogo.comparatorProperty());
-        tablaCatalogo.setItems(sortedData);
+        obtenerPujas();
     }
 
 
@@ -176,42 +153,47 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
     private void accionOrdenar(MouseEvent event) {
     }
 
-    @FXML
-    void filtrarXcategoria(ActionEvent event) {
+    private void obtenerPujas() {
+        ObservableList<TablaCatalogoTemporal> datos = pujaController.getPujasActivasItems();
 
-        ObservableList<TablaCatalogoTemporal> datos = FXCollections.observableArrayList();
-        for (Puja actual : generalController.getPujasActivas()) {
-            if (actual.getProducto().getCategoria() == desplegableFiltros.getSelectionModel().getSelectedItem()) {
-                TablaCatalogoTemporal temp = new TablaCatalogoTemporal();
-                temp.setPuja(actual);
-                temp.setImagen(new ImageView(actual.getProducto().getFoto()));
-                StringBuilder dtemp = new StringBuilder("Nombre:  " + actual.getProducto().getNombre() + "\n" + "Descripción:  " + actual.getProducto().getDescripcion() + "\n" + "Precio:  " + "$ " + actual.getPrecioFinal() + " COP" + "\n" + "Categoria: " + actual.getProducto().getCategoria());
-                temp.setDesc(dtemp.toString());
-                datos.add(temp);
-                // System.out.println(dtemp);
-            }
-        }
         tablaCatalogo.setItems(datos);
         FilteredList<TablaCatalogoTemporal> filteredData = new FilteredList<>(datos, b -> true);
         campoBusqueda.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(TablaCatalogoTemporal -> {
-                        // If filter text is empty, display all persons.
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+                String lowerCaseFilter = newValue.toLowerCase();
+                if (TablaCatalogoTemporal.getDesc().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true; // Filter matches first name.
+                } else
+                    return false; // Does not match.
+            });
+        });
+        SortedList<TablaCatalogoTemporal> sortedData = new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(tablaCatalogo.comparatorProperty());
+        tablaCatalogo.setItems(sortedData);
+    }
 
+
+    @FXML
+    void filtrarXcategoria(ActionEvent event) {
+
+        ObservableList<TablaCatalogoTemporal> datos = pujaController.getPujasActivaByCategoria(desplegableFiltros.getSelectionModel().getSelectedItem());
+
+        tablaCatalogo.setItems(datos);
+        FilteredList<TablaCatalogoTemporal> filteredData = new FilteredList<>(datos, b -> true);
+        campoBusqueda.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(TablaCatalogoTemporal -> {
                         if (newValue == null || newValue.isEmpty()) {
                             return true;
                         }
-
-                        // Compare first name and last name of every person with filter text.
                         String lowerCaseFilter = newValue.toLowerCase();
-                        ////////////////////////////////////////////////////////////////////////
-                        ////////////////////////////////////////////////////////////////////////
                         if (TablaCatalogoTemporal.getDesc().toLowerCase().indexOf(lowerCaseFilter) != -1) {
                             return true; // Filter matches first name.
                         } else
                             return false; // Does not match.
-
                     }
-
             );
         });
         SortedList<TablaCatalogoTemporal> sortedData = new SortedList<>(filteredData);
@@ -223,16 +205,24 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
 
     @FXML
     void seleccionar(MouseEvent event) throws IOException {
-
-        generalController.setTemporalVisualizada(generalController.buscarPuja(tablaCatalogo.getSelectionModel().getSelectedItem().getPuja().getId()));
-        Parent pantallaIngresarParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaPujarXProducto.fxml"));
-        Scene pantallaIngresarScene = new Scene(pantallaIngresarParent);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(pantallaIngresarScene);
-        window.show();
+        if(tablaCatalogo.getSelectionModel().getSelectedItem() != null)
+        {
+            Puja a = tablaCatalogo.getSelectionModel().getSelectedItem().getPuja();
+            Puja b = pujaController.pujaVisualizada(a);
+            generalController.setTemporalVisualizada(b);
+            Parent pantallaIngresarParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaPujarXProducto.fxml"));
+            Scene pantallaIngresarScene = new Scene(pantallaIngresarParent);
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(pantallaIngresarScene);
+            window.show();
+        }
 
     }
 
+    public String getDesplegable() {
+
+        return this.desplegableFiltros.getSelectionModel().getSelectedItem().toString();
+    }
 }
 
 /*
