@@ -26,7 +26,7 @@ import pujaQpuja.utilities.PantallasMenu;
 public class PantallaPujarXProductoController implements Initializable {
 
     GeneralController generalController = GeneralController.getControllerAplication();
-   //PujaController pujaController =
+    PujaController pujaController;
 
     private PantallaPujarXProductoConfirmacionController controlador2 ;
 
@@ -90,7 +90,7 @@ public class PantallaPujarXProductoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         generalController = GeneralController.getControllerAplication();
-
+        pujaController = new PujaController();
         //System.out.println(pujaController.getTemporalVisualizada().getProducto().getDescripcion());
 
         campoDescripcionProducto.setText(generalController.getTemporalVisualizada().getProducto().getDescripcion());
@@ -99,6 +99,11 @@ public class PantallaPujarXProductoController implements Initializable {
         //textoNombreProducto.setText(pujaController.getTemporalVisualizada().getProducto().getNombre());
         campoPrecioSubasta.setText(Double.toString(generalController.getTemporalVisualizada().getPrecioFinal()));
         //campoPrecioSubasta.setText(Double.toString(pujaController.getTemporalVisualizada().getPrecioFinal()));
+
+        //if(generalController.getTemporalVisualizada().getListaCompradores().size() == 0)
+        //{
+           campoNumeroPujantes.setText(Integer.toString(pujaController.obtenerPujantes(generalController.getTemporalVisualizada().getId())));
+        //}
         // campoNumeroPujantes.setText(Double.toString(singleton.getTemporalVisualizada().getListaCompradores().size()));
         imagenProducto.setImage(generalController.getTemporalVisualizada().getProducto().getFoto());
        // imagenProducto.setImage(pujaController.getTemporalVisualizada().getProducto().getFoto());

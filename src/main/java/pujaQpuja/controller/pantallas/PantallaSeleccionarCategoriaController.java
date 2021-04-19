@@ -154,8 +154,8 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
     }
 
     private void obtenerPujas() {
-        ObservableList<TablaCatalogoTemporal> datos = pujaController.getPujasActivasItems();
 
+        ObservableList<TablaCatalogoTemporal> datos = pujaController.getPujasActivasItems();
         tablaCatalogo.setItems(datos);
         FilteredList<TablaCatalogoTemporal> filteredData = new FilteredList<>(datos, b -> true);
         campoBusqueda.textProperty().addListener((observable, oldValue, newValue) -> {

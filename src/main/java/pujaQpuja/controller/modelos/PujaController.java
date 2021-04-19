@@ -56,6 +56,14 @@ public class PujaController {
       // System.out.println(seleccionada.toString());
         return seleccionada ;
     }
+    
+    public  int obtenerPujantes( Long id){
+        
+      return this.pujaRepository.ContadorPujantes(id);
+        
+    }
+    
+    
 
 /*
     public Puja getTemporalVisualizada() {

@@ -18,6 +18,7 @@ public class PujaRepository extends DB {
     public PujaRepository() {
         usuarioController = new UsuarioController();
         productoController = new ProductoController();
+
     }
 
     public Puja buscarPuja(long id) {
@@ -42,6 +43,7 @@ public class PujaRepository extends DB {
                 temp.setPrecioFinal(rs.getDouble("precioFinal"));
                 temp.setFecha(rs.getDate("fecha"));
                 temp.setProducto(productoController.buscarPorID(rs.getLong("idProducto")));
+
                 return temp;
             }
             return temp;
@@ -111,4 +113,95 @@ public class PujaRepository extends DB {
     }
 
 
-}
+
+    public int ContadorPujantes (Long parametro){
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Connection con = getConexion();
+        int temp =5;
+
+        String sql = "";
+        sql += "SELECT COUNT(c.idComprador) " ;
+        sql += " FROM CompradorXPuja c";
+        sql += "WHERE c.idPuja = ?";
+
+
+        try {
+            ps = con.prepareStatement(sql);
+
+            ps.setLong(1,parametro );
+            rs = ps.executeQuery();
+
+            
+                temp = rs.getInt("COUNT(c.idComprador)\n");
+                System.out.println(temp+"bandera");
+
+                return temp;
+
+
+
+        } catch (SQLException e) {
+            System.err.println(e);
+            return temp;
+
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+
+            }
+        }
+
+
+    }
+
+/*
+    public boolean  añadirPujante   (Long idPuja, Long idComprador){
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Connection con = getConexion();
+        int temp = 0;
+
+        String sql = "";
+        sql += "Insert  " ;
+        sql += "WHERE c.idPuja = ?";
+
+
+        try {
+            ps = con.prepareStatement(sql);
+
+            ps.setLong(1,parametro );
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+
+                temp = rs.getInt("total");
+                ;
+                return temp;
+            }
+            return temp;
+
+        } catch (SQLException e) {
+            System.err.println(e);
+            return temp;
+
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+
+            }
+        }
+
+
+    }
+
+*/
+
+
+
+
+    }
+
+
+
