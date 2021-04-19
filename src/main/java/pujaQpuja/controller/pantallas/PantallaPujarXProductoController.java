@@ -24,7 +24,8 @@ import pujaQpuja.utilities.PantallasMenu;
 
 public class PantallaPujarXProductoController implements Initializable {
 
-    GeneralController generalController;
+    SingletonController singleton = SingletonController.getControllerAplication();
+    private PantallaPujarXProductoConfirmacionController controlador2 ;
 
     @FXML
     private Rectangle botonAtras;
@@ -76,7 +77,7 @@ public class PantallaPujarXProductoController implements Initializable {
 
     @FXML
     private Button botonPuja;
-
+   
     @FXML
     private Button botonRealizarPregunta;
 
@@ -106,34 +107,36 @@ public class PantallaPujarXProductoController implements Initializable {
                 // mostrar show alert dialog, campo incorrecto
             }
             if (precio > 0.0) {
-                if (precio <= generalController.getTemporalVisualizada().getPrecioFinal()) {
-                    Parent pantallaIngresarParent = FXMLLoader
-                            .load(getClass().getResource("/view/" + "PantallaPujarXProductoError.fxml"));
-                    Scene pantallaIngresarScene = new Scene(pantallaIngresarParent);
-                    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    window.setScene(pantallaIngresarScene);
-                    window.show();
+                if (precio <= singleton.getControlador().getTemporalVisualizada().getPrecioFinal()) {
+
+
+                            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + "PantallaPujarXProductoError.fxml"));
+                            fxmlLoader.load();
+                           Parent p = fxmlLoader.getRoot();
+                            Stage s = new Stage();
+                            s.setScene(new Scene(p));
+                            s.show(); 
                 } else {
                     // mostrar pantalla confirmacion- en caso de que no servir, hacer alert show
                     // dialogs
-
-                    // Parent pantallaIngresarParent2 = FXMLLoader
-                    // .load(getClass().getResource("/view/" +
-                    // "PantallaPujarXProductoConfirmacion.fxml"));
-                    // Scene pantallaIngresarScene2 = new Scene(pantallaIngresarParent2);
-                    // Stage window2 = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    // window2.setScene(pantallaIngresarScene2);
-                    // window2.show();
-                    FXMLLoader fxmlLoader = new FXMLLoader(
-                            getClass().getResource("/view/" + "PantallaPujarXProductoConfirmacion.fxml"));
-                    fxmlLoader.load();
-                    PantallaPujarXProductoConfirmacionController ConfirmacionController = fxmlLoader.getController();
-                    ConfirmacionController.SetPrecioNuevo(precio);
-                    ConfirmacionController.getTextoPrecio().setText(Double.toString(precio));
-                    Parent p = fxmlLoader.getRoot();
-                    Stage s = new Stage();
-                    s.setScene(new Scene(p));
-                    s.show();
+                    
+                  //  Parent pantallaIngresarParent2 = FXMLLoader
+                   //         .load(getClass().getResource("/view/" + "PantallaPujarXProductoConfirmacion.fxml"));
+                  //  Scene pantallaIngresarScene2 = new Scene(pantallaIngresarParent2);
+                 //   Stage window2 = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                //   window2.setScene(pantallaIngresarScene2);
+                  //  window2.show();
+                  FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + "PantallaPujarXProductoConfirmacion.fxml"));
+                  fxmlLoader.load();
+                  PantallaPujarXProductoConfirmacionController ConfirmacionController = fxmlLoader.getController();
+                  ConfirmacionController.SetPrecioNuevo(precio);
+                  ConfirmacionController.setControlador(this);
+                  ConfirmacionController.getTextoPrecio().setText(Double.toString( precio));
+                  Parent p = fxmlLoader.getRoot();
+                  Stage s = new Stage();
+                  s.setScene(new Scene(p));
+                  s.show(); 
+                  
 
                 }
             }
@@ -200,12 +203,26 @@ public class PantallaPujarXProductoController implements Initializable {
         window.show();
     }
 
-    public boolean confirmacion(boolean confirmacion, Double precionuevo) {
-        // crear la puja y validad y lo demas
-
-        generalController.getTemporalVisualizada().setPrecioFinal(precionuevo);
-        campoPrecioSubasta.setText(Double.toString(generalController.getTemporalVisualizada().getPrecioFinal()));
+    public boolean confirmacion(boolean confirmacion,Double precionuevo)
+    {
+        //crear la puja y validad y lo demas
+        
+       if(confirmacion==true) {
+        singleton.getControlador().getTemporalVisualizada().setPrecioFinal(precionuevo);
+        campoPrecioSubasta.setText(Double.toString(singleton.getControlador().getTemporalVisualizada().getPrecioFinal()));  
         return true;
+       }
+       else{
+        return false;
+       }
     }
-
+    public void setControlador(PantallaPujarXProductoConfirmacionController controlador)
+    {
+        this.controlador2 = controlador; 
+    }
+   public  Button botonPuja ()
+   {
+       return this.botonPuja;
+   }
+  
 }
