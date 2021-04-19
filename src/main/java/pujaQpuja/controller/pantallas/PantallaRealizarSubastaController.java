@@ -49,6 +49,7 @@ public class PantallaRealizarSubastaController implements Initializable {
     GeneralController generalController;
     ProductoController productoController;
     PujaController pujaController;
+    String rutaImagen;
 
     @FXML
     private Rectangle botonAtras;
@@ -92,6 +93,7 @@ public class PantallaRealizarSubastaController implements Initializable {
         desplegableCategoria.getItems().setAll(Categoria.values());
         productoController = new ProductoController();
         pujaController = new PujaController();
+        rutaImagen ="";
     }
 
     @FXML
@@ -141,20 +143,20 @@ public class PantallaRealizarSubastaController implements Initializable {
 
     @FXML
     private void accionAdjuntarFoto(ActionEvent event) {
-         
+        //imagenProducto.setImage(Utiles.cargarImagen(event,rutaImagen));
+        
         FileChooser fileChooser = new FileChooser();
-         fileChooser.setTitle("Buscar Imagen");
-         fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("All Images", "*.*"),
-                new FileChooser.ExtensionFilter("JPG", "*.jpg"),
-                new FileChooser.ExtensionFilter("PNG", "*.png")
-        );
-        File imgFile = fileChooser.showOpenDialog((Stage)((Node)event.getSource()).getScene().getWindow());
+        fileChooser.setTitle("Buscar Imagen");
+        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("All Images", "*.*"),
+                new FileChooser.ExtensionFilter("JPG", "*.jpg"), new FileChooser.ExtensionFilter("PNG", "*.png"));
+        File imgFile = fileChooser.showOpenDialog((Stage) ((Node) event.getSource()).getScene().getWindow());
         if (imgFile != null) {
             Image image = new Image("file:" + imgFile.getAbsolutePath());
+            rutaImagen = imgFile.getAbsolutePath();
             imagenProducto.setImage(image);
         }
     }
+
 
     @FXML
     private void accionPublicar(ActionEvent event) throws IOException, SQLException {
@@ -164,7 +166,7 @@ public class PantallaRealizarSubastaController implements Initializable {
         // FALTA AGREGAR ESE PRODUCTO A LA LISTA DE PUJAS
 
         productoASubastar.setNombre(campoNombreProducto.getText());
-        if(!campoPrecioInicial.getText().isEmpty())
+        if (!campoPrecioInicial.getText().isEmpty())
             productoASubastar.setPrecioInicial(Float.parseFloat(campoPrecioInicial.getText()));
         productoASubastar.setDescripcion(campoDescripcionProducto.getText());
 
@@ -192,19 +194,16 @@ public class PantallaRealizarSubastaController implements Initializable {
             categoria = Categoria.TECNOLOGIA;
         }
         productoASubastar.setCategoria(categoria);
-        
-        Image foto = new Image("file:" + "src/main/resources/images/logo.png", 118, 118, false, false);
-        productoASubastar.setFoto(foto);
+        productoASubastar.setFoto(imagenProducto.getImage());
         productoASubastar.setCondicion(Condicion.USADO);
-        
-         
+
         if (productoASubastar.getPrecioInicial() >= 0 && !productoASubastar.getNombre().isBlank()
                 && !productoASubastar.getDescripcion().isBlank() && productoASubastar.getCategoria() != null
                 && productoASubastar.getFoto() != null) {
 
-            productoController.crear(productoASubastar); 
+            productoController.crear(productoASubastar,rutaImagen);
             pujaController.crear(productoASubastar);
-            
+
             Parent pantallaErrorParent = FXMLLoader
                     .load(getClass().getResource("/view/" + "PantallaExitoRealizarSubasta.fxml"));
             Scene errorRegistroScene = new Scene(pantallaErrorParent);

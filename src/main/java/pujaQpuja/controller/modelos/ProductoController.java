@@ -16,7 +16,7 @@ public class ProductoController {
         return productoRepository.buscarPorID(idProducto);
     }
     
-    public void crear(Producto producto) throws SQLException{
-        productoRepository.crear(producto);
+    public void crear(Producto producto, String rutaImagen) throws SQLException{
+        productoRepository.crear(producto, rutaImagen);
     }
 }
