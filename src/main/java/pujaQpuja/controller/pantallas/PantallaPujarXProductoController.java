@@ -20,11 +20,14 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import pujaQpuja.controller.GeneralController;
+import pujaQpuja.controller.modelos.PujaController;
 import pujaQpuja.utilities.PantallasMenu;
 
 public class PantallaPujarXProductoController implements Initializable {
 
     GeneralController generalController = GeneralController.getControllerAplication();
+   //PujaController pujaController =
+
     private PantallaPujarXProductoConfirmacionController controlador2 ;
 
     @FXML
@@ -88,11 +91,17 @@ public class PantallaPujarXProductoController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         generalController = GeneralController.getControllerAplication();
 
+        //System.out.println(pujaController.getTemporalVisualizada().getProducto().getDescripcion());
+
         campoDescripcionProducto.setText(generalController.getTemporalVisualizada().getProducto().getDescripcion());
+        //campoDescripcionProducto.setText(pujaController.getTemporalVisualizada().getProducto().getDescripcion());
         textoNombreProducto.setText(generalController.getTemporalVisualizada().getProducto().getNombre());
+        //textoNombreProducto.setText(pujaController.getTemporalVisualizada().getProducto().getNombre());
         campoPrecioSubasta.setText(Double.toString(generalController.getTemporalVisualizada().getPrecioFinal()));
+        //campoPrecioSubasta.setText(Double.toString(pujaController.getTemporalVisualizada().getPrecioFinal()));
         // campoNumeroPujantes.setText(Double.toString(singleton.getTemporalVisualizada().getListaCompradores().size()));
         imagenProducto.setImage(generalController.getTemporalVisualizada().getProducto().getFoto());
+       // imagenProducto.setImage(pujaController.getTemporalVisualizada().getProducto().getFoto());
     }
 
     @FXML
@@ -195,8 +204,7 @@ public class PantallaPujarXProductoController implements Initializable {
 
     @FXML
     void irAtras(MouseEvent event) throws IOException {
-        Parent pantallaErrorParent = FXMLLoader
-                .load(getClass().getResource("/view/" + "PantallaSeleccionarCategoria.fxml"));
+        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaSeleccionarCategoria.fxml"));
         Scene errorRegistroScene = new Scene(pantallaErrorParent);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(errorRegistroScene);
@@ -208,8 +216,9 @@ public class PantallaPujarXProductoController implements Initializable {
         //crear la puja y validad y lo demas
         
        if(confirmacion==true) {
-        generalController.getTemporalVisualizada().setPrecioFinal(precionuevo);
-        campoPrecioSubasta.setText(Double.toString(generalController.getTemporalVisualizada().getPrecioFinal()));  
+        //generalController.getTemporalVisualizada().setPrecioFinal(precionuevo);
+       generalController.getTemporalVisualizada().setPrecioFinal(precionuevo);
+        campoPrecioSubasta.setText(Double.toString(generalController.getTemporalVisualizada().getPrecioFinal()));
         return true;
        }
        else{

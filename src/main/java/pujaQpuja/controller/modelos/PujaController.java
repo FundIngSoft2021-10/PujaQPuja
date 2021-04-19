@@ -3,6 +3,7 @@ package pujaQpuja.controller.modelos;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.image.ImageView;
+import pujaQpuja.controller.GeneralController;
 import pujaQpuja.controller.pantallas.PantallaSeleccionarCategoriaController;
 import pujaQpuja.model.entities.Categoria;
 import pujaQpuja.model.entities.EstadoPuja;
@@ -14,6 +15,7 @@ public class PujaController {
 
     PujaRepository pujaRepository;
     PantallaSeleccionarCategoriaController seleccionarCategoriaController;
+    Puja seleccionada ;
 
     public PujaController() {
         pujaRepository = new PujaRepository();
@@ -49,8 +51,29 @@ public class PujaController {
 
 
     public Puja pujaVisualizada(Puja temp) {
-        return this.pujaRepository.buscarPuja(temp.getId());
-
+        System.out.println(temp.getId());
+        seleccionada = this.pujaRepository.buscarPuja(temp.getId());
+      // System.out.println(seleccionada.toString());
+        return seleccionada ;
     }
+
+/*
+    public Puja getTemporalVisualizada() {
+        System.out.println("LLeagamos A get");
+        System.out.println(seleccionada.toString());
+        return this.seleccionada;
+    }
+
+    public void setTemporalVisualizada(Puja seleccionada) {
+        //System.out.println(seleccionada.toString());
+
+        this.seleccionada = seleccionada;
+    }
+
+    public PujaController temporalVisualizada (Puja seleccionada) {
+        setTemporalVisualizada(seleccionada);
+        return this;
+    }
+*/
 
 }

@@ -5,24 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bab415b7-8294-4919-b0ff-d59ce9d66de9" name="Default Changelist" comment="Arreglo pantallas hasta pantalla PujarXProducto">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2021_1_09_p__m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2021_1_09_p__m___Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2021_1_09_p__m___Default_Changelist_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2021_1_09_p__m___Default_Changelist_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/GeneralController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/GeneralController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/IGeneralController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/IGeneralController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/modelos/PujaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/modelos/PujaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaSeleccionarCategoriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaSeleccionarCategoriaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/model/repository/ProductoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/model/repository/ProductoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/model/repository/PujaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/model/repository/PujaRepository.java" afterDir="false" />
-    </list>
-    <list id="8643eda8-afe8-4462-8650-d4f14b65d4e2" name="Changes by debruit" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/GeneralController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/GeneralController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaSeleccionarCategoriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaSeleccionarCategoriaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/model/repository/PujaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/model/repository/PujaRepository.java" afterDir="false" />
-    </list>
-    <list id="093dc541-dcd8-4c6f-92b7-996f66c416a7" name="Changes by LomitoFrito" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaPujarXProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaPujarXProductoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaSeleccionarCategoriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaSeleccionarCategoriaController.java" afterDir="false" />
     </list>
+    <list id="8643eda8-afe8-4462-8650-d4f14b65d4e2" name="Changes by debruit" comment="" />
+    <list id="093dc541-dcd8-4c6f-92b7-996f66c416a7" name="Changes by LomitoFrito" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,47 +47,6 @@
   </component>
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="76755c97-02cc-4320-8aef-4f230f760d6f" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/pujaQpuja/model/repository/PujaRepository.java">
-      <ranges>
-        <range start1="4" end1="8" start2="4" end2="5" changelist="8643eda8-afe8-4462-8650-d4f14b65d4e2" />
-        <range start1="20" end1="22" start2="17" end2="18" changelist="bab415b7-8294-4919-b0ff-d59ce9d66de9" />
-        <range start1="26" end1="28" start2="22" end2="23" changelist="bab415b7-8294-4919-b0ff-d59ce9d66de9" />
-        <range start1="31" end1="32" start2="26" end2="27" changelist="bab415b7-8294-4919-b0ff-d59ce9d66de9" />
-        <range start1="35" end1="36" start2="30" end2="77" changelist="bab415b7-8294-4919-b0ff-d59ce9d66de9" />
-        <range start1="40" end1="41" start2="81" end2="85" changelist="bab415b7-8294-4919-b0ff-d59ce9d66de9" />
-        <range start1="44" end1="46" start2="88" end2="89" changelist="bab415b7-8294-4919-b0ff-d59ce9d66de9" />
-        <range start1="68" end1="68" start2="111" end2="112" changelist="bab415b7-8294-4919-b0ff-d59ce9d66de9" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaSeleccionarCategoriaController.java">
-      <ranges>
-        <range start1="89" end1="89" start2="89" end2="96" changelist="bab415b7-8294-4919-b0ff-d59ce9d66de9" />
-        <range start1="92" end1="122" start2="99" end2="99" changelist="093dc541-dcd8-4c6f-92b7-996f66c416a7" />
-        <range start1="178" end1="178" start2="155" end2="178" changelist="093dc541-dcd8-4c6f-92b7-996f66c416a7" />
-        <range start1="181" end1="193" start2="181" end2="183" changelist="bab415b7-8294-4919-b0ff-d59ce9d66de9" />
-        <range start1="197" end1="199" start2="187" end2="187" changelist="bab415b7-8294-4919-b0ff-d59ce9d66de9" />
-        <range start1="202" end1="204" start2="190" end2="190" changelist="bab415b7-8294-4919-b0ff-d59ce9d66de9" />
-        <range start1="205" end1="207" start2="191" end2="191" changelist="bab415b7-8294-4919-b0ff-d59ce9d66de9" />
-        <range start1="211" end1="212" start2="195" end2="195" changelist="bab415b7-8294-4919-b0ff-d59ce9d66de9" />
-        <range start1="213" end1="214" start2="196" end2="196" changelist="bab415b7-8294-4919-b0ff-d59ce9d66de9" />
-        <range start1="225" end1="227" start2="207" end2="210" changelist="8643eda8-afe8-4462-8650-d4f14b65d4e2" />
-        <range start1="235" end1="235" start2="218" end2="222" changelist="8643eda8-afe8-4462-8650-d4f14b65d4e2" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/GeneralController.java">
-      <ranges>
-        <range start1="46" end1="47" start2="46" end2="47" changelist="8643eda8-afe8-4462-8650-d4f14b65d4e2" />
-        <range start1="76" end1="86" start2="76" end2="76" changelist="bab415b7-8294-4919-b0ff-d59ce9d66de9" />
-        <range start1="87" end1="89" start2="77" end2="77" changelist="bab415b7-8294-4919-b0ff-d59ce9d66de9" />
-        <range start1="90" end1="97" start2="78" end2="78" changelist="bab415b7-8294-4919-b0ff-d59ce9d66de9" />
-        <range start1="98" end1="101" start2="79" end2="79" changelist="bab415b7-8294-4919-b0ff-d59ce9d66de9" />
-        <range start1="149" end1="150" start2="127" end2="128" changelist="bab415b7-8294-4919-b0ff-d59ce9d66de9" />
-        <range start1="151" end1="152" start2="129" end2="130" changelist="bab415b7-8294-4919-b0ff-d59ce9d66de9" />
-        <range start1="159" end1="160" start2="137" end2="138" changelist="bab415b7-8294-4919-b0ff-d59ce9d66de9" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectId" id="1r2CgMMRiTvncp7uXrDWudQ04RB" />
   <component name="ProjectLevelVcsManager">

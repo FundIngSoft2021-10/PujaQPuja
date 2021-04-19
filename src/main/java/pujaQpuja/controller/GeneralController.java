@@ -78,10 +78,10 @@ public class GeneralController implements IGeneralController {
 
 
 
+
     public Puja getTemporalVisualizada() {
         return this.temporalVisualizada;
     }
-
     public void setTemporalVisualizada(Puja temporalVisualizada) {
         this.temporalVisualizada = temporalVisualizada;
     }

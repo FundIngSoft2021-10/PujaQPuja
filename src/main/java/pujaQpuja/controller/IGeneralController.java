@@ -41,11 +41,11 @@ public interface IGeneralController {
     //------------------------ Usuario -------------------------
     //----------------------------------------------------------
 
-
+/*
     public Puja getTemporalVisualizada();
     public void setTemporalVisualizada(Puja temporalVisualizada);
     public GeneralController temporalVisualizada(Puja temporalVisualizada);
-
+*/
     public List<Puja> getPujasActivas();
     public void setPujasActivas(List<Puja> pujasActivas);
     public GeneralController pujasActivas(List<Puja> pujasActivas);
