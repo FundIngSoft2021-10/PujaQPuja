@@ -23,12 +23,9 @@ public class PujaController {
     public PujaController() {
         pujaRepository = new PujaRepository();
         seleccionarCategoriaController = new PantallaSeleccionarCategoriaController();
-    GeneralController generalController;
+        GeneralController generalController = GeneralController.getControllerAplication();
 
-    public PujaController() {
-        pujaRepository = new PujaRepository();
-        generalController= GeneralController.getControllerAplication();
-    }
+  
 
     public ObservableList<TablaCatalogoTemporal> getPujasActivasItems() {
         return getPujasActivasByEstadoPujaYCategoriaProducto(EstadoPuja.ACTIVO, null);
@@ -93,3 +90,6 @@ public class PujaController {
         pujaRepository.crear(puja,idUsuario,producto.getId());
     } 
 }
+
+    private void getPujasActivasByEstadoPujaYCategoriaProducto(EstadoPuja activo, Object o) {
+    }
