@@ -134,11 +134,13 @@ public class PantallaCalificarProductoController implements Initializable {
             window.setScene(exitoCalificarScene);
             window.show();
         }
-        Parent pantallaExitoParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaExitoCalificar.fxml"));
-        Scene exitoCalificarScene = new Scene(pantallaExitoParent);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(exitoCalificarScene);
-        window.show();
+        if(botonRadioBuena.isSelected() || botonRadioRegular.isSelected() || botonRadioMala.isSelected()) {
+            Parent pantallaExitoParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaExitoCalificar.fxml"));
+            Scene exitoCalificarScene = new Scene(pantallaExitoParent);
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(exitoCalificarScene);
+            window.show();
+        }
     }
 
 }

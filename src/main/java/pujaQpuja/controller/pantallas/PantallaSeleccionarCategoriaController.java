@@ -218,9 +218,4 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
         }
 
     }
-
-    public String getDesplegable() {
-
-        return this.desplegableFiltros.getSelectionModel().getSelectedItem().toString();
-    }
 }
