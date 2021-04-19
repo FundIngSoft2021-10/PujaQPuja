@@ -9,7 +9,7 @@ import pujaQpuja.model.entities.Usuario;
 
 public class UsuarioRepository extends DB {
 
-    public static boolean crear(Usuario usuario) {
+    public boolean crear(Usuario usuario) {
 
         PreparedStatement ps = null;
         Connection con = getConexion();
@@ -39,14 +39,14 @@ public class UsuarioRepository extends DB {
             return false;
         } finally {
             try {
-                desconectar(con);
+                desconectar();
             } catch (SQLException e) {
                 System.err.println(e);
             }
         }
     }
 
-    public static boolean modificar(Usuario usuario) {
+    public boolean modificar(Usuario usuario) {
 
         PreparedStatement ps = null;
         Connection con = getConexion();
@@ -75,14 +75,14 @@ public class UsuarioRepository extends DB {
             return false;
         } finally {
             try {
-                desconectar(con);
+                desconectar();
             } catch (SQLException e) {
                 System.err.println(e);
             }
         }
     }
 
-    public static boolean eliminar(Usuario usuario) {
+    public boolean eliminar(Usuario usuario) {
 
         PreparedStatement ps = null;
         Connection con = getConexion();
@@ -102,19 +102,19 @@ public class UsuarioRepository extends DB {
             return false;
         } finally {
             try {
-                desconectar(con);
+                desconectar();
             } catch (SQLException e) {
                 System.err.println(e);
             }
         }
     }
 
-    public static boolean buscarPorID(Usuario usuario) {
-        
+    public Usuario buscarPorID(long id) {
 
         PreparedStatement ps = null;
         ResultSet rs = null;
         Connection con = getConexion();
+        Usuario usuario = new Usuario();
 
         String sql = "";
         sql += "SELECT * FROM Usuario ";
@@ -123,10 +123,11 @@ public class UsuarioRepository extends DB {
         try {
             ps = con.prepareStatement(sql);
 
-            ps.setLong(1, usuario.getId());
+            ps.setLong(1, id);
             rs = ps.executeQuery();
 
             if (rs.next()) {
+
                 usuario.setId(rs.getLong("id"));
 
                 usuario.setPassword(rs.getString("password"));
@@ -137,15 +138,15 @@ public class UsuarioRepository extends DB {
                 usuario.setTelefono(rs.getString("telefono"));
                 usuario.setDocumento(rs.getString("documento"));
                 usuario.setCalificacion(rs.getDouble("calificacion"));
-                return true;
+                return usuario;
             }
-            return false;
+            return usuario;
         } catch (SQLException e) {
             System.err.println(e);
-            return false;
+            return usuario;
         } finally {
             try {
-                desconectar(con);
+                desconectar();
             } catch (SQLException e) {
                 System.err.println(e);
             }
@@ -153,7 +154,7 @@ public class UsuarioRepository extends DB {
     }
 
 
-    public static boolean buscarPorCorreo(Usuario usuario) {
+    public boolean buscarPorCorreo(Usuario usuario) {
         
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -189,7 +190,7 @@ public class UsuarioRepository extends DB {
             return false;
         } finally {
             try {
-                desconectar(con);
+                desconectar();
             } catch (SQLException e) {
                 System.err.println(e);
             }
