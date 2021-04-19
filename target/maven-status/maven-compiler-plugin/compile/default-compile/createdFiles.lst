@@ -9,6 +9,7 @@ pujaQpuja\model\repository\DB.class
 pujaQpuja\controller\pantallas\ErrorAutenticarController.class
 pujaQpuja\controller\pantallas\InformacionController.class
 pujaQpuja\model\entities\otros\TablaCatalogoTemporal.class
+pujaQpuja\model\repository\PujaRepository.class
 module-info.class
 pujaQpuja\model\repository\UsuarioRepository.class
 pujaQpuja\controller\pantallas\PantallaSeleccionarCategoriaController.class

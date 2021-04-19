@@ -32,6 +32,10 @@ public class PantallaPujarXProductoConfirmacionController implements Initializab
     @FXML
     private Label textPrecioPujaARealizar;
 
+    public Label getTextoPrecio(){
+        return this.textPrecioPujaARealizar;
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // textPrecioPujaARealizar.setText(Double.toString(this.precionuevo));
@@ -95,5 +99,4 @@ public class PantallaPujarXProductoConfirmacionController implements Initializab
 
         return this.botonSi;
     }
-
 }

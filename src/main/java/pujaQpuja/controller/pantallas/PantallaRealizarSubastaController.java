@@ -187,9 +187,7 @@ public class PantallaRealizarSubastaController implements Initializable {
         nPuja.setId(cont);
         System.out.println(nPuja.toString());
         generalController.agregarPujaActiva(nPuja);
-        
-        System.out.println("holis");
-        System.out.println(productoASubastar.toString()); 
+         
         if (productoASubastar.getPrecioInicial() >= 0 && !productoASubastar.getNombre().isBlank()
                 && !productoASubastar.getDescripcion().isBlank() && productoASubastar.getCategoria() != null
                 && productoASubastar.getFoto() != null) {

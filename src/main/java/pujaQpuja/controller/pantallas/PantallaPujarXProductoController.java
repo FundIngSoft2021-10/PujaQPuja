@@ -24,7 +24,7 @@ import pujaQpuja.utilities.PantallasMenu;
 
 public class PantallaPujarXProductoController implements Initializable {
 
-    SingletonController singleton = SingletonController.getControllerAplication();
+    GeneralController generalController = GeneralController.getControllerAplication();
     private PantallaPujarXProductoConfirmacionController controlador2 ;
 
     @FXML
@@ -107,7 +107,7 @@ public class PantallaPujarXProductoController implements Initializable {
                 // mostrar show alert dialog, campo incorrecto
             }
             if (precio > 0.0) {
-                if (precio <= singleton.getControlador().getTemporalVisualizada().getPrecioFinal()) {
+                if (precio <= generalController.getTemporalVisualizada().getPrecioFinal()) {
 
 
                             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + "PantallaPujarXProductoError.fxml"));
@@ -208,8 +208,8 @@ public class PantallaPujarXProductoController implements Initializable {
         //crear la puja y validad y lo demas
         
        if(confirmacion==true) {
-        singleton.getControlador().getTemporalVisualizada().setPrecioFinal(precionuevo);
-        campoPrecioSubasta.setText(Double.toString(singleton.getControlador().getTemporalVisualizada().getPrecioFinal()));  
+        generalController.getTemporalVisualizada().setPrecioFinal(precionuevo);
+        campoPrecioSubasta.setText(Double.toString(generalController.getTemporalVisualizada().getPrecioFinal()));  
         return true;
        }
        else{
