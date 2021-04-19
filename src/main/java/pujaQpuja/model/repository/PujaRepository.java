@@ -4,16 +4,16 @@ import pujaQpuja.controller.UsuarioController;
 import pujaQpuja.controller.modelos.ProductoController;
 import pujaQpuja.model.entities.*;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PujaRepository extends DB {
     UsuarioController usuarioController;
     ProductoController productoController;
+
 
     public PujaRepository() {
         usuarioController = new UsuarioController();
@@ -155,24 +155,27 @@ public class PujaRepository extends DB {
     }
 
 
-    public boolean añadirPujante(Long idPuja, Long idComprador) {
+    public boolean añadirPujante(Long idPuja, Long idComprador,Double nuevoprecio) {
         PreparedStatement ps = null;
         //ResultSet rs = null;
         Connection con = getConexion();
         int temp = 0;
 
         String sql = "";
-        sql += "INSERT INTO CompradorXPuja(idComprador, precioOfertado, idPuja, fechaComprador) ";
-        sql += "VALUES (?, ?, ?, ?)";
+        sql += "INSERT INTO CompradorXPuja(idComprador,  idPuja, fechaComprador) ";
+        sql += "VALUES (?, ?, ?)";
 
         try {
             ps = con.prepareStatement(sql);
 
             ps.setLong(1, idComprador);
-            ps.setDouble(2, 5000.0);
-            ps.setLong(3, idPuja);
-            ps.setLong(4, null);
+          //  ps.setDouble(2, nuevoprecio);
+            ps.setLong(2, idPuja);
+            LocalDate localDate = LocalDate.now();
+            ps.setDate(3,java.sql.Date.valueOf(localDate));
+            System.out.println(localDate.toString());
             return ps.execute();
+
 
         } catch (SQLException e) {
             System.err.println(e);

@@ -63,7 +63,9 @@ public class PujaController {
         
     }
     
-    
+    public boolean InsertarComprador(Long idPuja, Long idComprador,Double nuevoprecio){
+        return this.pujaRepository.añadirPujante(idPuja,idComprador,nuevoprecio);
+    }
 
 /*
     public Puja getTemporalVisualizada() {

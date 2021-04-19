@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bab415b7-8294-4919-b0ff-d59ce9d66de9" name="Default Changelist" comment="Arreglo pantallas hasta pantalla PujarXProducto">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2021_1_09_p__m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2021_1_09_p__m___Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2021_1_09_p__m___Default_Changelist_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2021_1_09_p__m___Default_Changelist_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/modelos/PujaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/modelos/PujaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaPujarXProductoConfirmacionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaPujarXProductoConfirmacionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaPujarXProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaPujarXProductoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/model/repository/PujaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/model/repository/PujaRepository.java" afterDir="false" />
     </list>
     <list id="8643eda8-afe8-4462-8650-d4f14b65d4e2" name="Changes by debruit" comment="" />
@@ -74,7 +79,7 @@
       <option name="ALTERNATIVE_JRE_PATH" value="11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="pujaQpuja.MainApp" />
-      <module name="pujaQpuja" />
+      <module name="PujaQPuja" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="pujaQpuja.utilities.*" />
@@ -90,18 +95,6 @@
         <item itemvalue="Application.MainApp" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="false" transferred="true" />
   <component name="SvnConfiguration">
@@ -162,8 +155,31 @@
     <MESSAGE value="Arreglo pantallas hasta pantalla PujarXProducto" />
     <option name="LAST_COMMIT_MESSAGE" value="Arreglo pantallas hasta pantalla PujarXProducto" />
   </component>
+  <component name="WindowStateProjectService">
+    <state width="1493" height="218" key="GridCell.Tab.0.bottom" timestamp="1618875951602">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="218" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1618875951602" />
+    <state width="1493" height="218" key="GridCell.Tab.0.center" timestamp="1618875951601">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="218" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1618875951601" />
+    <state width="1493" height="218" key="GridCell.Tab.0.left" timestamp="1618875951601">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="218" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1618875951601" />
+    <state width="1493" height="218" key="GridCell.Tab.0.right" timestamp="1618875951602">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="218" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1618875951602" />
+  </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/PujaQPuja$MainApp.ic" NAME="MainApp Coverage Results" MODIFIED="1618856538005" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>pujaQpuja.utilities.*</FILTER>
+    </SUITE>
   </component>
 </project>

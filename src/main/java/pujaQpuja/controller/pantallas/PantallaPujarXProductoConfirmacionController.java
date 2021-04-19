@@ -44,8 +44,9 @@ public class PantallaPujarXProductoConfirmacionController implements Initializab
 
     @FXML
     void accionNo(ActionEvent event)throws IOException {
+       // controlador1.pujaController.InsertarComprador(controlador1.generalController.getTemporalVisualizada().getId(),controlador1.generalController.getAutenticado().getId(),precionuevo);
         cerrar();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + "PantallaPujarXProducto.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + "PantallaSeleccionarCategoria.fxml"));
         fxmlLoader.load();
         PantallaPujarXProductoController ConfirmacionController = fxmlLoader.getController();
        
