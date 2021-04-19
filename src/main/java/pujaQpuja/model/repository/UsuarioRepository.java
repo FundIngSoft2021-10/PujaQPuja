@@ -17,7 +17,7 @@ public class UsuarioRepository extends DB {
         String sql = "";
         sql += "INSERT INTO Usuario ";
         sql += "(password, nombres, apellidos, correo, direccion, telefono, documento, calificacion) ";
-        sql += "VALUES (?,?,?,?,?,?,?,?,?)";
+        sql += "VALUES (?,?,?,?,?,?,?,?)";
 
         //INSERT INTO `Usuario` (`id`, `nombres`, `apellidos`, `password`, `correo`, `direccion`, `telefono`, `documento`, `calificacion`) VALUES ('0', 'Kenneth', 'Leonel', 'contra', 'ken@hotmail.com', 'Carrear 1 # 1-1', '3542875398', '1222986475', NULL);
 
@@ -195,16 +195,4 @@ public class UsuarioRepository extends DB {
             }
         }
     }
-
-    public static boolean buscarUsuarioCorreo(String correo) {
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        Connection con = getConexion();
-
-        String sql = "";
-        sql += "SELECT * FROM Usuario ";
-        sql += "WHERE correo = ?";
-        
-        return false;
-    }
-}
+ }

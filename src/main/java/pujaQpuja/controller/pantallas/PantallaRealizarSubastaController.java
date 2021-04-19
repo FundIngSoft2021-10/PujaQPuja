@@ -143,7 +143,8 @@ public class PantallaRealizarSubastaController implements Initializable {
         // FALTA AGREGAR ESE PRODUCTO A LA LISTA DE PUJAS
 
         productoASubastar.setNombre(campoNombreProducto.getText());
-        productoASubastar.setPrecioInicial(Float.parseFloat(campoPrecioInicial.getText()));
+        if(!campoPrecioInicial.getText().isEmpty())
+            productoASubastar.setPrecioInicial(Float.parseFloat(campoPrecioInicial.getText()));
         productoASubastar.setDescripcion(campoDescripcionProducto.getText());
 
         Categoria categoria = Categoria.CALZADO;
@@ -186,9 +187,11 @@ public class PantallaRealizarSubastaController implements Initializable {
         nPuja.setId(cont);
         System.out.println(nPuja.toString());
         generalController.agregarPujaActiva(nPuja);
-
-        if (productoASubastar.getPrecioInicial() >= 0 && !productoASubastar.getNombre().isEmpty()
-                && !productoASubastar.getNombre().isEmpty() && productoASubastar.getCategoria() != null
+        
+        System.out.println("holis");
+        System.out.println(productoASubastar.toString()); 
+        if (productoASubastar.getPrecioInicial() >= 0 && !productoASubastar.getNombre().isBlank()
+                && !productoASubastar.getDescripcion().isBlank() && productoASubastar.getCategoria() != null
                 && productoASubastar.getFoto() != null) {
 
             Parent pantallaErrorParent = FXMLLoader
@@ -199,7 +202,7 @@ public class PantallaRealizarSubastaController implements Initializable {
             window.show();
         } else {
             Parent pantallaErrorParent = FXMLLoader
-                    .load(getClass().getResource("/view/" + "PantallaErrorPublicacionSubasta"));
+                    .load(getClass().getResource("/view/" + "PantallaErrorPublicacionSubasta.fxml"));
             Scene errorRegistroScene = new Scene(pantallaErrorParent);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(errorRegistroScene);

@@ -160,8 +160,8 @@ public class GeneralController implements IGeneralController {
         UsuarioRepository.modificar(usuario);
     }
 
-    public boolean usuarioRegistradoCorreo(String correo) {
-        return UsuarioRepository.buscarUsuarioCorreo(correo);
+    public boolean buscarPorCorreo(Usuario usuario) {
+        return UsuarioRepository.buscarPorCorreo(usuario);
     }
 
     public void crear(Usuario usuario) {
