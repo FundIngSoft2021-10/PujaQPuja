@@ -31,6 +31,7 @@ public class GeneralController implements IGeneralController {
     // ----------------------------------------------------------
 
     private Usuario autenticado;
+    private UsuarioController usuarioController;
 
     private List<Puja> pujasActivas;
     private Puja temporalVisualizada;
@@ -44,6 +45,7 @@ public class GeneralController implements IGeneralController {
     public GeneralController() {
         //Eliminar la linea de abajo
         obtenerPujas();
+        usuarioController = new UsuarioController();
     }
 
     // ----------------------------------------------------------
@@ -54,7 +56,7 @@ public class GeneralController implements IGeneralController {
         Usuario temp = new Usuario();
         temp.setCorreo(correo);
 
-        if (UsuarioRepository.buscarPorCorreo(temp)) {
+        if (usuarioController.buscarPorCorreo(temp)) {
             if (temp.getPassword().equals(password)) {
                 autenticado = temp;
                 System.out.println("ENTRASTE CORRECTAMENTE");
@@ -157,15 +159,15 @@ public class GeneralController implements IGeneralController {
     }
 
     public void setActualizarUsuario(Usuario usuario) {
-        UsuarioRepository.modificar(usuario);
+        usuarioController.modificar(usuario);
     }
 
-    public boolean usuarioRegistradoCorreo(String correo) {
-        return UsuarioRepository.buscarUsuarioCorreo(correo);
+    public boolean buscarPorCorreo(Usuario usuario) {
+        return usuarioController.buscarPorCorreo(usuario);
     }
 
     public void crear(Usuario usuario) {
-        UsuarioRepository.crear(usuario);
+        usuarioController.crear(usuario);
     }
 
 

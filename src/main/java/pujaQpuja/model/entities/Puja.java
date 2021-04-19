@@ -161,4 +161,8 @@ public class Puja {
                 + getEstado() + "'" + "}";
     }
 
+    public void setFecha() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

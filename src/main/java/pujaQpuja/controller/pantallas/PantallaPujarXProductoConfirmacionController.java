@@ -19,8 +19,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-public class PantallaPujarXProductoConfirmacionController implements Initializable {
-    private Double precionuevo;
+public class PantallaPujarXProductoConfirmacionController implements Initializable{
+    private Double precionuevo; 
+    private PantallaPujarXProductoController controlador1 ;
+
     @FXML
     private Button botonSi;
 
@@ -30,6 +32,10 @@ public class PantallaPujarXProductoConfirmacionController implements Initializab
     @FXML
     private Label textPrecioPujaARealizar;
 
+    public Label getTextoPrecio(){
+        return this.textPrecioPujaARealizar;
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // textPrecioPujaARealizar.setText(Double.toString(this.precionuevo));
@@ -37,31 +43,60 @@ public class PantallaPujarXProductoConfirmacionController implements Initializab
     }
 
     @FXML
-    void accionNo(ActionEvent event) {
-
-    }
-
-    @FXML
-    void accionSi(ActionEvent event) throws IOException {
-
+    void accionNo(ActionEvent event)throws IOException {
+        cerrar();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + "PantallaPujarXProducto.fxml"));
         fxmlLoader.load();
         PantallaPujarXProductoController ConfirmacionController = fxmlLoader.getController();
-        if (ConfirmacionController.confirmacion(true, this.precionuevo)) {
-            // showalert messaje puja realizada con exito
+       
+        if( ConfirmacionController.confirmacion(false,this.precionuevo))
+        {
+            //showalert messaje puja realizada con exito
         }
         Parent p = fxmlLoader.getRoot();
         Stage s = new Stage();
         s.setScene(new Scene(p));
-        s.show();
+        s.show(); 
+        Stage escena= (Stage) botonSi().getScene().getWindow();
+        escena.close();
     }
 
-    public void SetPrecioNuevo(Double precio) {
-        this.precionuevo = precio;
+    @FXML
+    void accionSi(ActionEvent event) throws IOException {
+        cerrar();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + "PantallaPujarXProducto.fxml"));
+        fxmlLoader.load();
+        PantallaPujarXProductoController ConfirmacionController = fxmlLoader.getController();
+       
+        if( ConfirmacionController.confirmacion(true,this.precionuevo))
+        {
+            //showalert messaje puja realizada con exito
+        }
+        Parent p = fxmlLoader.getRoot();
+        Stage s = new Stage();
+        s.setScene(new Scene(p));
+        s.show(); 
+        Stage escena= (Stage) botonSi().getScene().getWindow();
+        escena.close();
     }
+   public void SetPrecioNuevo(Double precio)
+   {
+    this.precionuevo=precio;
+   }
+   public void setControlador( PantallaPujarXProductoController controlador)
+   {
+       this.controlador1 = controlador;
+   }
 
-    public Label getTextoPrecio() {
-        return this.textPrecioPujaARealizar;
+   public void cerrar()
+   {
+      Stage stage = (Stage) this.controlador1.botonPuja().getScene().getWindow();
+      stage.close(); 
+   }
+
+    public Button botonSi()
+    {
+
+        return this.botonSi;
     }
-
 }

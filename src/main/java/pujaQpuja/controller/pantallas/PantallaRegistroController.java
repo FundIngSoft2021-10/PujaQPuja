@@ -139,7 +139,7 @@ public class PantallaRegistroController implements Initializable {
             usuario.setTelefono(campoTelefono.getText());
             usuario.setPassword(campoPassword.getText());
 
-            if (!generalController.usuarioRegistradoCorreo(usuario.getCorreo())) {
+            if (!generalController.buscarPorCorreo(usuario)) {
                 generalController.crear(usuario);
                 Parent pantallaErrorParent = FXMLLoader
                         .load(getClass().getResource("/view/" + "PantallaExitoRegistro.fxml"));
