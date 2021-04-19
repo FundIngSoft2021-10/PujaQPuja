@@ -113,33 +113,32 @@ public class PujaRepository extends DB {
     }
 
 
-
-    public int ContadorPujantes (Long parametro){
+    public int ContadorPujantes(Long parametro) {
         PreparedStatement ps = null;
         ResultSet rs = null;
         Connection con = getConexion();
-        int temp =5;
+        int temp = 5;
 
         String sql = "";
-        sql += "SELECT COUNT(c.idComprador) " ;
-        sql += " FROM CompradorXPuja c";
+        sql += "SELECT COUNT(c.idComprador) numPujantes ";
+        sql += "FROM CompradorXPuja c ";
         sql += "WHERE c.idPuja = ?";
 
 
         try {
             ps = con.prepareStatement(sql);
 
-            ps.setLong(1,parametro );
+            ps.setLong(1, parametro);
             rs = ps.executeQuery();
 
-            
-                temp = rs.getInt("COUNT(c.idComprador)\n");
-                System.out.println(temp+"bandera");
+            if (rs.next()) {
+                temp = rs.getInt("numPujantes");
+                System.out.println(temp + "bandera");
 
                 return temp;
+            }
 
-
-
+            return 0;
         } catch (SQLException e) {
             System.err.println(e);
             return temp;
@@ -155,35 +154,29 @@ public class PujaRepository extends DB {
 
     }
 
-/*
-    public boolean  añadirPujante   (Long idPuja, Long idComprador){
+
+    public boolean añadirPujante(Long idPuja, Long idComprador) {
         PreparedStatement ps = null;
-        ResultSet rs = null;
+        //ResultSet rs = null;
         Connection con = getConexion();
         int temp = 0;
 
         String sql = "";
-        sql += "Insert  " ;
-        sql += "WHERE c.idPuja = ?";
-
+        sql += "INSERT INTO CompradorXPuja(idComprador, precioOfertado, idPuja, fechaComprador) ";
+        sql += "VALUES (?, ?, ?, ?)";
 
         try {
             ps = con.prepareStatement(sql);
 
-            ps.setLong(1,parametro );
-            rs = ps.executeQuery();
-
-            if (rs.next()) {
-
-                temp = rs.getInt("total");
-                ;
-                return temp;
-            }
-            return temp;
+            ps.setLong(1, idComprador);
+            ps.setDouble(2, 5000.0);
+            ps.setLong(3, idPuja);
+            ps.setLong(4, null);
+            return ps.execute();
 
         } catch (SQLException e) {
             System.err.println(e);
-            return temp;
+            return false;
 
         } finally {
             try {
@@ -196,12 +189,8 @@ public class PujaRepository extends DB {
 
     }
 
-*/
 
-
-
-
-    }
+}
 
 
 
