@@ -1,8 +1,5 @@
 package pujaQpuja.controller.modelos;
 
-import java.sql.Date;
-import java.sql.SQLException;
-import java.util.Calendar;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.image.ImageView;
@@ -10,7 +7,6 @@ import pujaQpuja.controller.GeneralController;
 import pujaQpuja.controller.pantallas.PantallaSeleccionarCategoriaController;
 import pujaQpuja.model.entities.Categoria;
 import pujaQpuja.model.entities.EstadoPuja;
-import pujaQpuja.model.entities.Producto;
 import pujaQpuja.model.entities.Puja;
 import pujaQpuja.model.entities.otros.TablaCatalogoTemporal;
 import pujaQpuja.model.repository.PujaRepository;
@@ -60,8 +56,6 @@ public class PujaController {
       // System.out.println(seleccionada.toString());
         return seleccionada ;
     }
-
-
 
 /*
     public Puja getTemporalVisualizada() {
