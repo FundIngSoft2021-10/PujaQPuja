@@ -14,4 +14,8 @@ public class ProductoController {
     public Producto buscarPorID(long idProducto) {
         return productoRepository.buscarPorID(idProducto);
     }
+    
+    public void crear(Producto producto){
+        productoRepository.crear(producto);
+    }
 }

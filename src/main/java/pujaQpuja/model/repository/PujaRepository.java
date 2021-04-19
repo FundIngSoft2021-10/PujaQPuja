@@ -13,6 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import pujaQpuja.controller.GeneralController;
 
 public class PujaRepository extends DB {
     UsuarioController usuarioController;
@@ -58,6 +59,37 @@ public class PujaRepository extends DB {
         } catch (SQLException e) {
             System.err.println(e);
             return respuesta;
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+    }
+    public boolean crear(Puja puja, Long usuarioId, Long productoId) {
+
+        PreparedStatement ps = null;
+        Connection con = getConexion();
+
+        String sql = "";
+        sql += "INSERT INTO Puja ";
+        sql += "(precioFinal, fecha,idHistorialVentas, idProducto, estado) ";
+        sql += "VALUES (?,?,?,?,?)";
+        try {
+            ps = con.prepareStatement(sql);
+
+            ps.setDouble(1, puja.getPrecioFinal());
+            ps.setDate(2, puja.getFecha());
+            ps.setLong(3, usuarioId);
+            ps.setLong(4, productoId);
+            ps.setString(5, String.valueOf(EstadoPuja.ACTIVO));
+ 
+
+            return ps.execute();
+        } catch (SQLException e) {
+            System.err.println(e);
+            return false;
         } finally {
             try {
                 desconectar();

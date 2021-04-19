@@ -26,6 +26,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import pujaQpuja.controller.GeneralController;
+import pujaQpuja.controller.modelos.ProductoController;
+import pujaQpuja.controller.modelos.PujaController;
 import pujaQpuja.model.entities.Categoria;
 import pujaQpuja.model.entities.EstadoPuja;
 import pujaQpuja.model.entities.Producto;
@@ -40,6 +42,8 @@ import pujaQpuja.utilities.PantallasMenu;
 public class PantallaRealizarSubastaController implements Initializable {
 
     GeneralController generalController;
+    ProductoController productoController;
+    PujaController pujaController;
 
     @FXML
     private Rectangle botonAtras;
@@ -80,11 +84,9 @@ public class PantallaRealizarSubastaController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         generalController = GeneralController.getControllerAplication();
-
-        // TODO
-        // desplegableCategoria = new
-        // ChoiceBox(FXCollections.observableArrayList(Categoria.values()));
         desplegableCategoria.getItems().setAll(Categoria.values());
+        productoController = new ProductoController();
+        pujaController = new PujaController();
     }
 
     @FXML
@@ -171,10 +173,13 @@ public class PantallaRealizarSubastaController implements Initializable {
             categoria = Categoria.TECNOLOGIA;
         }
         productoASubastar.setCategoria(categoria);
-
+        
         Image foto = new Image("file:" + "src/main/resources/images/logo.png", 118, 118, false, false);
         productoASubastar.setFoto(foto);
-
+        
+        productoController.crear(productoASubastar); 
+        pujaController.crear(productoASubastar);
+         /*       
         Puja nPuja = new Puja();
         nPuja.setEstado(EstadoPuja.ACTIVO);
         nPuja.setProducto(productoASubastar);
@@ -186,7 +191,7 @@ public class PantallaRealizarSubastaController implements Initializable {
         System.out.println("Cont despues de incrementarID: " + cont);
         nPuja.setId(cont);
         System.out.println(nPuja.toString());
-        generalController.agregarPujaActiva(nPuja);
+        generalController.agregarPujaActiva(nPuja);*/
          
         if (productoASubastar.getPrecioInicial() >= 0 && !productoASubastar.getNombre().isBlank()
                 && !productoASubastar.getDescripcion().isBlank() && productoASubastar.getCategoria() != null

@@ -3,7 +3,9 @@ package pujaQpuja.controller.modelos;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.image.ImageView;
+import pujaQpuja.controller.GeneralController;
 import pujaQpuja.model.entities.EstadoPuja;
+import pujaQpuja.model.entities.Producto;
 import pujaQpuja.model.entities.Puja;
 import pujaQpuja.model.entities.otros.TablaCatalogoTemporal;
 import pujaQpuja.model.repository.PujaRepository;
@@ -11,9 +13,11 @@ import pujaQpuja.model.repository.PujaRepository;
 public class PujaController {
 
     PujaRepository pujaRepository;
+    GeneralController generalController;
 
     public PujaController() {
         pujaRepository = new PujaRepository();
+        generalController= GeneralController.getControllerAplication();
     }
 
     public ObservableList<TablaCatalogoTemporal> getPujasActivasItems() {
@@ -36,4 +40,12 @@ public class PujaController {
         }
         return datos;
     }
+    
+    public void crear(Producto producto){
+        Puja puja = new Puja();
+        puja.setFecha(null);
+        puja.setPrecioFinal(producto.getPrecioInicial());
+        long idUsuario =generalController.getAutenticado().getId();
+        PujaRepository.crear(puja,idUsuario,producto.getId());
+    } 
 }
