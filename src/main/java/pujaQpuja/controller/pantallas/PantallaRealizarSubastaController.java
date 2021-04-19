@@ -7,6 +7,7 @@ package pujaQpuja.controller.pantallas;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -29,6 +30,7 @@ import pujaQpuja.controller.GeneralController;
 import pujaQpuja.controller.modelos.ProductoController;
 import pujaQpuja.controller.modelos.PujaController;
 import pujaQpuja.model.entities.Categoria;
+import pujaQpuja.model.entities.Condicion;
 import pujaQpuja.model.entities.EstadoPuja;
 import pujaQpuja.model.entities.Producto;
 import pujaQpuja.model.entities.Puja;
@@ -138,7 +140,7 @@ public class PantallaRealizarSubastaController implements Initializable {
     }
 
     @FXML
-    private void accionPublicar(ActionEvent event) throws IOException {
+    private void accionPublicar(ActionEvent event) throws IOException, SQLException {
 
         Producto productoASubastar = new Producto();
 
@@ -176,7 +178,7 @@ public class PantallaRealizarSubastaController implements Initializable {
         
         Image foto = new Image("file:" + "src/main/resources/images/logo.png", 118, 118, false, false);
         productoASubastar.setFoto(foto);
-        
+        productoASubastar.setCondicion(Condicion.USADO);
         productoController.crear(productoASubastar); 
         pujaController.crear(productoASubastar);
          /*       

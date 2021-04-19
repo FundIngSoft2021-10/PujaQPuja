@@ -1,5 +1,6 @@
 package pujaQpuja.controller.modelos;
 
+import java.sql.SQLException;
 import pujaQpuja.model.entities.Producto;
 import pujaQpuja.model.repository.ProductoRepository;
 
@@ -15,7 +16,7 @@ public class ProductoController {
         return productoRepository.buscarPorID(idProducto);
     }
     
-    public void crear(Producto producto){
+    public void crear(Producto producto) throws SQLException{
         productoRepository.crear(producto);
     }
 }

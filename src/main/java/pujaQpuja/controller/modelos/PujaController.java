@@ -1,5 +1,7 @@
 package pujaQpuja.controller.modelos;
 
+import java.sql.Date;
+import java.util.Calendar;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.image.ImageView;
@@ -43,9 +45,9 @@ public class PujaController {
     
     public void crear(Producto producto){
         Puja puja = new Puja();
-        puja.setFecha(null);
+        puja.setFecha(new Date(Calendar.getInstance().getTime().getTime()));
         puja.setPrecioFinal(producto.getPrecioInicial());
         long idUsuario =generalController.getAutenticado().getId();
-        PujaRepository.crear(puja,idUsuario,producto.getId());
+        pujaRepository.crear(puja,idUsuario,producto.getId());
     } 
 }

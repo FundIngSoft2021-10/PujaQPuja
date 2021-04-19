@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class ProductoRepository extends DB {
 
@@ -55,18 +56,18 @@ public class ProductoRepository extends DB {
         }
     }
 
-    public Producto crear(Producto producto) {    
-        PreparedStatement ps = null;
+    public Producto crear(Producto producto) throws SQLException {
+        //PreparedStatement ps = null;
         Connection con = getConexion();
         ResultSet rs;
         String sql = "";
         sql += "INSERT INTO Producto ";
         sql += "(nombre,descripcion,condicion,precioInicial,categoria) ";
-        sql += "VALUES (?,?,?,?,?,?)";
+        sql += "VALUES (?,?,?,?,?)";
+        PreparedStatement ps = con.prepareStatement(sql,
+                Statement.RETURN_GENERATED_KEYS);
 
         try {
-            ps = con.prepareStatement(sql);
-
             ps.setString(1, producto.getNombre());
             ps.setString(2, producto.getDescripcion());
             //ps.setBlob(3, producto.getFoto());
@@ -74,14 +75,15 @@ public class ProductoRepository extends DB {
             ps.setDouble(4, producto.getPrecioInicial());
             ps.setString(5, String.valueOf(producto.getCategoria()));
 
-            //return ps.execute();
             ps.execute();
-            rs=ps.getGeneratedKeys();
-            if(rs.next()){
-                producto.setId(rs.getLong("id"));
+            rs = ps.getGeneratedKeys();
+            int generatedKey = 0;
+            if (rs.next()) {
+                generatedKey = rs.getInt(1);
             }
+            producto.setId(generatedKey);
             return producto;
-            
+
         } catch (SQLException e) {
             System.err.println(e);
             return null;
