@@ -1,14 +1,11 @@
 pujaQpuja\model\entities\Usuario.class
 pujaQpuja\controller\pantallas\PantallaPujarXProductoController.class
 pujaQpuja\controller\pantallas\PantallaRealizarSubastaController.class
-pujaQpuja\controller\modelos\ProductoController.class
 pujaQpuja\model\entities\Condicion.class
 pujaQpuja\model\entities\EstadoPuja.class
-pujaQpuja\model\repository\ProductoRepository.class
 pujaQpuja\controller\pantallas\HistorialVentasController.class
 pujaQpuja\model\entities\Producto.class
 pujaQpuja\model\repository\DB.class
-pujaQpuja\controller\modelos\PujaController.class
 pujaQpuja\controller\pantallas\ErrorAutenticarController.class
 pujaQpuja\controller\pantallas\InformacionController.class
 pujaQpuja\model\entities\otros\TablaCatalogoTemporal.class
