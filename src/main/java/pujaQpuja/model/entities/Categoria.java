@@ -7,7 +7,6 @@ public enum Categoria {
     PANTALONES,
     ELECTRODOMESTICOS,
     TECNOLOGIA;
-    
 
     public String getDeporte()
     {

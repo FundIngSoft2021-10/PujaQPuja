@@ -11,14 +11,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PujaRepository extends DB {
+
     UsuarioController usuarioController;
     ProductoController productoController;
-
 
     public PujaRepository() {
         usuarioController = new UsuarioController();
         productoController = new ProductoController();
-
     }
 
     public Puja buscarPuja(long id) {
@@ -60,7 +59,6 @@ public class PujaRepository extends DB {
             }
         }
 
-
     }
 
     public List<Puja> getPujasActivasByEstadoPujaYCategoriaProducto(EstadoPuja estado, Categoria categoria) {
@@ -87,7 +85,6 @@ public class PujaRepository extends DB {
 
             rs = ps.executeQuery();
 
-
             while (rs.next()) {
                 Puja temp = new Puja();
 
@@ -112,6 +109,8 @@ public class PujaRepository extends DB {
         }
     }
 
+    public boolean crear(Puja puja, Long usuarioId, Long productoId) {
+    }
 
     public int ContadorPujantes(Long parametro) {
         PreparedStatement ps = null;
@@ -123,7 +122,6 @@ public class PujaRepository extends DB {
         sql += "SELECT COUNT(c.idComprador) numPujantes ";
         sql += "FROM CompradorXPuja c ";
         sql += "WHERE c.idPuja = ?";
-
 
         try {
             ps = con.prepareStatement(sql);
@@ -151,13 +149,11 @@ public class PujaRepository extends DB {
             }
         }
 
-
     }
 
-
-    public boolean añadirPujante(Long idPuja, Long idComprador,Double nuevoprecio) {
+    public boolean añadirPujante(Long idPuja, Long idComprador, Double nuevoprecio) {
         PreparedStatement ps = null;
-        //ResultSet rs = null;
+        // ResultSet rs = null;
         Connection con = getConexion();
         int temp = 0;
 
@@ -169,13 +165,12 @@ public class PujaRepository extends DB {
             ps = con.prepareStatement(sql);
 
             ps.setLong(1, idComprador);
-          //  ps.setDouble(2, nuevoprecio);
+            // ps.setDouble(2, nuevoprecio);
             ps.setLong(2, idPuja);
             LocalDate localDate = LocalDate.now();
-            ps.setDate(3,java.sql.Date.valueOf(localDate));
+            ps.setDate(3, java.sql.Date.valueOf(localDate));
             System.out.println(localDate.toString());
             return ps.execute();
-
 
         } catch (SQLException e) {
             System.err.println(e);
@@ -189,11 +184,11 @@ public class PujaRepository extends DB {
             }
         }
 
-
     }
-    public boolean actualizarPrecio(Double nuevoprecio,long idPuja) {
+
+    public boolean actualizarPrecio(Double nuevoprecio, long idPuja) {
         PreparedStatement ps = null;
-        //ResultSet rs = null;
+        // ResultSet rs = null;
         Connection con = getConexion();
         int temp = 0;
 
@@ -204,12 +199,10 @@ public class PujaRepository extends DB {
         try {
             ps = con.prepareStatement(sql);
 
-
-             ps.setDouble(1, nuevoprecio);
+            ps.setDouble(1, nuevoprecio);
             ps.setLong(2, idPuja);
 
             return ps.execute();
-
 
         } catch (SQLException e) {
             System.err.println(e);
@@ -223,11 +216,6 @@ public class PujaRepository extends DB {
             }
         }
 
-
     }
 
-
 }
-
-
-
