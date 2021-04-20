@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.InicioController">
+    <center>
+        <AnchorPane prefHeight="654.0" prefWidth="405.0" BorderPane.alignment="CENTER">
+            <Text layoutX="528.0" layoutY="90.0" style="-fx-background-color: #CCECFE;" text="Puja que Puja">
+                <font>
+                    <Font name="SansSerif Regular" size="36.0"/>
+                </font>
+            </Text>
+            <ImageView fitHeight="410.0" fitWidth="369.0" layoutX="474.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../images/logo.png"/>
+            </ImageView>
+            <Button id="registrarseInicio" fx:id="botonRegistrarse" layoutX="567.0" layoutY="531.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#accionRegistrarse" prefHeight="36.0" prefWidth="146.0"
+                    style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Registrarse" textAlignment="CENTER">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0"/>
+                </font>
+                <opaqueInsets>
+                    <Insets/>
+                </opaqueInsets>
+            </Button>
+            <Button id="ingresarInicio" fx:id="botonIngresar" layoutX="567.0" layoutY="603.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#accionIngresar" prefHeight="36.0" prefWidth="146.0"
+                    style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Ingresar" textAlignment="CENTER">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0"/>
+                </font>
+                <opaqueInsets>
+                    <Insets/>
+                </opaqueInsets>
+            </Button>
+        </AnchorPane>
+    </center>
+</BorderPane>

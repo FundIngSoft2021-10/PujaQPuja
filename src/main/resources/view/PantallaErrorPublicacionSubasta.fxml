@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="264.0" prefWidth="327.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaErrorPublicacionSubastaController">
+    <center>
+        <AnchorPane prefHeight="543.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+            <children>
+                <TextArea editable="false" layoutX="26.0" layoutY="58.0" prefHeight="126.0" prefWidth="274.0" style="-fx-font-size: 18;" text="El articulo no pudo ser publicado, debido a un error en el sistema" wrapText="true" />
+                <Text fx:id="textoNombreProducto" layoutX="51.0" layoutY="36.0" style="-fx-background-color: #CCECFE;" text="Nombre del producto" textAlignment="CENTER">
+                    <font>
+                        <Font name="SansSerif Regular" size="24.0" />
+                    </font>
+                </Text>
+                <ImageView fx:id="imagenProducto" fitHeight="43.0" fitWidth="46.0" layoutX="243.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../images/alerta.png" />
+                </ImageView>
+                <Button fx:id="botonReintentar" layoutX="31.0" layoutY="199.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#accionReintentar" prefHeight="37.0" prefWidth="125.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Reintentar" textAlignment="CENTER">
+                    <font>
+                        <Font name="SansSerif Regular" size="20.0" />
+                    </font>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </Button>
+                <Button fx:id="botonCancelar" layoutX="177.0" layoutY="199.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#accionCancelar" prefHeight="36.0" prefWidth="120.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Cancelar" textAlignment="CENTER">
+                    <font>
+                        <Font name="SansSerif Regular" size="20.0" />
+                    </font>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </Button>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

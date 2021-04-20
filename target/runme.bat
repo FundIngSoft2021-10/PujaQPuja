@@ -1,0 +1,1 @@
+start jlink-image\bin\javaw -jar modules\pujaQpuja-1.jar

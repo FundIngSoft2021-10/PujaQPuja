@@ -1,0 +1,736 @@
+Index: src/main/resources/fxml/Inicio.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.BorderPane?>\r\n<?import javafx.scene.text.Font?>\r\n<?import javafx.scene.text.Text?>\r\n\r\n<BorderPane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"600.0\" prefWidth=\"335.0\" xmlns=\"http://javafx.com/javafx/16\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"pujaQpuja.InicioController\">\r\n   <center>\r\n      <AnchorPane prefHeight=\"200.0\" prefWidth=\"200.0\" style=\"-fx-background-color: #393939;\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <Text fill=\"WHITE\" layoutX=\"99.0\" layoutY=\"70.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Puja que Puja\">\r\n               <font>\r\n                  <Font size=\"24.0\" />\r\n               </font>\r\n            </Text>\r\n            <ImageView fitHeight=\"204.0\" fitWidth=\"138.0\" layoutX=\"101.0\" layoutY=\"114.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n               <image>\r\n                  <Image url=\"@../images/logo.png\" />\r\n               </image>\r\n            </ImageView>\r\n            <Button id=\"registrarseInicio\" fx:id=\"botonRegistrarse\" layoutX=\"106.0\" layoutY=\"386.0\" mnemonicParsing=\"false\" prefHeight=\"35.0\" prefWidth=\"130.0\" style=\"-fx-background-color: #1e90ff;\" text=\"Registrarse\" textFill=\"WHITE\">\r\n               <font>\r\n                  <Font size=\"14.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button id=\"ingresarInicio\" fx:id=\"botonIngresar\" layoutX=\"106.0\" layoutY=\"461.0\" mnemonicParsing=\"false\" prefHeight=\"35.0\" prefWidth=\"130.0\" style=\"-fx-background-color: #1e90ff;\" text=\"Ingresar\" textFill=\"WHITE\">\r\n               <font>\r\n                  <Font size=\"14.0\" />\r\n               </font>\r\n            </Button>\r\n         </children>\r\n      </AnchorPane>\r\n   </center>\r\n</BorderPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/fxml/Inicio.fxml b/src/main/resources/fxml/Inicio.fxml
+--- a/src/main/resources/fxml/Inicio.fxml	
++++ b/src/main/resources/fxml/Inicio.fxml	
+@@ -1,38 +1,29 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
+-<?import javafx.scene.control.Button?>
+-<?import javafx.scene.image.Image?>
+-<?import javafx.scene.image.ImageView?>
+-<?import javafx.scene.layout.AnchorPane?>
+-<?import javafx.scene.layout.BorderPane?>
+-<?import javafx.scene.text.Font?>
+-<?import javafx.scene.text.Text?>
++<?import javafx.scene.control.*?>
++<?import javafx.scene.image.*?>
++<?import javafx.scene.layout.*?>
++<?import javafx.scene.text.*?>
+ 
+-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.InicioController">
+-   <center>
+-      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #393939;" BorderPane.alignment="CENTER">
+-         <children>
+-            <Text fill="WHITE" layoutX="99.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Puja que Puja">
+-               <font>
+-                  <Font size="24.0" />
+-               </font>
+-            </Text>
+-            <ImageView fitHeight="204.0" fitWidth="138.0" layoutX="101.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
+-               <image>
+-                  <Image url="@../images/logo.png" />
+-               </image>
+-            </ImageView>
+-            <Button id="registrarseInicio" fx:id="botonRegistrarse" layoutX="106.0" layoutY="386.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: #1e90ff;" text="Registrarse" textFill="WHITE">
+-               <font>
+-                  <Font size="14.0" />
+-               </font>
+-            </Button>
+-            <Button id="ingresarInicio" fx:id="botonIngresar" layoutX="106.0" layoutY="461.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: #1e90ff;" text="Ingresar" textFill="WHITE">
+-               <font>
+-                  <Font size="14.0" />
+-               </font>
+-            </Button>
+-         </children>
+-      </AnchorPane>
+-   </center>
+-</BorderPane>
++<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #393939;" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.InicioController">
++    <children>
++        <Text fill="WHITE" layoutX="99.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Puja que Puja">
++            <font>
++                <Font size="24.0" />
++            </font>
++        </Text>
++        <ImageView fitHeight="204.0" fitWidth="138.0" layoutX="101.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
++            <Image url="@../images/logo.png" />
++        </ImageView>
++        <Button id="registrarseInicio" fx:id="botonRegistrarse" layoutX="106.0" layoutY="386.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: #1e90ff;" text="Registrarse" textFill="WHITE">
++            <font>
++                <Font size="14.0" />
++            </font>
++        </Button>
++        <Button id="ingresarInicio" fx:id="botonIngresar" layoutX="106.0" layoutY="461.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: #1e90ff;" text="Ingresar" textFill="WHITE">
++            <font>
++                <Font size="14.0" />
++            </font>
++        </Button>
++    </children>
++</AnchorPane>
+Index: src/main/java/pujaQpuja/MainApp.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package pujaQpuja;\r\n\r\nimport java.io.IOException;\r\nimport javafx.application.Application;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Parent;\r\nimport javafx.scene.Scene;\r\nimport javafx.stage.Stage;\r\n\r\n\r\npublic class MainApp extends Application {\r\n    /*\r\n    \r\n    @Override\r\n    public void init() throws Exception {\r\n        super.init();\r\n        System.out.println(\"Realice las inicializaciones necesarias aquí.\");\r\n    }\r\n\r\n    @Override\r\n    public void start(Stage primaryStage) throws Exception {\r\n        FXMLLoader loader = new FXMLLoader(getClass().getResource(\"/Inicio.fxml\"));\r\n\r\n        Parent root = loader.load();\r\n        primaryStage.setScene(new Scene(root));\r\n        primaryStage.show();\r\n    }\r\n    @Override\r\n    public void stop() throws Exception {\r\n        super.stop();\r\n        System.out.println(\"Destruye los recursos. Realice limpieza.\");\r\n    }\r\n    public static void main(String[] args) {\r\n        launch(args);\r\n    }\r\n    */\r\n    /*\r\n    private static Stage stage;\r\n    \r\n    @Override\r\n    public void start(@SuppressWarnings(\"exports\") Stage s) throws IOException {\r\n        stage=s;\r\n        setRoot(\"primary\",\"\");\r\n    }\r\n    \r\n    static void setRoot(String fxml) throws IOException {\r\n        setRoot(fxml,stage.getTitle());\r\n    }\r\n    \r\n    static void setRoot(String fxml, String title) throws IOException {\r\n        Scene scene = new Scene(loadFXML(fxml));\r\n        stage.setTitle(title);\r\n        stage.setScene(scene);\r\n        stage.show();\r\n    }\r\n    \r\n    private static Parent loadFXML(String fxml) throws IOException {\r\n        FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource(\"/fxml/\"+ fxml + \".fxml\"));\r\n        return fxmlLoader.load();\r\n    }\r\n    \r\n    \r\n    public static void main(String[] args) {\r\n        launch(args);\r\n    }\r\n    */\r\n\r\n    private static Scene scene;\r\n\r\n    @Override\r\n    public void start(Stage stage) throws IOException {\r\n        scene = new Scene(loadFXML(\"Inicio\"), 640, 480);\r\n        stage.setScene(scene);\r\n        stage.show();\r\n    }\r\n\r\n    static void setRoot(String fxml) throws IOException {\r\n        scene.setRoot(loadFXML(fxml));\r\n    }\r\n\r\n    private static Parent loadFXML(String fxml) throws IOException {\r\n        FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource(\"/fxml/\" + fxml + \".fxml\"));\r\n        return fxmlLoader.load();\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        launch();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/pujaQpuja/MainApp.java b/src/main/java/pujaQpuja/MainApp.java
+--- a/src/main/java/pujaQpuja/MainApp.java	
++++ b/src/main/java/pujaQpuja/MainApp.java	
+@@ -69,7 +69,7 @@
+ 
+     @Override
+     public void start(Stage stage) throws IOException {
+-        scene = new Scene(loadFXML("Inicio"), 640, 480);
++        scene = new Scene(loadFXML("Inicio"));
+         stage.setScene(scene);
+         stage.show();
+     }
+Index: target/classes/pujaQpuja/view/Informacion.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/pujaQpuja/view/Informacion.fxml b/target/classes/pujaQpuja/view/Informacion.fxml
+deleted file mode 100644
+--- a/target/classes/pujaQpuja/view/Informacion.fxml	
++++ /dev/null	
+@@ -1,40 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-
+-<?import com.gluonhq.charm.glisten.control.AppBar?>
+-<?import com.gluonhq.charm.glisten.mvc.View?>
+-<?import javafx.scene.control.Button?>
+-<?import javafx.scene.control.TextField?>
+-<?import javafx.scene.image.ImageView?>
+-<?import javafx.scene.layout.AnchorPane?>
+-<?import javafx.scene.layout.BorderPane?>
+-<?import javafx.scene.text.Font?>
+-<?import javafx.scene.text.Text?>
+-
+-<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+-   <center>
+-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Text fill="#fffbfb" layoutX="79.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Más Información">
+-               <font>
+-                  <Font size="24.0" />
+-               </font>
+-            </Text>
+-            <ImageView id="imagenInfo" fitHeight="150.0" fitWidth="200.0" layoutX="68.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true" />
+-            <Text fill="WHITE" layoutX="10.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tiempo en subasta:" />
+-            <Text fill="WHITE" layoutX="10.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tiempo restante:" />
+-            <Text fill="WHITE" layoutX="10.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total de pujas:" />
+-            <Text fill="WHITE" layoutX="10.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio inicial:" />
+-            <Text fill="WHITE" layoutX="9.0" layoutY="414.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio actual:" />
+-            <TextField id="tiempoSubastaInformacion" layoutX="150.0" layoutY="248.0" promptText="Tiempo subasta" />
+-            <TextField id="tiempoRestanteInformacion" layoutX="150.0" layoutY="281.0" promptText="Tiempo Restante" />
+-            <TextField id="totalPujasInformacion" layoutX="150.0" layoutY="320.0" promptText="Total Pujas" />
+-            <TextField id="precioInicialInformacion" layoutX="150.0" layoutY="354.0" promptText="Precio Inicial" />
+-            <TextField id="precioActualInformacion" layoutX="150.0" layoutY="396.0" promptText="Precio Actual" />
+-            <Button id="regresarInformacion" layoutX="114.0" layoutY="474.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="108.0" text="Regresar" />
+-         </children>
+-      </AnchorPane>
+-   </center>
+-   <top>
+-      <AppBar titleText="" BorderPane.alignment="CENTER" />
+-   </top>
+-</View>
+Index: target/classes/pujaQpuja/view/ErrorAutenticar.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/pujaQpuja/view/ErrorAutenticar.fxml b/target/classes/pujaQpuja/view/ErrorAutenticar.fxml
+deleted file mode 100644
+--- a/target/classes/pujaQpuja/view/ErrorAutenticar.fxml	
++++ /dev/null	
+@@ -1,63 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-
+-<!--
+-  Copyright (c) 2017, 2019, Gluon and/or its affiliates.
+-  All rights reserved. Use is subject to license terms.
+-
+-  This file is available and licensed under the following license:
+-
+-  Redistribution and use in source and binary forms, with or without
+-  modification, are permitted provided that the following conditions
+-  are met:
+-
+-  - Redistributions of source code must retain the above copyright
+-    notice, this list of conditions and the following disclaimer.
+-  - Redistributions in binary form must reproduce the above copyright
+-    notice, this list of conditions and the following disclaimer in
+-    the documentation and/or other materials provided with the distribution.
+-  - Neither the name of Oracle Corporation nor the names of its
+-    contributors may be used to endorse or promote products derived
+-    from this software without specific prior written permission.
+-
+-  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+-  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+-  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+-  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+-  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+-  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+-  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+-  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+-  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+-  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+-  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+--->
+-
+-<?import com.gluonhq.charm.glisten.control.AppBar?>
+-<?import com.gluonhq.charm.glisten.control.Icon?>
+-<?import com.gluonhq.charm.glisten.mvc.View?>
+-<?import javafx.scene.control.Button?>
+-<?import javafx.scene.control.Label?>
+-<?import javafx.scene.layout.AnchorPane?>
+-<?import javafx.scene.layout.BorderPane?>
+-<?import javafx.scene.shape.Rectangle?>
+-<?import javafx.scene.text.Font?>
+-
+-<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="316.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+-   <center>
+-      <AnchorPane prefHeight="323.0" prefWidth="311.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e44545" height="141.0" layoutX="16.0" layoutY="43.0" stroke="BLACK" strokeType="INSIDE" width="284.0" />
+-            <Label layoutX="25.0" layoutY="68.0" prefHeight="92.0" prefWidth="288.0" text="Error al autenticarse, correo o contraseña incorrecta." wrapText="true">
+-               <font>
+-                  <Font size="18.0" />
+-               </font>
+-            </Label>
+-            <Icon content="ERROR" layoutX="257.0" layoutY="43.0" prefHeight="36.0" prefWidth="45.0" />
+-            <Button id="aceptarErrorAutenticar" layoutX="83.0" layoutY="233.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="150.0" text="Aceptar" />
+-         </children>
+-      </AnchorPane>
+-   </center>
+-   <top>
+-      <AppBar titleText="Error" BorderPane.alignment="CENTER" />
+-   </top>
+-</View>
+Index: target/classes/pujaQpuja/view/PantallaSeleccionarCategoria.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/pujaQpuja/view/PantallaSeleccionarCategoria.fxml b/target/classes/pujaQpuja/view/PantallaSeleccionarCategoria.fxml
+deleted file mode 100644
+--- a/target/classes/pujaQpuja/view/PantallaSeleccionarCategoria.fxml	
++++ /dev/null	
+@@ -1,74 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-
+-<!--
+-  Copyright (c) 2017, 2019, Gluon and/or its affiliates.
+-  All rights reserved. Use is subject to license terms.
+-
+-  This file is available and licensed under the following license:
+-
+-  Redistribution and use in source and binary forms, with or without
+-  modification, are permitted provided that the following conditions
+-  are met:
+-
+-  - Redistributions of source code must retain the above copyright
+-    notice, this list of conditions and the following disclaimer.
+-  - Redistributions in binary form must reproduce the above copyright
+-    notice, this list of conditions and the following disclaimer in
+-    the documentation and/or other materials provided with the distribution.
+-  - Neither the name of Oracle Corporation nor the names of its
+-    contributors may be used to endorse or promote products derived
+-    from this software without specific prior written permission.
+-
+-  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+-  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+-  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+-  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+-  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+-  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+-  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+-  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+-  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+-  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+-  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+--->
+-
+-<?import com.gluonhq.charm.glisten.control.AppBar?>
+-<?import com.gluonhq.charm.glisten.control.Icon?>
+-<?import com.gluonhq.charm.glisten.mvc.View?>
+-<?import javafx.scene.control.TableColumn?>
+-<?import javafx.scene.control.TableView?>
+-<?import javafx.scene.control.TextField?>
+-<?import javafx.scene.layout.BorderPane?>
+-<?import javafx.scene.layout.Pane?>
+-<?import javafx.scene.text.Font?>
+-<?import javafx.scene.text.Text?>
+-
+-<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+-   <top>
+-      <AppBar titleText="Catálogo" BorderPane.alignment="CENTER" />
+-   </top>
+-   <center>
+-      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Text layoutX="3.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Puja que Puja">
+-               <font>
+-                  <Font name="System Bold Italic" size="18.0" />
+-               </font>
+-            </Text>
+-            <Icon fx:id="iconperfil" accessibleRole="BUTTON" content="INSERT_EMOTICON" layoutX="273.0" layoutY="5.0" onTouchMoved="#volveruserfuncion" onTouchPressed="#volveruserfuncion" />
+-            <Icon fx:id="iconregresar" accessibleRole="BUTTON" content="KEYBOARD_ARROW_LEFT" layoutX="299.0" layoutY="5.0" onTouchMoved="#regresaranteriorfuncion" onTouchPressed="#regresaranteriorfuncion" />
+-            <TextField fx:id="Buscar" layoutY="31.0" onAction="#labenfuncion" onMouseEntered="#funcionbuscarenter" onTouchPressed="#labelfuncion" prefHeight="37.0" prefWidth="335.0" />
+-            <Icon fx:id="iconbuscar" accessibleRole="BUTTON" content="SEARCH" layoutX="310.0" layoutY="36.0" onTouchMoved="#funcionbuscar" onTouchPressed="#funconbuscar" />
+-            <Icon fx:id="next" accessibleRole="BUTTON" content="KEYBOARD_ARROW_RIGHT" layoutX="313.0" layoutY="515.0" onTouchMoved="#siguientefuncion" onTouchPressed="#siguientefuncion" />
+-            <Icon fx:id="categorias" accessibleRole="BUTTON" content="TUNE" layoutX="3.0" layoutY="68.0" onTouchMoved="#categoriafuncion" onTouchPressed="#categoriafuncion" />
+-            <Icon fx:id="ordenar" accessibleRole="BUTTON" content="UNFOLD_MORE" layoutX="25.0" layoutY="68.0" onTouchMoved="#ordenarfuncion" onTouchPressed="#ordenarfuncion" />
+-            <TableView fx:id="tableview" layoutY="94.0" prefHeight="424.0" prefWidth="335.0">
+-              <columns>
+-                <TableColumn fx:id="imagecolumn" prefWidth="75.0" />
+-                <TableColumn fx:id="descriptioncolumn" prefWidth="259.0000228881836" />
+-              </columns>
+-            </TableView>
+-         </children>
+-      </Pane>
+-   </center>
+-</View>
+Index: target/classes/pujaQpuja/view/Inicio.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/pujaQpuja/view/Inicio.fxml b/target/classes/pujaQpuja/view/Inicio.fxml
+deleted file mode 100644
+--- a/target/classes/pujaQpuja/view/Inicio.fxml	
++++ /dev/null	
+@@ -1,31 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-
+-<?import com.gluonhq.charm.glisten.mvc.View?>
+-<?import javafx.scene.control.Button?>
+-<?import javafx.scene.image.Image?>
+-<?import javafx.scene.image.ImageView?>
+-<?import javafx.scene.layout.AnchorPane?>
+-<?import javafx.scene.layout.BorderPane?>
+-<?import javafx.scene.text.Font?>
+-<?import javafx.scene.text.Text?>
+-
+-<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+-   <center>
+-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Text fill="WHITE" layoutX="96.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Puja que Puja">
+-               <font>
+-                  <Font size="24.0" />
+-               </font>
+-            </Text>
+-            <ImageView fitHeight="201.0" fitWidth="131.0" layoutX="103.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+-               <image>
+-                  <Image url="@../../../../Downloads/logo.png" />
+-               </image>
+-            </ImageView>
+-            <Button id="registrarseInicio" layoutX="103.0" layoutY="354.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="130.0" text="Registrarse" />
+-            <Button id="ingresarInicio" layoutX="104.0" layoutY="424.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="130.0" text="Ingresar" />
+-         </children>
+-      </AnchorPane>
+-   </center>
+-</View>
+Index: target/classes/pujaQpuja/view/DetallesVenta.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/pujaQpuja/view/DetallesVenta.fxml b/target/classes/pujaQpuja/view/DetallesVenta.fxml
+deleted file mode 100644
+--- a/target/classes/pujaQpuja/view/DetallesVenta.fxml	
++++ /dev/null	
+@@ -1,74 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-
+-<!--
+-  Copyright (c) 2017, 2019, Gluon and/or its affiliates.
+-  All rights reserved. Use is subject to license terms.
+-
+-  This file is available and licensed under the following license:
+-
+-  Redistribution and use in source and binary forms, with or without
+-  modification, are permitted provided that the following conditions
+-  are met:
+-
+-  - Redistributions of source code must retain the above copyright
+-    notice, this list of conditions and the following disclaimer.
+-  - Redistributions in binary form must reproduce the above copyright
+-    notice, this list of conditions and the following disclaimer in
+-    the documentation and/or other materials provided with the distribution.
+-  - Neither the name of Oracle Corporation nor the names of its
+-    contributors may be used to endorse or promote products derived
+-    from this software without specific prior written permission.
+-
+-  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+-  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+-  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+-  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+-  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+-  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+-  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+-  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+-  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+-  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+-  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+--->
+-
+-<?import com.gluonhq.charm.glisten.control.AppBar?>
+-<?import com.gluonhq.charm.glisten.control.Icon?>
+-<?import com.gluonhq.charm.glisten.mvc.View?>
+-<?import javafx.scene.control.Button?>
+-<?import javafx.scene.control.TextField?>
+-<?import javafx.scene.image.ImageView?>
+-<?import javafx.scene.layout.AnchorPane?>
+-<?import javafx.scene.layout.BorderPane?>
+-<?import javafx.scene.text.Font?>
+-<?import javafx.scene.text.Text?>
+-
+-<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+-   <center>
+-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Text fill="WHITE" layoutX="125.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Detalles">
+-               <font>
+-                  <Font size="24.0" />
+-               </font>
+-            </Text>
+-            <ImageView id="imagenDetalles" fitHeight="138.0" fitWidth="132.0" layoutX="14.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" />
+-            <TextField id="nomDetalles" layoutX="153.0" layoutY="66.0" promptText="NombreProducto" />
+-            <TextField id="precioDetalles" layoutX="153.0" layoutY="114.0" promptText="Precio" />
+-            <TextField id="nombreCompradorDetalles" layoutX="58.0" layoutY="195.0" prefHeight="26.0" prefWidth="211.0" promptText="Nombre Comprador" />
+-            <Icon content="PEOPLE" layoutX="15.0" layoutY="195.0" />
+-            <Icon content="INFO" layoutX="15.0" layoutY="234.0" />
+-            <TextField id="informacionDetalles" layoutX="57.0" layoutY="234.0" prefHeight="24.0" prefWidth="213.0" promptText="Más información" />
+-            <TextField id="descripcionDetalles" layoutX="59.0" layoutY="280.0" prefHeight="24.0" prefWidth="217.0" promptText="Descripción" />
+-            <Icon content="DESCRIPTION" layoutX="14.0" layoutY="280.0" prefHeight="26.0" prefWidth="25.0" />
+-            <Button id="tableroDetalles" layoutX="98.0" layoutY="330.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="148.0" text="Tablero de preguntas" />
+-            <Button id="editarDetalles" layoutX="98.0" layoutY="372.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="148.0" text="Editar producto" />
+-            <Button id="eliminarDetalles" layoutX="98.0" layoutY="413.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="148.0" text="Eliminar Producto" />
+-            <Button id="regresarDetalles" layoutX="98.0" layoutY="479.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="148.0" text="Regresar" />
+-         </children>
+-      </AnchorPane>
+-   </center>
+-   <top>
+-      <AppBar titleText="" BorderPane.alignment="CENTER" />
+-   </top>
+-</View>
+Index: target/classes/pujaQpuja/view/Ingresar.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/pujaQpuja/view/Ingresar.fxml b/target/classes/pujaQpuja/view/Ingresar.fxml
+deleted file mode 100644
+--- a/target/classes/pujaQpuja/view/Ingresar.fxml	
++++ /dev/null	
+@@ -1,44 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-
+-<?import com.gluonhq.charm.glisten.mvc.View?>
+-<?import javafx.scene.control.Button?>
+-<?import javafx.scene.control.PasswordField?>
+-<?import javafx.scene.control.TextField?>
+-<?import javafx.scene.image.Image?>
+-<?import javafx.scene.image.ImageView?>
+-<?import javafx.scene.layout.AnchorPane?>
+-<?import javafx.scene.layout.BorderPane?>
+-<?import javafx.scene.text.Font?>
+-<?import javafx.scene.text.Text?>
+-
+-<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+-   <center>
+-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Text fill="WHITE" layoutX="96.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Puja que Puja">
+-               <font>
+-                  <Font size="24.0" />
+-               </font>
+-            </Text>
+-            <ImageView id="imagenLogo" fitHeight="197.0" fitWidth="134.0" layoutX="103.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true">
+-               <image>
+-                  <Image url="@../../../../Downloads/logo.png" />
+-               </image>
+-            </ImageView>
+-            <TextField id="correoIngresar" layoutX="22.0" layoutY="363.0" prefHeight="28.0" prefWidth="290.0" style="-fx-background-color: gray;" />
+-            <PasswordField id="contraIngresar" layoutX="22.0" layoutY="446.0" prefHeight="28.0" prefWidth="290.0" style="-fx-background-color: gray;" />
+-            <Text fill="WHITE" layoutX="23.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Correo electrónico">
+-               <font>
+-                  <Font size="18.0" />
+-               </font>
+-            </Text>
+-            <Text fill="#fffdfd" layoutX="22.0" layoutY="432.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña">
+-               <font>
+-                  <Font size="18.0" />
+-               </font>
+-            </Text>
+-            <Button id="ingresarIngresar" layoutX="122.0" layoutY="520.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="95.0" text="Ingresar" />
+-         </children>
+-      </AnchorPane>
+-   </center>
+-</View>
+Index: target/classes/pujaQpuja/view/EditarPerfil.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/pujaQpuja/view/EditarPerfil.fxml b/target/classes/pujaQpuja/view/EditarPerfil.fxml
+deleted file mode 100644
+--- a/target/classes/pujaQpuja/view/EditarPerfil.fxml	
++++ /dev/null	
+@@ -1,55 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-
+-<?import com.gluonhq.charm.glisten.control.AppBar?>
+-<?import com.gluonhq.charm.glisten.mvc.View?>
+-<?import javafx.scene.control.Button?>
+-<?import javafx.scene.control.Label?>
+-<?import javafx.scene.control.PasswordField?>
+-<?import javafx.scene.control.TextField?>
+-<?import javafx.scene.layout.AnchorPane?>
+-<?import javafx.scene.layout.BorderPane?>
+-<?import javafx.scene.shape.Rectangle?>
+-<?import javafx.scene.text.Font?>
+-<?import javafx.scene.text.Text?>
+-
+-<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+-   <top>
+-      <AppBar titleText="Editar Perfil" BorderPane.alignment="CENTER" />
+-   </top>
+-   <center>
+-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Text fill="WHITE" layoutX="106.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Puja que Puja" wrappingWidth="123.98957824707031">
+-               <font>
+-                  <Font size="18.0" />
+-               </font>
+-            </Text>
+-            <Text fill="WHITE" layoutX="23.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Datos de la cuenta">
+-               <font>
+-                  <Font size="16.0" />
+-               </font>
+-            </Text>
+-            <TextField id="usuarioEdicion" layoutX="20.0" layoutY="144.0" prefHeight="28.0" prefWidth="290.0" promptText="Usuario" style="-fx-background-color: grey;" />
+-            <TextField id="correoEdicion" layoutX="20.0" layoutY="182.0" prefHeight="28.0" prefWidth="290.0" promptText="Correo" style="-fx-background-color: grey;" />
+-            <Text fill="WHITE" layoutX="22.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Datos Personales" wrappingWidth="120.609375">
+-               <font>
+-                  <Font size="16.0" />
+-               </font>
+-            </Text>
+-            <TextField id="nombreEdicion" layoutX="20.0" layoutY="291.0" prefHeight="28.0" prefWidth="290.0" promptText="Nombre y apellido" style="-fx-background-color: grey;" />
+-            <TextField id="docuEdicion" layoutX="20.0" layoutY="328.0" prefHeight="28.0" prefWidth="290.0" promptText="Documento" style="-fx-background-color: grey;" />
+-            <TextField id="telEdicion" layoutX="20.0" layoutY="364.0" prefHeight="28.0" prefWidth="290.0" promptText="Teléfono" style="-fx-background-color: grey;" />
+-            <TextField id="dirEdicion" layoutX="20.0" layoutY="402.0" prefHeight="52.0" prefWidth="290.0" promptText="Dirección" style="-fx-background-color: grey;" />
+-            <PasswordField id="contraEdicion" layoutX="20.0" layoutY="221.0" prefHeight="28.0" prefWidth="290.0" promptText="contraseña" style="-fx-background-color: grey;" />
+-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="GREY" height="31.0" layoutX="-9.0" layoutY="62.0" stroke="BLACK" strokeType="INSIDE" width="344.0" />
+-            <Label layoutX="23.0" layoutY="65.0" text="Mi Perfil">
+-               <font>
+-                  <Font size="16.0" />
+-               </font>
+-            </Label>
+-            <Button id="guardarEditar" layoutX="59.0" layoutY="482.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="95.0" text="Guardar" />
+-            <Button id="cancelarEditar" layoutX="182.0" layoutY="482.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="95.0" text="Cancelar" />
+-         </children>
+-      </AnchorPane>
+-   </center>
+-</View>
+Index: .idea/PujaQPuja.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/PujaQPuja.iml b/.idea/PujaQPuja.iml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/PujaQPuja.iml	
+@@ -0,0 +1,2 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="JAVA_MODULE" version="4" />
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"MainApp\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"pujaQpuja.MainApp\" />\r\n      <module name=\"pujaQpuja\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"pujaQpuja.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.MainApp\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"ServiceViewManager\">\r\n    <option name=\"viewStates\">\r\n      <list>\r\n        <serviceView>\r\n          <treeState>\r\n            <expand />\r\n            <select />\r\n          </treeState>\r\n        </serviceView>\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"SvnConfiguration\">\r\n    <configuration />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -1,14 +1,49 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-
++  <component name="AutoImportSettings">
++    <option name="autoReloadType" value="SELECTIVE" />
++  </component>
++  <component name="ChangeListManager">
++    <list default="true" id="b1c78e62-fecf-496b-9328-1718d8cbc994" name="Default Changelist" comment="">
++      <change afterPath="$PROJECT_DIR$/.idea/PujaQPuja.iml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/MainApp.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/Inicio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/Inicio.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/view/DetallesVenta.fxml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/view/EditarPerfil.fxml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/view/ErrorAutenticar.fxml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/view/Informacion.fxml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/view/Ingresar.fxml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/view/Inicio.fxml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/view/PantallaSeleccionarCategoria.fxml" beforeDir="false" />
++    </list>
++    <option name="SHOW_DIALOG" value="false" />
++    <option name="HIGHLIGHT_CONFLICTS" value="true" />
++    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++    <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="Git.Settings">
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
++  <component name="ProjectId" id="1r26O3JGcQipNY96pejYApI3hay" />
++  <component name="ProjectViewState">
++    <option name="hideEmptyMiddlePackages" value="true" />
++    <option name="showLibraryContents" value="true" />
++  </component>
+   <component name="PropertiesComponent">
++    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
++    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
++    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+   </component>
+   <component name="RunManager">
+-    <configuration name="MainApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++    <configuration name="PujaQPuja" type="Application" factoryName="Application" temporary="true">
+       <option name="MAIN_CLASS_NAME" value="pujaQpuja.MainApp" />
+-      <module name="pujaQpuja" />
++      <module name="PujaQPuja" />
+       <extension name="coverage">
+         <pattern>
+           <option name="PATTERN" value="pujaQpuja.*" />
+@@ -21,7 +56,7 @@
+     </configuration>
+     <recent_temporary>
+       <list>
+-        <item itemvalue="Application.MainApp" />
++        <item itemvalue="Application.PujaQPuja" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -37,7 +72,33 @@
+       </list>
+     </option>
+   </component>
++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="SvnConfiguration">
+     <configuration />
+   </component>
++  <component name="TaskManager">
++    <task active="true" id="Default" summary="Default task">
++      <changelist id="b1c78e62-fecf-496b-9328-1718d8cbc994" name="Default Changelist" comment="" />
++      <created>1618161804837</created>
++      <option name="number" value="Default" />
++      <option name="presentableId" value="Default" />
++      <updated>1618161804837</updated>
++    </task>
++    <servers />
++  </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
++  <component name="XSLT-Support.FileAssociations.UIState">
++    <expand />
++    <select />
++  </component>
+ </project>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/vcs.xml	
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"CompilerConfiguration\">\r\n    <annotationProcessing>\r\n      <profile name=\"Maven default annotation processors profile\" enabled=\"true\">\r\n        <sourceOutputDir name=\"target/generated-sources/annotations\" />\r\n        <sourceTestOutputDir name=\"target/generated-test-sources/test-annotations\" />\r\n        <outputRelativeToContentRoot value=\"true\" />\r\n        <module name=\"pujaQpuja\" />\r\n      </profile>\r\n    </annotationProcessing>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+--- a/.idea/compiler.xml	
++++ b/.idea/compiler.xml	
+@@ -7,6 +7,7 @@
+         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+         <outputRelativeToContentRoot value="true" />
+         <module name="pujaQpuja" />
++        <module name="PujaQPuja" />
+       </profile>
+     </annotationProcessing>
+   </component>
+Index: .idea/jarRepositories.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/jarRepositories.xml b/.idea/jarRepositories.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/jarRepositories.xml	
+@@ -0,0 +1,25 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="RemoteRepositoriesConfiguration">
++    <remote-repository>
++      <option name="id" value="central" />
++      <option name="name" value="Central Repository" />
++      <option name="url" value="https://repo.maven.apache.org/maven2" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="central" />
++      <option name="name" value="Maven Central repository" />
++      <option name="url" value="https://repo1.maven.org/maven2" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="jboss.community" />
++      <option name="name" value="JBoss Community repository" />
++      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="gluon-nexus-repository" />
++      <option name="name" value="gluon-nexus-repository" />
++      <option name="url" value="http://nexus.gluonhq.com/nexus/content/repositories/releases/" />
++    </remote-repository>
++  </component>
++</project>
+\ No newline at end of file
