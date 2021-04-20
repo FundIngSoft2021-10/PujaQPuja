@@ -227,7 +227,8 @@ public class PantallaPujarXProductoController implements Initializable {
            //System.out.println(generalController.getTemporalVisualizada().getId()+generalController.getAutenticado().getId()+generalController.getAutenticado().getId()+precionuevo);
             pujaController.InsertarComprador(generalController.getTemporalVisualizada().getId(),generalController.getAutenticado().getId(),precionuevo);
            campoNumeroPujantes.setText(Integer.toString(Integer.valueOf(campoNumeroPujantes.getText())+1));
-           
+           pujaController.ActualizarPrecio(generalController.getTemporalVisualizada().getId(),precionuevo);
+            campoPrecioSubasta.setText(Double.toString(precionuevo));
         return true;
        }
        else{

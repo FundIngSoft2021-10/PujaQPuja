@@ -191,6 +191,40 @@ public class PujaRepository extends DB {
 
 
     }
+    public boolean actualizarPrecio(Double nuevoprecio,long idPuja) {
+        PreparedStatement ps = null;
+        //ResultSet rs = null;
+        Connection con = getConexion();
+        int temp = 0;
+
+        String sql = "";
+        sql += "UPDATE Puja SET precioFinal = ? ";
+        sql += "WHERE id = ?";
+
+        try {
+            ps = con.prepareStatement(sql);
+
+
+             ps.setDouble(1, nuevoprecio);
+            ps.setLong(2, idPuja);
+
+            return ps.execute();
+
+
+        } catch (SQLException e) {
+            System.err.println(e);
+            return false;
+
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+
+            }
+        }
+
+
+    }
 
 
 }
