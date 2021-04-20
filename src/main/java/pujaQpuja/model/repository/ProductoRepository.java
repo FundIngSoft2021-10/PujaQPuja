@@ -78,7 +78,7 @@ public class ProductoRepository extends DB {
     }
 
     public Producto crear(Producto producto, String rutaImagen) throws SQLException {
-        // PreparedStatement ps = null;
+
         Connection con = getConexion();
         ResultSet rs;
         String sql = "";

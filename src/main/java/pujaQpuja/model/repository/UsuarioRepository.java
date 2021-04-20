@@ -9,6 +9,9 @@ import pujaQpuja.model.entities.Usuario;
 
 public class UsuarioRepository extends DB {
 
+    public UsuarioRepository() {
+    }
+
     public boolean crear(Usuario usuario) {
 
         PreparedStatement ps = null;
@@ -155,7 +158,7 @@ public class UsuarioRepository extends DB {
 
 
     public boolean buscarPorCorreo(Usuario usuario) {
-        
+
         PreparedStatement ps = null;
         ResultSet rs = null;
         Connection con = getConexion();
@@ -171,7 +174,7 @@ public class UsuarioRepository extends DB {
 
             rs = ps.executeQuery();
 
-            if(rs.next()) {
+            if (rs.next()) {
                 usuario.setId(rs.getLong("id"));
 
                 usuario.setPassword(rs.getString("password"));
@@ -196,4 +199,4 @@ public class UsuarioRepository extends DB {
             }
         }
     }
- }
+}

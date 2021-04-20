@@ -13,14 +13,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
 import pujaQpuja.controller.GeneralController;
 
 public class PujaRepository extends DB {
+
     UsuarioController usuarioController;
     ProductoController productoController;
 
-    public PujaRepository()
-    {
+    public PujaRepository() {
         usuarioController = new UsuarioController();
         productoController = new ProductoController();
     }
@@ -43,8 +44,7 @@ public class PujaRepository extends DB {
             rs = ps.executeQuery();
 
 
-            while(rs.next())
-            {
+            while (rs.next()) {
                 Puja temp = new Puja();
 
                 temp.setId(rs.getLong("id"));
@@ -67,6 +67,7 @@ public class PujaRepository extends DB {
             }
         }
     }
+
     public boolean crear(Puja puja, Long usuarioId, Long productoId) {
 
         PreparedStatement ps = null;
@@ -84,7 +85,7 @@ public class PujaRepository extends DB {
             ps.setLong(3, usuarioId);
             ps.setLong(4, productoId);
             ps.setString(5, String.valueOf(EstadoPuja.ACTIVO));
- 
+
 
             return ps.execute();
         } catch (SQLException e) {
