@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="237.0" prefWidth="304.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaExitoRealizarSubastaController">
+    <center>
+        <AnchorPane prefHeight="543.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+            <Text fx:id="textoNombreProducto" layoutX="38.0" layoutY="36.0" style="-fx-background-color: #CCECFE;" text="Nombre del producto" textAlignment="CENTER">
+                <font>
+                    <Font name="SansSerif Regular" size="24.0"/>
+                </font>
+            </Text>
+            <TextArea fx:id="campoConfirmacion" editable="false" layoutX="23.0" layoutY="57.0" prefHeight="97.0" prefWidth="257.0" style="-fx-font-size: 18;" text="El articulo fue publicado con exito" wrapText="true"/>
+            <ImageView fx:id="imagenProducto" fitHeight="42.0" fitWidth="45.0" layoutX="230.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../images/informacion.png"/>
+            </ImageView>
+            <Button fx:id="botonAceptar" layoutX="77.0" layoutY="178.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#accionAceptar" prefHeight="36.0" prefWidth="146.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;"
+                    text="Aceptar" textAlignment="CENTER">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0"/>
+                </font>
+                <opaqueInsets>
+                    <Insets/>
+                </opaqueInsets>
+            </Button>
+        </AnchorPane>
+    </center>
+</BorderPane>
