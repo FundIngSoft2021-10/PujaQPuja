@@ -45,7 +45,7 @@ import pujaQpuja.utilities.PantallasMenu;
 public class PantallaSeleccionarCategoriaController implements Initializable {
 
     GeneralController generalController;
-    PujaController pujaController ;
+    PujaController pujaController;
 
     @FXML
     private Rectangle botonAtras;
@@ -85,11 +85,11 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       generalController = GeneralController.getControllerAplication();
-       pujaController = new PujaController();
+        generalController = GeneralController.getControllerAplication();
+        pujaController = new PujaController();
 
         // TODO REPARAR CÓDIGO
-        //System.out.println(generalController.getAutenticado().getCorreo());
+        // System.out.println(generalController.getAutenticado().getCorreo());
 
         desplegableFiltros.getItems().setAll(Categoria.values());
         columnaDescripcion.setCellValueFactory(new PropertyValueFactory<TablaCatalogoTemporal, String>("desc"));
@@ -97,7 +97,6 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
 
         obtenerPujas();
     }
-
 
     @FXML
     private void irAtras(MouseEvent event) {
@@ -175,26 +174,25 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
         tablaCatalogo.setItems(sortedData);
     }
 
-
     @FXML
     void filtrarXcategoria(ActionEvent event) {
 
-        ObservableList<TablaCatalogoTemporal> datos = pujaController.getPujasActivaByCategoria(desplegableFiltros.getSelectionModel().getSelectedItem());
+        ObservableList<TablaCatalogoTemporal> datos = pujaController
+                .getPujasActivaByCategoria(desplegableFiltros.getSelectionModel().getSelectedItem());
 
         tablaCatalogo.setItems(datos);
         FilteredList<TablaCatalogoTemporal> filteredData = new FilteredList<>(datos, b -> true);
         campoBusqueda.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(TablaCatalogoTemporal -> {
-                        if (newValue == null || newValue.isEmpty()) {
-                            return true;
-                        }
-                        String lowerCaseFilter = newValue.toLowerCase();
-                        if (TablaCatalogoTemporal.getDesc().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-                            return true; // Filter matches first name.
-                        } else
-                            return false; // Does not match.
-                    }
-            );
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+                String lowerCaseFilter = newValue.toLowerCase();
+                if (TablaCatalogoTemporal.getDesc().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true; // Filter matches first name.
+                } else
+                    return false; // Does not match.
+            });
         });
         SortedList<TablaCatalogoTemporal> sortedData = new SortedList<>(filteredData);
         sortedData.comparatorProperty().bind(tablaCatalogo.comparatorProperty());
@@ -205,12 +203,12 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
 
     @FXML
     void seleccionar(MouseEvent event) throws IOException {
-        if(tablaCatalogo.getSelectionModel().getSelectedItem() != null)
-        {
+        if (tablaCatalogo.getSelectionModel().getSelectedItem() != null) {
             Puja a = tablaCatalogo.getSelectionModel().getSelectedItem().getPuja();
             Puja b = pujaController.pujaVisualizada(a);
             generalController.setTemporalVisualizada(b);
-            Parent pantallaIngresarParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaPujarXProducto.fxml"));
+            Parent pantallaIngresarParent = FXMLLoader
+                    .load(getClass().getResource("/view/" + "PantallaPujarXProducto.fxml"));
             Scene pantallaIngresarScene = new Scene(pantallaIngresarParent);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(pantallaIngresarScene);
@@ -218,4 +216,5 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
         }
 
     }
+
 }

@@ -127,7 +127,6 @@ public class PujaRepository extends DB {
             ps.setLong(4, productoId);
             ps.setString(5, String.valueOf(EstadoPuja.ACTIVO));
 
-
             return ps.execute();
         } catch (SQLException e) {
             System.err.println(e);

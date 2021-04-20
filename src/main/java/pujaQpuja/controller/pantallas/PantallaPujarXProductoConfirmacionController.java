@@ -39,14 +39,12 @@ public class PantallaPujarXProductoConfirmacionController implements Initializab
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // textPrecioPujaARealizar.setText(Double.toString(this.precionuevo));
-
     }
 
     @FXML
     void accionNo(ActionEvent event)throws IOException {
-       // controlador1.pujaController.InsertarComprador(controlador1.generalController.getTemporalVisualizada().getId(),controlador1.generalController.getAutenticado().getId(),precionuevo);
         cerrar();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + "PantallaSeleccionarCategoria.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + "PantallaPujarXProducto.fxml"));
         fxmlLoader.load();
         PantallaPujarXProductoController ConfirmacionController = fxmlLoader.getController();
        

@@ -119,9 +119,7 @@ public class PantallaCalificarProductoController implements Initializable {
     private void accionAceptar(ActionEvent event) throws IOException {
 
         if (botonRadioBuena.isSelected()) {
-
             System.out.println("Buena");
-
         } else if (botonRadioRegular.isSelected()) {
             System.out.println("Regular");
         } else if (botonRadioMala.isSelected()) {
@@ -134,8 +132,9 @@ public class PantallaCalificarProductoController implements Initializable {
             window.setScene(exitoCalificarScene);
             window.show();
         }
-        if(botonRadioBuena.isSelected() || botonRadioRegular.isSelected() || botonRadioMala.isSelected()) {
-            Parent pantallaExitoParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaExitoCalificar.fxml"));
+        if (botonRadioBuena.isSelected() || botonRadioRegular.isSelected() || botonRadioMala.isSelected()) {
+            Parent pantallaExitoParent = FXMLLoader
+                    .load(getClass().getResource("/view/" + "PantallaExitoCalificar.fxml"));
             Scene exitoCalificarScene = new Scene(pantallaExitoParent);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(exitoCalificarScene);
