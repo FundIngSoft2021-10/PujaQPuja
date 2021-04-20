@@ -1,5 +1,7 @@
 package pujaQpuja.utilities;
 
+import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -7,121 +9,69 @@ import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import pujaQpuja.MainApp;
+import pujaQpuja.controller.pantallas.PantallaRealizarSubastaController;
 
 public class PantallasMenu {
 
-    static public void abrirPerfil(MouseEvent event) {
+    public static void abrirPantalla(Event event, String nombrePantalla) {
         try {
-            Parent root = FXMLLoader.load(MainApp.class.getResource("/view/" + "PantallaPerfil.fxml"));
+            Parent root = FXMLLoader.load(MainApp.class.getResource("/view/" + nombrePantalla + ".fxml"));
             Scene scene = new Scene(root);
-            Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            appStage.setScene(scene);
-            appStage.toFront();
-            appStage.show();
-
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(scene);
+            window.toFront();
+            window.show();
         } catch (Exception e) {
             System.err.println("Error abriendo pantalla: " + e);
         }
     }
 
-    static public void abrirAjustes(MouseEvent event) {
+    public static void abrirVentana(ActionEvent event, String nombrePantalla) {
+        try {
+            Parent root = FXMLLoader.load(MainApp.class.getResource("/view/" + nombrePantalla + ".fxml"));
+            Scene scene = new Scene(root);
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(scene);
+            window.show();
+        } catch (Exception e) {
+            System.err.println("Error abriendo pantalla: " + e);
+        }
+    }
+
+    public static void abrirPerfil(MouseEvent event) {
+        abrirPantalla(event, "PantallaPerfil");
+    }
+
+    public static void abrirAjustes(MouseEvent event) {
         // TODO hacer pantalla ajustes
-        try {
-            Parent root = FXMLLoader.load(MainApp.class.getResource("/view/" + "PantallaAjustes.fxml"));
-            Scene scene = new Scene(root);
-            Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            appStage.setScene(scene);
-            appStage.toFront();
-            appStage.show();
-
-        } catch (Exception e) {
-            System.err.println("Error abriendo pantalla: " + e);
-        }
+        abrirPantalla(event, "PantallaAjustes");
     }
 
-    static public void abrirCategorias(MouseEvent event) {
-        try {
-            Parent root = FXMLLoader.load(MainApp.class.getResource("/view/" + "PantallaSeleccionarCategoria.fxml"));
-            Scene scene = new Scene(root);
-            Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            appStage.setScene(scene);
-            appStage.toFront();
-            appStage.show();
-
-        } catch (Exception e) {
-            System.err.println("Error abriendo pantalla: " + e);
-        }
+    public static void abrirCategorias(MouseEvent event) {
+        abrirPantalla(event, "PantallaSeleccionarCategoria");
     }
 
-    static public void abrirRealizarSubasta(MouseEvent event) {
-        try {
-            Parent root = FXMLLoader.load(MainApp.class.getResource("/view/" + "PantallaRealizarSubasta.fxml"));
-            Scene scene = new Scene(root);
-            Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            appStage.setScene(scene);
-            appStage.toFront();
-            appStage.show();
-
-        } catch (Exception e) {
-            System.err.println("Error abriendo pantalla: " + e);
-        }
+    public static void abrirRealizarSubasta(MouseEvent event) {
+        abrirPantalla(event, "PantallaRealizarSubasta");
     }
 
-    static public void abrirHistorialVentas(MouseEvent event) {
-        try {
-            Parent root = FXMLLoader.load(MainApp.class.getResource("/view/" + "HistorialVentas.fxml"));
-            Scene scene = new Scene(root);
-            Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            appStage.setScene(scene);
-            appStage.toFront();
-            appStage.show();
-
-        } catch (Exception e) {
-            System.err.println("Error abriendo pantalla: " + e);
-        }
+    public static void abrirHistorialVentas(MouseEvent event) {
+        abrirPantalla(event, "HistorialVentas");
     }
 
-    static public void abrirHistorialCompras(MouseEvent event) {
-        try {
-            Parent root = FXMLLoader.load(MainApp.class.getResource("/view/" + "HistorialCompras.fxml"));
-            Scene scene = new Scene(root);
-            Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            appStage.setScene(scene);
-            appStage.toFront();
-            appStage.show();
-
-        } catch (Exception e) {
-            System.err.println("Error abriendo pantalla: " + e);
-        }
+    public static void abrirHistorialCompras(MouseEvent event) {
+        abrirPantalla(event, "HistorialCompras");
     }
 
-    static public void abrirNotificaciones(MouseEvent event) {
+    public static void abrirNotificaciones(MouseEvent event) {
         // TODO hacer pantalla notificaciones
-        try {
-            Parent root = FXMLLoader.load(MainApp.class.getResource("/view/" + "PantallaNotificaciones.fxml"));
-            Scene scene = new Scene(root);
-            Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            appStage.setScene(scene);
-            appStage.toFront();
-            appStage.show();
-
-        } catch (Exception e) {
-            System.err.println("Error abriendo pantalla: " + e);
-        }
+        abrirPantalla(event, "PantallaNotificaciones");
     }
 
-    static public void abririMetodoPago(MouseEvent event) {
+    public static void abririMetodoPago(MouseEvent event) {
         // TODO hacer pantalla método pago
-        try {
-            Parent root = FXMLLoader.load(MainApp.class.getResource("/view/" + "PantallaMetodoPago.fxml"));
-            Scene scene = new Scene(root);
-            Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            appStage.setScene(scene);
-            appStage.toFront();
-            appStage.show();
-
-        } catch (Exception e) {
-            System.err.println("Error abriendo pantalla: " + e);
-        }
+        abrirPantalla(event, "PantallaMetodoPago");
     }
+
+
 }

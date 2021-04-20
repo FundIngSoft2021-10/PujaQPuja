@@ -2,7 +2,6 @@ package pujaQpuja.model.entities.otros;
 
 import java.util.Objects;
 
-
 import javafx.scene.image.ImageView;
 import pujaQpuja.model.entities.Puja;
 
@@ -77,11 +76,7 @@ public class TablaCatalogoTemporal {
 
     @Override
     public String toString() {
-        return "{" +
-            " imagen='" + getImagen() + "'" +
-            ", desc='" + getDesc() + "'" +
-            ", puja='" + getPuja() + "'" +
-            "}";
+        return "{" + " imagen='" + getImagen() + "'" + ", desc='" + getDesc() + "'" + ", puja='" + getPuja() + "'" + "}";
     }
 
 }

@@ -1,14 +1,13 @@
-package pujaQpuja.controller;
+package pujaQpuja.controller.modelos;
 
 import pujaQpuja.model.entities.Usuario;
 import pujaQpuja.model.repository.UsuarioRepository;
 
 public class UsuarioController {
 
-    UsuarioRepository usuarioRepository;
+    private UsuarioRepository usuarioRepository;
 
-    public UsuarioController()
-    {
+    public UsuarioController() {
         usuarioRepository = new UsuarioRepository();
     }
 

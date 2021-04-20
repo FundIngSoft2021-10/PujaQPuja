@@ -94,8 +94,7 @@ public class PantallaPujarXProductoController implements Initializable {
         campoDescripcionProducto.setText(generalController.getTemporalVisualizada().getProducto().getDescripcion());
         textoNombreProducto.setText(generalController.getTemporalVisualizada().getProducto().getNombre());
         campoPrecioSubasta.setText(Double.toString(generalController.getTemporalVisualizada().getPrecioFinal()));
-        campoNumeroPujantes.setText(
-                Integer.toString(pujaController.obtenerPujantes(generalController.getTemporalVisualizada().getId())));
+        campoNumeroPujantes.setText(Integer.toString(pujaController.obtenerNumeroPujantesPorPujaId(generalController.getTemporalVisualizada().getId())));
         imagenProducto.setImage(generalController.getTemporalVisualizada().getProducto().getFoto());
     }
 
@@ -113,8 +112,7 @@ public class PantallaPujarXProductoController implements Initializable {
             if (precio > 0.0) {
                 if (precio <= generalController.getTemporalVisualizada().getPrecioFinal()) {
 
-                    FXMLLoader fxmlLoader = new FXMLLoader(
-                            getClass().getResource("/view/" + "PantallaPujarXProductoError.fxml"));
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + "PantallaPujarXProductoError.fxml"));
                     fxmlLoader.load();
                     Parent p = fxmlLoader.getRoot();
                     Stage s = new Stage();
@@ -131,8 +129,7 @@ public class PantallaPujarXProductoController implements Initializable {
                     // Stage window2 = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     // window2.setScene(pantallaIngresarScene2);
                     // window2.show();
-                    FXMLLoader fxmlLoader = new FXMLLoader(
-                            getClass().getResource("/view/" + "PantallaPujarXProductoConfirmacion.fxml"));
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + "PantallaPujarXProductoConfirmacion.fxml"));
                     fxmlLoader.load();
                     PantallaPujarXProductoConfirmacionController ConfirmacionController = fxmlLoader.getController();
                     ConfirmacionController.SetPrecioNuevo(precio);
@@ -200,8 +197,7 @@ public class PantallaPujarXProductoController implements Initializable {
 
     @FXML
     void irAtras(MouseEvent event) throws IOException {
-        Parent pantallaErrorParent = FXMLLoader
-                .load(getClass().getResource("/view/" + "PantallaSeleccionarCategoria.fxml"));
+        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaSeleccionarCategoria.fxml"));
         Scene errorRegistroScene = new Scene(pantallaErrorParent);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(errorRegistroScene);
@@ -212,8 +208,7 @@ public class PantallaPujarXProductoController implements Initializable {
         // crear la puja y validad y lo demas
 
         if (confirmacion == true) {
-            pujaController.InsertarComprador(generalController.getTemporalVisualizada().getId(),
-                    generalController.getAutenticado().getId(), precionuevo);
+            pujaController.InsertarComprador(generalController.getTemporalVisualizada().getId(), generalController.getAutenticado().getId(), precionuevo);
             campoNumeroPujantes.setText(Integer.toString(Integer.valueOf(campoNumeroPujantes.getText()) + 1));
             pujaController.ActualizarPrecio(generalController.getTemporalVisualizada().getId(), precionuevo);
             campoPrecioSubasta.setText(Double.toString(precionuevo));

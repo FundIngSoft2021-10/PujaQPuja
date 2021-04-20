@@ -8,6 +8,7 @@ package pujaQpuja.controller.pantallas;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -15,6 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import pujaQpuja.controller.modelos.UsuarioController;
 import pujaQpuja.utilities.Utiles;
 import pujaQpuja.utilities.PantallasMenu;
 import pujaQpuja.controller.GeneralController;
@@ -33,7 +35,8 @@ import javafx.scene.shape.Rectangle;
  */
 public class EditarPerfilController implements Initializable {
 
-    GeneralController generalController;
+    private GeneralController generalController;
+    private UsuarioController usuarioController;
 
     @FXML
     private Rectangle botonAtras;
@@ -77,14 +80,15 @@ public class EditarPerfilController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        usuarioController = new UsuarioController();
         generalController = GeneralController.getControllerAplication();
     }
 
     @FXML
     private void irAtras(MouseEvent event) throws IOException {
-        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaPerfil.fxml"));
+        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaPerfil.fxml"));
         Scene errorRegistroScene = new Scene(pantallaErrorParent);
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(errorRegistroScene);
         window.show();
     }
@@ -155,7 +159,7 @@ public class EditarPerfilController implements Initializable {
             usuario.setDireccion(campoDireccion.getText());
         }
 
-        generalController.setActualizarUsuario(usuario);
+        usuarioController.modificar(usuario);
         generalController.setAutenticado(usuario);
 
         Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaSeleccionarCategoria.fxml"));

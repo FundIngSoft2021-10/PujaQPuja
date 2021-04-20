@@ -4,9 +4,9 @@ import java.util.Objects;
 
 public class Mensaje {
     private long id;
- private Usuario emisor;
- private Usuario receptor;
- private String cuerpo;
+    private Usuario emisor;
+    private Usuario receptor;
+    private String cuerpo;
 
     public Mensaje() {
     }
@@ -88,12 +88,7 @@ public class Mensaje {
 
     @Override
     public String toString() {
-        return "{" +
-            " id='" + getId() + "'" +
-            ", emisor='" + getEmisor() + "'" +
-            ", receptor='" + getReceptor() + "'" +
-            ", cuerpo='" + getCuerpo() + "'" +
-            "}";
+        return "{" + " id='" + getId() + "'" + ", emisor='" + getEmisor() + "'" + ", receptor='" + getReceptor() + "'" + ", cuerpo='" + getCuerpo() + "'" + "}";
     }
 
 }

@@ -4,7 +4,7 @@ import pujaQpuja.model.repository.MensajeRepository;
 
 public class MensajeController {
 
-    MensajeRepository mensajeRepository;
+    private MensajeRepository mensajeRepository;
 
     public MensajeController() {
         mensajeRepository = new MensajeRepository();

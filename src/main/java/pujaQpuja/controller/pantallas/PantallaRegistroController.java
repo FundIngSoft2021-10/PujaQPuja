@@ -18,7 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-import pujaQpuja.controller.GeneralController;
+import pujaQpuja.controller.modelos.UsuarioController;
 import pujaQpuja.model.entities.Usuario;
 import pujaQpuja.utilities.Utiles;
 import pujaQpuja.utilities.PantallasMenu;
@@ -30,7 +30,7 @@ import pujaQpuja.utilities.PantallasMenu;
  */
 public class PantallaRegistroController implements Initializable {
 
-    GeneralController generalController;
+    UsuarioController usuarioController;
 
     @FXML
     private Rectangle botonAtras;
@@ -74,7 +74,7 @@ public class PantallaRegistroController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        generalController = GeneralController.getControllerAplication();
+        usuarioController = new UsuarioController();
     }
 
     @FXML
@@ -130,8 +130,7 @@ public class PantallaRegistroController implements Initializable {
     private void accionRegistrarse(ActionEvent event) throws IOException {
         Usuario usuario = new Usuario();
 
-        if (campoPassword.getText().equals(campoConfirmarPassword.getText()) && checkAceptarTerminos.isSelected()
-                && Utiles.isNumeric(campoTelefono.getText()) && Utiles.isValid(campoCorreo.getText())) {
+        if (campoPassword.getText().equals(campoConfirmarPassword.getText()) && checkAceptarTerminos.isSelected() && Utiles.isNumeric(campoTelefono.getText()) && Utiles.isValid(campoCorreo.getText())) {
             usuario.setNombres(campoNombres.getText());
             usuario.setApellidos(campoApellidos.getText());
             usuario.setCorreo(campoCorreo.getText());
@@ -139,25 +138,22 @@ public class PantallaRegistroController implements Initializable {
             usuario.setTelefono(campoTelefono.getText());
             usuario.setPassword(campoPassword.getText());
 
-            if (!generalController.buscarPorCorreo(usuario)) {
-                generalController.crear(usuario);
-                Parent pantallaErrorParent = FXMLLoader
-                        .load(getClass().getResource("/view/" + "PantallaExitoRegistro.fxml"));
+            if (!usuarioController.buscarPorCorreo(usuario)) {
+                usuarioController.crear(usuario);
+                Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaExitoRegistro.fxml"));
                 Scene errorRegistroScene = new Scene(pantallaErrorParent);
                 Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 window.setScene(errorRegistroScene);
                 window.show();
             } else {
-                Parent pantallaErrorParent = FXMLLoader
-                        .load(getClass().getResource("/view/" + "PantallaErrorRegistro.fxml"));
+                Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaErrorRegistro.fxml"));
                 Scene errorRegistroScene = new Scene(pantallaErrorParent);
                 Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 window.setScene(errorRegistroScene);
                 window.show();
             }
         } else {
-            Parent pantallaErrorParent = FXMLLoader
-                    .load(getClass().getResource("/view/" + "PantallaErrorRegistro.fxml"));
+            Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaErrorRegistro.fxml"));
             Scene errorRegistroScene = new Scene(pantallaErrorParent);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(errorRegistroScene);

@@ -2,6 +2,7 @@ package pujaQpuja.controller.modelos;
 
 import java.sql.Date;
 import java.util.Calendar;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.image.ImageView;
@@ -44,8 +45,7 @@ public class PujaController {
         return getPujasActivasByEstadoPujaYCategoriaProducto(EstadoPuja.ACTIVO, categoria);
     }
 
-    public ObservableList<TablaCatalogoTemporal> getPujasActivasByEstadoPujaYCategoriaProducto(EstadoPuja estado,
-            Categoria filtro) {
+    public ObservableList<TablaCatalogoTemporal> getPujasActivasByEstadoPujaYCategoriaProducto(EstadoPuja estado, Categoria filtro) {
 
         ObservableList<TablaCatalogoTemporal> datos = FXCollections.observableArrayList();
 
@@ -57,9 +57,7 @@ public class PujaController {
                     temp.setImagen(new ImageView(actual.getProducto().getFoto()));
                 }
             }
-            StringBuilder dtemp = new StringBuilder("Nombre:  " + actual.getProducto().getNombre() + "\n"
-                    + "Descripción:  " + actual.getProducto().getDescripcion() + "\n" + "Precio:  " + "$ "
-                    + actual.getPrecioFinal() + " COP" + "\n" + "Categoria: " + actual.getProducto().getCategoria());
+            StringBuilder dtemp = new StringBuilder("Nombre:  " + actual.getProducto().getNombre() + "\n" + "Descripción:  " + actual.getProducto().getDescripcion() + "\n" + "Precio:  " + "$ " + actual.getPrecioFinal() + " COP" + "\n" + "Categoria: " + actual.getProducto().getCategoria());
             temp.setDesc(dtemp.toString());
             datos.add(temp);
         }
@@ -68,16 +66,16 @@ public class PujaController {
 
     public Puja pujaVisualizada(Puja temp) {
         System.out.println(temp.getId());
-        seleccionada = this.pujaRepository.buscarPuja(temp.getId());
+        seleccionada = this.pujaRepository.buscarPujaPorId(temp.getId());
         return seleccionada;
     }
 
-    public int obtenerPujantes(Long id) {
-        return this.pujaRepository.ContadorPujantes(id);
+    public int obtenerNumeroPujantesPorPujaId(Long id) {
+        return this.pujaRepository.getNumeroPujantesPorPujaId(id);
     }
 
-    public boolean InsertarComprador(Long idPuja, Long idComprador, Double nuevoprecio) {
-        return this.pujaRepository.añadirPujante(idPuja, idComprador, nuevoprecio);
+    public boolean InsertarComprador(Long idPuja, Long idComprador, Double precioPujado) {
+        return this.pujaRepository.agregarPujante(idPuja, idComprador, precioPujado);
     }
 
     public boolean ActualizarPrecio(Long idPuja, Double nuevoprecio) {

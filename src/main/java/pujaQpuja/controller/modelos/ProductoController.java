@@ -1,22 +1,23 @@
 package pujaQpuja.controller.modelos;
 
 import java.sql.SQLException;
+
 import pujaQpuja.model.entities.Producto;
 import pujaQpuja.model.repository.ProductoRepository;
 
 public class ProductoController {
 
-    ProductoRepository productoRepository;
+    private ProductoRepository productoRepository;
 
     public ProductoController() {
         productoRepository = new ProductoRepository();
     }
 
-    public Producto buscarPorID(long idProducto) {
-        return productoRepository.buscarPorID(idProducto);
+    public Producto buscarPorId(long idProducto) {
+        return productoRepository.buscarProductoPorId(idProducto);
     }
-    
-    public void crear(Producto producto, String rutaImagen) throws SQLException{
-        productoRepository.crear(producto, rutaImagen);
+
+    public boolean crear(Producto producto, String rutaImagen) {
+        return productoRepository.crear(producto, rutaImagen);
     }
 }

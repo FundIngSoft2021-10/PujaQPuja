@@ -90,12 +90,7 @@ public class Chat {
 
     @Override
     public String toString() {
-        return "{" +
-            " id='" + getId() + "'" +
-            ", usuarioUno='" + getUsuarioUno() + "'" +
-            ", usuarioDos='" + getUsuarioDos() + "'" +
-            ", mensajes='" + getMensajes() + "'" +
-            "}";
+        return "{" + " id='" + getId() + "'" + ", usuarioUno='" + getUsuarioUno() + "'" + ", usuarioDos='" + getUsuarioDos() + "'" + ", mensajes='" + getMensajes() + "'" + "}";
     }
 
 }

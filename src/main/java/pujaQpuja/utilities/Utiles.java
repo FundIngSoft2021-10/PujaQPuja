@@ -30,14 +30,12 @@ public class Utiles {
     public static Image cargarImagen(Event event, String rutaImagen) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Buscar Imagen");
-        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("All Images", "*.*"),
-                new FileChooser.ExtensionFilter("JPG", "*.jpg"), new FileChooser.ExtensionFilter("PNG", "*.png"));
+        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("All Images", "*.*"), new FileChooser.ExtensionFilter("JPG", "*.jpg"), new FileChooser.ExtensionFilter("PNG", "*.png"));
         File imgFile = fileChooser.showOpenDialog((Stage) ((Node) event.getSource()).getScene().getWindow());
         if (imgFile != null) {
             Image image = new Image("file:" + imgFile.getAbsolutePath());
             rutaImagen = imgFile.getAbsolutePath();
             return image;
-            // imagenProducto.setImage(image);
         }
         return null;
     }
