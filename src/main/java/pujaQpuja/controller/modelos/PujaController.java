@@ -1,7 +1,9 @@
 package pujaQpuja.controller.modelos;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -36,17 +38,16 @@ public class PujaController {
         pujaRepository.crear(puja, idUsuario, producto.getId());
     }
 
-    public ObservableList<TablaCatalogoTemporal> getPujasActivasItems() {
+    public List<TablaCatalogoTemporal> getPujasActivasItems() {
         return getPujasActivasByEstadoPujaYCategoriaProducto(EstadoPuja.ACTIVO, null);
     }
 
-    public ObservableList<TablaCatalogoTemporal> getPujasActivaByCategoria(Categoria categoria) {
+    public List<TablaCatalogoTemporal> getPujasActivaByCategoria(Categoria categoria) {
         return getPujasActivasByEstadoPujaYCategoriaProducto(EstadoPuja.ACTIVO, categoria);
     }
 
-    public ObservableList<TablaCatalogoTemporal> getPujasActivasByEstadoPujaYCategoriaProducto(EstadoPuja estado, Categoria filtro) {
-
-        ObservableList<TablaCatalogoTemporal> datos = FXCollections.observableArrayList();
+    public List<TablaCatalogoTemporal> getPujasActivasByEstadoPujaYCategoriaProducto(EstadoPuja estado, Categoria filtro) {
+        List<TablaCatalogoTemporal> datos = new ArrayList<>();
 
         for (Puja actual : pujaRepository.getPujasActivasByEstadoPujaYCategoriaProducto(estado, filtro)) {
             TablaCatalogoTemporal temp = new TablaCatalogoTemporal();

@@ -83,8 +83,7 @@ public class PantallaPujarXProductoController implements Initializable {
             try {
                 precio = Double.parseDouble(precioOfertado);
             } catch (Exception e) {
-                // TODO: handle exception
-                // mostrar show alert dialog, campo incorrecto
+                System.err.println(e);
             }
             if (precio > 0.0) {
                 if (precio <= controladorGeneral.autenticacionController.getTemporalVisualizada().getPrecioFinal()) {

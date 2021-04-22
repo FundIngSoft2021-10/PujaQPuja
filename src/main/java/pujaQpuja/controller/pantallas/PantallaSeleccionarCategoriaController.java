@@ -1,5 +1,8 @@
 package pujaQpuja.controller.pantallas;
 
+import javafx.beans.InvalidationListener;
+import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
@@ -27,7 +30,7 @@ import pujaQpuja.utilities.PantallasMenu;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class PantallaSeleccionarCategoriaController implements Initializable {
 
@@ -78,20 +81,16 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
     }
 
     private void obtenerPujas() {
-
-        ObservableList<TablaCatalogoTemporal> datos = controladorGeneral.pujaController.getPujasActivasItems();
+        ObservableList<TablaCatalogoTemporal> datos = FXCollections.observableArrayList();
+        datos.addAll(controladorGeneral.pujaController.getPujasActivasItems());
         tablaCatalogo.setItems(datos);
+
         FilteredList<TablaCatalogoTemporal> filteredData = new FilteredList<>(datos, b -> true);
         campoBusqueda.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(TablaCatalogoTemporal -> {
-                if (newValue == null || newValue.isEmpty()) {
+                if (newValue == null || newValue.isEmpty())
                     return true;
-                }
-                String lowerCaseFilter = newValue.toLowerCase();
-                if (TablaCatalogoTemporal.getDesc().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-                    return true; // Filter matches first name.
-                } else
-                    return false; // Does not match.
+                return TablaCatalogoTemporal.getDesc().toLowerCase().indexOf(newValue.toLowerCase()) != -1 ? true : false;
             });
         });
         SortedList<TablaCatalogoTemporal> sortedData = new SortedList<>(filteredData);
@@ -155,20 +154,16 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
     @FXML
     void filtrarXcategoria(ActionEvent event) {
 
-        ObservableList<TablaCatalogoTemporal> datos = controladorGeneral.pujaController.getPujasActivaByCategoria(desplegableFiltros.getSelectionModel().getSelectedItem());
-
+        ObservableList<TablaCatalogoTemporal> datos = FXCollections.observableArrayList();
+        datos.addAll(controladorGeneral.pujaController.getPujasActivaByCategoria(desplegableFiltros.getSelectionModel().getSelectedItem()));
         tablaCatalogo.setItems(datos);
+
         FilteredList<TablaCatalogoTemporal> filteredData = new FilteredList<>(datos, b -> true);
         campoBusqueda.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(TablaCatalogoTemporal -> {
-                if (newValue == null || newValue.isEmpty()) {
+                if (newValue == null || newValue.isEmpty())
                     return true;
-                }
-                String lowerCaseFilter = newValue.toLowerCase();
-                if (TablaCatalogoTemporal.getDesc().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-                    return true; // Filter matches first name.
-                } else
-                    return false; // Does not match.
+                return TablaCatalogoTemporal.getDesc().toLowerCase().indexOf(newValue.toLowerCase()) != -1 ? true : false;
             });
         });
         SortedList<TablaCatalogoTemporal> sortedData = new SortedList<>(filteredData);
