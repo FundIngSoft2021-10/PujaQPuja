@@ -11,31 +11,38 @@ import javafx.stage.Stage;
 import pujaQpuja.MainApp;
 import pujaQpuja.controller.pantallas.PantallaRealizarSubastaController;
 
+import java.io.IOException;
+
 public class PantallasMenu {
 
     public static void abrirPantalla(Event event, String nombrePantalla) {
         try {
-            Parent root = FXMLLoader.load(MainApp.class.getResource("/view/" + nombrePantalla + ".fxml"));
-            Scene scene = new Scene(root);
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("/view/" + nombrePantalla + ".fxml"));
+            Parent root = fxmlLoader.load();
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            window.setScene(scene);
+            window.setScene(new Scene(root));
             window.toFront();
+            window.showAndWait();
+        } catch (Exception e) {
+            System.err.println("Error abriendo pantalla: " + e);
+        }
+    }
+
+    public static void abrirVentana(String nombrePantalla) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("/view/" + nombrePantalla + ".fxml"));
+            Parent root = fxmlLoader.load();
+            Stage window = new Stage();
+            window.setScene(new Scene(root));
             window.show();
         } catch (Exception e) {
             System.err.println("Error abriendo pantalla: " + e);
         }
     }
 
-    public static void abrirVentana(ActionEvent event, String nombrePantalla) {
-        try {
-            Parent root = FXMLLoader.load(MainApp.class.getResource("/view/" + nombrePantalla + ".fxml"));
-            Scene scene = new Scene(root);
-            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            window.setScene(scene);
-            window.show();
-        } catch (Exception e) {
-            System.err.println("Error abriendo pantalla: " + e);
-        }
+    public static void cerrarPantalla(Event event){
+        Stage escena = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        escena.close();
     }
 
     public static void abrirPerfil(MouseEvent event) {

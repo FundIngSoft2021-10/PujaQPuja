@@ -1,36 +1,27 @@
 package pujaQpuja.controller.pantallas;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
-
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
-import javafx.stage.Stage;
 import pujaQpuja.controller.modelos.UsuarioController;
 import pujaQpuja.model.entities.Usuario;
-import pujaQpuja.utilities.Utiles;
 import pujaQpuja.utilities.PantallasMenu;
+import pujaQpuja.utilities.Utiles;
 
-/**
- * FXML Controller class
- *
- * @author Cristian Da Camara
- */
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
 public class PantallaRegistroController implements Initializable {
 
-    UsuarioController usuarioController;
+    private UsuarioController usuarioController;
 
     @FXML
     private Rectangle botonAtras;
@@ -69,9 +60,6 @@ public class PantallaRegistroController implements Initializable {
     @FXML
     private Button botonRegistrarse;
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         usuarioController = new UsuarioController();
@@ -79,11 +67,7 @@ public class PantallaRegistroController implements Initializable {
 
     @FXML
     private void irAtras(MouseEvent event) throws IOException {
-        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" + "inicio.fxml"));
-        Scene errorRegistroScene = new Scene(pantallaErrorParent);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(errorRegistroScene);
-        window.show();
+        PantallasMenu.abrirPantalla(event, "inicio");
     }
 
     @FXML
@@ -127,7 +111,7 @@ public class PantallaRegistroController implements Initializable {
     }
 
     @FXML
-    private void accionRegistrarse(ActionEvent event) throws IOException {
+    private void accionRegistrarse(ActionEvent event) throws IOException, InterruptedException {
         Usuario usuario = new Usuario();
 
         if (campoPassword.getText().equals(campoConfirmarPassword.getText()) && checkAceptarTerminos.isSelected() && Utiles.isNumeric(campoTelefono.getText()) && Utiles.isValid(campoCorreo.getText())) {
@@ -140,25 +124,18 @@ public class PantallaRegistroController implements Initializable {
 
             if (!usuarioController.buscarPorCorreo(usuario)) {
                 usuarioController.crear(usuario);
-                Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaExitoRegistro.fxml"));
-                Scene errorRegistroScene = new Scene(pantallaErrorParent);
-                Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                window.setScene(errorRegistroScene);
-                window.show();
+                PantallasMenu.abrirPantalla(event, "Inicio");
+                PantallasMenu.abrirVentana("PantallaExitoRegistro");
             } else {
-                Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaErrorRegistro.fxml"));
-                Scene errorRegistroScene = new Scene(pantallaErrorParent);
-                Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                window.setScene(errorRegistroScene);
-                window.show();
+                PantallasMenu.abrirVentana("PantallaErrorRegistro");
             }
         } else {
-            Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaErrorRegistro.fxml"));
-            Scene errorRegistroScene = new Scene(pantallaErrorParent);
-            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            window.setScene(errorRegistroScene);
-            window.show();
+            PantallasMenu.abrirVentana("PantallaErrorRegistro");
         }
+    }
+
+    private void abrirInicio(Event event) {
+        PantallasMenu.abrirPantalla(event, "Inicio");
     }
 
 }

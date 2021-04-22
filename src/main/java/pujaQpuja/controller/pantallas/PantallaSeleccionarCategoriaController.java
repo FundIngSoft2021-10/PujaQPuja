@@ -1,15 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pujaQpuja.controller.pantallas;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
-
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
@@ -29,23 +19,21 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-import pujaQpuja.controller.GeneralController;
+import pujaQpuja.controller.modelos.AutenticacionController;
 import pujaQpuja.controller.modelos.PujaController;
 import pujaQpuja.model.entities.Categoria;
-import pujaQpuja.model.entities.EstadoPuja;
 import pujaQpuja.model.entities.Puja;
 import pujaQpuja.model.entities.otros.TablaCatalogoTemporal;
 import pujaQpuja.utilities.PantallasMenu;
 
-/**
- * FXML Controller class
- *
- * @author LomitoFrito
- */
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
 public class PantallaSeleccionarCategoriaController implements Initializable {
 
-    GeneralController generalController;
-    PujaController pujaController;
+    private AutenticacionController autenticacionController;
+    private PujaController pujaController;
 
     @FXML
     private Rectangle botonAtras;
@@ -80,16 +68,10 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
     @FXML
     private Rectangle botonOrdenar;
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        generalController = GeneralController.getControllerAplication();
+        autenticacionController = AutenticacionController.getControllerAplication();
         pujaController = new PujaController();
-
-        // TODO REPARAR CÓDIGO
-        // System.out.println(generalController.getAutenticado().getCorreo());
 
         desplegableFiltros.getItems().setAll(Categoria.values());
         columnaDescripcion.setCellValueFactory(new PropertyValueFactory<TablaCatalogoTemporal, String>("desc"));
@@ -98,9 +80,30 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
         obtenerPujas();
     }
 
+    private void obtenerPujas() {
+
+        ObservableList<TablaCatalogoTemporal> datos = pujaController.getPujasActivasItems();
+        tablaCatalogo.setItems(datos);
+        FilteredList<TablaCatalogoTemporal> filteredData = new FilteredList<>(datos, b -> true);
+        campoBusqueda.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(TablaCatalogoTemporal -> {
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+                String lowerCaseFilter = newValue.toLowerCase();
+                if (TablaCatalogoTemporal.getDesc().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true; // Filter matches first name.
+                } else
+                    return false; // Does not match.
+            });
+        });
+        SortedList<TablaCatalogoTemporal> sortedData = new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(tablaCatalogo.comparatorProperty());
+        tablaCatalogo.setItems(sortedData);
+    }
+
     @FXML
     private void irAtras(MouseEvent event) {
-
     }
 
     @FXML
@@ -152,33 +155,10 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
     private void accionOrdenar(MouseEvent event) {
     }
 
-    private void obtenerPujas() {
-
-        ObservableList<TablaCatalogoTemporal> datos = pujaController.getPujasActivasItems();
-        tablaCatalogo.setItems(datos);
-        FilteredList<TablaCatalogoTemporal> filteredData = new FilteredList<>(datos, b -> true);
-        campoBusqueda.textProperty().addListener((observable, oldValue, newValue) -> {
-            filteredData.setPredicate(TablaCatalogoTemporal -> {
-                if (newValue == null || newValue.isEmpty()) {
-                    return true;
-                }
-                String lowerCaseFilter = newValue.toLowerCase();
-                if (TablaCatalogoTemporal.getDesc().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-                    return true; // Filter matches first name.
-                } else
-                    return false; // Does not match.
-            });
-        });
-        SortedList<TablaCatalogoTemporal> sortedData = new SortedList<>(filteredData);
-        sortedData.comparatorProperty().bind(tablaCatalogo.comparatorProperty());
-        tablaCatalogo.setItems(sortedData);
-    }
-
     @FXML
     void filtrarXcategoria(ActionEvent event) {
 
-        ObservableList<TablaCatalogoTemporal> datos = pujaController
-                .getPujasActivaByCategoria(desplegableFiltros.getSelectionModel().getSelectedItem());
+        ObservableList<TablaCatalogoTemporal> datos = pujaController.getPujasActivaByCategoria(desplegableFiltros.getSelectionModel().getSelectedItem());
 
         tablaCatalogo.setItems(datos);
         FilteredList<TablaCatalogoTemporal> filteredData = new FilteredList<>(datos, b -> true);
@@ -197,8 +177,6 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
         SortedList<TablaCatalogoTemporal> sortedData = new SortedList<>(filteredData);
         sortedData.comparatorProperty().bind(tablaCatalogo.comparatorProperty());
         tablaCatalogo.setItems(sortedData);
-        // System.out.println(datos.size());
-
     }
 
     @FXML
@@ -206,9 +184,8 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
         if (tablaCatalogo.getSelectionModel().getSelectedItem() != null) {
             Puja a = tablaCatalogo.getSelectionModel().getSelectedItem().getPuja();
             Puja b = pujaController.pujaVisualizada(a);
-            generalController.setTemporalVisualizada(b);
-            Parent pantallaIngresarParent = FXMLLoader
-                    .load(getClass().getResource("/view/" + "PantallaPujarXProducto.fxml"));
+            autenticacionController.setTemporalVisualizada(b);
+            Parent pantallaIngresarParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaPujarXProducto.fxml"));
             Scene pantallaIngresarScene = new Scene(pantallaIngresarParent);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(pantallaIngresarScene);

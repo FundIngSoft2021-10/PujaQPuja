@@ -6,7 +6,6 @@ import java.util.Calendar;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.image.ImageView;
-import pujaQpuja.controller.GeneralController;
 import pujaQpuja.model.entities.EstadoPuja;
 import pujaQpuja.model.entities.Producto;
 import pujaQpuja.model.entities.Puja;
@@ -19,21 +18,21 @@ public class PujaController {
 
     private PujaRepository pujaRepository;
     private PantallaSeleccionarCategoriaController seleccionarCategoriaController;
-    private GeneralController generalController;
+    private AutenticacionController autenticacionController;
 
     private Puja seleccionada;
 
     public PujaController() {
         pujaRepository = new PujaRepository();
         seleccionarCategoriaController = new PantallaSeleccionarCategoriaController();
-        generalController = GeneralController.getControllerAplication();
+        autenticacionController = AutenticacionController.getControllerAplication();
     }
 
     public void crear(Producto producto) {
         Puja puja = new Puja();
         puja.setFecha(new Date(Calendar.getInstance().getTime().getTime()));
         puja.setPrecioFinal(producto.getPrecioInicial());
-        long idUsuario = generalController.getAutenticado().getId();
+        long idUsuario = autenticacionController.getAutenticado().getId();
         pujaRepository.crear(puja, idUsuario, producto.getId());
     }
 
@@ -57,7 +56,7 @@ public class PujaController {
                     temp.setImagen(new ImageView(actual.getProducto().getFoto()));
                 }
             }
-            StringBuilder dtemp = new StringBuilder("Nombre:  " + actual.getProducto().getNombre() + "\n" + "DescripciÃ³n:  " + actual.getProducto().getDescripcion() + "\n" + "Precio:  " + "$ " + actual.getPrecioFinal() + " COP" + "\n" + "Categoria: " + actual.getProducto().getCategoria());
+            StringBuilder dtemp = new StringBuilder("Nombre:  " + actual.getProducto().getNombre() + "\n" + "Descripción:  " + actual.getProducto().getDescripcion() + "\n" + "Precio:  " + "$ " + actual.getPrecioFinal() + " COP" + "\n" + "Categoria: " + actual.getProducto().getCategoria());
             temp.setDesc(dtemp.toString());
             datos.add(temp);
         }
@@ -74,11 +73,11 @@ public class PujaController {
         return this.pujaRepository.getNumeroPujantesPorPujaId(id);
     }
 
-    public boolean InsertarComprador(Long idPuja, Long idComprador, Double precioPujado) {
+    public boolean insertarComprador(Long idPuja, Long idComprador, Double precioPujado) {
         return this.pujaRepository.agregarPujante(idPuja, idComprador, precioPujado);
     }
 
-    public boolean ActualizarPrecio(Long idPuja, Double nuevoprecio) {
+    public boolean actualizarPrecio(Long idPuja, Double nuevoprecio) {
         return this.pujaRepository.actualizarPrecio(nuevoprecio, idPuja);
     }
 

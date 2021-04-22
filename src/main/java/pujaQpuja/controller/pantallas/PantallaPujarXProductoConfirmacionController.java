@@ -1,13 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pujaQpuja.controller.pantallas;
-
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,23 +9,23 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import pujaQpuja.utilities.PantallasMenu;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class PantallaPujarXProductoConfirmacionController implements Initializable {
+
     private Double precionuevo;
     private PantallaPujarXProductoController controlador1;
 
     @FXML
     private Button botonSi;
-
     @FXML
     private Button botonNo;
-
     @FXML
     private Label textPrecioPujaARealizar;
-
-    public Label getTextoPrecio() {
-        return this.textPrecioPujaARealizar;
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -43,11 +34,11 @@ public class PantallaPujarXProductoConfirmacionController implements Initializab
 
     @FXML
     void accionNo(ActionEvent event) throws IOException {
-        cerrar();
+        PantallasMenu.cerrarPantalla(event);
+
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + "PantallaPujarXProducto.fxml"));
         fxmlLoader.load();
         PantallaPujarXProductoController ConfirmacionController = fxmlLoader.getController();
-
         if (ConfirmacionController.confirmacion(false, this.precionuevo)) {
             //showalert messaje puja realizada con exito
         }
@@ -55,17 +46,17 @@ public class PantallaPujarXProductoConfirmacionController implements Initializab
         Stage s = new Stage();
         s.setScene(new Scene(p));
         s.show();
-        Stage escena = (Stage) this.botonSi.getScene().getWindow();
-        escena.close();
+
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
     void accionSi(ActionEvent event) throws IOException {
-        cerrar();
+        PantallasMenu.cerrarPantalla(event);
+
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + "PantallaPujarXProducto.fxml"));
         fxmlLoader.load();
         PantallaPujarXProductoController ConfirmacionController = fxmlLoader.getController();
-
         if (ConfirmacionController.confirmacion(true, this.precionuevo)) {
             //showalert messaje puja realizada con exito
         }
@@ -73,11 +64,15 @@ public class PantallaPujarXProductoConfirmacionController implements Initializab
         Stage s = new Stage();
         s.setScene(new Scene(p));
         s.show();
-        Stage escena = (Stage) this.botonSi.getScene().getWindow();
-        escena.close();
+
+        PantallasMenu.cerrarPantalla(event);
     }
 
-    public void SetPrecioNuevo(Double precio) {
+    public Label getTextoPrecio() {
+        return this.textPrecioPujaARealizar;
+    }
+
+    public void setPrecioNuevo(Double precio) {
         this.precionuevo = precio;
     }
 
@@ -85,8 +80,4 @@ public class PantallaPujarXProductoConfirmacionController implements Initializab
         this.controlador1 = controlador;
     }
 
-    public void cerrar() {
-        Stage stage = (Stage) this.controlador1.botonPuja().getScene().getWindow();
-        stage.close();
-    }
 }

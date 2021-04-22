@@ -1,20 +1,19 @@
-package pujaQpuja.controller;
+package pujaQpuja.controller.modelos;
 
-import pujaQpuja.controller.modelos.UsuarioController;
 import pujaQpuja.model.entities.Puja;
 import pujaQpuja.model.entities.Usuario;
 
-public class GeneralController {
+public class AutenticacionController {
 
     // ----------------------------------------------------------
     // ----------------------- Singleton ------------------------
     // ----------------------------------------------------------
 
-    private static GeneralController conexion = null;
+    private static AutenticacionController conexion = null;
 
-    public static GeneralController getControllerAplication() {
+    public static AutenticacionController getControllerAplication() {
         if (conexion == null) {
-            conexion = new GeneralController();
+            conexion = new AutenticacionController();
         }
         return conexion;
     }
@@ -32,7 +31,7 @@ public class GeneralController {
     // ---------------------- Constructor -----------------------
     // ----------------------------------------------------------
 
-    public GeneralController() {
+    public AutenticacionController() {
         usuarioController = new UsuarioController();
     }
 

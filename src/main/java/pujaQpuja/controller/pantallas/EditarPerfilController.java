@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pujaQpuja.controller.pantallas;
 
 import java.io.IOException;
@@ -19,24 +14,14 @@ import javafx.scene.input.MouseEvent;
 import pujaQpuja.controller.modelos.UsuarioController;
 import pujaQpuja.utilities.Utiles;
 import pujaQpuja.utilities.PantallasMenu;
-import pujaQpuja.controller.GeneralController;
+import pujaQpuja.controller.modelos.AutenticacionController;
 import pujaQpuja.model.entities.Usuario;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.shape.Rectangle;
 
-/**
- * FXML Controller class
- *
- * @author Cristian Da Camara
- */
 public class EditarPerfilController implements Initializable {
 
-    private GeneralController generalController;
-    private UsuarioController usuarioController;
+    private UsuarioController usuarioController = new UsuarioController();
+    private AutenticacionController autenticacionController = AutenticacionController.getControllerAplication();
 
     @FXML
     private Rectangle botonAtras;
@@ -75,22 +60,15 @@ public class EditarPerfilController implements Initializable {
     @FXML
     private Button botonCancelar;
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         usuarioController = new UsuarioController();
-        generalController = GeneralController.getControllerAplication();
+        autenticacionController = AutenticacionController.getControllerAplication();
     }
 
     @FXML
     private void irAtras(MouseEvent event) throws IOException {
-        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaPerfil.fxml"));
-        Scene errorRegistroScene = new Scene(pantallaErrorParent);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(errorRegistroScene);
-        window.show();
+        PantallasMenu.abrirPantalla(event, "PantallaPerfil");
     }
 
     @FXML
@@ -135,7 +113,7 @@ public class EditarPerfilController implements Initializable {
 
     @FXML
     private void accionGuardar(ActionEvent event) throws IOException {
-        Usuario usuario = generalController.getAutenticado();
+        Usuario usuario = autenticacionController.getAutenticado();
 
         if (!campoNombres.getText().isBlank()) {
             usuario.setNombres(campoNombres.getText());
@@ -160,22 +138,14 @@ public class EditarPerfilController implements Initializable {
         }
 
         usuarioController.modificar(usuario);
-        generalController.setAutenticado(usuario);
+        autenticacionController.setAutenticado(usuario);
 
-        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaSeleccionarCategoria.fxml"));
-        Scene errorRegistroScene = new Scene(pantallaErrorParent);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(errorRegistroScene);
-        window.show();
+        PantallasMenu.abrirPantalla(event, "PantallaSeleccionarCategoria");
     }
 
     @FXML
     private void accionCancelar(ActionEvent event) throws IOException {
-        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaSeleccionarCategoria.fxml"));
-        Scene errorRegistroScene = new Scene(pantallaErrorParent);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(errorRegistroScene);
-        window.show();
+        PantallasMenu.abrirPantalla(event, "PantallaSeleccionarCategoria");
     }
 
 }

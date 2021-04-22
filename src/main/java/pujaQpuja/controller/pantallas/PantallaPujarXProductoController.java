@@ -1,15 +1,10 @@
 package pujaQpuja.controller.pantallas;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
-
-import javafx.scene.Node;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -19,87 +14,73 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import pujaQpuja.controller.GeneralController;
+import pujaQpuja.controller.modelos.AutenticacionController;
 import pujaQpuja.controller.modelos.PujaController;
 import pujaQpuja.utilities.PantallasMenu;
 
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
 public class PantallaPujarXProductoController implements Initializable {
 
-    GeneralController generalController;
-    PujaController pujaController;
+    private AutenticacionController autenticacionController;
+    private PujaController pujaController;
     private PantallaPujarXProductoConfirmacionController controlador2;
 
     @FXML
     private Rectangle botonAtras;
-
     @FXML
     private Rectangle botonPerfil;
-
     @FXML
     private Rectangle botonRectanguloAjustes;
-
     @FXML
     private Rectangle botonRectanguloCategorias;
-
     @FXML
     private Rectangle botonRectanguloRealizarSubasta;
-
     @FXML
     private Rectangle botonRectanguloHistorialVentas;
-
     @FXML
     private Rectangle botonRectanguloHistorialCompras;
-
     @FXML
     private Rectangle botonRectanguloNotificaciones;
-
     @FXML
     private Rectangle botonRectanguloMetodoPago;
-
     @FXML
     private TextField campoBusqueda;
-
     @FXML
     private Rectangle botonBusqueda;
-
     @FXML
     private ImageView imagenProducto;
-
     @FXML
     private TextField campoDescripcionProducto;
-
     @FXML
     private TextField campoPrecioSubasta;
-
     @FXML
     private TextField campoNumeroPujantes;
-
     @FXML
     private TextField campoDigitePrecio;
-
     @FXML
     private Button botonPuja;
-
     @FXML
     private Button botonRealizarPregunta;
-
     @FXML
     private Text textoNombreProducto;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        generalController = GeneralController.getControllerAplication();
+        autenticacionController = AutenticacionController.getControllerAplication();
         pujaController = new PujaController();
 
-        campoDescripcionProducto.setText(generalController.getTemporalVisualizada().getProducto().getDescripcion());
-        textoNombreProducto.setText(generalController.getTemporalVisualizada().getProducto().getNombre());
-        campoPrecioSubasta.setText(Double.toString(generalController.getTemporalVisualizada().getPrecioFinal()));
-        campoNumeroPujantes.setText(Integer.toString(pujaController.obtenerNumeroPujantesPorPujaId(generalController.getTemporalVisualizada().getId())));
-        imagenProducto.setImage(generalController.getTemporalVisualizada().getProducto().getFoto());
+        campoDescripcionProducto.setText(autenticacionController.getTemporalVisualizada().getProducto().getDescripcion());
+        textoNombreProducto.setText(autenticacionController.getTemporalVisualizada().getProducto().getNombre());
+        campoPrecioSubasta.setText(Double.toString(autenticacionController.getTemporalVisualizada().getPrecioFinal()));
+        campoNumeroPujantes.setText(Integer.toString(pujaController.obtenerNumeroPujantesPorPujaId(autenticacionController.getTemporalVisualizada().getId())));
+        imagenProducto.setImage(autenticacionController.getTemporalVisualizada().getProducto().getFoto());
     }
 
     @FXML
-    void AbrirPujar(ActionEvent event) throws IOException {
+    void abrirPujar(ActionEvent event) throws IOException {
         String precioOfertado = campoDigitePrecio.getText();
         if (precioOfertado != null) {
             Double precio = 0.0;
@@ -110,44 +91,26 @@ public class PantallaPujarXProductoController implements Initializable {
                 // mostrar show alert dialog, campo incorrecto
             }
             if (precio > 0.0) {
-                if (precio <= generalController.getTemporalVisualizada().getPrecioFinal()) {
-
-                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + "PantallaPujarXProductoError.fxml"));
-                    fxmlLoader.load();
-                    Parent p = fxmlLoader.getRoot();
-                    Stage s = new Stage();
-                    s.setScene(new Scene(p));
-                    s.show();
+                if (precio <= autenticacionController.getTemporalVisualizada().getPrecioFinal()) {
+                    PantallasMenu.abrirVentana("PantallaPujarXProductoError");
                 } else {
-                    // mostrar pantalla confirmacion- en caso de que no servir, hacer alert show
-                    // dialogs
-
-                    // Parent pantallaIngresarParent2 = FXMLLoader
-                    // .load(getClass().getResource("/view/" +
-                    // "PantallaPujarXProductoConfirmacion.fxml"));
-                    // Scene pantallaIngresarScene2 = new Scene(pantallaIngresarParent2);
-                    // Stage window2 = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    // window2.setScene(pantallaIngresarScene2);
-                    // window2.show();
                     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + "PantallaPujarXProductoConfirmacion.fxml"));
                     fxmlLoader.load();
                     PantallaPujarXProductoConfirmacionController ConfirmacionController = fxmlLoader.getController();
-                    ConfirmacionController.SetPrecioNuevo(precio);
+                    ConfirmacionController.setPrecioNuevo(precio);
                     ConfirmacionController.setControlador(this);
                     ConfirmacionController.getTextoPrecio().setText(Double.toString(precio));
                     Parent p = fxmlLoader.getRoot();
                     Stage s = new Stage();
                     s.setScene(new Scene(p));
                     s.show();
-
                 }
             }
         }
     }
 
     @FXML
-    void AbrirRealizarPregunta(ActionEvent event) {
-
+    void abrirRealizarPregunta(ActionEvent event) {
     }
 
     @FXML
@@ -187,30 +150,24 @@ public class PantallaPujarXProductoController implements Initializable {
 
     @FXML
     void abririMetodoPago(MouseEvent event) {
-
     }
 
     @FXML
     void accionBuscar(MouseEvent event) {
-
     }
 
     @FXML
     void irAtras(MouseEvent event) throws IOException {
-        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaSeleccionarCategoria.fxml"));
-        Scene errorRegistroScene = new Scene(pantallaErrorParent);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(errorRegistroScene);
-        window.show();
+        PantallasMenu.abrirPantalla(event, "PantallaSeleccionarCategoria");
     }
 
     public boolean confirmacion(boolean confirmacion, Double precionuevo) {
         // crear la puja y validad y lo demas
 
         if (confirmacion == true) {
-            pujaController.InsertarComprador(generalController.getTemporalVisualizada().getId(), generalController.getAutenticado().getId(), precionuevo);
+            pujaController.insertarComprador(autenticacionController.getTemporalVisualizada().getId(), autenticacionController.getAutenticado().getId(), precionuevo);
             campoNumeroPujantes.setText(Integer.toString(Integer.valueOf(campoNumeroPujantes.getText()) + 1));
-            pujaController.ActualizarPrecio(generalController.getTemporalVisualizada().getId(), precionuevo);
+            pujaController.actualizarPrecio(autenticacionController.getTemporalVisualizada().getId(), precionuevo);
             campoPrecioSubasta.setText(Double.toString(precionuevo));
             return true;
         } else {
