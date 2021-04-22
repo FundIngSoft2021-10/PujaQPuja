@@ -25,7 +25,7 @@ public class PujaController {
     public PujaController() {
         pujaRepository = new PujaRepository();
         seleccionarCategoriaController = new PantallaSeleccionarCategoriaController();
-        autenticacionController = AutenticacionController.getControllerAplication();
+        autenticacionController = AutenticacionController.getInstance();
     }
 
     public void crear(Producto producto) {
@@ -56,7 +56,7 @@ public class PujaController {
                     temp.setImagen(new ImageView(actual.getProducto().getFoto()));
                 }
             }
-            StringBuilder dtemp = new StringBuilder("Nombre:  " + actual.getProducto().getNombre() + "\n" + "Descripción:  " + actual.getProducto().getDescripcion() + "\n" + "Precio:  " + "$ " + actual.getPrecioFinal() + " COP" + "\n" + "Categoria: " + actual.getProducto().getCategoria());
+            StringBuilder dtemp = new StringBuilder("Nombre:  " + actual.getProducto().getNombre() + "\n" + "Descripciï¿½n:  " + actual.getProducto().getDescripcion() + "\n" + "Precio:  " + "$ " + actual.getPrecioFinal() + " COP" + "\n" + "Categoria: " + actual.getProducto().getCategoria());
             temp.setDesc(dtemp.toString());
             datos.add(temp);
         }

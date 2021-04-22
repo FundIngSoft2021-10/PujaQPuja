@@ -6,12 +6,15 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
+import pujaQpuja.controller.modelos.ControladorGeneral;
 import pujaQpuja.utilities.PantallasMenu;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class InformacionController implements Initializable {
+
+    private ControladorGeneral controladorGeneral;
 
     @FXML
     private Rectangle botonAtras;
@@ -46,6 +49,7 @@ public class InformacionController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        controladorGeneral = new ControladorGeneral();
     }
 
     @FXML

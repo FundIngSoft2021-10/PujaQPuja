@@ -19,8 +19,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-import pujaQpuja.controller.modelos.AutenticacionController;
-import pujaQpuja.controller.modelos.PujaController;
+import pujaQpuja.controller.modelos.ControladorGeneral;
 import pujaQpuja.model.entities.Categoria;
 import pujaQpuja.model.entities.Puja;
 import pujaQpuja.model.entities.otros.TablaCatalogoTemporal;
@@ -32,8 +31,7 @@ import java.util.ResourceBundle;
 
 public class PantallaSeleccionarCategoriaController implements Initializable {
 
-    private AutenticacionController autenticacionController;
-    private PujaController pujaController;
+    private ControladorGeneral controladorGeneral;
 
     @FXML
     private Rectangle botonAtras;
@@ -70,8 +68,7 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        autenticacionController = AutenticacionController.getControllerAplication();
-        pujaController = new PujaController();
+        controladorGeneral = new ControladorGeneral();
 
         desplegableFiltros.getItems().setAll(Categoria.values());
         columnaDescripcion.setCellValueFactory(new PropertyValueFactory<TablaCatalogoTemporal, String>("desc"));
@@ -82,7 +79,7 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
 
     private void obtenerPujas() {
 
-        ObservableList<TablaCatalogoTemporal> datos = pujaController.getPujasActivasItems();
+        ObservableList<TablaCatalogoTemporal> datos = controladorGeneral.pujaController.getPujasActivasItems();
         tablaCatalogo.setItems(datos);
         FilteredList<TablaCatalogoTemporal> filteredData = new FilteredList<>(datos, b -> true);
         campoBusqueda.textProperty().addListener((observable, oldValue, newValue) -> {
@@ -158,7 +155,7 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
     @FXML
     void filtrarXcategoria(ActionEvent event) {
 
-        ObservableList<TablaCatalogoTemporal> datos = pujaController.getPujasActivaByCategoria(desplegableFiltros.getSelectionModel().getSelectedItem());
+        ObservableList<TablaCatalogoTemporal> datos = controladorGeneral.pujaController.getPujasActivaByCategoria(desplegableFiltros.getSelectionModel().getSelectedItem());
 
         tablaCatalogo.setItems(datos);
         FilteredList<TablaCatalogoTemporal> filteredData = new FilteredList<>(datos, b -> true);
@@ -183,8 +180,8 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
     void seleccionar(MouseEvent event) throws IOException {
         if (tablaCatalogo.getSelectionModel().getSelectedItem() != null) {
             Puja a = tablaCatalogo.getSelectionModel().getSelectedItem().getPuja();
-            Puja b = pujaController.pujaVisualizada(a);
-            autenticacionController.setTemporalVisualizada(b);
+            Puja b = controladorGeneral.pujaController.pujaVisualizada(a);
+            controladorGeneral.autenticacionController.setTemporalVisualizada(b);
             Parent pantallaIngresarParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaPujarXProducto.fxml"));
             Scene pantallaIngresarScene = new Scene(pantallaIngresarParent);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();

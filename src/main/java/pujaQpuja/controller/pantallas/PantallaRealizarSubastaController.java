@@ -14,9 +14,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import pujaQpuja.controller.modelos.AutenticacionController;
-import pujaQpuja.controller.modelos.ProductoController;
-import pujaQpuja.controller.modelos.PujaController;
+import pujaQpuja.controller.modelos.ControladorGeneral;
 import pujaQpuja.model.entities.Categoria;
 import pujaQpuja.model.entities.Condicion;
 import pujaQpuja.model.entities.Producto;
@@ -30,10 +28,7 @@ import java.util.ResourceBundle;
 
 public class PantallaRealizarSubastaController implements Initializable {
 
-    private AutenticacionController autenticacionController;
-    private ProductoController productoController;
-    private PujaController pujaController;
-
+    private ControladorGeneral controladorGeneral;
     private String rutaImagen;
 
     @FXML
@@ -71,9 +66,7 @@ public class PantallaRealizarSubastaController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        autenticacionController = AutenticacionController.getControllerAplication();
-        productoController = new ProductoController();
-        pujaController = new PujaController();
+        controladorGeneral = new ControladorGeneral();
 
         desplegableCategoria.getItems().setAll(Categoria.values());
         rutaImagen = "";
@@ -178,8 +171,8 @@ public class PantallaRealizarSubastaController implements Initializable {
 
         if (productoASubastar.getPrecioInicial() >= 0 && !productoASubastar.getNombre().isBlank() && !productoASubastar.getDescripcion().isBlank() && productoASubastar.getCategoria() != null && productoASubastar.getFoto() != null) {
 
-            productoController.crear(productoASubastar, rutaImagen);
-            pujaController.crear(productoASubastar);
+            controladorGeneral.productoController.crear(productoASubastar, rutaImagen);
+            controladorGeneral.pujaController.crear(productoASubastar);
 
             PantallasMenu.abrirVentana("PantallaExitoRealizarSubasta");
         } else {

@@ -6,12 +6,15 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+import pujaQpuja.controller.modelos.ControladorGeneral;
 import pujaQpuja.utilities.PantallasMenu;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class PantallaChatController implements Initializable {
+
+    private ControladorGeneral controladorGeneral;
 
     @FXML
     private Rectangle botonAtras;
@@ -40,6 +43,7 @@ public class PantallaChatController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        controladorGeneral = new ControladorGeneral();
     }
 
     @FXML

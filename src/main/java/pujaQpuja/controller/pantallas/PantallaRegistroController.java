@@ -10,7 +10,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
-import pujaQpuja.controller.modelos.UsuarioController;
+import pujaQpuja.controller.modelos.ControladorGeneral;
 import pujaQpuja.model.entities.Usuario;
 import pujaQpuja.utilities.PantallasMenu;
 import pujaQpuja.utilities.Utiles;
@@ -21,7 +21,7 @@ import java.util.ResourceBundle;
 
 public class PantallaRegistroController implements Initializable {
 
-    private UsuarioController usuarioController;
+    private ControladorGeneral controladorGeneral;
 
     @FXML
     private Rectangle botonAtras;
@@ -62,7 +62,7 @@ public class PantallaRegistroController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        usuarioController = new UsuarioController();
+        controladorGeneral = new ControladorGeneral();
     }
 
     @FXML
@@ -122,8 +122,8 @@ public class PantallaRegistroController implements Initializable {
             usuario.setTelefono(campoTelefono.getText());
             usuario.setPassword(campoPassword.getText());
 
-            if (!usuarioController.buscarPorCorreo(usuario)) {
-                usuarioController.crear(usuario);
+            if (!controladorGeneral.usuarioController.buscarPorCorreo(usuario)) {
+                controladorGeneral.usuarioController.crear(usuario);
                 PantallasMenu.abrirPantalla(event, "Inicio");
                 PantallasMenu.abrirVentana("PantallaExitoRegistro");
             } else {

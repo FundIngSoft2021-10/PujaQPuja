@@ -11,7 +11,7 @@ public class AutenticacionController {
 
     private static AutenticacionController conexion = null;
 
-    public static AutenticacionController getControllerAplication() {
+    public static AutenticacionController getInstance() {
         if (conexion == null) {
             conexion = new AutenticacionController();
         }
@@ -57,20 +57,20 @@ public class AutenticacionController {
         return false;
     }
 
-    public Puja getTemporalVisualizada() {
-        return this.temporalVisualizada;
-    }
-
-    public void setTemporalVisualizada(Puja temporalVisualizada) {
-        this.temporalVisualizada = temporalVisualizada;
-    }
-
     public Usuario getAutenticado() {
         return this.autenticado;
     }
 
     public void setAutenticado(Usuario autenticado) {
         this.autenticado = autenticado;
+    }
+
+    public Puja getTemporalVisualizada() {
+        return this.temporalVisualizada;
+    }
+
+    public void setTemporalVisualizada(Puja temporalVisualizada) {
+        this.temporalVisualizada = temporalVisualizada;
     }
 
 }

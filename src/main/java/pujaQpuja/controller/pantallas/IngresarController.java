@@ -6,7 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import pujaQpuja.controller.modelos.AutenticacionController;
+import pujaQpuja.controller.modelos.ControladorGeneral;
 import pujaQpuja.utilities.PantallasMenu;
 
 import java.io.IOException;
@@ -15,7 +15,7 @@ import java.util.ResourceBundle;
 
 public class IngresarController implements Initializable {
 
-    private AutenticacionController autenticacionController;
+    private ControladorGeneral controladorGeneral;
 
     @FXML
     private TextField campoCorreo;
@@ -26,7 +26,7 @@ public class IngresarController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        autenticacionController = new AutenticacionController();
+        controladorGeneral = new ControladorGeneral();
     }
 
     @FXML
@@ -36,7 +36,7 @@ public class IngresarController implements Initializable {
         String contra = campoPassword.getText();
 
         if (correo != null && contra != null) {
-            if (autenticacionController.iniciarSesion(correo, contra)) {
+            if (controladorGeneral.autenticacionController.iniciarSesion(correo, contra)) {
                 PantallasMenu.abrirPantalla(event, "PantallaSeleccionarCategoria");
             } else {
                 PantallasMenu.abrirVentana("ErrorAutenticar");

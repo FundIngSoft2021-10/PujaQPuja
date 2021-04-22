@@ -4,7 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -14,8 +13,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import pujaQpuja.controller.modelos.AutenticacionController;
-import pujaQpuja.controller.modelos.PujaController;
+import pujaQpuja.controller.modelos.ControladorGeneral;
 import pujaQpuja.utilities.PantallasMenu;
 
 import java.io.IOException;
@@ -24,8 +22,7 @@ import java.util.ResourceBundle;
 
 public class PantallaPujarXProductoController implements Initializable {
 
-    private AutenticacionController autenticacionController;
-    private PujaController pujaController;
+    private ControladorGeneral controladorGeneral;
     private PantallaPujarXProductoConfirmacionController controlador2;
 
     @FXML
@@ -69,14 +66,13 @@ public class PantallaPujarXProductoController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        autenticacionController = AutenticacionController.getControllerAplication();
-        pujaController = new PujaController();
+        controladorGeneral = new ControladorGeneral();
 
-        campoDescripcionProducto.setText(autenticacionController.getTemporalVisualizada().getProducto().getDescripcion());
-        textoNombreProducto.setText(autenticacionController.getTemporalVisualizada().getProducto().getNombre());
-        campoPrecioSubasta.setText(Double.toString(autenticacionController.getTemporalVisualizada().getPrecioFinal()));
-        campoNumeroPujantes.setText(Integer.toString(pujaController.obtenerNumeroPujantesPorPujaId(autenticacionController.getTemporalVisualizada().getId())));
-        imagenProducto.setImage(autenticacionController.getTemporalVisualizada().getProducto().getFoto());
+        campoDescripcionProducto.setText(controladorGeneral.autenticacionController.getTemporalVisualizada().getProducto().getDescripcion());
+        textoNombreProducto.setText(controladorGeneral.autenticacionController.getTemporalVisualizada().getProducto().getNombre());
+        campoPrecioSubasta.setText(Double.toString(controladorGeneral.autenticacionController.getTemporalVisualizada().getPrecioFinal()));
+        campoNumeroPujantes.setText(Integer.toString(controladorGeneral.pujaController.obtenerNumeroPujantesPorPujaId(controladorGeneral.autenticacionController.getTemporalVisualizada().getId())));
+        imagenProducto.setImage(controladorGeneral.autenticacionController.getTemporalVisualizada().getProducto().getFoto());
     }
 
     @FXML
@@ -91,7 +87,7 @@ public class PantallaPujarXProductoController implements Initializable {
                 // mostrar show alert dialog, campo incorrecto
             }
             if (precio > 0.0) {
-                if (precio <= autenticacionController.getTemporalVisualizada().getPrecioFinal()) {
+                if (precio <= controladorGeneral.autenticacionController.getTemporalVisualizada().getPrecioFinal()) {
                     PantallasMenu.abrirVentana("PantallaPujarXProductoError");
                 } else {
                     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + "PantallaPujarXProductoConfirmacion.fxml"));
@@ -165,9 +161,9 @@ public class PantallaPujarXProductoController implements Initializable {
         // crear la puja y validad y lo demas
 
         if (confirmacion == true) {
-            pujaController.insertarComprador(autenticacionController.getTemporalVisualizada().getId(), autenticacionController.getAutenticado().getId(), precionuevo);
+            controladorGeneral.pujaController.insertarComprador(controladorGeneral.autenticacionController.getTemporalVisualizada().getId(), controladorGeneral.autenticacionController.getAutenticado().getId(), precionuevo);
             campoNumeroPujantes.setText(Integer.toString(Integer.valueOf(campoNumeroPujantes.getText()) + 1));
-            pujaController.actualizarPrecio(autenticacionController.getTemporalVisualizada().getId(), precionuevo);
+            controladorGeneral.pujaController.actualizarPrecio(controladorGeneral.autenticacionController.getTemporalVisualizada().getId(), precionuevo);
             campoPrecioSubasta.setText(Double.toString(precionuevo));
             return true;
         } else {

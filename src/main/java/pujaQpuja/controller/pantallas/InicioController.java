@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import pujaQpuja.controller.modelos.ControladorGeneral;
 import pujaQpuja.utilities.PantallasMenu;
 
 import java.io.IOException;
@@ -12,6 +13,8 @@ import java.util.ResourceBundle;
 
 public class InicioController implements Initializable {
 
+    private ControladorGeneral controladorGeneral;
+
     @FXML
     private Button botonRegistrarse;
     @FXML
@@ -19,6 +22,7 @@ public class InicioController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        controladorGeneral = new ControladorGeneral();
     }
 
     @FXML

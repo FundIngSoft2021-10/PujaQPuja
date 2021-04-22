@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import pujaQpuja.controller.modelos.ControladorGeneral;
 import pujaQpuja.utilities.PantallasMenu;
 
 import java.io.IOException;
@@ -17,6 +18,7 @@ import java.util.ResourceBundle;
 
 public class PantallaPujarXProductoConfirmacionController implements Initializable {
 
+    private ControladorGeneral controladorGeneral;
     private Double precionuevo;
     private PantallaPujarXProductoController controlador1;
 
@@ -29,6 +31,7 @@ public class PantallaPujarXProductoConfirmacionController implements Initializab
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        controladorGeneral = new ControladorGeneral();
         // textPrecioPujaARealizar.setText(Double.toString(this.precionuevo));
     }
 

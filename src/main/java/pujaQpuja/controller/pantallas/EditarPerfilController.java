@@ -1,9 +1,5 @@
 package pujaQpuja.controller.pantallas;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -11,17 +7,19 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import pujaQpuja.controller.modelos.UsuarioController;
-import pujaQpuja.utilities.Utiles;
-import pujaQpuja.utilities.PantallasMenu;
-import pujaQpuja.controller.modelos.AutenticacionController;
-import pujaQpuja.model.entities.Usuario;
 import javafx.scene.shape.Rectangle;
+import pujaQpuja.controller.modelos.ControladorGeneral;
+import pujaQpuja.model.entities.Usuario;
+import pujaQpuja.utilities.PantallasMenu;
+import pujaQpuja.utilities.Utiles;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class EditarPerfilController implements Initializable {
 
-    private UsuarioController usuarioController = new UsuarioController();
-    private AutenticacionController autenticacionController = AutenticacionController.getControllerAplication();
+    private ControladorGeneral controladorGeneral;
 
     @FXML
     private Rectangle botonAtras;
@@ -62,8 +60,7 @@ public class EditarPerfilController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        usuarioController = new UsuarioController();
-        autenticacionController = AutenticacionController.getControllerAplication();
+        controladorGeneral = new ControladorGeneral();
     }
 
     @FXML
@@ -113,7 +110,7 @@ public class EditarPerfilController implements Initializable {
 
     @FXML
     private void accionGuardar(ActionEvent event) throws IOException {
-        Usuario usuario = autenticacionController.getAutenticado();
+        Usuario usuario = controladorGeneral.autenticacionController.getAutenticado();
 
         if (!campoNombres.getText().isBlank()) {
             usuario.setNombres(campoNombres.getText());
@@ -137,8 +134,8 @@ public class EditarPerfilController implements Initializable {
             usuario.setDireccion(campoDireccion.getText());
         }
 
-        usuarioController.modificar(usuario);
-        autenticacionController.setAutenticado(usuario);
+        controladorGeneral.usuarioController.modificar(usuario);
+        controladorGeneral.autenticacionController.setAutenticado(usuario);
 
         PantallasMenu.abrirPantalla(event, "PantallaSeleccionarCategoria");
     }

@@ -9,13 +9,12 @@ public class ControladorGeneral {
     public UsuarioController usuarioController;
 
     public ControladorGeneral() {
-        this.autenticacionController = new AutenticacionController();
+        this.autenticacionController = AutenticacionController.getInstance();
         this.chatController = new ChatController();
         this.mensajeController = new MensajeController();
         this.productoController = new ProductoController();
         this.pujaController = new PujaController();
         this.usuarioController = new UsuarioController();
     }
-
 
 }

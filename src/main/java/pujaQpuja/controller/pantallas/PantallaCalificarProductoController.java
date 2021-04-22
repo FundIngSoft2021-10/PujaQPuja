@@ -8,6 +8,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
+import pujaQpuja.controller.modelos.ControladorGeneral;
 import pujaQpuja.utilities.PantallasMenu;
 
 import java.io.IOException;
@@ -15,6 +16,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class PantallaCalificarProductoController implements Initializable {
+
+    private ControladorGeneral controladorGeneral;
 
     @FXML
     private Rectangle botonAtras;
@@ -47,6 +50,7 @@ public class PantallaCalificarProductoController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        controladorGeneral = new ControladorGeneral();
     }
 
     @FXML

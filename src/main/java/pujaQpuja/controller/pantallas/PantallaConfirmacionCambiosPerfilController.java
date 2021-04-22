@@ -4,12 +4,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import pujaQpuja.controller.modelos.ControladorGeneral;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class PantallaConfirmacionCambiosPerfilController implements Initializable {
 
+    private ControladorGeneral controladorGeneral;
     @FXML
     private Button botonSi;
     @FXML
@@ -17,6 +19,7 @@ public class PantallaConfirmacionCambiosPerfilController implements Initializabl
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        controladorGeneral = new ControladorGeneral();
     }
 
     @FXML

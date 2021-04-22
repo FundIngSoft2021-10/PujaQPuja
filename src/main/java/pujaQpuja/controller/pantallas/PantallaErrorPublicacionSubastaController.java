@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import pujaQpuja.controller.modelos.ControladorGeneral;
 import pujaQpuja.utilities.PantallasMenu;
 
 import java.io.IOException;
@@ -13,6 +14,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class PantallaErrorPublicacionSubastaController implements Initializable {
+
+    private ControladorGeneral controladorGeneral;
 
     @FXML
     private Text textoNombreProducto;
@@ -25,6 +28,7 @@ public class PantallaErrorPublicacionSubastaController implements Initializable 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        controladorGeneral = new ControladorGeneral();
     }
 
     @FXML
