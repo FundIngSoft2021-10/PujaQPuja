@@ -1,29 +1,71 @@
 package pujaQpuja.model.repository;
 
-import pujaQpuja.controller.UsuarioController;
+import pujaQpuja.controller.modelos.UsuarioController;
 import pujaQpuja.controller.modelos.ProductoController;
 import pujaQpuja.model.entities.*;
 
 import java.sql.*;
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PujaRepository extends DB {
 
-    UsuarioController usuarioController;
-    ProductoController productoController;
+    private UsuarioController usuarioController;
+    private ProductoController productoController;
 
     public PujaRepository() {
         usuarioController = new UsuarioController();
         productoController = new ProductoController();
     }
 
-    public Puja buscarPuja(long id) {
-        PreparedStatement ps = null;
-        ResultSet rs = null;
+    public boolean crear(Puja puja, Long usuarioId, Long productoId) {
+
         Connection con = getConexion();
+        PreparedStatement ps;
+        ResultSet rs;
+
+        String sql = "";
+        sql += "INSERT INTO Puja ";
+        sql += "(precioFinal, fecha,idHistorialVentas, idProducto, estado) ";
+        sql += "VALUES (?,?,?,?,?)";
+
+        try {
+            ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+
+            ps.setDouble(1, puja.getPrecioFinal());
+            ps.setDate(2, puja.getFecha());
+            ps.setLong(3, usuarioId);
+            ps.setLong(4, productoId);
+            ps.setString(5, String.valueOf(EstadoPuja.ACTIVO));
+
+            ps.execute();
+            rs = ps.getGeneratedKeys();
+
+            if (rs.next()) {
+                int generatedKey = rs.getInt(1);
+                puja.setId(generatedKey);
+                return true;
+            }
+            return false;
+        } catch (SQLException e) {
+            System.err.println(e);
+            return false;
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+    }
+
+    public Puja buscarPujaPorId(long id) {
+
+        Connection con = getConexion();
+        PreparedStatement ps;
+        ResultSet rs;
+
         Puja temp = new Puja();
 
         String sql = "";
@@ -41,7 +83,7 @@ public class PujaRepository extends DB {
                 temp.setEstado(EstadoPuja.valueOf(rs.getString("estado")));
                 temp.setPrecioFinal(rs.getDouble("precioFinal"));
                 temp.setFecha(rs.getDate("fecha"));
-                temp.setProducto(productoController.buscarPorID(rs.getLong("idProducto")));
+                temp.setProducto(productoController.buscarPorId(rs.getLong("idProducto")));
 
                 return temp;
             }
@@ -63,9 +105,10 @@ public class PujaRepository extends DB {
 
     public List<Puja> getPujasActivasByEstadoPujaYCategoriaProducto(EstadoPuja estado, Categoria categoria) {
 
-        PreparedStatement ps = null;
-        ResultSet rs = null;
         Connection con = getConexion();
+        PreparedStatement ps;
+        ResultSet rs;
+
         List<Puja> respuesta = new ArrayList<>();
 
         String sql = "";
@@ -92,7 +135,7 @@ public class PujaRepository extends DB {
                 temp.setEstado(EstadoPuja.valueOf(rs.getString("estado")));
                 temp.setPrecioFinal(rs.getDouble("precioFinal"));
                 temp.setFecha(rs.getDate("fecha"));
-                temp.setProducto(productoController.buscarPorID(rs.getLong("idProducto")));
+                temp.setProducto(productoController.buscarPorId(rs.getLong("idProducto")));
 
                 respuesta.add(temp);
             }
@@ -109,43 +152,13 @@ public class PujaRepository extends DB {
         }
     }
 
-    public boolean crear(Puja puja, Long usuarioId, Long productoId) {
+    public int getNumeroPujantesPorPujaId(Long id) {
 
-        PreparedStatement ps = null;
         Connection con = getConexion();
+        PreparedStatement ps;
+        ResultSet rs;
 
-        String sql = "";
-        sql += "INSERT INTO Puja ";
-        sql += "(precioFinal, fecha,idHistorialVentas, idProducto, estado) ";
-        sql += "VALUES (?,?,?,?,?)";
-        try {
-            ps = con.prepareStatement(sql);
-
-            ps.setDouble(1, puja.getPrecioFinal());
-            ps.setDate(2, puja.getFecha());
-            ps.setLong(3, usuarioId);
-            ps.setLong(4, productoId);
-            ps.setString(5, String.valueOf(EstadoPuja.ACTIVO));
-
-
-            return ps.execute();
-        } catch (SQLException e) {
-            System.err.println(e);
-            return false;
-        } finally {
-            try {
-                desconectar();
-            } catch (SQLException e) {
-                System.err.println(e);
-            }
-        }
-    }
-
-    public int ContadorPujantes(Long parametro) {
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        Connection con = getConexion();
-        int temp = 5;
+        int temp = -1;
 
         String sql = "";
         sql += "SELECT COUNT(c.idComprador) numPujantes ";
@@ -155,21 +168,17 @@ public class PujaRepository extends DB {
         try {
             ps = con.prepareStatement(sql);
 
-            ps.setLong(1, parametro);
+            ps.setLong(1, id);
             rs = ps.executeQuery();
 
             if (rs.next()) {
                 temp = rs.getInt("numPujantes");
-                System.out.println(temp + "bandera");
-
                 return temp;
             }
-
-            return 0;
+            return temp;
         } catch (SQLException e) {
             System.err.println(e);
             return temp;
-
         } finally {
             try {
                 desconectar();
@@ -180,27 +189,24 @@ public class PujaRepository extends DB {
 
     }
 
-    public boolean añadirPujante(Long idPuja, Long idComprador, Double nuevoprecio) {
-        PreparedStatement ps = null;
-        // ResultSet rs = null;
+    public boolean agregarPujante(Long idPuja, Long idComprador, Double precioPujado) {
+
         Connection con = getConexion();
-        int temp = 0;
+        PreparedStatement ps;
 
         String sql = "";
-        sql += "INSERT INTO CompradorXPuja(idComprador,  idPuja, fechaComprador) ";
-        sql += "VALUES (?, ?, ?)";
+        sql += "INSERT INTO CompradorXPuja(idComprador,  idPuja, fechaComprador, precioPujado) ";
+        sql += "VALUES (?, ?, ?, ?)";
 
         try {
             ps = con.prepareStatement(sql);
 
             ps.setLong(1, idComprador);
-            // ps.setDouble(2, nuevoprecio);
             ps.setLong(2, idPuja);
-            LocalDate localDate = LocalDate.now();
-            ps.setDate(3, java.sql.Date.valueOf(localDate));
-            System.out.println(localDate.toString());
-            return ps.execute();
+            ps.setDate(3, java.sql.Date.valueOf(LocalDate.now()));
+            ps.setDouble(4, precioPujado);
 
+            return ps.execute();
         } catch (SQLException e) {
             System.err.println(e);
             return false;
@@ -216,10 +222,9 @@ public class PujaRepository extends DB {
     }
 
     public boolean actualizarPrecio(Double nuevoprecio, long idPuja) {
-        PreparedStatement ps = null;
-        // ResultSet rs = null;
+
         Connection con = getConexion();
-        int temp = 0;
+        PreparedStatement ps;
 
         String sql = "";
         sql += "UPDATE Puja SET precioFinal = ? ";
@@ -232,7 +237,6 @@ public class PujaRepository extends DB {
             ps.setLong(2, idPuja);
 
             return ps.execute();
-
         } catch (SQLException e) {
             System.err.println(e);
             return false;
@@ -244,7 +248,6 @@ public class PujaRepository extends DB {
 
             }
         }
-
     }
 
 }

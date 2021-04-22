@@ -1,21 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pujaQpuja.controller.pantallas;
-
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
@@ -24,22 +12,24 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import pujaQpuja.controller.GeneralController;
+import pujaQpuja.controller.modelos.ControladorGeneral;
 import pujaQpuja.model.entities.Categoria;
-import pujaQpuja.model.entities.EstadoPuja;
+import pujaQpuja.model.entities.Condicion;
 import pujaQpuja.model.entities.Producto;
-import pujaQpuja.model.entities.Puja;
 import pujaQpuja.utilities.PantallasMenu;
 
-/**
- * FXML Controller class
- *
- * @author LomitoFrito
- */
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
+
 public class PantallaRealizarSubastaController implements Initializable {
 
-    GeneralController generalController;
+    private ControladorGeneral controladorGeneral;
+    private String rutaImagen;
 
     @FXML
     private Rectangle botonAtras;
@@ -74,21 +64,17 @@ public class PantallaRealizarSubastaController implements Initializable {
     @FXML
     private Button botonPublicar;
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        generalController = GeneralController.getControllerAplication();
+        controladorGeneral = new ControladorGeneral();
 
-        // TODO
-        // desplegableCategoria = new
-        // ChoiceBox(FXCollections.observableArrayList(Categoria.values()));
         desplegableCategoria.getItems().setAll(Categoria.values());
+        rutaImagen = "";
     }
 
     @FXML
     private void irAtras(MouseEvent event) {
+        PantallasMenu.abrirCategorias(event);
     }
 
     @FXML
@@ -133,17 +119,26 @@ public class PantallaRealizarSubastaController implements Initializable {
 
     @FXML
     private void accionAdjuntarFoto(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Buscar Imagen");
+        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("All Images", "*.*"), new FileChooser.ExtensionFilter("JPG", "*.jpg"), new FileChooser.ExtensionFilter("PNG", "*.png"));
+        File imgFile = fileChooser.showOpenDialog((Stage) ((Node) event.getSource()).getScene().getWindow());
+        if (imgFile != null) {
+            Image image = new Image("file:" + imgFile.getAbsolutePath());
+            rutaImagen = imgFile.getAbsolutePath();
+            imagenProducto.setImage(image);
+        }
     }
 
     @FXML
-    private void accionPublicar(ActionEvent event) throws IOException {
+    private void accionPublicar(ActionEvent event) throws IOException, SQLException {
 
         Producto productoASubastar = new Producto();
 
         // FALTA AGREGAR ESE PRODUCTO A LA LISTA DE PUJAS
 
         productoASubastar.setNombre(campoNombreProducto.getText());
-        if(!campoPrecioInicial.getText().isEmpty())
+        if (!campoPrecioInicial.getText().isEmpty())
             productoASubastar.setPrecioInicial(Float.parseFloat(campoPrecioInicial.getText()));
         productoASubastar.setDescripcion(campoDescripcionProducto.getText());
 
@@ -171,40 +166,17 @@ public class PantallaRealizarSubastaController implements Initializable {
             categoria = Categoria.TECNOLOGIA;
         }
         productoASubastar.setCategoria(categoria);
+        productoASubastar.setFoto(imagenProducto.getImage());
+        productoASubastar.setCondicion(Condicion.USADO);
 
-        Image foto = new Image("file:" + "src/main/resources/images/logo.png", 118, 118, false, false);
-        productoASubastar.setFoto(foto);
+        if (productoASubastar.getPrecioInicial() >= 0 && !productoASubastar.getNombre().isBlank() && !productoASubastar.getDescripcion().isBlank() && productoASubastar.getCategoria() != null && productoASubastar.getFoto() != null) {
 
-        Puja nPuja = new Puja();
-        nPuja.setEstado(EstadoPuja.ACTIVO);
-        nPuja.setProducto(productoASubastar);
-        nPuja.setPrecioFinal(productoASubastar.getPrecioInicial());
-        int cont = generalController.getContID();
-        System.out.println("Cont antes de incrementarID: " + cont);
-        generalController.incrementarId();
-        cont = generalController.getContID();
-        System.out.println("Cont despues de incrementarID: " + cont);
-        nPuja.setId(cont);
-        System.out.println(nPuja.toString());
-        generalController.agregarPujaActiva(nPuja);
-         
-        if (productoASubastar.getPrecioInicial() >= 0 && !productoASubastar.getNombre().isBlank()
-                && !productoASubastar.getDescripcion().isBlank() && productoASubastar.getCategoria() != null
-                && productoASubastar.getFoto() != null) {
+            controladorGeneral.productoController.crear(productoASubastar, rutaImagen);
+            controladorGeneral.pujaController.crear(productoASubastar);
 
-            Parent pantallaErrorParent = FXMLLoader
-                    .load(getClass().getResource("/view/" + "PantallaExitoRealizarSubasta.fxml"));
-            Scene errorRegistroScene = new Scene(pantallaErrorParent);
-            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            window.setScene(errorRegistroScene);
-            window.show();
+            PantallasMenu.abrirVentana("PantallaExitoRealizarSubasta");
         } else {
-            Parent pantallaErrorParent = FXMLLoader
-                    .load(getClass().getResource("/view/" + "PantallaErrorPublicacionSubasta.fxml"));
-            Scene errorRegistroScene = new Scene(pantallaErrorParent);
-            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            window.setScene(errorRegistroScene);
-            window.show();
+            PantallasMenu.abrirVentana("PantallaErrorPublicacionSubasta");
         }
     }
 

@@ -1,13 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pujaQpuja.controller.pantallas;
-
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,86 +9,78 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import pujaQpuja.controller.modelos.ControladorGeneral;
+import pujaQpuja.utilities.PantallasMenu;
 
-public class PantallaPujarXProductoConfirmacionController implements Initializable{
-    private Double precionuevo; 
-    private PantallaPujarXProductoController controlador1 ;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class PantallaPujarXProductoConfirmacionController implements Initializable {
+
+    private ControladorGeneral controladorGeneral;
+    private Double precionuevo;
+    private PantallaPujarXProductoController controlador1;
 
     @FXML
     private Button botonSi;
-
     @FXML
     private Button botonNo;
-
     @FXML
     private Label textPrecioPujaARealizar;
 
-    public Label getTextoPrecio(){
-        return this.textPrecioPujaARealizar;
-    }
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        controladorGeneral = new ControladorGeneral();
         // textPrecioPujaARealizar.setText(Double.toString(this.precionuevo));
-
     }
 
     @FXML
-    void accionNo(ActionEvent event)throws IOException {
-       // controlador1.pujaController.InsertarComprador(controlador1.generalController.getTemporalVisualizada().getId(),controlador1.generalController.getAutenticado().getId(),precionuevo);
-        cerrar();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + "PantallaSeleccionarCategoria.fxml"));
+    void accionNo(ActionEvent event) throws IOException {
+        PantallasMenu.cerrarPantalla(event);
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + "PantallaPujarXProducto.fxml"));
         fxmlLoader.load();
         PantallaPujarXProductoController ConfirmacionController = fxmlLoader.getController();
-       
-        if( ConfirmacionController.confirmacion(false,this.precionuevo))
-        {
+        if (ConfirmacionController.confirmacion(false, this.precionuevo)) {
             //showalert messaje puja realizada con exito
         }
         Parent p = fxmlLoader.getRoot();
         Stage s = new Stage();
         s.setScene(new Scene(p));
-        s.show(); 
-        Stage escena= (Stage) botonSi().getScene().getWindow();
-        escena.close();
+        s.show();
+
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
     void accionSi(ActionEvent event) throws IOException {
-        cerrar();
+        PantallasMenu.cerrarPantalla(event);
+
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + "PantallaPujarXProducto.fxml"));
         fxmlLoader.load();
         PantallaPujarXProductoController ConfirmacionController = fxmlLoader.getController();
-       
-        if( ConfirmacionController.confirmacion(true,this.precionuevo))
-        {
+        if (ConfirmacionController.confirmacion(true, this.precionuevo)) {
             //showalert messaje puja realizada con exito
         }
         Parent p = fxmlLoader.getRoot();
         Stage s = new Stage();
         s.setScene(new Scene(p));
-        s.show(); 
-        Stage escena= (Stage) botonSi().getScene().getWindow();
-        escena.close();
+        s.show();
+
+        PantallasMenu.cerrarPantalla(event);
     }
-   public void SetPrecioNuevo(Double precio)
-   {
-    this.precionuevo=precio;
-   }
-   public void setControlador( PantallaPujarXProductoController controlador)
-   {
-       this.controlador1 = controlador;
-   }
 
-   public void cerrar()
-   {
-      Stage stage = (Stage) this.controlador1.botonPuja().getScene().getWindow();
-      stage.close(); 
-   }
-
-    public Button botonSi()
-    {
-
-        return this.botonSi;
+    public Label getTextoPrecio() {
+        return this.textPrecioPujaARealizar;
     }
+
+    public void setPrecioNuevo(Double precio) {
+        this.precionuevo = precio;
+    }
+
+    public void setControlador(PantallaPujarXProductoController controlador) {
+        this.controlador1 = controlador;
+    }
+
 }

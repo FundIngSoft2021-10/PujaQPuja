@@ -1,38 +1,53 @@
 package pujaQpuja.controller.modelos;
 
+import java.sql.Date;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.image.ImageView;
-import pujaQpuja.controller.GeneralController;
-import pujaQpuja.controller.pantallas.PantallaSeleccionarCategoriaController;
-import pujaQpuja.model.entities.Categoria;
 import pujaQpuja.model.entities.EstadoPuja;
+import pujaQpuja.model.entities.Producto;
 import pujaQpuja.model.entities.Puja;
 import pujaQpuja.model.entities.otros.TablaCatalogoTemporal;
 import pujaQpuja.model.repository.PujaRepository;
+import pujaQpuja.controller.pantallas.PantallaSeleccionarCategoriaController;
+import pujaQpuja.model.entities.Categoria;
 
 public class PujaController {
 
-    PujaRepository pujaRepository;
-    PantallaSeleccionarCategoriaController seleccionarCategoriaController;
-    Puja seleccionada ;
+    private PujaRepository pujaRepository;
+    private PantallaSeleccionarCategoriaController seleccionarCategoriaController;
+    private AutenticacionController autenticacionController;
+
+    private Puja seleccionada;
 
     public PujaController() {
         pujaRepository = new PujaRepository();
         seleccionarCategoriaController = new PantallaSeleccionarCategoriaController();
+        autenticacionController = AutenticacionController.getInstance();
     }
 
-    public ObservableList<TablaCatalogoTemporal> getPujasActivasItems() {
+    public void crear(Producto producto) {
+        Puja puja = new Puja();
+        puja.setFecha(new Date(Calendar.getInstance().getTime().getTime()));
+        puja.setPrecioFinal(producto.getPrecioInicial());
+        long idUsuario = autenticacionController.getAutenticado().getId();
+        pujaRepository.crear(puja, idUsuario, producto.getId());
+    }
+
+    public List<TablaCatalogoTemporal> getPujasActivasItems() {
         return getPujasActivasByEstadoPujaYCategoriaProducto(EstadoPuja.ACTIVO, null);
     }
 
-    public ObservableList<TablaCatalogoTemporal> getPujasActivaByCategoria(Categoria categoria) {
+    public List<TablaCatalogoTemporal> getPujasActivaByCategoria(Categoria categoria) {
         return getPujasActivasByEstadoPujaYCategoriaProducto(EstadoPuja.ACTIVO, categoria);
     }
 
-    public ObservableList<TablaCatalogoTemporal> getPujasActivasByEstadoPujaYCategoriaProducto(EstadoPuja estado, Categoria filtro) {
-
-        ObservableList<TablaCatalogoTemporal> datos = FXCollections.observableArrayList();
+    public List<TablaCatalogoTemporal> getPujasActivasByEstadoPujaYCategoriaProducto(EstadoPuja estado, Categoria filtro) {
+        List<TablaCatalogoTemporal> datos = new ArrayList<>();
 
         for (Puja actual : pujaRepository.getPujasActivasByEstadoPujaYCategoriaProducto(estado, filtro)) {
             TablaCatalogoTemporal temp = new TablaCatalogoTemporal();
@@ -42,50 +57,29 @@ public class PujaController {
                     temp.setImagen(new ImageView(actual.getProducto().getFoto()));
                 }
             }
-            StringBuilder dtemp = new StringBuilder("Nombre:  " + actual.getProducto().getNombre() + "\n" + "Descripción:  " + actual.getProducto().getDescripcion() + "\n" + "Precio:  " + "$ " + actual.getPrecioFinal() + " COP" + "\n" + "Categoria: " + actual.getProducto().getCategoria());
+            StringBuilder dtemp = new StringBuilder("Nombre:  " + actual.getProducto().getNombre() + "\n" + "Descripci�n:  " + actual.getProducto().getDescripcion() + "\n" + "Precio:  " + "$ " + actual.getPrecioFinal() + " COP" + "\n" + "Categoria: " + actual.getProducto().getCategoria());
             temp.setDesc(dtemp.toString());
             datos.add(temp);
         }
         return datos;
     }
 
-
     public Puja pujaVisualizada(Puja temp) {
         System.out.println(temp.getId());
-        seleccionada = this.pujaRepository.buscarPuja(temp.getId());
-      // System.out.println(seleccionada.toString());
-        return seleccionada ;
-    }
-    
-    public  int obtenerPujantes( Long id){
-        
-      return this.pujaRepository.ContadorPujantes(id);
-        
-    }
-    
-    public boolean InsertarComprador(Long idPuja, Long idComprador,Double nuevoprecio){
-        return this.pujaRepository.añadirPujante(idPuja,idComprador,nuevoprecio);
-    }
-    public boolean ActualizarPrecio(Long idPuja,Double nuevoprecio){
-        return this.pujaRepository.actualizarPrecio(nuevoprecio,idPuja);
-    }
-/*
-    public Puja getTemporalVisualizada() {
-        System.out.println("LLeagamos A get");
-        System.out.println(seleccionada.toString());
-        return this.seleccionada;
+        seleccionada = this.pujaRepository.buscarPujaPorId(temp.getId());
+        return seleccionada;
     }
 
-    public void setTemporalVisualizada(Puja seleccionada) {
-        //System.out.println(seleccionada.toString());
-
-        this.seleccionada = seleccionada;
+    public int obtenerNumeroPujantesPorPujaId(Long id) {
+        return this.pujaRepository.getNumeroPujantesPorPujaId(id);
     }
 
-    public PujaController temporalVisualizada (Puja seleccionada) {
-        setTemporalVisualizada(seleccionada);
-        return this;
+    public boolean insertarComprador(Long idPuja, Long idComprador, Double precioPujado) {
+        return this.pujaRepository.agregarPujante(idPuja, idComprador, precioPujado);
     }
-*/
+
+    public boolean actualizarPrecio(Long idPuja, Double nuevoprecio) {
+        return this.pujaRepository.actualizarPrecio(nuevoprecio, idPuja);
+    }
 
 }

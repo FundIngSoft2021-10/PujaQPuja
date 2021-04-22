@@ -2,6 +2,7 @@ package pujaQpuja.model.entities;
 
 import java.sql.Date;
 import java.util.Objects;
+
 public class CompradorXpuja {
 
     private long id;
@@ -89,12 +90,7 @@ public class CompradorXpuja {
 
     @Override
     public String toString() {
-        return "{" +
-            " id='" + getId() + "'" +
-            ", comprador='" + getComprador() + "'" +
-            ", precioOfertado='" + getPrecioOfertado() + "'" +
-            ", fechaComprador='" + getFechaComprador() + "'" +
-            "}";
+        return "{" + " id='" + getId() + "'" + ", comprador='" + getComprador() + "'" + ", precioOfertado='" + getPrecioOfertado() + "'" + ", fechaComprador='" + getFechaComprador() + "'" + "}";
     }
 
 

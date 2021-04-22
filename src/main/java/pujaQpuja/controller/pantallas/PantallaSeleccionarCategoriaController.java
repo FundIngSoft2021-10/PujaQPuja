@@ -1,15 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pujaQpuja.controller.pantallas;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
-
+import javafx.beans.InvalidationListener;
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
@@ -29,23 +22,19 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-import pujaQpuja.controller.GeneralController;
-import pujaQpuja.controller.modelos.PujaController;
+import pujaQpuja.controller.modelos.ControladorGeneral;
 import pujaQpuja.model.entities.Categoria;
-import pujaQpuja.model.entities.EstadoPuja;
 import pujaQpuja.model.entities.Puja;
 import pujaQpuja.model.entities.otros.TablaCatalogoTemporal;
 import pujaQpuja.utilities.PantallasMenu;
 
-/**
- * FXML Controller class
- *
- * @author LomitoFrito
- */
+import java.io.IOException;
+import java.net.URL;
+import java.util.*;
+
 public class PantallaSeleccionarCategoriaController implements Initializable {
 
-    GeneralController generalController;
-    PujaController pujaController ;
+    private ControladorGeneral controladorGeneral;
 
     @FXML
     private Rectangle botonAtras;
@@ -80,16 +69,9 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
     @FXML
     private Rectangle botonOrdenar;
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       generalController = GeneralController.getControllerAplication();
-       pujaController = new PujaController();
-
-        // TODO REPARAR CÓDIGO
-        //System.out.println(generalController.getAutenticado().getCorreo());
+        controladorGeneral = new ControladorGeneral();
 
         desplegableFiltros.getItems().setAll(Categoria.values());
         columnaDescripcion.setCellValueFactory(new PropertyValueFactory<TablaCatalogoTemporal, String>("desc"));
@@ -98,10 +80,26 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
         obtenerPujas();
     }
 
+    private void obtenerPujas() {
+        ObservableList<TablaCatalogoTemporal> datos = FXCollections.observableArrayList();
+        datos.addAll(controladorGeneral.pujaController.getPujasActivasItems());
+        tablaCatalogo.setItems(datos);
+
+        FilteredList<TablaCatalogoTemporal> filteredData = new FilteredList<>(datos, b -> true);
+        campoBusqueda.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(TablaCatalogoTemporal -> {
+                if (newValue == null || newValue.isEmpty())
+                    return true;
+                return TablaCatalogoTemporal.getDesc().toLowerCase().indexOf(newValue.toLowerCase()) != -1 ? true : false;
+            });
+        });
+        SortedList<TablaCatalogoTemporal> sortedData = new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(tablaCatalogo.comparatorProperty());
+        tablaCatalogo.setItems(sortedData);
+    }
 
     @FXML
     private void irAtras(MouseEvent event) {
-
     }
 
     @FXML
@@ -153,21 +151,19 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
     private void accionOrdenar(MouseEvent event) {
     }
 
-    private void obtenerPujas() {
+    @FXML
+    void filtrarXcategoria(ActionEvent event) {
 
-        ObservableList<TablaCatalogoTemporal> datos = pujaController.getPujasActivasItems();
+        ObservableList<TablaCatalogoTemporal> datos = FXCollections.observableArrayList();
+        datos.addAll(controladorGeneral.pujaController.getPujasActivaByCategoria(desplegableFiltros.getSelectionModel().getSelectedItem()));
         tablaCatalogo.setItems(datos);
+
         FilteredList<TablaCatalogoTemporal> filteredData = new FilteredList<>(datos, b -> true);
         campoBusqueda.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(TablaCatalogoTemporal -> {
-                if (newValue == null || newValue.isEmpty()) {
+                if (newValue == null || newValue.isEmpty())
                     return true;
-                }
-                String lowerCaseFilter = newValue.toLowerCase();
-                if (TablaCatalogoTemporal.getDesc().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-                    return true; // Filter matches first name.
-                } else
-                    return false; // Does not match.
+                return TablaCatalogoTemporal.getDesc().toLowerCase().indexOf(newValue.toLowerCase()) != -1 ? true : false;
             });
         });
         SortedList<TablaCatalogoTemporal> sortedData = new SortedList<>(filteredData);
@@ -175,41 +171,12 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
         tablaCatalogo.setItems(sortedData);
     }
 
-
-    @FXML
-    void filtrarXcategoria(ActionEvent event) {
-
-        ObservableList<TablaCatalogoTemporal> datos = pujaController.getPujasActivaByCategoria(desplegableFiltros.getSelectionModel().getSelectedItem());
-
-        tablaCatalogo.setItems(datos);
-        FilteredList<TablaCatalogoTemporal> filteredData = new FilteredList<>(datos, b -> true);
-        campoBusqueda.textProperty().addListener((observable, oldValue, newValue) -> {
-            filteredData.setPredicate(TablaCatalogoTemporal -> {
-                        if (newValue == null || newValue.isEmpty()) {
-                            return true;
-                        }
-                        String lowerCaseFilter = newValue.toLowerCase();
-                        if (TablaCatalogoTemporal.getDesc().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-                            return true; // Filter matches first name.
-                        } else
-                            return false; // Does not match.
-                    }
-            );
-        });
-        SortedList<TablaCatalogoTemporal> sortedData = new SortedList<>(filteredData);
-        sortedData.comparatorProperty().bind(tablaCatalogo.comparatorProperty());
-        tablaCatalogo.setItems(sortedData);
-        // System.out.println(datos.size());
-
-    }
-
     @FXML
     void seleccionar(MouseEvent event) throws IOException {
-        if(tablaCatalogo.getSelectionModel().getSelectedItem() != null)
-        {
+        if (tablaCatalogo.getSelectionModel().getSelectedItem() != null) {
             Puja a = tablaCatalogo.getSelectionModel().getSelectedItem().getPuja();
-            Puja b = pujaController.pujaVisualizada(a);
-            generalController.setTemporalVisualizada(b);
+            Puja b = controladorGeneral.pujaController.pujaVisualizada(a);
+            controladorGeneral.autenticacionController.setTemporalVisualizada(b);
             Parent pantallaIngresarParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaPujarXProducto.fxml"));
             Scene pantallaIngresarScene = new Scene(pantallaIngresarParent);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -218,4 +185,5 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
         }
 
     }
+
 }

@@ -1,13 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pujaQpuja.controller.pantallas;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -15,25 +7,19 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import pujaQpuja.utilities.Utiles;
-import pujaQpuja.utilities.PantallasMenu;
-import pujaQpuja.controller.GeneralController;
-import pujaQpuja.model.entities.Usuario;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.shape.Rectangle;
+import pujaQpuja.controller.modelos.ControladorGeneral;
+import pujaQpuja.model.entities.Usuario;
+import pujaQpuja.utilities.PantallasMenu;
+import pujaQpuja.utilities.Utiles;
 
-/**
- * FXML Controller class
- *
- * @author Cristian Da Camara
- */
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
 public class EditarPerfilController implements Initializable {
 
-    GeneralController generalController;
+    private ControladorGeneral controladorGeneral;
 
     @FXML
     private Rectangle botonAtras;
@@ -72,21 +58,14 @@ public class EditarPerfilController implements Initializable {
     @FXML
     private Button botonCancelar;
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        generalController = GeneralController.getControllerAplication();
+        controladorGeneral = new ControladorGeneral();
     }
 
     @FXML
     private void irAtras(MouseEvent event) throws IOException {
-        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"PantallaPerfil.fxml"));
-        Scene errorRegistroScene = new Scene(pantallaErrorParent);
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window.setScene(errorRegistroScene);
-        window.show();
+        PantallasMenu.abrirPantalla(event, "PantallaPerfil");
     }
 
     @FXML
@@ -131,7 +110,7 @@ public class EditarPerfilController implements Initializable {
 
     @FXML
     private void accionGuardar(ActionEvent event) throws IOException {
-        Usuario usuario = generalController.getAutenticado();
+        Usuario usuario = controladorGeneral.autenticacionController.getAutenticado();
 
         if (!campoNombres.getText().isBlank()) {
             usuario.setNombres(campoNombres.getText());
@@ -155,23 +134,15 @@ public class EditarPerfilController implements Initializable {
             usuario.setDireccion(campoDireccion.getText());
         }
 
-        generalController.setActualizarUsuario(usuario);
-        generalController.setAutenticado(usuario);
+        controladorGeneral.usuarioController.modificar(usuario);
+        controladorGeneral.autenticacionController.setAutenticado(usuario);
 
-        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaSeleccionarCategoria.fxml"));
-        Scene errorRegistroScene = new Scene(pantallaErrorParent);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(errorRegistroScene);
-        window.show();
+        PantallasMenu.abrirPantalla(event, "PantallaSeleccionarCategoria");
     }
 
     @FXML
     private void accionCancelar(ActionEvent event) throws IOException {
-        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaSeleccionarCategoria.fxml"));
-        Scene errorRegistroScene = new Scene(pantallaErrorParent);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(errorRegistroScene);
-        window.show();
+        PantallasMenu.abrirPantalla(event, "PantallaSeleccionarCategoria");
     }
 
 }

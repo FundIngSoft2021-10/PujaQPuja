@@ -1,33 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pujaQpuja.controller.pantallas;
 
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-import javafx.fxml.FXMLLoader;
-import java.io.IOException;
-
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
+import pujaQpuja.controller.modelos.ControladorGeneral;
 import pujaQpuja.utilities.PantallasMenu;
-/**
- * FXML Controller class
- *
- * @author LomitoFrito
- */
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
 public class PantallaPerfilController implements Initializable {
+
+    private ControladorGeneral controladorGeneral;
 
     @FXML
     private Rectangle botonAtras;
@@ -56,16 +45,10 @@ public class PantallaPerfilController implements Initializable {
     @FXML
     private Button botonSoporteYAyuda;
 
-
-
-
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+        controladorGeneral = new ControladorGeneral();
+    }
 
     @FXML
     private void irAtras(MouseEvent event) {
@@ -113,11 +96,7 @@ public class PantallaPerfilController implements Initializable {
 
     @FXML
     private void abrirEditarPerfil(ActionEvent event) throws IOException {
-        Parent pantallaErrorParent = FXMLLoader.load(getClass().getResource("/view/" +"EditarPerfil.fxml"));
-        Scene errorRegistroScene = new Scene(pantallaErrorParent);
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window.setScene(errorRegistroScene);
-        window.show();
+        PantallasMenu.abrirPantalla(event, "EditarPerfil");
     }
 
     @FXML
@@ -127,6 +106,5 @@ public class PantallaPerfilController implements Initializable {
     @FXML
     private void abrirSoporteYAyuda(ActionEvent event) {
     }
-
 
 }

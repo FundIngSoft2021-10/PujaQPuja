@@ -1,9 +1,6 @@
 package pujaQpuja.model.repository;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 import pujaQpuja.model.entities.Usuario;
 
@@ -14,18 +11,17 @@ public class UsuarioRepository extends DB {
 
     public boolean crear(Usuario usuario) {
 
-        PreparedStatement ps = null;
         Connection con = getConexion();
+        PreparedStatement ps;
+        ResultSet rs;
 
         String sql = "";
         sql += "INSERT INTO Usuario ";
         sql += "(password, nombres, apellidos, correo, direccion, telefono, documento, calificacion) ";
         sql += "VALUES (?,?,?,?,?,?,?,?)";
 
-        //INSERT INTO `Usuario` (`id`, `nombres`, `apellidos`, `password`, `correo`, `direccion`, `telefono`, `documento`, `calificacion`) VALUES ('0', 'Kenneth', 'Leonel', 'contra', 'ken@hotmail.com', 'Carrear 1 # 1-1', '3542875398', '1222986475', NULL);
-
         try {
-            ps = con.prepareStatement(sql);
+            ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
             ps.setString(1, usuario.getPassword());
             ps.setString(2, usuario.getNombres());
@@ -36,7 +32,15 @@ public class UsuarioRepository extends DB {
             ps.setString(7, usuario.getDocumento());
             ps.setDouble(8, usuario.getCalificacion());
 
-            return ps.execute();
+            ps.execute();
+            rs = ps.getGeneratedKeys();
+
+            if (rs.next()) {
+                int generatedKey = rs.getInt(1);
+                usuario.setId(generatedKey);
+                return true;
+            }
+            return false;
         } catch (SQLException e) {
             System.err.println(e);
             return false;
@@ -51,8 +55,8 @@ public class UsuarioRepository extends DB {
 
     public boolean modificar(Usuario usuario) {
 
-        PreparedStatement ps = null;
         Connection con = getConexion();
+        PreparedStatement ps;
 
         String sql = "";
         sql += "UPDATE Usuario ";
@@ -87,8 +91,8 @@ public class UsuarioRepository extends DB {
 
     public boolean eliminar(Usuario usuario) {
 
-        PreparedStatement ps = null;
         Connection con = getConexion();
+        PreparedStatement ps;
 
         String sql = "";
         sql += "DELETE FROM Usuario ";
@@ -112,11 +116,12 @@ public class UsuarioRepository extends DB {
         }
     }
 
-    public Usuario buscarPorID(long id) {
+    public Usuario buscarPorIdUsuario(long id) {
 
-        PreparedStatement ps = null;
-        ResultSet rs = null;
         Connection con = getConexion();
+        PreparedStatement ps;
+        ResultSet rs;
+
         Usuario usuario = new Usuario();
 
         String sql = "";
@@ -156,12 +161,11 @@ public class UsuarioRepository extends DB {
         }
     }
 
-
     public boolean buscarPorCorreo(Usuario usuario) {
 
-        PreparedStatement ps = null;
-        ResultSet rs = null;
         Connection con = getConexion();
+        PreparedStatement ps;
+        ResultSet rs;
 
         String sql = "";
         sql += "SELECT * FROM Usuario ";

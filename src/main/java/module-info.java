@@ -18,4 +18,6 @@ module pujaQpuja {
     opens pujaQpuja.model.entities to javafx.fxml;
     opens pujaQpuja.model.repository to javafx.fxml;
     opens pujaQpuja.model.entities.otros to javafx.fxml;
+    exports pujaQpuja.controller.modelos;
+    opens pujaQpuja.controller.modelos to javafx.fxml;
 }

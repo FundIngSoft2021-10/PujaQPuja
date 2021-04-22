@@ -1,12 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pujaQpuja.controller.pantallas;
-
-import java.net.URL;
-import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -14,13 +6,15 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+import pujaQpuja.controller.modelos.ControladorGeneral;
 import pujaQpuja.utilities.PantallasMenu;
-/**
- * FXML Controller class
- *
- * @author LomitoFrito
- */
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
 public class PantallaChatController implements Initializable {
+
+    private ControladorGeneral controladorGeneral;
 
     @FXML
     private Rectangle botonAtras;
@@ -47,15 +41,10 @@ public class PantallaChatController implements Initializable {
     @FXML
     private Rectangle botonEnviar;
 
-
-
-
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    }    
+        controladorGeneral = new ControladorGeneral();
+    }
 
     @FXML
     private void irAtras(MouseEvent event) {
@@ -104,7 +93,4 @@ public class PantallaChatController implements Initializable {
     @FXML
     private void accionEnviar(MouseEvent event) {
     }
-    
-
-
 }

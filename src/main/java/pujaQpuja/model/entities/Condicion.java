@@ -1,20 +1,17 @@
 package pujaQpuja.model.entities;
 
 public enum Condicion {
-    RESTAURADO,
-    NUEVO,
-    USADO;
+    RESTAURADO, NUEVO, USADO;
 
-    public String getRESTAURADO()
-    {
+    public String getRESTAURADO() {
         return "restaurado";
     }
-    public String getNUEVO()
-    {
+
+    public String getNUEVO() {
         return "nuevo";
     }
-    public String getUSADO()
-    {
+
+    public String getUSADO() {
         return "usado";
     }
 }

@@ -1,12 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pujaQpuja.controller.pantallas;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -15,14 +11,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
+import pujaQpuja.controller.modelos.ControladorGeneral;
 import pujaQpuja.utilities.PantallasMenu;
 
-/**
- * FXML Controller class
- *
- * @author LomitoFrito
- */
 public class DetallesVentaController implements Initializable {
+
+    private ControladorGeneral controladorGeneral;
 
     @FXML
     private Rectangle botonAtras;
@@ -31,7 +25,7 @@ public class DetallesVentaController implements Initializable {
     @FXML
     private Rectangle botonRectanguloAjustes;
     @FXML
-    private Rectangle botonRectanguloCategorias;
+    private Rectangle botonRectanguloCate3gorias;
     @FXML
     private Rectangle botonRectanguloRealizarSubasta;
     @FXML
@@ -61,12 +55,9 @@ public class DetallesVentaController implements Initializable {
     @FXML
     private Rectangle botonRectanguloMasInformacion;
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        controladorGeneral = new ControladorGeneral();
     }
 
     @FXML

@@ -14,7 +14,6 @@ public class Producto {
     private Condicion condicion;
     private double precioInicial;
 
-
     public Producto() {
     }
 
@@ -137,15 +136,7 @@ public class Producto {
 
     @Override
     public String toString() {
-        return "{" +
-            " id='" + getId() + "'" +
-            ", nombre='" + getNombre() + "'" +
-            ", categoria='" + getCategoria() + "'" +
-            ", descripcion='" + getDescripcion() + "'" +
-            ", foto='" + getFoto() + "'" +
-            ", condicion='" + getCondicion() + "'" +
-            ", precioInicial='" + getPrecioInicial() + "'" +
-            "}";
+        return "{" + " id='" + getId() + "'" + ", nombre='" + getNombre() + "'" + ", categoria='" + getCategoria() + "'" + ", descripcion='" + getDescripcion() + "'" + ", foto='" + getFoto() + "'" + ", condicion='" + getCondicion() + "'" + ", precioInicial='" + getPrecioInicial() + "'" + "}";
     }
 
 }
