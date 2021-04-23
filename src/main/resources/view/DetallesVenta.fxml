@@ -11,8 +11,9 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.DetallesVentaController">
+<BorderPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.DetallesVentaController">
     <top>
         <AnchorPane prefHeight="39.0" prefWidth="375.0" BorderPane.alignment="CENTER">
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#64b5f6" height="78.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1280.0" />
@@ -144,7 +145,7 @@
             <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="482.0" layoutY="420.0" pickOnBounds="true" preserveRatio="true">
                 <Image url="@../images/usuario.png" />
             </ImageView>
-            <Button id="tableroDetalles" fx:id="botonTableroDePreguntas" layoutX="116.0" layoutY="420.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#abrirTableroDePreguntas" prefHeight="37.0" prefWidth="220.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Tablero de preguntas" textAlignment="CENTER">
+            <Button id="tableroDetalles" fx:id="botonTableroDePreguntas" layoutX="116.0" layoutY="400.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#abrirTableroDePreguntas" prefHeight="37.0" prefWidth="220.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Tablero de preguntas" textAlignment="CENTER">
                 <font>
                     <Font name="SansSerif Regular" size="20.0" />
                 </font>
@@ -152,7 +153,7 @@
                     <Insets />
                 </opaqueInsets>
             </Button>
-            <Button id="editarDetalles" fx:id="botonEditarProducto" layoutX="116.0" layoutY="497.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#abrirEditarProducto" prefHeight="37.0" prefWidth="220.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Editar producto" textAlignment="CENTER">
+            <Button id="editarDetalles" fx:id="botonEditarProducto" layoutX="116.0" layoutY="450.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#abrirEditarProducto" prefHeight="37.0" prefWidth="220.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Editar puja" textAlignment="CENTER">
                 <font>
                     <Font name="SansSerif Regular" size="20.0" />
                 </font>
@@ -160,7 +161,7 @@
                     <Insets />
                 </opaqueInsets>
             </Button>
-            <Button id="eliminarDetalles" fx:id="botonEliminarProducto" layoutX="116.0" layoutY="569.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#abrirEliminarProducto" prefHeight="37.0" prefWidth="220.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Eliminar Producto" textAlignment="CENTER">
+            <Button id="eliminarDetalles" fx:id="botonEliminarProducto" layoutX="116.0" layoutY="550.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#abrirEliminarProducto" prefHeight="37.0" prefWidth="220.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Eliminar puja" textAlignment="CENTER">
                 <font>
                     <Font name="SansSerif Regular" size="20.0" />
                 </font>
@@ -171,12 +172,33 @@
             <ImageView fitHeight="40.0" fitWidth="39.0" layoutX="487.0" layoutY="524.0" pickOnBounds="true" preserveRatio="true">
                 <Image url="@../images/informacion.png" />
             </ImageView>
-         <Label layoutX="535.0" layoutY="521.0" prefHeight="44.0" prefWidth="259.0" text="Más Información">
-            <font>
-               <Font name="Berlin Sans FB" size="30.0" />
-            </font>
-         </Label>
-         <Rectangle fx:id="botonRectanguloMasInformacion" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="54.0" layoutX="482.0" layoutY="516.0" onMouseClicked="#abrirMasInformacion" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="274.0" />
+            <Label layoutX="535.0" layoutY="521.0" prefHeight="44.0" prefWidth="259.0" text="Más Información">
+                <font>
+                    <Font name="Berlin Sans FB" size="30.0" />
+                </font>
+            </Label>
+            <Rectangle fx:id="botonRectanguloMasInformacion" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="54.0" layoutX="482.0" layoutY="516.0" onMouseClicked="#abrirMasInformacion" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="274.0" />
+            <Button id="editarDetalles" fx:id="botonPausarPuja" layoutX="246.0" layoutY="498.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#abrirPausarProducto" prefHeight="37.0" prefWidth="160.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Pausar puja" textAlignment="CENTER">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+                <opaqueInsets>
+                    <Insets />
+                </opaqueInsets>
+            </Button>
+            <Button id="editarDetalles" fx:id="botonReanudarPuja" layoutX="46.0" layoutY="498.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#abrirReanudarProducto" prefHeight="37.0" prefWidth="160.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Reanudar puja" textAlignment="CENTER">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+                <opaqueInsets>
+                    <Insets />
+                </opaqueInsets>
+            </Button>
+            <Text layoutX="215.0" layoutY="528.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O">
+                <font>
+                    <Font size="30.0" />
+                </font>
+            </Text>
         </AnchorPane>
     </center>
 </BorderPane>

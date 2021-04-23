@@ -5,10 +5,127 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bab415b7-8294-4919-b0ff-d59ce9d66de9" name="Default Changelist" comment="Arreglo pantallas hasta pantalla PujarXProducto">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaConfirmacionEliminarPujaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaConfirmacionEliminarPuja.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2021_1_09_p__m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2021_1_09_p__m___Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2021_1_09_p__m___Default_Changelist_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2021_1_09_p__m___Default_Changelist_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/modelos/PujaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/modelos/PujaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaPujarXProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaPujarXProductoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaSeleccionarCategoriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaSeleccionarCategoriaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/DetallesVentaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/DetallesVentaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/model/repository/PujaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/model/repository/PujaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/DetallesVenta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/DetallesVenta.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/adelante.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/ajustes.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/alert.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/alerta.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/atras.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/categoria.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/descripcion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/enviar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/feliz.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/filter.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/filter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/historial_compras.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/historial_ventas.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/informacion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/logo_vertical.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/loupe.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/menu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/metodo_pago.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/notificacion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/ordenar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/perfil.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/realizar_subasta.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/regular.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/triste.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/user.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/usuario.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/warning.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/MainApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/modelos/ChatController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/modelos/MensajeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/modelos/ProductoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/modelos/PujaController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/modelos/UsuarioController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/pantallas/DetallesVentaController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/pantallas/EditarPerfilController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/pantallas/ErrorAutenticarController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/pantallas/GanadorPujaController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/pantallas/HistorialComprasController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/pantallas/HistorialVentasController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/pantallas/InformacionController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/pantallas/IngresarController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/pantallas/InicioController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/pantallas/PantallaCalificarProductoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/pantallas/PantallaCatalogoErrorController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/pantallas/PantallaChatController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/pantallas/PantallaConfirmacionCambiosPerfilController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/pantallas/PantallaConfirmarPujaController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/pantallas/PantallaErrorCalificarController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/pantallas/PantallaErrorPublicacionSubastaController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/pantallas/PantallaErrorRegistroController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/pantallas/PantallaExitoCalificarController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/pantallas/PantallaExitoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/pantallas/PantallaExitoRealizarSubastaController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/pantallas/PantallaPerfilController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/pantallas/PantallaPujarXProductoConfirmacionController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/pantallas/PantallaPujarXProductoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/pantallas/PantallaPujarXProductoErrorController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/pantallas/PantallaRealizarSubastaController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/pantallas/PantallaRegistroController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/controller/pantallas/PantallaSeleccionarCategoriaController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/model/entities/Categoria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/model/entities/Chat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/model/entities/CompradorXpuja.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/model/entities/Condicion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/model/entities/EstadoPuja.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/model/entities/Mensaje.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/model/entities/Producto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/model/entities/Puja.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/model/entities/Usuario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/model/entities/otros/TablaCatalogoTemporal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/model/repository/ChatRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/model/repository/DB.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/model/repository/MensajeRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/model/repository/ProductoRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/model/repository/PujaRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/model/repository/UsuarioRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/utilities/PantallasMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pujaQpuja/utilities/Utiles.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/styles/Styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/styles/transparentTheme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/DetallesVenta.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/EditarPerfil.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/ErrorAutenticar.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/GanadorPuja.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/HistorialCompras.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/HistorialVentas.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/Informacion.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/Ingresar.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/Inicio.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/PantallaCalificarProducto.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/PantallaCatalogoError.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/PantallaChat.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/PantallaConfirmacionCambiosPerfil.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/PantallaConfirmarPuja.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/PantallaErrorCalificar.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/PantallaErrorPublicacionSubasta.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/PantallaErrorRegistro.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/PantallaExitoCalificar.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/PantallaExitoRealizarSubasta.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/PantallaExitoRegistro.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/PantallaPerfil.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/PantallaPujarXProducto.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/PantallaPujarXProductoConfirmacion.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/PantallaPujarXProductoError.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/PantallaRealizarSubasta.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/PantallaRegistro.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/PantallaSeleccionarCategoria.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/Plantilla.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
