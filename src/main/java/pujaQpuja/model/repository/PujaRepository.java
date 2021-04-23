@@ -250,4 +250,93 @@ public class PujaRepository extends DB {
         }
     }
 
+    public boolean reanudarPujaPorPuja(Puja puja){
+        Connection con = getConexion();
+        PreparedStatement ps;
+        ResultSet rs;
+
+        String sql = "";
+        sql += "UPDATE puja";
+        sql += "SET estado = 'ACTIVO'";
+        sql += "WHERE id = ?";
+
+        try {
+            ps = con.prepareStatement(sql);
+
+            ps.setLong(1, puja.getId());
+
+            return ps.execute();
+
+        } catch (SQLException e) {
+            System.err.println(e);
+            return false;
+
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+
+            }
+        }
+    }
+
+    public boolean PausarPujaPorPuja(Puja puja){
+        Connection con = getConexion();
+        PreparedStatement ps;
+        ResultSet rs;
+
+        String sql = "";
+        sql += "UPDATE puja";
+        sql += "SET estado = 'PAUSADO'";
+        sql += "WHERE id = ?";
+
+        try {
+            ps = con.prepareStatement(sql);
+
+            ps.setLong(1, puja.getId());
+
+            return ps.execute();
+
+        } catch (SQLException e) {
+            System.err.println(e);
+            return false;
+
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+
+            }
+        }
+    }
+
+    public boolean eliminarPujaPorId(long id){
+        Connection con = getConexion();
+        PreparedStatement ps;
+        ResultSet rs;
+
+        String sql = "";
+        sql += "DELETE FROM Puja ";
+        sql += "WHERE id = ?";
+
+        try {
+            ps = con.prepareStatement(sql);
+
+            ps.setLong(1, id);
+
+            return ps.execute();
+
+        } catch (SQLException e) {
+            System.err.println(e);
+            return false;
+
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+
+            }
+        }
+    }
+
 }

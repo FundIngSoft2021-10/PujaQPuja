@@ -12,6 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import pujaQpuja.controller.modelos.ControladorGeneral;
+import pujaQpuja.model.entities.Puja;
 import pujaQpuja.utilities.PantallasMenu;
 
 public class DetallesVentaController implements Initializable {
@@ -113,11 +114,26 @@ public class DetallesVentaController implements Initializable {
     }
 
     @FXML
-    private void abrirEliminarProducto(ActionEvent event) {
+    private void abrirMasInformacion(MouseEvent event) {
     }
 
     @FXML
-    private void abrirMasInformacion(MouseEvent event) {
+    void abrirPausarProducto(ActionEvent event) {
+        //TODO esperar respuesta Puja de otra pantalla
+        Puja pujaPausar = new Puja();
+        controladorGeneral.pujaController.pausarPuja(pujaPausar);
+    }
+
+    @FXML
+    void abrirReanudarProducto(ActionEvent event) {
+        //TODO esperar respuesta Puja de otra pantalla
+        Puja pujaReanudar = new Puja();
+        controladorGeneral.pujaController.reanudarPuja(pujaReanudar);
+    }
+
+    @FXML
+    private void abrirEliminarProducto(ActionEvent event) {
+        PantallasMenu.abrirVentana("PantallaConfirmacionEliminarPuja");
     }
 
 }

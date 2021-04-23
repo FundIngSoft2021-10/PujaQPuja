@@ -82,4 +82,16 @@ public class PujaController {
         return this.pujaRepository.actualizarPrecio(nuevoprecio, idPuja);
     }
 
+    public boolean reanudarPuja(Puja puja){
+        return this.pujaRepository.reanudarPujaPorPuja(puja);
+    }
+
+    public boolean pausarPuja(Puja puja){
+        return this.pujaRepository.PausarPujaPorPuja(puja);
+    }
+
+    public boolean eliminarPuja(Long idPuja){
+        boolean eliminado= this.pujaRepository.eliminarPujaPorId(idPuja);
+        return eliminado;
+    }
 }
