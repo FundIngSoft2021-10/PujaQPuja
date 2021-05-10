@@ -1,5 +1,6 @@
 package pujaQpuja.model.repository;
 
+import pujaQpuja.controller.modelos.AutenticacionController;
 import pujaQpuja.model.entities.*;
 import pujaQpuja.utilities.Utiles;
 
@@ -15,17 +16,19 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class ProductoRepository extends DB {
+public class ProductoRepository {
+
+    private DB db;
 
     public ProductoRepository() {
+        db = DB.getInstance();
     }
 
     public boolean crear(Producto producto, String rutaImagen) {
 
-        Connection con = getConexion();
+        Connection con = db.getConexion();
         PreparedStatement ps;
         ResultSet rs;
-
 
         String sql = "";
         sql += "INSERT INTO Producto ";
@@ -57,18 +60,12 @@ public class ProductoRepository extends DB {
         } catch (SQLException | FileNotFoundException e) {
             System.err.println(e);
             return false;
-        } finally {
-            try {
-                desconectar();
-            } catch (SQLException e) {
-                System.err.println(e);
-            }
         }
     }
 
     public Producto buscarProductoPorId(long id) {
 
-        Connection con = getConexion();
+        Connection con = db.getConexion();
         PreparedStatement ps;
         ResultSet rs;
 
@@ -99,11 +96,11 @@ public class ProductoRepository extends DB {
                 byte[] buffer = new byte[1024];
                 InputStream input = rs.getBinaryStream("foto");
                 FileOutputStream output = new FileOutputStream(file);
-                System.out.println("Leyendo archivo desde la base de datos...");
+                //System.out.println("Leyendo archivo desde la base de datos...");
                 while (input.read(buffer) > 0) {
                     output.write(buffer);
                 }
-                System.out.println("> Archivo guardado en : " + file.getAbsolutePath());
+                //System.out.println("> Archivo guardado en : " + file.getAbsolutePath());
                 //Fin proceso para cargar imagen
 
                 producto.setFoto(Utiles.cargarImagenConRuta(file.getAbsolutePath()));
@@ -114,12 +111,6 @@ public class ProductoRepository extends DB {
         } catch (SQLException | IOException e) {
             System.err.println(e);
             return producto;
-        } finally {
-            try {
-                desconectar();
-            } catch (SQLException e) {
-                System.err.println(e);
-            }
         }
     }
 

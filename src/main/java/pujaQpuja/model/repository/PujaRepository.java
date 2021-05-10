@@ -1,5 +1,6 @@
 package pujaQpuja.model.repository;
 
+import pujaQpuja.controller.modelos.AutenticacionController;
 import pujaQpuja.controller.modelos.UsuarioController;
 import pujaQpuja.controller.modelos.ProductoController;
 import pujaQpuja.model.entities.*;
@@ -9,19 +10,21 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PujaRepository extends DB {
+public class PujaRepository {
 
     private UsuarioController usuarioController;
     private ProductoController productoController;
+    private DB db;
 
     public PujaRepository() {
         usuarioController = new UsuarioController();
         productoController = new ProductoController();
+        db = DB.getInstance();
     }
 
     public boolean crear(Puja puja, Long usuarioId, Long productoId) {
 
-        Connection con = getConexion();
+        Connection con = db.getConexion();
         PreparedStatement ps;
         ResultSet rs;
 
@@ -51,18 +54,12 @@ public class PujaRepository extends DB {
         } catch (SQLException e) {
             System.err.println(e);
             return false;
-        } finally {
-            try {
-                desconectar();
-            } catch (SQLException e) {
-                System.err.println(e);
-            }
         }
     }
 
     public Puja buscarPujaPorId(long id) {
 
-        Connection con = getConexion();
+        Connection con = db.getConexion();
         PreparedStatement ps;
         ResultSet rs;
 
@@ -93,19 +90,12 @@ public class PujaRepository extends DB {
             System.err.println(e);
             return temp;
 
-        } finally {
-            try {
-                desconectar();
-            } catch (SQLException e) {
-
-            }
         }
-
     }
 
     public List<Puja> getPujasActivasByEstadoPujaYCategoriaProducto(EstadoPuja estado, Categoria categoria) {
 
-        Connection con = getConexion();
+        Connection con = db.getConexion();
         PreparedStatement ps;
         ResultSet rs;
 
@@ -143,18 +133,12 @@ public class PujaRepository extends DB {
         } catch (SQLException e) {
             System.err.println(e);
             return respuesta;
-        } finally {
-            try {
-                desconectar();
-            } catch (SQLException e) {
-                System.err.println(e);
-            }
         }
     }
 
     public int getNumeroPujantesPorPujaId(Long id) {
 
-        Connection con = getConexion();
+        Connection con = db.getConexion();
         PreparedStatement ps;
         ResultSet rs;
 
@@ -179,19 +163,12 @@ public class PujaRepository extends DB {
         } catch (SQLException e) {
             System.err.println(e);
             return temp;
-        } finally {
-            try {
-                desconectar();
-            } catch (SQLException e) {
-
-            }
         }
-
     }
 
     public boolean agregarPujante(Long idPuja, Long idComprador, Double precioPujado) {
 
-        Connection con = getConexion();
+        Connection con = db.getConexion();
         PreparedStatement ps;
 
         String sql = "";
@@ -211,19 +188,12 @@ public class PujaRepository extends DB {
             System.err.println(e);
             return false;
 
-        } finally {
-            try {
-                desconectar();
-            } catch (SQLException e) {
-
-            }
         }
-
     }
 
     public boolean actualizarPrecio(Double nuevoprecio, long idPuja) {
 
-        Connection con = getConexion();
+        Connection con = db.getConexion();
         PreparedStatement ps;
 
         String sql = "";
@@ -241,17 +211,12 @@ public class PujaRepository extends DB {
             System.err.println(e);
             return false;
 
-        } finally {
-            try {
-                desconectar();
-            } catch (SQLException e) {
-
-            }
         }
     }
 
-    public boolean reanudarPujaPorPuja(Puja puja){
-        Connection con = getConexion();
+    public boolean reanudarPujaPorPuja(Puja puja) {
+
+        Connection con = db.getConexion();
         PreparedStatement ps;
         ResultSet rs;
 
@@ -271,17 +236,11 @@ public class PujaRepository extends DB {
             System.err.println(e);
             return false;
 
-        } finally {
-            try {
-                desconectar();
-            } catch (SQLException e) {
-
-            }
         }
     }
 
-    public boolean PausarPujaPorPuja(Puja puja){
-        Connection con = getConexion();
+    public boolean PausarPujaPorPuja(Puja puja) {
+        Connection con = db.getConexion();
         PreparedStatement ps;
         ResultSet rs;
 
@@ -301,17 +260,12 @@ public class PujaRepository extends DB {
             System.err.println(e);
             return false;
 
-        } finally {
-            try {
-                desconectar();
-            } catch (SQLException e) {
-
-            }
         }
     }
 
-    public boolean eliminarPujaPorId(long id){
-        Connection con = getConexion();
+    public boolean eliminarPujaPorId(long id) {
+
+        Connection con = db.getConexion();
         PreparedStatement ps;
         ResultSet rs;
 
@@ -330,12 +284,6 @@ public class PujaRepository extends DB {
             System.err.println(e);
             return false;
 
-        } finally {
-            try {
-                desconectar();
-            } catch (SQLException e) {
-
-            }
         }
     }
 
