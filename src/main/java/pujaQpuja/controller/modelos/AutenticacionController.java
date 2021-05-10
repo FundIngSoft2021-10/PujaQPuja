@@ -2,6 +2,9 @@ package pujaQpuja.controller.modelos;
 
 import pujaQpuja.model.entities.Puja;
 import pujaQpuja.model.entities.Usuario;
+import pujaQpuja.model.repository.DB;
+
+import java.sql.Connection;
 
 public class AutenticacionController {
 
@@ -24,8 +27,8 @@ public class AutenticacionController {
 
     private Usuario autenticado;
     private UsuarioController usuarioController;
-    private Puja temporalVisualizada;
 
+    private Puja temporalVisualizada;
 
     // ----------------------------------------------------------
     // ---------------------- Constructor -----------------------

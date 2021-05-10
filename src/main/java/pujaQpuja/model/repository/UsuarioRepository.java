@@ -2,16 +2,20 @@ package pujaQpuja.model.repository;
 
 import java.sql.*;
 
+import pujaQpuja.controller.modelos.AutenticacionController;
 import pujaQpuja.model.entities.Usuario;
 
-public class UsuarioRepository extends DB {
+public class UsuarioRepository {
+
+    private DB db;
 
     public UsuarioRepository() {
+        db = DB.getInstance();
     }
 
     public boolean crear(Usuario usuario) {
 
-        Connection con = getConexion();
+        Connection con = db.getConexion();
         PreparedStatement ps;
         ResultSet rs;
 
@@ -44,18 +48,12 @@ public class UsuarioRepository extends DB {
         } catch (SQLException e) {
             System.err.println(e);
             return false;
-        } finally {
-            try {
-                desconectar();
-            } catch (SQLException e) {
-                System.err.println(e);
-            }
         }
     }
 
     public boolean modificar(Usuario usuario) {
 
-        Connection con = getConexion();
+        Connection con = db.getConexion();
         PreparedStatement ps;
 
         String sql = "";
@@ -80,18 +78,12 @@ public class UsuarioRepository extends DB {
         } catch (SQLException e) {
             System.err.println(e);
             return false;
-        } finally {
-            try {
-                desconectar();
-            } catch (SQLException e) {
-                System.err.println(e);
-            }
         }
     }
 
     public boolean eliminar(Usuario usuario) {
 
-        Connection con = getConexion();
+        Connection con = db.getConexion();
         PreparedStatement ps;
 
         String sql = "";
@@ -107,18 +99,12 @@ public class UsuarioRepository extends DB {
         } catch (SQLException e) {
             System.err.println(e);
             return false;
-        } finally {
-            try {
-                desconectar();
-            } catch (SQLException e) {
-                System.err.println(e);
-            }
         }
     }
 
     public Usuario buscarPorIdUsuario(long id) {
 
-        Connection con = getConexion();
+        Connection con = db.getConexion();
         PreparedStatement ps;
         ResultSet rs;
 
@@ -152,18 +138,12 @@ public class UsuarioRepository extends DB {
         } catch (SQLException e) {
             System.err.println(e);
             return usuario;
-        } finally {
-            try {
-                desconectar();
-            } catch (SQLException e) {
-                System.err.println(e);
-            }
         }
     }
 
     public boolean buscarPorCorreo(Usuario usuario) {
 
-        Connection con = getConexion();
+        Connection con = db.getConexion();
         PreparedStatement ps;
         ResultSet rs;
 
@@ -195,12 +175,6 @@ public class UsuarioRepository extends DB {
         } catch (SQLException e) {
             System.err.println(e);
             return false;
-        } finally {
-            try {
-                desconectar();
-            } catch (SQLException e) {
-                System.err.println(e);
-            }
         }
     }
 }
