@@ -44,6 +44,8 @@ public class PantallaPerfilController implements Initializable {
     private Button botonPrivacidadSeguridad;
     @FXML
     private Button botonSoporteYAyuda;
+    @FXML
+    private Button botonMisSubastas;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -105,6 +107,11 @@ public class PantallaPerfilController implements Initializable {
 
     @FXML
     private void abrirSoporteYAyuda(ActionEvent event) {
+    }
+
+    @FXML
+    void abrirMisSubastas(ActionEvent event) {
+        PantallasMenu.abrirPantalla(event, "PantallaMisSubastas");
     }
 
 }

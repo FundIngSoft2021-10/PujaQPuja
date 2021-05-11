@@ -64,6 +64,28 @@ public class PujaController {
         return datos;
     }
 
+    public List<TablaCatalogoTemporal> getPujasPropiasA() {
+        return getPujasPropias(null);
+    }
+
+    public List<TablaCatalogoTemporal> getPujasPropias(Categoria filtro) {
+        List<TablaCatalogoTemporal> datos = new ArrayList<>();
+
+        for (Puja actual : pujaRepository.getPujasPropiasDB(filtro,autenticacionController.getAutenticado().getId())) {
+            TablaCatalogoTemporal temp = new TablaCatalogoTemporal();
+            temp.setPuja(actual);
+            if (actual.getProducto() != null) {
+                if (actual.getProducto().getFoto() != null) {
+                    temp.setImagen(new ImageView(actual.getProducto().getFoto()));
+                }
+            }
+            StringBuilder dtemp = new StringBuilder("Nombre:  " + actual.getProducto().getNombre() + "\n" + "Descripci�n:  " + actual.getProducto().getDescripcion() + "\n" + "Precio:  " + "$ " + actual.getPrecioFinal() + " COP" + "\n" + "Categoria: " + actual.getProducto().getCategoria());
+            temp.setDesc(dtemp.toString());
+            datos.add(temp);
+        }
+        return datos;
+    }
+
     public Puja pujaVisualizada(Puja temp) {
         System.out.println(temp.getId());
         seleccionada = this.pujaRepository.buscarPujaPorId(temp.getId());

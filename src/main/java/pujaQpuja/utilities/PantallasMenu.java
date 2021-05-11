@@ -79,6 +79,4 @@ public class PantallasMenu {
         // TODO hacer pantalla método pago
         abrirPantalla(event, "PantallaMetodoPago");
     }
-
-
 }
