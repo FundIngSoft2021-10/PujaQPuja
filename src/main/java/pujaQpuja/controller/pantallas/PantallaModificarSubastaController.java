@@ -67,6 +67,9 @@ public class PantallaModificarSubastaController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         controladorGeneral = new ControladorGeneral();
         autenticacionController = AutenticacionController.getInstance();
+        campoNombreProducto.setText(autenticacionController.getTemporalVisualizada().getProducto().getNombre());
+        campoDescripcionProducto.setText(autenticacionController.getTemporalVisualizada().getProducto().getDescripcion());
+        imagenProducto.setImage(autenticacionController.getTemporalVisualizada().getProducto().getFoto());
     }
 
     @FXML
@@ -136,7 +139,7 @@ public class PantallaModificarSubastaController implements Initializable {
 
     @FXML
     void accionModificarSubasta(ActionEvent event) {
-
+        
     }
 
     @FXML
