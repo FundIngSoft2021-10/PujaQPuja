@@ -20,4 +20,9 @@ public class ProductoController {
     public boolean crear(Producto producto, String rutaImagen) {
         return productoRepository.crear(producto, rutaImagen);
     }
+
+    public boolean eliminarProducto(long idProductoAEliminar) {
+        boolean eliminado= this.productoRepository.eliminarPujaPorId(idProductoAEliminar);
+        return eliminado;
+    }
 }

@@ -114,4 +114,27 @@ public class ProductoRepository {
         }
     }
 
+    public boolean eliminarPujaPorId(long idProductoAEliminar) {
+        Connection con = db.getConexion();
+        PreparedStatement ps;
+        ResultSet rs;
+
+        String sql = "";
+        sql += "DELETE FROM Producto ";
+        sql += "WHERE id = ?";
+
+        try {
+            ps = con.prepareStatement(sql);
+
+            ps.setLong(1, idProductoAEliminar);
+
+            return ps.execute();
+
+        } catch (SQLException e) {
+            System.err.println(e);
+            return false;
+
+        }
+
+    }
 }

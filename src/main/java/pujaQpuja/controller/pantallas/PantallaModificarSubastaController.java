@@ -14,22 +14,19 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import pujaQpuja.controller.modelos.AutenticacionController;
 import pujaQpuja.controller.modelos.ControladorGeneral;
-import pujaQpuja.model.entities.Categoria;
-import pujaQpuja.model.entities.Condicion;
-import pujaQpuja.model.entities.Producto;
 import pujaQpuja.utilities.PantallasMenu;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class PantallaModificarSubastaController {
+public class PantallaModificarSubastaController implements Initializable {
 
     private ControladorGeneral controladorGeneral;
     private String rutaImagen;
+    private AutenticacionController autenticacionController;
 
     @FXML
     private Rectangle botonAtras;
@@ -66,6 +63,12 @@ public class PantallaModificarSubastaController {
     @FXML
     private Button botonAdjuntarFoto;
 
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        controladorGeneral = new ControladorGeneral();
+        autenticacionController = AutenticacionController.getInstance();
+    }
+
     @FXML
     void abrirAjustes(MouseEvent event) {
         PantallasMenu.abrirAjustes(event);
@@ -101,14 +104,13 @@ public class PantallaModificarSubastaController {
         PantallasMenu.abrirRealizarSubasta(event);
     }
 
-
-
     @FXML
-    private void irAtras(MouseEvent event) {
+    void irAtras(MouseEvent event) {
         PantallasMenu.abrirCategorias(event);
     }
 
-    private void accionAdjuntarFoto(ActionEvent event) {
+    @FXML
+    void accionAdjuntarFoto(ActionEvent event) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Buscar Imagen");
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("All Images", "*.*"), new FileChooser.ExtensionFilter("JPG", "*.jpg"), new FileChooser.ExtensionFilter("PNG", "*.png"));
@@ -123,7 +125,13 @@ public class PantallaModificarSubastaController {
 
     @FXML
     void accionCancelarSubasta(ActionEvent event) {
+        autenticacionController = AutenticacionController.getInstance();
+        long idPujaAEliminar = autenticacionController.getTemporalVisualizada().getId();
+        long idProductoAEliminar = autenticacionController.getTemporalVisualizada().getProducto().getId();
 
+        controladorGeneral.productoController.eliminarProducto(idProductoAEliminar);
+        controladorGeneral.pujaController.eliminarPuja(idPujaAEliminar);
+        //PantallasMenu.abrirPantalla(event,"");
     }
 
     @FXML
@@ -133,6 +141,11 @@ public class PantallaModificarSubastaController {
 
     @FXML
     void accionPausarSubasta(ActionEvent event) {
+
+    }
+
+    @FXML
+    void abririMetodoPago(MouseEvent event) {
 
     }
 
