@@ -19,6 +19,7 @@ import pujaQpuja.controller.modelos.ControladorGeneral;
 import pujaQpuja.model.entities.Condicion;
 import pujaQpuja.model.entities.Categoria;
 import pujaQpuja.model.entities.Producto;
+import pujaQpuja.model.entities.Puja;
 import pujaQpuja.utilities.PantallasMenu;
 
 import java.io.File;
@@ -133,7 +134,7 @@ public class PantallaModificarSubastaController implements Initializable {
 
     @FXML
     void accionCancelarSubasta(ActionEvent event) {
-        autenticacionController = AutenticacionController.getInstance();
+        //autenticacionController = AutenticacionController.getInstance();
         long idPujaAEliminar = autenticacionController.getTemporalVisualizada().getId();
         long idProductoAEliminar = autenticacionController.getTemporalVisualizada().getProducto().getId();
 
@@ -185,7 +186,11 @@ public class PantallaModificarSubastaController implements Initializable {
 
     @FXML
     void accionPausarSubasta(ActionEvent event) {
-
+        long idPuja =  autenticacionController.getTemporalVisualizada().getId();
+        if(controladorGeneral.pujaController.pausarPuja(idPuja))
+            System.out.println("Se pauso la puja con exito");
+        else
+            System.out.println("No se pauso la puja");
     }
 
     @FXML

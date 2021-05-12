@@ -121,7 +121,7 @@ public class DetallesVentaController implements Initializable {
     void abrirPausarProducto(ActionEvent event) {
         //TODO esperar respuesta Puja de otra pantalla
         Puja pujaPausar = new Puja();
-        controladorGeneral.pujaController.pausarPuja(pujaPausar);
+        controladorGeneral.pujaController.pausarPuja(pujaPausar.getId());
     }
 
     @FXML

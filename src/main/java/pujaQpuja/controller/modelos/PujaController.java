@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.scene.image.ImageView;
 import pujaQpuja.model.entities.EstadoPuja;
 import pujaQpuja.model.entities.Producto;
@@ -108,8 +106,8 @@ public class PujaController {
         return this.pujaRepository.reanudarPujaPorPuja(puja);
     }
 
-    public boolean pausarPuja(Puja puja){
-        return this.pujaRepository.PausarPujaPorPuja(puja);
+    public boolean pausarPuja(long idPuja){
+        return this.pujaRepository.pausarPuja(idPuja);
     }
 
     public boolean eliminarPuja(Long idPuja){

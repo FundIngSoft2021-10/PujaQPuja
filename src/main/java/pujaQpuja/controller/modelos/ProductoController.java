@@ -29,4 +29,6 @@ public class ProductoController {
     public boolean modificarProducto(Producto productoASubastar, String rutaImagen) {
         return this.productoRepository.modificarProducto(productoASubastar, rutaImagen);
     }
+
+
 }

@@ -304,9 +304,9 @@ public class PujaRepository extends DB {
         ResultSet rs;
 
         String sql = "";
-        sql += "UPDATE puja";
-        sql += "SET estado = 'ACTIVO'";
-        sql += "WHERE id = ?";
+        sql += "UPDATE Puja ";
+        sql += "SET estado = 'ACTIVO' ";
+        sql += "WHERE id = ? ";
 
         try {
             ps = con.prepareStatement(sql);
@@ -328,22 +328,21 @@ public class PujaRepository extends DB {
         }
     }
 
-    public boolean PausarPujaPorPuja(Puja puja) {
+    public boolean pausarPuja(long idPuja) {
         Connection con = getConexion();
         PreparedStatement ps;
         ResultSet rs;
 
         String sql = "";
-        sql += "UPDATE puja";
-        sql += "SET estado = 'PAUSADO'";
+        sql += "UPDATE Puja ";
+        sql += "SET estado = 'PAUSADO' ";
         sql += "WHERE id = ?";
 
         try {
             ps = con.prepareStatement(sql);
+            ps.setLong(1, idPuja);
 
-            ps.setLong(1, puja.getId());
-
-            return ps.execute();
+            return !ps.execute();
 
         } catch (SQLException e) {
             System.err.println(e);
