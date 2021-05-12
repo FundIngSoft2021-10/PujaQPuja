@@ -25,4 +25,8 @@ public class ProductoController {
         boolean eliminado= this.productoRepository.eliminarPujaPorId(idProductoAEliminar);
         return eliminado;
     }
+
+    public boolean modificarProducto(Producto productoASubastar) {
+        return this.productoRepository.modificarProducto(productoASubastar);
+    }
 }

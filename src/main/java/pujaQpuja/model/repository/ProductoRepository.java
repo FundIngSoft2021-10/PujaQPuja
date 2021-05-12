@@ -1,6 +1,5 @@
 package pujaQpuja.model.repository;
 
-import pujaQpuja.controller.modelos.AutenticacionController;
 import pujaQpuja.model.entities.*;
 import pujaQpuja.utilities.Utiles;
 
@@ -136,5 +135,29 @@ public class ProductoRepository {
 
         }
 
+    }
+
+    public boolean modificarProducto(Producto productoASubastar) {
+        Connection con = db.getConexion();
+        PreparedStatement ps;
+
+        String sql = "";
+        sql += "UPDATE Producto ";
+        sql += "SET nombre = ?, descripcion = ?, categoria = ? ";
+        sql += "WHERE id = ?";
+
+        try {
+            ps = con.prepareStatement(sql);
+
+            ps.setString(1, productoASubastar.getNombre());
+            ps.setString(2,productoASubastar.getDescripcion());
+            ps.setString(3, String.valueOf(productoASubastar.getCategoria()));
+            ps.setLong(4, productoASubastar.getId());
+            return ps.execute();
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return false;
+        }
     }
 }

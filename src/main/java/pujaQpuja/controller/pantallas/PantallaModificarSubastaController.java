@@ -16,10 +16,15 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import pujaQpuja.controller.modelos.AutenticacionController;
 import pujaQpuja.controller.modelos.ControladorGeneral;
+import pujaQpuja.model.entities.Condicion;
+import pujaQpuja.model.entities.Categoria;
+import pujaQpuja.model.entities.Producto;
 import pujaQpuja.utilities.PantallasMenu;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class PantallaModificarSubastaController implements Initializable {
@@ -49,7 +54,7 @@ public class PantallaModificarSubastaController implements Initializable {
     @FXML
     private TextField campoNombreProducto;
     @FXML
-    private ChoiceBox<?> desplegableCategoria;
+    private ChoiceBox<Categoria> desplegableCategoria;
     @FXML
     private TextArea campoDescripcionProducto;
     @FXML
@@ -60,8 +65,7 @@ public class PantallaModificarSubastaController implements Initializable {
     private Button botonModificar;
     @FXML
     private Button botonPausarSubasta;
-    @FXML
-    private Button botonAdjuntarFoto;
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -70,6 +74,7 @@ public class PantallaModificarSubastaController implements Initializable {
         campoNombreProducto.setText(autenticacionController.getTemporalVisualizada().getProducto().getNombre());
         campoDescripcionProducto.setText(autenticacionController.getTemporalVisualizada().getProducto().getDescripcion());
         imagenProducto.setImage(autenticacionController.getTemporalVisualizada().getProducto().getFoto());
+        desplegableCategoria.getItems().setAll(Categoria.values());
     }
 
     @FXML
@@ -112,18 +117,6 @@ public class PantallaModificarSubastaController implements Initializable {
         PantallasMenu.abrirCategorias(event);
     }
 
-    @FXML
-    void accionAdjuntarFoto(ActionEvent event) {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Buscar Imagen");
-        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("All Images", "*.*"), new FileChooser.ExtensionFilter("JPG", "*.jpg"), new FileChooser.ExtensionFilter("PNG", "*.png"));
-        File imgFile = fileChooser.showOpenDialog((Stage) ((Node) event.getSource()).getScene().getWindow());
-        if (imgFile != null) {
-            Image image = new Image("file:" + imgFile.getAbsolutePath());
-            rutaImagen = imgFile.getAbsolutePath();
-            imagenProducto.setImage(image);
-        }
-    }
 
 
     @FXML
@@ -139,7 +132,42 @@ public class PantallaModificarSubastaController implements Initializable {
 
     @FXML
     void accionModificarSubasta(ActionEvent event) {
-        
+
+        Producto productoASubastar = new Producto();
+        productoASubastar.setNombre(campoNombreProducto.getText());
+        productoASubastar.setDescripcion(campoDescripcionProducto.getText());
+
+        Categoria categoria = Categoria.CALZADO;
+        if (Categoria.CALZADO == desplegableCategoria.getValue()) {
+            categoria = Categoria.CALZADO;
+        }
+        if (Categoria.DEPORTE == desplegableCategoria.getValue()) {
+            categoria = Categoria.DEPORTE;
+        }
+
+        if (Categoria.ELECTRODOMESTICOS == desplegableCategoria.getValue()) {
+            categoria = Categoria.ELECTRODOMESTICOS;
+        }
+
+        if (Categoria.PANTALONES == desplegableCategoria.getValue()) {
+            categoria = Categoria.PANTALONES;
+        }
+
+        if (Categoria.ROPA == desplegableCategoria.getValue()) {
+            categoria = Categoria.ROPA;
+        }
+
+        if (Categoria.TECNOLOGIA == desplegableCategoria.getValue()) {
+            categoria = Categoria.TECNOLOGIA;
+        }
+        productoASubastar.setCategoria(categoria);
+        productoASubastar.setFoto(imagenProducto.getImage());
+        productoASubastar.setId(autenticacionController.getTemporalVisualizada().getProducto().getId());
+        if (controladorGeneral.productoController.modificarProducto(productoASubastar)) {
+            PantallasMenu.abrirVentana("PantallaExitoRealizarSubasta");
+        } else {
+            PantallasMenu.abrirVentana("PantallaErrorPublicacionSubasta");
+        }
     }
 
     @FXML

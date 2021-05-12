@@ -175,14 +175,6 @@
                <Insets />
             </opaqueInsets>
          </Button>
-         <Button fx:id="botonAdjuntarFoto" layoutX="200.0" layoutY="563.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#accionAdjuntarFoto" prefHeight="37.0" prefWidth="166.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Modificar foto" textAlignment="CENTER">
-            <font>
-               <Font name="SansSerif Regular" size="20.0" />
-            </font>
-            <opaqueInsets>
-               <Insets />
-            </opaqueInsets>
-         </Button>
         </AnchorPane>
     </center>
 </BorderPane>
