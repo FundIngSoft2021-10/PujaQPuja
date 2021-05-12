@@ -128,7 +128,7 @@ public class DetallesVentaController implements Initializable {
     void abrirReanudarProducto(ActionEvent event) {
         //TODO esperar respuesta Puja de otra pantalla
         Puja pujaReanudar = new Puja();
-        controladorGeneral.pujaController.reanudarPuja(pujaReanudar);
+        controladorGeneral.pujaController.reanudarPuja(pujaReanudar.getId());
     }
 
     @FXML

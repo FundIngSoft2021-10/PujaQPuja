@@ -102,8 +102,8 @@ public class PujaController {
         return this.pujaRepository.actualizarPrecio(nuevoprecio, idPuja);
     }
 
-    public boolean reanudarPuja(Puja puja){
-        return this.pujaRepository.reanudarPujaPorPuja(puja);
+    public boolean reanudarPuja(long idPuja){
+        return this.pujaRepository.reanudarPujaPorPuja(idPuja);
     }
 
     public boolean pausarPuja(long idPuja){

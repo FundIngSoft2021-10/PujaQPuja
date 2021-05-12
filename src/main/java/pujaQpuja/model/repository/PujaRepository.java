@@ -297,7 +297,7 @@ public class PujaRepository extends DB {
         }
     }
 
-    public boolean reanudarPujaPorPuja(Puja puja) {
+    public boolean reanudarPujaPorPuja(long idPuja) {
 
         Connection con = getConexion();
         PreparedStatement ps;
@@ -311,9 +311,9 @@ public class PujaRepository extends DB {
         try {
             ps = con.prepareStatement(sql);
 
-            ps.setLong(1, puja.getId());
+            ps.setLong(1, idPuja);
 
-            return ps.execute();
+            return !ps.execute();
 
         } catch (SQLException e) {
             System.err.println(e);

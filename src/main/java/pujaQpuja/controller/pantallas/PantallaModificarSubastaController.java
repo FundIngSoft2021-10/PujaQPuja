@@ -66,6 +66,8 @@ public class PantallaModificarSubastaController implements Initializable {
     private Button botonModificar;
     @FXML
     private Button botonPausarSubasta;
+    @FXML
+    private Button botonReanudarPuja;
 
 
     @Override
@@ -196,6 +198,15 @@ public class PantallaModificarSubastaController implements Initializable {
     @FXML
     void abririMetodoPago(MouseEvent event) {
 
+    }
+
+    @FXML
+    void accionReanudarPuja(ActionEvent event) {
+        long idPuja =  autenticacionController.getTemporalVisualizada().getId();
+        if(controladorGeneral.pujaController.reanudarPuja(idPuja))
+            System.out.println("Se reanudo la puja con exito");
+        else
+            System.out.println("No se reanudo la puja");
     }
 
 }
