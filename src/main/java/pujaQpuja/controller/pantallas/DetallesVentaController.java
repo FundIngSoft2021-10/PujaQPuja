@@ -66,7 +66,10 @@ public class DetallesVentaController implements Initializable {
         campoNombreProducto.setText(autenticacionController.getTemporalVisualizada().getProducto().getNombre());
         campoDescripcion.setText(autenticacionController.getTemporalVisualizada().getProducto().getDescripcion());
         imagenProducto.setImage(autenticacionController.getTemporalVisualizada().getProducto().getFoto());
-        //desplegableCategoria.getItems().setAll(Categoria.values());
+        campoPrecio.setText(String.valueOf(autenticacionController.getTemporalVisualizada().getPrecioFinal()));
+        /*campoNombreComprador.setText(autenticacionController.getTemporalVisualizada().getComprador().getNombres() +" "
+                                     + autenticacionController.getTemporalVisualizada().getComprador().getApellidos());*/
+
         rutaImagen = "";
     }
 
