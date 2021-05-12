@@ -76,7 +76,6 @@ public class PantallasMenu {
     }
 
     public static void abririMetodoPago(MouseEvent event) {
-        // TODO hacer pantalla método pago
         abrirPantalla(event, "PantallaMetodoPago");
     }
 }
