@@ -1,6 +1,6 @@
 package pujaQpuja.model.repository;
 
-public class MensajeRepository {
+public class MensajeRepository extends DB {
     public MensajeRepository() {
     }
 }

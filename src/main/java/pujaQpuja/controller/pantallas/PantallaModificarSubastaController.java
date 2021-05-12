@@ -75,6 +75,7 @@ public class PantallaModificarSubastaController implements Initializable {
         campoDescripcionProducto.setText(autenticacionController.getTemporalVisualizada().getProducto().getDescripcion());
         imagenProducto.setImage(autenticacionController.getTemporalVisualizada().getProducto().getFoto());
         desplegableCategoria.getItems().setAll(Categoria.values());
+        rutaImagen = "";
     }
 
     @FXML
@@ -117,7 +118,18 @@ public class PantallaModificarSubastaController implements Initializable {
         PantallasMenu.abrirCategorias(event);
     }
 
-
+    @FXML
+    private void accionAdjuntarFoto(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Buscar Imagen");
+        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("All Images", "*.*"), new FileChooser.ExtensionFilter("JPG", "*.jpg"), new FileChooser.ExtensionFilter("PNG", "*.png"));
+        File imgFile = fileChooser.showOpenDialog((Stage) ((Node) event.getSource()).getScene().getWindow());
+        if (imgFile != null) {
+            Image image = new Image("file:" + imgFile.getAbsolutePath());
+            rutaImagen = imgFile.getAbsolutePath();
+            imagenProducto.setImage(image);
+        }
+    }
 
     @FXML
     void accionCancelarSubasta(ActionEvent event) {
@@ -163,7 +175,8 @@ public class PantallaModificarSubastaController implements Initializable {
         productoASubastar.setCategoria(categoria);
         productoASubastar.setFoto(imagenProducto.getImage());
         productoASubastar.setId(autenticacionController.getTemporalVisualizada().getProducto().getId());
-        if (controladorGeneral.productoController.modificarProducto(productoASubastar)) {
+
+        if (controladorGeneral.productoController.modificarProducto(productoASubastar,rutaImagen)) {
             PantallasMenu.abrirVentana("PantallaExitoRealizarSubasta");
         } else {
             PantallasMenu.abrirVentana("PantallaErrorPublicacionSubasta");

@@ -15,17 +15,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class ProductoRepository {
-
-    private DB db;
+public class ProductoRepository extends DB {
 
     public ProductoRepository() {
-        db = DB.getInstance();
     }
 
     public boolean crear(Producto producto, String rutaImagen) {
 
-        Connection con = db.getConexion();
+        Connection con = getConexion();
         PreparedStatement ps;
         ResultSet rs;
 
@@ -59,12 +56,18 @@ public class ProductoRepository {
         } catch (SQLException | FileNotFoundException e) {
             System.err.println(e);
             return false;
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
         }
     }
 
     public Producto buscarProductoPorId(long id) {
 
-        Connection con = db.getConexion();
+        Connection con = getConexion();
         PreparedStatement ps;
         ResultSet rs;
 
@@ -110,11 +113,17 @@ public class ProductoRepository {
         } catch (SQLException | IOException e) {
             System.err.println(e);
             return producto;
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
         }
     }
 
     public boolean eliminarPujaPorId(long idProductoAEliminar) {
-        Connection con = db.getConexion();
+        Connection con = getConexion();
         PreparedStatement ps;
         ResultSet rs;
 
@@ -133,31 +142,56 @@ public class ProductoRepository {
             System.err.println(e);
             return false;
 
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
         }
 
     }
 
-    public boolean modificarProducto(Producto productoASubastar) {
-        Connection con = db.getConexion();
+    public boolean modificarProducto(Producto productoASubastar, String rutaImagen) {
+        Connection con = getConexion();
         PreparedStatement ps;
 
         String sql = "";
         sql += "UPDATE Producto ";
-        sql += "SET nombre = ?, descripcion = ?, categoria = ? ";
-        sql += "WHERE id = ?";
+        sql += "SET nombre = ?, descripcion = ?, categoria = ?";
+        if(rutaImagen!= "")
+            sql += ", foto = ?";
+        sql += " WHERE id = ?";
 
         try {
             ps = con.prepareStatement(sql);
 
             ps.setString(1, productoASubastar.getNombre());
-            ps.setString(2,productoASubastar.getDescripcion());
+            ps.setString(2, productoASubastar.getDescripcion());
             ps.setString(3, String.valueOf(productoASubastar.getCategoria()));
-            ps.setLong(4, productoASubastar.getId());
-            return ps.execute();
+            if(rutaImagen!= "")
+            {
+                File imagen = new File(rutaImagen);
+                FileInputStream fis = new FileInputStream(imagen);
+                ps.setBinaryStream(4, fis, (int) imagen.length());
+                ps.setLong(5, productoASubastar.getId());
+            }
+            else
+            {
+                ps.setLong(4, productoASubastar.getId());
+            }
 
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            return !ps.execute();
+
+        } catch (SQLException | FileNotFoundException e) {
+            System.err.println(e);
             return false;
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
         }
     }
 }

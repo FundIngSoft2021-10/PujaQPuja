@@ -26,7 +26,7 @@ public class ProductoController {
         return eliminado;
     }
 
-    public boolean modificarProducto(Producto productoASubastar) {
-        return this.productoRepository.modificarProducto(productoASubastar);
+    public boolean modificarProducto(Producto productoASubastar, String rutaImagen) {
+        return this.productoRepository.modificarProducto(productoASubastar, rutaImagen);
     }
 }
