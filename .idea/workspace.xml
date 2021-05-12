@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bab415b7-8294-4919-b0ff-d59ce9d66de9" name="Default Changelist" comment="Arreglo pantallas hasta pantalla PujarXProducto">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaMetodoPagoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaMetodoPago.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/model/entities/otros/TipoTarjeta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/GanadorPujaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/GanadorPujaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/utilities/PantallasMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/utilities/PantallasMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/DetallesVentaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/DetallesVentaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaMetodoPagoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaMetodoPagoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/PantallaMetodoPago.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaMetodoPago.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +69,7 @@
       <recent name="E:\Juanpa\Programacion\Java\PujaQPuja\src\main\resources\fxml" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="pujaQpuja.model.entities.otros" />
       <recent name="pujaQpuja.model.repository" />
     </key>
   </component>
@@ -174,6 +175,19 @@
           </properties>
           <option name="timeStamp" value="4" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pujaQpuja/utilities/PantallasMenu.java</url>
+          <line>78</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/pujaQpuja/utilities/PantallasMenu.java</url>
+          <line>77</line>
+          <properties class="pujaQpuja.utilities.PantallasMenu" method="abririMetodoPago">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>

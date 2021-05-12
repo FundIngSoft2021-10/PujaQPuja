@@ -135,31 +135,40 @@ public class DetallesVentaController implements Initializable {
     @FXML
     void abrirPausarProducto(ActionEvent event) {
         long idPuja =  autenticacionController.getTemporalVisualizada().getId();
-        if(controladorGeneral.pujaController.pausarPuja(idPuja))
-            System.out.println("Se pauso la puja con exito");
-        else
-            System.out.println("No se pauso la puja");
+        if(controladorGeneral.pujaController.pausarPuja(idPuja)) {
+            //PantallasMenu.abrirVentana("PantallaExitoPausarPuja");
+        }
+        else{
+            //PantallasMenu.abrirVentana("PantallaErrorPausarPuja");
+        }
+
     }
 
     @FXML
     void abrirReanudarProducto(ActionEvent event) {
         long idPuja =  autenticacionController.getTemporalVisualizada().getId();
-        if(controladorGeneral.pujaController.reanudarPuja(idPuja))
-            System.out.println("Se reanudo la puja con exito");
-        else
-            System.out.println("No se reanudo la puja");
+        if(controladorGeneral.pujaController.reanudarPuja(idPuja)){
+            //PantallasMenu.abrirVentana("PantallaExitoReanudarPuja");
+        }
+        else{
+            //PantallasMenu.abrirVentana("PantallaErrorReanudarPuja");
+        }
     }
 
     @FXML
     private void abrirEliminarProducto(ActionEvent event) {
-        //autenticacionController = AutenticacionController.getInstance();
         long idPujaAEliminar = autenticacionController.getTemporalVisualizada().getId();
         long idProductoAEliminar = autenticacionController.getTemporalVisualizada().getProducto().getId();
 
         controladorGeneral.productoController.eliminarProducto(idProductoAEliminar);
         controladorGeneral.pujaController.eliminarPuja(idPujaAEliminar);
-        //PantallasMenu.abrirPantalla(event,"");
-        PantallasMenu.abrirVentana("PantallaConfirmacionEliminarPuja");
+        if(controladorGeneral.productoController.eliminarProducto(idProductoAEliminar) && controladorGeneral.pujaController.eliminarPuja(idPujaAEliminar))
+        {
+            PantallasMenu.abrirVentana("PantallaConfirmacionEliminarPuja");
+        }else{
+            //PantallasMenu.abrirVentana("PantallaErrorEliminarProducto");
+        }
+
     }
 
 }
