@@ -1,7 +1,5 @@
 package pujaQpuja.controller.modelos;
 
-import java.sql.SQLException;
-
 import pujaQpuja.model.entities.Producto;
 import pujaQpuja.model.repository.ProductoRepository;
 

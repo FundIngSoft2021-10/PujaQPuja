@@ -177,7 +177,7 @@ public class PantallaMisSubastasController implements Initializable {
             Puja a = tablaCatalogo.getSelectionModel().getSelectedItem().getPuja();
             Puja b = controladorGeneral.pujaController.pujaVisualizada(a);
             controladorGeneral.autenticacionController.setTemporalVisualizada(b);
-            Parent pantallaIngresarParent = FXMLLoader.load(getClass().getResource("/view/" + "PantallaModificarSubasta.fxml"));
+            Parent pantallaIngresarParent = FXMLLoader.load(getClass().getResource("/view/" + "DetallesVenta.fxml"));
             Scene pantallaIngresarScene = new Scene(pantallaIngresarParent);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(pantallaIngresarScene);

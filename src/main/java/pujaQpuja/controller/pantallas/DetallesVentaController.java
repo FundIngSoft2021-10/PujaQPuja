@@ -11,14 +11,17 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
+import pujaQpuja.controller.modelos.AutenticacionController;
 import pujaQpuja.controller.modelos.ControladorGeneral;
+import pujaQpuja.model.entities.Categoria;
 import pujaQpuja.model.entities.Puja;
 import pujaQpuja.utilities.PantallasMenu;
 
 public class DetallesVentaController implements Initializable {
 
     private ControladorGeneral controladorGeneral;
-
+    private String rutaImagen;
+    private AutenticacionController autenticacionController;
     @FXML
     private Rectangle botonAtras;
     @FXML
@@ -59,10 +62,17 @@ public class DetallesVentaController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         controladorGeneral = new ControladorGeneral();
+        autenticacionController = AutenticacionController.getInstance();
+        campoNombreProducto.setText(autenticacionController.getTemporalVisualizada().getProducto().getNombre());
+        campoDescripcion.setText(autenticacionController.getTemporalVisualizada().getProducto().getDescripcion());
+        imagenProducto.setImage(autenticacionController.getTemporalVisualizada().getProducto().getFoto());
+        //desplegableCategoria.getItems().setAll(Categoria.values());
+        rutaImagen = "";
     }
 
     @FXML
     private void irAtras(MouseEvent event) {
+        PantallasMenu.abrirHistorialVentas(event);
     }
 
     @FXML
@@ -111,28 +121,41 @@ public class DetallesVentaController implements Initializable {
 
     @FXML
     private void abrirEditarProducto(ActionEvent event) {
+        PantallasMenu.abrirPantalla(event,"PantallaModificarSubasta");
     }
 
     @FXML
     private void abrirMasInformacion(MouseEvent event) {
+
     }
 
     @FXML
     void abrirPausarProducto(ActionEvent event) {
-        //TODO esperar respuesta Puja de otra pantalla
-        Puja pujaPausar = new Puja();
-        controladorGeneral.pujaController.pausarPuja(pujaPausar.getId());
+        long idPuja =  autenticacionController.getTemporalVisualizada().getId();
+        if(controladorGeneral.pujaController.pausarPuja(idPuja))
+            System.out.println("Se pauso la puja con exito");
+        else
+            System.out.println("No se pauso la puja");
     }
 
     @FXML
     void abrirReanudarProducto(ActionEvent event) {
-        //TODO esperar respuesta Puja de otra pantalla
-        Puja pujaReanudar = new Puja();
-        controladorGeneral.pujaController.reanudarPuja(pujaReanudar.getId());
+        long idPuja =  autenticacionController.getTemporalVisualizada().getId();
+        if(controladorGeneral.pujaController.reanudarPuja(idPuja))
+            System.out.println("Se reanudo la puja con exito");
+        else
+            System.out.println("No se reanudo la puja");
     }
 
     @FXML
     private void abrirEliminarProducto(ActionEvent event) {
+        //autenticacionController = AutenticacionController.getInstance();
+        long idPujaAEliminar = autenticacionController.getTemporalVisualizada().getId();
+        long idProductoAEliminar = autenticacionController.getTemporalVisualizada().getProducto().getId();
+
+        controladorGeneral.productoController.eliminarProducto(idProductoAEliminar);
+        controladorGeneral.pujaController.eliminarPuja(idPujaAEliminar);
+        //PantallasMenu.abrirPantalla(event,"");
         PantallasMenu.abrirVentana("PantallaConfirmacionEliminarPuja");
     }
 

@@ -16,16 +16,12 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import pujaQpuja.controller.modelos.AutenticacionController;
 import pujaQpuja.controller.modelos.ControladorGeneral;
-import pujaQpuja.model.entities.Condicion;
 import pujaQpuja.model.entities.Categoria;
 import pujaQpuja.model.entities.Producto;
-import pujaQpuja.model.entities.Puja;
 import pujaQpuja.utilities.PantallasMenu;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class PantallaModificarSubastaController implements Initializable {
@@ -134,16 +130,6 @@ public class PantallaModificarSubastaController implements Initializable {
         }
     }
 
-    @FXML
-    void accionCancelarSubasta(ActionEvent event) {
-        //autenticacionController = AutenticacionController.getInstance();
-        long idPujaAEliminar = autenticacionController.getTemporalVisualizada().getId();
-        long idProductoAEliminar = autenticacionController.getTemporalVisualizada().getProducto().getId();
-
-        controladorGeneral.productoController.eliminarProducto(idProductoAEliminar);
-        controladorGeneral.pujaController.eliminarPuja(idPujaAEliminar);
-        //PantallasMenu.abrirPantalla(event,"");
-    }
 
     @FXML
     void accionModificarSubasta(ActionEvent event) {
@@ -186,27 +172,12 @@ public class PantallaModificarSubastaController implements Initializable {
         }
     }
 
-    @FXML
-    void accionPausarSubasta(ActionEvent event) {
-        long idPuja =  autenticacionController.getTemporalVisualizada().getId();
-        if(controladorGeneral.pujaController.pausarPuja(idPuja))
-            System.out.println("Se pauso la puja con exito");
-        else
-            System.out.println("No se pauso la puja");
-    }
+
 
     @FXML
     void abririMetodoPago(MouseEvent event) {
 
     }
 
-    @FXML
-    void accionReanudarPuja(ActionEvent event) {
-        long idPuja =  autenticacionController.getTemporalVisualizada().getId();
-        if(controladorGeneral.pujaController.reanudarPuja(idPuja))
-            System.out.println("Se reanudo la puja con exito");
-        else
-            System.out.println("No se reanudo la puja");
-    }
 
 }
