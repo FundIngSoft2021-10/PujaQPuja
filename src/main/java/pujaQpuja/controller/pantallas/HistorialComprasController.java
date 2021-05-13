@@ -1,12 +1,19 @@
 package pujaQpuja.controller.pantallas;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import pujaQpuja.controller.modelos.ControladorGeneral;
+import pujaQpuja.model.entities.otros.TablaCatalogoTemporal;
 import pujaQpuja.utilities.PantallasMenu;
 
 import java.net.URL;
@@ -35,18 +42,36 @@ public class HistorialComprasController implements Initializable {
     @FXML
     private Rectangle botonRectanguloMetodoPago;
     @FXML
-    private TableView<?> tablaHistorialCompras;
+    private TableView<TablaCatalogoTemporal> tablaHistorialCompras;
     @FXML
-    private TableColumn<?, ?> columnaFotoProducto;
+    private TableColumn<TablaCatalogoTemporal, ImageView> columnaFotoProducto;
     @FXML
-    private TableColumn<?, ?> columnaDescripcionProducto;
+    private TableColumn<TablaCatalogoTemporal, String> columnaDescripcionProducto;
     @FXML
-    private TableColumn<?, ?> columnaEstadoProducto;
+    private TableColumn<TablaCatalogoTemporal, String> columnaEstadoProducto;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         controladorGeneral = new ControladorGeneral();
+        columnaDescripcionProducto.setCellValueFactory(new PropertyValueFactory<TablaCatalogoTemporal, String>("desc"));
+        columnaFotoProducto.setCellValueFactory(new PropertyValueFactory<TablaCatalogoTemporal, ImageView>("imagen"));
+        columnaEstadoProducto.setCellValueFactory(new PropertyValueFactory<TablaCatalogoTemporal,String>("estado"));
+        obtenerPujas();
     }
+
+    private void obtenerPujas() {
+        ObservableList<TablaCatalogoTemporal> datos = FXCollections.observableArrayList();
+        //datos.addAll(controladorGeneral.pujaController.getPujasPropiasA());
+        datos.addAll(controladorGeneral.pujaController.getPujasGanadas());
+        tablaHistorialCompras.setItems(datos);
+
+        FilteredList<TablaCatalogoTemporal> filteredData = new FilteredList<>(datos, b -> true);
+
+        SortedList<TablaCatalogoTemporal> sortedData = new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(tablaHistorialCompras.comparatorProperty());
+        tablaHistorialCompras.setItems(sortedData);
+    }
+
 
     @FXML
     private void irAtras(MouseEvent event) {
