@@ -16,13 +16,13 @@ public class PantallaProteccionPagoController{
     @FXML
     void accionNo(ActionEvent event) {
         PantallasMenu.abrirPantalla(event, "PantallaErrorPago");
-        PantallasMenu.cerrarPantalla(event);
+        //PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
     void accionSi(ActionEvent event) {
-        PantallasMenu.abrirVentana("PantallaExitoPago");
-        PantallasMenu.cerrarPantalla(event);
+        PantallasMenu.abrirPantalla(event,"PantallaExitoPago");
+        //PantallasMenu.cerrarPantalla(event);
     }
 
 }

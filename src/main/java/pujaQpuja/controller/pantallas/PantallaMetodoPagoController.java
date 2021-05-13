@@ -109,15 +109,15 @@ public class PantallaMetodoPagoController implements Initializable {
     void pagar(ActionEvent event) {
 
         boolean correcto= false;
-        if(        campoApellido.getText()       !=""
-                && campoCiudad.getText()         !=""
-                && campoCodigoPostal.getText()   != ""
-                && campoCodigoSeguridad.getText()!= ""
-                && campoFechaExpiracion.getText()!= ""
-                && campoNombre.getText()         != ""
-                && campoTelefono.getText()       != ""
-                && campoDireccion.getText()      != ""
-                && campoNumeroTarjeta.getText()  != "")
+        if(        !campoApellido.getText().isBlank()
+                && !campoCiudad.getText().isBlank()
+                && !campoCodigoPostal.getText().isBlank()
+                && !campoCodigoSeguridad.getText().isBlank()
+                && !campoFechaExpiracion.getText().isBlank()
+                && !campoNombre.getText().isBlank()
+                && !campoTelefono.getText().isBlank()
+                && !campoDireccion.getText().isBlank()
+                && !campoNumeroTarjeta.getText().isBlank()  )
         {
             correcto = true;
         }
