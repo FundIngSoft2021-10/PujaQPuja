@@ -122,8 +122,8 @@ public class PantallaMetodoPagoController implements Initializable {
             correcto = true;
         }
         if(correcto)
-             PantallasMenu.abrirPantalla(event,"PantallaExitoPago");
+             PantallasMenu.abrirVentana("PantallaProteccionPago");
         else
-            PantallasMenu.abrirPantalla(event, "PantallaErrorPago");
+            PantallasMenu.abrirVentana("PantallaErrorPago");
     }
 }
