@@ -60,7 +60,14 @@ public class EditarPerfilController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
         controladorGeneral = new ControladorGeneral();
+        campoCorreo.setText(controladorGeneral.autenticacionController.getAutenticado().getCorreo());
+        campoNombres.setText(controladorGeneral.autenticacionController.getAutenticado().getNombres());
+        campoApellidos.setText(controladorGeneral.autenticacionController.getAutenticado().getApellidos());
+        campoTelefono.setText(controladorGeneral.autenticacionController.getAutenticado().getTelefono());
+        campoDocumento.setText(controladorGeneral.autenticacionController.getAutenticado().getDocumento());
+        campoDireccion.setText(controladorGeneral.autenticacionController.getAutenticado().getDireccion());
     }
 
     @FXML
