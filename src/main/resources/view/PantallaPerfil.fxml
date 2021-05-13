@@ -148,7 +148,7 @@
                     <Insets />
                 </opaqueInsets>
             </Button>
-         <Button fx:id="botonMisSubastas" layoutX="383.0" layoutY="563.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#abrirMisSubastas" prefHeight="36.0" prefWidth="245.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Mis subastas" textAlignment="CENTER">
+         <Button fx:id="botonCerrarSesion" layoutX="383.0" layoutY="563.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="36.0" prefWidth="245.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Cerrar sesión" textAlignment="CENTER">
             <font>
                <Font name="SansSerif Regular" size="20.0" />
             </font>
