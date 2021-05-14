@@ -70,6 +70,10 @@ public class PantallasMenu {
         abrirPantalla(event, "HistorialCompras");
     }
 
+    public static void abrirQA(MouseEvent event) {
+        abrirPantalla(event, "PantallaPreguntas");
+    }
+
     public static void abrirNotificaciones(MouseEvent event) {
         // TODO hacer pantalla notificaciones
         abrirPantalla(event, "PantallaNotificaciones");

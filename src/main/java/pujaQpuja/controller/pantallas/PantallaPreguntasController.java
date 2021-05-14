@@ -1,61 +1,52 @@
 package pujaQpuja.controller.pantallas;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
-import pujaQpuja.controller.modelos.ControladorGeneral;
 import pujaQpuja.utilities.PantallasMenu;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
-
-public class PantallaCalificarProductoController implements Initializable {
-
-    private ControladorGeneral controladorGeneral;
+public class PantallaPreguntasController {
 
     @FXML
     private Rectangle botonAtras;
+
     @FXML
     private Rectangle botonPerfil;
+
     @FXML
     private Rectangle botonRectanguloAjustes;
+
     @FXML
     private Rectangle botonRectanguloCategorias;
+
     @FXML
     private Rectangle botonRectanguloRealizarSubasta;
+
     @FXML
     private Rectangle botonRectanguloHistorialVentas;
+
     @FXML
     private Rectangle botonRectanguloHistorialCompras;
+
     @FXML
     private Rectangle botonRectanguloNotificaciones;
+
     @FXML
     private Rectangle botonRectanguloMetodoPago;
-    @FXML
-    private RadioButton botonRadioBuena;
-    @FXML
-    private RadioButton botonRadioRegular;
-    @FXML
-    private RadioButton botonRadioMala;
-    @FXML
-    private Button botonAceptar;
-    @FXML
-    private TextField campoOpinionProducto;
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        controladorGeneral = new ControladorGeneral();
-    }
 
     @FXML
-    private void irAtras(MouseEvent event) {
-    }
+    private Rectangle botonRectanguloQA;
+
+    @FXML
+    private TableView<?> tablaHistorialVentas;
+
+    @FXML
+    private TableColumn<?, ?> columnaFotoProducto;
+
+    @FXML
+    private TableColumn<?, ?> columnaDescripcionProducto;
 
     @FXML
     private void abrirPerfil(MouseEvent event) {
@@ -70,11 +61,6 @@ public class PantallaCalificarProductoController implements Initializable {
     @FXML
     private void abrirCategorias(MouseEvent event) {
         PantallasMenu.abrirCategorias(event);
-    }
-
-    @FXML
-    private void abrirRealizarSubasta(MouseEvent event) {
-        PantallasMenu.abrirRealizarSubasta(event);
     }
 
     @FXML
@@ -93,17 +79,28 @@ public class PantallaCalificarProductoController implements Initializable {
     }
 
     @FXML
+    void abrirQA(MouseEvent event) {
+        PantallasMenu.abrirQA(event);
+    }
+
+    @FXML
+    private void abrirRealizarSubasta(MouseEvent event) {
+        PantallasMenu.abrirRealizarSubasta(event);
+    }
+
+    @FXML
     private void abririMetodoPago(MouseEvent event) {
         PantallasMenu.abririMetodoPago(event);
     }
 
     @FXML
-    private void accionAceptar(ActionEvent event) throws IOException {
-        if (botonRadioBuena.isSelected() || botonRadioRegular.isSelected() || botonRadioMala.isSelected()) {
-            PantallasMenu.abrirVentana("PantallaExitoCalificar");
-        } else {
-            PantallasMenu.abrirVentana("PantallaErrorCalificar");
-        }
+    void irAtras(MouseEvent event) {
+        PantallasMenu.abrirCategorias(event);
+    }
+
+    @FXML
+    void seleccionar(MouseEvent event) {
+
     }
 
 }
