@@ -61,8 +61,7 @@ public class HistorialComprasController implements Initializable {
 
     private void obtenerPujas() {
         ObservableList<TablaCatalogoTemporal> datos = FXCollections.observableArrayList();
-        //datos.addAll(controladorGeneral.pujaController.getPujasPropiasA());
-        datos.addAll(controladorGeneral.pujaController.getPujasGanadas());
+        datos.addAll(controladorGeneral.pujaController.getPujasGanadasA());
         tablaHistorialCompras.setItems(datos);
 
         FilteredList<TablaCatalogoTemporal> filteredData = new FilteredList<>(datos, b -> true);

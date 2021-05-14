@@ -237,6 +237,52 @@ public class PujaRepository extends DB {
         }
     }
 
+    public List<Puja> getPujasGanadasDB(Categoria categoria, long id){
+        Connection con = getConexion();
+        PreparedStatement ps;
+        ResultSet rs;
+
+        List<Puja> respuesta = new ArrayList<>();
+
+        String sql = "";
+        sql += "SELECT p.* ";
+        sql += "FROM Puja p ";
+        sql += "WHERE p.idHistorialCompras = ? ";
+        sql += "AND p.estado = 'INACTIVO' ";
+
+        try {
+            ps = con.prepareStatement(sql);
+
+            ps.setString(1, String.valueOf(id));
+            if (categoria != null)
+                ps.setString(2, String.valueOf(categoria));
+
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Puja temp = new Puja();
+
+                temp.setId(rs.getLong("id"));
+                temp.setEstado(EstadoPuja.valueOf(rs.getString("estado")));
+                temp.setPrecioFinal(rs.getDouble("precioFinal"));
+                temp.setFecha(rs.getDate("fecha"));
+                temp.setProducto(productoController.buscarPorId(rs.getLong("idProducto")));
+
+                respuesta.add(temp);
+            }
+            return respuesta;
+        } catch (SQLException e) {
+            System.err.println(e);
+            return respuesta;
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+    }
+
     public boolean agregarPujante(Long idPuja, Long idComprador, Double precioPujado) {
 
         Connection con = getConexion();
