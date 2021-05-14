@@ -40,10 +40,17 @@ public class PantallaChatController implements Initializable {
     private Text textoTituloTipoChat;
     @FXML
     private Rectangle botonEnviar;
+    @FXML
+    private Rectangle botonRectanguloQA;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         controladorGeneral = new ControladorGeneral();
+    }
+
+    @FXML
+    void abrirQA(MouseEvent event) {
+        PantallasMenu.abrirQA(event);
     }
 
     @FXML

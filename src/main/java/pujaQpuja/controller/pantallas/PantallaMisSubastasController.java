@@ -68,6 +68,8 @@ public class PantallaMisSubastasController implements Initializable {
     private ComboBox<Categoria> desplegableFiltros;
     @FXML
     private Rectangle botonOrdenar;
+    @FXML
+    private Rectangle botonRectanguloQA;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -99,6 +101,10 @@ public class PantallaMisSubastasController implements Initializable {
 
     @FXML
     private void irAtras(MouseEvent event) {
+    }
+    @FXML
+    void abrirQA(MouseEvent event) {
+        PantallasMenu.abrirQA(event);
     }
 
     @FXML

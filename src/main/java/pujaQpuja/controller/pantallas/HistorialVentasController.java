@@ -56,6 +56,8 @@ public class HistorialVentasController implements Initializable {
     private TableColumn<TablaCatalogoTemporal, String> columnaDescripcionProducto;
     @FXML
     private TableColumn<TablaCatalogoTemporal, String> columnaEstadoProducto;
+    @FXML
+    private Rectangle botonRectanguloQA;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -81,6 +83,11 @@ public class HistorialVentasController implements Initializable {
     @FXML
     private void abrirPerfil(MouseEvent event) {
         PantallasMenu.abrirPerfil(event);
+    }
+
+    @FXML
+    void abrirQA(MouseEvent event) {
+        PantallasMenu.abrirQA(event);
     }
 
     @FXML

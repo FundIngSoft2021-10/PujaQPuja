@@ -64,6 +64,8 @@ public class PantallaModificarSubastaController implements Initializable {
     private Button botonPausarSubasta;
     @FXML
     private Button botonReanudarPuja;
+    @FXML
+    private Rectangle botonRectanguloQA;
 
 
     @Override
@@ -75,6 +77,11 @@ public class PantallaModificarSubastaController implements Initializable {
         imagenProducto.setImage(autenticacionController.getTemporalVisualizada().getProducto().getFoto());
         desplegableCategoria.getItems().setAll(Categoria.values());
         rutaImagen = "";
+    }
+
+    @FXML
+    void abrirQA(MouseEvent event) {
+        PantallasMenu.abrirQA(event);
     }
 
     @FXML

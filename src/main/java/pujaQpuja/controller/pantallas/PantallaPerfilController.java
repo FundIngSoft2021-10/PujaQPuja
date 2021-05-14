@@ -46,10 +46,17 @@ public class PantallaPerfilController implements Initializable {
     private Button botonSoporteYAyuda;
     @FXML
     private Button botonCerrarSesion;
+    @FXML
+    private Rectangle botonRectanguloQA;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         controladorGeneral = new ControladorGeneral();
+    }
+
+    @FXML
+    void abrirQA(MouseEvent event) {
+        PantallasMenu.abrirQA(event);
     }
 
     @FXML

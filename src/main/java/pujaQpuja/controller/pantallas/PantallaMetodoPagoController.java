@@ -61,11 +61,17 @@ public class PantallaMetodoPagoController implements Initializable {
     private TextField campoTelefono;
     @FXML
     private Button botonPagar;
+    @FXML
+    private Rectangle botonRectanguloQA;
 
 
     @FXML
     private void abrirPerfil(MouseEvent event) {
         PantallasMenu.abrirPerfil(event);
+    }
+    @FXML
+    void abrirQA(MouseEvent event) {
+        PantallasMenu.abrirQA(event);
     }
     @FXML
     private void abrirAjustes(MouseEvent event) {

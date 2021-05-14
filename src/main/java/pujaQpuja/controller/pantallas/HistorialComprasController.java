@@ -49,6 +49,8 @@ public class HistorialComprasController implements Initializable {
     private TableColumn<TablaCatalogoTemporal, String> columnaDescripcionProducto;
     @FXML
     private TableColumn<TablaCatalogoTemporal, String> columnaEstadoProducto;
+    @FXML
+    private Rectangle botonRectanguloQA;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -69,6 +71,11 @@ public class HistorialComprasController implements Initializable {
         SortedList<TablaCatalogoTemporal> sortedData = new SortedList<>(filteredData);
         sortedData.comparatorProperty().bind(tablaHistorialCompras.comparatorProperty());
         tablaHistorialCompras.setItems(sortedData);
+    }
+
+    @FXML
+    void abrirQA(MouseEvent event) {
+        PantallasMenu.abrirQA(event);
     }
 
 

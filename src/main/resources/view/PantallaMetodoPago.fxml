@@ -117,6 +117,17 @@
             <ImageView fitHeight="133.0" fitWidth="240.0" layoutX="22.0" layoutY="-83.0" pickOnBounds="true" preserveRatio="true">
                 <Image url="@../images/logo_vertical.png" />
             </ImageView>
+         <ImageView disable="true" fitHeight="44.0" fitWidth="37.0" layoutX="14.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../images/chat.png" />
+            </image>
+         </ImageView>
+         <Label layoutX="66.0" layoutY="109.0" prefHeight="33.0" prefWidth="68.0" text="Q&amp;A">
+            <font>
+               <Font name="Berlin Sans FB" size="24.0" />
+            </font>
+         </Label>
+         <Rectangle fx:id="botonRectanguloQA" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="55.0" layoutY="98.0" onMouseClicked="#abrirQA" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="269.0" />
         </AnchorPane>
     </left>
     <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />

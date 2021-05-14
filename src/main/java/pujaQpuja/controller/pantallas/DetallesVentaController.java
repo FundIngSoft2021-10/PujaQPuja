@@ -58,6 +58,8 @@ public class DetallesVentaController implements Initializable {
     private Button botonEliminarProducto;
     @FXML
     private Rectangle botonRectanguloMasInformacion;
+    @FXML
+    private Rectangle botonRectanguloQA;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -116,6 +118,11 @@ public class DetallesVentaController implements Initializable {
     @FXML
     private void abririMetodoPago(MouseEvent event) {
         PantallasMenu.abririMetodoPago(event);
+    }
+
+    @FXML
+    void abrirQA(MouseEvent event) {
+        PantallasMenu.abrirQA(event);
     }
 
     @FXML
