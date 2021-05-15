@@ -4,13 +4,19 @@ import pujaQpuja.model.entities.Categoria;
 import pujaQpuja.model.entities.EstadoPuja;
 import pujaQpuja.model.entities.Mensaje;
 import pujaQpuja.model.entities.Puja;
+import pujaQpuja.controller.modelos.UsuarioController;
+import pujaQpuja.controller.modelos.ProductoController;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MensajeRepository extends DB {
+    private UsuarioController usuarioController;
+    private ProductoController productoController;
     public MensajeRepository() {
+        usuarioController = new UsuarioController();
+        productoController = new ProductoController();
     }
 
     public boolean crear(Mensaje mensaje) {
@@ -21,15 +27,16 @@ public class MensajeRepository extends DB {
 
         String sql = "";
         sql += "INSERT INTO Mensaje ";
-        sql += "(cuerpo, idEmisor, idReceptor) ";
-        sql += "VALUES (?,?,?)";
+        sql += "(idPuja, cuerpo, idEmisor, idReceptor) ";
+        sql += "VALUES (?,?,?,?)";
 
         try {
             ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
-            ps.setString(1, mensaje.getCuerpo());
-            ps.setLong(2, mensaje.getEmisor());
-            ps.setLong(3, mensaje.getReceptor());
+            ps.setLong(1, mensaje.getIdPuja());
+            ps.setString(2, mensaje.getCuerpo());
+            ps.setLong(3, mensaje.getEmisor());
+            ps.setLong(4, mensaje.getReceptor());
 
             ps.execute();
             rs = ps.getGeneratedKeys();
@@ -61,9 +68,9 @@ public class MensajeRepository extends DB {
         List<Mensaje> respuesta = new ArrayList<>();
 
         String sql = "";
-        sql += "SELECT m.* ";
-        sql += "FROM Mensaje m";
-        sql += "WHERE m.idEmisor = ? ";
+        sql += "SELECT * ";
+        sql += "FROM Mensaje ";
+        sql += "WHERE idEmisor = ? ";
 
         try {
             ps = con.prepareStatement(sql);
@@ -76,7 +83,9 @@ public class MensajeRepository extends DB {
                 Mensaje temp = new Mensaje();
 
                 temp.setId(rs.getLong("id"));
+                temp.setIdPuja(rs.getLong("idPuja"));
                 temp.setCuerpo(rs.getString("cuerpo"));
+                temp.setRespuesta(rs.getString("respuesta"));
                 temp.setEmisor(rs.getLong("idEmisor"));
                 temp.setReceptor(rs.getLong("idReceptor"));
 
@@ -86,6 +95,49 @@ public class MensajeRepository extends DB {
         } catch (SQLException e) {
             System.err.println(e);
             return respuesta;
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+    }
+
+    public Puja getPujaXMensaje(long id) {
+        Connection con = getConexion();
+        PreparedStatement ps;
+        ResultSet rs;
+
+        Puja temp = new Puja();
+
+        String sql = "";
+        sql += "SELECT p.* FROM Mensaje m, Puja p ";
+        sql += "WHERE p.id = ? AND m.idPuja = p.id ";
+        sql += "GROUP BY p.id";
+
+        try {
+            ps = con.prepareStatement(sql);
+
+            ps.setLong(1, id);
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                temp.setId(rs.getLong("id"));
+                temp.setEstado(EstadoPuja.valueOf(rs.getString("estado")));
+                temp.setPrecioFinal(rs.getDouble("precioFinal"));
+                temp.setFecha(rs.getDate("fecha"));
+                temp.setProducto(productoController.buscarPorId(rs.getLong("idProducto")));
+                temp.setVendedor(usuarioController.buscarPorId(rs.getLong("idHistorialVentas")));
+
+                return temp;
+            }
+            return temp;
+
+        } catch (SQLException e) {
+            System.err.println(e);
+            return temp;
+
         } finally {
             try {
                 desconectar();

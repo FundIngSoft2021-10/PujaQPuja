@@ -133,8 +133,9 @@
         <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <TableView fx:id="tablaPreguntasRespuestas" onMouseClicked="#seleccionar" prefHeight="654.0" prefWidth="1010.0">
                 <columns>
-                    <TableColumn fx:id="columnaPregunta" prefWidth="500.0" sortable="false" text="Pregunta" />
-                    <TableColumn fx:id="columnaRespuesta" prefWidth="500.0" text="Respuesta" />
+               <TableColumn fx:id="columnaFoto" prefWidth="200.0" sortable="false" text="Articulo" />
+                    <TableColumn fx:id="columnaPregunta" prefWidth="400.0" sortable="false" text="Pregunta" />
+                    <TableColumn fx:id="columnaRespuesta" prefWidth="400.0" text="Respuesta" />
                 </columns>
             </TableView>
         </AnchorPane>

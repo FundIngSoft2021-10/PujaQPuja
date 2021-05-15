@@ -4,18 +4,22 @@ import java.util.Objects;
 
 public class Mensaje {
     private long id;
+    private long idPuja;
     private long emisor;
     private long receptor;
     private String cuerpo;
+    private String respuesta;
 
     public Mensaje() {
     }
 
-    public Mensaje(long id, long emisor, long receptor, String cuerpo) {
+    public Mensaje(long id, long idPuja, long emisor, long receptor, String cuerpo, String respuesta) {
         this.id = id;
+        this.idPuja = idPuja;
         this.emisor = emisor;
         this.receptor = receptor;
         this.cuerpo = cuerpo;
+        this.respuesta = respuesta;
     }
 
     public long getId() {
@@ -24,6 +28,14 @@ public class Mensaje {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public long getIdPuja() {
+        return this.idPuja;
+    }
+
+    public void setIdPuja(long idPuja) {
+        this.idPuja = idPuja;
     }
 
     public long getEmisor() {
@@ -50,8 +62,21 @@ public class Mensaje {
         this.cuerpo = cuerpo;
     }
 
+    public String getRespuesta() {
+        return this.respuesta;
+    }
+
+    public void setRespuesta(String respuesta) {
+        this.respuesta = respuesta;
+    }
+
     public Mensaje id(long id) {
         setId(id);
+        return this;
+    }
+
+    public Mensaje idPuja(long idPuja) {
+        setId(idPuja);
         return this;
     }
 
@@ -67,6 +92,11 @@ public class Mensaje {
 
     public Mensaje cuerpo(String cuerpo) {
         setCuerpo(cuerpo);
+        return this;
+    }
+
+    public Mensaje respuesta(String respuesta) {
+        setCuerpo(respuesta);
         return this;
     }
 
@@ -90,5 +120,4 @@ public class Mensaje {
     public String toString() {
         return "{" + " id='" + getId() + "'" + ", emisor='" + getEmisor() + "'" + ", receptor='" + getReceptor() + "'" + ", cuerpo='" + getCuerpo() + "'" + "}";
     }
-
 }

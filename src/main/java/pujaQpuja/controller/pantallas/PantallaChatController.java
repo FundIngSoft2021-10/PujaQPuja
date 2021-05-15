@@ -106,20 +106,22 @@ public class PantallaChatController implements Initializable {
 
         textAreaMensaje.appendText(campoEscribirMensaje.getText()+"\n");
         campoEscribirMensaje.clear();
+        long idPuja= controladorGeneral.autenticacionController.getTemporalVisualizada().getId();
         long idVendedor=controladorGeneral.autenticacionController.getTemporalVisualizada().getVendedor().getId();
         long idComprador=controladorGeneral.autenticacionController.getAutenticado().getId();
         String mensaje = textAreaMensaje.getText();
-        controladorGeneral.mensajeController.crear(idVendedor,idComprador,mensaje);
+        controladorGeneral.mensajeController.crear(idPuja,idVendedor,idComprador,mensaje);
     }
     @FXML
     void enter(KeyEvent event) {
         if(event.getCode().toString().equals("ENTER")){
             textAreaMensaje.appendText(campoEscribirMensaje.getText()+"\n");
             campoEscribirMensaje.clear();
+            long idPuja= controladorGeneral.autenticacionController.getTemporalVisualizada().getId();
             long idVendedor=controladorGeneral.autenticacionController.getTemporalVisualizada().getVendedor().getId();
             long idComprador=controladorGeneral.autenticacionController.getAutenticado().getId();
             String mensaje = textAreaMensaje.getText();
-            controladorGeneral.mensajeController.crear(idVendedor,idComprador,mensaje);
+            controladorGeneral.mensajeController.crear(idPuja,idVendedor,idComprador,mensaje);
         }
 
     }

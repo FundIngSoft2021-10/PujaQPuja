@@ -2,12 +2,10 @@ package pujaQpuja.controller.modelos;
 
 import javafx.scene.image.ImageView;
 import pujaQpuja.model.entities.*;
-import pujaQpuja.model.entities.otros.TablaCatalogoTemporal;
+import pujaQpuja.model.entities.otros.TablaMensaje;
 import pujaQpuja.model.repository.MensajeRepository;
 
-import java.sql.Date;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 public class MensajeController {
@@ -19,23 +17,35 @@ public class MensajeController {
         mensajeRepository = new MensajeRepository();
     }
 
-    public void crear(long idVendedor,long idComprador, String pregunta) {
+    public void crear(long idPuja,long idVendedor,long idComprador, String pregunta) {
         Mensaje mensaje = new Mensaje();
+        mensaje.setIdPuja(idPuja);
         mensaje.setEmisor(idComprador);
         mensaje.setReceptor(idVendedor);
         mensaje.setCuerpo(pregunta);
         mensajeRepository.crear(mensaje);
     }
 
-    public List<Mensaje> getPreguntasRespuestas() {
-        return getPreguntasRespuestasByID();
+    public List<TablaMensaje> getPreguntasRespuestas(long id) {
+        return getPreguntasRespuestasByID(id);
     }
-    public List<Mensaje> getPreguntasRespuestasByID() {
-        List<Mensaje> datos = new ArrayList<>();
-
-        for (Mensaje actual : mensajeRepository.getPreguntasYRespuestas(controladorGeneral.autenticacionController.getAutenticado().getId())) {
-            datos.add(actual);
+    public List<TablaMensaje> getPreguntasRespuestasByID(long id) {
+        List<TablaMensaje> datos = new ArrayList<>();
+        for (Mensaje actual : mensajeRepository.getPreguntasYRespuestas(id)) {
+            TablaMensaje temp = new TablaMensaje();
+            temp.setMensaje(actual);
+            Puja puja = mensajeRepository.getPujaXMensaje(actual.getIdPuja());
+            temp.setPuja(puja);
+            if (puja.getProducto() != null) {
+                if (puja.getProducto().getFoto() != null) {
+                    temp.setImagen(new ImageView(puja.getProducto().getFoto()));
+                }
+            }
+            temp.setPregunta(actual.getCuerpo());
+            temp.setRespuesta(actual.getRespuesta());
+            datos.add(temp);
         }
+
         return datos;
     }
 }

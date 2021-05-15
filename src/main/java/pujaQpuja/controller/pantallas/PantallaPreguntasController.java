@@ -2,8 +2,6 @@ package pujaQpuja.controller.pantallas;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
-import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -13,11 +11,13 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import pujaQpuja.controller.modelos.ControladorGeneral;
 import pujaQpuja.model.entities.Mensaje;
-import pujaQpuja.model.entities.otros.TablaCatalogoTemporal;
+import pujaQpuja.model.entities.otros.TablaMensaje;
 import pujaQpuja.utilities.PantallasMenu;
 import javafx.fxml.Initializable;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class PantallaPreguntasController implements Initializable {
@@ -55,26 +55,30 @@ public class PantallaPreguntasController implements Initializable {
     private Rectangle botonRectanguloQA;
 
     @FXML
-    private TableView<Mensaje> tablaPreguntasRespuestas;
+    private TableView<TablaMensaje> tablaPreguntasRespuestas;
 
     @FXML
-    private TableColumn<Mensaje, String> columnaPregunta;
+    private TableColumn<TablaMensaje, ImageView> columnaFoto;
 
     @FXML
-    private TableColumn<Mensaje, String> columnaRespuesta;
+    private TableColumn<TablaMensaje, String> columnaPregunta;
+
+    @FXML
+    private TableColumn<TablaMensaje, String> columnaRespuesta;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         controladorGeneral = new ControladorGeneral();
-        columnaPregunta.setCellValueFactory(new PropertyValueFactory<Mensaje, String>("preg"));
-        columnaRespuesta.setCellValueFactory(new PropertyValueFactory<Mensaje, String>("resp"));
+        columnaFoto.setCellValueFactory(new PropertyValueFactory<TablaMensaje, ImageView>("imagen"));
+        columnaPregunta.setCellValueFactory(new PropertyValueFactory<TablaMensaje, String>("pregunta"));
+        columnaRespuesta.setCellValueFactory(new PropertyValueFactory<TablaMensaje, String>("respuesta"));
         obtenerQA();
     }
 
     private void obtenerQA() {
-        ObservableList<Mensaje> datos = FXCollections.observableArrayList();
-        datos.addAll(controladorGeneral.mensajeController.getPreguntasRespuestas());
-//        tablaPreguntasRespuestas.setItems(datos);
+        ObservableList<TablaMensaje> datos = FXCollections.observableArrayList();
+        datos.addAll(controladorGeneral.mensajeController.getPreguntasRespuestas(controladorGeneral.autenticacionController.getAutenticado().getId()));
+        tablaPreguntasRespuestas.setItems(datos);
     }
 
     @FXML
