@@ -33,6 +33,7 @@ public class PujaController {
         puja.setFecha(new Date(Calendar.getInstance().getTime().getTime()));
         puja.setPrecioFinal(producto.getPrecioInicial());
         long idUsuario = autenticacionController.getAutenticado().getId();
+        puja.setVendedor(autenticacionController.getAutenticado());
         pujaRepository.crear(puja, idUsuario, producto.getId());
     }
 

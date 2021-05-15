@@ -4,14 +4,14 @@ import java.util.Objects;
 
 public class Mensaje {
     private long id;
-    private Usuario emisor;
-    private Usuario receptor;
+    private long emisor;
+    private long receptor;
     private String cuerpo;
 
     public Mensaje() {
     }
 
-    public Mensaje(long id, Usuario emisor, Usuario receptor, String cuerpo) {
+    public Mensaje(long id, long emisor, long receptor, String cuerpo) {
         this.id = id;
         this.emisor = emisor;
         this.receptor = receptor;
@@ -26,19 +26,19 @@ public class Mensaje {
         this.id = id;
     }
 
-    public Usuario getEmisor() {
+    public long getEmisor() {
         return this.emisor;
     }
 
-    public void setEmisor(Usuario emisor) {
+    public void setEmisor(long emisor) {
         this.emisor = emisor;
     }
 
-    public Usuario getReceptor() {
+    public long getReceptor() {
         return this.receptor;
     }
 
-    public void setReceptor(Usuario receptor) {
+    public void setReceptor(long receptor) {
         this.receptor = receptor;
     }
 
@@ -55,12 +55,12 @@ public class Mensaje {
         return this;
     }
 
-    public Mensaje emisor(Usuario emisor) {
+    public Mensaje emisor(long emisor) {
         setEmisor(emisor);
         return this;
     }
 
-    public Mensaje receptor(Usuario receptor) {
+    public Mensaje receptor(long receptor) {
         setReceptor(receptor);
         return this;
     }

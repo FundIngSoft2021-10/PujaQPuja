@@ -1,5 +1,6 @@
 package pujaQpuja.controller.modelos;
 
+import pujaQpuja.model.entities.Mensaje;
 import pujaQpuja.model.repository.ChatRepository;
 
 public class ChatController {

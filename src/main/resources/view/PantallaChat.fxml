@@ -131,8 +131,11 @@
     </left>
     <center>
         <AnchorPane prefHeight="543.0" prefWidth="335.0" BorderPane.alignment="CENTER">
-            <TextArea layoutX="39.0" layoutY="70.0" opacity="0.5" prefHeight="506.0" prefWidth="934.0" />
-            <TextField fx:id="campoEscribirMensaje" layoutX="54.0" layoutY="592.0" prefHeight="37.0" prefWidth="842.0" style="-fx-background-color: #CCECFE;" text="Escribe tu mensaje">
+            <TextArea fx:id="textAreaMensaje" editable="false" layoutX="39.0" layoutY="70.0" prefHeight="506.0" prefWidth="934.0">
+            <font>
+               <Font name="SansSerif Bold" size="20.0" />
+            </font></TextArea>
+            <TextField fx:id="campoEscribirMensaje" layoutX="54.0" layoutY="592.0" onKeyPressed="#enter" prefHeight="37.0" prefWidth="842.0" promptText="Escribe tu mensaje" style="-fx-background-color: #CCECFE;">
                 <font>
                     <Font name="SansSerif Regular" size="20.0" />
                 </font>
@@ -147,7 +150,7 @@
                     <Image url="@../images/logo_vertical.png" />
                 </image>
             </ImageView>
-            <Text fx:id="textoTituloTipoChat" layoutX="219.0" layoutY="44.0" style="-fx-background-color: #CCECFE;" text="NOMBRE CHAT SEGÚN USO (SOPORTE, RESPUESTA, ETC)" textAlignment="CENTER">
+            <Text fx:id="textoTituloTipoChat" layoutX="437.0" layoutY="36.0" style="-fx-background-color: #CCECFE;" text="HAZ TU PREGUNTA!" textAlignment="CENTER">
                 <font>
                     <Font name="SansSerif Regular" size="20.0" />
                 </font>

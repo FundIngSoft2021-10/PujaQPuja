@@ -82,4 +82,8 @@ public class PantallasMenu {
     public static void abririMetodoPago(MouseEvent event) {
         abrirPantalla(event, "PantallaMetodoPago");
     }
+
+    public static void abrirChat(ActionEvent event) {
+        abrirPantalla(event, "PantallaChat");
+    }
 }

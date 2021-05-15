@@ -127,6 +127,7 @@ public class DetallesVentaController implements Initializable {
 
     @FXML
     private void abrirTableroDePreguntas(ActionEvent event) {
+        PantallasMenu.abrirPantalla(event,"PantallaPreguntas");
     }
 
     @FXML

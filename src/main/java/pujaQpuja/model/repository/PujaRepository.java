@@ -85,6 +85,7 @@ public class PujaRepository extends DB {
                 temp.setPrecioFinal(rs.getDouble("precioFinal"));
                 temp.setFecha(rs.getDate("fecha"));
                 temp.setProducto(productoController.buscarPorId(rs.getLong("idProducto")));
+                temp.setVendedor(usuarioController.buscarPorId(rs.getLong("idHistorialVentas")));
 
                 return temp;
             }
@@ -136,6 +137,7 @@ public class PujaRepository extends DB {
                 temp.setPrecioFinal(rs.getDouble("precioFinal"));
                 temp.setFecha(rs.getDate("fecha"));
                 temp.setProducto(productoController.buscarPorId(rs.getLong("idProducto")));
+                temp.setVendedor(usuarioController.buscarPorId(rs.getLong("idHistorialVentas")));
 
                 respuesta.add(temp);
             }

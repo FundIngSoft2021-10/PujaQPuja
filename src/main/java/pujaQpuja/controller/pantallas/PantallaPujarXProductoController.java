@@ -113,6 +113,7 @@ public class PantallaPujarXProductoController implements Initializable {
 
     @FXML
     void abrirRealizarPregunta(ActionEvent event) {
+        PantallasMenu.abrirChat(event);
     }
 
     @FXML
