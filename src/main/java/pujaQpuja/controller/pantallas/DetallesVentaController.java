@@ -127,7 +127,10 @@ public class DetallesVentaController implements Initializable {
 
     @FXML
     private void abrirTableroDePreguntas(ActionEvent event) {
-        PantallasMenu.abrirPantalla(event,"PantallaPreguntas");
+        PantallasMenu.abrirPreguntasPuja(event);
+        long idPuja=controladorGeneral.autenticacionController.getTemporalVisualizada().getId();
+        long idVendedor=controladorGeneral.autenticacionController.getAutenticado().getId();
+
     }
 
     @FXML

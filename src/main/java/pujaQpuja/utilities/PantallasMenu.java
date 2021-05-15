@@ -86,4 +86,8 @@ public class PantallasMenu {
     public static void abrirChat(ActionEvent event) {
         abrirPantalla(event, "PantallaChat");
     }
+
+    public static void abrirPreguntasPuja(ActionEvent event) {
+        abrirPantalla(event, "PreguntasPuja");
+    }
 }
