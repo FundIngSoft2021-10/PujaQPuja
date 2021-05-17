@@ -12,6 +12,7 @@ public class MensajeController {
 
     private MensajeRepository mensajeRepository;
     private ControladorGeneral controladorGeneral;
+    private Mensaje seleccionada;
 
     public MensajeController() {
         mensajeRepository = new MensajeRepository();
@@ -41,6 +42,29 @@ public class MensajeController {
                     temp.setImagen(new ImageView(puja.getProducto().getFoto()));
                 }
             }
+            temp.setPregunta(actual.getCuerpo());
+            temp.setRespuesta(actual.getRespuesta());
+            datos.add(temp);
+        }
+
+        return datos;
+    }
+
+    public void respuesta(long idPuja, String respuesta) {
+        mensajeRepository.respuesta(respuesta,idPuja);
+    }
+
+    public Mensaje mensajeVisualizado(Mensaje temp) {
+        System.out.println(temp.getId());
+        seleccionada = this.mensajeRepository.buscarPorId(temp.getId());
+        return seleccionada;
+    }
+
+    public List<TablaMensaje> getPreguntas(long id) {
+        List<TablaMensaje> datos = new ArrayList<>();
+        for (Mensaje actual : mensajeRepository.getPreguntasIdPuja(id)) {
+            TablaMensaje temp = new TablaMensaje();
+            temp.setMensaje(actual);
             temp.setPregunta(actual.getCuerpo());
             temp.setRespuesta(actual.getRespuesta());
             datos.add(temp);

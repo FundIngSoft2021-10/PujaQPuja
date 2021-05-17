@@ -1,9 +1,6 @@
 package pujaQpuja.model.repository;
 
-import pujaQpuja.model.entities.Categoria;
-import pujaQpuja.model.entities.EstadoPuja;
-import pujaQpuja.model.entities.Mensaje;
-import pujaQpuja.model.entities.Puja;
+import pujaQpuja.model.entities.*;
 import pujaQpuja.controller.modelos.UsuarioController;
 import pujaQpuja.controller.modelos.ProductoController;
 
@@ -138,6 +135,123 @@ public class MensajeRepository extends DB {
             System.err.println(e);
             return temp;
 
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+    }
+
+    public boolean respuesta(String respuesta, long id) {
+
+        Connection con = getConexion();
+        PreparedStatement ps;
+
+        String sql = "";
+        sql += "UPDATE Mensaje ";
+        sql += "SET respuesta = ? ";
+        sql += "WHERE id = ?";
+
+        try {
+            ps = con.prepareStatement(sql);
+
+            ps.setString(1, respuesta);
+            ps.setLong(2, id);
+
+            return !ps.execute();
+        } catch (SQLException e) {
+            System.err.println(e);
+            return false;
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+    }
+
+    public Mensaje buscarPorId(long id) {
+
+        Connection con = getConexion();
+        PreparedStatement ps;
+        ResultSet rs;
+
+        Mensaje temp = new Mensaje();
+
+        String sql = "";
+        sql += "SELECT * FROM Mensaje ";
+        sql += "WHERE id = ?";
+
+        try {
+            ps = con.prepareStatement(sql);
+
+            ps.setLong(1, id);
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                temp.setId(rs.getLong("id"));
+                temp.setIdPuja(rs.getLong("idPuja"));
+                temp.setEmisor(rs.getLong("idEmisor"));
+                temp.setReceptor(rs.getLong("idReceptor"));
+                temp.setCuerpo(rs.getString("cuerpo"));
+                temp.setRespuesta(rs.getString("respuesta"));
+
+                return temp;
+            }
+            return temp;
+
+        } catch (SQLException e) {
+            System.err.println(e);
+            return temp;
+
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+    }
+
+    public List<Mensaje> getPreguntasIdPuja(long id) {
+
+        Connection con = getConexion();
+        PreparedStatement ps;
+        ResultSet rs;
+
+        List<Mensaje> respuesta = new ArrayList<>();
+
+        String sql = "";
+        sql += "SELECT * ";
+        sql += "FROM Mensaje ";
+        sql += "WHERE idPuja = ? ";
+
+        try {
+            ps = con.prepareStatement(sql);
+
+            ps.setLong(1, id);
+
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Mensaje temp = new Mensaje();
+
+                temp.setId(rs.getLong("id"));
+                temp.setIdPuja(rs.getLong("idPuja"));
+                temp.setCuerpo(rs.getString("cuerpo"));
+                temp.setRespuesta(rs.getString("respuesta"));
+                temp.setEmisor(rs.getLong("idEmisor"));
+                temp.setReceptor(rs.getLong("idReceptor"));
+
+                respuesta.add(temp);
+            }
+            return respuesta;
+        } catch (SQLException e) {
+            System.err.println(e);
+            return respuesta;
         } finally {
             try {
                 desconectar();
