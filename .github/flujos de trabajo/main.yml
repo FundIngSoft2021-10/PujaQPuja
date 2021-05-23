@@ -5,9 +5,9 @@ name: Java Maven Notificación automatizada
 on:
   # Nuestra rama principal es develop y la de producción es master
   push:
-    branches: [ develop, master ]
+    branches: [ develop ]
   pull_request:
-    branches: [ develop, master ]
+    branches: [ develop ]
 
 jobs:
   build:
