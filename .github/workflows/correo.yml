@@ -33,7 +33,7 @@ jobs:
           DISCORD_USERNAME: WISEMAN
         uses: Ilshidur/action-discord@master
         with: 
-          args: "Fallo despliegue ${{ github.event_name }} \nRepositorio: ${{ github.repository }} \nRama: ${{ github.base_ref }}"
+          args: "Fallo despliegue ${{ github.event_name }} \nRepositorio: ${{ github.repository }} \nRama: ${{ github.ref }}"
       - name: Discord notification
         if: failure()
         env:
