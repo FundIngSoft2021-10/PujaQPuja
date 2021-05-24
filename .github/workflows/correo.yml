@@ -26,23 +26,16 @@ jobs:
           distribution: 'adopt'
       - name: Build Maven
         run: mvn -B package --file pom.xml
-      - name: Notificar fallos al correo
+      - name: Discord notification
         if: failure()
-        uses: dawidd6/action-send-mail@v3
-        with:
-          # Required mail server address:
-          server_address: smtp.gmail.com
-          server_port: 465
-          # Required mail server username:
-          username: ${{secrets.lomitofrito.lomcrafteo@gmail.com}}
-          password: ${{secrets.TeQueremos}}
-          # Required mail subject:
-          subject: Fallo despliegue ${{ github.event_name }} en ${{github.repository}}
-          # Required recipients' addresses:
-          to: kennethleo1@hotmail.com, ortizrubio09@gmail.com
-          # Required sender full name (address can be skipped):
-          from: Wiseman # <user@example.com>
-          # Optional whether this connection use TLS (default is true if server_port is 465)
-          secure: true
-          # Optional plain body:
-          body: Build de puja que puja en el repositorio ${{github.repository}} fallo!
+        env:
+          DISCORD_WEBHOOK: https://discord.com/api/webhooks/846528076346294322/mHgqCDEwT26vmUefhztEKNaYtJG18BRjm3qURkukMesdk9o03PnK8IqDWWninlPOlJt4
+          DISCORD_USERNAME: WISEMAN
+        uses: Ilshidur/action-discord@master
+        with: 
+          args: "Fallo despliegue ${{ github.event_name }} en el repositorio: ${{ github.repository }} \n rama: ${{ github.head_ref }}"
+      - name: Discord notification
+        if: failure()
+        env:
+          DISCORD_WEBHOOK: https://discord.com/api/webhooks/846528076346294322/mHgqCDEwT26vmUefhztEKNaYtJG18BRjm3qURkukMesdk9o03PnK8IqDWWninlPOlJt4
+        uses: Ilshidur/action-discord@master
