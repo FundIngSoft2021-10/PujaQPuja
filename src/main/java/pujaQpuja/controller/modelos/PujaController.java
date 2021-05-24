@@ -1,6 +1,7 @@
 package pujaQpuja.controller.modelos;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -155,5 +156,9 @@ public class PujaController {
             datos.add(temp);
         }
         return datos;
+    }
+
+    public boolean chequeoTiempoPujas(LocalDateTime tiempoAhora) {
+        return pujaRepository.actualizarTiempoPuja(tiempoAhora);
     }
 }

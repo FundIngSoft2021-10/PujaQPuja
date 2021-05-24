@@ -4,8 +4,12 @@ import pujaQpuja.controller.modelos.UsuarioController;
 import pujaQpuja.controller.modelos.ProductoController;
 import pujaQpuja.model.entities.*;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.sql.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -474,5 +478,34 @@ public class PujaRepository extends DB {
                 System.err.println(e);
             }
         }
+    }
+
+    public boolean actualizarTiempoPuja(LocalDateTime tiempoAhora) {
+        Connection con = getConexion();
+        PreparedStatement ps;
+
+
+        String sql = "";
+        sql += "UPDATE Puja ";
+        sql += "SET estado = 'INACTIVO' ";
+        sql += "WHERE FechaFinal < ? ";
+
+        try {
+            ps = con.prepareStatement(sql);
+            ps.setString(1, tiempoAhora.toString());
+
+            return !ps.execute();
+
+        } catch (SQLException e) {
+            System.err.println(e);
+            return false;
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+
     }
 }
