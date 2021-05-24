@@ -13,10 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -70,6 +67,8 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
     private Rectangle botonOrdenar;
     @FXML
     private Rectangle botonRectanguloQA;
+    @FXML
+    private Button botonSubastaPopular;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -191,6 +190,25 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
             window.show();
         }
 
+    }
+
+    @FXML
+    void filtrarXPopularidad(ActionEvent event) {
+        ObservableList<TablaCatalogoTemporal> datos = FXCollections.observableArrayList();
+        datos.addAll(controladorGeneral.pujaController.getPujasMasPopulares(desplegableFiltros.getSelectionModel().getSelectedItem()));
+        tablaCatalogo.setItems(datos);
+
+        FilteredList<TablaCatalogoTemporal> filteredData = new FilteredList<>(datos, b -> true);
+        campoBusqueda.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(TablaCatalogoTemporal -> {
+                if (newValue == null || newValue.isEmpty())
+                    return true;
+                return TablaCatalogoTemporal.getDesc().toLowerCase().indexOf(newValue.toLowerCase()) != -1 ? true : false;
+            });
+        });
+        SortedList<TablaCatalogoTemporal> sortedData = new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(tablaCatalogo.comparatorProperty());
+        tablaCatalogo.setItems(sortedData);
     }
 
 }

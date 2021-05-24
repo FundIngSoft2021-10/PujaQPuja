@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bab415b7-8294-4919-b0ff-d59ce9d66de9" name="Default Changelist" comment="Arreglo pantallas hasta pantalla PujarXProducto">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaRespuestaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaRespuesta.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/modelos/AutenticacionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/modelos/AutenticacionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/modelos/MensajeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/modelos/MensajeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/DetallesVentaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/DetallesVentaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PreguntasPujaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PreguntasPujaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/model/repository/MensajeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/model/repository/MensajeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/PreguntasPuja.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PreguntasPuja.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagen_obtenida_DB.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imagen_obtenida_DB.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/modelos/PujaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/modelos/PujaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaSeleccionarCategoriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaSeleccionarCategoriaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/model/repository/PujaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/model/repository/PujaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/PantallaSeleccionarCategoria.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaSeleccionarCategoria.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
