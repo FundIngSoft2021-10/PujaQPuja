@@ -117,27 +117,38 @@
             <ImageView fitHeight="133.0" fitWidth="240.0" layoutX="22.0" layoutY="-83.0" pickOnBounds="true" preserveRatio="true">
                 <Image url="@../images/logo_vertical.png" />
             </ImageView>
+         <ImageView disable="true" fitHeight="44.0" fitWidth="37.0" layoutX="14.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../images/chat.png" />
+            </image>
+         </ImageView>
+         <Label layoutX="66.0" layoutY="110.0" prefHeight="33.0" prefWidth="68.0" text="Q&amp;A">
+            <font>
+               <Font name="Berlin Sans FB" size="24.0" />
+            </font>
+         </Label>
+         <Rectangle fx:id="botonRectanguloQA" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="55.0" layoutX="5.0" layoutY="96.0" onMouseClicked="#abrirQA" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="269.0" />
         </AnchorPane>
     </left>
     <center>
         <AnchorPane prefHeight="480.0" BorderPane.alignment="CENTER">
             <ImageView id="imagenDetalles" fx:id="imagenProducto" fitHeight="360.0" fitWidth="404.0" layoutX="24.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
-            <TextField id="nomDetalles" fx:id="campoNombreProducto" layoutX="482.0" layoutY="40.0" promptText="Nombre Producto" style="-fx-background-color: #CCECFE;">
+            <TextField id="nomDetalles" fx:id="campoNombreProducto" editable="false" layoutX="482.0" layoutY="40.0" promptText="Nombre Producto" style="-fx-background-color: #CCECFE;">
                 <font>
                     <Font name="SansSerif Regular" size="20.0" />
                 </font>
             </TextField>
-            <TextField id="precioDetalles" fx:id="campoPrecio" layoutX="482.0" layoutY="104.0" promptText="Precio" style="-fx-background-color: #CCECFE;">
+            <TextField id="precioDetalles" fx:id="campoPrecio" editable="false" layoutX="482.0" layoutY="104.0" promptText="Precio" style="-fx-background-color: #CCECFE;">
                 <font>
                     <Font name="SansSerif Regular" size="20.0" />
                 </font>
             </TextField>
-            <TextField id="descripcionDetalles" fx:id="campoDescripcion" layoutX="482.0" layoutY="169.0" prefHeight="208.0" prefWidth="430.0" promptText="Descripción" style="-fx-background-color: #CCECFE;">
+            <TextField id="descripcionDetalles" fx:id="campoDescripcion" editable="false" layoutX="482.0" layoutY="169.0" prefHeight="208.0" prefWidth="430.0" promptText="Descripción" style="-fx-background-color: #CCECFE;">
                 <font>
                     <Font name="SansSerif Regular" size="20.0" />
                 </font>
             </TextField>
-            <TextField id="nombreCompradorDetalles" fx:id="campoNombreComprador" layoutX="524.0" layoutY="415.0" promptText="Nombre Comprador" style="-fx-background-color: #CCECFE;">
+            <TextField id="nombreCompradorDetalles" fx:id="campoNombreComprador" editable="false" layoutX="524.0" layoutY="415.0" promptText="Nombre Comprador" style="-fx-background-color: #CCECFE;">
                 <font>
                     <Font name="SansSerif Regular" size="20.0" />
                 </font>

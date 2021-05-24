@@ -46,10 +46,17 @@ public class InformacionController implements Initializable {
     private TextField campoPrecioInicial;
     @FXML
     private TextField campoPrecioActual;
+    @FXML
+    private Rectangle botonRectanguloQA;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         controladorGeneral = new ControladorGeneral();
+    }
+
+    @FXML
+    void abrirQA(MouseEvent event) {
+        PantallasMenu.abrirQA(event);
     }
 
     @FXML

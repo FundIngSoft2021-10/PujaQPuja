@@ -57,10 +57,24 @@ public class EditarPerfilController implements Initializable {
     private Button botonGuardar;
     @FXML
     private Button botonCancelar;
+    @FXML
+    private Rectangle botonRectanguloQA;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
         controladorGeneral = new ControladorGeneral();
+        campoCorreo.setText(controladorGeneral.autenticacionController.getAutenticado().getCorreo());
+        campoNombres.setText(controladorGeneral.autenticacionController.getAutenticado().getNombres());
+        campoApellidos.setText(controladorGeneral.autenticacionController.getAutenticado().getApellidos());
+        campoTelefono.setText(controladorGeneral.autenticacionController.getAutenticado().getTelefono());
+        campoDocumento.setText(controladorGeneral.autenticacionController.getAutenticado().getDocumento());
+        campoDireccion.setText(controladorGeneral.autenticacionController.getAutenticado().getDireccion());
+    }
+
+    @FXML
+    void abrirQA(MouseEvent event) {
+        PantallasMenu.abrirQA(event);
     }
 
     @FXML

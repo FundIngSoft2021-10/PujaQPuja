@@ -14,11 +14,12 @@ public class Puja {
     private Usuario vendedor;
     private Usuario comprador;
     private EstadoPuja estado;
+    private Mensaje mensaje;
 
     public Puja() {
     }
 
-    public Puja(long id, double precioFinal, Date fecha, List<CompradorXpuja> listaCompradores, Producto producto, Usuario vendedor, Usuario comprador, EstadoPuja estado) {
+    public Puja(long id, double precioFinal, Date fecha, List<CompradorXpuja> listaCompradores, Producto producto, Usuario vendedor, Usuario comprador, EstadoPuja estado, Mensaje mensaje) {
         this.id = id;
         this.precioFinal = precioFinal;
         this.fecha = fecha;
@@ -27,6 +28,7 @@ public class Puja {
         this.vendedor = vendedor;
         this.comprador = comprador;
         this.estado = estado;
+        this.mensaje = mensaje;
     }
 
     public long getId() {
@@ -154,4 +156,11 @@ public class Puja {
         return "{" + " id='" + getId() + "'" + ", precioFinal='" + getPrecioFinal() + "'" + ", fecha='" + getFecha() + "'" + ", listaCompradores='" + getListaCompradores() + "'" + ", producto='" + getProducto() + "'" + ", vendedor='" + getVendedor() + "'" + ", comprador='" + getComprador() + "'" + ", estado='" + getEstado() + "'" + "}";
     }
 
+    public Mensaje getMensaje() {
+        return this.mensaje;
+    }
+
+    public void setMensaje(Mensaje mensaje) {
+        this.mensaje = mensaje;
+    }
 }

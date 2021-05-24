@@ -47,10 +47,17 @@ public class PantallaCalificarProductoController implements Initializable {
     private Button botonAceptar;
     @FXML
     private TextField campoOpinionProducto;
+    @FXML
+    private Rectangle botonRectanguloQA;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         controladorGeneral = new ControladorGeneral();
+    }
+
+    @FXML
+    void abrirQA(MouseEvent event) {
+        PantallasMenu.abrirQA(event);
     }
 
     @FXML
@@ -100,7 +107,7 @@ public class PantallaCalificarProductoController implements Initializable {
     @FXML
     private void accionAceptar(ActionEvent event) throws IOException {
         if (botonRadioBuena.isSelected() || botonRadioRegular.isSelected() || botonRadioMala.isSelected()) {
-            PantallasMenu.abrirPantalla(event, "PantallaExitoCalificar");
+            PantallasMenu.abrirVentana("PantallaExitoCalificar");
         } else {
             PantallasMenu.abrirVentana("PantallaErrorCalificar");
         }

@@ -19,6 +19,10 @@ public class UsuarioController {
         return usuarioRepository.buscarPorCorreo(usuario);
     }
 
+    public Usuario buscarPorId(long usuario) {
+        return usuarioRepository.buscarPorIdUsuario(usuario);
+    }
+
     public boolean modificar(Usuario usuario) {
         return usuarioRepository.modificar(usuario);
     }

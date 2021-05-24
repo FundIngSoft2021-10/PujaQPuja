@@ -10,21 +10,19 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PujaRepository {
+public class PujaRepository extends DB {
 
     private UsuarioController usuarioController;
     private ProductoController productoController;
-    private DB db;
 
     public PujaRepository() {
         usuarioController = new UsuarioController();
         productoController = new ProductoController();
-        db = DB.getInstance();
     }
 
     public boolean crear(Puja puja, Long usuarioId, Long productoId) {
 
-        Connection con = db.getConexion();
+        Connection con = getConexion();
         PreparedStatement ps;
         ResultSet rs;
 
@@ -54,12 +52,18 @@ public class PujaRepository {
         } catch (SQLException e) {
             System.err.println(e);
             return false;
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
         }
     }
 
     public Puja buscarPujaPorId(long id) {
 
-        Connection con = db.getConexion();
+        Connection con = getConexion();
         PreparedStatement ps;
         ResultSet rs;
 
@@ -81,6 +85,7 @@ public class PujaRepository {
                 temp.setPrecioFinal(rs.getDouble("precioFinal"));
                 temp.setFecha(rs.getDate("fecha"));
                 temp.setProducto(productoController.buscarPorId(rs.getLong("idProducto")));
+                temp.setVendedor(usuarioController.buscarPorId(rs.getLong("idHistorialVentas")));
 
                 return temp;
             }
@@ -90,12 +95,18 @@ public class PujaRepository {
             System.err.println(e);
             return temp;
 
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
         }
     }
 
     public List<Puja> getPujasActivasByEstadoPujaYCategoriaProducto(EstadoPuja estado, Categoria categoria) {
 
-        Connection con = db.getConexion();
+        Connection con = getConexion();
         PreparedStatement ps;
         ResultSet rs;
 
@@ -126,6 +137,7 @@ public class PujaRepository {
                 temp.setPrecioFinal(rs.getDouble("precioFinal"));
                 temp.setFecha(rs.getDate("fecha"));
                 temp.setProducto(productoController.buscarPorId(rs.getLong("idProducto")));
+                temp.setVendedor(usuarioController.buscarPorId(rs.getLong("idHistorialVentas")));
 
                 respuesta.add(temp);
             }
@@ -133,12 +145,67 @@ public class PujaRepository {
         } catch (SQLException e) {
             System.err.println(e);
             return respuesta;
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+    }
+
+    public List<Puja> getPujasPropiasDB(Categoria categoria, long id) {
+
+        Connection con = getConexion();
+        PreparedStatement ps;
+        ResultSet rs;
+
+        List<Puja> respuesta = new ArrayList<>();
+
+        String sql = "";
+        sql += "SELECT p.* ";
+        sql += "FROM Puja p, Producto pr ";
+        sql += "WHERE p.idProducto = pr.id ";
+        sql += "AND p.idHistorialVentas = ? ";
+        if (categoria != null)
+            sql += "AND pr.categoria = ?";
+
+        try {
+            ps = con.prepareStatement(sql);
+
+            ps.setString(1, String.valueOf(id));
+            if (categoria != null)
+                ps.setString(2, String.valueOf(categoria));
+
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Puja temp = new Puja();
+
+                temp.setId(rs.getLong("id"));
+                temp.setEstado(EstadoPuja.valueOf(rs.getString("estado")));
+                temp.setPrecioFinal(rs.getDouble("precioFinal"));
+                temp.setFecha(rs.getDate("fecha"));
+                temp.setProducto(productoController.buscarPorId(rs.getLong("idProducto")));
+
+                respuesta.add(temp);
+            }
+            return respuesta;
+        } catch (SQLException e) {
+            System.err.println(e);
+            return respuesta;
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
         }
     }
 
     public int getNumeroPujantesPorPujaId(Long id) {
 
-        Connection con = db.getConexion();
+        Connection con = getConexion();
         PreparedStatement ps;
         ResultSet rs;
 
@@ -163,12 +230,64 @@ public class PujaRepository {
         } catch (SQLException e) {
             System.err.println(e);
             return temp;
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+    }
+
+    public List<Puja> getPujasGanadasDB(Categoria categoria, long id){
+        Connection con = getConexion();
+        PreparedStatement ps;
+        ResultSet rs;
+
+        List<Puja> respuesta = new ArrayList<>();
+
+        String sql = "";
+        sql += "SELECT p.* ";
+        sql += "FROM Puja p ";
+        sql += "WHERE p.idHistorialCompras = ? ";
+        sql += "AND p.estado = 'INACTIVO' ";
+
+        try {
+            ps = con.prepareStatement(sql);
+
+            ps.setString(1, String.valueOf(id));
+            if (categoria != null)
+                ps.setString(2, String.valueOf(categoria));
+
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Puja temp = new Puja();
+
+                temp.setId(rs.getLong("id"));
+                temp.setEstado(EstadoPuja.valueOf(rs.getString("estado")));
+                temp.setPrecioFinal(rs.getDouble("precioFinal"));
+                temp.setFecha(rs.getDate("fecha"));
+                temp.setProducto(productoController.buscarPorId(rs.getLong("idProducto")));
+
+                respuesta.add(temp);
+            }
+            return respuesta;
+        } catch (SQLException e) {
+            System.err.println(e);
+            return respuesta;
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
         }
     }
 
     public boolean agregarPujante(Long idPuja, Long idComprador, Double precioPujado) {
 
-        Connection con = db.getConexion();
+        Connection con = getConexion();
         PreparedStatement ps;
 
         String sql = "";
@@ -188,12 +307,18 @@ public class PujaRepository {
             System.err.println(e);
             return false;
 
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
         }
     }
 
     public boolean actualizarPrecio(Double nuevoprecio, long idPuja) {
 
-        Connection con = db.getConexion();
+        Connection con = getConexion();
         PreparedStatement ps;
 
         String sql = "";
@@ -206,66 +331,83 @@ public class PujaRepository {
             ps.setDouble(1, nuevoprecio);
             ps.setLong(2, idPuja);
 
-            return ps.execute();
+            return !ps.execute();
         } catch (SQLException e) {
             System.err.println(e);
             return false;
 
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
         }
     }
 
-    public boolean reanudarPujaPorPuja(Puja puja) {
+    public boolean reanudarPujaPorPuja(long idPuja) {
 
-        Connection con = db.getConexion();
+        Connection con = getConexion();
         PreparedStatement ps;
         ResultSet rs;
 
         String sql = "";
-        sql += "UPDATE puja";
-        sql += "SET estado = 'ACTIVO'";
-        sql += "WHERE id = ?";
+        sql += "UPDATE Puja ";
+        sql += "SET estado = 'ACTIVO' ";
+        sql += "WHERE id = ? ";
 
         try {
             ps = con.prepareStatement(sql);
 
-            ps.setLong(1, puja.getId());
+            ps.setLong(1, idPuja);
 
-            return ps.execute();
+            return !ps.execute();
 
         } catch (SQLException e) {
             System.err.println(e);
             return false;
 
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
         }
     }
 
-    public boolean PausarPujaPorPuja(Puja puja) {
-        Connection con = db.getConexion();
+    public boolean pausarPuja(long idPuja) {
+        Connection con = getConexion();
         PreparedStatement ps;
         ResultSet rs;
 
         String sql = "";
-        sql += "UPDATE puja";
-        sql += "SET estado = 'PAUSADO'";
+        sql += "UPDATE Puja ";
+        sql += "SET estado = 'PAUSADO' ";
         sql += "WHERE id = ?";
 
         try {
             ps = con.prepareStatement(sql);
+            ps.setLong(1, idPuja);
 
-            ps.setLong(1, puja.getId());
-
-            return ps.execute();
+            return !ps.execute();
 
         } catch (SQLException e) {
             System.err.println(e);
             return false;
 
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
         }
     }
 
     public boolean eliminarPujaPorId(long id) {
 
-        Connection con = db.getConexion();
+        Connection con = getConexion();
         PreparedStatement ps;
         ResultSet rs;
 
@@ -284,6 +426,12 @@ public class PujaRepository {
             System.err.println(e);
             return false;
 
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
         }
     }
 

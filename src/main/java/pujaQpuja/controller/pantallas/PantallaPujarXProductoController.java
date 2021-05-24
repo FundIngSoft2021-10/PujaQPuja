@@ -63,6 +63,8 @@ public class PantallaPujarXProductoController implements Initializable {
     private Button botonRealizarPregunta;
     @FXML
     private Text textoNombreProducto;
+    @FXML
+    private Rectangle botonRectanguloQA;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -105,7 +107,13 @@ public class PantallaPujarXProductoController implements Initializable {
     }
 
     @FXML
+    void abrirQA(MouseEvent event) {
+        PantallasMenu.abrirQA(event);
+    }
+
+    @FXML
     void abrirRealizarPregunta(ActionEvent event) {
+        PantallasMenu.abrirChat(event);
     }
 
     @FXML

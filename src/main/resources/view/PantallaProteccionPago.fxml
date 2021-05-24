@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="315.0" prefWidth="361.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaProteccionPagoController">
+    <center>
+        <AnchorPane prefHeight="277.0" prefWidth="344.0" BorderPane.alignment="CENTER">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d4d4" height="219.0" layoutX="18.0" layoutY="23.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="334.0" />
+            <Label alignment="CENTER" layoutX="20.0" layoutY="25.0" prefHeight="208.0" prefWidth="326.0" text="Nuestra plataforma utiliza puja pago, por lo que el pago sera retenido hasta que usted el comprador reciba el producto y no tenga ningun inconveniente. ¿Esta de acuerdo?" textAlignment="CENTER" wrapText="true">
+                <font>
+                    <Font size="20.0" />
+                </font>
+            </Label>
+            <ImageView fitHeight="36.0" fitWidth="37.0" layoutX="300.0" layoutY="197.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../images/informacion.png" />
+            </ImageView>
+            <Button fx:id="botonSi" layoutX="70.0" layoutY="254.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#accionSi" prefHeight="36.0" prefWidth="100.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Si" textAlignment="CENTER">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+                <opaqueInsets>
+                    <Insets />
+                </opaqueInsets>
+            </Button>
+            <Button fx:id="botonNo" layoutX="200.0" layoutY="254.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#accionNo" prefHeight="36.0" prefWidth="100.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="No" textAlignment="CENTER">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+                <opaqueInsets>
+                    <Insets />
+                </opaqueInsets>
+            </Button>
+        </AnchorPane>
+    </center>
+</BorderPane>
