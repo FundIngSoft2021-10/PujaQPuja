@@ -63,6 +63,8 @@ public class PantallaRealizarSubastaController implements Initializable {
     private Button botonAdjuntarFoto;
     @FXML
     private Button botonPublicar;
+    @FXML
+    private Rectangle botonRectanguloQA;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -70,6 +72,11 @@ public class PantallaRealizarSubastaController implements Initializable {
 
         desplegableCategoria.getItems().setAll(Categoria.values());
         rutaImagen = "";
+    }
+
+    @FXML
+    void abrirQA(MouseEvent event) {
+        PantallasMenu.abrirQA(event);
     }
 
     @FXML

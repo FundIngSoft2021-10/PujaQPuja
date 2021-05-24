@@ -2,11 +2,15 @@ package pujaQpuja.model.repository;
 
 import java.sql.*;
 
+import pujaQpuja.controller.modelos.AutenticacionController;
 import pujaQpuja.model.entities.Usuario;
 
 public class UsuarioRepository extends DB {
 
+    private SQLException e;
+
     public UsuarioRepository() {
+
     }
 
     public boolean crear(Usuario usuario) {
@@ -76,7 +80,7 @@ public class UsuarioRepository extends DB {
             ps.setDouble(8, usuario.getCalificacion());
             ps.setLong(9, usuario.getId());
 
-            return ps.execute();
+            return !ps.execute();
         } catch (SQLException e) {
             System.err.println(e);
             return false;

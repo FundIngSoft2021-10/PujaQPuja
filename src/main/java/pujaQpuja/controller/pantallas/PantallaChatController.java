@@ -2,7 +2,9 @@ package pujaQpuja.controller.pantallas;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
@@ -39,11 +41,20 @@ public class PantallaChatController implements Initializable {
     @FXML
     private Text textoTituloTipoChat;
     @FXML
+    private TextArea textAreaMensaje;
+    @FXML
     private Rectangle botonEnviar;
+    @FXML
+    private Rectangle botonRectanguloQA;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         controladorGeneral = new ControladorGeneral();
+    }
+
+    @FXML
+    void abrirQA(MouseEvent event) {
+        PantallasMenu.abrirQA(event);
     }
 
     @FXML
@@ -92,5 +103,26 @@ public class PantallaChatController implements Initializable {
 
     @FXML
     private void accionEnviar(MouseEvent event) {
+
+        textAreaMensaje.appendText(campoEscribirMensaje.getText()+"\n");
+        campoEscribirMensaje.clear();
+        long idPuja= controladorGeneral.autenticacionController.getTemporalVisualizada().getId();
+        long idVendedor=controladorGeneral.autenticacionController.getTemporalVisualizada().getVendedor().getId();
+        long idComprador=controladorGeneral.autenticacionController.getAutenticado().getId();
+        String mensaje = textAreaMensaje.getText();
+        controladorGeneral.mensajeController.crear(idPuja,idVendedor,idComprador,mensaje);
+    }
+    @FXML
+    void enter(KeyEvent event) {
+        if(event.getCode().toString().equals("ENTER")){
+            textAreaMensaje.appendText(campoEscribirMensaje.getText()+"\n");
+            campoEscribirMensaje.clear();
+            long idPuja= controladorGeneral.autenticacionController.getTemporalVisualizada().getId();
+            long idVendedor=controladorGeneral.autenticacionController.getTemporalVisualizada().getVendedor().getId();
+            long idComprador=controladorGeneral.autenticacionController.getAutenticado().getId();
+            String mensaje = textAreaMensaje.getText();
+            controladorGeneral.mensajeController.crear(idPuja,idVendedor,idComprador,mensaje);
+        }
+
     }
 }

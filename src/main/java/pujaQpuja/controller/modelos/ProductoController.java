@@ -1,7 +1,5 @@
 package pujaQpuja.controller.modelos;
 
-import java.sql.SQLException;
-
 import pujaQpuja.model.entities.Producto;
 import pujaQpuja.model.repository.ProductoRepository;
 
@@ -20,4 +18,15 @@ public class ProductoController {
     public boolean crear(Producto producto, String rutaImagen) {
         return productoRepository.crear(producto, rutaImagen);
     }
+
+    public boolean eliminarProducto(long idProductoAEliminar) {
+        boolean eliminado= this.productoRepository.eliminarPujaPorId(idProductoAEliminar);
+        return eliminado;
+    }
+
+    public boolean modificarProducto(Producto productoASubastar, String rutaImagen) {
+        return this.productoRepository.modificarProducto(productoASubastar, rutaImagen);
+    }
+
+
 }

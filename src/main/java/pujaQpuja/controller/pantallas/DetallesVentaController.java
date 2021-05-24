@@ -11,13 +11,17 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
+import pujaQpuja.controller.modelos.AutenticacionController;
 import pujaQpuja.controller.modelos.ControladorGeneral;
+import pujaQpuja.model.entities.Categoria;
+import pujaQpuja.model.entities.Puja;
 import pujaQpuja.utilities.PantallasMenu;
 
 public class DetallesVentaController implements Initializable {
 
     private ControladorGeneral controladorGeneral;
-
+    private String rutaImagen;
+    private AutenticacionController autenticacionController;
     @FXML
     private Rectangle botonAtras;
     @FXML
@@ -54,14 +58,26 @@ public class DetallesVentaController implements Initializable {
     private Button botonEliminarProducto;
     @FXML
     private Rectangle botonRectanguloMasInformacion;
+    @FXML
+    private Rectangle botonRectanguloQA;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         controladorGeneral = new ControladorGeneral();
+        autenticacionController = AutenticacionController.getInstance();
+        campoNombreProducto.setText(autenticacionController.getTemporalVisualizada().getProducto().getNombre());
+        campoDescripcion.setText(autenticacionController.getTemporalVisualizada().getProducto().getDescripcion());
+        imagenProducto.setImage(autenticacionController.getTemporalVisualizada().getProducto().getFoto());
+        campoPrecio.setText(String.valueOf(autenticacionController.getTemporalVisualizada().getPrecioFinal()));
+        /*campoNombreComprador.setText(autenticacionController.getTemporalVisualizada().getComprador().getNombres() +" "
+                                     + autenticacionController.getTemporalVisualizada().getComprador().getApellidos());*/
+
+        rutaImagen = "";
     }
 
     @FXML
     private void irAtras(MouseEvent event) {
+        PantallasMenu.abrirHistorialVentas(event);
     }
 
     @FXML
@@ -105,19 +121,63 @@ public class DetallesVentaController implements Initializable {
     }
 
     @FXML
+    void abrirQA(MouseEvent event) {
+        PantallasMenu.abrirQA(event);
+    }
+
+    @FXML
     private void abrirTableroDePreguntas(ActionEvent event) {
+        PantallasMenu.abrirPreguntasPuja(event);
+
     }
 
     @FXML
     private void abrirEditarProducto(ActionEvent event) {
-    }
-
-    @FXML
-    private void abrirEliminarProducto(ActionEvent event) {
+        PantallasMenu.abrirPantalla(event,"PantallaModificarSubasta");
     }
 
     @FXML
     private void abrirMasInformacion(MouseEvent event) {
+
+    }
+
+    @FXML
+    void abrirPausarProducto(ActionEvent event) {
+        long idPuja =  autenticacionController.getTemporalVisualizada().getId();
+        if(controladorGeneral.pujaController.pausarPuja(idPuja)) {
+            //PantallasMenu.abrirVentana("PantallaExitoPausarPuja");
+        }
+        else{
+            //PantallasMenu.abrirVentana("PantallaErrorPausarPuja");
+        }
+
+    }
+
+    @FXML
+    void abrirReanudarProducto(ActionEvent event) {
+        long idPuja =  autenticacionController.getTemporalVisualizada().getId();
+        if(controladorGeneral.pujaController.reanudarPuja(idPuja)){
+            //PantallasMenu.abrirVentana("PantallaExitoReanudarPuja");
+        }
+        else{
+            //PantallasMenu.abrirVentana("PantallaErrorReanudarPuja");
+        }
+    }
+
+    @FXML
+    private void abrirEliminarProducto(ActionEvent event) {
+        long idPujaAEliminar = autenticacionController.getTemporalVisualizada().getId();
+        long idProductoAEliminar = autenticacionController.getTemporalVisualizada().getProducto().getId();
+
+        controladorGeneral.productoController.eliminarProducto(idProductoAEliminar);
+        controladorGeneral.pujaController.eliminarPuja(idPujaAEliminar);
+        if(controladorGeneral.productoController.eliminarProducto(idProductoAEliminar) && controladorGeneral.pujaController.eliminarPuja(idPujaAEliminar))
+        {
+            PantallasMenu.abrirVentana("PantallaConfirmacionEliminarPuja");
+        }else{
+            //PantallasMenu.abrirVentana("PantallaErrorEliminarProducto");
+        }
+
     }
 
 }

@@ -68,6 +68,8 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
     private ComboBox<Categoria> desplegableFiltros;
     @FXML
     private Rectangle botonOrdenar;
+    @FXML
+    private Rectangle botonRectanguloQA;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -96,6 +98,11 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
         SortedList<TablaCatalogoTemporal> sortedData = new SortedList<>(filteredData);
         sortedData.comparatorProperty().bind(tablaCatalogo.comparatorProperty());
         tablaCatalogo.setItems(sortedData);
+    }
+
+    @FXML
+    void abrirQA(MouseEvent event) {
+        PantallasMenu.abrirQA(event);
     }
 
     @FXML

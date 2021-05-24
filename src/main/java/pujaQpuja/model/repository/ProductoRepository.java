@@ -26,7 +26,6 @@ public class ProductoRepository extends DB {
         PreparedStatement ps;
         ResultSet rs;
 
-
         String sql = "";
         sql += "INSERT INTO Producto ";
         sql += "(nombre, descripcion, condicion, precioInicial, categoria, foto) ";
@@ -99,11 +98,11 @@ public class ProductoRepository extends DB {
                 byte[] buffer = new byte[1024];
                 InputStream input = rs.getBinaryStream("foto");
                 FileOutputStream output = new FileOutputStream(file);
-                System.out.println("Leyendo archivo desde la base de datos...");
+                //System.out.println("Leyendo archivo desde la base de datos...");
                 while (input.read(buffer) > 0) {
                     output.write(buffer);
                 }
-                System.out.println("> Archivo guardado en : " + file.getAbsolutePath());
+                //System.out.println("> Archivo guardado en : " + file.getAbsolutePath());
                 //Fin proceso para cargar imagen
 
                 producto.setFoto(Utiles.cargarImagenConRuta(file.getAbsolutePath()));
@@ -123,4 +122,76 @@ public class ProductoRepository extends DB {
         }
     }
 
+    public boolean eliminarPujaPorId(long idProductoAEliminar) {
+        Connection con = getConexion();
+        PreparedStatement ps;
+        ResultSet rs;
+
+        String sql = "";
+        sql += "DELETE FROM Producto ";
+        sql += "WHERE id = ?";
+
+        try {
+            ps = con.prepareStatement(sql);
+
+            ps.setLong(1, idProductoAEliminar);
+
+            return ps.execute();
+
+        } catch (SQLException e) {
+            System.err.println(e);
+            return false;
+
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+
+    }
+
+    public boolean modificarProducto(Producto productoASubastar, String rutaImagen) {
+        Connection con = getConexion();
+        PreparedStatement ps;
+
+        String sql = "";
+        sql += "UPDATE Producto ";
+        sql += "SET nombre = ?, descripcion = ?, categoria = ?";
+        if(rutaImagen!= "")
+            sql += ", foto = ?";
+        sql += " WHERE id = ?";
+
+        try {
+            ps = con.prepareStatement(sql);
+
+            ps.setString(1, productoASubastar.getNombre());
+            ps.setString(2, productoASubastar.getDescripcion());
+            ps.setString(3, String.valueOf(productoASubastar.getCategoria()));
+            if(rutaImagen!= "")
+            {
+                File imagen = new File(rutaImagen);
+                FileInputStream fis = new FileInputStream(imagen);
+                ps.setBinaryStream(4, fis, (int) imagen.length());
+                ps.setLong(5, productoASubastar.getId());
+            }
+            else
+            {
+                ps.setLong(4, productoASubastar.getId());
+            }
+
+            return !ps.execute();
+
+        } catch (SQLException | FileNotFoundException e) {
+            System.err.println(e);
+            return false;
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+    }
 }

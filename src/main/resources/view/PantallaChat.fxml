@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaChatController">
+<BorderPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaChatController">
     <top>
         <AnchorPane prefHeight="39.0" prefWidth="375.0" BorderPane.alignment="CENTER">
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#64b5f6" height="78.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1280.0" />
@@ -110,12 +116,26 @@
             <ImageView fitHeight="133.0" fitWidth="240.0" layoutX="22.0" layoutY="-83.0" pickOnBounds="true" preserveRatio="true">
                 <Image url="@../images/logo_vertical.png" />
             </ImageView>
+         <ImageView disable="true" fitHeight="44.0" fitWidth="37.0" layoutX="14.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../images/chat.png" />
+            </image>
+         </ImageView>
+         <Label layoutX="66.0" layoutY="109.0" prefHeight="33.0" prefWidth="68.0" text="Q&amp;A">
+            <font>
+               <Font name="Berlin Sans FB" size="24.0" />
+            </font>
+         </Label>
+         <Rectangle fx:id="botonRectanguloQA" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="55.0" layoutX="-1.0" layoutY="98.0" onMouseClicked="#abrirQA" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="269.0" />
         </AnchorPane>
     </left>
     <center>
         <AnchorPane prefHeight="543.0" prefWidth="335.0" BorderPane.alignment="CENTER">
-            <TextArea layoutX="39.0" layoutY="70.0" opacity="0.5" prefHeight="506.0" prefWidth="934.0" />
-            <TextField fx:id="campoEscribirMensaje" layoutX="54.0" layoutY="592.0" prefHeight="37.0" prefWidth="842.0" style="-fx-background-color: #CCECFE;" text="Escribe tu mensaje">
+            <TextArea fx:id="textAreaMensaje" editable="false" layoutX="39.0" layoutY="70.0" prefHeight="506.0" prefWidth="934.0">
+            <font>
+               <Font name="SansSerif Bold" size="20.0" />
+            </font></TextArea>
+            <TextField fx:id="campoEscribirMensaje" layoutX="54.0" layoutY="592.0" onKeyPressed="#enter" prefHeight="37.0" prefWidth="842.0" promptText="Escribe tu mensaje" style="-fx-background-color: #CCECFE;">
                 <font>
                     <Font name="SansSerif Regular" size="20.0" />
                 </font>
@@ -130,7 +150,7 @@
                     <Image url="@../images/logo_vertical.png" />
                 </image>
             </ImageView>
-            <Text fx:id="textoTituloTipoChat" layoutX="219.0" layoutY="44.0" style="-fx-background-color: #CCECFE;" text="NOMBRE CHAT SEGÚN USO (SOPORTE, RESPUESTA, ETC)" textAlignment="CENTER">
+            <Text fx:id="textoTituloTipoChat" layoutX="437.0" layoutY="36.0" style="-fx-background-color: #CCECFE;" text="HAZ TU PREGUNTA!" textAlignment="CENTER">
                 <font>
                     <Font name="SansSerif Regular" size="20.0" />
                 </font>

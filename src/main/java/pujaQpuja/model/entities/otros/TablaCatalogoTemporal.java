@@ -8,15 +8,25 @@ import pujaQpuja.model.entities.Puja;
 public class TablaCatalogoTemporal {
     private ImageView imagen;
     private String desc;
+    private String estado;
     private Puja puja;
 
     public TablaCatalogoTemporal() {
     }
 
-    public TablaCatalogoTemporal(ImageView imagen, String desc, Puja puja) {
+    public TablaCatalogoTemporal(ImageView imagen, String desc, Puja puja, String estado) {
         this.imagen = imagen;
         this.desc = desc;
         this.puja = puja;
+        this.estado = estado;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public ImageView getImagen() {

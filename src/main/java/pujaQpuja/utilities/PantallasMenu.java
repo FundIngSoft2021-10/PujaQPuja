@@ -70,15 +70,24 @@ public class PantallasMenu {
         abrirPantalla(event, "HistorialCompras");
     }
 
+    public static void abrirQA(MouseEvent event) {
+        abrirPantalla(event, "PantallaPreguntas");
+    }
+
     public static void abrirNotificaciones(MouseEvent event) {
         // TODO hacer pantalla notificaciones
         abrirPantalla(event, "PantallaNotificaciones");
     }
 
     public static void abririMetodoPago(MouseEvent event) {
-        // TODO hacer pantalla método pago
         abrirPantalla(event, "PantallaMetodoPago");
     }
 
+    public static void abrirChat(ActionEvent event) {
+        abrirPantalla(event, "PantallaChat");
+    }
 
+    public static void abrirPreguntasPuja(ActionEvent event) {
+        abrirPantalla(event, "PreguntasPuja");
+    }
 }

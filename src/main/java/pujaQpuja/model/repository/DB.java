@@ -16,22 +16,25 @@ public class DB {
         try {
             Class.forName(driver);
             conn = DriverManager.getConnection(url, usuario, contra);
+            /*
             if (conn != null)
                 System.out.println("Conexión creada correctamente");
+             */
             return conn;
         } catch (Exception e) {
-            System.out.println("Error al conectar con la base de datos: " + e);
+            //System.out.println("Error al conectar con la base de datos: " + e);
             return null;
         }
     }
 
     public void desconectar() throws SQLException {
-        if (conn != null)
-        {
+        if (conn != null) {
             conn.close();
         }
         conn = null;
+        /*
         if (conn == null)
             System.out.println("Conexión terminada correctamente");
+        */
     }
 }
