@@ -139,22 +139,22 @@ public class PantallaNotificaciones implements Initializable {
             Long id = controladorGeneral.autenticacionController.getAutenticado().getId();
             Puja puja = tablaCatalogo.getSelectionModel().getSelectedItem().getPuja();
 
-            controladorGeneral.pujaController.actualizarPuja(puja);
+            //controladorGeneral.pujaController.actualizarPuja(puja);
 
-            if (puja.getComprador().getId() == id) {
+           // if (puja.getComprador().getId() == id) {
                 double montoAPagar = puja.getPrecioFinal();
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + "PantallaMetodoPago.fxml"));
                 fxmlLoader.load();
                 PantallaMetodoPagoController ConfirmacionController = fxmlLoader.getController();
-                ConfirmacionController.setPrecioNuevo(montoAPagar);
+                ConfirmacionController.setMontoAPagar(montoAPagar);
                 Parent p = fxmlLoader.getRoot();
                 Stage s = new Stage();
                 s.setScene(new Scene(p));
                 s.show();
 
-            } else {
+            //} else {
 
-            }
+            //}
         }
     }
 }

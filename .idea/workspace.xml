@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bab415b7-8294-4919-b0ff-d59ce9d66de9" name="Default Changelist" comment="Arreglo pantallas hasta pantalla PujarXProducto">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaNotificaciones.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/PantallaNotificaciones.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagen_obtenida_DB.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imagen_obtenida_DB.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/modelos/PujaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/modelos/PujaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaSeleccionarCategoriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaSeleccionarCategoriaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/model/entities/otros/TablaCatalogoTemporal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/model/entities/otros/TablaCatalogoTemporal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/model/repository/PujaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/model/repository/PujaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/utilities/PantallasMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/utilities/PantallasMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaNotificaciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaNotificaciones.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,6 +178,26 @@
           <url>file://$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaNotificaciones.java</url>
           <line>76</line>
           <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaNotificaciones.java</url>
+          <line>144</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaNotificaciones.java</url>
+          <line>143</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaNotificaciones.java</url>
+          <line>139</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pujaQpuja/controller/pantallas/PantallaNotificaciones.java</url>
+          <line>138</line>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
