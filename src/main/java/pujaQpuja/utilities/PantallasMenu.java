@@ -1,12 +1,16 @@
 package pujaQpuja.utilities;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ProgressIndicator;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import pujaQpuja.MainApp;
 import pujaQpuja.controller.pantallas.PantallaRealizarSubastaController;
@@ -29,15 +33,48 @@ public class PantallasMenu {
     }
 
     public static void abrirVentana(String nombrePantalla) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("/view/" + nombrePantalla + ".fxml"));
+
+            ////////////////////////////////////////////////////////////////////////////
+                                StackPane loadingRoot = new StackPane();
+
+                                loadingRoot.getChildren().setAll(new ProgressIndicator());
+                                final Scene scene = new Scene(loadingRoot);
+                                Stage stage = new Stage();
+                                stage.initModality(Modality.WINDOW_MODAL);
+                                stage.setWidth(1280);
+                                stage.setHeight(760);
+                                stage.setScene(scene);
+                                stage.show();
+
+                                new Thread(() -> {
+                              //  root = FXMLLoader.load(Main.class.getResource("FXMLDocument.fxml"));
+                                Parent root;
+                                FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("/view/" + nombrePantalla + ".fxml"));
+
+                                 try{
+                                        root = fxmlLoader.load();
+                                         scene.setRoot(root);
+                                 }catch(IOException ex)
+                                 {
+                                     System.err.println("Error abriendo pantalla: " + ex);
+                                 }
+                                    // we need to wrap UI code in Platform
+                                    Platform.runLater(() -> {
+
+
+                                    });
+                                }).start();
+
+            //////////////////////////////////////////////////////////////////////////////
+           /* FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("/view/" + nombrePantalla + ".fxml"));
             Parent root = fxmlLoader.load();
             Stage window = new Stage();
             window.setScene(new Scene(root));
             window.show();
         } catch (Exception e) {
             System.err.println("Error abriendo pantalla: " + e);
-        }
+        }*/
+
     }
 
     public static void cerrarPantalla(Event event){

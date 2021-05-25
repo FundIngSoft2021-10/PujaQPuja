@@ -1,18 +1,20 @@
 package pujaQpuja.controller.pantallas;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.FileChooser;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import pujaQpuja.controller.modelos.ControladorGeneral;
 import pujaQpuja.model.entities.Categoria;
@@ -178,12 +180,40 @@ public class PantallaRealizarSubastaController implements Initializable {
 
         if (productoASubastar.getPrecioInicial() >= 0 && !productoASubastar.getNombre().isBlank() && !productoASubastar.getDescripcion().isBlank() && productoASubastar.getCategoria() != null && productoASubastar.getFoto() != null) {
 
+
             controladorGeneral.productoController.crear(productoASubastar, rutaImagen);
             controladorGeneral.pujaController.crear(productoASubastar);
+            ButtonType botonsi= new ButtonType("Si");
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Estas seguro de publicar el producto : " + campoNombreProducto.getText() + " ?", botonsi, ButtonType.NO);
+            alert.showAndWait();
 
-            PantallasMenu.abrirVentana("PantallaExitoRealizarSubasta");
+            if (alert.getResult() == botonsi) {
+
+                ////////////////////////////////////////////////////////////////////////77
+
+                ///////////////////////////////////////////////////////////////////////////
+                PantallasMenu.abrirVentana("PantallaSeleccionarCategoria");
+                PantallasMenu.cerrarPantalla(event);
+            }else if(alert.getResult() == ButtonType.NO)
+            {
+                PantallasMenu.abrirVentana("PantallaSeleccionarCategoria");
+                PantallasMenu.cerrarPantalla(event);
+            }
+
         } else {
-            PantallasMenu.abrirVentana("PantallaErrorPublicacionSubasta");
+                        ButtonType botonvolver= new ButtonType("Volver");
+                        ButtonType cancelar= new ButtonType("Cancelar");
+                        Alert alert = new Alert(Alert.AlertType.ERROR, " Error en los campos " , botonvolver ,cancelar);
+                        alert.setHeaderText("ERROR AL VALIDAR DATOS INGRESADOS");
+                        alert.showAndWait();
+
+                        if (alert.getResult() == botonvolver) {
+
+                        }else if(alert.getResult() == cancelar)
+                        {
+                            PantallasMenu.abrirVentana("PantallaSeleccionarCategoria");
+                            PantallasMenu.cerrarPantalla(event);
+                        }
         }
     }
 

@@ -91,11 +91,12 @@ public class PantallaPujarXProductoController implements Initializable {
             }
             if (precio > 0.0) {
                 if (precio <= controladorGeneral.autenticacionController.getTemporalVisualizada().getPrecioFinal()) {
-                   Alert alert = new Alert(Alert.AlertType.ERROR, "Error, por favor digite un precio valido" , ButtonType.YES);
+                    ButtonType botonsi= new ButtonType("Si");
+                   Alert alert = new Alert(Alert.AlertType.ERROR, "Error, por favor digite un precio valido" , botonsi);
                    alert.setHeaderText("Hey cuidado animal");
                  
                         alert.showAndWait();
-                        if (alert.getResult() == ButtonType.YES) {
+                        if (alert.getResult() == botonsi) {
                             //do stuff
                         }
                 } else {
@@ -109,14 +110,15 @@ public class PantallaPujarXProductoController implements Initializable {
                     Stage s = new Stage();
                     s.setScene(new Scene(p));
                     s.show();*/
-                    Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Estas seguro de pujar: $ " + campoDigitePrecio.getText() + " ?", ButtonType.YES, ButtonType.NO);
+                    ButtonType botonsi= new ButtonType("Si");
+                    Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Estas seguro de pujar: $ " + campoDigitePrecio.getText() + " ?", botonsi, ButtonType.NO);
                         alert.showAndWait();
 
-                        if (alert.getResult() == ButtonType.YES) {
+                        if (alert.getResult() == botonsi) {
                             confirmacion(true,Double.valueOf(campoDigitePrecio.getText()));
                         }else if(alert.getResult() == ButtonType.NO)
                         {
-                                    
+                               //xd
                         }
                 }
             }

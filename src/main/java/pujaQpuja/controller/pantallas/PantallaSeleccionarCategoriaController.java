@@ -1,5 +1,6 @@
 package pujaQpuja.controller.pantallas;
 
+import javafx.application.Platform;
 import javafx.beans.InvalidationListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
@@ -17,7 +18,9 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import pujaQpuja.controller.modelos.ControladorGeneral;
 import pujaQpuja.model.entities.Categoria;
@@ -74,7 +77,9 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         controladorGeneral = new ControladorGeneral();
+            ////////////////////////////////////////////////////////////////////////////////7
 
+            ///////////////////////////////////////////////////////////////////////////////77
 
         /*
         if (controladorGeneral.pujaController.chequeoTiempoPujas()) {
@@ -84,6 +89,7 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
             // PantallasMenu.abrirVentana("PantallaErrorPublicacionSubasta");
             System.out.println("chao");
         }*/
+
         controladorGeneral.pujaController.ganadorPuja();
 
         desplegableFiltros.getItems().setAll(Categoria.values());
