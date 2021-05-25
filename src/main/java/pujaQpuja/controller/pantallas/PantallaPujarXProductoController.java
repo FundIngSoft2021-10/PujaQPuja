@@ -6,7 +6,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -89,9 +91,15 @@ public class PantallaPujarXProductoController implements Initializable {
             }
             if (precio > 0.0) {
                 if (precio <= controladorGeneral.autenticacionController.getTemporalVisualizada().getPrecioFinal()) {
-                    PantallasMenu.abrirVentana("PantallaPujarXProductoError");
+                   Alert alert = new Alert(Alert.AlertType.ERROR, "Error, por favor digite un precio valido" , ButtonType.YES);
+                   alert.setHeaderText("Hey cuidado animal");
+                 
+                        alert.showAndWait();
+                        if (alert.getResult() == ButtonType.YES) {
+                            //do stuff
+                        }
                 } else {
-                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + "PantallaPujarXProductoConfirmacion.fxml"));
+                   /* FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + "PantallaPujarXProductoConfirmacion.fxml"));
                     fxmlLoader.load();
                     PantallaPujarXProductoConfirmacionController ConfirmacionController = fxmlLoader.getController();
                     ConfirmacionController.setPrecioNuevo(precio);
@@ -100,7 +108,16 @@ public class PantallaPujarXProductoController implements Initializable {
                     Parent p = fxmlLoader.getRoot();
                     Stage s = new Stage();
                     s.setScene(new Scene(p));
-                    s.show();
+                    s.show();*/
+                    Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Estas seguro de pujar: $ " + campoDigitePrecio.getText() + " ?", ButtonType.YES, ButtonType.NO);
+                        alert.showAndWait();
+
+                        if (alert.getResult() == ButtonType.YES) {
+                            confirmacion(true,Double.valueOf(campoDigitePrecio.getText()));
+                        }else if(alert.getResult() == ButtonType.NO)
+                        {
+                                    
+                        }
                 }
             }
         }
