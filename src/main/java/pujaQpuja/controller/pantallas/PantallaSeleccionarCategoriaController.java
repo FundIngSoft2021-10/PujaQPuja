@@ -201,7 +201,6 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
             window.setScene(pantallaIngresarScene);
             window.show();
         }
-
     }
 
     @FXML

@@ -75,7 +75,6 @@ public class PantallasMenu {
     }
 
     public static void abrirNotificaciones(MouseEvent event) {
-        // TODO hacer pantalla notificaciones
         abrirPantalla(event, "PantallaNotificaciones");
     }
 

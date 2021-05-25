@@ -1,15 +1,13 @@
 package pujaQpuja.model.repository;
 
-import pujaQpuja.controller.modelos.UsuarioController;
 import pujaQpuja.controller.modelos.ProductoController;
-import pujaQpuja.model.entities.*;
+import pujaQpuja.controller.modelos.UsuarioController;
+import pujaQpuja.model.entities.Categoria;
+import pujaQpuja.model.entities.EstadoPuja;
+import pujaQpuja.model.entities.Puja;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.sql.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -17,8 +15,8 @@ import java.util.Map;
 
 public class PujaRepository extends DB {
 
-    private UsuarioController usuarioController;
-    private ProductoController productoController;
+    private final UsuarioController usuarioController;
+    private final ProductoController productoController;
 
     public PujaRepository() {
         usuarioController = new UsuarioController();
@@ -354,7 +352,6 @@ public class PujaRepository extends DB {
 
         Connection con = getConexion();
         PreparedStatement ps;
-        ResultSet rs;
 
         String sql = "";
         sql += "UPDATE Puja ";
@@ -384,7 +381,6 @@ public class PujaRepository extends DB {
     public boolean pausarPuja(long idPuja) {
         Connection con = getConexion();
         PreparedStatement ps;
-        ResultSet rs;
 
         String sql = "";
         sql += "UPDATE Puja ";
@@ -414,7 +410,6 @@ public class PujaRepository extends DB {
 
         Connection con = getConexion();
         PreparedStatement ps;
-        ResultSet rs;
 
         String sql = "";
         sql += "DELETE FROM Puja ";
@@ -495,8 +490,6 @@ public class PujaRepository extends DB {
         try {
             ps = con.prepareStatement(sql);
             //ps.setString(1, tiempoAhora.toString());
-
-
             return !ps.execute();
 
         } catch (SQLException e) {
@@ -571,4 +564,140 @@ public class PujaRepository extends DB {
             }
         }
     }
+
+    public List<Puja> obtenerNotificacionesComprador(Long idUsuario) {
+        Connection con = getConexion();
+        PreparedStatement ps;
+        ResultSet rs;
+        List<Puja> respuesta = new ArrayList<>();
+
+
+        String sql = "";
+        sql += "SELECT p.* ";
+        sql += "FROM Puja p, Usuario u ";
+        sql += "WHERE p.idHistorialVentas = u.id AND p.idHistorialCompras IS NOT NULL AND p.estado = 'INACTIVO' AND p.VistoComprador = 0 AND u.id = ?";
+
+        try {
+            ps = con.prepareStatement(sql);
+            ps.setLong(1, idUsuario);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Puja temp = new Puja();
+
+                temp.setId(rs.getLong("id"));
+                temp.setPrecioFinal(rs.getDouble("precioFinal"));
+                temp.setProducto(productoController.buscarPorId(rs.getLong("idProducto")));
+
+                respuesta.add(temp);
+            }
+            return respuesta;
+
+        } catch (SQLException e) {
+            System.err.println(e);
+            return respuesta;
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+    }
+
+    public List<Puja> obtenerNotificacionesVendedor(Long idUsuario) {
+        Connection con = getConexion();
+        PreparedStatement ps;
+        ResultSet rs;
+        List<Puja> respuesta = new ArrayList<>();
+
+
+        String sql = "";
+        sql += "SELECT p.* ";
+        sql += "FROM Puja p, Usuario u ";
+        sql += "WHERE p.idHistorialCompras = u.id AND p.idHistorialCompras IS NOT NULL AND p.estado = 'INACTIVO' AND p.VistoVendedor = 0 AND u.id = ?";
+
+        try {
+            ps = con.prepareStatement(sql);
+
+            ps.setLong(1, idUsuario);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Puja temp = new Puja();
+
+                temp.setId(rs.getLong("id"));
+                temp.setPrecioFinal(rs.getDouble("precioFinal"));
+                temp.setProducto(productoController.buscarPorId(rs.getLong("idProducto")));
+
+
+                respuesta.add(temp);
+            }
+            return respuesta;
+        } catch (SQLException e) {
+            System.err.println(e);
+            return respuesta;
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+    }
+
+    public boolean actualizarNotificacionesComprador(Long idPuja) {
+        Connection con = getConexion();
+        PreparedStatement ps;
+
+        String sql = "";
+        sql += "UPDATE Puja ";
+        sql += "SET VistoComprador = 1 ";
+        sql += "WHERE id = ?";
+
+        try {
+            ps = con.prepareStatement(sql);
+            ps.setLong(1, idPuja);
+
+            return !ps.execute();
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return false;
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+
+    }
+
+    public boolean actualizarNotificacionesVendedor(Long idPuja) {
+        Connection con = getConexion();
+        PreparedStatement ps;
+
+        String sql = "";
+        sql += "UPDATE Puja ";
+        sql += "SET VistoVendedor = 1 ";
+        sql += "WHERE id = ?";
+
+        try {
+            ps = con.prepareStatement(sql);
+            ps.setLong(1, idPuja);
+
+            return !ps.execute();
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return false;
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+
+    }
+
 }
