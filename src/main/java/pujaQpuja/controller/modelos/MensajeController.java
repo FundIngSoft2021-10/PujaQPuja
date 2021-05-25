@@ -30,6 +30,7 @@ public class MensajeController {
     public List<TablaMensaje> getPreguntasRespuestas(long id) {
         return getPreguntasRespuestasByID(id);
     }
+
     public List<TablaMensaje> getPreguntasRespuestasByID(long id) {
         List<TablaMensaje> datos = new ArrayList<>();
         for (Mensaje actual : mensajeRepository.getPreguntasYRespuestas(id)) {

@@ -15,7 +15,6 @@ pujaQpuja\model\repository\UsuarioRepository.class
 pujaQpuja\controller\pantallas\PantallaSeleccionarCategoriaController.class
 pujaQpuja\controller\pantallas\IngresarController.class
 pujaQpuja\controller\pantallas\GanadorPujaController.class
-pujaQpuja\controller\IGeneralController.class
 pujaQpuja\controller\pantallas\PantallaExitoCalificarController.class
 pujaQpuja\controller\pantallas\PantallaRegistroController.class
 pujaQpuja\controller\pantallas\PantallaErrorPublicacionSubastaController.class
@@ -23,9 +22,7 @@ pujaQpuja\controller\pantallas\PantallaCatalogoErrorController.class
 pujaQpuja\controller\pantallas\PantallaPerfilController.class
 pujaQpuja\model\entities\Mensaje.class
 pujaQpuja\model\entities\Categoria.class
-pujaQpuja\controller\GeneralController.class
 pujaQpuja\controller\pantallas\PantallaPujarXProductoErrorController.class
-pujaQpuja\controller\UsuarioController.class
 pujaQpuja\controller\pantallas\PantallaCalificarProductoController.class
 pujaQpuja\model\entities\Puja.class
 pujaQpuja\controller\pantallas\HistorialComprasController.class
