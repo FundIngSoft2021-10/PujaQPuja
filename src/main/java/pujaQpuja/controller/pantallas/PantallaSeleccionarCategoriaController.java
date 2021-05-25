@@ -76,17 +76,15 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
         controladorGeneral = new ControladorGeneral();
 
 
-        LocalDateTime tiempoAhora = LocalDateTime.now();
-        System.out.println(tiempoAhora.toString());
-        System.out.println("hora: " + tiempoAhora.getHour() + " mes: " + tiempoAhora.getMonth() + " dia: " + tiempoAhora.getDayOfMonth() + "minutos: " + tiempoAhora.getMinute());
-        if (controladorGeneral.pujaController.chequeoTiempoPujas(tiempoAhora)) {
+        /*
+        if (controladorGeneral.pujaController.chequeoTiempoPujas()) {
             //PantallasMenu.abrirVentana("PantallaExitoRealizarSubasta");
             System.out.println("holi");
         } else {
             // PantallasMenu.abrirVentana("PantallaErrorPublicacionSubasta");
             System.out.println("chao");
-        }
-
+        }*/
+        controladorGeneral.pujaController.ganadorPuja();
 
         desplegableFiltros.getItems().setAll(Categoria.values());
         columnaDescripcion.setCellValueFactory(new PropertyValueFactory<TablaCatalogoTemporal, String>("desc"));
@@ -105,7 +103,7 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
             filteredData.setPredicate(TablaCatalogoTemporal -> {
                 if (newValue == null || newValue.isEmpty())
                     return true;
-                return TablaCatalogoTemporal.getDesc().toLowerCase().indexOf(newValue.toLowerCase()) != -1 ? true : false;
+                return TablaCatalogoTemporal.getDesc().toLowerCase().contains(newValue.toLowerCase());
             });
         });
         SortedList<TablaCatalogoTemporal> sortedData = new SortedList<>(filteredData);

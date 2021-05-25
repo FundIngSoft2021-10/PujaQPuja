@@ -11,7 +11,9 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class PujaRepository extends DB {
 
@@ -242,7 +244,7 @@ public class PujaRepository extends DB {
         }
     }
 
-    public List<Puja> getPujasGanadasDB(Categoria categoria, long id){
+    public List<Puja> getPujasGanadasDB(Categoria categoria, long id) {
         Connection con = getConexion();
         PreparedStatement ps;
         ResultSet rs;
@@ -480,19 +482,20 @@ public class PujaRepository extends DB {
         }
     }
 
-    public boolean actualizarTiempoPuja(LocalDateTime tiempoAhora) {
+    public boolean actualizarTiempoPuja() {
         Connection con = getConexion();
         PreparedStatement ps;
-
+        //LocalDateTime tiempoAhora = LocalDateTime.now();
 
         String sql = "";
         sql += "UPDATE Puja ";
         sql += "SET estado = 'INACTIVO' ";
-        sql += "WHERE FechaFinal < ? ";
+        sql += "WHERE FechaFinal < now() ";
 
         try {
             ps = con.prepareStatement(sql);
-            ps.setString(1, tiempoAhora.toString());
+            //ps.setString(1, tiempoAhora.toString());
+
 
             return !ps.execute();
 
@@ -507,5 +510,65 @@ public class PujaRepository extends DB {
             }
         }
 
+    }
+
+    public Map<Long, Long> obtenerPujantesMayores() {
+        Connection con = getConexion();
+        PreparedStatement ps;
+        ResultSet rs;
+
+        Map<Long, Long> resultado = new HashMap<>();
+        String sql = "";
+        sql += "SELECT c.idComprador, c.idPuja ";
+        sql += "FROM CompradorXPuja c , Puja p ";
+        sql += "WHERE c.idPuja = p.id AND p.idHistorialCompras IS NULL AND p.FechaFinal < now() AND p.precioFinal = c.precioPujado ";
+
+
+        try {
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                resultado.put(rs.getLong("idPuja"), rs.getLong("idComprador"));
+            }
+            return resultado;
+
+        } catch (SQLException e) {
+            System.err.println(e);
+            return null;
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+    }
+
+    public boolean actualizarPujasFinalizadas(Long key, Long value) {
+        Connection con = getConexion();
+        PreparedStatement ps;
+
+        String sql = "";
+        sql += "UPDATE Puja ";
+        sql += "SET idHistorialCompras = ?, estado = 'INACTIVO' ";
+        sql += "WHERE id = ? ";
+
+        try {
+            ps = con.prepareStatement(sql);
+            ps.setLong(1, value);
+            ps.setLong(2, key);
+
+            return !ps.execute();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return false;
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
     }
 }
