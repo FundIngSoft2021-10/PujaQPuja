@@ -156,6 +156,8 @@
             <Label layoutX="299.0" layoutY="486.0" text="Número telefónico" />
             <TextField fx:id="campoTelefono" layoutX="293.0" layoutY="518.0" />
             <Button fx:id="botonPagar" layoutX="686.0" layoutY="491.0" mnemonicParsing="false" onAction="#pagar" text="Pagar" />
+            <TextField fx:id="campoMontoAPagar" editable="false" layoutX="635.0" layoutY="456.0" />
+            <Label layoutX="639.0" layoutY="423.0" text="Monto a pagar" />
          </children></AnchorPane>
     </center>
 </BorderPane>
