@@ -10,6 +10,7 @@ public class TablaCatalogoTemporal {
     private String desc;
     private String estado;
     private Puja puja;
+    private String mensajeNotificacion;
 
     public TablaCatalogoTemporal() {
     }
@@ -66,6 +67,19 @@ public class TablaCatalogoTemporal {
     public TablaCatalogoTemporal puja(Puja puja) {
         setPuja(puja);
         return this;
+    }
+
+    public TablaCatalogoTemporal puja(String  mensajeNotificacion) {
+        setMensajeNotificacion(mensajeNotificacion);
+        return this;
+    }
+
+    public String getMensajeNotificacion() {
+        return mensajeNotificacion;
+    }
+
+    public void setMensajeNotificacion(String mensajeNotificacion) {
+        this.mensajeNotificacion = mensajeNotificacion;
     }
 
     @Override

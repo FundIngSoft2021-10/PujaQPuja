@@ -164,4 +164,55 @@ public class PujaController {
             pujaRepository.actualizarPujasFinalizadas(cXp.getKey(), cXp.getValue());
         }
     }
+
+    public List<TablaCatalogoTemporal> obtenerNotificaciones() {
+        Long id = autenticacionController.getAutenticado().getId();
+
+        //List<Puja> pujas = new ArrayList<>();
+        //pujas.addAll(pujaRepository.obtenerNotificacionesComprador(id));
+        //pujas.addAll(pujaRepository.obtenerNotificacionesVendedor(id));
+
+        List<TablaCatalogoTemporal> datos = new ArrayList<>();
+
+        for (Puja actual : pujaRepository.obtenerNotificacionesComprador(id)) {
+            TablaCatalogoTemporal temp = new TablaCatalogoTemporal();
+            temp.setPuja(actual);
+            if (actual.getProducto() != null) {
+                if (actual.getProducto().getFoto() != null) {
+                    temp.setImagen(new ImageView(actual.getProducto().getFoto()));
+                }
+            }
+            //StringBuilder dtemp = new StringBuilder("Nombre:  " + actual.getProducto().getNombre() + "\n" + "Descripcion:  " + actual.getProducto().getDescripcion() + "\n" + "Precio:  " + "$ " + actual.getPrecioFinal() + " COP" + "\n" + "Categoria: " + actual.getProducto().getCategoria());
+            //temp.setDesc(dtemp.toString());
+            //temp.setEstado(actual.getEstado().toString());
+            temp.setMensajeNotificacion("Se ha terminado la puja del producto " + actual.getProducto().getNombre() + " y el producto es suyo, " + "continue con la realización pago.");
+            datos.add(temp);
+        }
+
+        for (Puja actual : pujaRepository.obtenerNotificacionesVendedor(id)) {
+            TablaCatalogoTemporal temp = new TablaCatalogoTemporal();
+            temp.setPuja(actual);
+            if (actual.getProducto() != null) {
+                if (actual.getProducto().getFoto() != null) {
+                    temp.setImagen(new ImageView(actual.getProducto().getFoto()));
+                }
+            }
+            //StringBuilder dtemp = new StringBuilder("Nombre:  " + actual.getProducto().getNombre() + "\n" + "Descripcion:  " + actual.getProducto().getDescripcion() + "\n" + "Precio:  " + "$ " + actual.getPrecioFinal() + " COP" + "\n" + "Categoria: " + actual.getProducto().getCategoria());
+            //temp.setDesc(dtemp.toString());
+            //temp.setEstado(actual.getEstado().toString());
+            temp.setMensajeNotificacion("Se ha terminado la puja del producto " + actual.getProducto().getNombre() + " con éxito");
+            datos.add(temp);
+        }
+        return datos;
+    }
+
+    public boolean actualizarPuja(Puja puja) {
+        Long id = autenticacionController.getAutenticado().getId();
+        if(puja.getComprador().getId() == id) {
+            return pujaRepository.actualizarNotificacionesComprador(puja.getId());
+        }
+        else {
+            return pujaRepository.actualizarNotificacionesVendedor(puja.getId());
+        }
+    }
 }
