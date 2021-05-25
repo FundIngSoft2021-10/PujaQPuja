@@ -4,15 +4,13 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Map;
 
 import javafx.scene.image.ImageView;
-import pujaQpuja.model.entities.EstadoPuja;
-import pujaQpuja.model.entities.Producto;
-import pujaQpuja.model.entities.Puja;
+import pujaQpuja.model.entities.*;
 import pujaQpuja.model.entities.otros.TablaCatalogoTemporal;
 import pujaQpuja.model.repository.PujaRepository;
 import pujaQpuja.controller.pantallas.PantallaSeleccionarCategoriaController;
-import pujaQpuja.model.entities.Categoria;
 
 public class PujaController {
 
@@ -70,7 +68,7 @@ public class PujaController {
     public List<TablaCatalogoTemporal> getPujasPropias(Categoria filtro) {
         List<TablaCatalogoTemporal> datos = new ArrayList<>();
 
-        for (Puja actual : pujaRepository.getPujasPropiasDB(filtro,autenticacionController.getAutenticado().getId())) {
+        for (Puja actual : pujaRepository.getPujasPropiasDB(filtro, autenticacionController.getAutenticado().getId())) {
             TablaCatalogoTemporal temp = new TablaCatalogoTemporal();
             temp.setPuja(actual);
             if (actual.getProducto() != null) {
@@ -104,16 +102,16 @@ public class PujaController {
         return this.pujaRepository.actualizarPrecio(nuevoprecio, idPuja);
     }
 
-    public boolean reanudarPuja(long idPuja){
+    public boolean reanudarPuja(long idPuja) {
         return this.pujaRepository.reanudarPujaPorPuja(idPuja);
     }
 
-    public boolean pausarPuja(long idPuja){
+    public boolean pausarPuja(long idPuja) {
         return this.pujaRepository.pausarPuja(idPuja);
     }
 
-    public boolean eliminarPuja(Long idPuja){
-        boolean eliminado= this.pujaRepository.eliminarPujaPorId(idPuja);
+    public boolean eliminarPuja(Long idPuja) {
+        boolean eliminado = this.pujaRepository.eliminarPujaPorId(idPuja);
         return eliminado;
     }
 
@@ -123,7 +121,7 @@ public class PujaController {
 
     public List<TablaCatalogoTemporal> getPujasGanadas(Categoria filtro) {
         List<TablaCatalogoTemporal> datos = new ArrayList<>();
-        for (Puja actual : pujaRepository.getPujasGanadasDB(filtro,autenticacionController.getAutenticado().getId())) {
+        for (Puja actual : pujaRepository.getPujasGanadasDB(filtro, autenticacionController.getAutenticado().getId())) {
             TablaCatalogoTemporal temp = new TablaCatalogoTemporal();
             temp.setPuja(actual);
             if (actual.getProducto() != null) {
@@ -137,5 +135,33 @@ public class PujaController {
             datos.add(temp);
         }
         return datos;
+    }
+
+    public List<TablaCatalogoTemporal> getPujasMasPopulares(Categoria selectedItem) {
+        List<TablaCatalogoTemporal> datos = new ArrayList<>();
+
+        for (Puja actual : pujaRepository.getPujasMasPopularesDB()) {
+            TablaCatalogoTemporal temp = new TablaCatalogoTemporal();
+            temp.setPuja(actual);
+            if (actual.getProducto() != null) {
+                if (actual.getProducto().getFoto() != null) {
+                    temp.setImagen(new ImageView(actual.getProducto().getFoto()));
+                }
+            }
+            StringBuilder dtemp = new StringBuilder("Nombre:  " + actual.getProducto().getNombre() + "\n" + "Descripcion:  " + actual.getProducto().getDescripcion() + "\n" + "Precio:  " + "$ " + actual.getPrecioFinal() + " COP" + "\n" + "Categoria: " + actual.getProducto().getCategoria());
+            temp.setDesc(dtemp.toString());
+            datos.add(temp);
+        }
+        return datos;
+    }
+
+    public void ganadorPuja() {
+        //obtenerPujantesMayores
+        Map<Long, Long> compradoresXPuja = pujaRepository.obtenerPujantesMayores();
+
+        for (Map.Entry<Long, Long> cXp : compradoresXPuja.entrySet()) {
+            //actualizarPujasFinalizadas
+            pujaRepository.actualizarPujasFinalizadas(cXp.getKey(), cXp.getValue());
+        }
     }
 }
