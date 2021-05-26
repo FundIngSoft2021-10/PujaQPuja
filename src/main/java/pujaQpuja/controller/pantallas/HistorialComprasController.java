@@ -5,17 +5,24 @@ import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
 import pujaQpuja.controller.modelos.ControladorGeneral;
+import pujaQpuja.model.entities.Puja;
 import pujaQpuja.model.entities.otros.TablaCatalogoTemporal;
 import pujaQpuja.utilities.PantallasMenu;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -71,6 +78,20 @@ public class HistorialComprasController implements Initializable {
         SortedList<TablaCatalogoTemporal> sortedData = new SortedList<>(filteredData);
         sortedData.comparatorProperty().bind(tablaHistorialCompras.comparatorProperty());
         tablaHistorialCompras.setItems(sortedData);
+    }
+
+    @FXML
+    void seleccionar(MouseEvent event) throws IOException {
+        if (tablaHistorialCompras.getSelectionModel().getSelectedItem() != null) {
+            Puja a = tablaHistorialCompras.getSelectionModel().getSelectedItem().getPuja();
+            Puja b = controladorGeneral.pujaController.pujaVisualizada(a);
+            controladorGeneral.autenticacionController.setTemporalVisualizada(b);
+            Parent pantallaIngresarParent = FXMLLoader.load(getClass().getResource("/view/" + "DetallesCompra.fxml"));
+            Scene pantallaIngresarScene = new Scene(pantallaIngresarParent);
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(pantallaIngresarScene);
+            window.show();
+        }
     }
 
     @FXML

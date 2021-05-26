@@ -64,6 +64,8 @@ public class PantallaPujarXProductoController implements Initializable {
     @FXML
     private Text textoNombreProducto;
     @FXML
+    private Text calificacion;
+    @FXML
     private Rectangle botonRectanguloQA;
 
     @Override
@@ -75,6 +77,7 @@ public class PantallaPujarXProductoController implements Initializable {
         campoPrecioSubasta.setText(Double.toString(controladorGeneral.autenticacionController.getTemporalVisualizada().getPrecioFinal()));
         campoNumeroPujantes.setText(Integer.toString(controladorGeneral.pujaController.obtenerNumeroPujantesPorPujaId(controladorGeneral.autenticacionController.getTemporalVisualizada().getId())));
         imagenProducto.setImage(controladorGeneral.autenticacionController.getTemporalVisualizada().getProducto().getFoto());
+        calificacion.setText(Double.toString(controladorGeneral.usuarioController.obtenerCalificacionV(controladorGeneral.autenticacionController.getTemporalVisualizada().getVendedor().getId()))+"/5");
     }
 
     @FXML
