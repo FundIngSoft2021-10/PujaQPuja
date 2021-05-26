@@ -206,13 +206,18 @@ public class PujaController {
         return datos;
     }
 
-    public void actualizarPuja(Puja puja) {
+    public void actualizarPujaVendedor(Puja puja) {
+        Long id = autenticacionController.getAutenticado().getId();
+        if(puja.getVendedor().getId() == id) {
+            pujaRepository.actualizarNotificacionesVendedor(puja.getId());
+        }
+    }
+
+    public void actualizarPujaComprador(Puja puja)
+    {
         Long id = autenticacionController.getAutenticado().getId();
         if(puja.getComprador().getId() == id) {
             pujaRepository.actualizarNotificacionesComprador(puja.getId());
-        }
-        if(puja.getVendedor().getId() == id) {
-            pujaRepository.actualizarNotificacionesVendedor(puja.getId());
         }
     }
 }

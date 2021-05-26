@@ -1,6 +1,5 @@
 package pujaQpuja.controller.pantallas;
 
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -10,6 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import pujaQpuja.controller.modelos.ControladorGeneral;
+import pujaQpuja.model.entities.Puja;
 import pujaQpuja.model.entities.otros.TipoTarjeta;
 import pujaQpuja.utilities.PantallasMenu;
 
@@ -19,6 +19,7 @@ import java.util.ResourceBundle;
 
 public class PantallaMetodoPagoController implements Initializable {
 
+    private ControladorGeneral controladorGeneral;
 
     @FXML
     private Rectangle botonAtras;
@@ -65,15 +66,15 @@ public class PantallaMetodoPagoController implements Initializable {
     @FXML
     private TextField campoMontoAPagar;
 
-    private double montoAPagar;
+    private Puja puja;
 
-    public double getMontoAPagar() {
-        return montoAPagar;
+    public void setPuja(Puja puja) {
+        this.puja = puja;
+        campoMontoAPagar.setText(String.valueOf(puja.getPrecioFinal()));
     }
 
-    public void setMontoAPagar(double montoAPagar) {
-        this.montoAPagar = montoAPagar;
-        campoMontoAPagar.setText(String.valueOf(montoAPagar));
+    public Puja getPuja() {
+        return puja;
     }
 
     @FXML
@@ -148,19 +149,20 @@ public class PantallaMetodoPagoController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        controladorGeneral = new ControladorGeneral();
         desplegableTipoTarjeta.getItems().setAll(TipoTarjeta.values());
         //campoMontoAPagar.setText(String.valueOf(montoAPagar));
     }
 
-    public PantallaMetodoPagoController getController(){
+    public PantallaMetodoPagoController getController() {
         return this;
     }
 
     @FXML
     void pagar(ActionEvent event) {
 
-        boolean correcto= false;
-        if(        !campoApellido.getText().isBlank()
+        boolean correcto = false;
+        if (!campoApellido.getText().isBlank()
                 && !campoCiudad.getText().isBlank()
                 && !campoCodigoPostal.getText().isBlank()
                 && !campoCodigoSeguridad.getText().isBlank()
@@ -168,13 +170,13 @@ public class PantallaMetodoPagoController implements Initializable {
                 && !campoNombre.getText().isBlank()
                 && !campoTelefono.getText().isBlank()
                 && !campoDireccion.getText().isBlank()
-                && !campoNumeroTarjeta.getText().isBlank()  )
-        {
+                && !campoNumeroTarjeta.getText().isBlank()) {
             correcto = true;
         }
-        if(correcto)
-             PantallasMenu.abrirVentana("PantallaProteccionPago");
-        else
+        if (correcto) {
+            PantallasMenu.abrirVentana("PantallaProteccionPago");
+            controladorGeneral.pujaController.actualizarPujaComprador(puja);
+        } else
             PantallasMenu.abrirVentana("PantallaErrorPago");
     }
 }

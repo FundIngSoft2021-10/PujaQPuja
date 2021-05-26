@@ -139,20 +139,21 @@ public class PantallaNotificaciones implements Initializable {
             Long id = controladorGeneral.autenticacionController.getAutenticado().getId();
             Puja puja = tablaCatalogo.getSelectionModel().getSelectedItem().getPuja();
 
-            controladorGeneral.pujaController.actualizarPuja(puja);
+            controladorGeneral.pujaController.actualizarPujaVendedor(puja);
 
-            //if vendedor no mostrar
-            double montoAPagar = puja.getPrecioFinal();
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + "PantallaMetodoPago.fxml"));
-            fxmlLoader.load();
-            PantallaMetodoPagoController ConfirmacionController = fxmlLoader.getController();
-            ConfirmacionController.setMontoAPagar(montoAPagar);
-            Parent p = fxmlLoader.getRoot();
-            Stage s = new Stage();
-            s.setScene(new Scene(p));
-            s.show();
-
-
+            if (id == puja.getComprador().getId()) {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + "PantallaMetodoPago.fxml"));
+                fxmlLoader.load();
+                PantallaMetodoPagoController ConfirmacionController = fxmlLoader.getController();
+                ConfirmacionController.setPuja(puja);
+                Parent p = fxmlLoader.getRoot();
+                Stage s = new Stage();
+                s.setScene(new Scene(p));
+                s.show();
+                PantallasMenu.cerrarPantalla(mouseEvent);
+            } else {
+                PantallasMenu.abrirPantalla(mouseEvent, "HistorialVentas");
+            }
         }
     }
 }
