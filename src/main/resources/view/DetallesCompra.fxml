@@ -13,11 +13,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.PantallaPujarXProductoController">
+<BorderPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pujaQpuja.controller.pantallas.DetallesCompraController">
     <top>
         <AnchorPane prefHeight="39.0" prefWidth="375.0" BorderPane.alignment="CENTER">
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#64b5f6" height="78.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1280.0" />
-            <Label layoutX="347.0" layoutY="8.0" prefHeight="64.0" prefWidth="259.0" text="Publicación">
+            <Label layoutX="347.0" layoutY="8.0" prefHeight="64.0" prefWidth="259.0" text="Detalles">
                 <font>
                     <Font name="Berlin Sans FB" size="32.0" />
                 </font>
@@ -117,81 +117,48 @@
             <ImageView fitHeight="133.0" fitWidth="240.0" layoutX="22.0" layoutY="-83.0" pickOnBounds="true" preserveRatio="true">
                 <Image url="@../images/logo_vertical.png" />
             </ImageView>
-         <ImageView disable="true" fitHeight="44.0" fitWidth="37.0" layoutX="14.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
+         <ImageView disable="true" fitHeight="44.0" fitWidth="37.0" layoutX="14.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
             <image>
                <Image url="@../images/chat.png" />
             </image>
          </ImageView>
-         <Label layoutX="66.0" layoutY="109.0" prefHeight="33.0" prefWidth="68.0" text="Q&amp;A">
+         <Label layoutX="66.0" layoutY="110.0" prefHeight="33.0" prefWidth="68.0" text="Q&amp;A">
             <font>
                <Font name="Berlin Sans FB" size="24.0" />
             </font>
          </Label>
-         <Rectangle fx:id="botonRectanguloQA" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="55.0" layoutY="98.0" onMouseClicked="#abrirQA" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="269.0" />
+         <Rectangle fx:id="botonRectanguloQA" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="55.0" layoutX="5.0" layoutY="96.0" onMouseClicked="#abrirQA" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="269.0" />
         </AnchorPane>
     </left>
     <center>
-        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-            <TextField fx:id="campoBusqueda" layoutX="182.0" layoutY="14.0" prefHeight="36.0" prefWidth="646.0" promptText="Buscar..." style="-fx-background-color: #CCECFE;">
+        <AnchorPane prefHeight="480.0" BorderPane.alignment="CENTER">
+            <ImageView id="imagenDetalles" fx:id="imagenProducto" fitHeight="360.0" fitWidth="404.0" layoutX="24.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
+            <TextField id="nomDetalles" fx:id="campoNombreProducto" editable="false" layoutX="661.0" layoutY="40.0" promptText="Nombre Producto" style="-fx-background-color: #CCECFE;">
                 <font>
                     <Font name="SansSerif Regular" size="20.0" />
                 </font>
             </TextField>
-            <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="795.0" layoutY="22.0">
-                <Image url="@../images/loupe.png" />
-            </ImageView>
-            <Rectangle fx:id="botonBusqueda" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="38.0" layoutX="787.0" layoutY="14.0" onMouseClicked="#accionBuscar" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="38.0" />
-            <Text layoutX="55.0" layoutY="100.0" style="-fx-background-color: #CCECFE;" text="Información del Producto">
+            <TextField id="precioDetalles" fx:id="campoPrecio" editable="false" layoutX="661.0" layoutY="104.0" promptText="Precio" style="-fx-background-color: #CCECFE;">
                 <font>
                     <Font name="SansSerif Regular" size="20.0" />
                 </font>
-            </Text>
-            <ImageView fx:id="imagenProducto" fitHeight="326.0" fitWidth="350.0" layoutX="43.0" layoutY="216.0" pickOnBounds="true" preserveRatio="true">
-                <image>
-                    <Image url="@../images/alerta.png" />
-                </image>
-            </ImageView>
-            <Text layoutX="417.0" layoutY="99.0" style="-fx-background-color: #CCECFE;" text="Descripción:">
+            </TextField>
+            <TextField id="descripcionDetalles" fx:id="campoDescripcion" editable="false" layoutX="482.0" layoutY="169.0" prefHeight="208.0" prefWidth="430.0" promptText="Descripción" style="-fx-background-color: #CCECFE;">
                 <font>
                     <Font name="SansSerif Regular" size="20.0" />
                 </font>
-            </Text>
-            <Text layoutX="422.0" layoutY="350.0" style="-fx-background-color: #CCECFE;" text="Precio en Subasta:">
-                <font>
-                    <Font name="SansSerif Regular" size="20.0" />
-                </font>
-            </Text>
-         <Text layoutX="420.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calificación del vendedor: ">
+            </TextField>
+         <Text layoutX="477.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre producto:">
             <font>
                <Font name="SansSerif Regular" size="20.0" />
             </font>
          </Text>
-         <Text fx:id="calificacion" layoutX="820.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/5">
+         <Text layoutX="477.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio:" y="104.0">
             <font>
                <Font name="SansSerif Regular" size="20.0" />
             </font>
          </Text>
-            <TextField fx:id="campoDescripcionProducto" editable="false" layoutX="417.0" layoutY="122.0" prefHeight="110.0" prefWidth="454.0" promptText="Descripción" style="-fx-background-color: #CCECFE;">
-                <font>
-                    <Font name="SansSerif Regular" size="20.0" />
-                </font>
-            </TextField>
-            <TextField fx:id="campoPrecioSubasta" editable="false" layoutX="615.0" layoutY="324.0" promptText="Precio" style="-fx-background-color: #CCECFE;">
-                <font>
-                    <Font name="SansSerif Regular" size="20.0" />
-                </font>
-            </TextField>
-            <TextField fx:id="campoNumeroPujantes" editable="false" layoutX="623.0" layoutY="395.0" promptText="#" style="-fx-background-color: #CCECFE;">
-                <font>
-                    <Font name="SansSerif Regular" size="20.0" />
-                </font>
-            </TextField>
-            <TextField fx:id="campoDigitePrecio" layoutX="406.0" layoutY="466.0" promptText="Digite Precio a pujar" style="-fx-background-color: #CCECFE;">
-                <font>
-                    <Font name="SansSerif Regular" size="20.0" />
-                </font>
-            </TextField>
-            <Button fx:id="botonPuja" layoutX="710.0" layoutY="467.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#abrirPujar" prefHeight="36.0" prefWidth="146.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Pujar" textAlignment="CENTER">
+            <Button id="tableroDetalles" fx:id="botonCalificar" layoutX="380.0" layoutY="450.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#abrirCalificacion" prefHeight="37.0" prefWidth="220.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Calificar vendedor" textAlignment="CENTER">
                 <font>
                     <Font name="SansSerif Regular" size="20.0" />
                 </font>
@@ -199,12 +166,7 @@
                     <Insets />
                 </opaqueInsets>
             </Button>
-            <Text layoutX="414.0" layoutY="418.0" style="-fx-background-color: #CCECFE;" text="# Pujantes             :" wrappingWidth="188.068359375">
-                <font>
-                    <Font name="SansSerif Regular" size="20.0" />
-                </font>
-            </Text>
-            <Button fx:id="botonRealizarPregunta" layoutX="542.0" layoutY="542.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#abrirRealizarPregunta" prefHeight="37.0" prefWidth="205.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Realizar Pregunta" textAlignment="CENTER">
+            <Button id="eliminarDetalles" fx:id="botonRegresar" layoutX="380.0" layoutY="520.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#abrirRegresar" prefHeight="37.0" prefWidth="220.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Regresar" textAlignment="CENTER">
                 <font>
                     <Font name="SansSerif Regular" size="20.0" />
                 </font>
@@ -212,11 +174,6 @@
                     <Insets />
                 </opaqueInsets>
             </Button>
-            <Text fx:id="textoNombreProducto" layoutX="55.0" layoutY="171.0" style="-fx-background-color: #CCECFE;" text="NOMBRE DEL PRODUCTO">
-                <font>
-                    <Font name="SansSerif Regular" size="24.0" />
-                </font>
-            </Text>
         </AnchorPane>
     </center>
 </BorderPane>

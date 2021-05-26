@@ -3,9 +3,7 @@ package pujaQpuja.controller.pantallas;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import pujaQpuja.controller.modelos.ControladorGeneral;
@@ -18,6 +16,8 @@ import java.util.ResourceBundle;
 public class PantallaCalificarProductoController implements Initializable {
 
     private ControladorGeneral controladorGeneral;
+    private double calificacion;
+    private long id;
 
     @FXML
     private Rectangle botonAtras;
@@ -53,6 +53,7 @@ public class PantallaCalificarProductoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         controladorGeneral = new ControladorGeneral();
+        id = controladorGeneral.autenticacionController.getTemporalVisualizada().getVendedor().getId();
     }
 
     @FXML
@@ -65,6 +66,10 @@ public class PantallaCalificarProductoController implements Initializable {
     void abrirRealizarPregunta(ActionEvent event) {
         PantallasMenu.abrirVentana("PantallaChat");
         PantallasMenu.cerrarPantalla(event);
+    }
+    @FXML
+    void irAtras(MouseEvent event) {
+        PantallasMenu.abrirPantalla(event,"DetallesCompra");
     }
 
     @FXML
@@ -128,9 +133,40 @@ public class PantallaCalificarProductoController implements Initializable {
     @FXML
     private void accionAceptar(ActionEvent event) throws IOException {
         if (botonRadioBuena.isSelected() || botonRadioRegular.isSelected() || botonRadioMala.isSelected()) {
-            PantallasMenu.abrirVentana("PantallaExitoCalificar");
+            if(botonRadioBuena.isSelected()){
+                calificacion=5.0;
+                boolean a= controladorGeneral.usuarioController.calificarV(calificacion,id);
+            } else if(botonRadioRegular.isSelected()){
+                calificacion=3.0;
+                boolean a=controladorGeneral.usuarioController.calificarV(calificacion,id);
+            } else if(botonRadioMala.isSelected()){
+                calificacion=1.0;
+                boolean a=controladorGeneral.usuarioController.calificarV(calificacion,id);
+            }
+            ButtonType botonAceptar= new ButtonType("Aceptar");
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Recibimos tu calificación. Gracias por ayudarnos a mejorar!" , botonAceptar);
+            alert.setHeaderText("Muchas gracias!");
+            alert.showAndWait();
+            if (alert.getResult() == botonAceptar) {
+                PantallasMenu.abrirVentana("HistorialCompras");
+                PantallasMenu.cerrarPantalla(event);
+            }
+
         } else {
-            PantallasMenu.abrirVentana("PantallaErrorCalificar");
+            ButtonType cancelar= new ButtonType("Cancelar");
+            ButtonType volver = new ButtonType("Volver");
+            Alert alert = new Alert(Alert.AlertType.ERROR, "No recibimos tu calificación. Por favor selecciona una opción." , cancelar,volver);
+            alert.setHeaderText("Hubo un error.");
+            alert.showAndWait();
+            if (alert.getResult() == volver) {
+                PantallasMenu.abrirVentana("PantallaCalificarProducto");
+                PantallasMenu.cerrarPantalla(event);
+            }
+            else if (alert.getResult() == cancelar)
+            {
+                PantallasMenu.abrirVentana("HistorialCompras");
+                PantallasMenu.cerrarPantalla(event);
+            }
         }
     }
 
