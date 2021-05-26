@@ -64,7 +64,7 @@ public class PantallaMetodoPagoController implements Initializable {
     @FXML
     private TextField campoMontoAPagar;
 
-    double montoAPagar;
+    private double montoAPagar;
 
     public double getMontoAPagar() {
         return montoAPagar;
@@ -72,6 +72,7 @@ public class PantallaMetodoPagoController implements Initializable {
 
     public void setMontoAPagar(double montoAPagar) {
         this.montoAPagar = montoAPagar;
+        campoMontoAPagar.setText(String.valueOf(montoAPagar));
     }
 
     @FXML
@@ -118,7 +119,11 @@ public class PantallaMetodoPagoController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         desplegableTipoTarjeta.getItems().setAll(TipoTarjeta.values());
-        campoMontoAPagar.setText(String.valueOf(montoAPagar));
+        //campoMontoAPagar.setText(String.valueOf(montoAPagar));
+    }
+
+    public PantallaMetodoPagoController getController(){
+        return this;
     }
 
     @FXML
