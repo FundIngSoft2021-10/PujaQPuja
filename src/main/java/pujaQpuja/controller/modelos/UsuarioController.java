@@ -26,4 +26,16 @@ public class UsuarioController {
     public boolean modificar(Usuario usuario) {
         return usuarioRepository.modificar(usuario);
     }
+
+    public double obtenerCalificacionV(long id) {
+        return usuarioRepository.getCalificacionV(id);
+    }
+
+    public boolean calificarV(double calificacion, long id) {
+        if(obtenerCalificacionV(id)!=0.0){
+            calificacion=(calificacion+obtenerCalificacionV(id))/2;
+            return usuarioRepository.calificarVendedor(calificacion,id);
+        } else
+            return usuarioRepository.calificarVendedor(calificacion,id);
+    }
 }

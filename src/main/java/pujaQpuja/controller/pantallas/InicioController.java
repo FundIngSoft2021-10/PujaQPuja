@@ -27,12 +27,17 @@ public class InicioController implements Initializable {
 
     @FXML
     private void accionRegistrarse(ActionEvent event) throws IOException {
-        PantallasMenu.abrirPantalla(event, "PantallaRegistro");
+
+        PantallasMenu.abrirVentana("PantallaRegistro");
+        PantallasMenu.cerrarPantalla(event);
+
+        
     }
 
     @FXML
     private void accionIngresar(ActionEvent event) throws IOException {
-        PantallasMenu.abrirPantalla(event, "Ingresar");
+        PantallasMenu.abrirVentana("Ingresar");
+        PantallasMenu.cerrarPantalla(event);
     }
 
 }

@@ -207,4 +207,68 @@ public class UsuarioRepository extends DB {
             }
         }
     }
+
+    public double getCalificacionV(long id) {
+        Connection con = getConexion();
+        PreparedStatement ps;
+        ResultSet rs;
+
+        double temp = -1;
+
+        String sql = "";
+        sql += "SELECT u.calificacion ";
+        sql += "FROM Usuario u ";
+        sql += "WHERE u.id = ?";
+
+        try {
+            ps = con.prepareStatement(sql);
+
+            ps.setLong(1, id);
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                temp = rs.getDouble("calificacion");
+                return temp;
+            }
+            return temp;
+        } catch (SQLException e) {
+            System.err.println(e);
+            return temp;
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+
+    }
+
+    public boolean calificarVendedor(double calificacion, long id) {
+        Connection con = getConexion();
+        PreparedStatement ps;
+
+        String sql = "";
+        sql += "UPDATE Usuario ";
+        sql += "SET calificacion = ?";
+        sql += "WHERE id = ?";
+
+        try {
+            ps = con.prepareStatement(sql);
+
+            ps.setDouble(1, calificacion);
+            ps.setLong(2,id);
+
+            return !ps.execute();
+        } catch (SQLException e) {
+            System.err.println(e);
+            return false;
+        } finally {
+            try {
+                desconectar();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+    }
 }

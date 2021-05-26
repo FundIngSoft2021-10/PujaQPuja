@@ -1,18 +1,20 @@
 package pujaQpuja.controller.pantallas;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.FileChooser;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import pujaQpuja.controller.modelos.ControladorGeneral;
 import pujaQpuja.model.entities.Categoria;
@@ -76,52 +78,72 @@ public class PantallaRealizarSubastaController implements Initializable {
 
     @FXML
     void abrirQA(MouseEvent event) {
-        PantallasMenu.abrirQA(event);
+        PantallasMenu.abrirVentana("PantallaPreguntas");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
-    private void irAtras(MouseEvent event) {
-        PantallasMenu.abrirCategorias(event);
+    void abrirRealizarPregunta(ActionEvent event) {
+        PantallasMenu.abrirVentana("PantallaChat");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
-    private void abrirPerfil(MouseEvent event) {
-        PantallasMenu.abrirPerfil(event);
+    void abrirAjustes(MouseEvent event) {
+        PantallasMenu.abrirVentana("PantallaPerfil");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
-    private void abrirAjustes(MouseEvent event) {
-        PantallasMenu.abrirAjustes(event);
+    void abrirCategorias(MouseEvent event) {
+        PantallasMenu.abrirVentana("PantallaSeleccionarCategoria");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
-    private void abrirCategorias(MouseEvent event) {
-        PantallasMenu.abrirCategorias(event);
+    void abrirHistorialCompras(MouseEvent event) {
+        PantallasMenu.abrirVentana("HistorialCompras");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
-    private void abrirRealizarSubasta(MouseEvent event) {
-        PantallasMenu.abrirRealizarSubasta(event);
+    void abrirHistorialVentas(MouseEvent event) {
+        PantallasMenu.abrirVentana("HistorialVentas");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
-    private void abrirHistorialVentas(MouseEvent event) {
-        PantallasMenu.abrirHistorialVentas(event);
+    void abrirNotificaciones(MouseEvent event) {
+        PantallasMenu.abrirVentana("PantallaNotificaciones");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
-    private void abrirHistorialCompras(MouseEvent event) {
-        PantallasMenu.abrirHistorialCompras(event);
+    void abrirPerfil(MouseEvent event) {
+        PantallasMenu.abrirVentana("PantallaPerfil");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
-    private void abrirNotificaciones(MouseEvent event) {
-        PantallasMenu.abrirNotificaciones(event);
+    void abrirRealizarSubasta(MouseEvent event) {
+        PantallasMenu.abrirVentana("PantallaRealizarSubasta");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
-    private void abririMetodoPago(MouseEvent event) {
-        PantallasMenu.abririMetodoPago(event);
+    void abririMetodoPago(MouseEvent event) {
+        PantallasMenu.abrirVentana("PantallaMetodoPago");
+        PantallasMenu.cerrarPantalla(event);
+    }
+
+    @FXML
+    void accionBuscar(MouseEvent event) {
+    }
+
+    @FXML
+    void irAtras(MouseEvent event) throws IOException {
+        PantallasMenu.abrirVentana("PantallaSeleccionarCategoria");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
@@ -178,12 +200,40 @@ public class PantallaRealizarSubastaController implements Initializable {
 
         if (productoASubastar.getPrecioInicial() >= 0 && !productoASubastar.getNombre().isBlank() && !productoASubastar.getDescripcion().isBlank() && productoASubastar.getCategoria() != null && productoASubastar.getFoto() != null) {
 
+
             controladorGeneral.productoController.crear(productoASubastar, rutaImagen);
             controladorGeneral.pujaController.crear(productoASubastar);
+            ButtonType botonsi= new ButtonType("Si");
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Estas seguro de publicar el producto : " + campoNombreProducto.getText() + " ?", botonsi, ButtonType.NO);
+            alert.showAndWait();
 
-            PantallasMenu.abrirVentana("PantallaExitoRealizarSubasta");
+            if (alert.getResult() == botonsi) {
+
+                ////////////////////////////////////////////////////////////////////////77
+
+                ///////////////////////////////////////////////////////////////////////////
+                PantallasMenu.abrirVentana("PantallaSeleccionarCategoria");
+                PantallasMenu.cerrarPantalla(event);
+            }else if(alert.getResult() == ButtonType.NO)
+            {
+                PantallasMenu.abrirVentana("PantallaSeleccionarCategoria");
+                PantallasMenu.cerrarPantalla(event);
+            }
+
         } else {
-            PantallasMenu.abrirVentana("PantallaErrorPublicacionSubasta");
+                        ButtonType botonvolver= new ButtonType("Volver");
+                        ButtonType cancelar= new ButtonType("Cancelar");
+                        Alert alert = new Alert(Alert.AlertType.ERROR, " Error en los campos " , botonvolver ,cancelar);
+                        alert.setHeaderText("ERROR AL VALIDAR DATOS INGRESADOS");
+                        alert.showAndWait();
+
+                        if (alert.getResult() == botonvolver) {
+
+                        }else if(alert.getResult() == cancelar)
+                        {
+                            PantallasMenu.abrirVentana("PantallaSeleccionarCategoria");
+                            PantallasMenu.cerrarPantalla(event);
+                        }
         }
     }
 
