@@ -2,6 +2,7 @@ package pujaQpuja.controller.pantallas;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -15,6 +16,7 @@ import pujaQpuja.model.entities.otros.TablaMensaje;
 import pujaQpuja.utilities.PantallasMenu;
 import javafx.fxml.Initializable;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -82,53 +84,73 @@ public class PantallaPreguntasController implements Initializable {
     }
 
     @FXML
-    private void abrirPerfil(MouseEvent event) {
-        PantallasMenu.abrirPerfil(event);
-    }
-
-    @FXML
-    private void abrirAjustes(MouseEvent event) {
-        PantallasMenu.abrirAjustes(event);
-    }
-
-    @FXML
-    private void abrirCategorias(MouseEvent event) {
-        PantallasMenu.abrirCategorias(event);
-    }
-
-    @FXML
-    private void abrirHistorialVentas(MouseEvent event) {
-        PantallasMenu.abrirHistorialVentas(event);
-    }
-
-    @FXML
-    private void abrirHistorialCompras(MouseEvent event) {
-        PantallasMenu.abrirHistorialCompras(event);
-    }
-
-    @FXML
-    private void abrirNotificaciones(MouseEvent event) {
-        PantallasMenu.abrirNotificaciones(event);
-    }
-
-    @FXML
     void abrirQA(MouseEvent event) {
-        PantallasMenu.abrirQA(event);
+        PantallasMenu.abrirVentana("PantallaPreguntas");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
-    private void abrirRealizarSubasta(MouseEvent event) {
-        PantallasMenu.abrirRealizarSubasta(event);
+    void abrirRealizarPregunta(ActionEvent event) {
+        PantallasMenu.abrirVentana("PantallaChat");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
-    private void abririMetodoPago(MouseEvent event) {
-        PantallasMenu.abririMetodoPago(event);
+    void abrirAjustes(MouseEvent event) {
+        PantallasMenu.abrirVentana("PantallaPerfil");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
-    void irAtras(MouseEvent event) {
-        PantallasMenu.abrirCategorias(event);
+    void abrirCategorias(MouseEvent event) {
+        PantallasMenu.abrirVentana("PantallaSeleccionarCategoria");
+        PantallasMenu.cerrarPantalla(event);
+    }
+
+    @FXML
+    void abrirHistorialCompras(MouseEvent event) {
+        PantallasMenu.abrirVentana("HistorialCompras");
+        PantallasMenu.cerrarPantalla(event);
+    }
+
+    @FXML
+    void abrirHistorialVentas(MouseEvent event) {
+        PantallasMenu.abrirVentana("HistorialVentas");
+        PantallasMenu.cerrarPantalla(event);
+    }
+
+    @FXML
+    void abrirNotificaciones(MouseEvent event) {
+        PantallasMenu.abrirVentana("PantallaNotificaciones");
+        PantallasMenu.cerrarPantalla(event);
+    }
+
+    @FXML
+    void abrirPerfil(MouseEvent event) {
+        PantallasMenu.abrirVentana("PantallaPerfil");
+        PantallasMenu.cerrarPantalla(event);
+    }
+
+    @FXML
+    void abrirRealizarSubasta(MouseEvent event) {
+        PantallasMenu.abrirVentana("PantallaRealizarSubasta");
+        PantallasMenu.cerrarPantalla(event);
+    }
+
+    @FXML
+    void abririMetodoPago(MouseEvent event) {
+        PantallasMenu.abrirVentana("PantallaMetodoPago");
+        PantallasMenu.cerrarPantalla(event);
+    }
+
+    @FXML
+    void accionBuscar(MouseEvent event) {
+    }
+
+    @FXML
+    void irAtras(MouseEvent event) throws IOException {
+        PantallasMenu.abrirVentana("PantallaSeleccionarCategoria");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML

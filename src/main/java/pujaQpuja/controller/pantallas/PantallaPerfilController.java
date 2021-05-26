@@ -56,51 +56,62 @@ public class PantallaPerfilController implements Initializable {
 
     @FXML
     void abrirQA(MouseEvent event) {
-        PantallasMenu.abrirQA(event);
+        PantallasMenu.abrirVentana("PantallaPreguntas");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
     private void irAtras(MouseEvent event) {
+        PantallasMenu.abrirVentana("PantallaSeleccionarCategoria");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
     private void abrirPerfil(MouseEvent event) {
-        PantallasMenu.abrirPerfil(event);
+        PantallasMenu.abrirVentana("PantallaPerfil");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
     private void abrirAjustes(MouseEvent event) {
-        PantallasMenu.abrirAjustes(event);
+        PantallasMenu.abrirVentana("PantallaPerfil");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
     private void abrirCategorias(MouseEvent event) {
-        PantallasMenu.abrirCategorias(event);
+        PantallasMenu.abrirVentana("PantallaSeleccionarCategoria");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
     private void abrirRealizarSubasta(MouseEvent event) {
-        PantallasMenu.abrirRealizarSubasta(event);
+        PantallasMenu.abrirVentana("PantallaRealizarSubasta");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
     private void abrirHistorialVentas(MouseEvent event) {
-        PantallasMenu.abrirHistorialVentas(event);
+        PantallasMenu.abrirVentana("HistorialVentas");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
     private void abrirHistorialCompras(MouseEvent event) {
-        PantallasMenu.abrirHistorialCompras(event);
+        PantallasMenu.abrirVentana("HistorialCompras");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
     private void abrirNotificaciones(MouseEvent event) {
-        PantallasMenu.abrirNotificaciones(event);
+        PantallasMenu.abrirVentana("PantallaNotificaciones");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
     private void abririMetodoPago(MouseEvent event) {
-        PantallasMenu.abririMetodoPago(event);
+        PantallasMenu.abrirVentana("PantallaMetodoPago");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML

@@ -7,9 +7,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import pujaQpuja.MainApp;
@@ -35,9 +38,15 @@ public class PantallasMenu {
     public static void abrirVentana(String nombrePantalla) {
 
             ////////////////////////////////////////////////////////////////////////////
+                                Text text = new Text("¡Aguarda!  Estamos cargando las subastas mas interesantes para tí");
+                                text.setX(150);
+                                text.setY(150);
+                                text.setStroke(Color.BLUE);
+                                //text.setStrokeWidth(3);
                                 StackPane loadingRoot = new StackPane();
-
-                                loadingRoot.getChildren().setAll(new ProgressIndicator());
+                                ProgressIndicator pin =new ProgressIndicator();
+                                loadingRoot.getChildren().setAll(pin);
+                                loadingRoot.getChildren().add(text);
                                 final Scene scene = new Scene(loadingRoot);
                                 Stage stage = new Stage();
                                 stage.initModality(Modality.WINDOW_MODAL);
@@ -45,22 +54,28 @@ public class PantallasMenu {
                                 stage.setHeight(760);
                                 stage.setScene(scene);
                                 stage.show();
-
                                 new Thread(() -> {
                               //  root = FXMLLoader.load(Main.class.getResource("FXMLDocument.fxml"));
-                                Parent root;
-                                FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("/view/" + nombrePantalla + ".fxml"));
 
-                                 try{
+                                    // we need to wrap UI code in Platform
+                                    Platform.runLater(() -> {
+                                             Parent root;
+                                              try{
+
+                                      FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("/view/" + nombrePantalla + ".fxml"));
+
                                         root = fxmlLoader.load();
-                                         scene.setRoot(root);
+
+                                         Stage window = new Stage();
+                                            window.setScene(new Scene(root));
+                                            window.show();
+
+                                            stage.close();
+                                         //scene.setRoot(root);
                                  }catch(IOException ex)
                                  {
                                      System.err.println("Error abriendo pantalla: " + ex);
                                  }
-                                    // we need to wrap UI code in Platform
-                                    Platform.runLater(() -> {
-
 
                                     });
                                 }).start();
