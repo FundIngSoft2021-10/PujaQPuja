@@ -139,9 +139,9 @@ public class PantallaNotificaciones implements Initializable {
             Long id = controladorGeneral.autenticacionController.getAutenticado().getId();
             Puja puja = tablaCatalogo.getSelectionModel().getSelectedItem().getPuja();
 
-            //controladorGeneral.pujaController.actualizarPuja(puja);
+            controladorGeneral.pujaController.actualizarPuja(puja);
 
-
+            //if vendedor no mostrar
             double montoAPagar = puja.getPrecioFinal();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + "PantallaMetodoPago.fxml"));
             fxmlLoader.load();

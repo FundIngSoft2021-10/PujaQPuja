@@ -54,7 +54,7 @@ public class PujaController {
                     temp.setImagen(new ImageView(actual.getProducto().getFoto()));
                 }
             }
-            StringBuilder dtemp = new StringBuilder("Nombre:  " + actual.getProducto().getNombre() + "\n" + "Descripci�n:  " + actual.getProducto().getDescripcion() + "\n" + "Precio:  " + "$ " + actual.getPrecioFinal() + " COP" + "\n" + "Categoria: " + actual.getProducto().getCategoria());
+            StringBuilder dtemp = new StringBuilder("Nombre:  " + actual.getProducto().getNombre() + "\n" + "Descripción:  " + actual.getProducto().getDescripcion() + "\n" + "Precio:  " + "$ " + actual.getPrecioFinal() + " COP" + "\n" + "Categoria: " + actual.getProducto().getCategoria());
             temp.setDesc(dtemp.toString());
             datos.add(temp);
         }
@@ -206,13 +206,13 @@ public class PujaController {
         return datos;
     }
 
-    public boolean actualizarPuja(Puja puja) {
+    public void actualizarPuja(Puja puja) {
         Long id = autenticacionController.getAutenticado().getId();
         if(puja.getComprador().getId() == id) {
-            return pujaRepository.actualizarNotificacionesComprador(puja.getId());
+            pujaRepository.actualizarNotificacionesComprador(puja.getId());
         }
-        else {
-            return pujaRepository.actualizarNotificacionesVendedor(puja.getId());
+        if(puja.getVendedor().getId() == id) {
+            pujaRepository.actualizarNotificacionesVendedor(puja.getId());
         }
     }
 }

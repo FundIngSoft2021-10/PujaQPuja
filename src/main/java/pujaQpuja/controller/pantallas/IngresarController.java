@@ -38,7 +38,7 @@ public class IngresarController implements Initializable {
 
         if (correo != null && contra != null) {
             if (controladorGeneral.autenticacionController.iniciarSesion(correo, contra)) {
-                PantallasMenu.abrirVentana("PantallaSeleccionarCategoria");
+                PantallasMenu.abrirVentana("PantallaPerfil");
                 PantallasMenu.cerrarPantalla(event);
             } else {
                 PantallasMenu.abrirVentana("ErrorAutenticar");

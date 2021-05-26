@@ -575,7 +575,7 @@ public class PujaRepository extends DB {
         String sql = "";
         sql += "SELECT p.* ";
         sql += "FROM Puja p, Usuario u ";
-        sql += "WHERE p.idHistorialVentas = u.id AND p.idHistorialCompras IS NOT NULL AND p.estado = 'INACTIVO' AND p.VistoComprador = 0 AND u.id = ?";
+        sql += "WHERE p.idHistorialVentas = u.id AND p.idHistorialCompras IS NOT NULL AND p.estado = 'INACTIVO' AND p.VistoComprador = 0 AND p.idHistorialCompras = ?";
 
         try {
             ps = con.prepareStatement(sql);
@@ -587,6 +587,8 @@ public class PujaRepository extends DB {
                 temp.setId(rs.getLong("id"));
                 temp.setPrecioFinal(rs.getDouble("precioFinal"));
                 temp.setProducto(productoController.buscarPorId(rs.getLong("idProducto")));
+                temp.setComprador(usuarioController.buscarPorId(rs.getLong("idHistorialCompras")));
+                temp.setVendedor(usuarioController.buscarPorId(rs.getLong("idHistorialVentas")));
 
                 respuesta.add(temp);
             }
@@ -614,7 +616,7 @@ public class PujaRepository extends DB {
         String sql = "";
         sql += "SELECT p.* ";
         sql += "FROM Puja p, Usuario u ";
-        sql += "WHERE p.idHistorialCompras = u.id AND p.idHistorialCompras IS NOT NULL AND p.estado = 'INACTIVO' AND p.VistoVendedor = 0 AND u.id = ?";
+        sql += "WHERE p.idHistorialVentas = u.id AND p.idHistorialCompras IS NOT NULL AND p.estado = 'INACTIVO' AND p.VistoVendedor = 0 AND p.idHistorialVentas = ?";
 
         try {
             ps = con.prepareStatement(sql);
@@ -627,6 +629,8 @@ public class PujaRepository extends DB {
                 temp.setId(rs.getLong("id"));
                 temp.setPrecioFinal(rs.getDouble("precioFinal"));
                 temp.setProducto(productoController.buscarPorId(rs.getLong("idProducto")));
+                temp.setComprador(usuarioController.buscarPorId(rs.getLong("idHistorialCompras")));
+                temp.setVendedor(usuarioController.buscarPorId(rs.getLong("idHistorialVentas")));
 
 
                 respuesta.add(temp);
