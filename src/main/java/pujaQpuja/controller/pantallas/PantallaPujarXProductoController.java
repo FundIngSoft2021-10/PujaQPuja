@@ -20,6 +20,7 @@ import pujaQpuja.utilities.PantallasMenu;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
 public class PantallaPujarXProductoController implements Initializable {
@@ -79,7 +80,8 @@ public class PantallaPujarXProductoController implements Initializable {
         campoPrecioSubasta.setText(Double.toString(controladorGeneral.autenticacionController.getTemporalVisualizada().getPrecioFinal()));
         campoNumeroPujantes.setText(Integer.toString(controladorGeneral.pujaController.obtenerNumeroPujantesPorPujaId(controladorGeneral.autenticacionController.getTemporalVisualizada().getId())));
         imagenProducto.setImage(controladorGeneral.autenticacionController.getTemporalVisualizada().getProducto().getFoto());
-        calificacion.setText(Double.toString(controladorGeneral.usuarioController.obtenerCalificacionV(controladorGeneral.autenticacionController.getTemporalVisualizada().getVendedor().getId()))+"/5");
+        DecimalFormat df = new DecimalFormat("#.00");
+        calificacion.setText(df.format(controladorGeneral.usuarioController.obtenerCalificacionV(controladorGeneral.autenticacionController.getTemporalVisualizada().getVendedor().getId())).toString()+"/5");
     }
 
     @FXML

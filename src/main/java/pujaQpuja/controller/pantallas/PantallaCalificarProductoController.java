@@ -67,10 +67,7 @@ public class PantallaCalificarProductoController implements Initializable {
         PantallasMenu.abrirVentana("PantallaChat");
         PantallasMenu.cerrarPantalla(event);
     }
-    @FXML
-    void irAtras(MouseEvent event) {
-        PantallasMenu.abrirPantalla(event,"DetallesCompra");
-    }
+
 
     @FXML
     void abrirAjustes(MouseEvent event) {
@@ -126,7 +123,7 @@ public class PantallaCalificarProductoController implements Initializable {
 
     @FXML
     void irAtras(MouseEvent event) throws IOException {
-        PantallasMenu.abrirVentana("PantallaSeleccionarCategoria");
+        PantallasMenu.abrirVentana("DetallesCompra");
         PantallasMenu.cerrarPantalla(event);
     }
 

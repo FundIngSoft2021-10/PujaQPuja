@@ -38,7 +38,7 @@ public class PantallasMenu {
     public static void abrirVentana(String nombrePantalla) {
 
             ////////////////////////////////////////////////////////////////////////////
-                                Text text = new Text("¡Aguarda!  Estamos cargando las subastas mas interesantes para tí");
+                                Text text = new Text("¡Aguarda!  Estamos cargando las subastas mas interesantes para ti");
                                 text.setX(150);
                                 text.setY(150);
                                 text.setStroke(Color.BLUE);
