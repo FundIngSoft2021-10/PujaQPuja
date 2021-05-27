@@ -5,6 +5,7 @@ module pujaQpuja {
     requires java.sql;
     requires java.base;
     requires junit;
+    requires org.junit.jupiter.api;
     exports pujaQpuja.test;
     opens pujaQpuja.test to javafx.fxml;
     exports pujaQpuja;
@@ -21,4 +22,5 @@ module pujaQpuja {
     opens pujaQpuja.model.entities.otros to javafx.fxml;
     exports pujaQpuja.controller.modelos;
     opens pujaQpuja.controller.modelos to javafx.fxml;
+
 }

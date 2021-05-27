@@ -212,7 +212,10 @@ public class UsuarioRepository extends DB {
         Connection con = getConexion();
         PreparedStatement ps;
         ResultSet rs;
-
+        if(id==-1)
+        {
+                return -1;
+        }
         double temp = -1;
 
         String sql = "";

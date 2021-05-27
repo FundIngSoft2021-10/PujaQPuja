@@ -334,7 +334,7 @@ public class PujaRepository extends DB {
             ps.setDouble(1, nuevoprecio);
             ps.setLong(2, idPuja);
 
-            return !ps.execute();
+            return ps.execute();
         } catch (SQLException e) {
             System.err.println(e);
             return false;
@@ -363,7 +363,7 @@ public class PujaRepository extends DB {
 
             ps.setLong(1, idPuja);
 
-            return !ps.execute();
+            return ps.execute();
 
         } catch (SQLException e) {
             System.err.println(e);
@@ -391,7 +391,7 @@ public class PujaRepository extends DB {
             ps = con.prepareStatement(sql);
             ps.setLong(1, idPuja);
 
-            return !ps.execute();
+            return ps.execute();
 
         } catch (SQLException e) {
             System.err.println(e);
