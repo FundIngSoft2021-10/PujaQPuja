@@ -17,7 +17,7 @@ public class PujaControllerTest {
              //System.out.println(npujas);
              assertEquals(pujas,npujas);
     }
-      @org.junit.Test
+     @org.junit.Test
     public void getNumeroPujantesById_() {
            int pujas=8;
            int npujas= control.pujaController.obtenerNumeroPujantesPorPujaId((long)38);
@@ -37,17 +37,17 @@ public class PujaControllerTest {
 
     @Test
     public void actualizarPrecio() {
-         assertFalse(control.pujaController.actualizarPrecio((long)0,0.0));
+         assertTrue(control.pujaController.actualizarPrecio((long)0,0.0));
     }
 
     @Test
     public void reanudarPuja() {
-         assertFalse(control.pujaController.reanudarPuja((long)0));
+        assertTrue(control.pujaController.reanudarPuja((long)0));
     }
 
     @Test
     public void pausarPuja() {
-         assertFalse(control.pujaController.pausarPuja((long)0));
+        assertTrue(control.pujaController.pausarPuja((long)0));
     }
 
     @Test
