@@ -1,5 +1,6 @@
 package pujaQpuja.controller.pantallas;
 
+import javafx.application.Platform;
 import javafx.beans.InvalidationListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
@@ -13,14 +14,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import pujaQpuja.controller.modelos.ControladorGeneral;
 import pujaQpuja.model.entities.Categoria;
@@ -30,6 +30,7 @@ import pujaQpuja.utilities.PantallasMenu;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDateTime;
 import java.util.*;
 
 public class PantallaSeleccionarCategoriaController implements Initializable {
@@ -70,10 +71,26 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
     private Rectangle botonOrdenar;
     @FXML
     private Rectangle botonRectanguloQA;
+    @FXML
+    private Button botonSubastaPopular;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         controladorGeneral = new ControladorGeneral();
+            ////////////////////////////////////////////////////////////////////////////////7
+
+            ///////////////////////////////////////////////////////////////////////////////77
+
+        /*
+        if (controladorGeneral.pujaController.chequeoTiempoPujas()) {
+            //PantallasMenu.abrirVentana("PantallaExitoRealizarSubasta");
+            System.out.println("holi");
+        } else {
+            // PantallasMenu.abrirVentana("PantallaErrorPublicacionSubasta");
+            System.out.println("chao");
+        }*/
+
+        controladorGeneral.pujaController.ganadorPuja();
 
         desplegableFiltros.getItems().setAll(Categoria.values());
         columnaDescripcion.setCellValueFactory(new PropertyValueFactory<TablaCatalogoTemporal, String>("desc"));
@@ -92,7 +109,7 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
             filteredData.setPredicate(TablaCatalogoTemporal -> {
                 if (newValue == null || newValue.isEmpty())
                     return true;
-                return TablaCatalogoTemporal.getDesc().toLowerCase().indexOf(newValue.toLowerCase()) != -1 ? true : false;
+                return TablaCatalogoTemporal.getDesc().toLowerCase().contains(newValue.toLowerCase());
             });
         });
         SortedList<TablaCatalogoTemporal> sortedData = new SortedList<>(filteredData);
@@ -102,51 +119,70 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
 
     @FXML
     void abrirQA(MouseEvent event) {
-        PantallasMenu.abrirQA(event);
+        PantallasMenu.abrirVentana("PantallaPreguntas");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
-    private void irAtras(MouseEvent event) {
+    void abrirRealizarPregunta(ActionEvent event) {
+        PantallasMenu.abrirVentana("PantallaChat");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
-    private void abrirPerfil(MouseEvent event) {
-        PantallasMenu.abrirPerfil(event);
+    void abrirAjustes(MouseEvent event) {
+        PantallasMenu.abrirVentana("PantallaPerfil");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
-    private void abrirAjustes(MouseEvent event) {
-        PantallasMenu.abrirAjustes(event);
+    void abrirCategorias(MouseEvent event) {
+        PantallasMenu.abrirVentana("PantallaSeleccionarCategoria");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
-    private void abrirCategorias(MouseEvent event) {
-        PantallasMenu.abrirCategorias(event);
+    void abrirHistorialCompras(MouseEvent event) {
+        PantallasMenu.abrirVentana("HistorialCompras");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
-    private void abrirRealizarSubasta(MouseEvent event) {
-        PantallasMenu.abrirRealizarSubasta(event);
+    void abrirHistorialVentas(MouseEvent event) {
+        PantallasMenu.abrirVentana("HistorialVentas");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
-    private void abrirHistorialVentas(MouseEvent event) {
-        PantallasMenu.abrirHistorialVentas(event);
+    void abrirNotificaciones(MouseEvent event) {
+        PantallasMenu.abrirVentana("PantallaNotificaciones");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
-    private void abrirHistorialCompras(MouseEvent event) {
-        PantallasMenu.abrirHistorialCompras(event);
+    void abrirPerfil(MouseEvent event) {
+        PantallasMenu.abrirVentana("PantallaPerfil");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
-    private void abrirNotificaciones(MouseEvent event) {
-        PantallasMenu.abrirNotificaciones(event);
+    void abrirRealizarSubasta(MouseEvent event) {
+        PantallasMenu.abrirVentana("PantallaRealizarSubasta");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
-    private void abririMetodoPago(MouseEvent event) {
-        PantallasMenu.abririMetodoPago(event);
+    void abririMetodoPago(MouseEvent event) {
+        PantallasMenu.abrirVentana("PantallaMetodoPago");
+        PantallasMenu.cerrarPantalla(event);
+    }
+
+
+
+    @FXML
+    void irAtras(MouseEvent event) throws IOException {
+        PantallasMenu.abrirVentana("PantallaSeleccionarCategoria");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
@@ -190,7 +226,25 @@ public class PantallaSeleccionarCategoriaController implements Initializable {
             window.setScene(pantallaIngresarScene);
             window.show();
         }
+    }
 
+    @FXML
+    void filtrarXPopularidad(ActionEvent event) {
+        ObservableList<TablaCatalogoTemporal> datos = FXCollections.observableArrayList();
+        datos.addAll(controladorGeneral.pujaController.getPujasMasPopulares(desplegableFiltros.getSelectionModel().getSelectedItem()));
+        tablaCatalogo.setItems(datos);
+
+        FilteredList<TablaCatalogoTemporal> filteredData = new FilteredList<>(datos, b -> true);
+        campoBusqueda.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(TablaCatalogoTemporal -> {
+                if (newValue == null || newValue.isEmpty())
+                    return true;
+                return TablaCatalogoTemporal.getDesc().toLowerCase().indexOf(newValue.toLowerCase()) != -1 ? true : false;
+            });
+        });
+        SortedList<TablaCatalogoTemporal> sortedData = new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(tablaCatalogo.comparatorProperty());
+        tablaCatalogo.setItems(sortedData);
     }
 
 }

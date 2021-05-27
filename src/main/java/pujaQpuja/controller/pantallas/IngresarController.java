@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import pujaQpuja.controller.modelos.ControladorGeneral;
 import pujaQpuja.utilities.PantallasMenu;
 
@@ -37,10 +38,15 @@ public class IngresarController implements Initializable {
 
         if (correo != null && contra != null) {
             if (controladorGeneral.autenticacionController.iniciarSesion(correo, contra)) {
-                PantallasMenu.abrirPantalla(event, "PantallaSeleccionarCategoria");
+                PantallasMenu.abrirVentana("PantallaPerfil");
+                PantallasMenu.cerrarPantalla(event);
             } else {
                 PantallasMenu.abrirVentana("ErrorAutenticar");
             }
         }
     }
 }
+  
+   
+
+    

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
@@ -117,45 +118,139 @@
             <ImageView fitHeight="133.0" fitWidth="240.0" layoutX="22.0" layoutY="-83.0" pickOnBounds="true" preserveRatio="true">
                 <Image url="@../images/logo_vertical.png" />
             </ImageView>
-         <ImageView disable="true" fitHeight="44.0" fitWidth="37.0" layoutX="14.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="@../images/chat.png" />
-            </image>
-         </ImageView>
-         <Label layoutX="66.0" layoutY="109.0" prefHeight="33.0" prefWidth="68.0" text="Q&amp;A">
-            <font>
-               <Font name="Berlin Sans FB" size="24.0" />
-            </font>
-         </Label>
-         <Rectangle fx:id="botonRectanguloQA" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="55.0" layoutY="98.0" onMouseClicked="#abrirQA" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="269.0" />
+            <ImageView disable="true" fitHeight="44.0" fitWidth="37.0" layoutX="14.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../images/chat.png" />
+            </ImageView>
+            <Label layoutX="66.0" layoutY="109.0" prefHeight="33.0" prefWidth="68.0" text="Q&amp;A">
+                <font>
+                    <Font name="Berlin Sans FB" size="24.0" />
+                </font>
+            </Label>
+            <Rectangle fx:id="botonRectanguloQA" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="55.0" layoutY="98.0" onMouseClicked="#abrirQA" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="269.0" />
         </AnchorPane>
     </left>
     <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
     <center>
         <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label layoutX="80.0" layoutY="81.0" text="Método de pago" />
-            <ChoiceBox fx:id="desplegableTipoTarjeta" layoutX="80.0" layoutY="107.0" prefWidth="150.0" />
-            <Text layoutX="81.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Número de tarjeta" />
-            <TextField fx:id="campoNumeroTarjeta" layoutX="81.0" layoutY="170.0" />
-            <Label layoutX="392.0" layoutY="145.0" text="Fecha de expiración" />
-            <TextField fx:id="campoFechaExpiracion" layoutX="392.0" layoutY="170.0" prefHeight="25.0" prefWidth="138.0" />
-            <Label layoutX="612.0" layoutY="145.0" text="Código de seguridad" />
-            <TextField fx:id="campoCodigoSeguridad" layoutX="612.0" layoutY="170.0" prefHeight="25.0" prefWidth="81.0" />
-            <Label layoutX="84.0" layoutY="240.0" text="Información de facturación" />
-            <Label layoutX="102.0" layoutY="310.0" text="Nombre" />
-            <TextField fx:id="campoNombre" layoutX="96.0" layoutY="340.0" />
-            <Label layoutX="302.0" layoutY="310.0" text="Apellido" />
-            <TextField fx:id="campoApellido" layoutX="293.0" layoutY="340.0" />
-            <Label layoutX="96.0" layoutY="397.0" text="Ciudad" />
-            <TextField fx:id="campoCiudad" layoutX="96.0" layoutY="431.0" />
-            <Label layoutX="299.0" layoutY="398.0" text="Dirección" />
-            <TextField fx:id="campoDireccion" layoutX="293.0" layoutY="431.0" />
-            <Label layoutX="109.0" layoutY="486.0" text="Código postal" />
-            <TextField fx:id="campoCodigoPostal" layoutX="104.0" layoutY="518.0" />
-            <Label layoutX="299.0" layoutY="486.0" text="Número telefónico" />
-            <TextField fx:id="campoTelefono" layoutX="293.0" layoutY="518.0" />
-            <Button fx:id="botonPagar" layoutX="686.0" layoutY="491.0" mnemonicParsing="false" onAction="#pagar" text="Pagar" />
-         </children></AnchorPane>
+            <Text layoutX="433.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Método de pago">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+            </Text>
+            <ChoiceBox fx:id="desplegableTipoTarjeta" layoutX="380.0" layoutY="59.0" prefHeight="33.0" prefWidth="251.0" style="-fx-background-color: #CCECFE;" />
+            <Text layoutX="112.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Número de tarjeta">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+            </Text>
+            <TextField fx:id="campoNumeroTarjeta" layoutX="67.0" layoutY="155.0" style="-fx-background-color: #CCECFE;">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+            </TextField>
+            <Text layoutX="416.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha de expiración">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+            </Text>
+            <TextField fx:id="campoFechaExpiracion" layoutX="381.0" layoutY="157.0" style="-fx-background-color: #CCECFE;">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+            </TextField>
+            <Text layoutX="728.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Código de seguridad">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+            </Text>
+            <TextField fx:id="campoCodigoSeguridad" layoutX="697.0" layoutY="156.0" style="-fx-background-color: #CCECFE;">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+            </TextField>
+            <Text layoutX="378.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Información de facturación">
+                <font>
+                    <Font name="SansSerif Bold" size="20.0" />
+                </font>
+            </Text>
+            <Text layoutX="157.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+            </Text>
+            <TextField fx:id="campoNombre" layoutX="67.0" layoutY="334.0" style="-fx-background-color: #CCECFE;">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+            </TextField>
+            <Text layoutX="471.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apellido">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+            </Text>
+            <TextField fx:id="campoApellido" layoutX="381.0" layoutY="335.0" style="-fx-background-color: #CCECFE;">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+            </TextField>
+            <Text layoutX="161.0" layoutY="429.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ciudad">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+            </Text>
+            <TextField fx:id="campoCiudad" layoutX="67.0" layoutY="436.0" style="-fx-background-color: #CCECFE;">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+            </TextField>
+            <Text layoutX="465.0" layoutY="429.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dirección">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+            </Text>
+            <TextField fx:id="campoDireccion" layoutX="381.0" layoutY="437.0" style="-fx-background-color: #CCECFE;">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+            </TextField>
+            <Text layoutX="131.0" layoutY="530.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Código postal">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+            </Text>
+            <TextField fx:id="campoCodigoPostal" layoutX="67.0" layoutY="538.0" style="-fx-background-color: #CCECFE;">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+            </TextField>
+            <Text layoutX="425.0" layoutY="529.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Número telefónico">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+            </Text>
+            <TextField fx:id="campoTelefono" layoutX="381.0" layoutY="536.0" style="-fx-background-color: #CCECFE;">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+            </TextField>
+            <Button fx:id="botonPagar" layoutX="749.0" layoutY="494.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#pagar" prefHeight="36.0" prefWidth="146.0" style="-fx-background-color: #74C3FF; -fx-background-radius: 8;" text="Pagar" textAlignment="CENTER">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+                <opaqueInsets>
+                    <Insets />
+                </opaqueInsets>
+            </Button>
+            <TextField fx:id="campoMontoAPagar" editable="false" layoutX="697.0" layoutY="414.0" style="-fx-background-color: #CCECFE;">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+            </TextField>
+            <Text layoutX="758.0" layoutY="399.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monto a pagar">
+                <font>
+                    <Font name="SansSerif Regular" size="20.0" />
+                </font>
+            </Text>
+        </AnchorPane>
     </center>
 </BorderPane>

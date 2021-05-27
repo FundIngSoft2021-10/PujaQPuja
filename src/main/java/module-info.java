@@ -4,6 +4,9 @@ module pujaQpuja {
     requires javafx.media;
     requires java.sql;
     requires java.base;
+    requires junit;
+    exports pujaQpuja.test;
+    opens pujaQpuja.test to javafx.fxml;
     exports pujaQpuja;
     exports pujaQpuja.utilities;
     exports pujaQpuja.controller.pantallas;

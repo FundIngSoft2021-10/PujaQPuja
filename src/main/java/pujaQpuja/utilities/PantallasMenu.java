@@ -1,12 +1,19 @@
 package pujaQpuja.utilities;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ProgressBar;
+import javafx.scene.control.ProgressIndicator;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import pujaQpuja.MainApp;
 import pujaQpuja.controller.pantallas.PantallaRealizarSubastaController;
@@ -29,15 +36,60 @@ public class PantallasMenu {
     }
 
     public static void abrirVentana(String nombrePantalla) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("/view/" + nombrePantalla + ".fxml"));
+
+            ////////////////////////////////////////////////////////////////////////////
+                                Text text = new Text("¡Aguarda!  Estamos cargando las subastas mas interesantes para ti");
+                                text.setX(150);
+                                text.setY(150);
+                                text.setStroke(Color.BLUE);
+                                //text.setStrokeWidth(3);
+                                StackPane loadingRoot = new StackPane();
+                                ProgressIndicator pin =new ProgressIndicator();
+                                loadingRoot.getChildren().setAll(pin);
+                                loadingRoot.getChildren().add(text);
+                                final Scene scene = new Scene(loadingRoot);
+                                Stage stage = new Stage();
+                                stage.initModality(Modality.WINDOW_MODAL);
+                                stage.setWidth(1280);
+                                stage.setHeight(760);
+                                stage.setScene(scene);
+                                stage.show();
+                                new Thread(() -> {
+                              //  root = FXMLLoader.load(Main.class.getResource("FXMLDocument.fxml"));
+
+                                    // we need to wrap UI code in Platform
+                                    Platform.runLater(() -> {
+                                             Parent root;
+                                              try{
+
+                                      FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("/view/" + nombrePantalla + ".fxml"));
+
+                                        root = fxmlLoader.load();
+
+                                         Stage window = new Stage();
+                                            window.setScene(new Scene(root));
+                                            window.show();
+
+                                            stage.close();
+                                         //scene.setRoot(root);
+                                 }catch(IOException ex)
+                                 {
+                                     System.err.println("Error abriendo pantalla: " + ex);
+                                 }
+
+                                    });
+                                }).start();
+
+            //////////////////////////////////////////////////////////////////////////////
+           /* FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("/view/" + nombrePantalla + ".fxml"));
             Parent root = fxmlLoader.load();
             Stage window = new Stage();
             window.setScene(new Scene(root));
             window.show();
         } catch (Exception e) {
             System.err.println("Error abriendo pantalla: " + e);
-        }
+        }*/
+
     }
 
     public static void cerrarPantalla(Event event){
@@ -75,7 +127,6 @@ public class PantallasMenu {
     }
 
     public static void abrirNotificaciones(MouseEvent event) {
-        // TODO hacer pantalla notificaciones
         abrirPantalla(event, "PantallaNotificaciones");
     }
 

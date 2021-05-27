@@ -6,7 +6,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -18,6 +20,7 @@ import pujaQpuja.utilities.PantallasMenu;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
 public class PantallaPujarXProductoController implements Initializable {
@@ -64,6 +67,8 @@ public class PantallaPujarXProductoController implements Initializable {
     @FXML
     private Text textoNombreProducto;
     @FXML
+    private Text calificacion;
+    @FXML
     private Rectangle botonRectanguloQA;
 
     @Override
@@ -75,6 +80,8 @@ public class PantallaPujarXProductoController implements Initializable {
         campoPrecioSubasta.setText(Double.toString(controladorGeneral.autenticacionController.getTemporalVisualizada().getPrecioFinal()));
         campoNumeroPujantes.setText(Integer.toString(controladorGeneral.pujaController.obtenerNumeroPujantesPorPujaId(controladorGeneral.autenticacionController.getTemporalVisualizada().getId())));
         imagenProducto.setImage(controladorGeneral.autenticacionController.getTemporalVisualizada().getProducto().getFoto());
+        DecimalFormat df = new DecimalFormat("#.00");
+        calificacion.setText(df.format(controladorGeneral.usuarioController.obtenerCalificacionV(controladorGeneral.autenticacionController.getTemporalVisualizada().getVendedor().getId())).toString()+"/5");
     }
 
     @FXML
@@ -89,7 +96,14 @@ public class PantallaPujarXProductoController implements Initializable {
             }
             if (precio > 0.0) {
                 if (precio <= controladorGeneral.autenticacionController.getTemporalVisualizada().getPrecioFinal()) {
-                    PantallasMenu.abrirVentana("PantallaPujarXProductoError");
+                    ButtonType botonsi= new ButtonType("Si");
+                   Alert alert = new Alert(Alert.AlertType.ERROR, "Error, por favor digite un precio valido" , botonsi);
+                   alert.setHeaderText("Hey cuidado animal");
+                 
+                        alert.showAndWait();
+                        if (alert.getResult() == botonsi) {
+                            //do stuff
+                        }
                 } else {
                     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + "PantallaPujarXProductoConfirmacion.fxml"));
                     fxmlLoader.load();
@@ -101,6 +115,16 @@ public class PantallaPujarXProductoController implements Initializable {
                     Stage s = new Stage();
                     s.setScene(new Scene(p));
                     s.show();
+                    ButtonType botonsi= new ButtonType("Si");
+                    Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Estas seguro de pujar: $ " + campoDigitePrecio.getText() + " ?", botonsi, ButtonType.NO);
+                        alert.showAndWait();
+
+                        if (alert.getResult() == botonsi) {
+                            confirmacion(true,Double.valueOf(campoDigitePrecio.getText()));
+                        }else if(alert.getResult() == ButtonType.NO)
+                        {
+                               //xd
+                        }
                 }
             }
         }
@@ -108,51 +132,62 @@ public class PantallaPujarXProductoController implements Initializable {
 
     @FXML
     void abrirQA(MouseEvent event) {
-        PantallasMenu.abrirQA(event);
+        PantallasMenu.abrirVentana("PantallaPreguntas");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
     void abrirRealizarPregunta(ActionEvent event) {
-        PantallasMenu.abrirChat(event);
+        PantallasMenu.abrirVentana("PantallaChat");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
     void abrirAjustes(MouseEvent event) {
-        PantallasMenu.abrirAjustes(event);
+        PantallasMenu.abrirVentana("PantallaPerfil");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
     void abrirCategorias(MouseEvent event) {
-        PantallasMenu.abrirCategorias(event);
+        PantallasMenu.abrirVentana("PantallaSeleccionarCategoria");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
     void abrirHistorialCompras(MouseEvent event) {
-        PantallasMenu.abrirHistorialCompras(event);
+        PantallasMenu.abrirVentana("HistorialCompras");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
     void abrirHistorialVentas(MouseEvent event) {
-        PantallasMenu.abrirHistorialVentas(event);
+        PantallasMenu.abrirVentana("HistorialVentas");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
     void abrirNotificaciones(MouseEvent event) {
-        PantallasMenu.abrirNotificaciones(event);
+        PantallasMenu.abrirVentana("PantallaNotificaciones");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
     void abrirPerfil(MouseEvent event) {
-        PantallasMenu.abrirPerfil(event);
+        PantallasMenu.abrirVentana("PantallaPerfil");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
     void abrirRealizarSubasta(MouseEvent event) {
-        PantallasMenu.abrirRealizarSubasta(event);
+        PantallasMenu.abrirVentana("PantallaRealizarSubasta");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
     void abririMetodoPago(MouseEvent event) {
+        PantallasMenu.abrirVentana("PantallaMetodoPago");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     @FXML
@@ -161,7 +196,8 @@ public class PantallaPujarXProductoController implements Initializable {
 
     @FXML
     void irAtras(MouseEvent event) throws IOException {
-        PantallasMenu.abrirPantalla(event, "PantallaSeleccionarCategoria");
+        PantallasMenu.abrirVentana("PantallaSeleccionarCategoria");
+        PantallasMenu.cerrarPantalla(event);
     }
 
     public boolean confirmacion(boolean confirmacion, Double precionuevo) {

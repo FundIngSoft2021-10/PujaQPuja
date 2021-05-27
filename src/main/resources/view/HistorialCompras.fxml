@@ -131,7 +131,7 @@
     <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
     <center>
         <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-            <TableView fx:id="tablaHistorialCompras" prefHeight="654.0" prefWidth="1011.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <TableView fx:id="tablaHistorialCompras" onMouseClicked="#seleccionar" prefHeight="654.0" prefWidth="1011.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                 <columns>
                     <TableColumn fx:id="columnaFotoProducto" prefWidth="274.0" sortable="false" text="Foto del Producto" />
                     <TableColumn fx:id="columnaDescripcionProducto" prefWidth="607.0" text="Descripción del Producto" />

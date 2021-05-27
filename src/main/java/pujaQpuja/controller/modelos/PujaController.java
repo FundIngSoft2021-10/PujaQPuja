@@ -4,15 +4,13 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Map;
 
 import javafx.scene.image.ImageView;
-import pujaQpuja.model.entities.EstadoPuja;
-import pujaQpuja.model.entities.Producto;
-import pujaQpuja.model.entities.Puja;
+import pujaQpuja.model.entities.*;
 import pujaQpuja.model.entities.otros.TablaCatalogoTemporal;
 import pujaQpuja.model.repository.PujaRepository;
 import pujaQpuja.controller.pantallas.PantallaSeleccionarCategoriaController;
-import pujaQpuja.model.entities.Categoria;
 
 public class PujaController {
 
@@ -56,7 +54,7 @@ public class PujaController {
                     temp.setImagen(new ImageView(actual.getProducto().getFoto()));
                 }
             }
-            StringBuilder dtemp = new StringBuilder("Nombre:  " + actual.getProducto().getNombre() + "\n" + "Descripci�n:  " + actual.getProducto().getDescripcion() + "\n" + "Precio:  " + "$ " + actual.getPrecioFinal() + " COP" + "\n" + "Categoria: " + actual.getProducto().getCategoria());
+            StringBuilder dtemp = new StringBuilder("Nombre:  " + actual.getProducto().getNombre() + "\n" + "Descripción:  " + actual.getProducto().getDescripcion() + "\n" + "Precio:  " + "$ " + actual.getPrecioFinal() + " COP" + "\n" + "Categoria: " + actual.getProducto().getCategoria());
             temp.setDesc(dtemp.toString());
             datos.add(temp);
         }
@@ -70,7 +68,7 @@ public class PujaController {
     public List<TablaCatalogoTemporal> getPujasPropias(Categoria filtro) {
         List<TablaCatalogoTemporal> datos = new ArrayList<>();
 
-        for (Puja actual : pujaRepository.getPujasPropiasDB(filtro,autenticacionController.getAutenticado().getId())) {
+        for (Puja actual : pujaRepository.getPujasPropiasDB(filtro, autenticacionController.getAutenticado().getId())) {
             TablaCatalogoTemporal temp = new TablaCatalogoTemporal();
             temp.setPuja(actual);
             if (actual.getProducto() != null) {
@@ -104,16 +102,16 @@ public class PujaController {
         return this.pujaRepository.actualizarPrecio(nuevoprecio, idPuja);
     }
 
-    public boolean reanudarPuja(long idPuja){
+    public boolean reanudarPuja(long idPuja) {
         return this.pujaRepository.reanudarPujaPorPuja(idPuja);
     }
 
-    public boolean pausarPuja(long idPuja){
+    public boolean pausarPuja(long idPuja) {
         return this.pujaRepository.pausarPuja(idPuja);
     }
 
-    public boolean eliminarPuja(Long idPuja){
-        boolean eliminado= this.pujaRepository.eliminarPujaPorId(idPuja);
+    public boolean eliminarPuja(Long idPuja) {
+        boolean eliminado = this.pujaRepository.eliminarPujaPorId(idPuja);
         return eliminado;
     }
 
@@ -123,7 +121,7 @@ public class PujaController {
 
     public List<TablaCatalogoTemporal> getPujasGanadas(Categoria filtro) {
         List<TablaCatalogoTemporal> datos = new ArrayList<>();
-        for (Puja actual : pujaRepository.getPujasGanadasDB(filtro,autenticacionController.getAutenticado().getId())) {
+        for (Puja actual : pujaRepository.getPujasGanadasDB(filtro, autenticacionController.getAutenticado().getId())) {
             TablaCatalogoTemporal temp = new TablaCatalogoTemporal();
             temp.setPuja(actual);
             if (actual.getProducto() != null) {
@@ -137,5 +135,89 @@ public class PujaController {
             datos.add(temp);
         }
         return datos;
+    }
+
+    public List<TablaCatalogoTemporal> getPujasMasPopulares(Categoria selectedItem) {
+        List<TablaCatalogoTemporal> datos = new ArrayList<>();
+
+        for (Puja actual : pujaRepository.getPujasMasPopularesDB()) {
+            TablaCatalogoTemporal temp = new TablaCatalogoTemporal();
+            temp.setPuja(actual);
+            if (actual.getProducto() != null) {
+                if (actual.getProducto().getFoto() != null) {
+                    temp.setImagen(new ImageView(actual.getProducto().getFoto()));
+                }
+            }
+            StringBuilder dtemp = new StringBuilder("Nombre:  " + actual.getProducto().getNombre() + "\n" + "Descripcion:  " + actual.getProducto().getDescripcion() + "\n" + "Precio:  " + "$ " + actual.getPrecioFinal() + " COP" + "\n" + "Categoria: " + actual.getProducto().getCategoria());
+            temp.setDesc(dtemp.toString());
+            datos.add(temp);
+        }
+        return datos;
+    }
+
+    public void ganadorPuja() {
+        //obtenerPujantesMayores
+        Map<Long, Long> compradoresXPuja = pujaRepository.obtenerPujantesMayores();
+
+        for (Map.Entry<Long, Long> cXp : compradoresXPuja.entrySet()) {
+            //actualizarPujasFinalizadas
+            pujaRepository.actualizarPujasFinalizadas(cXp.getKey(), cXp.getValue());
+        }
+    }
+
+    public List<TablaCatalogoTemporal> obtenerNotificaciones() {
+        Long id = autenticacionController.getAutenticado().getId();
+
+        //List<Puja> pujas = new ArrayList<>();
+        //pujas.addAll(pujaRepository.obtenerNotificacionesComprador(id));
+        //pujas.addAll(pujaRepository.obtenerNotificacionesVendedor(id));
+
+        List<TablaCatalogoTemporal> datos = new ArrayList<>();
+
+        for (Puja actual : pujaRepository.obtenerNotificacionesComprador(id)) {
+            TablaCatalogoTemporal temp = new TablaCatalogoTemporal();
+            temp.setPuja(actual);
+            if (actual.getProducto() != null) {
+                if (actual.getProducto().getFoto() != null) {
+                    temp.setImagen(new ImageView(actual.getProducto().getFoto()));
+                }
+            }
+            //StringBuilder dtemp = new StringBuilder("Nombre:  " + actual.getProducto().getNombre() + "\n" + "Descripcion:  " + actual.getProducto().getDescripcion() + "\n" + "Precio:  " + "$ " + actual.getPrecioFinal() + " COP" + "\n" + "Categoria: " + actual.getProducto().getCategoria());
+            //temp.setDesc(dtemp.toString());
+            //temp.setEstado(actual.getEstado().toString());
+            temp.setMensajeNotificacion("Se ha terminado la puja del producto " + actual.getProducto().getNombre() + " y el producto es suyo, " + "continue con la realización pago.");
+            datos.add(temp);
+        }
+
+        for (Puja actual : pujaRepository.obtenerNotificacionesVendedor(id)) {
+            TablaCatalogoTemporal temp = new TablaCatalogoTemporal();
+            temp.setPuja(actual);
+            if (actual.getProducto() != null) {
+                if (actual.getProducto().getFoto() != null) {
+                    temp.setImagen(new ImageView(actual.getProducto().getFoto()));
+                }
+            }
+            //StringBuilder dtemp = new StringBuilder("Nombre:  " + actual.getProducto().getNombre() + "\n" + "Descripcion:  " + actual.getProducto().getDescripcion() + "\n" + "Precio:  " + "$ " + actual.getPrecioFinal() + " COP" + "\n" + "Categoria: " + actual.getProducto().getCategoria());
+            //temp.setDesc(dtemp.toString());
+            //temp.setEstado(actual.getEstado().toString());
+            temp.setMensajeNotificacion("Se ha terminado la puja del producto " + actual.getProducto().getNombre() + " con éxito");
+            datos.add(temp);
+        }
+        return datos;
+    }
+
+    public void actualizarPujaVendedor(Puja puja) {
+        Long id = autenticacionController.getAutenticado().getId();
+        if(puja.getVendedor().getId() == id) {
+            pujaRepository.actualizarNotificacionesVendedor(puja.getId());
+        }
+    }
+
+    public void actualizarPujaComprador(Puja puja)
+    {
+        Long id = autenticacionController.getAutenticado().getId();
+        if(puja.getComprador().getId() == id) {
+            pujaRepository.actualizarNotificacionesComprador(puja.getId());
+        }
     }
 }
