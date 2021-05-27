@@ -37,17 +37,17 @@ public class PujaControllerTest {
 
     @Test
     public void actualizarPrecio() {
-         assertFalse(control.pujaController.actualizarPrecio((long)0,0.0));
+         assertTRUE(control.pujaController.actualizarPrecio((long)0,0.0));
     }
 
     @Test
     public void reanudarPuja() {
-         assertFalse(control.pujaController.reanudarPuja((long)0));
+         assertTRUE(control.pujaController.reanudarPuja((long)0));
     }
 
     @Test
     public void pausarPuja() {
-         assertFalse(control.pujaController.pausarPuja((long)0));
+         assertTRUE(control.pujaController.pausarPuja((long)0));
     }
 
     @Test
